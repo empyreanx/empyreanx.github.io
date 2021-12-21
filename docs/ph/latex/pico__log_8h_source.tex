@@ -1,0 +1,707 @@
+\hypertarget{pico__log_8h_source}{}\doxysection{pico\+\_\+log.\+h}
+\mbox{\hyperlink{pico__log_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#ifndef PICO\_LOG\_H}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define PICO\_LOG\_H}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#ifndef PL\_ASSERT}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#include <assert.h>}  \textcolor{comment}{// assert}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#include <stdarg.h>}  \textcolor{comment}{// ...}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#include <stdbool.h>} \textcolor{comment}{// bool, true, false}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#include <stddef.h>}  \textcolor{comment}{// NULL}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#include <stdio.h>}   \textcolor{comment}{// FILE}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{70 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{77 \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{78 \{}
+\DoxyCodeLine{79     \mbox{\hyperlink{pico__log_8h_aca0828ad9286d7b2811d54d577c57867aafca9988d55bb6357de1fa599896c49d}{PL\_LEVEL\_TRACE}} = 0,}
+\DoxyCodeLine{80     \mbox{\hyperlink{pico__log_8h_aca0828ad9286d7b2811d54d577c57867a43a4d6deb40685dc59033d96881e90ff}{PL\_LEVEL\_DEBUG}},}
+\DoxyCodeLine{81     \mbox{\hyperlink{pico__log_8h_aca0828ad9286d7b2811d54d577c57867a70759f4b5b9754f801957c86ce55056a}{PL\_LEVEL\_INFO}},}
+\DoxyCodeLine{82     \mbox{\hyperlink{pico__log_8h_aca0828ad9286d7b2811d54d577c57867a26a3b9fb3b9d64fe7e142178d3243c33}{PL\_LEVEL\_WARN}},}
+\DoxyCodeLine{83     \mbox{\hyperlink{pico__log_8h_aca0828ad9286d7b2811d54d577c57867af09344d92482eafdd4ea96cc548c3344}{PL\_LEVEL\_ERROR}},}
+\DoxyCodeLine{84     \mbox{\hyperlink{pico__log_8h_aca0828ad9286d7b2811d54d577c57867a41c04c6d7b3f79a15b5712d979714d3c}{PL\_LEVEL\_FATAL}},}
+\DoxyCodeLine{85     \mbox{\hyperlink{pico__log_8h_aca0828ad9286d7b2811d54d577c57867ac20bf5c88e2c037b4a67fa525ff23b19}{PL\_LEVEL\_COUNT}}}
+\DoxyCodeLine{86 \} \mbox{\hyperlink{pico__log_8h_aca0828ad9286d7b2811d54d577c57867}{pl\_level\_t}};}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{92 \textcolor{keyword}{typedef} void (*\mbox{\hyperlink{pico__log_8h_ad46a198b2f52025591ac87e40f4c6668}{pl\_appender\_fn}})(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* entry, \textcolor{keywordtype}{void}* udata);}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{97 \textcolor{keyword}{typedef} void (*\mbox{\hyperlink{pico__log_8h_a280d377aae6209d04f2ccdeb79359a91}{pl\_lock\_fn}})(\textcolor{keywordtype}{bool} lock, \textcolor{keywordtype}{void} *udata);}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{102 \textcolor{keyword}{typedef} \textcolor{keywordtype}{int} \mbox{\hyperlink{pico__log_8h_a75313a635254411b22b2b0ed0c906017}{pl\_id\_t}};}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{107 \textcolor{keywordtype}{bool} \mbox{\hyperlink{pico__log_8h_a7b4dd64388feddca00eca9ec55f1163e}{pl\_str\_level}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* str, \mbox{\hyperlink{pico__log_8h_aca0828ad9286d7b2811d54d577c57867}{pl\_level\_t}}* level);}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{112 \textcolor{keywordtype}{void} \mbox{\hyperlink{pico__log_8h_aeab27be43e1423eb170d77471d505fe7}{pl\_enable}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{117 \textcolor{keywordtype}{void} \mbox{\hyperlink{pico__log_8h_adab7b86ecd9d99e522e564b3f3cd91ca}{pl\_disable}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{139 \mbox{\hyperlink{pico__log_8h_a75313a635254411b22b2b0ed0c906017}{pl\_id\_t}} \mbox{\hyperlink{pico__log_8h_a7c1ef1d29cde9769d9e1d8fb7d8e8723}{pl\_add\_appender}}(\mbox{\hyperlink{pico__log_8h_ad46a198b2f52025591ac87e40f4c6668}{pl\_appender\_fn}} appender\_fp,}
+\DoxyCodeLine{140                         \mbox{\hyperlink{pico__log_8h_aca0828ad9286d7b2811d54d577c57867}{pl\_level\_t}} level, \textcolor{keywordtype}{void}* udata);}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{151 \mbox{\hyperlink{pico__log_8h_a75313a635254411b22b2b0ed0c906017}{pl\_id\_t}} \mbox{\hyperlink{pico__log_8h_aab1c7b208cb5704806aabe41f37198f8}{pl\_add\_stream}}(FILE* stream, \mbox{\hyperlink{pico__log_8h_aca0828ad9286d7b2811d54d577c57867}{pl\_level\_t}} level);}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{158 \textcolor{keywordtype}{void} \mbox{\hyperlink{pico__log_8h_a7cb60519f30974b373812c4e91c941ab}{pl\_remove\_appender}}(\mbox{\hyperlink{pico__log_8h_a75313a635254411b22b2b0ed0c906017}{pl\_id\_t}} \textcolor{keywordtype}{id});}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{166 \textcolor{keywordtype}{void} \mbox{\hyperlink{pico__log_8h_ab7ad5854268eb2e6c946a93f939785b9}{pl\_enable\_appender}}(\mbox{\hyperlink{pico__log_8h_a75313a635254411b22b2b0ed0c906017}{pl\_id\_t}} \textcolor{keywordtype}{id});}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{173 \textcolor{keywordtype}{void} \mbox{\hyperlink{pico__log_8h_a496e3e6dada9d9fac144be64836a2342}{pl\_disable\_appender}}(\mbox{\hyperlink{pico__log_8h_a75313a635254411b22b2b0ed0c906017}{pl\_id\_t}} \textcolor{keywordtype}{id});}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{178 \textcolor{keywordtype}{void} \mbox{\hyperlink{pico__log_8h_afe02e2bdd2837ff061bbc8bb8111d2d9}{pl\_set\_lock}}(\mbox{\hyperlink{pico__log_8h_a75313a635254411b22b2b0ed0c906017}{pl\_id\_t}} \textcolor{keywordtype}{id}, \mbox{\hyperlink{pico__log_8h_a280d377aae6209d04f2ccdeb79359a91}{pl\_lock\_fn}} lock\_fp, \textcolor{keywordtype}{void}* udata);}
+\DoxyCodeLine{179 }
+\DoxyCodeLine{189 \textcolor{keywordtype}{void} \mbox{\hyperlink{pico__log_8h_ab92bcadb562435026677dfe8ff27be86}{pl\_set\_level}}(\mbox{\hyperlink{pico__log_8h_a75313a635254411b22b2b0ed0c906017}{pl\_id\_t}} \textcolor{keywordtype}{id}, \mbox{\hyperlink{pico__log_8h_aca0828ad9286d7b2811d54d577c57867}{pl\_level\_t}} level);}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{200 \textcolor{keywordtype}{void} \mbox{\hyperlink{pico__log_8h_a5f9ae1b346fd101daf230fad559c32ca}{pl\_set\_time\_fmt}}(\mbox{\hyperlink{pico__log_8h_a75313a635254411b22b2b0ed0c906017}{pl\_id\_t}} \textcolor{keywordtype}{id}, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* fmt);}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{209 \textcolor{keywordtype}{void} \mbox{\hyperlink{pico__log_8h_aac14f1408eaebdce050417b32cf289ae}{pl\_display\_colors}}(\mbox{\hyperlink{pico__log_8h_a75313a635254411b22b2b0ed0c906017}{pl\_id\_t}} \textcolor{keywordtype}{id}, \textcolor{keywordtype}{bool} enabled);}
+\DoxyCodeLine{210 }
+\DoxyCodeLine{218 \textcolor{keywordtype}{void} \mbox{\hyperlink{pico__log_8h_a0ea963e5e966f53ff60479b7faa55015}{pl\_display\_timestamp}}(\mbox{\hyperlink{pico__log_8h_a75313a635254411b22b2b0ed0c906017}{pl\_id\_t}} \textcolor{keywordtype}{id}, \textcolor{keywordtype}{bool} enabled);}
+\DoxyCodeLine{219 }
+\DoxyCodeLine{227 \textcolor{keywordtype}{void} \mbox{\hyperlink{pico__log_8h_ad284135b15625f7a0c18341df9ff37c6}{pl\_display\_level}}(\mbox{\hyperlink{pico__log_8h_a75313a635254411b22b2b0ed0c906017}{pl\_id\_t}} \textcolor{keywordtype}{id}, \textcolor{keywordtype}{bool} enabled);}
+\DoxyCodeLine{228 }
+\DoxyCodeLine{237 \textcolor{keywordtype}{void} \mbox{\hyperlink{pico__log_8h_afd9193f2fe579c4ed4a35ddc57d409b6}{pl\_display\_file}}(\mbox{\hyperlink{pico__log_8h_a75313a635254411b22b2b0ed0c906017}{pl\_id\_t}} \textcolor{keywordtype}{id}, \textcolor{keywordtype}{bool} enabled);}
+\DoxyCodeLine{238 }
+\DoxyCodeLine{246 \textcolor{keywordtype}{void} \mbox{\hyperlink{pico__log_8h_a1f53a5a5f12eedcd719f40c790694f9c}{pl\_display\_function}}(\mbox{\hyperlink{pico__log_8h_a75313a635254411b22b2b0ed0c906017}{pl\_id\_t}} \textcolor{keywordtype}{id}, \textcolor{keywordtype}{bool} enabled);}
+\DoxyCodeLine{247 }
+\DoxyCodeLine{254 \textcolor{preprocessor}{\#define pl\_trace(...) \(\backslash\)}}
+\DoxyCodeLine{255 \textcolor{preprocessor}{        pl\_write(PL\_LEVEL\_TRACE, \_\_FILE\_\_, \_\_LINE\_\_, \_\_func\_\_, \_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{256 }
+\DoxyCodeLine{263 \textcolor{preprocessor}{\#define pl\_debug(...) \(\backslash\)}}
+\DoxyCodeLine{264 \textcolor{preprocessor}{        pl\_write(PL\_LEVEL\_DEBUG, \_\_FILE\_\_, \_\_LINE\_\_, \_\_func\_\_, \_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{265 }
+\DoxyCodeLine{272 \textcolor{preprocessor}{\#define pl\_info(...) \(\backslash\)}}
+\DoxyCodeLine{273 \textcolor{preprocessor}{        pl\_write(PL\_LEVEL\_INFO,  \_\_FILE\_\_, \_\_LINE\_\_, \_\_func\_\_, \_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{274 }
+\DoxyCodeLine{281 \textcolor{preprocessor}{\#define pl\_warn(...) \(\backslash\)}}
+\DoxyCodeLine{282 \textcolor{preprocessor}{        pl\_write(PL\_LEVEL\_WARN,  \_\_FILE\_\_, \_\_LINE\_\_, \_\_func\_\_, \_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{283 }
+\DoxyCodeLine{290 \textcolor{preprocessor}{\#define pl\_error(...) \(\backslash\)}}
+\DoxyCodeLine{291 \textcolor{preprocessor}{        pl\_write(PL\_LEVEL\_ERROR, \_\_FILE\_\_, \_\_LINE\_\_, \_\_func\_\_, \_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{292 }
+\DoxyCodeLine{299 \textcolor{preprocessor}{\#define pl\_fatal(...) \(\backslash\)}}
+\DoxyCodeLine{300 \textcolor{preprocessor}{        pl\_write(PL\_LEVEL\_FATAL, \_\_FILE\_\_, \_\_LINE\_\_, \_\_func\_\_, \_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{301 }
+\DoxyCodeLine{302 }
+\DoxyCodeLine{307 \textcolor{keywordtype}{void} \mbox{\hyperlink{pico__log_8h_a4ecd67247230fe217919b3d447a1a22a}{pl\_write}}(\mbox{\hyperlink{pico__log_8h_aca0828ad9286d7b2811d54d577c57867}{pl\_level\_t}} level,}
+\DoxyCodeLine{308               \textcolor{keyword}{const} \textcolor{keywordtype}{char}* file,}
+\DoxyCodeLine{309               \textcolor{keywordtype}{unsigned} line,}
+\DoxyCodeLine{310               \textcolor{keyword}{const} \textcolor{keywordtype}{char}* func,}
+\DoxyCodeLine{311               \textcolor{keyword}{const} \textcolor{keywordtype}{char}* fmt, ...);}
+\DoxyCodeLine{312 }
+\DoxyCodeLine{313 }
+\DoxyCodeLine{314 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{315 \}}
+\DoxyCodeLine{316 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{317 }
+\DoxyCodeLine{318 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// PICO\_LOG\_H}}
+\DoxyCodeLine{319 }
+\DoxyCodeLine{320 \textcolor{preprocessor}{\#ifdef PL\_IMPLEMENTATION}}
+\DoxyCodeLine{321 }
+\DoxyCodeLine{322 \textcolor{preprocessor}{\#include <time.h>}}
+\DoxyCodeLine{323 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{324 }
+\DoxyCodeLine{325 \textcolor{comment}{/*}}
+\DoxyCodeLine{326 \textcolor{comment}{ * Configuration constants/macros.}}
+\DoxyCodeLine{327 \textcolor{comment}{ */}}
+\DoxyCodeLine{328 \textcolor{preprocessor}{\#ifndef PL\_MAX\_APPENDERS}}
+\DoxyCodeLine{329 \textcolor{preprocessor}{\#define PL\_MAX\_APPENDERS 16}}
+\DoxyCodeLine{330 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{331 }
+\DoxyCodeLine{332 \textcolor{preprocessor}{\#ifndef PL\_MAX\_MSG\_LENGTH}}
+\DoxyCodeLine{333 \textcolor{preprocessor}{\#define PL\_MAX\_MSG\_LENGTH 1024}}
+\DoxyCodeLine{334 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{335 }
+\DoxyCodeLine{336 \textcolor{preprocessor}{\#ifndef PL\_ASSERT}}
+\DoxyCodeLine{337 \textcolor{preprocessor}{\#define PL\_ASSERT(expr) assert(expr)}}
+\DoxyCodeLine{338 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{339 }
+\DoxyCodeLine{340 \textcolor{comment}{/*}}
+\DoxyCodeLine{341 \textcolor{comment}{ * Log entry component maximum sizes. These have been chosen to be overly}}
+\DoxyCodeLine{342 \textcolor{comment}{ * generous powers of 2 for the sake of safety and simplicity.}}
+\DoxyCodeLine{343 \textcolor{comment}{ */}}
+\DoxyCodeLine{344 }
+\DoxyCodeLine{345 \textcolor{preprocessor}{\#define PL\_TIMESTAMP\_LEN 64}}
+\DoxyCodeLine{346 \textcolor{preprocessor}{\#define PL\_LEVEL\_LEN     32}}
+\DoxyCodeLine{347 \textcolor{preprocessor}{\#define PL\_FILE\_LEN      512}}
+\DoxyCodeLine{348 \textcolor{preprocessor}{\#define PL\_FUNC\_LEN      32}}
+\DoxyCodeLine{349 \textcolor{preprocessor}{\#define PL\_MSG\_LEN       PL\_MAX\_MSG\_LENGTH}}
+\DoxyCodeLine{350 \textcolor{preprocessor}{\#define PL\_BREAK\_LEN     1}}
+\DoxyCodeLine{351 }
+\DoxyCodeLine{352 \textcolor{preprocessor}{\#define PL\_ENTRY\_LEN (PL\_TIMESTAMP\_LEN  + \(\backslash\)}}
+\DoxyCodeLine{353 \textcolor{preprocessor}{                        PL\_LEVEL\_LEN      + \(\backslash\)}}
+\DoxyCodeLine{354 \textcolor{preprocessor}{                        PL\_FILE\_LEN       + \(\backslash\)}}
+\DoxyCodeLine{355 \textcolor{preprocessor}{                        PL\_FUNC\_LEN       + \(\backslash\)}}
+\DoxyCodeLine{356 \textcolor{preprocessor}{                        PL\_MSG\_LEN        + \(\backslash\)}}
+\DoxyCodeLine{357 \textcolor{preprocessor}{                        PL\_BREAK\_LEN)}}
+\DoxyCodeLine{358 }
+\DoxyCodeLine{359 \textcolor{preprocessor}{\#define PL\_TIME\_FMT\_LEN 32}}
+\DoxyCodeLine{360 \textcolor{preprocessor}{\#define PL\_TIME\_FMT     "{}\%d/\%m/\%g \%H:\%M:\%S"{}}}
+\DoxyCodeLine{361 }
+\DoxyCodeLine{362 \textcolor{preprocessor}{\#define PL\_TERM\_CODE  0x1B}}
+\DoxyCodeLine{363 \textcolor{preprocessor}{\#define PL\_TERM\_RESET "{}[0m"{}}}
+\DoxyCodeLine{364 \textcolor{preprocessor}{\#define PL\_TERM\_GRAY  "{}[90m"{}}}
+\DoxyCodeLine{365 }
+\DoxyCodeLine{366 \textcolor{keyword}{static} \textcolor{keywordtype}{bool} pl\_initialized    = \textcolor{keyword}{false}; \textcolor{comment}{// True if logger is initialized}}
+\DoxyCodeLine{367 \textcolor{keyword}{static} \textcolor{keywordtype}{bool} pl\_enabled        = \textcolor{keyword}{true};  \textcolor{comment}{// True if logger is enabled}}
+\DoxyCodeLine{368 \textcolor{keyword}{static} \textcolor{keywordtype}{int}  pl\_appender\_count = 0;     \textcolor{comment}{// Number of appenders}}
+\DoxyCodeLine{369 }
+\DoxyCodeLine{370 \textcolor{comment}{/*}}
+\DoxyCodeLine{371 \textcolor{comment}{ * Logger level strings indexed by level ID (pl\_level\_t).}}
+\DoxyCodeLine{372 \textcolor{comment}{ */}}
+\DoxyCodeLine{373 \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \textcolor{keyword}{const} pl\_level\_str[] =}
+\DoxyCodeLine{374 \{}
+\DoxyCodeLine{375     \textcolor{stringliteral}{"{}TRACE"{}},}
+\DoxyCodeLine{376     \textcolor{stringliteral}{"{}DEBUG"{}},}
+\DoxyCodeLine{377     \textcolor{stringliteral}{"{}INFO"{}},}
+\DoxyCodeLine{378     \textcolor{stringliteral}{"{}WARN"{}},}
+\DoxyCodeLine{379     \textcolor{stringliteral}{"{}ERROR"{}},}
+\DoxyCodeLine{380     \textcolor{stringliteral}{"{}FATAL"{}},}
+\DoxyCodeLine{381     0}
+\DoxyCodeLine{382 \};}
+\DoxyCodeLine{383 }
+\DoxyCodeLine{384 \textcolor{comment}{/*}}
+\DoxyCodeLine{385 \textcolor{comment}{ * Logger level strings indexed by level ID (pl\_level\_t).}}
+\DoxyCodeLine{386 \textcolor{comment}{ */}}
+\DoxyCodeLine{387 \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \textcolor{keyword}{const} pl\_level\_str\_formatted[] =}
+\DoxyCodeLine{388 \{}
+\DoxyCodeLine{389     \textcolor{stringliteral}{"{}TRACE"{}},}
+\DoxyCodeLine{390     \textcolor{stringliteral}{"{}DEBUG"{}},}
+\DoxyCodeLine{391     \textcolor{stringliteral}{"{}INFO "{}},}
+\DoxyCodeLine{392     \textcolor{stringliteral}{"{}WARN "{}},}
+\DoxyCodeLine{393     \textcolor{stringliteral}{"{}ERROR"{}},}
+\DoxyCodeLine{394     \textcolor{stringliteral}{"{}FATAL"{}},}
+\DoxyCodeLine{395     0}
+\DoxyCodeLine{396 \};}
+\DoxyCodeLine{397 }
+\DoxyCodeLine{398 \textcolor{comment}{// Appropriated from https://github.com/rxi/log.c (MIT licensed)}}
+\DoxyCodeLine{399 \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{char}* pl\_level\_color[] =}
+\DoxyCodeLine{400 \{}
+\DoxyCodeLine{401     \textcolor{stringliteral}{"{}[94m"{}}, \textcolor{stringliteral}{"{}[36m"{}}, \textcolor{stringliteral}{"{}[32m"{}}, \textcolor{stringliteral}{"{}[33m"{}}, \textcolor{stringliteral}{"{}[31m"{}}, \textcolor{stringliteral}{"{}[35m"{}}, NULL}
+\DoxyCodeLine{402 \};}
+\DoxyCodeLine{403 }
+\DoxyCodeLine{404 \textcolor{comment}{/*}}
+\DoxyCodeLine{405 \textcolor{comment}{ * Appender pointer and metadata.}}
+\DoxyCodeLine{406 \textcolor{comment}{ */}}
+\DoxyCodeLine{407 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{408 \{}
+\DoxyCodeLine{409     \mbox{\hyperlink{pico__log_8h_ad46a198b2f52025591ac87e40f4c6668}{pl\_appender\_fn}} appender\_fp;}
+\DoxyCodeLine{410     \textcolor{keywordtype}{void}*          udata;}
+\DoxyCodeLine{411     \textcolor{keywordtype}{bool}           enabled;}
+\DoxyCodeLine{412     \mbox{\hyperlink{pico__log_8h_aca0828ad9286d7b2811d54d577c57867}{pl\_level\_t}}     log\_level;}
+\DoxyCodeLine{413     \textcolor{keywordtype}{char}           time\_fmt[PL\_TIME\_FMT\_LEN];}
+\DoxyCodeLine{414     \textcolor{keywordtype}{bool}           colors;}
+\DoxyCodeLine{415     \textcolor{keywordtype}{bool}           timestamp;}
+\DoxyCodeLine{416     \textcolor{keywordtype}{bool}           level;}
+\DoxyCodeLine{417     \textcolor{keywordtype}{bool}           file;}
+\DoxyCodeLine{418     \textcolor{keywordtype}{bool}           func;}
+\DoxyCodeLine{419     \mbox{\hyperlink{pico__log_8h_a280d377aae6209d04f2ccdeb79359a91}{pl\_lock\_fn}}     lock\_fp;}
+\DoxyCodeLine{420     \textcolor{keywordtype}{void}*          lock\_udata;}
+\DoxyCodeLine{421 \} pl\_appender\_t;}
+\DoxyCodeLine{422 }
+\DoxyCodeLine{423 \textcolor{comment}{/*}}
+\DoxyCodeLine{424 \textcolor{comment}{ * Array of appenders.}}
+\DoxyCodeLine{425 \textcolor{comment}{ */}}
+\DoxyCodeLine{426 \textcolor{keyword}{static} pl\_appender\_t pl\_appenders[PL\_MAX\_APPENDERS];}
+\DoxyCodeLine{427 }
+\DoxyCodeLine{428 \textcolor{comment}{/*}}
+\DoxyCodeLine{429 \textcolor{comment}{ * Initializes the logger provided it has not been initialized.}}
+\DoxyCodeLine{430 \textcolor{comment}{ */}}
+\DoxyCodeLine{431 \textcolor{keyword}{static} \textcolor{keywordtype}{void}}
+\DoxyCodeLine{432 pl\_try\_init ()}
+\DoxyCodeLine{433 \{}
+\DoxyCodeLine{434     \textcolor{keywordflow}{if} (pl\_initialized)}
+\DoxyCodeLine{435     \{}
+\DoxyCodeLine{436         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{437     \}}
+\DoxyCodeLine{438 }
+\DoxyCodeLine{439     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < PL\_MAX\_APPENDERS; i++)}
+\DoxyCodeLine{440     \{}
+\DoxyCodeLine{441         pl\_appenders[i].appender\_fp = NULL;}
+\DoxyCodeLine{442     \}}
+\DoxyCodeLine{443 }
+\DoxyCodeLine{444     pl\_initialized = \textcolor{keyword}{true};}
+\DoxyCodeLine{445 \}}
+\DoxyCodeLine{446 }
+\DoxyCodeLine{447 \textcolor{keyword}{static} \textcolor{keywordtype}{bool} pl\_appender\_exists(\mbox{\hyperlink{pico__log_8h_a75313a635254411b22b2b0ed0c906017}{pl\_id\_t}} \textcolor{keywordtype}{id})}
+\DoxyCodeLine{448 \{}
+\DoxyCodeLine{449     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{id} < PL\_MAX\_APPENDERS \&\& NULL != pl\_appenders[\textcolor{keywordtype}{id}].appender\_fp);}
+\DoxyCodeLine{450 \}}
+\DoxyCodeLine{451 }
+\DoxyCodeLine{452 \textcolor{keyword}{static} \textcolor{keywordtype}{bool} pl\_appender\_enabled(\mbox{\hyperlink{pico__log_8h_a75313a635254411b22b2b0ed0c906017}{pl\_id\_t}} \textcolor{keywordtype}{id})}
+\DoxyCodeLine{453 \{}
+\DoxyCodeLine{454     \textcolor{keywordflow}{return} pl\_appender\_exists(\textcolor{keywordtype}{id}) \&\& pl\_appenders[id].enabled;}
+\DoxyCodeLine{455 \}}
+\DoxyCodeLine{456 }
+\DoxyCodeLine{457 \textcolor{keywordtype}{bool} \mbox{\hyperlink{pico__log_8h_a7b4dd64388feddca00eca9ec55f1163e}{pl\_str\_level}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* str, \mbox{\hyperlink{pico__log_8h_aca0828ad9286d7b2811d54d577c57867}{pl\_level\_t}}* level)}
+\DoxyCodeLine{458 \{}
+\DoxyCodeLine{459     \textcolor{keywordflow}{if} (!level)}
+\DoxyCodeLine{460         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{461 }
+\DoxyCodeLine{462     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; pl\_level\_str[i]; i++)}
+\DoxyCodeLine{463     \{}
+\DoxyCodeLine{464         \textcolor{keywordflow}{if} (0 == strcmp(str, pl\_level\_str[i]))}
+\DoxyCodeLine{465         \{}
+\DoxyCodeLine{466             *level = (\mbox{\hyperlink{pico__log_8h_aca0828ad9286d7b2811d54d577c57867}{pl\_level\_t}})i;}
+\DoxyCodeLine{467             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{468         \}}
+\DoxyCodeLine{469     \}}
+\DoxyCodeLine{470 }
+\DoxyCodeLine{471     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{472 \}}
+\DoxyCodeLine{473 }
+\DoxyCodeLine{474 \textcolor{keywordtype}{void}}
+\DoxyCodeLine{475 \mbox{\hyperlink{pico__log_8h_aeab27be43e1423eb170d77471d505fe7}{pl\_enable}} (\textcolor{keywordtype}{void})}
+\DoxyCodeLine{476 \{}
+\DoxyCodeLine{477     pl\_enabled = \textcolor{keyword}{true};}
+\DoxyCodeLine{478 \}}
+\DoxyCodeLine{479 }
+\DoxyCodeLine{480 \textcolor{keywordtype}{void}}
+\DoxyCodeLine{481 \mbox{\hyperlink{pico__log_8h_adab7b86ecd9d99e522e564b3f3cd91ca}{pl\_disable}} (\textcolor{keywordtype}{void})}
+\DoxyCodeLine{482 \{}
+\DoxyCodeLine{483     pl\_enabled = \textcolor{keyword}{false};}
+\DoxyCodeLine{484 \}}
+\DoxyCodeLine{485 }
+\DoxyCodeLine{486 \mbox{\hyperlink{pico__log_8h_a75313a635254411b22b2b0ed0c906017}{pl\_id\_t}}}
+\DoxyCodeLine{487 \mbox{\hyperlink{pico__log_8h_a7c1ef1d29cde9769d9e1d8fb7d8e8723}{pl\_add\_appender}} (\mbox{\hyperlink{pico__log_8h_ad46a198b2f52025591ac87e40f4c6668}{pl\_appender\_fn}} appender\_fp, \mbox{\hyperlink{pico__log_8h_aca0828ad9286d7b2811d54d577c57867}{pl\_level\_t}} level, \textcolor{keywordtype}{void}* udata)}
+\DoxyCodeLine{488 \{}
+\DoxyCodeLine{489     \textcolor{comment}{// Initialize logger if neccesary}}
+\DoxyCodeLine{490     pl\_try\_init();}
+\DoxyCodeLine{491 }
+\DoxyCodeLine{492     \textcolor{comment}{// Check if there is space for a new appender.}}
+\DoxyCodeLine{493     PL\_ASSERT(pl\_appender\_count < PL\_MAX\_APPENDERS);}
+\DoxyCodeLine{494 }
+\DoxyCodeLine{495     \textcolor{comment}{// Ensure level is valid}}
+\DoxyCodeLine{496     PL\_ASSERT(level >= 0 \&\& level < \mbox{\hyperlink{pico__log_8h_aca0828ad9286d7b2811d54d577c57867ac20bf5c88e2c037b4a67fa525ff23b19}{PL\_LEVEL\_COUNT}});}
+\DoxyCodeLine{497 }
+\DoxyCodeLine{498     \textcolor{comment}{// Iterate through appender array and find an empty slot.}}
+\DoxyCodeLine{499     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < PL\_MAX\_APPENDERS; i++)}
+\DoxyCodeLine{500     \{}
+\DoxyCodeLine{501         \textcolor{keywordflow}{if} (NULL == pl\_appenders[i].appender\_fp)}
+\DoxyCodeLine{502         \{}
+\DoxyCodeLine{503             pl\_appender\_t* appender = \&pl\_appenders[i];}
+\DoxyCodeLine{504 }
+\DoxyCodeLine{505             \textcolor{comment}{// Store and enable appender}}
+\DoxyCodeLine{506             appender-\/>appender\_fp = appender\_fp;}
+\DoxyCodeLine{507             appender-\/>log\_level   = level;}
+\DoxyCodeLine{508             appender-\/>udata       = udata;}
+\DoxyCodeLine{509             appender-\/>level       = \mbox{\hyperlink{pico__log_8h_aca0828ad9286d7b2811d54d577c57867a70759f4b5b9754f801957c86ce55056a}{PL\_LEVEL\_INFO}};}
+\DoxyCodeLine{510             appender-\/>enabled     = \textcolor{keyword}{true};}
+\DoxyCodeLine{511             appender-\/>colors      = \textcolor{keyword}{false};}
+\DoxyCodeLine{512             appender-\/>level       = \textcolor{keyword}{true};}
+\DoxyCodeLine{513             appender-\/>timestamp   = \textcolor{keyword}{false};}
+\DoxyCodeLine{514             appender-\/>file        = \textcolor{keyword}{false};}
+\DoxyCodeLine{515             appender-\/>func        = \textcolor{keyword}{false};}
+\DoxyCodeLine{516             appender-\/>lock\_fp     = NULL;}
+\DoxyCodeLine{517             appender-\/>lock\_udata  = NULL;}
+\DoxyCodeLine{518 }
+\DoxyCodeLine{519             strncpy(appender-\/>time\_fmt, PL\_TIME\_FMT, PL\_TIME\_FMT\_LEN);}
+\DoxyCodeLine{520 }
+\DoxyCodeLine{521             pl\_appender\_count++;}
+\DoxyCodeLine{522 }
+\DoxyCodeLine{523             \textcolor{keywordflow}{return} (\mbox{\hyperlink{pico__log_8h_a75313a635254411b22b2b0ed0c906017}{pl\_id\_t}})i;}
+\DoxyCodeLine{524         \}}
+\DoxyCodeLine{525     \}}
+\DoxyCodeLine{526 }
+\DoxyCodeLine{527     \textcolor{comment}{// This should never happen}}
+\DoxyCodeLine{528     PL\_ASSERT(\textcolor{keyword}{false});}
+\DoxyCodeLine{529     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{530 \}}
+\DoxyCodeLine{531 }
+\DoxyCodeLine{532 \textcolor{keyword}{static} \textcolor{keywordtype}{void}}
+\DoxyCodeLine{533 pl\_stream\_appender (\textcolor{keyword}{const} \textcolor{keywordtype}{char}* entry, \textcolor{keywordtype}{void}* udata)}
+\DoxyCodeLine{534 \{}
+\DoxyCodeLine{535     FILE* stream = (FILE*)udata;}
+\DoxyCodeLine{536     fprintf(stream, \textcolor{stringliteral}{"{}\%s"{}}, entry);}
+\DoxyCodeLine{537     fflush(stream);}
+\DoxyCodeLine{538 \}}
+\DoxyCodeLine{539 }
+\DoxyCodeLine{540 \mbox{\hyperlink{pico__log_8h_a75313a635254411b22b2b0ed0c906017}{pl\_id\_t}}}
+\DoxyCodeLine{541 \mbox{\hyperlink{pico__log_8h_aab1c7b208cb5704806aabe41f37198f8}{pl\_add\_stream}} (FILE* stream, \mbox{\hyperlink{pico__log_8h_aca0828ad9286d7b2811d54d577c57867}{pl\_level\_t}} level)}
+\DoxyCodeLine{542 \{}
+\DoxyCodeLine{543     \textcolor{comment}{// Stream must not be NULL}}
+\DoxyCodeLine{544     PL\_ASSERT(NULL != stream);}
+\DoxyCodeLine{545 }
+\DoxyCodeLine{546     \textcolor{keywordflow}{return} \mbox{\hyperlink{pico__log_8h_a7c1ef1d29cde9769d9e1d8fb7d8e8723}{pl\_add\_appender}}(pl\_stream\_appender, level, stream);}
+\DoxyCodeLine{547 \}}
+\DoxyCodeLine{548 }
+\DoxyCodeLine{549 \textcolor{keywordtype}{void}}
+\DoxyCodeLine{550 \mbox{\hyperlink{pico__log_8h_a7cb60519f30974b373812c4e91c941ab}{pl\_remove\_appender}} (\mbox{\hyperlink{pico__log_8h_a75313a635254411b22b2b0ed0c906017}{pl\_id\_t}} \textcolor{keywordtype}{id})}
+\DoxyCodeLine{551 \{}
+\DoxyCodeLine{552     \textcolor{comment}{// Initialize logger if neccesary}}
+\DoxyCodeLine{553     pl\_try\_init();}
+\DoxyCodeLine{554 }
+\DoxyCodeLine{555     \textcolor{comment}{// Ensure appender is registered}}
+\DoxyCodeLine{556     PL\_ASSERT(pl\_appender\_exists(\textcolor{keywordtype}{id}));}
+\DoxyCodeLine{557 }
+\DoxyCodeLine{558     \textcolor{comment}{// Reset appender with given ID}}
+\DoxyCodeLine{559     pl\_appenders[id].appender\_fp = NULL;}
+\DoxyCodeLine{560 }
+\DoxyCodeLine{561     pl\_appender\_count-\/-\/;}
+\DoxyCodeLine{562 \}}
+\DoxyCodeLine{563 }
+\DoxyCodeLine{564 \textcolor{keywordtype}{void}}
+\DoxyCodeLine{565 \mbox{\hyperlink{pico__log_8h_ab7ad5854268eb2e6c946a93f939785b9}{pl\_enable\_appender}} (\mbox{\hyperlink{pico__log_8h_a75313a635254411b22b2b0ed0c906017}{pl\_id\_t}} \textcolor{keywordtype}{id})}
+\DoxyCodeLine{566 \{}
+\DoxyCodeLine{567     \textcolor{comment}{// Initialize logger if neccesary}}
+\DoxyCodeLine{568     pl\_try\_init();}
+\DoxyCodeLine{569 }
+\DoxyCodeLine{570     \textcolor{comment}{// Ensure appender is registered}}
+\DoxyCodeLine{571     PL\_ASSERT(pl\_appender\_exists(\textcolor{keywordtype}{id}));}
+\DoxyCodeLine{572 }
+\DoxyCodeLine{573     \textcolor{comment}{// Enable appender}}
+\DoxyCodeLine{574     pl\_appenders[id].enabled = \textcolor{keyword}{true};}
+\DoxyCodeLine{575 \}}
+\DoxyCodeLine{576 }
+\DoxyCodeLine{577 \textcolor{keywordtype}{void}}
+\DoxyCodeLine{578 \mbox{\hyperlink{pico__log_8h_a496e3e6dada9d9fac144be64836a2342}{pl\_disable\_appender}} (\mbox{\hyperlink{pico__log_8h_a75313a635254411b22b2b0ed0c906017}{pl\_id\_t}} \textcolor{keywordtype}{id})}
+\DoxyCodeLine{579 \{}
+\DoxyCodeLine{580     \textcolor{comment}{// Initialize logger if neccesary}}
+\DoxyCodeLine{581     pl\_try\_init();}
+\DoxyCodeLine{582 }
+\DoxyCodeLine{583     \textcolor{comment}{// Ensure appender is registered}}
+\DoxyCodeLine{584     PL\_ASSERT(pl\_appender\_exists(\textcolor{keywordtype}{id}));}
+\DoxyCodeLine{585 }
+\DoxyCodeLine{586     \textcolor{comment}{// Disable appender}}
+\DoxyCodeLine{587     pl\_appenders[id].enabled = \textcolor{keyword}{false};}
+\DoxyCodeLine{588 \}}
+\DoxyCodeLine{589 }
+\DoxyCodeLine{590 \textcolor{keywordtype}{void} \mbox{\hyperlink{pico__log_8h_afe02e2bdd2837ff061bbc8bb8111d2d9}{pl\_set\_lock}}(\mbox{\hyperlink{pico__log_8h_a75313a635254411b22b2b0ed0c906017}{pl\_id\_t}} \textcolor{keywordtype}{id}, \mbox{\hyperlink{pico__log_8h_a280d377aae6209d04f2ccdeb79359a91}{pl\_lock\_fn}} lock\_fp, \textcolor{keywordtype}{void}* udata)}
+\DoxyCodeLine{591 \{}
+\DoxyCodeLine{592     \textcolor{comment}{// Ensure lock function is initialized}}
+\DoxyCodeLine{593     PL\_ASSERT(NULL != lock\_fp);}
+\DoxyCodeLine{594 }
+\DoxyCodeLine{595     \textcolor{comment}{// Ensure appender is registered}}
+\DoxyCodeLine{596     pl\_try\_init();}
+\DoxyCodeLine{597 }
+\DoxyCodeLine{598     \textcolor{comment}{// Ensure appender is registered}}
+\DoxyCodeLine{599     PL\_ASSERT(pl\_appender\_exists(\textcolor{keywordtype}{id}));}
+\DoxyCodeLine{600 }
+\DoxyCodeLine{601     pl\_appenders[id].lock\_fp = lock\_fp;}
+\DoxyCodeLine{602     pl\_appenders[id].lock\_udata = udata;}
+\DoxyCodeLine{603 \}}
+\DoxyCodeLine{604 }
+\DoxyCodeLine{605 \textcolor{keywordtype}{void}}
+\DoxyCodeLine{606 \mbox{\hyperlink{pico__log_8h_ab92bcadb562435026677dfe8ff27be86}{pl\_set\_level}} (\mbox{\hyperlink{pico__log_8h_a75313a635254411b22b2b0ed0c906017}{pl\_id\_t}} \textcolor{keywordtype}{id}, \mbox{\hyperlink{pico__log_8h_aca0828ad9286d7b2811d54d577c57867}{pl\_level\_t}} level)}
+\DoxyCodeLine{607 \{}
+\DoxyCodeLine{608     \textcolor{comment}{// Initialize logger if neccesary}}
+\DoxyCodeLine{609     pl\_try\_init();}
+\DoxyCodeLine{610 }
+\DoxyCodeLine{611     \textcolor{comment}{// Ensure appender is registered}}
+\DoxyCodeLine{612     PL\_ASSERT(pl\_appender\_exists(\textcolor{keywordtype}{id}));}
+\DoxyCodeLine{613 }
+\DoxyCodeLine{614     \textcolor{comment}{// Ensure level is valid}}
+\DoxyCodeLine{615     PL\_ASSERT(level >= 0 \&\& level < \mbox{\hyperlink{pico__log_8h_aca0828ad9286d7b2811d54d577c57867ac20bf5c88e2c037b4a67fa525ff23b19}{PL\_LEVEL\_COUNT}});}
+\DoxyCodeLine{616 }
+\DoxyCodeLine{617     \textcolor{comment}{// Set the level}}
+\DoxyCodeLine{618     pl\_appenders[id].log\_level = level;}
+\DoxyCodeLine{619 \}}
+\DoxyCodeLine{620 }
+\DoxyCodeLine{621 \textcolor{keywordtype}{void}}
+\DoxyCodeLine{622 \mbox{\hyperlink{pico__log_8h_a5f9ae1b346fd101daf230fad559c32ca}{pl\_set\_time\_fmt}} (\mbox{\hyperlink{pico__log_8h_a75313a635254411b22b2b0ed0c906017}{pl\_id\_t}} \textcolor{keywordtype}{id}, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* fmt)}
+\DoxyCodeLine{623 \{}
+\DoxyCodeLine{624     \textcolor{comment}{// Initialize logger if neccesary}}
+\DoxyCodeLine{625     pl\_try\_init();}
+\DoxyCodeLine{626 }
+\DoxyCodeLine{627     \textcolor{comment}{// Ensure appender is registered}}
+\DoxyCodeLine{628     PL\_ASSERT(pl\_appender\_exists(\textcolor{keywordtype}{id}));}
+\DoxyCodeLine{629 }
+\DoxyCodeLine{630     \textcolor{comment}{// Copy the time string}}
+\DoxyCodeLine{631     strncpy(pl\_appenders[\textcolor{keywordtype}{id}].time\_fmt, fmt, PL\_TIME\_FMT\_LEN);}
+\DoxyCodeLine{632 \}}
+\DoxyCodeLine{633 }
+\DoxyCodeLine{634 \textcolor{keywordtype}{void}}
+\DoxyCodeLine{635 \mbox{\hyperlink{pico__log_8h_aac14f1408eaebdce050417b32cf289ae}{pl\_display\_colors}} (\mbox{\hyperlink{pico__log_8h_a75313a635254411b22b2b0ed0c906017}{pl\_id\_t}} \textcolor{keywordtype}{id}, \textcolor{keywordtype}{bool} enabled)}
+\DoxyCodeLine{636 \{}
+\DoxyCodeLine{637     \textcolor{comment}{// Initialize logger if neccesary}}
+\DoxyCodeLine{638     pl\_try\_init();}
+\DoxyCodeLine{639 }
+\DoxyCodeLine{640     \textcolor{comment}{// Ensure appender is registered}}
+\DoxyCodeLine{641     PL\_ASSERT(pl\_appender\_exists(\textcolor{keywordtype}{id}));}
+\DoxyCodeLine{642 }
+\DoxyCodeLine{643     \textcolor{comment}{// Disable appender}}
+\DoxyCodeLine{644     pl\_appenders[id].colors = enabled;}
+\DoxyCodeLine{645 \}}
+\DoxyCodeLine{646 }
+\DoxyCodeLine{647 \textcolor{keywordtype}{void}}
+\DoxyCodeLine{648 \mbox{\hyperlink{pico__log_8h_a0ea963e5e966f53ff60479b7faa55015}{pl\_display\_timestamp}} (\mbox{\hyperlink{pico__log_8h_a75313a635254411b22b2b0ed0c906017}{pl\_id\_t}} \textcolor{keywordtype}{id}, \textcolor{keywordtype}{bool} enabled)}
+\DoxyCodeLine{649 \{}
+\DoxyCodeLine{650     \textcolor{comment}{// Initialize logger if neccesary}}
+\DoxyCodeLine{651     pl\_try\_init();}
+\DoxyCodeLine{652 }
+\DoxyCodeLine{653     \textcolor{comment}{// Ensure appender is registered}}
+\DoxyCodeLine{654     PL\_ASSERT(pl\_appender\_exists(\textcolor{keywordtype}{id}));}
+\DoxyCodeLine{655 }
+\DoxyCodeLine{656     \textcolor{comment}{// Turn timestamp on}}
+\DoxyCodeLine{657     pl\_appenders[id].timestamp = enabled;}
+\DoxyCodeLine{658 \}}
+\DoxyCodeLine{659 }
+\DoxyCodeLine{660 \textcolor{keywordtype}{void}}
+\DoxyCodeLine{661 \mbox{\hyperlink{pico__log_8h_ad284135b15625f7a0c18341df9ff37c6}{pl\_display\_level}} (\mbox{\hyperlink{pico__log_8h_a75313a635254411b22b2b0ed0c906017}{pl\_id\_t}} \textcolor{keywordtype}{id}, \textcolor{keywordtype}{bool} enabled)}
+\DoxyCodeLine{662 \{}
+\DoxyCodeLine{663     \textcolor{comment}{// Initialize logger if neccesary}}
+\DoxyCodeLine{664     pl\_try\_init();}
+\DoxyCodeLine{665 }
+\DoxyCodeLine{666     \textcolor{comment}{// Ensure appender is registered}}
+\DoxyCodeLine{667     PL\_ASSERT(pl\_appender\_exists(\textcolor{keywordtype}{id}));}
+\DoxyCodeLine{668 }
+\DoxyCodeLine{669     \textcolor{comment}{// Turn level reporting on}}
+\DoxyCodeLine{670     pl\_appenders[id].level = enabled;}
+\DoxyCodeLine{671 \}}
+\DoxyCodeLine{672 }
+\DoxyCodeLine{673 \textcolor{keywordtype}{void}}
+\DoxyCodeLine{674 \mbox{\hyperlink{pico__log_8h_afd9193f2fe579c4ed4a35ddc57d409b6}{pl\_display\_file}} (\mbox{\hyperlink{pico__log_8h_a75313a635254411b22b2b0ed0c906017}{pl\_id\_t}} \textcolor{keywordtype}{id}, \textcolor{keywordtype}{bool} enabled)}
+\DoxyCodeLine{675 \{}
+\DoxyCodeLine{676     \textcolor{comment}{// Initialize logger if neccesary}}
+\DoxyCodeLine{677     pl\_try\_init();}
+\DoxyCodeLine{678 }
+\DoxyCodeLine{679     \textcolor{comment}{// Ensure appender is registered}}
+\DoxyCodeLine{680     PL\_ASSERT(pl\_appender\_exists(\textcolor{keywordtype}{id}));}
+\DoxyCodeLine{681 }
+\DoxyCodeLine{682     \textcolor{comment}{// Turn file reporting on}}
+\DoxyCodeLine{683     pl\_appenders[id].file = enabled;}
+\DoxyCodeLine{684 \}}
+\DoxyCodeLine{685 }
+\DoxyCodeLine{686 \textcolor{keywordtype}{void}}
+\DoxyCodeLine{687 \mbox{\hyperlink{pico__log_8h_a1f53a5a5f12eedcd719f40c790694f9c}{pl\_display\_function}} (\mbox{\hyperlink{pico__log_8h_a75313a635254411b22b2b0ed0c906017}{pl\_id\_t}} \textcolor{keywordtype}{id}, \textcolor{keywordtype}{bool} enabled)}
+\DoxyCodeLine{688 \{}
+\DoxyCodeLine{689     \textcolor{comment}{// Initialize logger if neccesary}}
+\DoxyCodeLine{690     pl\_try\_init();}
+\DoxyCodeLine{691 }
+\DoxyCodeLine{692     \textcolor{comment}{// Ensure appender is registered}}
+\DoxyCodeLine{693     PL\_ASSERT(pl\_appender\_exists(\textcolor{keywordtype}{id}));}
+\DoxyCodeLine{694 }
+\DoxyCodeLine{695     \textcolor{comment}{// Turn file reporting on}}
+\DoxyCodeLine{696     pl\_appenders[id].func = enabled;}
+\DoxyCodeLine{697 \}}
+\DoxyCodeLine{698 }
+\DoxyCodeLine{699 \textcolor{comment}{/*}}
+\DoxyCodeLine{700 \textcolor{comment}{ * Formats the current time as as string.}}
+\DoxyCodeLine{701 \textcolor{comment}{ */}}
+\DoxyCodeLine{702 \textcolor{keyword}{static} \textcolor{keywordtype}{char}*}
+\DoxyCodeLine{703 pl\_time\_str (\textcolor{keyword}{const} \textcolor{keywordtype}{char}* time\_fmt, \textcolor{keywordtype}{char}* str, \textcolor{keywordtype}{int} len)}
+\DoxyCodeLine{704 \{}
+\DoxyCodeLine{705     time\_t now = time(0);}
+\DoxyCodeLine{706     \textcolor{keywordtype}{int} ret = strftime(str, len, time\_fmt, localtime(\&now));}
+\DoxyCodeLine{707 }
+\DoxyCodeLine{708     PL\_ASSERT(ret > 0);}
+\DoxyCodeLine{709 }
+\DoxyCodeLine{710     \textcolor{keywordflow}{return} str;}
+\DoxyCodeLine{711 \}}
+\DoxyCodeLine{712 }
+\DoxyCodeLine{713 \textcolor{keyword}{static} \textcolor{keywordtype}{void}}
+\DoxyCodeLine{714 pl\_append\_timestamp (\textcolor{keywordtype}{char}* entry\_str, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* time\_fmt)}
+\DoxyCodeLine{715 \{}
+\DoxyCodeLine{716     \textcolor{keywordtype}{char} time\_str[PL\_TIMESTAMP\_LEN + 1];}
+\DoxyCodeLine{717     \textcolor{keywordtype}{char} tmp\_str[PL\_TIMESTAMP\_LEN + 1];}
+\DoxyCodeLine{718 }
+\DoxyCodeLine{719     snprintf(time\_str, PL\_TIMESTAMP\_LEN, \textcolor{stringliteral}{"{}\%s "{}},}
+\DoxyCodeLine{720              pl\_time\_str(time\_fmt, tmp\_str, PL\_TIMESTAMP\_LEN));}
+\DoxyCodeLine{721 }
+\DoxyCodeLine{722     strncat(entry\_str, time\_str, PL\_TIMESTAMP\_LEN);}
+\DoxyCodeLine{723 \}}
+\DoxyCodeLine{724 }
+\DoxyCodeLine{725 \textcolor{keyword}{static} \textcolor{keywordtype}{void}}
+\DoxyCodeLine{726 pl\_append\_level (\textcolor{keywordtype}{char}* entry\_str, \mbox{\hyperlink{pico__log_8h_aca0828ad9286d7b2811d54d577c57867}{pl\_level\_t}} level, \textcolor{keywordtype}{bool} colors)}
+\DoxyCodeLine{727 \{}
+\DoxyCodeLine{728     \textcolor{keywordtype}{char} level\_str[PL\_LEVEL\_LEN];}
+\DoxyCodeLine{729 }
+\DoxyCodeLine{730     \textcolor{keywordflow}{if} (colors)}
+\DoxyCodeLine{731     \{}
+\DoxyCodeLine{732         snprintf(level\_str, \textcolor{keyword}{sizeof}(level\_str), \textcolor{stringliteral}{"{}\%c\%s\%s \%c\%s"{}},}
+\DoxyCodeLine{733         PL\_TERM\_CODE, pl\_level\_color[level],}
+\DoxyCodeLine{734         pl\_level\_str\_formatted[level],}
+\DoxyCodeLine{735         PL\_TERM\_CODE, PL\_TERM\_RESET);}
+\DoxyCodeLine{736     \}}
+\DoxyCodeLine{737     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{738     \{}
+\DoxyCodeLine{739         snprintf(level\_str, \textcolor{keyword}{sizeof}(level\_str), \textcolor{stringliteral}{"{}\%s "{}}, pl\_level\_str[level]);}
+\DoxyCodeLine{740     \}}
+\DoxyCodeLine{741 }
+\DoxyCodeLine{742     strncat(entry\_str, level\_str, PL\_LEVEL\_LEN);}
+\DoxyCodeLine{743 \}}
+\DoxyCodeLine{744 }
+\DoxyCodeLine{745 \textcolor{keyword}{static} \textcolor{keywordtype}{void}}
+\DoxyCodeLine{746 pl\_append\_file(\textcolor{keywordtype}{char}* entry\_str, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* file, \textcolor{keywordtype}{unsigned} line, \textcolor{keywordtype}{bool} colors)}
+\DoxyCodeLine{747 \{}
+\DoxyCodeLine{748     \textcolor{keywordtype}{char} file\_str[PL\_FILE\_LEN];}
+\DoxyCodeLine{749 }
+\DoxyCodeLine{750     \textcolor{keywordflow}{if} (colors)}
+\DoxyCodeLine{751     \{}
+\DoxyCodeLine{752         snprintf(file\_str, \textcolor{keyword}{sizeof}(file\_str), \textcolor{stringliteral}{"{}\%c\%s\%s:\%u\%c\%s "{}},}
+\DoxyCodeLine{753                  PL\_TERM\_CODE, PL\_TERM\_GRAY,}
+\DoxyCodeLine{754                  file, line,}
+\DoxyCodeLine{755                  PL\_TERM\_CODE, PL\_TERM\_RESET);}
+\DoxyCodeLine{756 }
+\DoxyCodeLine{757     \}}
+\DoxyCodeLine{758     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{759     \{}
+\DoxyCodeLine{760         snprintf(file\_str, \textcolor{keyword}{sizeof}(file\_str), \textcolor{stringliteral}{"{}\%s:\%u "{}}, file, line);}
+\DoxyCodeLine{761     \}}
+\DoxyCodeLine{762 }
+\DoxyCodeLine{763     strncat(entry\_str, file\_str, PL\_FILE\_LEN);}
+\DoxyCodeLine{764 \}}
+\DoxyCodeLine{765 }
+\DoxyCodeLine{766 \textcolor{keyword}{static} \textcolor{keywordtype}{void}}
+\DoxyCodeLine{767 pl\_append\_func(\textcolor{keywordtype}{char}* entry\_str, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* func, \textcolor{keywordtype}{bool} colors)}
+\DoxyCodeLine{768 \{}
+\DoxyCodeLine{769    \textcolor{keywordtype}{char} func\_str[PL\_FUNC\_LEN];}
+\DoxyCodeLine{770 }
+\DoxyCodeLine{771     \textcolor{keywordflow}{if} (colors)}
+\DoxyCodeLine{772     \{}
+\DoxyCodeLine{773         snprintf(func\_str, \textcolor{keyword}{sizeof}(func\_str), \textcolor{stringliteral}{"{}\%c\%s[\%s] \%c\%s"{}},}
+\DoxyCodeLine{774                  PL\_TERM\_CODE, PL\_TERM\_GRAY,}
+\DoxyCodeLine{775                  func,}
+\DoxyCodeLine{776                  PL\_TERM\_CODE, PL\_TERM\_RESET);}
+\DoxyCodeLine{777     \}}
+\DoxyCodeLine{778     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{779     \{}
+\DoxyCodeLine{780         snprintf(func\_str, \textcolor{keyword}{sizeof}(func\_str), \textcolor{stringliteral}{"{}[\%s] "{}}, func);}
+\DoxyCodeLine{781     \}}
+\DoxyCodeLine{782 }
+\DoxyCodeLine{783     strncat(entry\_str, func\_str, PL\_FUNC\_LEN);}
+\DoxyCodeLine{784 \}}
+\DoxyCodeLine{785 }
+\DoxyCodeLine{786 \textcolor{keywordtype}{void}}
+\DoxyCodeLine{787 \mbox{\hyperlink{pico__log_8h_a4ecd67247230fe217919b3d447a1a22a}{pl\_write}} (\mbox{\hyperlink{pico__log_8h_aca0828ad9286d7b2811d54d577c57867}{pl\_level\_t}} level, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* file, \textcolor{keywordtype}{unsigned} line,}
+\DoxyCodeLine{788                             \textcolor{keyword}{const} \textcolor{keywordtype}{char}* func, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* fmt, ...)}
+\DoxyCodeLine{789 \{}
+\DoxyCodeLine{790     \textcolor{comment}{// Only write entry if there are registered appenders and the logger is}}
+\DoxyCodeLine{791     \textcolor{comment}{// enabled}}
+\DoxyCodeLine{792     \textcolor{keywordflow}{if} (0 == pl\_appender\_count || !pl\_enabled)}
+\DoxyCodeLine{793     \{}
+\DoxyCodeLine{794         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{795     \}}
+\DoxyCodeLine{796 }
+\DoxyCodeLine{797     \textcolor{comment}{// Ensure valid log level}}
+\DoxyCodeLine{798     PL\_ASSERT(level < \mbox{\hyperlink{pico__log_8h_aca0828ad9286d7b2811d54d577c57867ac20bf5c88e2c037b4a67fa525ff23b19}{PL\_LEVEL\_COUNT}});}
+\DoxyCodeLine{799 }
+\DoxyCodeLine{800     \textcolor{keywordflow}{for} (\mbox{\hyperlink{pico__log_8h_a75313a635254411b22b2b0ed0c906017}{pl\_id\_t}} i = 0; i < PL\_MAX\_APPENDERS; i++)}
+\DoxyCodeLine{801     \{}
+\DoxyCodeLine{802         pl\_appender\_t* appender = \&pl\_appenders[i];}
+\DoxyCodeLine{803 }
+\DoxyCodeLine{804         \textcolor{keywordflow}{if} (!pl\_appender\_enabled(i))}
+\DoxyCodeLine{805             \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{806 }
+\DoxyCodeLine{807         \textcolor{keywordflow}{if} (pl\_appenders[i].log\_level <= level)}
+\DoxyCodeLine{808         \{}
+\DoxyCodeLine{809             \textcolor{keywordtype}{char} entry\_str[PL\_ENTRY\_LEN + 1]; \textcolor{comment}{// Ensure there is space for}}
+\DoxyCodeLine{810                                               \textcolor{comment}{// null char}}
+\DoxyCodeLine{811 }
+\DoxyCodeLine{812             entry\_str[0] = \textcolor{charliteral}{'\(\backslash\)0'}; \textcolor{comment}{// Ensure the entry is null terminated}}
+\DoxyCodeLine{813 }
+\DoxyCodeLine{814             \textcolor{comment}{// Append a timestamp}}
+\DoxyCodeLine{815             \textcolor{keywordflow}{if} (appender-\/>timestamp)}
+\DoxyCodeLine{816             \{}
+\DoxyCodeLine{817                 pl\_append\_timestamp(entry\_str, appender-\/>time\_fmt);}
+\DoxyCodeLine{818             \}}
+\DoxyCodeLine{819 }
+\DoxyCodeLine{820             \textcolor{comment}{// Append the logger level}}
+\DoxyCodeLine{821             \textcolor{keywordflow}{if} (appender-\/>level)}
+\DoxyCodeLine{822             \{}
+\DoxyCodeLine{823                 pl\_append\_level(entry\_str, level, appender-\/>colors);}
+\DoxyCodeLine{824             \}}
+\DoxyCodeLine{825 }
+\DoxyCodeLine{826             \textcolor{comment}{// Append the filename/line number}}
+\DoxyCodeLine{827             \textcolor{keywordflow}{if} (appender-\/>file)}
+\DoxyCodeLine{828             \{}
+\DoxyCodeLine{829                 pl\_append\_file(entry\_str, file, line, appender-\/>colors);}
+\DoxyCodeLine{830             \}}
+\DoxyCodeLine{831 }
+\DoxyCodeLine{832             \textcolor{comment}{// Append the function name}}
+\DoxyCodeLine{833             \textcolor{keywordflow}{if} (appender-\/>func)}
+\DoxyCodeLine{834             \{}
+\DoxyCodeLine{835                 pl\_append\_func(entry\_str, func, appender-\/>colors);}
+\DoxyCodeLine{836             \}}
+\DoxyCodeLine{837 }
+\DoxyCodeLine{838             \textcolor{comment}{// Append the log message}}
+\DoxyCodeLine{839             \textcolor{keywordtype}{char} msg\_str[PL\_MSG\_LEN];}
+\DoxyCodeLine{840 }
+\DoxyCodeLine{841             va\_list args;}
+\DoxyCodeLine{842             va\_start(args, fmt);}
+\DoxyCodeLine{843             vsnprintf(msg\_str, \textcolor{keyword}{sizeof}(msg\_str), fmt, args);}
+\DoxyCodeLine{844             va\_end(args);}
+\DoxyCodeLine{845 }
+\DoxyCodeLine{846             strncat(entry\_str, msg\_str, PL\_MSG\_LEN);}
+\DoxyCodeLine{847             strcat(entry\_str, \textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{848 }
+\DoxyCodeLine{849             \textcolor{comment}{// Locks the appender}}
+\DoxyCodeLine{850             \textcolor{keywordflow}{if} (NULL != appender-\/>lock\_fp)}
+\DoxyCodeLine{851             \{}
+\DoxyCodeLine{852                 appender-\/>lock\_fp(\textcolor{keyword}{true}, appender-\/>lock\_udata);}
+\DoxyCodeLine{853             \}}
+\DoxyCodeLine{854 }
+\DoxyCodeLine{855             appender-\/>appender\_fp(entry\_str, appender-\/>udata);}
+\DoxyCodeLine{856 }
+\DoxyCodeLine{857             \textcolor{comment}{// Unlocks the appender}}
+\DoxyCodeLine{858             \textcolor{keywordflow}{if} (NULL != appender-\/>lock\_fp)}
+\DoxyCodeLine{859             \{}
+\DoxyCodeLine{860                 appender-\/>lock\_fp(\textcolor{keyword}{false}, appender-\/>lock\_udata);}
+\DoxyCodeLine{861             \}}
+\DoxyCodeLine{862         \}}
+\DoxyCodeLine{863     \}}
+\DoxyCodeLine{864 \}}
+\DoxyCodeLine{865 }
+\DoxyCodeLine{866 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// PL\_IMPLEMENTATION}}
+\DoxyCodeLine{867 }
+\DoxyCodeLine{868 }
+\DoxyCodeLine{869 \textcolor{comment}{/*}}
+\DoxyCodeLine{870 \textcolor{comment}{    -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{871 \textcolor{comment}{    This software is available under two licenses (A) or (B). You may choose}}
+\DoxyCodeLine{872 \textcolor{comment}{    either one as you wish:}}
+\DoxyCodeLine{873 \textcolor{comment}{    -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{874 \textcolor{comment}{}}
+\DoxyCodeLine{875 \textcolor{comment}{    (A) The zlib License}}
+\DoxyCodeLine{876 \textcolor{comment}{}}
+\DoxyCodeLine{877 \textcolor{comment}{    Copyright (c) 2021 James McLean}}
+\DoxyCodeLine{878 \textcolor{comment}{}}
+\DoxyCodeLine{879 \textcolor{comment}{    This software is provided 'as-\/is', without any express or implied warranty.}}
+\DoxyCodeLine{880 \textcolor{comment}{    In no event will the authors be held liable for any damages arising from the}}
+\DoxyCodeLine{881 \textcolor{comment}{    use of this software.}}
+\DoxyCodeLine{882 \textcolor{comment}{}}
+\DoxyCodeLine{883 \textcolor{comment}{    Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{884 \textcolor{comment}{    including commercial applications, and to alter it and redistribute it}}
+\DoxyCodeLine{885 \textcolor{comment}{    freely, subject to the following restrictions:}}
+\DoxyCodeLine{886 \textcolor{comment}{}}
+\DoxyCodeLine{887 \textcolor{comment}{    1. The origin of this software must not be misrepresented; you must not}}
+\DoxyCodeLine{888 \textcolor{comment}{    claim that you wrote the original software. If you use this software in a}}
+\DoxyCodeLine{889 \textcolor{comment}{    product, an acknowledgment in the product documentation would be appreciated}}
+\DoxyCodeLine{890 \textcolor{comment}{    but is not required.}}
+\DoxyCodeLine{891 \textcolor{comment}{}}
+\DoxyCodeLine{892 \textcolor{comment}{    2. Altered source versions must be plainly marked as such, and must not be}}
+\DoxyCodeLine{893 \textcolor{comment}{    misrepresented as being the original software.}}
+\DoxyCodeLine{894 \textcolor{comment}{}}
+\DoxyCodeLine{895 \textcolor{comment}{    3. This notice may not be removed or altered from any source distribution.}}
+\DoxyCodeLine{896 \textcolor{comment}{}}
+\DoxyCodeLine{897 \textcolor{comment}{    -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{898 \textcolor{comment}{}}
+\DoxyCodeLine{899 \textcolor{comment}{    (B) Public Domain (www.unlicense.org)}}
+\DoxyCodeLine{900 \textcolor{comment}{}}
+\DoxyCodeLine{901 \textcolor{comment}{    This is free and unencumbered software released into the public domain.}}
+\DoxyCodeLine{902 \textcolor{comment}{}}
+\DoxyCodeLine{903 \textcolor{comment}{    Anyone is free to copy, modify, publish, use, compile, sell, or distribute}}
+\DoxyCodeLine{904 \textcolor{comment}{    this software, either in source code form or as a compiled binary, for any}}
+\DoxyCodeLine{905 \textcolor{comment}{    purpose, commercial or non-\/commercial, and by any means.}}
+\DoxyCodeLine{906 \textcolor{comment}{}}
+\DoxyCodeLine{907 \textcolor{comment}{    In jurisdictions that recognize copyright laws, the author or authors of}}
+\DoxyCodeLine{908 \textcolor{comment}{    this software dedicate any and all copyright interest in the software to the}}
+\DoxyCodeLine{909 \textcolor{comment}{    public domain. We make this dedication for the benefit of the public at}}
+\DoxyCodeLine{910 \textcolor{comment}{    large and to the detriment of our heirs and successors. We intend this}}
+\DoxyCodeLine{911 \textcolor{comment}{    dedication to be an overt act of relinquishment in perpetuity of all present}}
+\DoxyCodeLine{912 \textcolor{comment}{    and future rights to this software under copyright law.}}
+\DoxyCodeLine{913 \textcolor{comment}{}}
+\DoxyCodeLine{914 \textcolor{comment}{    THE SOFTWARE IS PROVIDED "{}AS IS"{}, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR}}
+\DoxyCodeLine{915 \textcolor{comment}{    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,}}
+\DoxyCodeLine{916 \textcolor{comment}{    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE}}
+\DoxyCodeLine{917 \textcolor{comment}{    AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN}}
+\DoxyCodeLine{918 \textcolor{comment}{    ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION}}
+\DoxyCodeLine{919 \textcolor{comment}{    WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.}}
+\DoxyCodeLine{920 \textcolor{comment}{*/}}
+\DoxyCodeLine{921 }
+\DoxyCodeLine{922 \textcolor{comment}{// EoF}}
+
+\end{DoxyCode}

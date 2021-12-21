@@ -1,0 +1,779 @@
+\hypertarget{pico__ml_8h_source}{}\doxysection{pico\+\_\+ml.\+h}
+\mbox{\hyperlink{pico__ml_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#ifndef PICO\_ML\_H}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define PICO\_ML\_H}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#include <math.h>}    \textcolor{comment}{// sqrt(f), cos(f), sin(f), atan2(f)...}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#include <stdbool.h>} \textcolor{comment}{// bool, true, false}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#include <stdint.h>}  \textcolor{comment}{// uint32\_t}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{67 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{comment}{// Common}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#if defined(\_MSC\_VER)}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{    \#define PM\_INLINE \_\_forceinline}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#elif defined(\_\_GNUC\_\_) || defined(\_\_clang\_\_)}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{    \#define PM\_INLINE static inline \_\_attribute((always\_inline))}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{    \#define PM\_INLINE inline}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 \textcolor{comment}{// Types}}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#ifdef PM\_USE\_DOUBLE}}
+\DoxyCodeLine{83     \textcolor{comment}{// @brief A double precision floating point number}}
+\DoxyCodeLine{84     \textcolor{keyword}{typedef} \textcolor{keywordtype}{double} \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}};}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 \textcolor{preprocessor}{    \#define PM\_EPSILON 1e-\/7}}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \textcolor{preprocessor}{    \#define PM\_PI   3.14159265358979323846264338327950288}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{    \#define PM\_PI2 (2.0 * PM\_PI)}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{    \#define PM\_E    2.71828182845904523536028747135266250}}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 \textcolor{preprocessor}{    \#define pm\_sqrt  sqrt}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{    \#define pm\_cos   cos}}
+\DoxyCodeLine{94 \textcolor{preprocessor}{    \#define pm\_sin   sin}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{    \#define pm\_acos  acos}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{    \#define pm\_asin  asin}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{    \#define pm\_atan2 atan2}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{    \#define pm\_abs   fabs}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{    \#define pm\_fmod  fmod}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{    \#define pm\_exp   exp}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{    \#define pm\_pow   pow}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{    \#define pm\_floor floor}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{    \#define pm\_ceil  ceil}}
+\DoxyCodeLine{104 \textcolor{preprocessor}{    \#define pm\_log2  log2}}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{107     \textcolor{comment}{// @brief A single precision floating point number}}
+\DoxyCodeLine{108     \textcolor{keyword}{typedef} \textcolor{keywordtype}{float} \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}};}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110 \textcolor{preprocessor}{    \#define PM\_EPSILON 1e-\/5f}}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112 \textcolor{preprocessor}{    \#define PM\_PI   3.14159265359f}}
+\DoxyCodeLine{113 \textcolor{preprocessor}{    \#define PM\_PI2 (2.0f * PM\_PI)}}
+\DoxyCodeLine{114 \textcolor{preprocessor}{    \#define PM\_E    2.71828182845f}}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116 \textcolor{preprocessor}{    \#define pm\_sqrt  sqrtf}}
+\DoxyCodeLine{117 \textcolor{preprocessor}{    \#define pm\_cos   cosf}}
+\DoxyCodeLine{118 \textcolor{preprocessor}{    \#define pm\_sin   sinf}}
+\DoxyCodeLine{119 \textcolor{preprocessor}{    \#define pm\_acos  acosf}}
+\DoxyCodeLine{120 \textcolor{preprocessor}{    \#define pm\_asin  asinf}}
+\DoxyCodeLine{121 \textcolor{preprocessor}{    \#define pm\_atan2 atan2f}}
+\DoxyCodeLine{122 \textcolor{preprocessor}{    \#define pm\_abs   fabsf}}
+\DoxyCodeLine{123 \textcolor{preprocessor}{    \#define pm\_fmod  fmodf}}
+\DoxyCodeLine{124 \textcolor{preprocessor}{    \#define pm\_exp   expf}}
+\DoxyCodeLine{125 \textcolor{preprocessor}{    \#define pm\_pow   powf}}
+\DoxyCodeLine{126 \textcolor{preprocessor}{    \#define pm\_floor floorf}}
+\DoxyCodeLine{127 \textcolor{preprocessor}{    \#define pm\_ceil  ceilf}}
+\DoxyCodeLine{128 \textcolor{preprocessor}{    \#define pm\_log2  log2f}}
+\DoxyCodeLine{129 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{131 \textcolor{comment}{/*}}
+\DoxyCodeLine{132 \textcolor{comment}{ * @brief A 2D vector}}
+\DoxyCodeLine{133 \textcolor{comment}{ */}}
+\DoxyCodeLine{134 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{135 \{}
+\DoxyCodeLine{136     \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} \mbox{\hyperlink{structpm__v2_a59252ad8edb4c86e492b30e9ff9c61d5}{x}}, y;}
+\DoxyCodeLine{137 \} \mbox{\hyperlink{structpm__v2}{pm\_v2}};}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139 \textcolor{comment}{/*}}
+\DoxyCodeLine{140 \textcolor{comment}{ * @brief A 2D transform}}
+\DoxyCodeLine{141 \textcolor{comment}{ */}}
+\DoxyCodeLine{142 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{143 \{}
+\DoxyCodeLine{144     \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} \mbox{\hyperlink{structpm__t2_a4ce31dcc7ab506059d71e123a46b748e}{t00}}, t10, t01, t11, tx, ty;}
+\DoxyCodeLine{145 \} \mbox{\hyperlink{structpm__t2}{pm\_t2}};}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147 \textcolor{comment}{/*}}
+\DoxyCodeLine{148 \textcolor{comment}{ * @brief A 2D axis-\/aligned-\/bounding-\/box (AABB)}}
+\DoxyCodeLine{149 \textcolor{comment}{ */}}
+\DoxyCodeLine{150 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{151 \{}
+\DoxyCodeLine{152     \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} x, y, w, \mbox{\hyperlink{structpm__b2_a002a2ad944538fe0a974a53904fc7974}{h}};}
+\DoxyCodeLine{153 \} \mbox{\hyperlink{structpm__b2}{pm\_b2}};}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155 \textcolor{comment}{/*==============================================================================}}
+\DoxyCodeLine{156 \textcolor{comment}{ * Scalar functions and macros}}
+\DoxyCodeLine{157 \textcolor{comment}{ *============================================================================*/}}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{162 \textcolor{preprocessor}{\#define pm\_min(a, b) (a < b ? a : b)}}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{167 \textcolor{preprocessor}{\#define pm\_max(a, b) (a > b ? a : b)}}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{172 \textcolor{preprocessor}{\#define pm\_clamp(val, min, max) ((val < min) ? min : ((val > max) ? max : val))}}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{182 \textcolor{preprocessor}{\#define pm\_sign(val) ((0 == val) ? 0 : ((val > 0) ? 1 : -\/1))}}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{187 \mbox{\hyperlink{pico__ml_8h_a41daca15036ae70fb43c040e8fbe4999}{PM\_INLINE}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{pico__ml_8h_a7205c5e1af6a35ab85ccd578080d4079}{pm\_equal}}(\mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} c1, \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} c2)}
+\DoxyCodeLine{188 \{}
+\DoxyCodeLine{189     \textcolor{keywordflow}{return} \mbox{\hyperlink{pico__ml_8h_a35fed208974957b54f8cb0f97439bb94}{pm\_abs}}(c1 -\/ c2) < \mbox{\hyperlink{pico__ml_8h_aa1d3e2c0042b41cb48e743298240d6fc}{PM\_EPSILON}};}
+\DoxyCodeLine{190 \}}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{199 \mbox{\hyperlink{pico__ml_8h_a41daca15036ae70fb43c040e8fbe4999}{PM\_INLINE}} \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} \mbox{\hyperlink{pico__ml_8h_a60ad4642a791269c5d50c780fce2e451}{pm\_lerp}}(\mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} a, \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} b, \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} alpha)}
+\DoxyCodeLine{200 \{}
+\DoxyCodeLine{201     \textcolor{keywordflow}{return} a + (b -\/ a) * alpha;}
+\DoxyCodeLine{202 \}}
+\DoxyCodeLine{203 }
+\DoxyCodeLine{211 \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} \mbox{\hyperlink{pico__ml_8h_aa322aab2accc0e5b9f969e7877a01670}{pm\_lerp\_angle}}(\mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} angle1, \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} angle2, \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} alpha);}
+\DoxyCodeLine{212 }
+\DoxyCodeLine{216 \mbox{\hyperlink{pico__ml_8h_a41daca15036ae70fb43c040e8fbe4999}{PM\_INLINE}} \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} \mbox{\hyperlink{pico__ml_8h_a0aca2cf04f618c70a090d879b54fda69}{pm\_normalize\_angle}}(\mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} angle)}
+\DoxyCodeLine{217 \{}
+\DoxyCodeLine{218     \textcolor{keywordflow}{while} (angle >= \mbox{\hyperlink{pico__ml_8h_a4919f423efde089d61f9e3dafbc1cf31}{PM\_PI2}})}
+\DoxyCodeLine{219         angle -\/= \mbox{\hyperlink{pico__ml_8h_a4919f423efde089d61f9e3dafbc1cf31}{PM\_PI2}};}
+\DoxyCodeLine{220 }
+\DoxyCodeLine{221     \textcolor{keywordflow}{while} (angle < 0.0f)}
+\DoxyCodeLine{222         angle += \mbox{\hyperlink{pico__ml_8h_a4919f423efde089d61f9e3dafbc1cf31}{PM\_PI2}};}
+\DoxyCodeLine{223 }
+\DoxyCodeLine{224     \textcolor{keywordflow}{return} angle;}
+\DoxyCodeLine{225 \}}
+\DoxyCodeLine{226 }
+\DoxyCodeLine{230 \mbox{\hyperlink{pico__ml_8h_a41daca15036ae70fb43c040e8fbe4999}{PM\_INLINE}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{pico__ml_8h_a1359fa7aa83fd23792435be3b526b164}{pm\_is\_pow2}}(uint32\_t c)}
+\DoxyCodeLine{231 \{}
+\DoxyCodeLine{232     \textcolor{keywordflow}{return} (c \& (c -\/ 1)) == 0;}
+\DoxyCodeLine{233 \}}
+\DoxyCodeLine{234 }
+\DoxyCodeLine{239 \mbox{\hyperlink{pico__ml_8h_a41daca15036ae70fb43c040e8fbe4999}{PM\_INLINE}} uint32\_t \mbox{\hyperlink{pico__ml_8h_ac3619e70b27ffca09ea345742714d6ab}{pm\_next\_pow2}}(uint32\_t c)}
+\DoxyCodeLine{240 \{}
+\DoxyCodeLine{241     uint32\_t n = (uint32\_t)\mbox{\hyperlink{pico__ml_8h_a74f8ebd4f6d95e342a92aca96cbb3e4a}{pm\_ceil}}(\mbox{\hyperlink{pico__ml_8h_a78914adcad98a56bd47211fdad27cdf7}{pm\_log2}}(c + 1));}
+\DoxyCodeLine{242     \textcolor{keywordflow}{return} (1UL << n);}
+\DoxyCodeLine{243 \}}
+\DoxyCodeLine{244 }
+\DoxyCodeLine{245 \textcolor{comment}{/*==============================================================================}}
+\DoxyCodeLine{246 \textcolor{comment}{ * Vectors}}
+\DoxyCodeLine{247 \textcolor{comment}{ *============================================================================*/}}
+\DoxyCodeLine{248 }
+\DoxyCodeLine{252 \mbox{\hyperlink{pico__ml_8h_a41daca15036ae70fb43c040e8fbe4999}{PM\_INLINE}} \mbox{\hyperlink{structpm__v2}{pm\_v2}} \mbox{\hyperlink{pico__ml_8h_ac54fdc43b0686abdd4bef3b06b6b9888}{pm\_v2\_make}}(\mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} x, \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} y)}
+\DoxyCodeLine{253 \{}
+\DoxyCodeLine{254     \mbox{\hyperlink{structpm__v2}{pm\_v2}} out;}
+\DoxyCodeLine{255     out.\mbox{\hyperlink{structpm__v2_a59252ad8edb4c86e492b30e9ff9c61d5}{x}} = x;}
+\DoxyCodeLine{256     out.\mbox{\hyperlink{structpm__v2_a8eca7e3db8a4cc97472229a104b15d3f}{y}} = y;}
+\DoxyCodeLine{257     \textcolor{keywordflow}{return} out;}
+\DoxyCodeLine{258 \}}
+\DoxyCodeLine{259 }
+\DoxyCodeLine{263 \mbox{\hyperlink{pico__ml_8h_a41daca15036ae70fb43c040e8fbe4999}{PM\_INLINE}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{pico__ml_8h_a18c162740649fa8bb77cb6c562e15c7d}{pm\_v2\_equal}}(\textcolor{keyword}{const} \mbox{\hyperlink{structpm__v2}{pm\_v2}}* v1, \textcolor{keyword}{const} \mbox{\hyperlink{structpm__v2}{pm\_v2}}* v2)}
+\DoxyCodeLine{264 \{}
+\DoxyCodeLine{265     \textcolor{keywordflow}{return} \mbox{\hyperlink{pico__ml_8h_a7205c5e1af6a35ab85ccd578080d4079}{pm\_equal}}(v1-\/>\mbox{\hyperlink{structpm__v2_a59252ad8edb4c86e492b30e9ff9c61d5}{x}}, v2-\/>\mbox{\hyperlink{structpm__v2_a59252ad8edb4c86e492b30e9ff9c61d5}{x}}) \&\&}
+\DoxyCodeLine{266            \mbox{\hyperlink{pico__ml_8h_a7205c5e1af6a35ab85ccd578080d4079}{pm\_equal}}(v1-\/>\mbox{\hyperlink{structpm__v2_a8eca7e3db8a4cc97472229a104b15d3f}{y}}, v2-\/>\mbox{\hyperlink{structpm__v2_a8eca7e3db8a4cc97472229a104b15d3f}{y}});}
+\DoxyCodeLine{267 \}}
+\DoxyCodeLine{268 }
+\DoxyCodeLine{274 \mbox{\hyperlink{pico__ml_8h_a41daca15036ae70fb43c040e8fbe4999}{PM\_INLINE}} \mbox{\hyperlink{structpm__v2}{pm\_v2}} \mbox{\hyperlink{pico__ml_8h_adb7ffc4b535a55f0600d905ae7d542b0}{pm\_v2\_add}}(\mbox{\hyperlink{structpm__v2}{pm\_v2}} v1, \mbox{\hyperlink{structpm__v2}{pm\_v2}} v2)}
+\DoxyCodeLine{275 \{}
+\DoxyCodeLine{276     \textcolor{keywordflow}{return} \mbox{\hyperlink{pico__ml_8h_ac54fdc43b0686abdd4bef3b06b6b9888}{pm\_v2\_make}}(v1.\mbox{\hyperlink{structpm__v2_a59252ad8edb4c86e492b30e9ff9c61d5}{x}} + v2.\mbox{\hyperlink{structpm__v2_a59252ad8edb4c86e492b30e9ff9c61d5}{x}}, v1.\mbox{\hyperlink{structpm__v2_a8eca7e3db8a4cc97472229a104b15d3f}{y}} + v2.\mbox{\hyperlink{structpm__v2_a8eca7e3db8a4cc97472229a104b15d3f}{y}});}
+\DoxyCodeLine{277 \}}
+\DoxyCodeLine{278 }
+\DoxyCodeLine{284 \mbox{\hyperlink{pico__ml_8h_a41daca15036ae70fb43c040e8fbe4999}{PM\_INLINE}} \mbox{\hyperlink{structpm__v2}{pm\_v2}} \mbox{\hyperlink{pico__ml_8h_a62bdc75164ee5cbad92ebfd12877ad7b}{pm\_v2\_sub}}(\mbox{\hyperlink{structpm__v2}{pm\_v2}} v1, \mbox{\hyperlink{structpm__v2}{pm\_v2}} v2)}
+\DoxyCodeLine{285 \{}
+\DoxyCodeLine{286     \textcolor{keywordflow}{return} \mbox{\hyperlink{pico__ml_8h_ac54fdc43b0686abdd4bef3b06b6b9888}{pm\_v2\_make}}(v1.\mbox{\hyperlink{structpm__v2_a59252ad8edb4c86e492b30e9ff9c61d5}{x}} -\/ v2.\mbox{\hyperlink{structpm__v2_a59252ad8edb4c86e492b30e9ff9c61d5}{x}}, v1.\mbox{\hyperlink{structpm__v2_a8eca7e3db8a4cc97472229a104b15d3f}{y}} -\/ v2.\mbox{\hyperlink{structpm__v2_a8eca7e3db8a4cc97472229a104b15d3f}{y}});}
+\DoxyCodeLine{287 \}}
+\DoxyCodeLine{288 }
+\DoxyCodeLine{294 \mbox{\hyperlink{pico__ml_8h_a41daca15036ae70fb43c040e8fbe4999}{PM\_INLINE}} \mbox{\hyperlink{structpm__v2}{pm\_v2}} \mbox{\hyperlink{pico__ml_8h_aab017bc236d794e4b7080ce0a7db76c4}{pm\_v2\_scale}}(\mbox{\hyperlink{structpm__v2}{pm\_v2}} v, \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} c)}
+\DoxyCodeLine{295 \{}
+\DoxyCodeLine{296     \textcolor{keywordflow}{return} \mbox{\hyperlink{pico__ml_8h_ac54fdc43b0686abdd4bef3b06b6b9888}{pm\_v2\_make}}(v.\mbox{\hyperlink{structpm__v2_a59252ad8edb4c86e492b30e9ff9c61d5}{x}} * c, v.\mbox{\hyperlink{structpm__v2_a8eca7e3db8a4cc97472229a104b15d3f}{y}} * c);}
+\DoxyCodeLine{297 \}}
+\DoxyCodeLine{298 }
+\DoxyCodeLine{302 \mbox{\hyperlink{pico__ml_8h_a41daca15036ae70fb43c040e8fbe4999}{PM\_INLINE}} \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} \mbox{\hyperlink{pico__ml_8h_a53f88d26cb7f47f6b1d885d631211585}{pm\_v2\_dot}}(\textcolor{keyword}{const} \mbox{\hyperlink{structpm__v2}{pm\_v2}}* v1, \textcolor{keyword}{const} \mbox{\hyperlink{structpm__v2}{pm\_v2}}* v2)}
+\DoxyCodeLine{303 \{}
+\DoxyCodeLine{304     \textcolor{keywordflow}{return} v1-\/>\mbox{\hyperlink{structpm__v2_a59252ad8edb4c86e492b30e9ff9c61d5}{x}} * v2-\/>\mbox{\hyperlink{structpm__v2_a59252ad8edb4c86e492b30e9ff9c61d5}{x}} + v1-\/>\mbox{\hyperlink{structpm__v2_a8eca7e3db8a4cc97472229a104b15d3f}{y}} * v2-\/>\mbox{\hyperlink{structpm__v2_a8eca7e3db8a4cc97472229a104b15d3f}{y}};}
+\DoxyCodeLine{305 \}}
+\DoxyCodeLine{306 }
+\DoxyCodeLine{310 \mbox{\hyperlink{pico__ml_8h_a41daca15036ae70fb43c040e8fbe4999}{PM\_INLINE}} \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} \mbox{\hyperlink{pico__ml_8h_a395666f4c9d60ae721cc8408aa9ad7e0}{pm\_v2\_len2}}(\textcolor{keyword}{const} \mbox{\hyperlink{structpm__v2}{pm\_v2}}* v)}
+\DoxyCodeLine{311 \{}
+\DoxyCodeLine{312     \textcolor{keywordflow}{return} \mbox{\hyperlink{pico__ml_8h_a53f88d26cb7f47f6b1d885d631211585}{pm\_v2\_dot}}(v, v);}
+\DoxyCodeLine{313 \}}
+\DoxyCodeLine{314 }
+\DoxyCodeLine{318 \mbox{\hyperlink{pico__ml_8h_a41daca15036ae70fb43c040e8fbe4999}{PM\_INLINE}} \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} \mbox{\hyperlink{pico__ml_8h_a834b21d67f6b60f9d9fa048f0ac211c4}{pm\_v2\_len}}(\textcolor{keyword}{const} \mbox{\hyperlink{structpm__v2}{pm\_v2}}* v)}
+\DoxyCodeLine{319 \{}
+\DoxyCodeLine{320     \textcolor{keywordflow}{return} \mbox{\hyperlink{pico__ml_8h_a39c8cf2c3d5c3b8269267477a95ded4e}{pm\_sqrt}}(\mbox{\hyperlink{pico__ml_8h_a395666f4c9d60ae721cc8408aa9ad7e0}{pm\_v2\_len2}}(v));}
+\DoxyCodeLine{321 \}}
+\DoxyCodeLine{322 }
+\DoxyCodeLine{328 \mbox{\hyperlink{pico__ml_8h_a41daca15036ae70fb43c040e8fbe4999}{PM\_INLINE}} \textcolor{keywordtype}{void} \mbox{\hyperlink{pico__ml_8h_a40be3d3e500d44b9d9ce96f05a5d5be6}{pm\_v2\_normalize}}(\mbox{\hyperlink{structpm__v2}{pm\_v2}}* v)}
+\DoxyCodeLine{329 \{}
+\DoxyCodeLine{330     \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} c = \mbox{\hyperlink{pico__ml_8h_a834b21d67f6b60f9d9fa048f0ac211c4}{pm\_v2\_len}}(v);}
+\DoxyCodeLine{331 }
+\DoxyCodeLine{332     \textcolor{keywordflow}{if} (c < \mbox{\hyperlink{pico__ml_8h_aa1d3e2c0042b41cb48e743298240d6fc}{PM\_EPSILON}})}
+\DoxyCodeLine{333         *v = \mbox{\hyperlink{pico__ml_8h_ac54fdc43b0686abdd4bef3b06b6b9888}{pm\_v2\_make}}(0.0f, 0.0f);}
+\DoxyCodeLine{334     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{335         *v = \mbox{\hyperlink{pico__ml_8h_aab017bc236d794e4b7080ce0a7db76c4}{pm\_v2\_scale}}(*v, 1.0f / c);}
+\DoxyCodeLine{336 \}}
+\DoxyCodeLine{337 }
+\DoxyCodeLine{343 \mbox{\hyperlink{pico__ml_8h_a41daca15036ae70fb43c040e8fbe4999}{PM\_INLINE}} \mbox{\hyperlink{structpm__v2}{pm\_v2}} \mbox{\hyperlink{pico__ml_8h_adb3b29ad8d17859a26e190bc4cded369}{pm\_v2\_perp}}(\textcolor{keyword}{const} \mbox{\hyperlink{structpm__v2}{pm\_v2}}* v)}
+\DoxyCodeLine{344 \{}
+\DoxyCodeLine{345     \textcolor{keywordflow}{return} \mbox{\hyperlink{pico__ml_8h_ac54fdc43b0686abdd4bef3b06b6b9888}{pm\_v2\_make}}(-\/v-\/>\mbox{\hyperlink{structpm__v2_a8eca7e3db8a4cc97472229a104b15d3f}{y}}, v-\/>\mbox{\hyperlink{structpm__v2_a59252ad8edb4c86e492b30e9ff9c61d5}{x}});}
+\DoxyCodeLine{346 \}}
+\DoxyCodeLine{347 }
+\DoxyCodeLine{351 \mbox{\hyperlink{pico__ml_8h_a41daca15036ae70fb43c040e8fbe4999}{PM\_INLINE}} \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} \mbox{\hyperlink{pico__ml_8h_aeb9d48d968fa1de739064e4b7058b43d}{pm\_v2\_cross}}(\textcolor{keyword}{const} \mbox{\hyperlink{structpm__v2}{pm\_v2}}* v1, \textcolor{keyword}{const} \mbox{\hyperlink{structpm__v2}{pm\_v2}}* v2)}
+\DoxyCodeLine{352 \{}
+\DoxyCodeLine{353     \mbox{\hyperlink{structpm__v2}{pm\_v2}} perp = \mbox{\hyperlink{pico__ml_8h_adb3b29ad8d17859a26e190bc4cded369}{pm\_v2\_perp}}(v1);}
+\DoxyCodeLine{354     \textcolor{keywordflow}{return} \mbox{\hyperlink{pico__ml_8h_a53f88d26cb7f47f6b1d885d631211585}{pm\_v2\_dot}}(\&perp, v2);}
+\DoxyCodeLine{355 \}}
+\DoxyCodeLine{356 }
+\DoxyCodeLine{360 \mbox{\hyperlink{pico__ml_8h_a41daca15036ae70fb43c040e8fbe4999}{PM\_INLINE}} \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} \mbox{\hyperlink{pico__ml_8h_a2f10e2801ed47058b18774bbc856a2eb}{pm\_v2\_angle}}(\textcolor{keyword}{const} \mbox{\hyperlink{structpm__v2}{pm\_v2}}* v)}
+\DoxyCodeLine{361 \{}
+\DoxyCodeLine{362     \textcolor{keywordflow}{return} \mbox{\hyperlink{pico__ml_8h_afe458996a21af90f7a1310e103f5d7e3}{pm\_atan2}}(v-\/>\mbox{\hyperlink{structpm__v2_a8eca7e3db8a4cc97472229a104b15d3f}{y}}, v-\/>\mbox{\hyperlink{structpm__v2_a59252ad8edb4c86e492b30e9ff9c61d5}{x}});}
+\DoxyCodeLine{363 \}}
+\DoxyCodeLine{364 }
+\DoxyCodeLine{371 \mbox{\hyperlink{pico__ml_8h_a41daca15036ae70fb43c040e8fbe4999}{PM\_INLINE}} \mbox{\hyperlink{structpm__v2}{pm\_v2}} \mbox{\hyperlink{pico__ml_8h_afdc023283d135f80d19ae7a2782d36d4}{pm\_v2\_proj}}(\textcolor{keyword}{const} \mbox{\hyperlink{structpm__v2}{pm\_v2}}* v1, \textcolor{keyword}{const} \mbox{\hyperlink{structpm__v2}{pm\_v2}}* v2)}
+\DoxyCodeLine{372 \{}
+\DoxyCodeLine{373     \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} d = \mbox{\hyperlink{pico__ml_8h_a53f88d26cb7f47f6b1d885d631211585}{pm\_v2\_dot}}(v1, v2) / \mbox{\hyperlink{pico__ml_8h_a53f88d26cb7f47f6b1d885d631211585}{pm\_v2\_dot}}(v2, v2);}
+\DoxyCodeLine{374     \textcolor{keywordflow}{return} \mbox{\hyperlink{pico__ml_8h_aab017bc236d794e4b7080ce0a7db76c4}{pm\_v2\_scale}}(*v2, d);}
+\DoxyCodeLine{375 \}}
+\DoxyCodeLine{376 }
+\DoxyCodeLine{380 \mbox{\hyperlink{pico__ml_8h_a41daca15036ae70fb43c040e8fbe4999}{PM\_INLINE}} \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} \mbox{\hyperlink{pico__ml_8h_a8fc2937586ae35f17010994dd92a05ae}{pm\_v2\_dist}}(\textcolor{keyword}{const} \mbox{\hyperlink{structpm__v2}{pm\_v2}}* v1, \textcolor{keyword}{const} \mbox{\hyperlink{structpm__v2}{pm\_v2}}* v2)}
+\DoxyCodeLine{381 \{}
+\DoxyCodeLine{382     \mbox{\hyperlink{structpm__v2}{pm\_v2}} v = \mbox{\hyperlink{pico__ml_8h_a62bdc75164ee5cbad92ebfd12877ad7b}{pm\_v2\_sub}}(*v1, *v2);}
+\DoxyCodeLine{383     \textcolor{keywordflow}{return} \mbox{\hyperlink{pico__ml_8h_a834b21d67f6b60f9d9fa048f0ac211c4}{pm\_v2\_len}}(\&v);}
+\DoxyCodeLine{384 \}}
+\DoxyCodeLine{385 }
+\DoxyCodeLine{392 \mbox{\hyperlink{pico__ml_8h_a41daca15036ae70fb43c040e8fbe4999}{PM\_INLINE}} \mbox{\hyperlink{structpm__v2}{pm\_v2}} \mbox{\hyperlink{pico__ml_8h_a1e9424e09106f01d5c29d8a3925f1cc7}{pm\_v2\_lerp}}(\textcolor{keyword}{const} \mbox{\hyperlink{structpm__v2}{pm\_v2}}* v1, \textcolor{keyword}{const} \mbox{\hyperlink{structpm__v2}{pm\_v2}}* v2, \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} alpha)}
+\DoxyCodeLine{393 \{}
+\DoxyCodeLine{394     \mbox{\hyperlink{structpm__v2}{pm\_v2}} out;}
+\DoxyCodeLine{395     out.\mbox{\hyperlink{structpm__v2_a59252ad8edb4c86e492b30e9ff9c61d5}{x}} = \mbox{\hyperlink{pico__ml_8h_a60ad4642a791269c5d50c780fce2e451}{pm\_lerp}}(v1-\/>\mbox{\hyperlink{structpm__v2_a59252ad8edb4c86e492b30e9ff9c61d5}{x}}, v2-\/>\mbox{\hyperlink{structpm__v2_a59252ad8edb4c86e492b30e9ff9c61d5}{x}}, alpha);}
+\DoxyCodeLine{396     out.\mbox{\hyperlink{structpm__v2_a8eca7e3db8a4cc97472229a104b15d3f}{y}} = \mbox{\hyperlink{pico__ml_8h_a60ad4642a791269c5d50c780fce2e451}{pm\_lerp}}(v1-\/>\mbox{\hyperlink{structpm__v2_a8eca7e3db8a4cc97472229a104b15d3f}{y}}, v2-\/>\mbox{\hyperlink{structpm__v2_a8eca7e3db8a4cc97472229a104b15d3f}{y}}, alpha);}
+\DoxyCodeLine{397     \textcolor{keywordflow}{return} out;}
+\DoxyCodeLine{398 \}}
+\DoxyCodeLine{399 }
+\DoxyCodeLine{403 \mbox{\hyperlink{pico__ml_8h_a41daca15036ae70fb43c040e8fbe4999}{PM\_INLINE}} \mbox{\hyperlink{structpm__v2}{pm\_v2}} \mbox{\hyperlink{pico__ml_8h_abfdc134622889bfb3a0d9a148f496325}{pm\_v2\_polar}}(\mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} len, \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} angle)}
+\DoxyCodeLine{404 \{}
+\DoxyCodeLine{405     \textcolor{keywordflow}{return} \mbox{\hyperlink{pico__ml_8h_ac54fdc43b0686abdd4bef3b06b6b9888}{pm\_v2\_make}}(len * \mbox{\hyperlink{pico__ml_8h_a2f6bb5292f7dad0846891e1fde675d9f}{pm\_cos}}(angle), len * \mbox{\hyperlink{pico__ml_8h_a4cf518c9f0d9e1636510b512b791d3d7}{pm\_sin}}(angle));}
+\DoxyCodeLine{406 \}}
+\DoxyCodeLine{407 }
+\DoxyCodeLine{408 \textcolor{comment}{/*==============================================================================}}
+\DoxyCodeLine{409 \textcolor{comment}{ * 2D Affine Transforms}}
+\DoxyCodeLine{410 \textcolor{comment}{ *============================================================================*/}}
+\DoxyCodeLine{411 }
+\DoxyCodeLine{415 \mbox{\hyperlink{pico__ml_8h_a41daca15036ae70fb43c040e8fbe4999}{PM\_INLINE}} \mbox{\hyperlink{structpm__t2}{pm\_t2}} \mbox{\hyperlink{pico__ml_8h_ab97bb22a94c8b508f315f7ba7cb9fcc6}{pm\_t2\_make}}(\mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} t00, \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} t01, \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} tx,}
+\DoxyCodeLine{416                               \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} t10, \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} t11, \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} ty)}
+\DoxyCodeLine{417 \{}
+\DoxyCodeLine{418     \mbox{\hyperlink{structpm__t2}{pm\_t2}} out;}
+\DoxyCodeLine{419     out.\mbox{\hyperlink{structpm__t2_a4ce31dcc7ab506059d71e123a46b748e}{t00}} = t00; out.\mbox{\hyperlink{structpm__t2_a9aa4df59771637391116ef2f8f7f67b9}{t01}} = t01; out.\mbox{\hyperlink{structpm__t2_afb468998246481098b050f5c76d37899}{tx}}  = tx;}
+\DoxyCodeLine{420     out.\mbox{\hyperlink{structpm__t2_ac188ae096f9454069098cfa7b125d767}{t10}} = t10; out.\mbox{\hyperlink{structpm__t2_aceaad44cc0c9023948484ea69d60fdb3}{t11}} = t11; out.\mbox{\hyperlink{structpm__t2_adc6762cd85b1e55d9a56a95b3f0f93ff}{ty}}  = ty;}
+\DoxyCodeLine{421     \textcolor{keywordflow}{return} out;}
+\DoxyCodeLine{422 \}}
+\DoxyCodeLine{423 }
+\DoxyCodeLine{427 \mbox{\hyperlink{pico__ml_8h_a41daca15036ae70fb43c040e8fbe4999}{PM\_INLINE}} \mbox{\hyperlink{structpm__t2}{pm\_t2}} \mbox{\hyperlink{pico__ml_8h_ab19b817cff416de070a6afb4cd7bd5cc}{pm\_t2\_identity}}()}
+\DoxyCodeLine{428 \{}
+\DoxyCodeLine{429     \textcolor{keywordflow}{return} \mbox{\hyperlink{pico__ml_8h_ab97bb22a94c8b508f315f7ba7cb9fcc6}{pm\_t2\_make}}(1.0f, 0.0f, 0.0f,}
+\DoxyCodeLine{430                       0.0f, 1.0f, 0.0f);}
+\DoxyCodeLine{431 \}}
+\DoxyCodeLine{432 }
+\DoxyCodeLine{436 \textcolor{keywordtype}{bool} \mbox{\hyperlink{pico__ml_8h_a22cf2de6c77243f4fcfd1c5620b0452e}{pm\_t2\_equal}}(\textcolor{keyword}{const} \mbox{\hyperlink{structpm__t2}{pm\_t2}}* t1, \textcolor{keyword}{const} \mbox{\hyperlink{structpm__t2}{pm\_t2}}* t2);}
+\DoxyCodeLine{437 }
+\DoxyCodeLine{442 \mbox{\hyperlink{pico__ml_8h_a41daca15036ae70fb43c040e8fbe4999}{PM\_INLINE}} \mbox{\hyperlink{structpm__v2}{pm\_v2}} \mbox{\hyperlink{pico__ml_8h_a40549c5f93c58170f9225fa1f13ba1d1}{pm\_t2\_get\_pos}}(\textcolor{keyword}{const} \mbox{\hyperlink{structpm__t2}{pm\_t2}}* t)}
+\DoxyCodeLine{443 \{}
+\DoxyCodeLine{444     \textcolor{keywordflow}{return} \mbox{\hyperlink{pico__ml_8h_ac54fdc43b0686abdd4bef3b06b6b9888}{pm\_v2\_make}}(t-\/>\mbox{\hyperlink{structpm__t2_afb468998246481098b050f5c76d37899}{tx}}, t-\/>\mbox{\hyperlink{structpm__t2_adc6762cd85b1e55d9a56a95b3f0f93ff}{ty}});}
+\DoxyCodeLine{445 \}}
+\DoxyCodeLine{446 }
+\DoxyCodeLine{452 \mbox{\hyperlink{pico__ml_8h_a41daca15036ae70fb43c040e8fbe4999}{PM\_INLINE}} \textcolor{keywordtype}{void} \mbox{\hyperlink{pico__ml_8h_a1f296712ec897856dbad8809f334bf1a}{pm\_t2\_set\_pos}}(\mbox{\hyperlink{structpm__t2}{pm\_t2}}* t, \textcolor{keyword}{const} \mbox{\hyperlink{structpm__v2}{pm\_v2}}* pos)}
+\DoxyCodeLine{453 \{}
+\DoxyCodeLine{454     t-\/>\mbox{\hyperlink{structpm__t2_afb468998246481098b050f5c76d37899}{tx}} = pos-\/>\mbox{\hyperlink{structpm__v2_a59252ad8edb4c86e492b30e9ff9c61d5}{x}};}
+\DoxyCodeLine{455     t-\/>\mbox{\hyperlink{structpm__t2_adc6762cd85b1e55d9a56a95b3f0f93ff}{ty}} = pos-\/>\mbox{\hyperlink{structpm__v2_a8eca7e3db8a4cc97472229a104b15d3f}{y}};}
+\DoxyCodeLine{456 \}}
+\DoxyCodeLine{457 }
+\DoxyCodeLine{461 \mbox{\hyperlink{pico__ml_8h_a41daca15036ae70fb43c040e8fbe4999}{PM\_INLINE}} \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} \mbox{\hyperlink{pico__ml_8h_a42d13b7cc4db033ff49ffd70a4a0cd17}{pm\_t2\_get\_angle}}(\textcolor{keyword}{const} \mbox{\hyperlink{structpm__t2}{pm\_t2}}* t)}
+\DoxyCodeLine{462 \{}
+\DoxyCodeLine{463     \textcolor{keywordflow}{return} \mbox{\hyperlink{pico__ml_8h_a0aca2cf04f618c70a090d879b54fda69}{pm\_normalize\_angle}}(\mbox{\hyperlink{pico__ml_8h_afe458996a21af90f7a1310e103f5d7e3}{pm\_atan2}}(t-\/>\mbox{\hyperlink{structpm__t2_ac188ae096f9454069098cfa7b125d767}{t10}}, t-\/>\mbox{\hyperlink{structpm__t2_aceaad44cc0c9023948484ea69d60fdb3}{t11}}));}
+\DoxyCodeLine{464 \}}
+\DoxyCodeLine{465 }
+\DoxyCodeLine{471 \textcolor{keywordtype}{void} \mbox{\hyperlink{pico__ml_8h_aa4dbe029b8c992f4b462e7a09024457c}{pm\_t2\_set\_scale}}(\mbox{\hyperlink{structpm__t2}{pm\_t2}}* t, \textcolor{keyword}{const} \mbox{\hyperlink{structpm__v2}{pm\_v2}}* scale);}
+\DoxyCodeLine{472 }
+\DoxyCodeLine{477 \mbox{\hyperlink{structpm__v2}{pm\_v2}} \mbox{\hyperlink{pico__ml_8h_aa4269ede74dc095a5c246ecc2820696e}{pm\_t2\_get\_scale}}(\textcolor{keyword}{const} \mbox{\hyperlink{structpm__t2}{pm\_t2}}* t);}
+\DoxyCodeLine{478 }
+\DoxyCodeLine{482 \textcolor{keywordtype}{void} \mbox{\hyperlink{pico__ml_8h_a7a815a9dc45c475e8fe28f24479fe1e3}{pm\_t2\_set\_angle}}(\mbox{\hyperlink{structpm__t2}{pm\_t2}}* t, \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} angle);}
+\DoxyCodeLine{483 }
+\DoxyCodeLine{489 \mbox{\hyperlink{pico__ml_8h_a41daca15036ae70fb43c040e8fbe4999}{PM\_INLINE}} \mbox{\hyperlink{structpm__v2}{pm\_v2}} \mbox{\hyperlink{pico__ml_8h_adac85f2983ab5450c46d208bfc17a647}{pm\_t2\_map}}(\textcolor{keyword}{const} \mbox{\hyperlink{structpm__t2}{pm\_t2}}* t, \mbox{\hyperlink{structpm__v2}{pm\_v2}} v)}
+\DoxyCodeLine{490 \{}
+\DoxyCodeLine{491     \mbox{\hyperlink{structpm__v2}{pm\_v2}} out;}
+\DoxyCodeLine{492     out.\mbox{\hyperlink{structpm__v2_a59252ad8edb4c86e492b30e9ff9c61d5}{x}} = t-\/>\mbox{\hyperlink{structpm__t2_a4ce31dcc7ab506059d71e123a46b748e}{t00}} * v.\mbox{\hyperlink{structpm__v2_a59252ad8edb4c86e492b30e9ff9c61d5}{x}} + t-\/>\mbox{\hyperlink{structpm__t2_a9aa4df59771637391116ef2f8f7f67b9}{t01}} * v.\mbox{\hyperlink{structpm__v2_a8eca7e3db8a4cc97472229a104b15d3f}{y}} + t-\/>\mbox{\hyperlink{structpm__t2_afb468998246481098b050f5c76d37899}{tx}};}
+\DoxyCodeLine{493     out.\mbox{\hyperlink{structpm__v2_a8eca7e3db8a4cc97472229a104b15d3f}{y}} = t-\/>\mbox{\hyperlink{structpm__t2_ac188ae096f9454069098cfa7b125d767}{t10}} * v.\mbox{\hyperlink{structpm__v2_a59252ad8edb4c86e492b30e9ff9c61d5}{x}} + t-\/>\mbox{\hyperlink{structpm__t2_aceaad44cc0c9023948484ea69d60fdb3}{t11}} * v.\mbox{\hyperlink{structpm__v2_a8eca7e3db8a4cc97472229a104b15d3f}{y}} + t-\/>\mbox{\hyperlink{structpm__t2_adc6762cd85b1e55d9a56a95b3f0f93ff}{ty}};}
+\DoxyCodeLine{494     \textcolor{keywordflow}{return} out;}
+\DoxyCodeLine{495 \}}
+\DoxyCodeLine{496 }
+\DoxyCodeLine{500 \mbox{\hyperlink{pico__ml_8h_a41daca15036ae70fb43c040e8fbe4999}{PM\_INLINE}} \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} \mbox{\hyperlink{pico__ml_8h_a5c4b90fd89f9b8371053822cc2a5eebe}{pm\_t2\_det}}(\textcolor{keyword}{const} \mbox{\hyperlink{structpm__t2}{pm\_t2}}* t)}
+\DoxyCodeLine{501 \{}
+\DoxyCodeLine{502     \textcolor{keywordflow}{return} t-\/>\mbox{\hyperlink{structpm__t2_a4ce31dcc7ab506059d71e123a46b748e}{t00}} * t-\/>\mbox{\hyperlink{structpm__t2_aceaad44cc0c9023948484ea69d60fdb3}{t11}} -\/ t-\/>\mbox{\hyperlink{structpm__t2_a9aa4df59771637391116ef2f8f7f67b9}{t01}} * t-\/>\mbox{\hyperlink{structpm__t2_ac188ae096f9454069098cfa7b125d767}{t10}};}
+\DoxyCodeLine{503 \}}
+\DoxyCodeLine{504 }
+\DoxyCodeLine{509 \mbox{\hyperlink{structpm__t2}{pm\_t2}} \mbox{\hyperlink{pico__ml_8h_a82dcdc1039a4b4c396a7970638abc98c}{pm\_t2\_inv}}(\textcolor{keyword}{const} \mbox{\hyperlink{structpm__t2}{pm\_t2}}* t);}
+\DoxyCodeLine{510 }
+\DoxyCodeLine{514 \mbox{\hyperlink{structpm__t2}{pm\_t2}} \mbox{\hyperlink{pico__ml_8h_af52c8ce036b825e8fe4d3c7fd662c95d}{pm\_t2\_mult}}(\textcolor{keyword}{const} \mbox{\hyperlink{structpm__t2}{pm\_t2}}* t1, \textcolor{keyword}{const} \mbox{\hyperlink{structpm__t2}{pm\_t2}}* t2);}
+\DoxyCodeLine{515 }
+\DoxyCodeLine{519 \mbox{\hyperlink{structpm__t2}{pm\_t2}} \mbox{\hyperlink{pico__ml_8h_aeb9d745f6282e975d2b8722ce699e657}{pm\_t2\_lerp}}(\textcolor{keyword}{const} \mbox{\hyperlink{structpm__t2}{pm\_t2}}* t1, \textcolor{keyword}{const} \mbox{\hyperlink{structpm__t2}{pm\_t2}}* t2, \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} alpha);}
+\DoxyCodeLine{520 }
+\DoxyCodeLine{525 \mbox{\hyperlink{pico__ml_8h_a41daca15036ae70fb43c040e8fbe4999}{PM\_INLINE}} \mbox{\hyperlink{structpm__t2}{pm\_t2}} \mbox{\hyperlink{pico__ml_8h_a5718ce42c811e4354eb8ab3197a36898}{pm\_t2\_scaling}}(\mbox{\hyperlink{structpm__v2}{pm\_v2}} scale)}
+\DoxyCodeLine{526 \{}
+\DoxyCodeLine{527      \textcolor{keywordflow}{return} \mbox{\hyperlink{pico__ml_8h_ab97bb22a94c8b508f315f7ba7cb9fcc6}{pm\_t2\_make}}(scale.\mbox{\hyperlink{structpm__v2_a59252ad8edb4c86e492b30e9ff9c61d5}{x}}, 0.0f,    0.0f,}
+\DoxyCodeLine{528                        0.0f,    scale.\mbox{\hyperlink{structpm__v2_a8eca7e3db8a4cc97472229a104b15d3f}{y}}, 0.0f);}
+\DoxyCodeLine{529 \}}
+\DoxyCodeLine{530 }
+\DoxyCodeLine{535 \mbox{\hyperlink{pico__ml_8h_a41daca15036ae70fb43c040e8fbe4999}{PM\_INLINE}} \mbox{\hyperlink{structpm__t2}{pm\_t2}} \mbox{\hyperlink{pico__ml_8h_a9c5ba07ca92f7732d446fd2d35fb6c46}{pm\_t2\_rotation}}(\mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} angle)}
+\DoxyCodeLine{536 \{}
+\DoxyCodeLine{537     \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} c = \mbox{\hyperlink{pico__ml_8h_a2f6bb5292f7dad0846891e1fde675d9f}{pm\_cos}}(angle);}
+\DoxyCodeLine{538     \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} s = \mbox{\hyperlink{pico__ml_8h_a4cf518c9f0d9e1636510b512b791d3d7}{pm\_sin}}(angle);}
+\DoxyCodeLine{539 }
+\DoxyCodeLine{540     \textcolor{keywordflow}{return} \mbox{\hyperlink{pico__ml_8h_ab97bb22a94c8b508f315f7ba7cb9fcc6}{pm\_t2\_make}}(c, -\/s, 0.0f,}
+\DoxyCodeLine{541                       s,  c, 0.0f);}
+\DoxyCodeLine{542 \}}
+\DoxyCodeLine{543 }
+\DoxyCodeLine{548 \mbox{\hyperlink{pico__ml_8h_a41daca15036ae70fb43c040e8fbe4999}{PM\_INLINE}} \mbox{\hyperlink{structpm__t2}{pm\_t2}} \mbox{\hyperlink{pico__ml_8h_aaf154eb8ec514a3dda33c5dc5635ba78}{pm\_t2\_translation}}(\mbox{\hyperlink{structpm__v2}{pm\_v2}} pos)}
+\DoxyCodeLine{549 \{}
+\DoxyCodeLine{550     \textcolor{keywordflow}{return} \mbox{\hyperlink{pico__ml_8h_ab97bb22a94c8b508f315f7ba7cb9fcc6}{pm\_t2\_make}}(1.0f, 0.0f, pos.\mbox{\hyperlink{structpm__v2_a59252ad8edb4c86e492b30e9ff9c61d5}{x}},}
+\DoxyCodeLine{551                       0.0f, 1.0f, pos.\mbox{\hyperlink{structpm__v2_a8eca7e3db8a4cc97472229a104b15d3f}{y}});}
+\DoxyCodeLine{552 \}}
+\DoxyCodeLine{553 }
+\DoxyCodeLine{559 \mbox{\hyperlink{pico__ml_8h_a41daca15036ae70fb43c040e8fbe4999}{PM\_INLINE}} \textcolor{keywordtype}{void} \mbox{\hyperlink{pico__ml_8h_af07ade4a08e4a646d8f5ba10cf865d14}{pm\_t2\_scale}}(\mbox{\hyperlink{structpm__t2}{pm\_t2}}* t, \mbox{\hyperlink{structpm__v2}{pm\_v2}} scale)}
+\DoxyCodeLine{560 \{}
+\DoxyCodeLine{561     \mbox{\hyperlink{structpm__t2}{pm\_t2}} scaling = \mbox{\hyperlink{pico__ml_8h_a5718ce42c811e4354eb8ab3197a36898}{pm\_t2\_scaling}}(scale);}
+\DoxyCodeLine{562     *t = \mbox{\hyperlink{pico__ml_8h_af52c8ce036b825e8fe4d3c7fd662c95d}{pm\_t2\_mult}}(\&scaling, t);}
+\DoxyCodeLine{563 \}}
+\DoxyCodeLine{564 }
+\DoxyCodeLine{570 \mbox{\hyperlink{pico__ml_8h_a41daca15036ae70fb43c040e8fbe4999}{PM\_INLINE}} \textcolor{keywordtype}{void} \mbox{\hyperlink{pico__ml_8h_ab4433aae25858fe51c19d589d7e2baa6}{pm\_t2\_rotate}}(\mbox{\hyperlink{structpm__t2}{pm\_t2}}* t, \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} angle)}
+\DoxyCodeLine{571 \{}
+\DoxyCodeLine{572     \mbox{\hyperlink{structpm__t2}{pm\_t2}} rotation = \mbox{\hyperlink{pico__ml_8h_a9c5ba07ca92f7732d446fd2d35fb6c46}{pm\_t2\_rotation}}(angle);}
+\DoxyCodeLine{573     *t = \mbox{\hyperlink{pico__ml_8h_af52c8ce036b825e8fe4d3c7fd662c95d}{pm\_t2\_mult}}(\&rotation, t);}
+\DoxyCodeLine{574 \}}
+\DoxyCodeLine{575 }
+\DoxyCodeLine{581 \mbox{\hyperlink{pico__ml_8h_a41daca15036ae70fb43c040e8fbe4999}{PM\_INLINE}} \textcolor{keywordtype}{void} \mbox{\hyperlink{pico__ml_8h_aadba3541e6732507cf9330dfa693d11a}{pm\_t2\_translate}}(\mbox{\hyperlink{structpm__t2}{pm\_t2}}* t, \mbox{\hyperlink{structpm__v2}{pm\_v2}} pos)}
+\DoxyCodeLine{582 \{}
+\DoxyCodeLine{583     \mbox{\hyperlink{structpm__t2}{pm\_t2}} translation = \mbox{\hyperlink{pico__ml_8h_aaf154eb8ec514a3dda33c5dc5635ba78}{pm\_t2\_translation}}(pos);}
+\DoxyCodeLine{584     *t = \mbox{\hyperlink{pico__ml_8h_af52c8ce036b825e8fe4d3c7fd662c95d}{pm\_t2\_mult}}(\&translation, t);}
+\DoxyCodeLine{585 \}}
+\DoxyCodeLine{586 }
+\DoxyCodeLine{587 \textcolor{comment}{/*==============================================================================}}
+\DoxyCodeLine{588 \textcolor{comment}{ * 2D Box (Rectangle)}}
+\DoxyCodeLine{589 \textcolor{comment}{ *============================================================================*/}}
+\DoxyCodeLine{590 }
+\DoxyCodeLine{594 \mbox{\hyperlink{pico__ml_8h_a41daca15036ae70fb43c040e8fbe4999}{PM\_INLINE}} \mbox{\hyperlink{structpm__b2}{pm\_b2}} \mbox{\hyperlink{pico__ml_8h_a184e62d2f45361e7d80cd6b5c799e0ad}{pm\_b2\_make}}(\mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} x, \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} y, \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} w, \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} h)}
+\DoxyCodeLine{595 \{}
+\DoxyCodeLine{596     \mbox{\hyperlink{structpm__b2}{pm\_b2}} out;}
+\DoxyCodeLine{597     out.\mbox{\hyperlink{structpm__b2_a7a16a17b03dfb5aa25754ad5a1696ef8}{x}} = x; out.\mbox{\hyperlink{structpm__b2_a5a4138612c10f90454d757971b1ff9a2}{y}} = y;}
+\DoxyCodeLine{598     out.\mbox{\hyperlink{structpm__b2_a6aa46a68e09fc94881ef6cb3cdebbead}{w}} = w; out.\mbox{\hyperlink{structpm__b2_a002a2ad944538fe0a974a53904fc7974}{h}} = h;}
+\DoxyCodeLine{599     \textcolor{keywordflow}{return} out;}
+\DoxyCodeLine{600 \}}
+\DoxyCodeLine{601 }
+\DoxyCodeLine{605 \textcolor{keywordtype}{bool} \mbox{\hyperlink{pico__ml_8h_a7bfc62856e6b56e5c0b14ea44cb484da}{pm\_b2\_equal}}(\textcolor{keyword}{const} \mbox{\hyperlink{structpm__b2}{pm\_b2}}* b1, \textcolor{keyword}{const} \mbox{\hyperlink{structpm__b2}{pm\_b2}}* b2);}
+\DoxyCodeLine{606 }
+\DoxyCodeLine{610 \mbox{\hyperlink{structpm__b2}{pm\_b2}} \mbox{\hyperlink{pico__ml_8h_a46fc703bc55bee2409d7145dc7d62302}{pm\_b2\_union}}(\textcolor{keyword}{const} \mbox{\hyperlink{structpm__b2}{pm\_b2}}* b1, \textcolor{keyword}{const} \mbox{\hyperlink{structpm__b2}{pm\_b2}}* b2);}
+\DoxyCodeLine{611 }
+\DoxyCodeLine{615 \mbox{\hyperlink{pico__ml_8h_a41daca15036ae70fb43c040e8fbe4999}{PM\_INLINE}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{pico__ml_8h_a256d91c67aff075a330b5bb459488a0f}{pm\_b2\_intersects}}(\textcolor{keyword}{const} \mbox{\hyperlink{structpm__b2}{pm\_b2}}* b1, \textcolor{keyword}{const} \mbox{\hyperlink{structpm__b2}{pm\_b2}}* b2)}
+\DoxyCodeLine{616 \{}
+\DoxyCodeLine{617     \textcolor{keywordflow}{return} b1-\/>\mbox{\hyperlink{structpm__b2_a7a16a17b03dfb5aa25754ad5a1696ef8}{x}} + b1-\/>\mbox{\hyperlink{structpm__b2_a6aa46a68e09fc94881ef6cb3cdebbead}{w}} >= b2-\/>\mbox{\hyperlink{structpm__b2_a7a16a17b03dfb5aa25754ad5a1696ef8}{x}} \&\& \textcolor{comment}{// x + w}}
+\DoxyCodeLine{618            b1-\/>\mbox{\hyperlink{structpm__b2_a5a4138612c10f90454d757971b1ff9a2}{y}} + b1-\/>\mbox{\hyperlink{structpm__b2_a002a2ad944538fe0a974a53904fc7974}{h}} >= b2-\/>\mbox{\hyperlink{structpm__b2_a5a4138612c10f90454d757971b1ff9a2}{y}} \&\& \textcolor{comment}{// y + h}}
+\DoxyCodeLine{619            b2-\/>\mbox{\hyperlink{structpm__b2_a7a16a17b03dfb5aa25754ad5a1696ef8}{x}} + b2-\/>\mbox{\hyperlink{structpm__b2_a6aa46a68e09fc94881ef6cb3cdebbead}{w}} >= b1-\/>\mbox{\hyperlink{structpm__b2_a7a16a17b03dfb5aa25754ad5a1696ef8}{x}} \&\& \textcolor{comment}{// x + w}}
+\DoxyCodeLine{620            b2-\/>\mbox{\hyperlink{structpm__b2_a5a4138612c10f90454d757971b1ff9a2}{y}} + b2-\/>\mbox{\hyperlink{structpm__b2_a002a2ad944538fe0a974a53904fc7974}{h}} >= b2-\/>\mbox{\hyperlink{structpm__b2_a5a4138612c10f90454d757971b1ff9a2}{y}};   \textcolor{comment}{// y + h}}
+\DoxyCodeLine{621 \}}
+\DoxyCodeLine{622 }
+\DoxyCodeLine{626 \mbox{\hyperlink{structpm__b2}{pm\_b2}} \mbox{\hyperlink{pico__ml_8h_af685f764eda535856436e94cd518bb78}{pm\_b2\_intersection}}(\textcolor{keyword}{const} \mbox{\hyperlink{structpm__b2}{pm\_b2}}* b1, \textcolor{keyword}{const} \mbox{\hyperlink{structpm__b2}{pm\_b2}}* b2);}
+\DoxyCodeLine{627 }
+\DoxyCodeLine{631 \mbox{\hyperlink{pico__ml_8h_a41daca15036ae70fb43c040e8fbe4999}{PM\_INLINE}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{pico__ml_8h_acfb2c6b9f31a82d2c0aefeb280e2c9ee}{pm\_b2\_contains}}(\textcolor{keyword}{const} \mbox{\hyperlink{structpm__b2}{pm\_b2}}* b, \mbox{\hyperlink{structpm__v2}{pm\_v2}} v)}
+\DoxyCodeLine{632 \{}
+\DoxyCodeLine{633     \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} x = v.\mbox{\hyperlink{structpm__v2_a59252ad8edb4c86e492b30e9ff9c61d5}{x}};}
+\DoxyCodeLine{634     \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} y = v.\mbox{\hyperlink{structpm__v2_a8eca7e3db8a4cc97472229a104b15d3f}{y}};}
+\DoxyCodeLine{635 }
+\DoxyCodeLine{636     \textcolor{keywordflow}{return} x > b-\/>\mbox{\hyperlink{structpm__b2_a7a16a17b03dfb5aa25754ad5a1696ef8}{x}} \&\& y > b-\/>\mbox{\hyperlink{structpm__b2_a5a4138612c10f90454d757971b1ff9a2}{y}} \&\& x < b-\/>\mbox{\hyperlink{structpm__b2_a7a16a17b03dfb5aa25754ad5a1696ef8}{x}} + b-\/>\mbox{\hyperlink{structpm__b2_a6aa46a68e09fc94881ef6cb3cdebbead}{w}} \&\& y < b-\/>\mbox{\hyperlink{structpm__b2_a5a4138612c10f90454d757971b1ff9a2}{y}} + b-\/>\mbox{\hyperlink{structpm__b2_a002a2ad944538fe0a974a53904fc7974}{h}};}
+\DoxyCodeLine{637 \}}
+\DoxyCodeLine{638 }
+\DoxyCodeLine{642 \mbox{\hyperlink{pico__ml_8h_a41daca15036ae70fb43c040e8fbe4999}{PM\_INLINE}} \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} \mbox{\hyperlink{pico__ml_8h_ab4f11c6604fc6f596ab2c4a9fc70db85}{pm\_b2\_area}}(\textcolor{keyword}{const} \mbox{\hyperlink{structpm__b2}{pm\_b2}}* b)}
+\DoxyCodeLine{643 \{}
+\DoxyCodeLine{644     \textcolor{keywordflow}{return} b-\/>\mbox{\hyperlink{structpm__b2_a6aa46a68e09fc94881ef6cb3cdebbead}{w}} * b-\/>\mbox{\hyperlink{structpm__b2_a002a2ad944538fe0a974a53904fc7974}{h}};}
+\DoxyCodeLine{645 \}}
+\DoxyCodeLine{646 }
+\DoxyCodeLine{650 \mbox{\hyperlink{pico__ml_8h_a41daca15036ae70fb43c040e8fbe4999}{PM\_INLINE}} \mbox{\hyperlink{structpm__v2}{pm\_v2}} \mbox{\hyperlink{pico__ml_8h_ae80b33274d76db7e49060e52f2de96bf}{pm\_b2\_center}}(\textcolor{keyword}{const} \mbox{\hyperlink{structpm__b2}{pm\_b2}}* b)}
+\DoxyCodeLine{651 \{}
+\DoxyCodeLine{652     \textcolor{keywordflow}{return} \mbox{\hyperlink{pico__ml_8h_ac54fdc43b0686abdd4bef3b06b6b9888}{pm\_v2\_make}}(b-\/>\mbox{\hyperlink{structpm__b2_a7a16a17b03dfb5aa25754ad5a1696ef8}{x}} + b-\/>\mbox{\hyperlink{structpm__b2_a6aa46a68e09fc94881ef6cb3cdebbead}{w}} / 2.0f, b-\/>\mbox{\hyperlink{structpm__b2_a5a4138612c10f90454d757971b1ff9a2}{y}} + b-\/>\mbox{\hyperlink{structpm__b2_a002a2ad944538fe0a974a53904fc7974}{h}} / 2.0f);}
+\DoxyCodeLine{653 \}}
+\DoxyCodeLine{654 }
+\DoxyCodeLine{660 \mbox{\hyperlink{structpm__b2}{pm\_b2}} \mbox{\hyperlink{pico__ml_8h_ac2961b4d36a57a29a768c358d2a87338}{pm\_b2\_min}}(\textcolor{keyword}{const} \mbox{\hyperlink{structpm__v2}{pm\_v2}}* vertices, \textcolor{keywordtype}{int} count);}
+\DoxyCodeLine{661 }
+\DoxyCodeLine{662 \textcolor{preprocessor}{\#define PM\_STATE\_VECTOR\_LEN 624}}
+\DoxyCodeLine{663 }
+\DoxyCodeLine{667 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{668 \{}
+\DoxyCodeLine{669   uint32\_t mt[\mbox{\hyperlink{pico__ml_8h_af00b40c7e1e35fb61acfcc8a58bb5ba2}{PM\_STATE\_VECTOR\_LEN}}];}
+\DoxyCodeLine{670   \textcolor{keywordtype}{int} \mbox{\hyperlink{structpm__rng__t_a8184eb9ef260cd873982745dfb7101c0}{index}};}
+\DoxyCodeLine{671 \} \mbox{\hyperlink{structpm__rng__t}{pm\_rng\_t}};}
+\DoxyCodeLine{672 }
+\DoxyCodeLine{678 \textcolor{keywordtype}{void} \mbox{\hyperlink{pico__ml_8h_a911426b04c7a2db7d9d6fdaaa52b0fac}{pm\_rng\_seed}}(\mbox{\hyperlink{structpm__rng__t}{pm\_rng\_t}}* rng, uint32\_t seed);}
+\DoxyCodeLine{679 }
+\DoxyCodeLine{684 uint32\_t \mbox{\hyperlink{pico__ml_8h_a6c3c6d21bbb19790381c2f3b2eaf1601}{pm\_random}}(\mbox{\hyperlink{structpm__rng__t}{pm\_rng\_t}}* rng);}
+\DoxyCodeLine{685 }
+\DoxyCodeLine{689 \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} \mbox{\hyperlink{pico__ml_8h_a2d22f8f53f2d3e203857fe17e8d424d2}{pm\_random\_float}}(\mbox{\hyperlink{structpm__rng__t}{pm\_rng\_t}}* rng);}
+\DoxyCodeLine{690 }
+\DoxyCodeLine{691 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{692 \}}
+\DoxyCodeLine{693 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{694 }
+\DoxyCodeLine{695 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// PICO\_ML\_H}}
+\DoxyCodeLine{696 }
+\DoxyCodeLine{697 \textcolor{preprocessor}{\#ifdef PM\_IMPLEMENTATION}}
+\DoxyCodeLine{698 }
+\DoxyCodeLine{699 }
+\DoxyCodeLine{700 \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} \mbox{\hyperlink{pico__ml_8h_aa322aab2accc0e5b9f969e7877a01670}{pm\_lerp\_angle}}(\mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} angle1, \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} angle2, \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} alpha)}
+\DoxyCodeLine{701 \{}
+\DoxyCodeLine{702     \textcolor{keyword}{const} \mbox{\hyperlink{structpm__v2}{pm\_v2}} v1 = \mbox{\hyperlink{pico__ml_8h_ac54fdc43b0686abdd4bef3b06b6b9888}{pm\_v2\_make}}(\mbox{\hyperlink{pico__ml_8h_a2f6bb5292f7dad0846891e1fde675d9f}{pm\_cos}}(angle1), \mbox{\hyperlink{pico__ml_8h_a4cf518c9f0d9e1636510b512b791d3d7}{pm\_sin}}(angle1));}
+\DoxyCodeLine{703     \textcolor{keyword}{const} \mbox{\hyperlink{structpm__v2}{pm\_v2}} v2 = \mbox{\hyperlink{pico__ml_8h_ac54fdc43b0686abdd4bef3b06b6b9888}{pm\_v2\_make}}(\mbox{\hyperlink{pico__ml_8h_a2f6bb5292f7dad0846891e1fde675d9f}{pm\_cos}}(angle2), \mbox{\hyperlink{pico__ml_8h_a4cf518c9f0d9e1636510b512b791d3d7}{pm\_sin}}(angle2));}
+\DoxyCodeLine{704 }
+\DoxyCodeLine{705     \textcolor{comment}{// Calculuate cosine of angle between the two vectors}}
+\DoxyCodeLine{706     \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} dot = \mbox{\hyperlink{pico__ml_8h_a0c03ebf0a51271e6358799a5ee0dc189}{pm\_clamp}}(\mbox{\hyperlink{pico__ml_8h_a53f88d26cb7f47f6b1d885d631211585}{pm\_v2\_dot}}(\&v1, \&v2), -\/1.0f, 1.0f);}
+\DoxyCodeLine{707 }
+\DoxyCodeLine{708     \textcolor{comment}{// LERP if the cosine is too close to its limits}}
+\DoxyCodeLine{709     \textcolor{keywordflow}{if} (\mbox{\hyperlink{pico__ml_8h_a7205c5e1af6a35ab85ccd578080d4079}{pm\_equal}}(dot, 1.0f) || \mbox{\hyperlink{pico__ml_8h_a7205c5e1af6a35ab85ccd578080d4079}{pm\_equal}}(dot, -\/1.0f))}
+\DoxyCodeLine{710     \{}
+\DoxyCodeLine{711         \mbox{\hyperlink{structpm__v2}{pm\_v2}} tmp = \mbox{\hyperlink{pico__ml_8h_a1e9424e09106f01d5c29d8a3925f1cc7}{pm\_v2\_lerp}}(\&v1, \&v2, alpha);}
+\DoxyCodeLine{712         \textcolor{keywordflow}{return} \mbox{\hyperlink{pico__ml_8h_a0aca2cf04f618c70a090d879b54fda69}{pm\_normalize\_angle}}(\mbox{\hyperlink{pico__ml_8h_afe458996a21af90f7a1310e103f5d7e3}{pm\_atan2}}(tmp.\mbox{\hyperlink{structpm__v2_a8eca7e3db8a4cc97472229a104b15d3f}{y}}, tmp.\mbox{\hyperlink{structpm__v2_a59252ad8edb4c86e492b30e9ff9c61d5}{x}}));}
+\DoxyCodeLine{713     \}}
+\DoxyCodeLine{714 }
+\DoxyCodeLine{715    \textcolor{comment}{// Calculate angle}}
+\DoxyCodeLine{716     \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} angle = \mbox{\hyperlink{pico__ml_8h_ae1d7514403bcc1a95f6bfcf2dbd7185b}{pm\_acos}}(dot) * alpha;}
+\DoxyCodeLine{717 }
+\DoxyCodeLine{718     \textcolor{comment}{// Gram–Schmidt (construct a new vector 'v0' that is orthogonal to v1)}}
+\DoxyCodeLine{719     \mbox{\hyperlink{structpm__v2}{pm\_v2}} v0  = \mbox{\hyperlink{pico__ml_8h_a62bdc75164ee5cbad92ebfd12877ad7b}{pm\_v2\_sub}}(v2, \mbox{\hyperlink{pico__ml_8h_aab017bc236d794e4b7080ce0a7db76c4}{pm\_v2\_scale}}(v1, dot));}
+\DoxyCodeLine{720     \mbox{\hyperlink{pico__ml_8h_a40be3d3e500d44b9d9ce96f05a5d5be6}{pm\_v2\_normalize}}(\&v0);}
+\DoxyCodeLine{721 }
+\DoxyCodeLine{722     \textcolor{comment}{// Calcuate vector in new coordinate system}}
+\DoxyCodeLine{723     \mbox{\hyperlink{structpm__v2}{pm\_v2}} tmp1 = \mbox{\hyperlink{pico__ml_8h_aab017bc236d794e4b7080ce0a7db76c4}{pm\_v2\_scale}}(v1, \mbox{\hyperlink{pico__ml_8h_a2f6bb5292f7dad0846891e1fde675d9f}{pm\_cos}}(angle));}
+\DoxyCodeLine{724     \mbox{\hyperlink{structpm__v2}{pm\_v2}} tmp2 = \mbox{\hyperlink{pico__ml_8h_aab017bc236d794e4b7080ce0a7db76c4}{pm\_v2\_scale}}(v0, \mbox{\hyperlink{pico__ml_8h_a4cf518c9f0d9e1636510b512b791d3d7}{pm\_sin}}(angle));}
+\DoxyCodeLine{725 }
+\DoxyCodeLine{726     \mbox{\hyperlink{structpm__v2}{pm\_v2}} tmp = \mbox{\hyperlink{pico__ml_8h_adb7ffc4b535a55f0600d905ae7d542b0}{pm\_v2\_add}}(tmp1, tmp2);}
+\DoxyCodeLine{727 }
+\DoxyCodeLine{728     \textcolor{comment}{// Calculate new angle}}
+\DoxyCodeLine{729     \textcolor{keywordflow}{return} \mbox{\hyperlink{pico__ml_8h_a0aca2cf04f618c70a090d879b54fda69}{pm\_normalize\_angle}}(\mbox{\hyperlink{pico__ml_8h_afe458996a21af90f7a1310e103f5d7e3}{pm\_atan2}}(tmp.\mbox{\hyperlink{structpm__v2_a8eca7e3db8a4cc97472229a104b15d3f}{y}}, tmp.\mbox{\hyperlink{structpm__v2_a59252ad8edb4c86e492b30e9ff9c61d5}{x}}));}
+\DoxyCodeLine{730 \}}
+\DoxyCodeLine{731 }
+\DoxyCodeLine{732 \textcolor{keywordtype}{bool} \mbox{\hyperlink{pico__ml_8h_a22cf2de6c77243f4fcfd1c5620b0452e}{pm\_t2\_equal}}(\textcolor{keyword}{const} \mbox{\hyperlink{structpm__t2}{pm\_t2}}* t1, \textcolor{keyword}{const} \mbox{\hyperlink{structpm__t2}{pm\_t2}}* t2)}
+\DoxyCodeLine{733 \{}
+\DoxyCodeLine{734     \textcolor{keywordflow}{return} \mbox{\hyperlink{pico__ml_8h_a7205c5e1af6a35ab85ccd578080d4079}{pm\_equal}}(t1-\/>\mbox{\hyperlink{structpm__t2_a4ce31dcc7ab506059d71e123a46b748e}{t00}}, t2-\/>\mbox{\hyperlink{structpm__t2_a4ce31dcc7ab506059d71e123a46b748e}{t00}}) \&\&}
+\DoxyCodeLine{735            \mbox{\hyperlink{pico__ml_8h_a7205c5e1af6a35ab85ccd578080d4079}{pm\_equal}}(t1-\/>\mbox{\hyperlink{structpm__t2_ac188ae096f9454069098cfa7b125d767}{t10}}, t2-\/>\mbox{\hyperlink{structpm__t2_ac188ae096f9454069098cfa7b125d767}{t10}}) \&\&}
+\DoxyCodeLine{736            \mbox{\hyperlink{pico__ml_8h_a7205c5e1af6a35ab85ccd578080d4079}{pm\_equal}}(t1-\/>\mbox{\hyperlink{structpm__t2_a9aa4df59771637391116ef2f8f7f67b9}{t01}}, t2-\/>\mbox{\hyperlink{structpm__t2_a9aa4df59771637391116ef2f8f7f67b9}{t01}}) \&\&}
+\DoxyCodeLine{737            \mbox{\hyperlink{pico__ml_8h_a7205c5e1af6a35ab85ccd578080d4079}{pm\_equal}}(t1-\/>\mbox{\hyperlink{structpm__t2_aceaad44cc0c9023948484ea69d60fdb3}{t11}}, t2-\/>\mbox{\hyperlink{structpm__t2_aceaad44cc0c9023948484ea69d60fdb3}{t11}}) \&\&}
+\DoxyCodeLine{738            \mbox{\hyperlink{pico__ml_8h_a7205c5e1af6a35ab85ccd578080d4079}{pm\_equal}}(t1-\/>\mbox{\hyperlink{structpm__t2_afb468998246481098b050f5c76d37899}{tx}},  t2-\/>\mbox{\hyperlink{structpm__t2_afb468998246481098b050f5c76d37899}{tx}})  \&\&}
+\DoxyCodeLine{739            \mbox{\hyperlink{pico__ml_8h_a7205c5e1af6a35ab85ccd578080d4079}{pm\_equal}}(t1-\/>\mbox{\hyperlink{structpm__t2_adc6762cd85b1e55d9a56a95b3f0f93ff}{ty}},  t2-\/>\mbox{\hyperlink{structpm__t2_adc6762cd85b1e55d9a56a95b3f0f93ff}{ty}});}
+\DoxyCodeLine{740 \}}
+\DoxyCodeLine{741 }
+\DoxyCodeLine{742 \textcolor{keywordtype}{void} \mbox{\hyperlink{pico__ml_8h_aa4dbe029b8c992f4b462e7a09024457c}{pm\_t2\_set\_scale}}(\mbox{\hyperlink{structpm__t2}{pm\_t2}}* t, \textcolor{keyword}{const} \mbox{\hyperlink{structpm__v2}{pm\_v2}}* scale)}
+\DoxyCodeLine{743 \{}
+\DoxyCodeLine{744     \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} angle = \mbox{\hyperlink{pico__ml_8h_a42d13b7cc4db033ff49ffd70a4a0cd17}{pm\_t2\_get\_angle}}(t);}
+\DoxyCodeLine{745 }
+\DoxyCodeLine{746     \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} c = \mbox{\hyperlink{pico__ml_8h_a2f6bb5292f7dad0846891e1fde675d9f}{pm\_cos}}(angle);}
+\DoxyCodeLine{747     \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} s = \mbox{\hyperlink{pico__ml_8h_a4cf518c9f0d9e1636510b512b791d3d7}{pm\_sin}}(angle);}
+\DoxyCodeLine{748 }
+\DoxyCodeLine{749     \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} sx = scale-\/>\mbox{\hyperlink{structpm__v2_a59252ad8edb4c86e492b30e9ff9c61d5}{x}};}
+\DoxyCodeLine{750     \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} sy = scale-\/>\mbox{\hyperlink{structpm__v2_a8eca7e3db8a4cc97472229a104b15d3f}{y}};}
+\DoxyCodeLine{751 }
+\DoxyCodeLine{752     t-\/>\mbox{\hyperlink{structpm__t2_a4ce31dcc7ab506059d71e123a46b748e}{t00}} = sx * c; t-\/>\mbox{\hyperlink{structpm__t2_a9aa4df59771637391116ef2f8f7f67b9}{t01}} = sx * -\/s;}
+\DoxyCodeLine{753     t-\/>\mbox{\hyperlink{structpm__t2_ac188ae096f9454069098cfa7b125d767}{t10}} = sy * s; t-\/>\mbox{\hyperlink{structpm__t2_aceaad44cc0c9023948484ea69d60fdb3}{t11}} = sy *  c;}
+\DoxyCodeLine{754 \}}
+\DoxyCodeLine{755 }
+\DoxyCodeLine{756 \mbox{\hyperlink{structpm__v2}{pm\_v2}} \mbox{\hyperlink{pico__ml_8h_aa4269ede74dc095a5c246ecc2820696e}{pm\_t2\_get\_scale}}(\textcolor{keyword}{const} \mbox{\hyperlink{structpm__t2}{pm\_t2}}* t)}
+\DoxyCodeLine{757 \{}
+\DoxyCodeLine{758     \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} angle = \mbox{\hyperlink{pico__ml_8h_a42d13b7cc4db033ff49ffd70a4a0cd17}{pm\_t2\_get\_angle}}(t);}
+\DoxyCodeLine{759     \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} cos\_sign = \mbox{\hyperlink{pico__ml_8h_ab1cfa5af287241dc68bf981099ad02f8}{pm\_sign}}(\mbox{\hyperlink{pico__ml_8h_a2f6bb5292f7dad0846891e1fde675d9f}{pm\_cos}}(angle));}
+\DoxyCodeLine{760 }
+\DoxyCodeLine{761     \mbox{\hyperlink{structpm__v2}{pm\_v2}} out;}
+\DoxyCodeLine{762 }
+\DoxyCodeLine{763     \textcolor{keywordflow}{if} (0.0f == cos\_sign) \textcolor{comment}{//TODO: pm\_equal?}}
+\DoxyCodeLine{764     \{}
+\DoxyCodeLine{765         out.\mbox{\hyperlink{structpm__v2_a59252ad8edb4c86e492b30e9ff9c61d5}{x}} = -\/t-\/>\mbox{\hyperlink{structpm__t2_a9aa4df59771637391116ef2f8f7f67b9}{t01}};}
+\DoxyCodeLine{766         out.\mbox{\hyperlink{structpm__v2_a8eca7e3db8a4cc97472229a104b15d3f}{y}} =  t-\/>\mbox{\hyperlink{structpm__t2_ac188ae096f9454069098cfa7b125d767}{t10}};}
+\DoxyCodeLine{767         \textcolor{keywordflow}{return} out;}
+\DoxyCodeLine{768     \}}
+\DoxyCodeLine{769 }
+\DoxyCodeLine{770     \mbox{\hyperlink{structpm__v2}{pm\_v2}} v1 = \mbox{\hyperlink{pico__ml_8h_ac54fdc43b0686abdd4bef3b06b6b9888}{pm\_v2\_make}}(t-\/>\mbox{\hyperlink{structpm__t2_a4ce31dcc7ab506059d71e123a46b748e}{t00}}, t-\/>\mbox{\hyperlink{structpm__t2_a9aa4df59771637391116ef2f8f7f67b9}{t01}});}
+\DoxyCodeLine{771     \mbox{\hyperlink{structpm__v2}{pm\_v2}} v2 = \mbox{\hyperlink{pico__ml_8h_ac54fdc43b0686abdd4bef3b06b6b9888}{pm\_v2\_make}}(t-\/>\mbox{\hyperlink{structpm__t2_ac188ae096f9454069098cfa7b125d767}{t10}}, t-\/>\mbox{\hyperlink{structpm__t2_aceaad44cc0c9023948484ea69d60fdb3}{t11}});}
+\DoxyCodeLine{772 }
+\DoxyCodeLine{773     out.\mbox{\hyperlink{structpm__v2_a59252ad8edb4c86e492b30e9ff9c61d5}{x}} = \mbox{\hyperlink{pico__ml_8h_ab1cfa5af287241dc68bf981099ad02f8}{pm\_sign}}(t-\/>\mbox{\hyperlink{structpm__t2_a4ce31dcc7ab506059d71e123a46b748e}{t00}}) * cos\_sign * \mbox{\hyperlink{pico__ml_8h_a834b21d67f6b60f9d9fa048f0ac211c4}{pm\_v2\_len}}(\&v1);}
+\DoxyCodeLine{774     out.\mbox{\hyperlink{structpm__v2_a8eca7e3db8a4cc97472229a104b15d3f}{y}} = \mbox{\hyperlink{pico__ml_8h_ab1cfa5af287241dc68bf981099ad02f8}{pm\_sign}}(t-\/>\mbox{\hyperlink{structpm__t2_aceaad44cc0c9023948484ea69d60fdb3}{t11}}) * cos\_sign * \mbox{\hyperlink{pico__ml_8h_a834b21d67f6b60f9d9fa048f0ac211c4}{pm\_v2\_len}}(\&v2);}
+\DoxyCodeLine{775 }
+\DoxyCodeLine{776     \textcolor{keywordflow}{return} out;}
+\DoxyCodeLine{777 \}}
+\DoxyCodeLine{778 }
+\DoxyCodeLine{779 \textcolor{keywordtype}{void} \mbox{\hyperlink{pico__ml_8h_a7a815a9dc45c475e8fe28f24479fe1e3}{pm\_t2\_set\_angle}}(\mbox{\hyperlink{structpm__t2}{pm\_t2}}* t, \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} angle)}
+\DoxyCodeLine{780 \{}
+\DoxyCodeLine{781     \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} c = \mbox{\hyperlink{pico__ml_8h_a2f6bb5292f7dad0846891e1fde675d9f}{pm\_cos}}(angle);}
+\DoxyCodeLine{782     \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} s = \mbox{\hyperlink{pico__ml_8h_a4cf518c9f0d9e1636510b512b791d3d7}{pm\_sin}}(angle);}
+\DoxyCodeLine{783 }
+\DoxyCodeLine{784     \mbox{\hyperlink{structpm__v2}{pm\_v2}} scale = \mbox{\hyperlink{pico__ml_8h_aa4269ede74dc095a5c246ecc2820696e}{pm\_t2\_get\_scale}}(t);}
+\DoxyCodeLine{785 }
+\DoxyCodeLine{786     \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} sx = scale.\mbox{\hyperlink{structpm__v2_a59252ad8edb4c86e492b30e9ff9c61d5}{x}};}
+\DoxyCodeLine{787     \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} sy = scale.\mbox{\hyperlink{structpm__v2_a8eca7e3db8a4cc97472229a104b15d3f}{y}};}
+\DoxyCodeLine{788 }
+\DoxyCodeLine{789     t-\/>\mbox{\hyperlink{structpm__t2_a4ce31dcc7ab506059d71e123a46b748e}{t00}} = sx * c; t-\/>\mbox{\hyperlink{structpm__t2_a9aa4df59771637391116ef2f8f7f67b9}{t01}} = sx * -\/s;}
+\DoxyCodeLine{790     t-\/>\mbox{\hyperlink{structpm__t2_ac188ae096f9454069098cfa7b125d767}{t10}} = sy * s; t-\/>\mbox{\hyperlink{structpm__t2_aceaad44cc0c9023948484ea69d60fdb3}{t11}} = sy *  c;}
+\DoxyCodeLine{791 \}}
+\DoxyCodeLine{792 }
+\DoxyCodeLine{793 \mbox{\hyperlink{structpm__t2}{pm\_t2}} \mbox{\hyperlink{pico__ml_8h_a82dcdc1039a4b4c396a7970638abc98c}{pm\_t2\_inv}}(\textcolor{keyword}{const} \mbox{\hyperlink{structpm__t2}{pm\_t2}}* t)}
+\DoxyCodeLine{794 \{}
+\DoxyCodeLine{795     \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} det = \mbox{\hyperlink{pico__ml_8h_a5c4b90fd89f9b8371053822cc2a5eebe}{pm\_t2\_det}}(t);}
+\DoxyCodeLine{796 }
+\DoxyCodeLine{797     \textcolor{keywordflow}{if} (0.0f == det) \textcolor{comment}{// Intentionally not using epsilon because determinants}}
+\DoxyCodeLine{798     \{                \textcolor{comment}{// can be really small and still be valid}}
+\DoxyCodeLine{799         \textcolor{keywordflow}{return} \mbox{\hyperlink{pico__ml_8h_ab19b817cff416de070a6afb4cd7bd5cc}{pm\_t2\_identity}}();}
+\DoxyCodeLine{800     \}}
+\DoxyCodeLine{801 }
+\DoxyCodeLine{802     \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} inv\_det = 1.0f / det;}
+\DoxyCodeLine{803 }
+\DoxyCodeLine{804     \mbox{\hyperlink{structpm__t2}{pm\_t2}} out;}
+\DoxyCodeLine{805 }
+\DoxyCodeLine{806     out.\mbox{\hyperlink{structpm__t2_a4ce31dcc7ab506059d71e123a46b748e}{t00}} =  t-\/>\mbox{\hyperlink{structpm__t2_aceaad44cc0c9023948484ea69d60fdb3}{t11}}; out.\mbox{\hyperlink{structpm__t2_a9aa4df59771637391116ef2f8f7f67b9}{t01}} = -\/t-\/>\mbox{\hyperlink{structpm__t2_a9aa4df59771637391116ef2f8f7f67b9}{t01}}; out.\mbox{\hyperlink{structpm__t2_afb468998246481098b050f5c76d37899}{tx}} = t-\/>\mbox{\hyperlink{structpm__t2_a9aa4df59771637391116ef2f8f7f67b9}{t01}} * t-\/>\mbox{\hyperlink{structpm__t2_adc6762cd85b1e55d9a56a95b3f0f93ff}{ty}} -\/ t-\/>\mbox{\hyperlink{structpm__t2_aceaad44cc0c9023948484ea69d60fdb3}{t11}} * t-\/>\mbox{\hyperlink{structpm__t2_afb468998246481098b050f5c76d37899}{tx}};}
+\DoxyCodeLine{807     out.\mbox{\hyperlink{structpm__t2_ac188ae096f9454069098cfa7b125d767}{t10}} = -\/t-\/>\mbox{\hyperlink{structpm__t2_ac188ae096f9454069098cfa7b125d767}{t10}}; out.\mbox{\hyperlink{structpm__t2_aceaad44cc0c9023948484ea69d60fdb3}{t11}} =  t-\/>\mbox{\hyperlink{structpm__t2_a4ce31dcc7ab506059d71e123a46b748e}{t00}}; out.\mbox{\hyperlink{structpm__t2_adc6762cd85b1e55d9a56a95b3f0f93ff}{ty}} = t-\/>\mbox{\hyperlink{structpm__t2_ac188ae096f9454069098cfa7b125d767}{t10}} * t-\/>\mbox{\hyperlink{structpm__t2_afb468998246481098b050f5c76d37899}{tx}} -\/ t-\/>\mbox{\hyperlink{structpm__t2_a4ce31dcc7ab506059d71e123a46b748e}{t00}} * t-\/>\mbox{\hyperlink{structpm__t2_adc6762cd85b1e55d9a56a95b3f0f93ff}{ty}};}
+\DoxyCodeLine{808 }
+\DoxyCodeLine{809     out.\mbox{\hyperlink{structpm__t2_a4ce31dcc7ab506059d71e123a46b748e}{t00}} *= inv\_det; out.\mbox{\hyperlink{structpm__t2_a9aa4df59771637391116ef2f8f7f67b9}{t01}} *= inv\_det; out.\mbox{\hyperlink{structpm__t2_afb468998246481098b050f5c76d37899}{tx}} *= inv\_det;}
+\DoxyCodeLine{810     out.\mbox{\hyperlink{structpm__t2_ac188ae096f9454069098cfa7b125d767}{t10}} *= inv\_det; out.\mbox{\hyperlink{structpm__t2_aceaad44cc0c9023948484ea69d60fdb3}{t11}} *= inv\_det; out.\mbox{\hyperlink{structpm__t2_adc6762cd85b1e55d9a56a95b3f0f93ff}{ty}} *= inv\_det;}
+\DoxyCodeLine{811 }
+\DoxyCodeLine{812     \textcolor{keywordflow}{return} out;}
+\DoxyCodeLine{813 \}}
+\DoxyCodeLine{814 }
+\DoxyCodeLine{815 \mbox{\hyperlink{structpm__t2}{pm\_t2}} \mbox{\hyperlink{pico__ml_8h_af52c8ce036b825e8fe4d3c7fd662c95d}{pm\_t2\_mult}}(\textcolor{keyword}{const} \mbox{\hyperlink{structpm__t2}{pm\_t2}}* t1, \textcolor{keyword}{const} \mbox{\hyperlink{structpm__t2}{pm\_t2}}* t2)}
+\DoxyCodeLine{816 \{}
+\DoxyCodeLine{817     \mbox{\hyperlink{structpm__t2}{pm\_t2}} out;}
+\DoxyCodeLine{818 }
+\DoxyCodeLine{819     out.\mbox{\hyperlink{structpm__t2_a4ce31dcc7ab506059d71e123a46b748e}{t00}} = t1-\/>\mbox{\hyperlink{structpm__t2_a4ce31dcc7ab506059d71e123a46b748e}{t00}} * t2-\/>\mbox{\hyperlink{structpm__t2_a4ce31dcc7ab506059d71e123a46b748e}{t00}} + t1-\/>\mbox{\hyperlink{structpm__t2_a9aa4df59771637391116ef2f8f7f67b9}{t01}} * t2-\/>\mbox{\hyperlink{structpm__t2_ac188ae096f9454069098cfa7b125d767}{t10}};}
+\DoxyCodeLine{820     out.\mbox{\hyperlink{structpm__t2_ac188ae096f9454069098cfa7b125d767}{t10}} = t1-\/>\mbox{\hyperlink{structpm__t2_ac188ae096f9454069098cfa7b125d767}{t10}} * t2-\/>\mbox{\hyperlink{structpm__t2_a4ce31dcc7ab506059d71e123a46b748e}{t00}} + t1-\/>\mbox{\hyperlink{structpm__t2_aceaad44cc0c9023948484ea69d60fdb3}{t11}} * t2-\/>\mbox{\hyperlink{structpm__t2_ac188ae096f9454069098cfa7b125d767}{t10}};}
+\DoxyCodeLine{821 }
+\DoxyCodeLine{822     out.\mbox{\hyperlink{structpm__t2_a9aa4df59771637391116ef2f8f7f67b9}{t01}} = t1-\/>\mbox{\hyperlink{structpm__t2_a4ce31dcc7ab506059d71e123a46b748e}{t00}} * t2-\/>\mbox{\hyperlink{structpm__t2_a9aa4df59771637391116ef2f8f7f67b9}{t01}} + t1-\/>\mbox{\hyperlink{structpm__t2_a9aa4df59771637391116ef2f8f7f67b9}{t01}} * t2-\/>\mbox{\hyperlink{structpm__t2_aceaad44cc0c9023948484ea69d60fdb3}{t11}};}
+\DoxyCodeLine{823     out.\mbox{\hyperlink{structpm__t2_aceaad44cc0c9023948484ea69d60fdb3}{t11}} = t1-\/>\mbox{\hyperlink{structpm__t2_ac188ae096f9454069098cfa7b125d767}{t10}} * t2-\/>\mbox{\hyperlink{structpm__t2_a9aa4df59771637391116ef2f8f7f67b9}{t01}} + t1-\/>\mbox{\hyperlink{structpm__t2_aceaad44cc0c9023948484ea69d60fdb3}{t11}} * t2-\/>\mbox{\hyperlink{structpm__t2_aceaad44cc0c9023948484ea69d60fdb3}{t11}};}
+\DoxyCodeLine{824 }
+\DoxyCodeLine{825     out.\mbox{\hyperlink{structpm__t2_afb468998246481098b050f5c76d37899}{tx}} = t1-\/>\mbox{\hyperlink{structpm__t2_a4ce31dcc7ab506059d71e123a46b748e}{t00}} * t2-\/>\mbox{\hyperlink{structpm__t2_afb468998246481098b050f5c76d37899}{tx}} + t1-\/>\mbox{\hyperlink{structpm__t2_a9aa4df59771637391116ef2f8f7f67b9}{t01}} * t2-\/>\mbox{\hyperlink{structpm__t2_adc6762cd85b1e55d9a56a95b3f0f93ff}{ty}} + t1-\/>\mbox{\hyperlink{structpm__t2_afb468998246481098b050f5c76d37899}{tx}};}
+\DoxyCodeLine{826     out.\mbox{\hyperlink{structpm__t2_adc6762cd85b1e55d9a56a95b3f0f93ff}{ty}} = t1-\/>\mbox{\hyperlink{structpm__t2_ac188ae096f9454069098cfa7b125d767}{t10}} * t2-\/>\mbox{\hyperlink{structpm__t2_afb468998246481098b050f5c76d37899}{tx}} + t1-\/>\mbox{\hyperlink{structpm__t2_aceaad44cc0c9023948484ea69d60fdb3}{t11}} * t2-\/>\mbox{\hyperlink{structpm__t2_adc6762cd85b1e55d9a56a95b3f0f93ff}{ty}} + t1-\/>\mbox{\hyperlink{structpm__t2_adc6762cd85b1e55d9a56a95b3f0f93ff}{ty}};}
+\DoxyCodeLine{827 }
+\DoxyCodeLine{828     \textcolor{keywordflow}{return} out;}
+\DoxyCodeLine{829 \}}
+\DoxyCodeLine{830 }
+\DoxyCodeLine{831 \mbox{\hyperlink{structpm__t2}{pm\_t2}} \mbox{\hyperlink{pico__ml_8h_aeb9d745f6282e975d2b8722ce699e657}{pm\_t2\_lerp}}(\textcolor{keyword}{const} \mbox{\hyperlink{structpm__t2}{pm\_t2}}* t1, \textcolor{keyword}{const} \mbox{\hyperlink{structpm__t2}{pm\_t2}}* t2, \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} alpha)}
+\DoxyCodeLine{832 \{}
+\DoxyCodeLine{833     \mbox{\hyperlink{structpm__v2}{pm\_v2}} scale1 = \mbox{\hyperlink{pico__ml_8h_aa4269ede74dc095a5c246ecc2820696e}{pm\_t2\_get\_scale}}(t1);}
+\DoxyCodeLine{834     \mbox{\hyperlink{structpm__v2}{pm\_v2}} scale2 = \mbox{\hyperlink{pico__ml_8h_aa4269ede74dc095a5c246ecc2820696e}{pm\_t2\_get\_scale}}(t2);}
+\DoxyCodeLine{835 }
+\DoxyCodeLine{836     \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} angle1 = \mbox{\hyperlink{pico__ml_8h_a42d13b7cc4db033ff49ffd70a4a0cd17}{pm\_t2\_get\_angle}}(t1);}
+\DoxyCodeLine{837     \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} angle2 = \mbox{\hyperlink{pico__ml_8h_a42d13b7cc4db033ff49ffd70a4a0cd17}{pm\_t2\_get\_angle}}(t2);}
+\DoxyCodeLine{838 }
+\DoxyCodeLine{839     \mbox{\hyperlink{structpm__v2}{pm\_v2}} pos1 = \mbox{\hyperlink{pico__ml_8h_a40549c5f93c58170f9225fa1f13ba1d1}{pm\_t2\_get\_pos}}(t1);}
+\DoxyCodeLine{840     \mbox{\hyperlink{structpm__v2}{pm\_v2}} pos2 = \mbox{\hyperlink{pico__ml_8h_a40549c5f93c58170f9225fa1f13ba1d1}{pm\_t2\_get\_pos}}(t2);}
+\DoxyCodeLine{841 }
+\DoxyCodeLine{842     \mbox{\hyperlink{structpm__v2}{pm\_v2}} scale = \mbox{\hyperlink{pico__ml_8h_a1e9424e09106f01d5c29d8a3925f1cc7}{pm\_v2\_lerp}}(\&scale1, \&scale2, alpha);}
+\DoxyCodeLine{843     \mbox{\hyperlink{structpm__v2}{pm\_v2}} pos = \mbox{\hyperlink{pico__ml_8h_a1e9424e09106f01d5c29d8a3925f1cc7}{pm\_v2\_lerp}}(\&pos1, \&pos2, alpha);}
+\DoxyCodeLine{844     \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} angle = \mbox{\hyperlink{pico__ml_8h_aa322aab2accc0e5b9f969e7877a01670}{pm\_lerp\_angle}}(angle1, angle2, alpha);}
+\DoxyCodeLine{845 }
+\DoxyCodeLine{846     \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} c = \mbox{\hyperlink{pico__ml_8h_a2f6bb5292f7dad0846891e1fde675d9f}{pm\_cos}}(angle);}
+\DoxyCodeLine{847     \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} s = \mbox{\hyperlink{pico__ml_8h_a4cf518c9f0d9e1636510b512b791d3d7}{pm\_sin}}(angle);}
+\DoxyCodeLine{848 }
+\DoxyCodeLine{849     \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} sx = scale.\mbox{\hyperlink{structpm__v2_a59252ad8edb4c86e492b30e9ff9c61d5}{x}};}
+\DoxyCodeLine{850     \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} sy = scale.\mbox{\hyperlink{structpm__v2_a8eca7e3db8a4cc97472229a104b15d3f}{y}};}
+\DoxyCodeLine{851 }
+\DoxyCodeLine{852     \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} tx = pos.\mbox{\hyperlink{structpm__v2_a59252ad8edb4c86e492b30e9ff9c61d5}{x}};}
+\DoxyCodeLine{853     \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} ty = pos.\mbox{\hyperlink{structpm__v2_a8eca7e3db8a4cc97472229a104b15d3f}{y}};}
+\DoxyCodeLine{854 }
+\DoxyCodeLine{855     \mbox{\hyperlink{structpm__t2}{pm\_t2}} out;}
+\DoxyCodeLine{856 }
+\DoxyCodeLine{857     out.\mbox{\hyperlink{structpm__t2_a4ce31dcc7ab506059d71e123a46b748e}{t00}} = sx * c; out.\mbox{\hyperlink{structpm__t2_a9aa4df59771637391116ef2f8f7f67b9}{t01}} = sx * -\/s; out.\mbox{\hyperlink{structpm__t2_afb468998246481098b050f5c76d37899}{tx}} = tx;}
+\DoxyCodeLine{858     out.\mbox{\hyperlink{structpm__t2_ac188ae096f9454069098cfa7b125d767}{t10}} = sy * s; out.\mbox{\hyperlink{structpm__t2_aceaad44cc0c9023948484ea69d60fdb3}{t11}} = sy *  c; out.\mbox{\hyperlink{structpm__t2_adc6762cd85b1e55d9a56a95b3f0f93ff}{ty}} = ty;}
+\DoxyCodeLine{859 }
+\DoxyCodeLine{860     \textcolor{keywordflow}{return} out;}
+\DoxyCodeLine{861 \}}
+\DoxyCodeLine{862 }
+\DoxyCodeLine{863 \textcolor{keywordtype}{bool} \mbox{\hyperlink{pico__ml_8h_a7bfc62856e6b56e5c0b14ea44cb484da}{pm\_b2\_equal}}(\textcolor{keyword}{const} \mbox{\hyperlink{structpm__b2}{pm\_b2}}* b1, \textcolor{keyword}{const} \mbox{\hyperlink{structpm__b2}{pm\_b2}}* b2)}
+\DoxyCodeLine{864 \{}
+\DoxyCodeLine{865     \textcolor{keywordflow}{return} \mbox{\hyperlink{pico__ml_8h_a7205c5e1af6a35ab85ccd578080d4079}{pm\_equal}}(b1-\/>\mbox{\hyperlink{structpm__b2_a7a16a17b03dfb5aa25754ad5a1696ef8}{x}}, b2-\/>\mbox{\hyperlink{structpm__b2_a7a16a17b03dfb5aa25754ad5a1696ef8}{x}}) \&\&}
+\DoxyCodeLine{866            \mbox{\hyperlink{pico__ml_8h_a7205c5e1af6a35ab85ccd578080d4079}{pm\_equal}}(b1-\/>\mbox{\hyperlink{structpm__b2_a5a4138612c10f90454d757971b1ff9a2}{y}}, b2-\/>\mbox{\hyperlink{structpm__b2_a5a4138612c10f90454d757971b1ff9a2}{y}}) \&\&}
+\DoxyCodeLine{867            \mbox{\hyperlink{pico__ml_8h_a7205c5e1af6a35ab85ccd578080d4079}{pm\_equal}}(b1-\/>\mbox{\hyperlink{structpm__b2_a6aa46a68e09fc94881ef6cb3cdebbead}{w}}, b2-\/>\mbox{\hyperlink{structpm__b2_a6aa46a68e09fc94881ef6cb3cdebbead}{w}}) \&\&}
+\DoxyCodeLine{868            \mbox{\hyperlink{pico__ml_8h_a7205c5e1af6a35ab85ccd578080d4079}{pm\_equal}}(b1-\/>\mbox{\hyperlink{structpm__b2_a002a2ad944538fe0a974a53904fc7974}{h}}, b2-\/>\mbox{\hyperlink{structpm__b2_a002a2ad944538fe0a974a53904fc7974}{h}});}
+\DoxyCodeLine{869 \}}
+\DoxyCodeLine{870 }
+\DoxyCodeLine{871 \mbox{\hyperlink{structpm__b2}{pm\_b2}} \mbox{\hyperlink{pico__ml_8h_a46fc703bc55bee2409d7145dc7d62302}{pm\_b2\_union}}(\textcolor{keyword}{const} \mbox{\hyperlink{structpm__b2}{pm\_b2}}* b1, \textcolor{keyword}{const} \mbox{\hyperlink{structpm__b2}{pm\_b2}}* b2)}
+\DoxyCodeLine{872 \{}
+\DoxyCodeLine{873     \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} x1 = \mbox{\hyperlink{pico__ml_8h_a0d21831407eafc69f1c7a24dc05d9e11}{pm\_min}}(b1-\/>\mbox{\hyperlink{structpm__b2_a7a16a17b03dfb5aa25754ad5a1696ef8}{x}},  b2-\/>\mbox{\hyperlink{structpm__b2_a7a16a17b03dfb5aa25754ad5a1696ef8}{x}}); \textcolor{comment}{// x}}
+\DoxyCodeLine{874     \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} y1 = \mbox{\hyperlink{pico__ml_8h_a0d21831407eafc69f1c7a24dc05d9e11}{pm\_min}}(b1-\/>\mbox{\hyperlink{structpm__b2_a5a4138612c10f90454d757971b1ff9a2}{y}},  b2-\/>\mbox{\hyperlink{structpm__b2_a5a4138612c10f90454d757971b1ff9a2}{y}}); \textcolor{comment}{// y}}
+\DoxyCodeLine{875     \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} x2 = \mbox{\hyperlink{pico__ml_8h_a43bba0eb45afc94033ff3eacc92ec390}{pm\_max}}(b1-\/>\mbox{\hyperlink{structpm__b2_a7a16a17b03dfb5aa25754ad5a1696ef8}{x}} + b1-\/>\mbox{\hyperlink{structpm__b2_a6aa46a68e09fc94881ef6cb3cdebbead}{w}}, b2-\/>\mbox{\hyperlink{structpm__b2_a7a16a17b03dfb5aa25754ad5a1696ef8}{x}} + b2-\/>\mbox{\hyperlink{structpm__b2_a6aa46a68e09fc94881ef6cb3cdebbead}{w}}); \textcolor{comment}{// x + w}}
+\DoxyCodeLine{876     \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} y2 = \mbox{\hyperlink{pico__ml_8h_a43bba0eb45afc94033ff3eacc92ec390}{pm\_max}}(b1-\/>\mbox{\hyperlink{structpm__b2_a5a4138612c10f90454d757971b1ff9a2}{y}} + b1-\/>\mbox{\hyperlink{structpm__b2_a002a2ad944538fe0a974a53904fc7974}{h}}, b2-\/>\mbox{\hyperlink{structpm__b2_a5a4138612c10f90454d757971b1ff9a2}{y}} + b2-\/>\mbox{\hyperlink{structpm__b2_a002a2ad944538fe0a974a53904fc7974}{h}}); \textcolor{comment}{// y + h}}
+\DoxyCodeLine{877 }
+\DoxyCodeLine{878     \mbox{\hyperlink{structpm__b2}{pm\_b2}} out;}
+\DoxyCodeLine{879     out.\mbox{\hyperlink{structpm__b2_a7a16a17b03dfb5aa25754ad5a1696ef8}{x}} = x1;}
+\DoxyCodeLine{880     out.\mbox{\hyperlink{structpm__b2_a5a4138612c10f90454d757971b1ff9a2}{y}} = y1;}
+\DoxyCodeLine{881     out.\mbox{\hyperlink{structpm__b2_a6aa46a68e09fc94881ef6cb3cdebbead}{w}} = x2 -\/ x1;}
+\DoxyCodeLine{882     out.\mbox{\hyperlink{structpm__b2_a002a2ad944538fe0a974a53904fc7974}{h}} = y2 -\/ y1;}
+\DoxyCodeLine{883     \textcolor{keywordflow}{return} out;}
+\DoxyCodeLine{884 \}}
+\DoxyCodeLine{885 }
+\DoxyCodeLine{886 \mbox{\hyperlink{structpm__b2}{pm\_b2}} \mbox{\hyperlink{pico__ml_8h_af685f764eda535856436e94cd518bb78}{pm\_b2\_intersection}}(\textcolor{keyword}{const} \mbox{\hyperlink{structpm__b2}{pm\_b2}}* b1, \textcolor{keyword}{const} \mbox{\hyperlink{structpm__b2}{pm\_b2}}* b2)}
+\DoxyCodeLine{887 \{}
+\DoxyCodeLine{888     \textcolor{keywordflow}{if} (!\mbox{\hyperlink{pico__ml_8h_a256d91c67aff075a330b5bb459488a0f}{pm\_b2\_intersects}}(b1, b2))}
+\DoxyCodeLine{889         \textcolor{keywordflow}{return} \mbox{\hyperlink{pico__ml_8h_a184e62d2f45361e7d80cd6b5c799e0ad}{pm\_b2\_make}}(0.0f, 0.0f, 0.0f, 0.0f);}
+\DoxyCodeLine{890 }
+\DoxyCodeLine{891     \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} x1 = \mbox{\hyperlink{pico__ml_8h_a43bba0eb45afc94033ff3eacc92ec390}{pm\_max}}(b1-\/>\mbox{\hyperlink{structpm__b2_a7a16a17b03dfb5aa25754ad5a1696ef8}{x}},  b2-\/>\mbox{\hyperlink{structpm__b2_a7a16a17b03dfb5aa25754ad5a1696ef8}{x}}); \textcolor{comment}{// x}}
+\DoxyCodeLine{892     \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} y1 = \mbox{\hyperlink{pico__ml_8h_a43bba0eb45afc94033ff3eacc92ec390}{pm\_max}}(b1-\/>\mbox{\hyperlink{structpm__b2_a5a4138612c10f90454d757971b1ff9a2}{y}},  b2-\/>\mbox{\hyperlink{structpm__b2_a5a4138612c10f90454d757971b1ff9a2}{y}}); \textcolor{comment}{// y}}
+\DoxyCodeLine{893     \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} x2 = \mbox{\hyperlink{pico__ml_8h_a0d21831407eafc69f1c7a24dc05d9e11}{pm\_min}}(b1-\/>\mbox{\hyperlink{structpm__b2_a7a16a17b03dfb5aa25754ad5a1696ef8}{x}} + b1-\/>\mbox{\hyperlink{structpm__b2_a6aa46a68e09fc94881ef6cb3cdebbead}{w}}, b2-\/>\mbox{\hyperlink{structpm__b2_a7a16a17b03dfb5aa25754ad5a1696ef8}{x}} + b2-\/>\mbox{\hyperlink{structpm__b2_a6aa46a68e09fc94881ef6cb3cdebbead}{w}}); \textcolor{comment}{// x + w}}
+\DoxyCodeLine{894     \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} y2 = \mbox{\hyperlink{pico__ml_8h_a0d21831407eafc69f1c7a24dc05d9e11}{pm\_min}}(b1-\/>\mbox{\hyperlink{structpm__b2_a5a4138612c10f90454d757971b1ff9a2}{y}} + b1-\/>\mbox{\hyperlink{structpm__b2_a002a2ad944538fe0a974a53904fc7974}{h}}, b2-\/>\mbox{\hyperlink{structpm__b2_a5a4138612c10f90454d757971b1ff9a2}{y}} + b2-\/>\mbox{\hyperlink{structpm__b2_a002a2ad944538fe0a974a53904fc7974}{h}}); \textcolor{comment}{// y + h}}
+\DoxyCodeLine{895 }
+\DoxyCodeLine{896     \mbox{\hyperlink{structpm__b2}{pm\_b2}} out;}
+\DoxyCodeLine{897     out.\mbox{\hyperlink{structpm__b2_a7a16a17b03dfb5aa25754ad5a1696ef8}{x}} = x1;}
+\DoxyCodeLine{898     out.\mbox{\hyperlink{structpm__b2_a5a4138612c10f90454d757971b1ff9a2}{y}} = y1;}
+\DoxyCodeLine{899     out.\mbox{\hyperlink{structpm__b2_a6aa46a68e09fc94881ef6cb3cdebbead}{w}} = x2 -\/ x1;}
+\DoxyCodeLine{900     out.\mbox{\hyperlink{structpm__b2_a002a2ad944538fe0a974a53904fc7974}{h}} = y2 -\/ y1;}
+\DoxyCodeLine{901     \textcolor{keywordflow}{return} out;}
+\DoxyCodeLine{902 \}}
+\DoxyCodeLine{903 }
+\DoxyCodeLine{904 \mbox{\hyperlink{structpm__b2}{pm\_b2}} \mbox{\hyperlink{pico__ml_8h_ac2961b4d36a57a29a768c358d2a87338}{pm\_b2\_min}}(\textcolor{keyword}{const} \mbox{\hyperlink{structpm__v2}{pm\_v2}}* vertices, \textcolor{keywordtype}{int} count)}
+\DoxyCodeLine{905 \{}
+\DoxyCodeLine{906     \textcolor{keywordflow}{if} (0 == count)}
+\DoxyCodeLine{907         \textcolor{keywordflow}{return} \mbox{\hyperlink{pico__ml_8h_a184e62d2f45361e7d80cd6b5c799e0ad}{pm\_b2\_make}}(0.0f, 0.0f, 0.0f, 0.0f);}
+\DoxyCodeLine{908 }
+\DoxyCodeLine{909     \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} min\_x = vertices[0].\mbox{\hyperlink{structpm__v2_a59252ad8edb4c86e492b30e9ff9c61d5}{x}};}
+\DoxyCodeLine{910     \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} min\_y = vertices[0].\mbox{\hyperlink{structpm__v2_a8eca7e3db8a4cc97472229a104b15d3f}{y}};}
+\DoxyCodeLine{911     \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} max\_x = vertices[0].\mbox{\hyperlink{structpm__v2_a59252ad8edb4c86e492b30e9ff9c61d5}{x}};}
+\DoxyCodeLine{912     \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} max\_y = vertices[0].\mbox{\hyperlink{structpm__v2_a8eca7e3db8a4cc97472229a104b15d3f}{y}};}
+\DoxyCodeLine{913 }
+\DoxyCodeLine{914     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < count; i++)}
+\DoxyCodeLine{915     \{}
+\DoxyCodeLine{916         \textcolor{keywordflow}{if} (vertices[i].x < min\_x)}
+\DoxyCodeLine{917             min\_x = vertices[i].\mbox{\hyperlink{structpm__v2_a59252ad8edb4c86e492b30e9ff9c61d5}{x}};}
+\DoxyCodeLine{918 }
+\DoxyCodeLine{919         \textcolor{keywordflow}{if} (vertices[i].y < min\_x)}
+\DoxyCodeLine{920             min\_y = vertices[i].\mbox{\hyperlink{structpm__v2_a8eca7e3db8a4cc97472229a104b15d3f}{y}};}
+\DoxyCodeLine{921 }
+\DoxyCodeLine{922         \textcolor{keywordflow}{if} (vertices[i].x > max\_x)}
+\DoxyCodeLine{923             max\_x = vertices[i].\mbox{\hyperlink{structpm__v2_a59252ad8edb4c86e492b30e9ff9c61d5}{x}};}
+\DoxyCodeLine{924 }
+\DoxyCodeLine{925         \textcolor{keywordflow}{if} (vertices[i].y > max\_y)}
+\DoxyCodeLine{926             max\_y = vertices[i].\mbox{\hyperlink{structpm__v2_a8eca7e3db8a4cc97472229a104b15d3f}{y}};}
+\DoxyCodeLine{927     \}}
+\DoxyCodeLine{928 }
+\DoxyCodeLine{929     \mbox{\hyperlink{structpm__b2}{pm\_b2}} out;}
+\DoxyCodeLine{930     out.\mbox{\hyperlink{structpm__b2_a7a16a17b03dfb5aa25754ad5a1696ef8}{x}} = min\_x;}
+\DoxyCodeLine{931     out.\mbox{\hyperlink{structpm__b2_a5a4138612c10f90454d757971b1ff9a2}{y}} = min\_y;}
+\DoxyCodeLine{932     out.\mbox{\hyperlink{structpm__b2_a6aa46a68e09fc94881ef6cb3cdebbead}{w}} = \mbox{\hyperlink{pico__ml_8h_a35fed208974957b54f8cb0f97439bb94}{pm\_abs}}(max\_x -\/ min\_x);}
+\DoxyCodeLine{933     out.\mbox{\hyperlink{structpm__b2_a002a2ad944538fe0a974a53904fc7974}{h}} = \mbox{\hyperlink{pico__ml_8h_a35fed208974957b54f8cb0f97439bb94}{pm\_abs}}(max\_y -\/ min\_y);}
+\DoxyCodeLine{934     \textcolor{keywordflow}{return} out;}
+\DoxyCodeLine{935 \}}
+\DoxyCodeLine{936 }
+\DoxyCodeLine{937 }
+\DoxyCodeLine{938 \textcolor{comment}{/*}}
+\DoxyCodeLine{939 \textcolor{comment}{ * Mersenne Twister random number generator. Based on}}
+\DoxyCodeLine{940 \textcolor{comment}{ * https://github.com/ESultanik/mtwister by Evan Sultanik (Public Domain).}}
+\DoxyCodeLine{941 \textcolor{comment}{ */}}
+\DoxyCodeLine{942 }
+\DoxyCodeLine{943 \textcolor{preprocessor}{\#define PM\_STATE\_VECTOR\_LEN 624}}
+\DoxyCodeLine{944 \textcolor{preprocessor}{\#define PM\_STATE\_VECTOR\_M   397}}
+\DoxyCodeLine{945 \textcolor{preprocessor}{\#define PM\_UPPER\_MASK       0x80000000}}
+\DoxyCodeLine{946 \textcolor{preprocessor}{\#define PM\_LOWER\_MASK       0x7fffffff}}
+\DoxyCodeLine{947 \textcolor{preprocessor}{\#define PM\_TEMPERING\_MASK\_B 0x9d2c5680}}
+\DoxyCodeLine{948 \textcolor{preprocessor}{\#define PM\_TEMPERING\_MASK\_C 0xefc60000}}
+\DoxyCodeLine{949 }
+\DoxyCodeLine{950 \textcolor{keywordtype}{void} \mbox{\hyperlink{pico__ml_8h_a911426b04c7a2db7d9d6fdaaa52b0fac}{pm\_rng\_seed}}(\mbox{\hyperlink{structpm__rng__t}{pm\_rng\_t}}* rng, uint32\_t seed)}
+\DoxyCodeLine{951 \{}
+\DoxyCodeLine{952     rng-\/>\mbox{\hyperlink{structpm__rng__t_a728c46e97bd8a0eaffbd464a44965674}{mt}}[0] = seed \& 0xffffffff;}
+\DoxyCodeLine{953 }
+\DoxyCodeLine{954     \textcolor{keywordflow}{for} (rng-\/>\mbox{\hyperlink{structpm__rng__t_a8184eb9ef260cd873982745dfb7101c0}{index}} = 1; rng-\/>\mbox{\hyperlink{structpm__rng__t_a8184eb9ef260cd873982745dfb7101c0}{index}} < \mbox{\hyperlink{pico__ml_8h_af00b40c7e1e35fb61acfcc8a58bb5ba2}{PM\_STATE\_VECTOR\_LEN}}; rng-\/>\mbox{\hyperlink{structpm__rng__t_a8184eb9ef260cd873982745dfb7101c0}{index}}++)}
+\DoxyCodeLine{955     \{}
+\DoxyCodeLine{956         rng-\/>\mbox{\hyperlink{structpm__rng__t_a728c46e97bd8a0eaffbd464a44965674}{mt}}[rng-\/>\mbox{\hyperlink{structpm__rng__t_a8184eb9ef260cd873982745dfb7101c0}{index}}] = (69069 * rng-\/>\mbox{\hyperlink{structpm__rng__t_a728c46e97bd8a0eaffbd464a44965674}{mt}}[rng-\/>\mbox{\hyperlink{structpm__rng__t_a8184eb9ef260cd873982745dfb7101c0}{index}} -\/ 1]) \& 0xffffffff;}
+\DoxyCodeLine{957     \}}
+\DoxyCodeLine{958 \}}
+\DoxyCodeLine{959 }
+\DoxyCodeLine{960 uint32\_t \mbox{\hyperlink{pico__ml_8h_a6c3c6d21bbb19790381c2f3b2eaf1601}{pm\_random}}(\mbox{\hyperlink{structpm__rng__t}{pm\_rng\_t}}* rng)}
+\DoxyCodeLine{961 \{}
+\DoxyCodeLine{962     uint32\_t y;}
+\DoxyCodeLine{963     \textcolor{keyword}{static} \textcolor{keyword}{const} uint32\_t mag[2] = \{0x0, 0x9908b0df\};}
+\DoxyCodeLine{964 }
+\DoxyCodeLine{965     \textcolor{keywordflow}{if} (rng-\/>\mbox{\hyperlink{structpm__rng__t_a8184eb9ef260cd873982745dfb7101c0}{index}} >= \mbox{\hyperlink{pico__ml_8h_af00b40c7e1e35fb61acfcc8a58bb5ba2}{PM\_STATE\_VECTOR\_LEN}} || rng-\/>\mbox{\hyperlink{structpm__rng__t_a8184eb9ef260cd873982745dfb7101c0}{index}} < 0)}
+\DoxyCodeLine{966     \{}
+\DoxyCodeLine{967         \textcolor{keywordtype}{int} kk;}
+\DoxyCodeLine{968 }
+\DoxyCodeLine{969         \textcolor{keywordflow}{if} (rng-\/>\mbox{\hyperlink{structpm__rng__t_a8184eb9ef260cd873982745dfb7101c0}{index}} >= \mbox{\hyperlink{pico__ml_8h_af00b40c7e1e35fb61acfcc8a58bb5ba2}{PM\_STATE\_VECTOR\_LEN}} + 1 || rng-\/>\mbox{\hyperlink{structpm__rng__t_a8184eb9ef260cd873982745dfb7101c0}{index}} < 0)}
+\DoxyCodeLine{970         \{}
+\DoxyCodeLine{971             \mbox{\hyperlink{pico__ml_8h_a911426b04c7a2db7d9d6fdaaa52b0fac}{pm\_rng\_seed}}(rng, 4357);}
+\DoxyCodeLine{972         \}}
+\DoxyCodeLine{973 }
+\DoxyCodeLine{974         \textcolor{keywordflow}{for} (kk = 0; kk < \mbox{\hyperlink{pico__ml_8h_af00b40c7e1e35fb61acfcc8a58bb5ba2}{PM\_STATE\_VECTOR\_LEN}} -\/ PM\_STATE\_VECTOR\_M; kk++)}
+\DoxyCodeLine{975         \{}
+\DoxyCodeLine{976             y = (rng-\/>\mbox{\hyperlink{structpm__rng__t_a728c46e97bd8a0eaffbd464a44965674}{mt}}[kk] \& PM\_UPPER\_MASK) | (rng-\/>\mbox{\hyperlink{structpm__rng__t_a728c46e97bd8a0eaffbd464a44965674}{mt}}[kk + 1] \& PM\_LOWER\_MASK);}
+\DoxyCodeLine{977             rng-\/>\mbox{\hyperlink{structpm__rng__t_a728c46e97bd8a0eaffbd464a44965674}{mt}}[kk] = rng-\/>\mbox{\hyperlink{structpm__rng__t_a728c46e97bd8a0eaffbd464a44965674}{mt}}[kk + PM\_STATE\_VECTOR\_M] \string^ (y >> 1) \string^ mag[y \& 0x1];}
+\DoxyCodeLine{978         \}}
+\DoxyCodeLine{979 }
+\DoxyCodeLine{980         \textcolor{keywordflow}{for}(; kk < \mbox{\hyperlink{pico__ml_8h_af00b40c7e1e35fb61acfcc8a58bb5ba2}{PM\_STATE\_VECTOR\_LEN}} -\/ 1; kk++)}
+\DoxyCodeLine{981         \{}
+\DoxyCodeLine{982             y = (rng-\/>\mbox{\hyperlink{structpm__rng__t_a728c46e97bd8a0eaffbd464a44965674}{mt}}[kk] \& PM\_UPPER\_MASK) | (rng-\/>\mbox{\hyperlink{structpm__rng__t_a728c46e97bd8a0eaffbd464a44965674}{mt}}[kk + 1] \& PM\_LOWER\_MASK);}
+\DoxyCodeLine{983             rng-\/>\mbox{\hyperlink{structpm__rng__t_a728c46e97bd8a0eaffbd464a44965674}{mt}}[kk] = rng-\/>\mbox{\hyperlink{structpm__rng__t_a728c46e97bd8a0eaffbd464a44965674}{mt}}[kk + (PM\_STATE\_VECTOR\_M -\/ \mbox{\hyperlink{pico__ml_8h_af00b40c7e1e35fb61acfcc8a58bb5ba2}{PM\_STATE\_VECTOR\_LEN}})] \string^ (y >> 1) \string^ mag[y \& 0x1];}
+\DoxyCodeLine{984         \}}
+\DoxyCodeLine{985 }
+\DoxyCodeLine{986         y = (rng-\/>\mbox{\hyperlink{structpm__rng__t_a728c46e97bd8a0eaffbd464a44965674}{mt}}[\mbox{\hyperlink{pico__ml_8h_af00b40c7e1e35fb61acfcc8a58bb5ba2}{PM\_STATE\_VECTOR\_LEN}} -\/ 1] \& PM\_UPPER\_MASK) | (rng-\/>\mbox{\hyperlink{structpm__rng__t_a728c46e97bd8a0eaffbd464a44965674}{mt}}[0] \& PM\_LOWER\_MASK);}
+\DoxyCodeLine{987 }
+\DoxyCodeLine{988         rng-\/>\mbox{\hyperlink{structpm__rng__t_a728c46e97bd8a0eaffbd464a44965674}{mt}}[\mbox{\hyperlink{pico__ml_8h_af00b40c7e1e35fb61acfcc8a58bb5ba2}{PM\_STATE\_VECTOR\_LEN}} -\/ 1] = rng-\/>\mbox{\hyperlink{structpm__rng__t_a728c46e97bd8a0eaffbd464a44965674}{mt}}[PM\_STATE\_VECTOR\_M -\/ 1] \string^ (y >> 1) \string^ mag[y \& 0x1];}
+\DoxyCodeLine{989         rng-\/>\mbox{\hyperlink{structpm__rng__t_a8184eb9ef260cd873982745dfb7101c0}{index}} = 0;}
+\DoxyCodeLine{990     \}}
+\DoxyCodeLine{991 }
+\DoxyCodeLine{992     y = rng-\/>\mbox{\hyperlink{structpm__rng__t_a728c46e97bd8a0eaffbd464a44965674}{mt}}[rng-\/>\mbox{\hyperlink{structpm__rng__t_a8184eb9ef260cd873982745dfb7101c0}{index}}++];}
+\DoxyCodeLine{993     y \string^= (y >> 11);}
+\DoxyCodeLine{994     y \string^= (y << 7)  \& PM\_TEMPERING\_MASK\_B;}
+\DoxyCodeLine{995     y \string^= (y << 15) \& PM\_TEMPERING\_MASK\_C;}
+\DoxyCodeLine{996     y \string^= (y >> 18);}
+\DoxyCodeLine{997 }
+\DoxyCodeLine{998     \textcolor{keywordflow}{return} y;}
+\DoxyCodeLine{999 \}}
+\DoxyCodeLine{1000 }
+\DoxyCodeLine{1001 \mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}} \mbox{\hyperlink{pico__ml_8h_a2d22f8f53f2d3e203857fe17e8d424d2}{pm\_random\_float}}(\mbox{\hyperlink{structpm__rng__t}{pm\_rng\_t}}* rng)}
+\DoxyCodeLine{1002 \{}
+\DoxyCodeLine{1003     \textcolor{keywordflow}{return} (\mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}})\mbox{\hyperlink{pico__ml_8h_a6c3c6d21bbb19790381c2f3b2eaf1601}{pm\_random}}(rng) / (\mbox{\hyperlink{pico__ml_8h_a5f6d95b45d6581a0f4fedb0abec2c4ed}{pm\_flt}})UINT32\_MAX;}
+\DoxyCodeLine{1004 \}}
+\DoxyCodeLine{1005 }
+\DoxyCodeLine{1006 }
+\DoxyCodeLine{1007 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// PM\_IMPLEMENTATION}}
+\DoxyCodeLine{1008 }
+\DoxyCodeLine{1009 \textcolor{comment}{/*}}
+\DoxyCodeLine{1010 \textcolor{comment}{    -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1011 \textcolor{comment}{    This software is available under two licenses (A) or (B). You may choose}}
+\DoxyCodeLine{1012 \textcolor{comment}{    either one as you wish:}}
+\DoxyCodeLine{1013 \textcolor{comment}{    -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1014 \textcolor{comment}{}}
+\DoxyCodeLine{1015 \textcolor{comment}{    (A) The zlib License}}
+\DoxyCodeLine{1016 \textcolor{comment}{}}
+\DoxyCodeLine{1017 \textcolor{comment}{    Copyright (c) 2021 James McLean}}
+\DoxyCodeLine{1018 \textcolor{comment}{}}
+\DoxyCodeLine{1019 \textcolor{comment}{    This software is provided 'as-\/is', without any express or implied warranty.}}
+\DoxyCodeLine{1020 \textcolor{comment}{    In no event will the authors be held liable for any damages arising from the}}
+\DoxyCodeLine{1021 \textcolor{comment}{    use of this software.}}
+\DoxyCodeLine{1022 \textcolor{comment}{}}
+\DoxyCodeLine{1023 \textcolor{comment}{    Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{1024 \textcolor{comment}{    including commercial applications, and to alter it and redistribute it}}
+\DoxyCodeLine{1025 \textcolor{comment}{    freely, subject to the following restrictions:}}
+\DoxyCodeLine{1026 \textcolor{comment}{}}
+\DoxyCodeLine{1027 \textcolor{comment}{    1. The origin of this software must not be misrepresented; you must not}}
+\DoxyCodeLine{1028 \textcolor{comment}{    claim that you wrote the original software. If you use this software in a}}
+\DoxyCodeLine{1029 \textcolor{comment}{    product, an acknowledgment in the product documentation would be appreciated}}
+\DoxyCodeLine{1030 \textcolor{comment}{    but is not required.}}
+\DoxyCodeLine{1031 \textcolor{comment}{}}
+\DoxyCodeLine{1032 \textcolor{comment}{    2. Altered source versions must be plainly marked as such, and must not be}}
+\DoxyCodeLine{1033 \textcolor{comment}{    misrepresented as being the original software.}}
+\DoxyCodeLine{1034 \textcolor{comment}{}}
+\DoxyCodeLine{1035 \textcolor{comment}{    3. This notice may not be removed or altered from any source distribution.}}
+\DoxyCodeLine{1036 \textcolor{comment}{}}
+\DoxyCodeLine{1037 \textcolor{comment}{    -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{1038 \textcolor{comment}{}}
+\DoxyCodeLine{1039 \textcolor{comment}{    (B) Public Domain (www.unlicense.org)}}
+\DoxyCodeLine{1040 \textcolor{comment}{}}
+\DoxyCodeLine{1041 \textcolor{comment}{    This is free and unencumbered software released into the public domain.}}
+\DoxyCodeLine{1042 \textcolor{comment}{}}
+\DoxyCodeLine{1043 \textcolor{comment}{    Anyone is free to copy, modify, publish, use, compile, sell, or distribute}}
+\DoxyCodeLine{1044 \textcolor{comment}{    this software, either in source code form or as a compiled binary, for any}}
+\DoxyCodeLine{1045 \textcolor{comment}{    purpose, commercial or non-\/commercial, and by any means.}}
+\DoxyCodeLine{1046 \textcolor{comment}{}}
+\DoxyCodeLine{1047 \textcolor{comment}{    In jurisdictions that recognize copyright laws, the author or authors of}}
+\DoxyCodeLine{1048 \textcolor{comment}{    this software dedicate any and all copyright interest in the software to the}}
+\DoxyCodeLine{1049 \textcolor{comment}{    public domain. We make this dedication for the benefit of the public at}}
+\DoxyCodeLine{1050 \textcolor{comment}{    large and to the detriment of our heirs and successors. We intend this}}
+\DoxyCodeLine{1051 \textcolor{comment}{    dedication to be an overt act of relinquishment in perpetuity of all present}}
+\DoxyCodeLine{1052 \textcolor{comment}{    and future rights to this software under copyright law.}}
+\DoxyCodeLine{1053 \textcolor{comment}{}}
+\DoxyCodeLine{1054 \textcolor{comment}{    THE SOFTWARE IS PROVIDED "{}AS IS"{}, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR}}
+\DoxyCodeLine{1055 \textcolor{comment}{    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,}}
+\DoxyCodeLine{1056 \textcolor{comment}{    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE}}
+\DoxyCodeLine{1057 \textcolor{comment}{    AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN}}
+\DoxyCodeLine{1058 \textcolor{comment}{    ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION}}
+\DoxyCodeLine{1059 \textcolor{comment}{    WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.}}
+\DoxyCodeLine{1060 \textcolor{comment}{*/}}
+\DoxyCodeLine{1061 }
+
+\end{DoxyCode}
