@@ -221,8 +221,8 @@ $(function() {
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;{</div>
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    <span class="stringliteral">&quot;TRACE&quot;</span>,</div>
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    <span class="stringliteral">&quot;DEBUG&quot;</span>,</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    <span class="stringliteral">&quot;INFO&quot;</span>,</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    <span class="stringliteral">&quot;WARN&quot;</span>,</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    <span class="stringliteral">&quot;INFO &quot;</span>,</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    <span class="stringliteral">&quot;WARN &quot;</span>,</div>
 <div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    <span class="stringliteral">&quot;ERROR&quot;</span>,</div>
 <div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    <span class="stringliteral">&quot;FATAL&quot;</span>,</div>
 <div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    0</div>
@@ -593,7 +593,7 @@ $(function() {
 <div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;pl_append_file(<span class="keywordtype">char</span>* entry_str, <span class="keyword">const</span> <span class="keywordtype">char</span>* file, <span class="keywordtype">unsigned</span> line)</div>
 <div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;{</div>
 <div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;    <span class="keywordtype">char</span> file_str[PL_FILE_LEN];</div>
-<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;    snprintf(file_str, <span class="keyword">sizeof</span>(file_str), <span class="stringliteral">&quot;%s:%u &quot;</span>, file, line);</div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;    snprintf(file_str, <span class="keyword">sizeof</span>(file_str), <span class="stringliteral">&quot;[%s:%u] &quot;</span>, file, line);</div>
 <div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;    strncat(entry_str, file_str, PL_FILE_LEN);</div>
 <div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;}</div>
 <div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160; </div>

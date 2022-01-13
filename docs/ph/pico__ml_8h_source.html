@@ -481,10 +481,10 @@ $(function() {
 <div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="pico__ml_8h.html#a0aca2cf04f618c70a090d879b54fda69">pm_normalize_angle</a>(<a class="code" href="pico__ml_8h.html#afe458996a21af90f7a1310e103f5d7e3">pm_atan2</a>(tmp.<a class="code" href="structpm__v2.html#a8eca7e3db8a4cc97472229a104b15d3f">y</a>, tmp.<a class="code" href="structpm__v2.html#a59252ad8edb4c86e492b30e9ff9c61d5">x</a>));</div>
 <div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;    }</div>
 <div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160; </div>
-<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;   <span class="comment">// Calculate angle</span></div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;    <span class="comment">// Calculate angle</span></div>
 <div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;    <a class="code" href="pico__ml_8h.html#a5f6d95b45d6581a0f4fedb0abec2c4ed">pm_flt</a> angle = <a class="code" href="pico__ml_8h.html#ae1d7514403bcc1a95f6bfcf2dbd7185b">pm_acos</a>(dot) * alpha;</div>
 <div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160; </div>
-<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;    <span class="comment">// Gram–Schmidt (construct a new vector &#39;v0&#39; that is orthogonal to v1)</span></div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;    <span class="comment">// Gram-Schmidt(construct a new vector &#39;v0&#39; that is orthogonal to &#39;v1&#39;)</span></div>
 <div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;    <a class="code" href="structpm__v2.html">pm_v2</a> v0  = <a class="code" href="pico__ml_8h.html#a62bdc75164ee5cbad92ebfd12877ad7b">pm_v2_sub</a>(v2, <a class="code" href="pico__ml_8h.html#aab017bc236d794e4b7080ce0a7db76c4">pm_v2_scale</a>(v1, dot));</div>
 <div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;    <a class="code" href="pico__ml_8h.html#a40be3d3e500d44b9d9ce96f05a5d5be6">pm_v2_normalize</a>(&amp;v0);</div>
 <div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160; </div>
