@@ -538,7 +538,7 @@ Constants:</h2>
 <p>Registers (adds appender to logger) and enables the specified appender. An appender writes a log entry to an output stream. This could be a console, a file, a network connection, etc...</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">appender</td><td>Pointer to the appender function to register. An appender function has the signature, <code>void appender_func(const char* p_entry, void* p_udata)</code></td></tr>
+    <tr><td class="paramname">appender_fp</td><td>Pointer to the appender function to register. An appender function has the signature, <code>void appender_func(const char* p_entry, void* p_udata)</code></td></tr>
     <tr><td class="paramname">level</td><td>The appender's log level</td></tr>
     <tr><td class="paramname">udata</td><td>A pointer supplied to the appender function when writing a log entry. This pointer is not modified by the logger. If not required, pass in NULL for this parameter.</td></tr>
   </table>
@@ -728,8 +728,9 @@ Constants:</h2>
 
 <p>Sets the logging level. </p>
 <p>Sets the logging level. Only those messages of equal or higher priority (severity) than this value will be logged.</p>
-<p>@aaram id The appender to hold the lock </p><dl class="params"><dt>Parameters</dt><dd>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">id</td><td>The appender to hold the lock </td></tr>
     <tr><td class="paramname">level</td><td>The new appender logging threshold. </td></tr>
   </table>
   </dd>
