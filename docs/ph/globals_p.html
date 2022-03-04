@@ -595,11 +595,11 @@ $(function() {
 <li>pm_b2_make()
 : <a class="el" href="pico__math_8h.html#a184e62d2f45361e7d80cd6b5c799e0ad">pico_math.h</a>
 </li>
-<li>pm_b2_make_raw()
-: <a class="el" href="pico__math_8h.html#a3094ea99d7b794fcc4fe336d1d88ab34">pico_math.h</a>
+<li>pm_b2_make_minmax()
+: <a class="el" href="pico__math_8h.html#af78b50f0739c08289b4fb33c2bf7e39c">pico_math.h</a>
 </li>
-<li>pm_b2_min()
-: <a class="el" href="pico__math_8h.html#af63c9963bae055a8a10bdb7cb9ac29ce">pico_math.h</a>
+<li>pm_b2_min_aabb()
+: <a class="el" href="pico__math_8h.html#a2cbc5b38865229d5380cf50356c5ea51">pico_math.h</a>
 </li>
 <li>pm_b2_pos()
 : <a class="el" href="pico__math_8h.html#ad3d0b376f283e6be6bec1ae7d6cd6333">pico_math.h</a>
@@ -608,7 +608,7 @@ $(function() {
 : <a class="el" href="pico__math_8h.html#a535241a5029512fe52f87e17b20d3c7f">pico_math.h</a>
 </li>
 <li>pm_b2_transform()
-: <a class="el" href="pico__math_8h.html#a6d3bc9860bc604c30075222a8c84267e">pico_math.h</a>
+: <a class="el" href="pico__math_8h.html#a3f75b9c18d7fd89934d1eeb8f7338afc">pico_math.h</a>
 </li>
 <li>pm_b2_union()
 : <a class="el" href="pico__math_8h.html#a46fc703bc55bee2409d7145dc7d62302">pico_math.h</a>
@@ -731,7 +731,7 @@ $(function() {
 : <a class="el" href="pico__math_8h.html#ab97bb22a94c8b508f315f7ba7cb9fcc6">pico_math.h</a>
 </li>
 <li>pm_t2_map()
-: <a class="el" href="pico__math_8h.html#af49cf29d26ca54d1fd1abcdd1341373f">pico_math.h</a>
+: <a class="el" href="pico__math_8h.html#a5dcbe7cf94d335e4e8001426ef0a0afd">pico_math.h</a>
 </li>
 <li>pm_t2_mult()
 : <a class="el" href="pico__math_8h.html#af52c8ce036b825e8fe4d3c7fd662c95d">pico_math.h</a>
@@ -812,7 +812,7 @@ $(function() {
 : <a class="el" href="pico__math_8h.html#adb3b29ad8d17859a26e190bc4cded369">pico_math.h</a>
 </li>
 <li>pm_v2_polar()
-: <a class="el" href="pico__math_8h.html#abfdc134622889bfb3a0d9a148f496325">pico_math.h</a>
+: <a class="el" href="pico__math_8h.html#ab5ca59104586d2a86e873aa3e360cec5">pico_math.h</a>
 </li>
 <li>pm_v2_proj()
 : <a class="el" href="pico__math_8h.html#afdc023283d135f80d19ae7a2782d36d4">pico_math.h</a>
@@ -822,6 +822,36 @@ $(function() {
 </li>
 <li>pm_v2_sub()
 : <a class="el" href="pico__math_8h.html#a62bdc75164ee5cbad92ebfd12877ad7b">pico_math.h</a>
+</li>
+<li>pm_v2_zero()
+: <a class="el" href="pico__math_8h.html#a6c109cfa848e2545bd16f25c8827118b">pico_math.h</a>
+</li>
+<li>pt_from_msec()
+: <a class="el" href="pico__time_8h.html#ad5a91366f5e2c4766eb683fd75788715">pico_time.h</a>
+</li>
+<li>pt_from_sec()
+: <a class="el" href="pico__time_8h.html#af0f9420089b3457f71bf7fbfd717470c">pico_time.h</a>
+</li>
+<li>pt_from_usec()
+: <a class="el" href="pico__time_8h.html#a4d86a8e38902a7a793b823d855f090df">pico_time.h</a>
+</li>
+<li>pt_now()
+: <a class="el" href="pico__time_8h.html#a6fea90459cf68dd57684282efc2a765b">pico_time.h</a>
+</li>
+<li>pt_sleep()
+: <a class="el" href="pico__time_8h.html#afe9eaa0614163b1f6e0b54cbff93310c">pico_time.h</a>
+</li>
+<li>pt_to_msec()
+: <a class="el" href="pico__time_8h.html#a2bf7f7743ae981db1e940409d8590500">pico_time.h</a>
+</li>
+<li>pt_to_sec()
+: <a class="el" href="pico__time_8h.html#a95758d996a21c6acb3370c0e704dad81">pico_time.h</a>
+</li>
+<li>pt_to_usec()
+: <a class="el" href="pico__time_8h.html#a358d95a81ae177f7ecb59b94ea84cd23">pico_time.h</a>
+</li>
+<li>ptime_t
+: <a class="el" href="pico__time_8h.html#ab79ee746422e20141a3e7c6c47f750ad">pico_time.h</a>
 </li>
 <li>pu_assert()
 : <a class="el" href="pico__unit_8h.html#ab5041543a5af08e8aa67f80a238a017e">pico_unit.h</a>
@@ -841,17 +871,17 @@ $(function() {
 <li>pu_print_stats()
 : <a class="el" href="pico__unit_8h.html#a7514088d1d7d27fe6367a8c57e86adaf">pico_unit.h</a>
 </li>
-<li>PU_RUN_SUITE
-: <a class="el" href="pico__unit_8h.html#aae717af95c308fa17538ba93800bd7fe">pico_unit.h</a>
-</li>
 <li>pu_run_suite()
 : <a class="el" href="pico__unit_8h.html#a6b34c80d1840604e48f564ab4b0e5089">pico_unit.h</a>
 </li>
-<li>PU_RUN_TEST
-: <a class="el" href="pico__unit_8h.html#a6213a2cd4b2d43ecbf0f3cb3ffe5870b">pico_unit.h</a>
+<li>PU_RUN_SUITE
+: <a class="el" href="pico__unit_8h.html#aae717af95c308fa17538ba93800bd7fe">pico_unit.h</a>
 </li>
 <li>pu_run_test()
 : <a class="el" href="pico__unit_8h.html#a4f7e8e5cdbb28b2fcc1669cba6b8c09d">pico_unit.h</a>
+</li>
+<li>PU_RUN_TEST
+: <a class="el" href="pico__unit_8h.html#a6213a2cd4b2d43ecbf0f3cb3ffe5870b">pico_unit.h</a>
 </li>
 <li>pu_setup()
 : <a class="el" href="pico__unit_8h.html#aff17eb6acdeeb7d502343f6358de559e">pico_unit.h</a>

@@ -1,14 +1,14 @@
 var indexSectionsWithContent =
 {
-  0: "acegimprtuxy",
+  0: "_acegimprtuxy",
   1: "p",
   2: "pr",
   3: "ep",
   4: "acimptuxy",
   5: "ep",
-  6: "ep",
-  7: "egp",
-  8: "p",
+  6: "p",
+  7: "gp",
+  8: "_p",
   9: "p"
 };
 

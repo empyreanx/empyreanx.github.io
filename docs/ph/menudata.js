@@ -33,7 +33,8 @@ var menudata={children:[
 {text:"File List",url:"files.html"},
 {text:"File Members",url:"globals.html",children:[
 {text:"All",url:"globals.html",children:[
-{text:"e",url:"globals.html#index_e"},
+{text:"_",url:"globals.html#index__5F"},
+{text:"e",url:"globals_e.html#index_e"},
 {text:"g",url:"globals_g.html#index_g"},
 {text:"p",url:"globals_p.html#index_p"}]},
 {text:"Functions",url:"globals_func.html",children:[
@@ -42,8 +43,8 @@ var menudata={children:[
 {text:"Typedefs",url:"globals_type.html"},
 {text:"Enumerations",url:"globals_enum.html"},
 {text:"Enumerator",url:"globals_eval.html",children:[
-{text:"e",url:"globals_eval.html#index_e"},
 {text:"g",url:"globals_eval.html#index_g"},
 {text:"p",url:"globals_eval.html#index_p"}]},
 {text:"Macros",url:"globals_defs.html",children:[
+{text:"_",url:"globals_defs.html#index__5F"},
 {text:"p",url:"globals_defs.html#index_p"}]}]}]}]}

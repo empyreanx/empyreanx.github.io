@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['color_3',['color',['../structpgl__vertex__t.html#a3cfb8b24947e1ef338d64bab2ba02c13',1,'pgl_vertex_t']]],
-  ['color_5fdst_4',['color_dst',['../structpgl__blend__mode__t.html#a418ed3da89284581786c6667f3aaf5d0',1,'pgl_blend_mode_t']]],
-  ['color_5feq_5',['color_eq',['../structpgl__blend__mode__t.html#a403dcc004fb5d25d3b51015379e0fb01',1,'pgl_blend_mode_t']]],
-  ['color_5fsrc_6',['color_src',['../structpgl__blend__mode__t.html#ae2554cc79581829888b5cc5cecbb6ed5',1,'pgl_blend_mode_t']]]
+  ['alpha_5fdst_1',['alpha_dst',['../structpgl__blend__mode__t.html#a12677def0d5e911b9107dd9f264140e9',1,'pgl_blend_mode_t']]],
+  ['alpha_5feq_2',['alpha_eq',['../structpgl__blend__mode__t.html#a442213c486edb0415416af294c2992c0',1,'pgl_blend_mode_t']]],
+  ['alpha_5fsrc_3',['alpha_src',['../structpgl__blend__mode__t.html#adff246da7b448ffac7d5984ee458deda',1,'pgl_blend_mode_t']]]
 ];
