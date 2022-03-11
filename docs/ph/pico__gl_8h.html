@@ -71,7 +71,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>A powerful 2D graphics library written in C99.  
+<p>A powerful OpenGL-based graphics library written in C99.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &lt;stdarg.h&gt;</code><br />
@@ -248,9 +248,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a4b37dad31b321652a3793b9d07a2cd03"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gl_8h.html#a4b37dad31b321652a3793b9d07a2cd03">pgl_get_error_str</a> (<a class="el" href="pico__gl_8h.html#aea66b8b5691c55af96a4baff9bb53d29">pgl_error_t</a> code)</td></tr>
 <tr class="memdesc:a4b37dad31b321652a3793b9d07a2cd03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the string associated with the specified error code.  <a href="pico__gl_8h.html#a4b37dad31b321652a3793b9d07a2cd03">More...</a><br /></td></tr>
 <tr class="separator:a4b37dad31b321652a3793b9d07a2cd03"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad36d679887188aa5b8e9ffe8914df10f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pico__gl_8h.html#af51fa12f49452bafcb60d1904589f730">pgl_ctx_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gl_8h.html#ad36d679887188aa5b8e9ffe8914df10f">pgl_create_context</a> (uint32_t w, uint32_t h, uint32_t samples, bool srgb, void *mem_ctx)</td></tr>
-<tr class="memdesc:ad36d679887188aa5b8e9ffe8914df10f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of the renderer.  <a href="pico__gl_8h.html#ad36d679887188aa5b8e9ffe8914df10f">More...</a><br /></td></tr>
-<tr class="separator:ad36d679887188aa5b8e9ffe8914df10f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33e874cbdeb4135024a23f6341e29459"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pico__gl_8h.html#af51fa12f49452bafcb60d1904589f730">pgl_ctx_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gl_8h.html#a33e874cbdeb4135024a23f6341e29459">pgl_create_context</a> (uint32_t w, uint32_t h, bool depth, uint32_t samples, bool srgb, void *mem_ctx)</td></tr>
+<tr class="memdesc:a33e874cbdeb4135024a23f6341e29459"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of the renderer.  <a href="pico__gl_8h.html#a33e874cbdeb4135024a23f6341e29459">More...</a><br /></td></tr>
+<tr class="separator:a33e874cbdeb4135024a23f6341e29459"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab004ae3553d18d19c78d31e808eb8405"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gl_8h.html#ab004ae3553d18d19c78d31e808eb8405">pgl_destroy_context</a> (<a class="el" href="pico__gl_8h.html#af51fa12f49452bafcb60d1904589f730">pgl_ctx_t</a> *ctx)</td></tr>
 <tr class="memdesc:ab004ae3553d18d19c78d31e808eb8405"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys a context, releasing it's resources.  <a href="pico__gl_8h.html#ab004ae3553d18d19c78d31e808eb8405">More...</a><br /></td></tr>
 <tr class="separator:ab004ae3553d18d19c78d31e808eb8405"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -321,15 +321,15 @@ Functions</h2></td></tr>
 <tr class="memitem:a444ff6757b26bb33e5b93e2e48624ee9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gl_8h.html#a444ff6757b26bb33e5b93e2e48624ee9">pgl_reset_blend_mode</a> (<a class="el" href="pico__gl_8h.html#af51fa12f49452bafcb60d1904589f730">pgl_ctx_t</a> *ctx)</td></tr>
 <tr class="memdesc:a444ff6757b26bb33e5b93e2e48624ee9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the blend mode to standard alpha blending.  <a href="pico__gl_8h.html#a444ff6757b26bb33e5b93e2e48624ee9">More...</a><br /></td></tr>
 <tr class="separator:a444ff6757b26bb33e5b93e2e48624ee9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b4a97eefa6682d1e4afd4c860546033"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gl_8h.html#a9b4a97eefa6682d1e4afd4c860546033">pgl_set_transform</a> (<a class="el" href="pico__gl_8h.html#af51fa12f49452bafcb60d1904589f730">pgl_ctx_t</a> *ctx, const <a class="el" href="pico__gl_8h.html#ad523e0c10b3618d733a586d6ea73a300">pgl_m3_t</a> matrix)</td></tr>
-<tr class="memdesc:a9b4a97eefa6682d1e4afd4c860546033"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the context's global tranformation matrix.  <a href="pico__gl_8h.html#a9b4a97eefa6682d1e4afd4c860546033">More...</a><br /></td></tr>
-<tr class="separator:a9b4a97eefa6682d1e4afd4c860546033"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a199e7739eb1fd3d235c65a60bd8018d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gl_8h.html#a199e7739eb1fd3d235c65a60bd8018d9">pgl_set_transform</a> (<a class="el" href="pico__gl_8h.html#af51fa12f49452bafcb60d1904589f730">pgl_ctx_t</a> *ctx, const <a class="el" href="pico__gl_8h.html#aac7976d8ef6fe32382800ea475241cf4">pgl_m4_t</a> matrix)</td></tr>
+<tr class="memdesc:a199e7739eb1fd3d235c65a60bd8018d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the context's global tranformation matrix.  <a href="pico__gl_8h.html#a199e7739eb1fd3d235c65a60bd8018d9">More...</a><br /></td></tr>
+<tr class="separator:a199e7739eb1fd3d235c65a60bd8018d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf944b47e8c95f85869f45ae4c1bd919"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gl_8h.html#abf944b47e8c95f85869f45ae4c1bd919">pgl_reset_transform</a> (<a class="el" href="pico__gl_8h.html#af51fa12f49452bafcb60d1904589f730">pgl_ctx_t</a> *ctx)</td></tr>
 <tr class="memdesc:abf944b47e8c95f85869f45ae4c1bd919"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the context's transform to the identity matrix.  <a href="pico__gl_8h.html#abf944b47e8c95f85869f45ae4c1bd919">More...</a><br /></td></tr>
 <tr class="separator:abf944b47e8c95f85869f45ae4c1bd919"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeba208a2682548825c6497de81fb2667"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gl_8h.html#aeba208a2682548825c6497de81fb2667">pgl_set_projection</a> (<a class="el" href="pico__gl_8h.html#af51fa12f49452bafcb60d1904589f730">pgl_ctx_t</a> *ctx, const <a class="el" href="pico__gl_8h.html#ad523e0c10b3618d733a586d6ea73a300">pgl_m3_t</a> matrix)</td></tr>
-<tr class="memdesc:aeba208a2682548825c6497de81fb2667"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a context's global projecton matrix.  <a href="pico__gl_8h.html#aeba208a2682548825c6497de81fb2667">More...</a><br /></td></tr>
-<tr class="separator:aeba208a2682548825c6497de81fb2667"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe57e1271f3b4f06d9100f8de34786d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gl_8h.html#afe57e1271f3b4f06d9100f8de34786d6">pgl_set_projection</a> (<a class="el" href="pico__gl_8h.html#af51fa12f49452bafcb60d1904589f730">pgl_ctx_t</a> *ctx, const <a class="el" href="pico__gl_8h.html#aac7976d8ef6fe32382800ea475241cf4">pgl_m4_t</a> matrix)</td></tr>
+<tr class="memdesc:afe57e1271f3b4f06d9100f8de34786d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a context's global projecton matrix.  <a href="pico__gl_8h.html#afe57e1271f3b4f06d9100f8de34786d6">More...</a><br /></td></tr>
+<tr class="separator:afe57e1271f3b4f06d9100f8de34786d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a10b5b7f744fdcbd9ab98162519f51c9e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gl_8h.html#a10b5b7f744fdcbd9ab98162519f51c9e">pgl_reset_projection</a> (<a class="el" href="pico__gl_8h.html#af51fa12f49452bafcb60d1904589f730">pgl_ctx_t</a> *ctx)</td></tr>
 <tr class="memdesc:a10b5b7f744fdcbd9ab98162519f51c9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the context's project to the identity matrix.  <a href="pico__gl_8h.html#a10b5b7f744fdcbd9ab98162519f51c9e">More...</a><br /></td></tr>
 <tr class="separator:a10b5b7f744fdcbd9ab98162519f51c9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -428,8 +428,8 @@ Functions</h2></td></tr>
 <tr class="separator:a935cfaf24d726d4e691ae4c6678632bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A powerful 2D graphics library written in C99. </p>
-<p>============================================================================= WARNING: This file was automatically generated on 03/03/2022 21:46:49. </p>
+<div class="textblock"><p>A powerful OpenGL-based graphics library written in C99. </p>
+<p>============================================================================= WARNING: This file was automatically generated on 11/03/2022 14:04:35. </p>
 <h1><a class="anchor" id="autotoc_md7"></a>
 DO NOT EDIT!</h1>
 <hr  />
@@ -1054,8 +1054,8 @@ Todo:</h2>
 
 </div>
 </div>
-<a id="ad36d679887188aa5b8e9ffe8914df10f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad36d679887188aa5b8e9ffe8914df10f">&#9670;&nbsp;</a></span>pgl_create_context()</h2>
+<a id="a33e874cbdeb4135024a23f6341e29459"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33e874cbdeb4135024a23f6341e29459">&#9670;&nbsp;</a></span>pgl_create_context()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1071,6 +1071,12 @@ Todo:</h2>
           <td></td>
           <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>depth</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -2177,8 +2183,8 @@ Todo:</h2>
 
 </div>
 </div>
-<a id="a9b4a97eefa6682d1e4afd4c860546033"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9b4a97eefa6682d1e4afd4c860546033">&#9670;&nbsp;</a></span>pgl_set_transform()</h2>
+<a id="a199e7739eb1fd3d235c65a60bd8018d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a199e7739eb1fd3d235c65a60bd8018d9">&#9670;&nbsp;</a></span>pgl_set_transform()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2192,7 +2198,7 @@ Todo:</h2>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="pico__gl_8h.html#ad523e0c10b3618d733a586d6ea73a300">pgl_m3_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="pico__gl_8h.html#aac7976d8ef6fe32382800ea475241cf4">pgl_m4_t</a>&#160;</td>
           <td class="paramname"><em>matrix</em>&#160;</td>
         </tr>
         <tr>
@@ -2240,8 +2246,8 @@ Todo:</h2>
 
 </div>
 </div>
-<a id="aeba208a2682548825c6497de81fb2667"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeba208a2682548825c6497de81fb2667">&#9670;&nbsp;</a></span>pgl_set_projection()</h2>
+<a id="afe57e1271f3b4f06d9100f8de34786d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe57e1271f3b4f06d9100f8de34786d6">&#9670;&nbsp;</a></span>pgl_set_projection()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2255,7 +2261,7 @@ Todo:</h2>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="pico__gl_8h.html#ad523e0c10b3618d733a586d6ea73a300">pgl_m3_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="pico__gl_8h.html#aac7976d8ef6fe32382800ea475241cf4">pgl_m4_t</a>&#160;</td>
           <td class="paramname"><em>matrix</em>&#160;</td>
         </tr>
         <tr>
