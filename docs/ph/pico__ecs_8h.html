@@ -195,17 +195,17 @@ Summary:</h2>
 Usage:</h2>
 <p>To use this library in your project, add the following</p>
 <blockquote class="doxtable">
-<p>#define ECS_IMPLEMENTATION #include "pico_ecs.h" </p>
+<p>#define PICO_ECS_IMPLEMENTATION #include "pico_ecs.h" </p>
 </blockquote>
 <p>to a source file (once), then simply include the header normally.</p>
 <h2><a class="anchor" id="autotoc_md5"></a>
 Constants:</h2>
 <ul>
-<li>ECS_MAX_COMPONENTS (default: 32)</li>
-<li>ECS_MAX_ENTITIES (default: 8*1024)</li>
-<li>ECS_MAX_SYSTEMS (default: 16)</li>
+<li>PICO_ECS_MAX_COMPONENTS (default: 32)</li>
+<li>PICO_ECS_MAX_ENTITIES (default: 8*1024)</li>
+<li>PICO_ECS_MAX_SYSTEMS (default: 16)</li>
 </ul>
-<p>Must be defined before ECS_IMPLEMENTATION</p>
+<p>Must be defined before PICO_ECS_IMPLEMENTATION</p>
 <h2><a class="anchor" id="autotoc_md6"></a>
 Todo:</h2>
 <ul>
@@ -457,7 +457,7 @@ Todo:</h2>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ecs</td><td>The ECS instance </td></tr>
-    <tr><td class="paramname">comp_id</td><td>The component ID to use (must be less than ECS_MAX_COMPONENTS) </td></tr>
+    <tr><td class="paramname">comp_id</td><td>The component ID to use (must be less than PICO_ECS_MAX_COMPONENTS) </td></tr>
     <tr><td class="paramname">num_bytes</td><td>The number of bytes to allocate for each component instance </td></tr>
   </table>
   </dd>
@@ -520,7 +520,7 @@ Todo:</h2>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ecs</td><td>The ECS instance </td></tr>
-    <tr><td class="paramname">sys_id</td><td>The system ID to use (must be less than ECS_MAX_SYSTEMS) </td></tr>
+    <tr><td class="paramname">sys_id</td><td>The system ID to use (must be less than PICO_ECS_MAX_SYSTEMS) </td></tr>
     <tr><td class="paramname">update_cb</td><td>Callback that is fired every update </td></tr>
     <tr><td class="paramname">add_cb</td><td>Called when an entity is added to the system (can be NULL) </td></tr>
     <tr><td class="paramname">remove_cb</td><td>Called when an entity is removed from the system (can be NULL) </td></tr>
@@ -672,7 +672,7 @@ Todo:</h2>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The new entity ID or ECS_NULL if ECS_MAX_ENTITIES is reached </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The new entity ID or ECS_NULL if PICO_ECS_MAX_ENTITIES is reached </dd></dl>
 
 </div>
 </div>

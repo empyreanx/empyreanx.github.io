@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['pl_5fdebug_650',['pl_debug',['../pico__log_8h.html#a62dcc57a4d481c72a124dc0cdae8657a',1,'pico_log.h']]],
-  ['pl_5ferror_651',['pl_error',['../pico__log_8h.html#a8baf8151964d49835c52d58e043c792e',1,'pico_log.h']]],
-  ['pl_5ffatal_652',['pl_fatal',['../pico__log_8h.html#a9e7644a52ab4666fb47db36ea9afa994',1,'pico_log.h']]],
-  ['pl_5finfo_653',['pl_info',['../pico__log_8h.html#a9fabd0ed65a15c0d1dd3c9eff303baf6',1,'pico_log.h']]],
-  ['pl_5ftrace_654',['pl_trace',['../pico__log_8h.html#af1aceadd8d287d184d6b6a4bb1de7bc0',1,'pico_log.h']]],
-  ['pl_5fwarn_655',['pl_warn',['../pico__log_8h.html#aab297535bf4ed1914c367da7f5a12348',1,'pico_log.h']]],
+  ['plog_5fdebug_650',['plog_debug',['../pico__log_8h.html#aa8f92a4927d4e39c090232de5c2b13a2',1,'pico_log.h']]],
+  ['plog_5ferror_651',['plog_error',['../pico__log_8h.html#a4747fdf9c2be3928dbc66ed8d611b556',1,'pico_log.h']]],
+  ['plog_5ffatal_652',['plog_fatal',['../pico__log_8h.html#ae63c9ae80a8e9bf30300836dea66ee9e',1,'pico_log.h']]],
+  ['plog_5finfo_653',['plog_info',['../pico__log_8h.html#a903f9dbf87aa2613334049783c5beb16',1,'pico_log.h']]],
+  ['plog_5ftrace_654',['plog_trace',['../pico__log_8h.html#abc343fc64d0e040ee393f57153e24d03',1,'pico_log.h']]],
+  ['plog_5fwarn_655',['plog_warn',['../pico__log_8h.html#adc704dc11cfb6b77211593883a1d9b9e',1,'pico_log.h']]],
   ['pm_5fabs_656',['pm_abs',['../pico__math_8h.html#a35fed208974957b54f8cb0f97439bb94',1,'pico_math.h']]],
   ['pm_5facos_657',['pm_acos',['../pico__math_8h.html#ae1d7514403bcc1a95f6bfcf2dbd7185b',1,'pico_math.h']]],
   ['pm_5fasin_658',['pm_asin',['../pico__math_8h.html#a58f9b3e24d789e4b8aac6bab0e0446bd',1,'pico_math.h']]],

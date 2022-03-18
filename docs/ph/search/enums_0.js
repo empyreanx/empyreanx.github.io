@@ -6,5 +6,5 @@ var searchData=
   ['pgl_5fformat_5ft_590',['pgl_format_t',['../pico__gl_8h.html#ae0b6403496d044f95efbcac06e818601',1,'pico_gl.h']]],
   ['pgl_5fprimitive_5ft_591',['pgl_primitive_t',['../pico__gl_8h.html#af35bf2851dfd0486b661c39336bdb0bd',1,'pico_gl.h']]],
   ['pgl_5fversion_5ft_592',['pgl_version_t',['../pico__gl_8h.html#a3e8256b083ace5fdeadca5d8e9fad559',1,'pico_gl.h']]],
-  ['pl_5flevel_5ft_593',['pl_level_t',['../pico__log_8h.html#aca0828ad9286d7b2811d54d577c57867',1,'pico_log.h']]]
+  ['plog_5flevel_5ft_593',['plog_level_t',['../pico__log_8h.html#aff2fb8cadb9a4e5fe70cb784e97a02bf',1,'pico_log.h']]]
 ];

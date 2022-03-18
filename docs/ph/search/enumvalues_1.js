@@ -46,11 +46,11 @@ var searchData=
   ['pgl_5funknown_5ferror_639',['PGL_UNKNOWN_ERROR',['../pico__gl_8h.html#aea66b8b5691c55af96a4baff9bb53d29afd5d702f6df616a6602ea7e76f63e5a9',1,'pico_gl.h']]],
   ['pgl_5fversion_5funsupported_640',['PGL_VERSION_UNSUPPORTED',['../pico__gl_8h.html#a3e8256b083ace5fdeadca5d8e9fad559af727d7268b42438edbb0e857dd50df90',1,'pico_gl.h']]],
   ['pgl_5fzero_641',['PGL_ZERO',['../pico__gl_8h.html#a4c0e394db4bc30b74ba1d2a6d6498c71a544fd0d2aa7095ee4e70a6e14f3e5160',1,'pico_gl.h']]],
-  ['pl_5flevel_5fcount_642',['PL_LEVEL_COUNT',['../pico__log_8h.html#aca0828ad9286d7b2811d54d577c57867ac20bf5c88e2c037b4a67fa525ff23b19',1,'pico_log.h']]],
-  ['pl_5flevel_5fdebug_643',['PL_LEVEL_DEBUG',['../pico__log_8h.html#aca0828ad9286d7b2811d54d577c57867a43a4d6deb40685dc59033d96881e90ff',1,'pico_log.h']]],
-  ['pl_5flevel_5ferror_644',['PL_LEVEL_ERROR',['../pico__log_8h.html#aca0828ad9286d7b2811d54d577c57867af09344d92482eafdd4ea96cc548c3344',1,'pico_log.h']]],
-  ['pl_5flevel_5ffatal_645',['PL_LEVEL_FATAL',['../pico__log_8h.html#aca0828ad9286d7b2811d54d577c57867a41c04c6d7b3f79a15b5712d979714d3c',1,'pico_log.h']]],
-  ['pl_5flevel_5finfo_646',['PL_LEVEL_INFO',['../pico__log_8h.html#aca0828ad9286d7b2811d54d577c57867a70759f4b5b9754f801957c86ce55056a',1,'pico_log.h']]],
-  ['pl_5flevel_5ftrace_647',['PL_LEVEL_TRACE',['../pico__log_8h.html#aca0828ad9286d7b2811d54d577c57867aafca9988d55bb6357de1fa599896c49d',1,'pico_log.h']]],
-  ['pl_5flevel_5fwarn_648',['PL_LEVEL_WARN',['../pico__log_8h.html#aca0828ad9286d7b2811d54d577c57867a26a3b9fb3b9d64fe7e142178d3243c33',1,'pico_log.h']]]
+  ['plog_5flevel_5fcount_642',['PLOG_LEVEL_COUNT',['../pico__log_8h.html#aff2fb8cadb9a4e5fe70cb784e97a02bfa064e26c17bbef645e3283cecda39b3dc',1,'pico_log.h']]],
+  ['plog_5flevel_5fdebug_643',['PLOG_LEVEL_DEBUG',['../pico__log_8h.html#aff2fb8cadb9a4e5fe70cb784e97a02bfa3c13992ad40d33ab88d014a0f8188020',1,'pico_log.h']]],
+  ['plog_5flevel_5ferror_644',['PLOG_LEVEL_ERROR',['../pico__log_8h.html#aff2fb8cadb9a4e5fe70cb784e97a02bfa672d431b4a0b0267134ecbc5c3033fc5',1,'pico_log.h']]],
+  ['plog_5flevel_5ffatal_645',['PLOG_LEVEL_FATAL',['../pico__log_8h.html#aff2fb8cadb9a4e5fe70cb784e97a02bfa725c2200dff057690cac27e275cc5f91',1,'pico_log.h']]],
+  ['plog_5flevel_5finfo_646',['PLOG_LEVEL_INFO',['../pico__log_8h.html#aff2fb8cadb9a4e5fe70cb784e97a02bfad56de42c5f85fcd3b8ea3fbfa89e5c90',1,'pico_log.h']]],
+  ['plog_5flevel_5ftrace_647',['PLOG_LEVEL_TRACE',['../pico__log_8h.html#aff2fb8cadb9a4e5fe70cb784e97a02bfa5491a0ca6d638977b1cd29081cfa5fe0',1,'pico_log.h']]],
+  ['plog_5flevel_5fwarn_648',['PLOG_LEVEL_WARN',['../pico__log_8h.html#aff2fb8cadb9a4e5fe70cb784e97a02bfafe7a220c05685e85d46e33b91fad5304',1,'pico_log.h']]]
 ];
