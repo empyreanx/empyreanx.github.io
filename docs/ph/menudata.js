@@ -34,10 +34,12 @@ var menudata={children:[
 {text:"File Members",url:"globals.html",children:[
 {text:"All",url:"globals.html",children:[
 {text:"_",url:"globals.html#index__5F"},
+{text:"b",url:"globals_b.html#index_b"},
 {text:"e",url:"globals_e.html#index_e"},
 {text:"g",url:"globals_g.html#index_g"},
 {text:"p",url:"globals_p.html#index_p"}]},
 {text:"Functions",url:"globals_func.html",children:[
+{text:"b",url:"globals_func.html#index_b"},
 {text:"e",url:"globals_func.html#index_e"},
 {text:"p",url:"globals_func.html#index_p"}]},
 {text:"Typedefs",url:"globals_type.html"},

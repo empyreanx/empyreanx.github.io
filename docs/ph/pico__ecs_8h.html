@@ -77,6 +77,7 @@ $(function() {
 Include dependency graph for pico_ecs.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="pico__ecs_8h__incl.png" border="0" usemap="#pico__ecs_8h" alt=""/></div>
+<!-- MAP 0 -->
 </div>
 </div>
 <p><a href="pico__ecs_8h_source.html">Go to the source code of this file.</a></p>
@@ -171,9 +172,9 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A pure and simple ECS written in C99. </p>
 <hr  />
- <h2><a class="anchor" id="autotoc_md1"></a>
+ <h2><a class="anchor" id="autotoc_md6"></a>
 Licensing information at end of header</h2>
-<h2><a class="anchor" id="autotoc_md2"></a>
+<h2><a class="anchor" id="autotoc_md7"></a>
 Features:</h2>
 <ul>
 <li>Written in C99</li>
@@ -183,7 +184,7 @@ Features:</h2>
 <li>Simple and concise API</li>
 <li>Permissive license (zlib or public domain)</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md3"></a>
+<h2><a class="anchor" id="autotoc_md8"></a>
 Summary:</h2>
 <p>This library implements an ECS (Entity-Component-System). Entities (sometimes called game objects) are defined by their components. For example, an entity might have position, sprite, and physics components. Systems operate on the components of entities that match the system's requirements. Entities are matched to systems based upon which components they have and also the system's matching crieria.</p>
 <p>In the above example, a sprite renderer system would match entities having poition and sprite components. The system would send the appropriate geometry and texture ID to the game's graphics API.</p>
@@ -191,14 +192,14 @@ Summary:</h2>
 <p>If the state specified by the class changes this could ripple through the class, and perhaps subclasses as well. It could well be that the class no longer belongs in the existing class hierarchy forcing even more revisions. If could even be true that a class doesn't neatly fit into the inheritance tree at all.</p>
 <p>An ECS solves these problems while also granting more flexibility in general.</p>
 <p>Please see the examples and unit tests for more details.</p>
-<h2><a class="anchor" id="autotoc_md4"></a>
+<h2><a class="anchor" id="autotoc_md9"></a>
 Usage:</h2>
 <p>To use this library in your project, add the following</p>
 <blockquote class="doxtable">
 <p>#define PICO_ECS_IMPLEMENTATION #include "pico_ecs.h" </p>
 </blockquote>
 <p>to a source file (once), then simply include the header normally.</p>
-<h2><a class="anchor" id="autotoc_md5"></a>
+<h2><a class="anchor" id="autotoc_md10"></a>
 Constants:</h2>
 <ul>
 <li>PICO_ECS_MAX_COMPONENTS (default: 32)</li>
@@ -206,7 +207,7 @@ Constants:</h2>
 <li>PICO_ECS_MAX_SYSTEMS (default: 16)</li>
 </ul>
 <p>Must be defined before PICO_ECS_IMPLEMENTATION</p>
-<h2><a class="anchor" id="autotoc_md6"></a>
+<h2><a class="anchor" id="autotoc_md11"></a>
 Todo:</h2>
 <ul>
 <li>Better default assertion macro</li>
@@ -457,7 +458,7 @@ Todo:</h2>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ecs</td><td>The ECS instance </td></tr>
-    <tr><td class="paramname">comp_id</td><td>The component ID to use (must be less than PICO_ECS_MAX_COMPONENTS) </td></tr>
+    <tr><td class="paramname">comp_id</td><td>The component ID to use (must be less than ECS_MAX_COMPONENTS) </td></tr>
     <tr><td class="paramname">num_bytes</td><td>The number of bytes to allocate for each component instance </td></tr>
   </table>
   </dd>
@@ -520,7 +521,7 @@ Todo:</h2>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ecs</td><td>The ECS instance </td></tr>
-    <tr><td class="paramname">sys_id</td><td>The system ID to use (must be less than PICO_ECS_MAX_SYSTEMS) </td></tr>
+    <tr><td class="paramname">sys_id</td><td>The system ID to use (must be less than ECS_MAX_SYSTEMS) </td></tr>
     <tr><td class="paramname">update_cb</td><td>Callback that is fired every update </td></tr>
     <tr><td class="paramname">add_cb</td><td>Called when an entity is added to the system (can be NULL) </td></tr>
     <tr><td class="paramname">remove_cb</td><td>Called when an entity is removed from the system (can be NULL) </td></tr>
@@ -672,7 +673,7 @@ Todo:</h2>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The new entity ID or ECS_NULL if PICO_ECS_MAX_ENTITIES is reached </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The new entity ID or ECS_NULL if ECS_MAX_ENTITIES is reached </dd></dl>
 
 </div>
 </div>

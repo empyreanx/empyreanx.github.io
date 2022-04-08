@@ -73,8 +73,7 @@ $(function() {
 
 <p>A minimal and flexible logging framework written in C99.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;assert.h&gt;</code><br />
-<code>#include &lt;stdarg.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;stdarg.h&gt;</code><br />
 <code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &lt;stddef.h&gt;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
@@ -89,112 +88,112 @@ Include dependency graph for pico_log.h:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:abc343fc64d0e040ee393f57153e24d03"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#abc343fc64d0e040ee393f57153e24d03">plog_trace</a>(...)&#160;&#160;&#160;<a class="el" href="pico__log_8h.html#a0dc5b03f25f40cdb35b05bda8d8f3ec6">plog_write</a>(<a class="el" href="pico__log_8h.html#aff2fb8cadb9a4e5fe70cb784e97a02bfa5491a0ca6d638977b1cd29081cfa5fe0">PLOG_LEVEL_TRACE</a>, __FILE__, __LINE__, __func__, __VA_ARGS__)</td></tr>
-<tr class="memdesc:abc343fc64d0e040ee393f57153e24d03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs a TRACE an INFO message.  <a href="pico__log_8h.html#abc343fc64d0e040ee393f57153e24d03">More...</a><br /></td></tr>
-<tr class="separator:abc343fc64d0e040ee393f57153e24d03"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8f92a4927d4e39c090232de5c2b13a2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#aa8f92a4927d4e39c090232de5c2b13a2">plog_debug</a>(...)&#160;&#160;&#160;<a class="el" href="pico__log_8h.html#a0dc5b03f25f40cdb35b05bda8d8f3ec6">plog_write</a>(<a class="el" href="pico__log_8h.html#aff2fb8cadb9a4e5fe70cb784e97a02bfa3c13992ad40d33ab88d014a0f8188020">PLOG_LEVEL_DEBUG</a>, __FILE__, __LINE__, __func__, __VA_ARGS__)</td></tr>
-<tr class="memdesc:aa8f92a4927d4e39c090232de5c2b13a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs a DEBUG message.  <a href="pico__log_8h.html#aa8f92a4927d4e39c090232de5c2b13a2">More...</a><br /></td></tr>
-<tr class="separator:aa8f92a4927d4e39c090232de5c2b13a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a903f9dbf87aa2613334049783c5beb16"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#a903f9dbf87aa2613334049783c5beb16">plog_info</a>(...)&#160;&#160;&#160;<a class="el" href="pico__log_8h.html#a0dc5b03f25f40cdb35b05bda8d8f3ec6">plog_write</a>(<a class="el" href="pico__log_8h.html#aff2fb8cadb9a4e5fe70cb784e97a02bfad56de42c5f85fcd3b8ea3fbfa89e5c90">PLOG_LEVEL_INFO</a>,  __FILE__, __LINE__, __func__, __VA_ARGS__)</td></tr>
-<tr class="memdesc:a903f9dbf87aa2613334049783c5beb16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs an INFO message.  <a href="pico__log_8h.html#a903f9dbf87aa2613334049783c5beb16">More...</a><br /></td></tr>
-<tr class="separator:a903f9dbf87aa2613334049783c5beb16"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc704dc11cfb6b77211593883a1d9b9e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#adc704dc11cfb6b77211593883a1d9b9e">plog_warn</a>(...)&#160;&#160;&#160;<a class="el" href="pico__log_8h.html#a0dc5b03f25f40cdb35b05bda8d8f3ec6">plog_write</a>(<a class="el" href="pico__log_8h.html#aff2fb8cadb9a4e5fe70cb784e97a02bfafe7a220c05685e85d46e33b91fad5304">PLOG_LEVEL_WARN</a>,  __FILE__, __LINE__, __func__, __VA_ARGS__)</td></tr>
-<tr class="memdesc:adc704dc11cfb6b77211593883a1d9b9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs a WARN message.  <a href="pico__log_8h.html#adc704dc11cfb6b77211593883a1d9b9e">More...</a><br /></td></tr>
-<tr class="separator:adc704dc11cfb6b77211593883a1d9b9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4747fdf9c2be3928dbc66ed8d611b556"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#a4747fdf9c2be3928dbc66ed8d611b556">plog_error</a>(...)&#160;&#160;&#160;<a class="el" href="pico__log_8h.html#a0dc5b03f25f40cdb35b05bda8d8f3ec6">plog_write</a>(<a class="el" href="pico__log_8h.html#aff2fb8cadb9a4e5fe70cb784e97a02bfa672d431b4a0b0267134ecbc5c3033fc5">PLOG_LEVEL_ERROR</a>, __FILE__, __LINE__, __func__, __VA_ARGS__)</td></tr>
-<tr class="memdesc:a4747fdf9c2be3928dbc66ed8d611b556"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs an ERROR message.  <a href="pico__log_8h.html#a4747fdf9c2be3928dbc66ed8d611b556">More...</a><br /></td></tr>
-<tr class="separator:a4747fdf9c2be3928dbc66ed8d611b556"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae63c9ae80a8e9bf30300836dea66ee9e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#ae63c9ae80a8e9bf30300836dea66ee9e">plog_fatal</a>(...)&#160;&#160;&#160;<a class="el" href="pico__log_8h.html#a0dc5b03f25f40cdb35b05bda8d8f3ec6">plog_write</a>(<a class="el" href="pico__log_8h.html#aff2fb8cadb9a4e5fe70cb784e97a02bfa725c2200dff057690cac27e275cc5f91">PLOG_LEVEL_FATAL</a>, __FILE__, __LINE__, __func__, __VA_ARGS__)</td></tr>
-<tr class="memdesc:ae63c9ae80a8e9bf30300836dea66ee9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs a FATAL message.  <a href="pico__log_8h.html#ae63c9ae80a8e9bf30300836dea66ee9e">More...</a><br /></td></tr>
-<tr class="separator:ae63c9ae80a8e9bf30300836dea66ee9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa1804247dd50c9aa230868b0870cfec"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#afa1804247dd50c9aa230868b0870cfec">pl_log_trace</a>(...)&#160;&#160;&#160;<a class="el" href="pico__log_8h.html#a8dbf5c319bb4aa0c2f3117da0a085921">pl_write_log</a>(<a class="el" href="pico__log_8h.html#aca0828ad9286d7b2811d54d577c57867aafca9988d55bb6357de1fa599896c49d">PL_LEVEL_TRACE</a>, __FILE__, __LINE__, __func__, __VA_ARGS__)</td></tr>
+<tr class="memdesc:afa1804247dd50c9aa230868b0870cfec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs a TRACE an INFO message.  <a href="pico__log_8h.html#afa1804247dd50c9aa230868b0870cfec">More...</a><br /></td></tr>
+<tr class="separator:afa1804247dd50c9aa230868b0870cfec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09f27acd0363dc73cbf1812e9934d5f1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#a09f27acd0363dc73cbf1812e9934d5f1">pl_log_debug</a>(...)&#160;&#160;&#160;<a class="el" href="pico__log_8h.html#a8dbf5c319bb4aa0c2f3117da0a085921">pl_write_log</a>(<a class="el" href="pico__log_8h.html#aca0828ad9286d7b2811d54d577c57867a43a4d6deb40685dc59033d96881e90ff">PL_LEVEL_DEBUG</a>, __FILE__, __LINE__, __func__, __VA_ARGS__)</td></tr>
+<tr class="memdesc:a09f27acd0363dc73cbf1812e9934d5f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs a DEBUG message.  <a href="pico__log_8h.html#a09f27acd0363dc73cbf1812e9934d5f1">More...</a><br /></td></tr>
+<tr class="separator:a09f27acd0363dc73cbf1812e9934d5f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a152b430c53835510506f859c38fbebaa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#a152b430c53835510506f859c38fbebaa">pl_log_info</a>(...)&#160;&#160;&#160;<a class="el" href="pico__log_8h.html#a8dbf5c319bb4aa0c2f3117da0a085921">pl_write_log</a>(<a class="el" href="pico__log_8h.html#aca0828ad9286d7b2811d54d577c57867a70759f4b5b9754f801957c86ce55056a">PL_LEVEL_INFO</a>,  __FILE__, __LINE__, __func__, __VA_ARGS__)</td></tr>
+<tr class="memdesc:a152b430c53835510506f859c38fbebaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs an INFO message.  <a href="pico__log_8h.html#a152b430c53835510506f859c38fbebaa">More...</a><br /></td></tr>
+<tr class="separator:a152b430c53835510506f859c38fbebaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8bdb1a8306562edb5a9f148e027b2de"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#af8bdb1a8306562edb5a9f148e027b2de">pl_log_warn</a>(...)&#160;&#160;&#160;<a class="el" href="pico__log_8h.html#a8dbf5c319bb4aa0c2f3117da0a085921">pl_write_log</a>(<a class="el" href="pico__log_8h.html#aca0828ad9286d7b2811d54d577c57867a26a3b9fb3b9d64fe7e142178d3243c33">PL_LEVEL_WARN</a>,  __FILE__, __LINE__, __func__, __VA_ARGS__)</td></tr>
+<tr class="memdesc:af8bdb1a8306562edb5a9f148e027b2de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs a WARN message.  <a href="pico__log_8h.html#af8bdb1a8306562edb5a9f148e027b2de">More...</a><br /></td></tr>
+<tr class="separator:af8bdb1a8306562edb5a9f148e027b2de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae67916d2962ebca51a1f11b62bce56d3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#ae67916d2962ebca51a1f11b62bce56d3">pl_log_error</a>(...)&#160;&#160;&#160;<a class="el" href="pico__log_8h.html#a8dbf5c319bb4aa0c2f3117da0a085921">pl_write_log</a>(<a class="el" href="pico__log_8h.html#aca0828ad9286d7b2811d54d577c57867af09344d92482eafdd4ea96cc548c3344">PL_LEVEL_ERROR</a>, __FILE__, __LINE__, __func__, __VA_ARGS__)</td></tr>
+<tr class="memdesc:ae67916d2962ebca51a1f11b62bce56d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs an ERROR message.  <a href="pico__log_8h.html#ae67916d2962ebca51a1f11b62bce56d3">More...</a><br /></td></tr>
+<tr class="separator:ae67916d2962ebca51a1f11b62bce56d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad862b483f07c6706cee2bf03fb8b392f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#ad862b483f07c6706cee2bf03fb8b392f">pl_log_fatal</a>(...)&#160;&#160;&#160;<a class="el" href="pico__log_8h.html#a8dbf5c319bb4aa0c2f3117da0a085921">pl_write_log</a>(<a class="el" href="pico__log_8h.html#aca0828ad9286d7b2811d54d577c57867a41c04c6d7b3f79a15b5712d979714d3c">PL_LEVEL_FATAL</a>, __FILE__, __LINE__, __func__, __VA_ARGS__)</td></tr>
+<tr class="memdesc:ad862b483f07c6706cee2bf03fb8b392f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs a FATAL message.  <a href="pico__log_8h.html#ad862b483f07c6706cee2bf03fb8b392f">More...</a><br /></td></tr>
+<tr class="separator:ad862b483f07c6706cee2bf03fb8b392f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a27a1a391f206601497627ffa3ebe7c86"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#a27a1a391f206601497627ffa3ebe7c86">plog_appender_fn</a>) (const char *entry, void *udata)</td></tr>
-<tr class="memdesc:a27a1a391f206601497627ffa3ebe7c86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appender function definition. An appender writes a log entry to an output stream. This could be the console, a file, a network connection, etc...  <a href="pico__log_8h.html#a27a1a391f206601497627ffa3ebe7c86">More...</a><br /></td></tr>
-<tr class="separator:a27a1a391f206601497627ffa3ebe7c86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ecc159656d25cf6d18079d7617332d6"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#a5ecc159656d25cf6d18079d7617332d6">plog_lock_fn</a>) (bool lock, void *udata)</td></tr>
-<tr class="memdesc:a5ecc159656d25cf6d18079d7617332d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lock function definition. This is called during plog_write. Adapted.  <a href="pico__log_8h.html#a5ecc159656d25cf6d18079d7617332d6">More...</a><br /></td></tr>
-<tr class="separator:a5ecc159656d25cf6d18079d7617332d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a648c960ac09d5147e394e4ca2f7287bf"><td class="memItemLeft" align="right" valign="top">typedef int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#a648c960ac09d5147e394e4ca2f7287bf">plog_id_t</a></td></tr>
-<tr class="memdesc:a648c960ac09d5147e394e4ca2f7287bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifies a registered appender.  <a href="pico__log_8h.html#a648c960ac09d5147e394e4ca2f7287bf">More...</a><br /></td></tr>
-<tr class="separator:a648c960ac09d5147e394e4ca2f7287bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad46a198b2f52025591ac87e40f4c6668"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#ad46a198b2f52025591ac87e40f4c6668">pl_appender_fn</a>) (const char *entry, void *udata)</td></tr>
+<tr class="memdesc:ad46a198b2f52025591ac87e40f4c6668"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appender function definition. An appender writes a log entry to an output stream. This could be the console, a file, a network connection, etc...  <a href="pico__log_8h.html#ad46a198b2f52025591ac87e40f4c6668">More...</a><br /></td></tr>
+<tr class="separator:ad46a198b2f52025591ac87e40f4c6668"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a280d377aae6209d04f2ccdeb79359a91"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#a280d377aae6209d04f2ccdeb79359a91">pl_lock_fn</a>) (bool lock, void *udata)</td></tr>
+<tr class="memdesc:a280d377aae6209d04f2ccdeb79359a91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lock function definition. This is called during pl_write_log. Adapted.  <a href="pico__log_8h.html#a280d377aae6209d04f2ccdeb79359a91">More...</a><br /></td></tr>
+<tr class="separator:a280d377aae6209d04f2ccdeb79359a91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75313a635254411b22b2b0ed0c906017"><td class="memItemLeft" align="right" valign="top">typedef int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#a75313a635254411b22b2b0ed0c906017">pl_id_t</a></td></tr>
+<tr class="memdesc:a75313a635254411b22b2b0ed0c906017"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifies a registered appender.  <a href="pico__log_8h.html#a75313a635254411b22b2b0ed0c906017">More...</a><br /></td></tr>
+<tr class="separator:a75313a635254411b22b2b0ed0c906017"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:aff2fb8cadb9a4e5fe70cb784e97a02bf"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#aff2fb8cadb9a4e5fe70cb784e97a02bf">plog_level_t</a> { <br />
-&#160;&#160;<a class="el" href="pico__log_8h.html#aff2fb8cadb9a4e5fe70cb784e97a02bfa5491a0ca6d638977b1cd29081cfa5fe0">PLOG_LEVEL_TRACE</a> = 0, 
-<a class="el" href="pico__log_8h.html#aff2fb8cadb9a4e5fe70cb784e97a02bfa3c13992ad40d33ab88d014a0f8188020">PLOG_LEVEL_DEBUG</a>, 
-<a class="el" href="pico__log_8h.html#aff2fb8cadb9a4e5fe70cb784e97a02bfad56de42c5f85fcd3b8ea3fbfa89e5c90">PLOG_LEVEL_INFO</a>, 
-<a class="el" href="pico__log_8h.html#aff2fb8cadb9a4e5fe70cb784e97a02bfafe7a220c05685e85d46e33b91fad5304">PLOG_LEVEL_WARN</a>, 
+<tr class="memitem:aca0828ad9286d7b2811d54d577c57867"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#aca0828ad9286d7b2811d54d577c57867">pl_level_t</a> { <br />
+&#160;&#160;<a class="el" href="pico__log_8h.html#aca0828ad9286d7b2811d54d577c57867aafca9988d55bb6357de1fa599896c49d">PL_LEVEL_TRACE</a> = 0, 
+<a class="el" href="pico__log_8h.html#aca0828ad9286d7b2811d54d577c57867a43a4d6deb40685dc59033d96881e90ff">PL_LEVEL_DEBUG</a>, 
+<a class="el" href="pico__log_8h.html#aca0828ad9286d7b2811d54d577c57867a70759f4b5b9754f801957c86ce55056a">PL_LEVEL_INFO</a>, 
+<a class="el" href="pico__log_8h.html#aca0828ad9286d7b2811d54d577c57867a26a3b9fb3b9d64fe7e142178d3243c33">PL_LEVEL_WARN</a>, 
 <br />
-&#160;&#160;<a class="el" href="pico__log_8h.html#aff2fb8cadb9a4e5fe70cb784e97a02bfa672d431b4a0b0267134ecbc5c3033fc5">PLOG_LEVEL_ERROR</a>, 
-<a class="el" href="pico__log_8h.html#aff2fb8cadb9a4e5fe70cb784e97a02bfa725c2200dff057690cac27e275cc5f91">PLOG_LEVEL_FATAL</a>, 
-<a class="el" href="pico__log_8h.html#aff2fb8cadb9a4e5fe70cb784e97a02bfa064e26c17bbef645e3283cecda39b3dc">PLOG_LEVEL_COUNT</a>
+&#160;&#160;<a class="el" href="pico__log_8h.html#aca0828ad9286d7b2811d54d577c57867af09344d92482eafdd4ea96cc548c3344">PL_LEVEL_ERROR</a>, 
+<a class="el" href="pico__log_8h.html#aca0828ad9286d7b2811d54d577c57867a41c04c6d7b3f79a15b5712d979714d3c">PL_LEVEL_FATAL</a>, 
+<a class="el" href="pico__log_8h.html#aca0828ad9286d7b2811d54d577c57867ac20bf5c88e2c037b4a67fa525ff23b19">PL_LEVEL_COUNT</a>
 <br />
  }</td></tr>
-<tr class="memdesc:aff2fb8cadb9a4e5fe70cb784e97a02bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">These codes allow different layers of granularity when logging. See the documentation of the <code>plog_set_level</code> function for more information.  <a href="pico__log_8h.html#aff2fb8cadb9a4e5fe70cb784e97a02bf">More...</a><br /></td></tr>
-<tr class="separator:aff2fb8cadb9a4e5fe70cb784e97a02bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memdesc:aca0828ad9286d7b2811d54d577c57867"><td class="mdescLeft">&#160;</td><td class="mdescRight">These codes allow different layers of granularity when logging. See the documentation of the <code>pl_set_level</code> function for more information.  <a href="pico__log_8h.html#aca0828ad9286d7b2811d54d577c57867">More...</a><br /></td></tr>
+<tr class="separator:aca0828ad9286d7b2811d54d577c57867"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aee80293ee1d90cb8c2347c10611fd76a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#aee80293ee1d90cb8c2347c10611fd76a">plog_str_level</a> (const char *str, <a class="el" href="pico__log_8h.html#aff2fb8cadb9a4e5fe70cb784e97a02bf">plog_level_t</a> *level)</td></tr>
-<tr class="memdesc:aee80293ee1d90cb8c2347c10611fd76a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a string to the corresponding log level.  <a href="pico__log_8h.html#aee80293ee1d90cb8c2347c10611fd76a">More...</a><br /></td></tr>
-<tr class="separator:aee80293ee1d90cb8c2347c10611fd76a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44c6c7379838225358316b003f455c14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#a44c6c7379838225358316b003f455c14">plog_enable</a> (void)</td></tr>
-<tr class="memdesc:a44c6c7379838225358316b003f455c14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables logging. NOTE: Logging is enabled by default.  <a href="pico__log_8h.html#a44c6c7379838225358316b003f455c14">More...</a><br /></td></tr>
-<tr class="separator:a44c6c7379838225358316b003f455c14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77a2d280c464eba8ba69a76e2bef3020"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#a77a2d280c464eba8ba69a76e2bef3020">plog_disable</a> (void)</td></tr>
-<tr class="memdesc:a77a2d280c464eba8ba69a76e2bef3020"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables logging.  <a href="pico__log_8h.html#a77a2d280c464eba8ba69a76e2bef3020">More...</a><br /></td></tr>
-<tr class="separator:a77a2d280c464eba8ba69a76e2bef3020"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2fe72e1d30c94c96bf9a53a4630f4c8c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pico__log_8h.html#a648c960ac09d5147e394e4ca2f7287bf">plog_id_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#a2fe72e1d30c94c96bf9a53a4630f4c8c">plog_add_appender</a> (<a class="el" href="pico__log_8h.html#a27a1a391f206601497627ffa3ebe7c86">plog_appender_fn</a> appender_fp, <a class="el" href="pico__log_8h.html#aff2fb8cadb9a4e5fe70cb784e97a02bf">plog_level_t</a> level, void *udata)</td></tr>
-<tr class="memdesc:a2fe72e1d30c94c96bf9a53a4630f4c8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers an appender.  <a href="pico__log_8h.html#a2fe72e1d30c94c96bf9a53a4630f4c8c">More...</a><br /></td></tr>
-<tr class="separator:a2fe72e1d30c94c96bf9a53a4630f4c8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06f88d19b65b1c8e3679ca18cad14947"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pico__log_8h.html#a648c960ac09d5147e394e4ca2f7287bf">plog_id_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#a06f88d19b65b1c8e3679ca18cad14947">plog_add_stream</a> (FILE *stream, <a class="el" href="pico__log_8h.html#aff2fb8cadb9a4e5fe70cb784e97a02bf">plog_level_t</a> level)</td></tr>
-<tr class="memdesc:a06f88d19b65b1c8e3679ca18cad14947"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers an output stream appender.  <a href="pico__log_8h.html#a06f88d19b65b1c8e3679ca18cad14947">More...</a><br /></td></tr>
-<tr class="separator:a06f88d19b65b1c8e3679ca18cad14947"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd417cec7e43cd9a1a26dd09bab82f3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#afd417cec7e43cd9a1a26dd09bab82f3f">plog_remove_appender</a> (<a class="el" href="pico__log_8h.html#a648c960ac09d5147e394e4ca2f7287bf">plog_id_t</a> id)</td></tr>
-<tr class="memdesc:afd417cec7e43cd9a1a26dd09bab82f3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unregisters appender (removes the appender from the logger).  <a href="pico__log_8h.html#afd417cec7e43cd9a1a26dd09bab82f3f">More...</a><br /></td></tr>
-<tr class="separator:afd417cec7e43cd9a1a26dd09bab82f3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d22f16608edc2882d7f28b6ba426a14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#a5d22f16608edc2882d7f28b6ba426a14">plog_enable_appender</a> (<a class="el" href="pico__log_8h.html#a648c960ac09d5147e394e4ca2f7287bf">plog_id_t</a> id)</td></tr>
-<tr class="memdesc:a5d22f16608edc2882d7f28b6ba426a14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the specified appender. NOTE: Appenders are enabled by default after registration.  <a href="pico__log_8h.html#a5d22f16608edc2882d7f28b6ba426a14">More...</a><br /></td></tr>
-<tr class="separator:a5d22f16608edc2882d7f28b6ba426a14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6c7325d154c3028f50b0afc3a92edcd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#ad6c7325d154c3028f50b0afc3a92edcd">plog_disable_appender</a> (<a class="el" href="pico__log_8h.html#a648c960ac09d5147e394e4ca2f7287bf">plog_id_t</a> id)</td></tr>
-<tr class="memdesc:ad6c7325d154c3028f50b0afc3a92edcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables the specified appender.  <a href="pico__log_8h.html#ad6c7325d154c3028f50b0afc3a92edcd">More...</a><br /></td></tr>
-<tr class="separator:ad6c7325d154c3028f50b0afc3a92edcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4f9b6f0c3d8f9618ecb8da7104d91a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#ac4f9b6f0c3d8f9618ecb8da7104d91a5">plog_set_lock</a> (<a class="el" href="pico__log_8h.html#a648c960ac09d5147e394e4ca2f7287bf">plog_id_t</a> id, <a class="el" href="pico__log_8h.html#a5ecc159656d25cf6d18079d7617332d6">plog_lock_fn</a> lock_fp, void *udata)</td></tr>
-<tr class="memdesc:ac4f9b6f0c3d8f9618ecb8da7104d91a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the locking function.  <a href="pico__log_8h.html#ac4f9b6f0c3d8f9618ecb8da7104d91a5">More...</a><br /></td></tr>
-<tr class="separator:ac4f9b6f0c3d8f9618ecb8da7104d91a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae2de9741c945eff454db034d2927af0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#aae2de9741c945eff454db034d2927af0">plog_set_level</a> (<a class="el" href="pico__log_8h.html#a648c960ac09d5147e394e4ca2f7287bf">plog_id_t</a> id, <a class="el" href="pico__log_8h.html#aff2fb8cadb9a4e5fe70cb784e97a02bf">plog_level_t</a> level)</td></tr>
-<tr class="memdesc:aae2de9741c945eff454db034d2927af0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the logging level.  <a href="pico__log_8h.html#aae2de9741c945eff454db034d2927af0">More...</a><br /></td></tr>
-<tr class="separator:aae2de9741c945eff454db034d2927af0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab72192f83d616aa4f59e4d6ff69282af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#ab72192f83d616aa4f59e4d6ff69282af">plog_set_time_fmt</a> (<a class="el" href="pico__log_8h.html#a648c960ac09d5147e394e4ca2f7287bf">plog_id_t</a> id, const char *fmt)</td></tr>
-<tr class="memdesc:ab72192f83d616aa4f59e4d6ff69282af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the appender timestamp.  <a href="pico__log_8h.html#ab72192f83d616aa4f59e4d6ff69282af">More...</a><br /></td></tr>
-<tr class="separator:ab72192f83d616aa4f59e4d6ff69282af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d63121f4def581761577fb842f30a8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#a9d63121f4def581761577fb842f30a8e">plog_display_colors</a> (<a class="el" href="pico__log_8h.html#a648c960ac09d5147e394e4ca2f7287bf">plog_id_t</a> id, bool enabled)</td></tr>
-<tr class="memdesc:a9d63121f4def581761577fb842f30a8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turns colors ouput on or off for the specified appender. NOTE: Off by default.  <a href="pico__log_8h.html#a9d63121f4def581761577fb842f30a8e">More...</a><br /></td></tr>
-<tr class="separator:a9d63121f4def581761577fb842f30a8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad587a3227f83941d488dcf27f866f9ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#ad587a3227f83941d488dcf27f866f9ef">plog_display_timestamp</a> (<a class="el" href="pico__log_8h.html#a648c960ac09d5147e394e4ca2f7287bf">plog_id_t</a> id, bool enabled)</td></tr>
-<tr class="memdesc:ad587a3227f83941d488dcf27f866f9ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turns timestamp reporting on/off for the specified appender. NOTE: Off by default.  <a href="pico__log_8h.html#ad587a3227f83941d488dcf27f866f9ef">More...</a><br /></td></tr>
-<tr class="separator:ad587a3227f83941d488dcf27f866f9ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0bd8e9fc3fc016260db9b951df4f22a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#aa0bd8e9fc3fc016260db9b951df4f22a">plog_display_level</a> (<a class="el" href="pico__log_8h.html#a648c960ac09d5147e394e4ca2f7287bf">plog_id_t</a> id, bool enabled)</td></tr>
-<tr class="memdesc:aa0bd8e9fc3fc016260db9b951df4f22a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turns log level reporting on/off for the specified appender. NOTE: On by default.  <a href="pico__log_8h.html#aa0bd8e9fc3fc016260db9b951df4f22a">More...</a><br /></td></tr>
-<tr class="separator:aa0bd8e9fc3fc016260db9b951df4f22a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4531394dbc8a6368fd32fd4f44f94e0f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#a4531394dbc8a6368fd32fd4f44f94e0f">plog_display_file</a> (<a class="el" href="pico__log_8h.html#a648c960ac09d5147e394e4ca2f7287bf">plog_id_t</a> id, bool enabled)</td></tr>
-<tr class="memdesc:a4531394dbc8a6368fd32fd4f44f94e0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turns filename and line number reporting on/off for the specified appender. NOTE: Off by default.  <a href="pico__log_8h.html#a4531394dbc8a6368fd32fd4f44f94e0f">More...</a><br /></td></tr>
-<tr class="separator:a4531394dbc8a6368fd32fd4f44f94e0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a500e311d03e558ef0db20adef09c07ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#a500e311d03e558ef0db20adef09c07ba">plog_display_function</a> (<a class="el" href="pico__log_8h.html#a648c960ac09d5147e394e4ca2f7287bf">plog_id_t</a> id, bool enabled)</td></tr>
-<tr class="memdesc:a500e311d03e558ef0db20adef09c07ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turns function reporting on/off for the specified appender. NOTE: Off by default.  <a href="pico__log_8h.html#a500e311d03e558ef0db20adef09c07ba">More...</a><br /></td></tr>
-<tr class="separator:a500e311d03e558ef0db20adef09c07ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0dc5b03f25f40cdb35b05bda8d8f3ec6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#a0dc5b03f25f40cdb35b05bda8d8f3ec6">plog_write</a> (<a class="el" href="pico__log_8h.html#aff2fb8cadb9a4e5fe70cb784e97a02bf">plog_level_t</a> level, const char *file, unsigned line, const char *func, const char *fmt,...)</td></tr>
-<tr class="separator:a0dc5b03f25f40cdb35b05bda8d8f3ec6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b4dd64388feddca00eca9ec55f1163e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#a7b4dd64388feddca00eca9ec55f1163e">pl_str_level</a> (const char *str, <a class="el" href="pico__log_8h.html#aca0828ad9286d7b2811d54d577c57867">pl_level_t</a> *level)</td></tr>
+<tr class="memdesc:a7b4dd64388feddca00eca9ec55f1163e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a string to the corresponding log level.  <a href="pico__log_8h.html#a7b4dd64388feddca00eca9ec55f1163e">More...</a><br /></td></tr>
+<tr class="separator:a7b4dd64388feddca00eca9ec55f1163e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeab27be43e1423eb170d77471d505fe7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#aeab27be43e1423eb170d77471d505fe7">pl_enable</a> (void)</td></tr>
+<tr class="memdesc:aeab27be43e1423eb170d77471d505fe7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables logging. NOTE: Logging is enabled by default.  <a href="pico__log_8h.html#aeab27be43e1423eb170d77471d505fe7">More...</a><br /></td></tr>
+<tr class="separator:aeab27be43e1423eb170d77471d505fe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adab7b86ecd9d99e522e564b3f3cd91ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#adab7b86ecd9d99e522e564b3f3cd91ca">pl_disable</a> (void)</td></tr>
+<tr class="memdesc:adab7b86ecd9d99e522e564b3f3cd91ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables logging.  <a href="pico__log_8h.html#adab7b86ecd9d99e522e564b3f3cd91ca">More...</a><br /></td></tr>
+<tr class="separator:adab7b86ecd9d99e522e564b3f3cd91ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c1ef1d29cde9769d9e1d8fb7d8e8723"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pico__log_8h.html#a75313a635254411b22b2b0ed0c906017">pl_id_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#a7c1ef1d29cde9769d9e1d8fb7d8e8723">pl_add_appender</a> (<a class="el" href="pico__log_8h.html#ad46a198b2f52025591ac87e40f4c6668">pl_appender_fn</a> appender_fp, <a class="el" href="pico__log_8h.html#aca0828ad9286d7b2811d54d577c57867">pl_level_t</a> level, void *udata)</td></tr>
+<tr class="memdesc:a7c1ef1d29cde9769d9e1d8fb7d8e8723"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers an appender.  <a href="pico__log_8h.html#a7c1ef1d29cde9769d9e1d8fb7d8e8723">More...</a><br /></td></tr>
+<tr class="separator:a7c1ef1d29cde9769d9e1d8fb7d8e8723"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab1c7b208cb5704806aabe41f37198f8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pico__log_8h.html#a75313a635254411b22b2b0ed0c906017">pl_id_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#aab1c7b208cb5704806aabe41f37198f8">pl_add_stream</a> (FILE *stream, <a class="el" href="pico__log_8h.html#aca0828ad9286d7b2811d54d577c57867">pl_level_t</a> level)</td></tr>
+<tr class="memdesc:aab1c7b208cb5704806aabe41f37198f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers an output stream appender.  <a href="pico__log_8h.html#aab1c7b208cb5704806aabe41f37198f8">More...</a><br /></td></tr>
+<tr class="separator:aab1c7b208cb5704806aabe41f37198f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cb60519f30974b373812c4e91c941ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#a7cb60519f30974b373812c4e91c941ab">pl_remove_appender</a> (<a class="el" href="pico__log_8h.html#a75313a635254411b22b2b0ed0c906017">pl_id_t</a> id)</td></tr>
+<tr class="memdesc:a7cb60519f30974b373812c4e91c941ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unregisters appender (removes the appender from the logger).  <a href="pico__log_8h.html#a7cb60519f30974b373812c4e91c941ab">More...</a><br /></td></tr>
+<tr class="separator:a7cb60519f30974b373812c4e91c941ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7ad5854268eb2e6c946a93f939785b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#ab7ad5854268eb2e6c946a93f939785b9">pl_enable_appender</a> (<a class="el" href="pico__log_8h.html#a75313a635254411b22b2b0ed0c906017">pl_id_t</a> id)</td></tr>
+<tr class="memdesc:ab7ad5854268eb2e6c946a93f939785b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the specified appender. NOTE: Appenders are enabled by default after registration.  <a href="pico__log_8h.html#ab7ad5854268eb2e6c946a93f939785b9">More...</a><br /></td></tr>
+<tr class="separator:ab7ad5854268eb2e6c946a93f939785b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a496e3e6dada9d9fac144be64836a2342"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#a496e3e6dada9d9fac144be64836a2342">pl_disable_appender</a> (<a class="el" href="pico__log_8h.html#a75313a635254411b22b2b0ed0c906017">pl_id_t</a> id)</td></tr>
+<tr class="memdesc:a496e3e6dada9d9fac144be64836a2342"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables the specified appender.  <a href="pico__log_8h.html#a496e3e6dada9d9fac144be64836a2342">More...</a><br /></td></tr>
+<tr class="separator:a496e3e6dada9d9fac144be64836a2342"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe02e2bdd2837ff061bbc8bb8111d2d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#afe02e2bdd2837ff061bbc8bb8111d2d9">pl_set_lock</a> (<a class="el" href="pico__log_8h.html#a75313a635254411b22b2b0ed0c906017">pl_id_t</a> id, <a class="el" href="pico__log_8h.html#a280d377aae6209d04f2ccdeb79359a91">pl_lock_fn</a> lock_fp, void *udata)</td></tr>
+<tr class="memdesc:afe02e2bdd2837ff061bbc8bb8111d2d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the locking function.  <a href="pico__log_8h.html#afe02e2bdd2837ff061bbc8bb8111d2d9">More...</a><br /></td></tr>
+<tr class="separator:afe02e2bdd2837ff061bbc8bb8111d2d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab92bcadb562435026677dfe8ff27be86"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#ab92bcadb562435026677dfe8ff27be86">pl_set_level</a> (<a class="el" href="pico__log_8h.html#a75313a635254411b22b2b0ed0c906017">pl_id_t</a> id, <a class="el" href="pico__log_8h.html#aca0828ad9286d7b2811d54d577c57867">pl_level_t</a> level)</td></tr>
+<tr class="memdesc:ab92bcadb562435026677dfe8ff27be86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the logging level.  <a href="pico__log_8h.html#ab92bcadb562435026677dfe8ff27be86">More...</a><br /></td></tr>
+<tr class="separator:ab92bcadb562435026677dfe8ff27be86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f9ae1b346fd101daf230fad559c32ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#a5f9ae1b346fd101daf230fad559c32ca">pl_set_time_fmt</a> (<a class="el" href="pico__log_8h.html#a75313a635254411b22b2b0ed0c906017">pl_id_t</a> id, const char *fmt)</td></tr>
+<tr class="memdesc:a5f9ae1b346fd101daf230fad559c32ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the appender timestamp.  <a href="pico__log_8h.html#a5f9ae1b346fd101daf230fad559c32ca">More...</a><br /></td></tr>
+<tr class="separator:a5f9ae1b346fd101daf230fad559c32ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac14f1408eaebdce050417b32cf289ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#aac14f1408eaebdce050417b32cf289ae">pl_display_colors</a> (<a class="el" href="pico__log_8h.html#a75313a635254411b22b2b0ed0c906017">pl_id_t</a> id, bool enabled)</td></tr>
+<tr class="memdesc:aac14f1408eaebdce050417b32cf289ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turns colors ouput on or off for the specified appender. NOTE: Off by default.  <a href="pico__log_8h.html#aac14f1408eaebdce050417b32cf289ae">More...</a><br /></td></tr>
+<tr class="separator:aac14f1408eaebdce050417b32cf289ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ea963e5e966f53ff60479b7faa55015"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#a0ea963e5e966f53ff60479b7faa55015">pl_display_timestamp</a> (<a class="el" href="pico__log_8h.html#a75313a635254411b22b2b0ed0c906017">pl_id_t</a> id, bool enabled)</td></tr>
+<tr class="memdesc:a0ea963e5e966f53ff60479b7faa55015"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turns timestamp reporting on/off for the specified appender. NOTE: Off by default.  <a href="pico__log_8h.html#a0ea963e5e966f53ff60479b7faa55015">More...</a><br /></td></tr>
+<tr class="separator:a0ea963e5e966f53ff60479b7faa55015"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad284135b15625f7a0c18341df9ff37c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#ad284135b15625f7a0c18341df9ff37c6">pl_display_level</a> (<a class="el" href="pico__log_8h.html#a75313a635254411b22b2b0ed0c906017">pl_id_t</a> id, bool enabled)</td></tr>
+<tr class="memdesc:ad284135b15625f7a0c18341df9ff37c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turns log level reporting on/off for the specified appender. NOTE: On by default.  <a href="pico__log_8h.html#ad284135b15625f7a0c18341df9ff37c6">More...</a><br /></td></tr>
+<tr class="separator:ad284135b15625f7a0c18341df9ff37c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd9193f2fe579c4ed4a35ddc57d409b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#afd9193f2fe579c4ed4a35ddc57d409b6">pl_display_file</a> (<a class="el" href="pico__log_8h.html#a75313a635254411b22b2b0ed0c906017">pl_id_t</a> id, bool enabled)</td></tr>
+<tr class="memdesc:afd9193f2fe579c4ed4a35ddc57d409b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turns filename and line number reporting on/off for the specified appender. NOTE: Off by default.  <a href="pico__log_8h.html#afd9193f2fe579c4ed4a35ddc57d409b6">More...</a><br /></td></tr>
+<tr class="separator:afd9193f2fe579c4ed4a35ddc57d409b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f53a5a5f12eedcd719f40c790694f9c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#a1f53a5a5f12eedcd719f40c790694f9c">pl_display_function</a> (<a class="el" href="pico__log_8h.html#a75313a635254411b22b2b0ed0c906017">pl_id_t</a> id, bool enabled)</td></tr>
+<tr class="memdesc:a1f53a5a5f12eedcd719f40c790694f9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turns function reporting on/off for the specified appender. NOTE: Off by default.  <a href="pico__log_8h.html#a1f53a5a5f12eedcd719f40c790694f9c">More...</a><br /></td></tr>
+<tr class="separator:a1f53a5a5f12eedcd719f40c790694f9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dbf5c319bb4aa0c2f3117da0a085921"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__log_8h.html#a8dbf5c319bb4aa0c2f3117da0a085921">pl_write_log</a> (<a class="el" href="pico__log_8h.html#aca0828ad9286d7b2811d54d577c57867">pl_level_t</a> level, const char *file, unsigned line, const char *func, const char *fmt,...)</td></tr>
+<tr class="separator:a8dbf5c319bb4aa0c2f3117da0a085921"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A minimal and flexible logging framework written in C99. </p>
 <hr  />
- <h2><a class="anchor" id="autotoc_md15"></a>
+ <h2><a class="anchor" id="autotoc_md20"></a>
 Licensing information at end of header</h2>
-<h2><a class="anchor" id="autotoc_md16"></a>
+<h2><a class="anchor" id="autotoc_md21"></a>
 Features:</h2>
 <ul>
 <li>Written in pure C99, and compatible with C++</li>
@@ -207,22 +206,22 @@ Features:</h2>
 <li>reporting individually, on a per appender basis</li>
 <li>Permissive licensing (zlib or public domain)</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md17"></a>
+<h2><a class="anchor" id="autotoc_md22"></a>
 Summary:</h2>
 <p>This library is built around the notion of appenders. An appender writes log messages to a sink. It could be a file, a network connection, or stream (e.g. stdout).</p>
-<p>Once one or more appenders are registered, macros such as plog_info will send messages to the appenders.</p>
-<p>Output can be modified in a number of ways. The most important way to affect the output is to specify the log level (e.g. PLOG_LEVEL_INFO). If the log level is set PLOG_LEVEL_INFO, then messages sent to plog_trace or plog_debug will not be written whereas plog_info, plog_warn, plog_error, and plog_fatal will be.</p>
-<p>Output can also be modified to show or hide various metadata. These are date/time, log level, filename/line number, and calling function. They can be toggled using the plog_display* functions. There is also an option to enable color coded output.</p>
-<p>It is possible to synchronize appenders using <code>plog_set_lock</code>. This function accepts a function pointer that takes a boolean and user data as input. When this function pointer is passed true the lock is acquired and false to release the lock.</p>
+<p>Once one or more appenders are registered, macros such as pl_info will send messages to the appenders.</p>
+<p>Output can be modified in a number of ways. The most important way to affect the output is to specify the log level (e.g. PL_LEVEL_INFO). If the log level is set PL_LEVEL_INFO, then messages sent to pl_trace or pl_debug will not be written whereas pl_info, pl_warn, pl_error, and pl_fatal will be.</p>
+<p>Output can also be modified to show or hide various metadata. These are date/time, log level, filename/line number, and calling function. They can be toggled using the pl_display* functions. There is also an option to enable color coded output.</p>
+<p>It is possible to synchronize appenders using <code>pl_set_lock</code>. This function accepts a function pointer that takes a boolean and user data as input. When this function pointer is passed true the lock is acquired and false to release the lock.</p>
 <p>Please see the examples for more details.</p>
-<h2><a class="anchor" id="autotoc_md18"></a>
+<h2><a class="anchor" id="autotoc_md23"></a>
 Usage:</h2>
 <p>To use this library in your project, add the following</p>
 <blockquote class="doxtable">
 <p>#define PICO_LOG_IMPLEMENTATION #include "pico_log.h" </p>
 </blockquote>
 <p>to a source file (once), then simply include the header normally.</p>
-<h2><a class="anchor" id="autotoc_md19"></a>
+<h2><a class="anchor" id="autotoc_md24"></a>
 Constants:</h2>
 <ul>
 <li>PICO_LOG_MAX_APPENDERS (default: 16)</li>
@@ -230,141 +229,141 @@ Constants:</h2>
 </ul>
 <p>Must be defined before PICO_LOG_IMPLEMENTATION </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="abc343fc64d0e040ee393f57153e24d03"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc343fc64d0e040ee393f57153e24d03">&#9670;&nbsp;</a></span>plog_trace</h2>
+<a id="afa1804247dd50c9aa230868b0870cfec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa1804247dd50c9aa230868b0870cfec">&#9670;&nbsp;</a></span>pl_log_trace</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define plog_trace</td>
+          <td class="memname">#define pl_log_trace</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>...</em></td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="pico__log_8h.html#a0dc5b03f25f40cdb35b05bda8d8f3ec6">plog_write</a>(<a class="el" href="pico__log_8h.html#aff2fb8cadb9a4e5fe70cb784e97a02bfa5491a0ca6d638977b1cd29081cfa5fe0">PLOG_LEVEL_TRACE</a>, __FILE__, __LINE__, __func__, __VA_ARGS__)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="pico__log_8h.html#a8dbf5c319bb4aa0c2f3117da0a085921">pl_write_log</a>(<a class="el" href="pico__log_8h.html#aca0828ad9286d7b2811d54d577c57867aafca9988d55bb6357de1fa599896c49d">PL_LEVEL_TRACE</a>, __FILE__, __LINE__, __func__, __VA_ARGS__)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Logs a TRACE an INFO message. </p>
-<p>Writes a TRACE level message to the log. Usage is similar to printf (i.e. <a class="el" href="pico__log_8h.html#abc343fc64d0e040ee393f57153e24d03" title="Logs a TRACE an INFO message.">plog_trace(format, args...)</a>) </p>
+<p>Writes a TRACE level message to the log. Usage is similar to printf (i.e. pl_trace(format, args...)) </p>
 
 </div>
 </div>
-<a id="aa8f92a4927d4e39c090232de5c2b13a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa8f92a4927d4e39c090232de5c2b13a2">&#9670;&nbsp;</a></span>plog_debug</h2>
+<a id="a09f27acd0363dc73cbf1812e9934d5f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09f27acd0363dc73cbf1812e9934d5f1">&#9670;&nbsp;</a></span>pl_log_debug</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define plog_debug</td>
+          <td class="memname">#define pl_log_debug</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>...</em></td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="pico__log_8h.html#a0dc5b03f25f40cdb35b05bda8d8f3ec6">plog_write</a>(<a class="el" href="pico__log_8h.html#aff2fb8cadb9a4e5fe70cb784e97a02bfa3c13992ad40d33ab88d014a0f8188020">PLOG_LEVEL_DEBUG</a>, __FILE__, __LINE__, __func__, __VA_ARGS__)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="pico__log_8h.html#a8dbf5c319bb4aa0c2f3117da0a085921">pl_write_log</a>(<a class="el" href="pico__log_8h.html#aca0828ad9286d7b2811d54d577c57867a43a4d6deb40685dc59033d96881e90ff">PL_LEVEL_DEBUG</a>, __FILE__, __LINE__, __func__, __VA_ARGS__)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Logs a DEBUG message. </p>
-<p>Writes a DEBUG level message to the log. Usage is similar to printf (i.e. (i.e. <a class="el" href="pico__log_8h.html#aa8f92a4927d4e39c090232de5c2b13a2" title="Logs a DEBUG message.">plog_debug(format, args...)</a>) </p>
+<p>Writes a DEBUG level message to the log. Usage is similar to printf (i.e. (i.e. pl_debug(format, args...)) </p>
 
 </div>
 </div>
-<a id="a903f9dbf87aa2613334049783c5beb16"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a903f9dbf87aa2613334049783c5beb16">&#9670;&nbsp;</a></span>plog_info</h2>
+<a id="a152b430c53835510506f859c38fbebaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a152b430c53835510506f859c38fbebaa">&#9670;&nbsp;</a></span>pl_log_info</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define plog_info</td>
+          <td class="memname">#define pl_log_info</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>...</em></td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="pico__log_8h.html#a0dc5b03f25f40cdb35b05bda8d8f3ec6">plog_write</a>(<a class="el" href="pico__log_8h.html#aff2fb8cadb9a4e5fe70cb784e97a02bfad56de42c5f85fcd3b8ea3fbfa89e5c90">PLOG_LEVEL_INFO</a>,  __FILE__, __LINE__, __func__, __VA_ARGS__)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="pico__log_8h.html#a8dbf5c319bb4aa0c2f3117da0a085921">pl_write_log</a>(<a class="el" href="pico__log_8h.html#aca0828ad9286d7b2811d54d577c57867a70759f4b5b9754f801957c86ce55056a">PL_LEVEL_INFO</a>,  __FILE__, __LINE__, __func__, __VA_ARGS__)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Logs an INFO message. </p>
-<p>Writes an INFO level message to the log. Usage is similar to printf (i.e. <a class="el" href="pico__log_8h.html#a903f9dbf87aa2613334049783c5beb16" title="Logs an INFO message.">plog_info(format, args...)</a>) </p>
+<p>Writes an INFO level message to the log. Usage is similar to printf (i.e. pl_info(format, args...)) </p>
 
 </div>
 </div>
-<a id="adc704dc11cfb6b77211593883a1d9b9e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adc704dc11cfb6b77211593883a1d9b9e">&#9670;&nbsp;</a></span>plog_warn</h2>
+<a id="af8bdb1a8306562edb5a9f148e027b2de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8bdb1a8306562edb5a9f148e027b2de">&#9670;&nbsp;</a></span>pl_log_warn</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define plog_warn</td>
+          <td class="memname">#define pl_log_warn</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>...</em></td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="pico__log_8h.html#a0dc5b03f25f40cdb35b05bda8d8f3ec6">plog_write</a>(<a class="el" href="pico__log_8h.html#aff2fb8cadb9a4e5fe70cb784e97a02bfafe7a220c05685e85d46e33b91fad5304">PLOG_LEVEL_WARN</a>,  __FILE__, __LINE__, __func__, __VA_ARGS__)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="pico__log_8h.html#a8dbf5c319bb4aa0c2f3117da0a085921">pl_write_log</a>(<a class="el" href="pico__log_8h.html#aca0828ad9286d7b2811d54d577c57867a26a3b9fb3b9d64fe7e142178d3243c33">PL_LEVEL_WARN</a>,  __FILE__, __LINE__, __func__, __VA_ARGS__)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Logs a WARN message. </p>
-<p>Writes a WARN level message to the log. Usage is similar to printf (i.e. (i.e. <a class="el" href="pico__log_8h.html#adc704dc11cfb6b77211593883a1d9b9e" title="Logs a WARN message.">plog_warn(format, args...)</a>) </p>
+<p>Writes a WARN level message to the log. Usage is similar to printf (i.e. (i.e. pl_warn(format, args...)) </p>
 
 </div>
 </div>
-<a id="a4747fdf9c2be3928dbc66ed8d611b556"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4747fdf9c2be3928dbc66ed8d611b556">&#9670;&nbsp;</a></span>plog_error</h2>
+<a id="ae67916d2962ebca51a1f11b62bce56d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae67916d2962ebca51a1f11b62bce56d3">&#9670;&nbsp;</a></span>pl_log_error</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define plog_error</td>
+          <td class="memname">#define pl_log_error</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>...</em></td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="pico__log_8h.html#a0dc5b03f25f40cdb35b05bda8d8f3ec6">plog_write</a>(<a class="el" href="pico__log_8h.html#aff2fb8cadb9a4e5fe70cb784e97a02bfa672d431b4a0b0267134ecbc5c3033fc5">PLOG_LEVEL_ERROR</a>, __FILE__, __LINE__, __func__, __VA_ARGS__)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="pico__log_8h.html#a8dbf5c319bb4aa0c2f3117da0a085921">pl_write_log</a>(<a class="el" href="pico__log_8h.html#aca0828ad9286d7b2811d54d577c57867af09344d92482eafdd4ea96cc548c3344">PL_LEVEL_ERROR</a>, __FILE__, __LINE__, __func__, __VA_ARGS__)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Logs an ERROR message. </p>
-<p>Writes a ERROR level message to the log. Usage is similar to printf (i.e. (i.e. <a class="el" href="pico__log_8h.html#a4747fdf9c2be3928dbc66ed8d611b556" title="Logs an ERROR message.">plog_error(format, args...)</a>) </p>
+<p>Writes a ERROR level message to the log. Usage is similar to printf (i.e. (i.e. pl_error(format, args...)) </p>
 
 </div>
 </div>
-<a id="ae63c9ae80a8e9bf30300836dea66ee9e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae63c9ae80a8e9bf30300836dea66ee9e">&#9670;&nbsp;</a></span>plog_fatal</h2>
+<a id="ad862b483f07c6706cee2bf03fb8b392f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad862b483f07c6706cee2bf03fb8b392f">&#9670;&nbsp;</a></span>pl_log_fatal</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define plog_fatal</td>
+          <td class="memname">#define pl_log_fatal</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>...</em></td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="pico__log_8h.html#a0dc5b03f25f40cdb35b05bda8d8f3ec6">plog_write</a>(<a class="el" href="pico__log_8h.html#aff2fb8cadb9a4e5fe70cb784e97a02bfa725c2200dff057690cac27e275cc5f91">PLOG_LEVEL_FATAL</a>, __FILE__, __LINE__, __func__, __VA_ARGS__)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="pico__log_8h.html#a8dbf5c319bb4aa0c2f3117da0a085921">pl_write_log</a>(<a class="el" href="pico__log_8h.html#aca0828ad9286d7b2811d54d577c57867a41c04c6d7b3f79a15b5712d979714d3c">PL_LEVEL_FATAL</a>, __FILE__, __LINE__, __func__, __VA_ARGS__)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Logs a FATAL message. </p>
-<p>Writes a FATAL level message to the log.. Usage is similar to printf (i.e. (i.e. <a class="el" href="pico__log_8h.html#ae63c9ae80a8e9bf30300836dea66ee9e" title="Logs a FATAL message.">plog_fatal(format, args...)</a>) </p>
+<p>Writes a FATAL level message to the log.. Usage is similar to printf (i.e. (i.e. pl_fatal(format, args...)) </p>
 
 </div>
 </div>
 <h2 class="groupheader">Typedef Documentation</h2>
-<a id="a27a1a391f206601497627ffa3ebe7c86"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a27a1a391f206601497627ffa3ebe7c86">&#9670;&nbsp;</a></span>plog_appender_fn</h2>
+<a id="ad46a198b2f52025591ac87e40f4c6668"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad46a198b2f52025591ac87e40f4c6668">&#9670;&nbsp;</a></span>pl_appender_fn</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(* plog_appender_fn) (const char *entry, void *udata)</td>
+          <td class="memname">typedef void(* pl_appender_fn) (const char *entry, void *udata)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -373,30 +372,30 @@ Constants:</h2>
 
 </div>
 </div>
-<a id="a5ecc159656d25cf6d18079d7617332d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ecc159656d25cf6d18079d7617332d6">&#9670;&nbsp;</a></span>plog_lock_fn</h2>
+<a id="a280d377aae6209d04f2ccdeb79359a91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a280d377aae6209d04f2ccdeb79359a91">&#9670;&nbsp;</a></span>pl_lock_fn</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(* plog_lock_fn) (bool lock, void *udata)</td>
+          <td class="memname">typedef void(* pl_lock_fn) (bool lock, void *udata)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Lock function definition. This is called during plog_write. Adapted. </p>
+<p>Lock function definition. This is called during pl_write_log. Adapted. </p>
 
 </div>
 </div>
-<a id="a648c960ac09d5147e394e4ca2f7287bf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a648c960ac09d5147e394e4ca2f7287bf">&#9670;&nbsp;</a></span>plog_id_t</h2>
+<a id="a75313a635254411b22b2b0ed0c906017"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75313a635254411b22b2b0ed0c906017">&#9670;&nbsp;</a></span>pl_id_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef int <a class="el" href="pico__log_8h.html#a648c960ac09d5147e394e4ca2f7287bf">plog_id_t</a></td>
+          <td class="memname">typedef int <a class="el" href="pico__log_8h.html#a75313a635254411b22b2b0ed0c906017">pl_id_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -406,40 +405,40 @@ Constants:</h2>
 </div>
 </div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="aff2fb8cadb9a4e5fe70cb784e97a02bf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aff2fb8cadb9a4e5fe70cb784e97a02bf">&#9670;&nbsp;</a></span>plog_level_t</h2>
+<a id="aca0828ad9286d7b2811d54d577c57867"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca0828ad9286d7b2811d54d577c57867">&#9670;&nbsp;</a></span>pl_level_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="pico__log_8h.html#aff2fb8cadb9a4e5fe70cb784e97a02bf">plog_level_t</a></td>
+          <td class="memname">enum <a class="el" href="pico__log_8h.html#aca0828ad9286d7b2811d54d577c57867">pl_level_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>These codes allow different layers of granularity when logging. See the documentation of the <code>plog_set_level</code> function for more information. </p>
+<p>These codes allow different layers of granularity when logging. See the documentation of the <code>pl_set_level</code> function for more information. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aff2fb8cadb9a4e5fe70cb784e97a02bfa5491a0ca6d638977b1cd29081cfa5fe0"></a>PLOG_LEVEL_TRACE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aff2fb8cadb9a4e5fe70cb784e97a02bfa3c13992ad40d33ab88d014a0f8188020"></a>PLOG_LEVEL_DEBUG&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aff2fb8cadb9a4e5fe70cb784e97a02bfad56de42c5f85fcd3b8ea3fbfa89e5c90"></a>PLOG_LEVEL_INFO&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aff2fb8cadb9a4e5fe70cb784e97a02bfafe7a220c05685e85d46e33b91fad5304"></a>PLOG_LEVEL_WARN&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aff2fb8cadb9a4e5fe70cb784e97a02bfa672d431b4a0b0267134ecbc5c3033fc5"></a>PLOG_LEVEL_ERROR&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aff2fb8cadb9a4e5fe70cb784e97a02bfa725c2200dff057690cac27e275cc5f91"></a>PLOG_LEVEL_FATAL&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aff2fb8cadb9a4e5fe70cb784e97a02bfa064e26c17bbef645e3283cecda39b3dc"></a>PLOG_LEVEL_COUNT&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aca0828ad9286d7b2811d54d577c57867aafca9988d55bb6357de1fa599896c49d"></a>PL_LEVEL_TRACE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aca0828ad9286d7b2811d54d577c57867a43a4d6deb40685dc59033d96881e90ff"></a>PL_LEVEL_DEBUG&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aca0828ad9286d7b2811d54d577c57867a70759f4b5b9754f801957c86ce55056a"></a>PL_LEVEL_INFO&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aca0828ad9286d7b2811d54d577c57867a26a3b9fb3b9d64fe7e142178d3243c33"></a>PL_LEVEL_WARN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aca0828ad9286d7b2811d54d577c57867af09344d92482eafdd4ea96cc548c3344"></a>PL_LEVEL_ERROR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aca0828ad9286d7b2811d54d577c57867a41c04c6d7b3f79a15b5712d979714d3c"></a>PL_LEVEL_FATAL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aca0828ad9286d7b2811d54d577c57867ac20bf5c88e2c037b4a67fa525ff23b19"></a>PL_LEVEL_COUNT&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="aee80293ee1d90cb8c2347c10611fd76a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aee80293ee1d90cb8c2347c10611fd76a">&#9670;&nbsp;</a></span>plog_str_level()</h2>
+<a id="a7b4dd64388feddca00eca9ec55f1163e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b4dd64388feddca00eca9ec55f1163e">&#9670;&nbsp;</a></span>pl_str_level()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool plog_str_level </td>
+          <td class="memname">bool pl_str_level </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>str</em>, </td>
@@ -447,7 +446,7 @@ Constants:</h2>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="pico__log_8h.html#aff2fb8cadb9a4e5fe70cb784e97a02bf">plog_level_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="pico__log_8h.html#aca0828ad9286d7b2811d54d577c57867">pl_level_t</a> *&#160;</td>
           <td class="paramname"><em>level</em>&#160;</td>
         </tr>
         <tr>
@@ -462,14 +461,14 @@ Constants:</h2>
 
 </div>
 </div>
-<a id="a44c6c7379838225358316b003f455c14"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a44c6c7379838225358316b003f455c14">&#9670;&nbsp;</a></span>plog_enable()</h2>
+<a id="aeab27be43e1423eb170d77471d505fe7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeab27be43e1423eb170d77471d505fe7">&#9670;&nbsp;</a></span>pl_enable()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void plog_enable </td>
+          <td class="memname">void pl_enable </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -482,14 +481,14 @@ Constants:</h2>
 
 </div>
 </div>
-<a id="a77a2d280c464eba8ba69a76e2bef3020"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a77a2d280c464eba8ba69a76e2bef3020">&#9670;&nbsp;</a></span>plog_disable()</h2>
+<a id="adab7b86ecd9d99e522e564b3f3cd91ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adab7b86ecd9d99e522e564b3f3cd91ca">&#9670;&nbsp;</a></span>pl_disable()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void plog_disable </td>
+          <td class="memname">void pl_disable </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -502,22 +501,22 @@ Constants:</h2>
 
 </div>
 </div>
-<a id="a2fe72e1d30c94c96bf9a53a4630f4c8c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2fe72e1d30c94c96bf9a53a4630f4c8c">&#9670;&nbsp;</a></span>plog_add_appender()</h2>
+<a id="a7c1ef1d29cde9769d9e1d8fb7d8e8723"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c1ef1d29cde9769d9e1d8fb7d8e8723">&#9670;&nbsp;</a></span>pl_add_appender()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="pico__log_8h.html#a648c960ac09d5147e394e4ca2f7287bf">plog_id_t</a> plog_add_appender </td>
+          <td class="memname"><a class="el" href="pico__log_8h.html#a75313a635254411b22b2b0ed0c906017">pl_id_t</a> pl_add_appender </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="pico__log_8h.html#a27a1a391f206601497627ffa3ebe7c86">plog_appender_fn</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="pico__log_8h.html#ad46a198b2f52025591ac87e40f4c6668">pl_appender_fn</a>&#160;</td>
           <td class="paramname"><em>appender_fp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="pico__log_8h.html#aff2fb8cadb9a4e5fe70cb784e97a02bf">plog_level_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="pico__log_8h.html#aca0828ad9286d7b2811d54d577c57867">pl_level_t</a>&#160;</td>
           <td class="paramname"><em>level</em>, </td>
         </tr>
         <tr>
@@ -548,14 +547,14 @@ Constants:</h2>
 
 </div>
 </div>
-<a id="a06f88d19b65b1c8e3679ca18cad14947"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a06f88d19b65b1c8e3679ca18cad14947">&#9670;&nbsp;</a></span>plog_add_stream()</h2>
+<a id="aab1c7b208cb5704806aabe41f37198f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab1c7b208cb5704806aabe41f37198f8">&#9670;&nbsp;</a></span>pl_add_stream()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="pico__log_8h.html#a648c960ac09d5147e394e4ca2f7287bf">plog_id_t</a> plog_add_stream </td>
+          <td class="memname"><a class="el" href="pico__log_8h.html#a75313a635254411b22b2b0ed0c906017">pl_id_t</a> pl_add_stream </td>
           <td>(</td>
           <td class="paramtype">FILE *&#160;</td>
           <td class="paramname"><em>stream</em>, </td>
@@ -563,7 +562,7 @@ Constants:</h2>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="pico__log_8h.html#aff2fb8cadb9a4e5fe70cb784e97a02bf">plog_level_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="pico__log_8h.html#aca0828ad9286d7b2811d54d577c57867">pl_level_t</a>&#160;</td>
           <td class="paramname"><em>level</em>&#160;</td>
         </tr>
         <tr>
@@ -586,16 +585,16 @@ Constants:</h2>
 
 </div>
 </div>
-<a id="afd417cec7e43cd9a1a26dd09bab82f3f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd417cec7e43cd9a1a26dd09bab82f3f">&#9670;&nbsp;</a></span>plog_remove_appender()</h2>
+<a id="a7cb60519f30974b373812c4e91c941ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7cb60519f30974b373812c4e91c941ab">&#9670;&nbsp;</a></span>pl_remove_appender()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void plog_remove_appender </td>
+          <td class="memname">void pl_remove_appender </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="pico__log_8h.html#a648c960ac09d5147e394e4ca2f7287bf">plog_id_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="pico__log_8h.html#a75313a635254411b22b2b0ed0c906017">pl_id_t</a>&#160;</td>
           <td class="paramname"><em>id</em></td><td>)</td>
           <td></td>
         </tr>
@@ -612,16 +611,16 @@ Constants:</h2>
 
 </div>
 </div>
-<a id="a5d22f16608edc2882d7f28b6ba426a14"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d22f16608edc2882d7f28b6ba426a14">&#9670;&nbsp;</a></span>plog_enable_appender()</h2>
+<a id="ab7ad5854268eb2e6c946a93f939785b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7ad5854268eb2e6c946a93f939785b9">&#9670;&nbsp;</a></span>pl_enable_appender()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void plog_enable_appender </td>
+          <td class="memname">void pl_enable_appender </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="pico__log_8h.html#a648c960ac09d5147e394e4ca2f7287bf">plog_id_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="pico__log_8h.html#a75313a635254411b22b2b0ed0c906017">pl_id_t</a>&#160;</td>
           <td class="paramname"><em>id</em></td><td>)</td>
           <td></td>
         </tr>
@@ -638,16 +637,16 @@ Constants:</h2>
 
 </div>
 </div>
-<a id="ad6c7325d154c3028f50b0afc3a92edcd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad6c7325d154c3028f50b0afc3a92edcd">&#9670;&nbsp;</a></span>plog_disable_appender()</h2>
+<a id="a496e3e6dada9d9fac144be64836a2342"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a496e3e6dada9d9fac144be64836a2342">&#9670;&nbsp;</a></span>pl_disable_appender()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void plog_disable_appender </td>
+          <td class="memname">void pl_disable_appender </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="pico__log_8h.html#a648c960ac09d5147e394e4ca2f7287bf">plog_id_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="pico__log_8h.html#a75313a635254411b22b2b0ed0c906017">pl_id_t</a>&#160;</td>
           <td class="paramname"><em>id</em></td><td>)</td>
           <td></td>
         </tr>
@@ -664,22 +663,22 @@ Constants:</h2>
 
 </div>
 </div>
-<a id="ac4f9b6f0c3d8f9618ecb8da7104d91a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac4f9b6f0c3d8f9618ecb8da7104d91a5">&#9670;&nbsp;</a></span>plog_set_lock()</h2>
+<a id="afe02e2bdd2837ff061bbc8bb8111d2d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe02e2bdd2837ff061bbc8bb8111d2d9">&#9670;&nbsp;</a></span>pl_set_lock()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void plog_set_lock </td>
+          <td class="memname">void pl_set_lock </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="pico__log_8h.html#a648c960ac09d5147e394e4ca2f7287bf">plog_id_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="pico__log_8h.html#a75313a635254411b22b2b0ed0c906017">pl_id_t</a>&#160;</td>
           <td class="paramname"><em>id</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="pico__log_8h.html#a5ecc159656d25cf6d18079d7617332d6">plog_lock_fn</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="pico__log_8h.html#a280d377aae6209d04f2ccdeb79359a91">pl_lock_fn</a>&#160;</td>
           <td class="paramname"><em>lock_fp</em>, </td>
         </tr>
         <tr>
@@ -700,22 +699,22 @@ Constants:</h2>
 
 </div>
 </div>
-<a id="aae2de9741c945eff454db034d2927af0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae2de9741c945eff454db034d2927af0">&#9670;&nbsp;</a></span>plog_set_level()</h2>
+<a id="ab92bcadb562435026677dfe8ff27be86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab92bcadb562435026677dfe8ff27be86">&#9670;&nbsp;</a></span>pl_set_level()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void plog_set_level </td>
+          <td class="memname">void pl_set_level </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="pico__log_8h.html#a648c960ac09d5147e394e4ca2f7287bf">plog_id_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="pico__log_8h.html#a75313a635254411b22b2b0ed0c906017">pl_id_t</a>&#160;</td>
           <td class="paramname"><em>id</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="pico__log_8h.html#aff2fb8cadb9a4e5fe70cb784e97a02bf">plog_level_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="pico__log_8h.html#aca0828ad9286d7b2811d54d577c57867">pl_level_t</a>&#160;</td>
           <td class="paramname"><em>level</em>&#160;</td>
         </tr>
         <tr>
@@ -738,16 +737,16 @@ Constants:</h2>
 
 </div>
 </div>
-<a id="ab72192f83d616aa4f59e4d6ff69282af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab72192f83d616aa4f59e4d6ff69282af">&#9670;&nbsp;</a></span>plog_set_time_fmt()</h2>
+<a id="a5f9ae1b346fd101daf230fad559c32ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f9ae1b346fd101daf230fad559c32ca">&#9670;&nbsp;</a></span>pl_set_time_fmt()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void plog_set_time_fmt </td>
+          <td class="memname">void pl_set_time_fmt </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="pico__log_8h.html#a648c960ac09d5147e394e4ca2f7287bf">plog_id_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="pico__log_8h.html#a75313a635254411b22b2b0ed0c906017">pl_id_t</a>&#160;</td>
           <td class="paramname"><em>id</em>, </td>
         </tr>
         <tr>
@@ -776,16 +775,16 @@ Constants:</h2>
 
 </div>
 </div>
-<a id="a9d63121f4def581761577fb842f30a8e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d63121f4def581761577fb842f30a8e">&#9670;&nbsp;</a></span>plog_display_colors()</h2>
+<a id="aac14f1408eaebdce050417b32cf289ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac14f1408eaebdce050417b32cf289ae">&#9670;&nbsp;</a></span>pl_display_colors()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void plog_display_colors </td>
+          <td class="memname">void pl_display_colors </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="pico__log_8h.html#a648c960ac09d5147e394e4ca2f7287bf">plog_id_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="pico__log_8h.html#a75313a635254411b22b2b0ed0c906017">pl_id_t</a>&#160;</td>
           <td class="paramname"><em>id</em>, </td>
         </tr>
         <tr>
@@ -813,16 +812,16 @@ Constants:</h2>
 
 </div>
 </div>
-<a id="ad587a3227f83941d488dcf27f866f9ef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad587a3227f83941d488dcf27f866f9ef">&#9670;&nbsp;</a></span>plog_display_timestamp()</h2>
+<a id="a0ea963e5e966f53ff60479b7faa55015"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ea963e5e966f53ff60479b7faa55015">&#9670;&nbsp;</a></span>pl_display_timestamp()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void plog_display_timestamp </td>
+          <td class="memname">void pl_display_timestamp </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="pico__log_8h.html#a648c960ac09d5147e394e4ca2f7287bf">plog_id_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="pico__log_8h.html#a75313a635254411b22b2b0ed0c906017">pl_id_t</a>&#160;</td>
           <td class="paramname"><em>id</em>, </td>
         </tr>
         <tr>
@@ -850,16 +849,16 @@ Constants:</h2>
 
 </div>
 </div>
-<a id="aa0bd8e9fc3fc016260db9b951df4f22a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa0bd8e9fc3fc016260db9b951df4f22a">&#9670;&nbsp;</a></span>plog_display_level()</h2>
+<a id="ad284135b15625f7a0c18341df9ff37c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad284135b15625f7a0c18341df9ff37c6">&#9670;&nbsp;</a></span>pl_display_level()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void plog_display_level </td>
+          <td class="memname">void pl_display_level </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="pico__log_8h.html#a648c960ac09d5147e394e4ca2f7287bf">plog_id_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="pico__log_8h.html#a75313a635254411b22b2b0ed0c906017">pl_id_t</a>&#160;</td>
           <td class="paramname"><em>id</em>, </td>
         </tr>
         <tr>
@@ -887,16 +886,16 @@ Constants:</h2>
 
 </div>
 </div>
-<a id="a4531394dbc8a6368fd32fd4f44f94e0f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4531394dbc8a6368fd32fd4f44f94e0f">&#9670;&nbsp;</a></span>plog_display_file()</h2>
+<a id="afd9193f2fe579c4ed4a35ddc57d409b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd9193f2fe579c4ed4a35ddc57d409b6">&#9670;&nbsp;</a></span>pl_display_file()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void plog_display_file </td>
+          <td class="memname">void pl_display_file </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="pico__log_8h.html#a648c960ac09d5147e394e4ca2f7287bf">plog_id_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="pico__log_8h.html#a75313a635254411b22b2b0ed0c906017">pl_id_t</a>&#160;</td>
           <td class="paramname"><em>id</em>, </td>
         </tr>
         <tr>
@@ -924,16 +923,16 @@ Constants:</h2>
 
 </div>
 </div>
-<a id="a500e311d03e558ef0db20adef09c07ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a500e311d03e558ef0db20adef09c07ba">&#9670;&nbsp;</a></span>plog_display_function()</h2>
+<a id="a1f53a5a5f12eedcd719f40c790694f9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f53a5a5f12eedcd719f40c790694f9c">&#9670;&nbsp;</a></span>pl_display_function()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void plog_display_function </td>
+          <td class="memname">void pl_display_function </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="pico__log_8h.html#a648c960ac09d5147e394e4ca2f7287bf">plog_id_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="pico__log_8h.html#a75313a635254411b22b2b0ed0c906017">pl_id_t</a>&#160;</td>
           <td class="paramname"><em>id</em>, </td>
         </tr>
         <tr>
@@ -961,16 +960,16 @@ Constants:</h2>
 
 </div>
 </div>
-<a id="a0dc5b03f25f40cdb35b05bda8d8f3ec6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0dc5b03f25f40cdb35b05bda8d8f3ec6">&#9670;&nbsp;</a></span>plog_write()</h2>
+<a id="a8dbf5c319bb4aa0c2f3117da0a085921"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8dbf5c319bb4aa0c2f3117da0a085921">&#9670;&nbsp;</a></span>pl_write_log()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void plog_write </td>
+          <td class="memname">void pl_write_log </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="pico__log_8h.html#aff2fb8cadb9a4e5fe70cb784e97a02bf">plog_level_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="pico__log_8h.html#aca0828ad9286d7b2811d54d577c57867">pl_level_t</a>&#160;</td>
           <td class="paramname"><em>level</em>, </td>
         </tr>
         <tr>
