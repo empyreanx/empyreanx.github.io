@@ -1,26 +1,6 @@
 var searchData=
 [
-  ['pgl_5fbuffer_5ft_580',['pgl_buffer_t',['../pico__gl_8h.html#ab07098c9586a1f3c8586ed1859cd6bc2',1,'pico_gl.h']]],
-  ['pgl_5fctx_5ft_581',['pgl_ctx_t',['../pico__gl_8h.html#af51fa12f49452bafcb60d1904589f730',1,'pico_gl.h']]],
-  ['pgl_5floader_5ffn_582',['pgl_loader_fn',['../pico__gl_8h.html#a734c038804349ad7df62d2b610da8339',1,'pico_gl.h']]],
-  ['pgl_5fm2_5ft_583',['pgl_m2_t',['../pico__gl_8h.html#a22148155c09ba7952896e2d6c9f2ac21',1,'pico_gl.h']]],
-  ['pgl_5fm3_5ft_584',['pgl_m3_t',['../pico__gl_8h.html#ad523e0c10b3618d733a586d6ea73a300',1,'pico_gl.h']]],
-  ['pgl_5fm4_5ft_585',['pgl_m4_t',['../pico__gl_8h.html#aac7976d8ef6fe32382800ea475241cf4',1,'pico_gl.h']]],
-  ['pgl_5fshader_5ft_586',['pgl_shader_t',['../pico__gl_8h.html#a16d88bc17a24b2d88277dc8463636641',1,'pico_gl.h']]],
-  ['pgl_5fsize_5ft_587',['pgl_size_t',['../pico__gl_8h.html#ac45edf63090e9ebe407ee1cf4a0a2ad6',1,'pico_gl.h']]],
-  ['pgl_5ftexture_5ft_588',['pgl_texture_t',['../pico__gl_8h.html#acefa7a4a5ea41ee5470fa46465651684',1,'pico_gl.h']]],
-  ['pgl_5fv2f_5ft_589',['pgl_v2f_t',['../pico__gl_8h.html#a521a52d3819678094f5fc68c1ccc13ea',1,'pico_gl.h']]],
-  ['pgl_5fv2i_5ft_590',['pgl_v2i_t',['../pico__gl_8h.html#a2cdf02615915a0e913fdf30f8d24ba2c',1,'pico_gl.h']]],
-  ['pgl_5fv3f_5ft_591',['pgl_v3f_t',['../pico__gl_8h.html#aab23a010c048457428c8cd254bc9253a',1,'pico_gl.h']]],
-  ['pgl_5fv3i_5ft_592',['pgl_v3i_t',['../pico__gl_8h.html#ad484302ee230835fdb3509c2134b1247',1,'pico_gl.h']]],
-  ['pgl_5fv4f_5ft_593',['pgl_v4f_t',['../pico__gl_8h.html#ae31fdf01cea07225cdc21aae3d67aa16',1,'pico_gl.h']]],
-  ['pgl_5fv4i_5ft_594',['pgl_v4i_t',['../pico__gl_8h.html#a981f0e86f1fe75c2932d5eb826d9f73e',1,'pico_gl.h']]],
-  ['pl_5fappender_5ffn_595',['pl_appender_fn',['../pico__log_8h.html#ad46a198b2f52025591ac87e40f4c6668',1,'pico_log.h']]],
-  ['pl_5fid_5ft_596',['pl_id_t',['../pico__log_8h.html#a75313a635254411b22b2b0ed0c906017',1,'pico_log.h']]],
-  ['pl_5flock_5ffn_597',['pl_lock_fn',['../pico__log_8h.html#a280d377aae6209d04f2ccdeb79359a91',1,'pico_log.h']]],
-  ['pm_5fflt_598',['pm_flt',['../pico__math_8h.html#a5f6d95b45d6581a0f4fedb0abec2c4ed',1,'pico_math.h']]],
-  ['ptime_5ft_599',['ptime_t',['../pico__time_8h.html#ab79ee746422e20141a3e7c6c47f750ad',1,'pico_time.h']]],
-  ['pu_5fsetup_5ffn_600',['pu_setup_fn',['../pico__unit_8h.html#ab4f6307484d15f2c4b5d0c5286ee9b0f',1,'pico_unit.h']]],
-  ['pu_5fsuite_5ffn_601',['pu_suite_fn',['../pico__unit_8h.html#a49e764f0764eaa49abddbb4aee0de8a5',1,'pico_unit.h']]],
-  ['pu_5ftest_5ffn_602',['pu_test_fn',['../pico__unit_8h.html#a428a3a0ab00bc146b6e45bb14fecb648',1,'pico_unit.h']]]
+  ['log_5fappender_5ffn_580',['log_appender_fn',['../pico__log_8h.html#a3812256bf0619b47a6a60c70881a8c26',1,'pico_log.h']]],
+  ['log_5fappender_5flock_5ffn_581',['log_appender_lock_fn',['../pico__log_8h.html#afd9d8919a261fd4d1699c8039672fc59',1,'pico_log.h']]],
+  ['log_5fappender_5ft_582',['log_appender_t',['../pico__log_8h.html#adb16d047b76f848ceecd6835beb101d0',1,'pico_log.h']]]
 ];
