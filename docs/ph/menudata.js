@@ -38,12 +38,14 @@ var menudata={children:[
 {text:"e",url:"globals_e.html#index_e"},
 {text:"g",url:"globals_g.html#index_g"},
 {text:"l",url:"globals_l.html#index_l"},
-{text:"p",url:"globals_p.html#index_p"}]},
+{text:"p",url:"globals_p.html#index_p"},
+{text:"s",url:"globals_s.html#index_s"}]},
 {text:"Functions",url:"globals_func.html",children:[
 {text:"b",url:"globals_func.html#index_b"},
 {text:"e",url:"globals_func.html#index_e"},
 {text:"l",url:"globals_func.html#index_l"},
-{text:"p",url:"globals_func.html#index_p"}]},
+{text:"p",url:"globals_func.html#index_p"},
+{text:"s",url:"globals_func.html#index_s"}]},
 {text:"Typedefs",url:"globals_type.html"},
 {text:"Enumerations",url:"globals_enum.html"},
 {text:"Enumerator",url:"globals_eval.html",children:[

@@ -1040,133 +1040,141 @@ $(function() {
 <div class="line"><a name="l01228"></a><span class="lineno"> 1228</span>&#160; </div>
 <div class="line"><a name="l01229"></a><span class="lineno"> 1229</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> ecs_array_init(<a class="code" href="pico__ecs_8h.html#a78aee9dde23c9234e2607b7bf6c91139">ecs_t</a>* ecs, ecs_array_t* array, <span class="keywordtype">size_t</span> size, <span class="keywordtype">size_t</span> capacity)</div>
 <div class="line"><a name="l01230"></a><span class="lineno"> 1230</span>&#160;{</div>
-<div class="line"><a name="l01231"></a><span class="lineno"> 1231</span>&#160;    (void)ecs;</div>
-<div class="line"><a name="l01232"></a><span class="lineno"> 1232</span>&#160; </div>
-<div class="line"><a name="l01233"></a><span class="lineno"> 1233</span>&#160;    memset(array, 0, <span class="keyword">sizeof</span>(ecs_array_t));</div>
-<div class="line"><a name="l01234"></a><span class="lineno"> 1234</span>&#160; </div>
-<div class="line"><a name="l01235"></a><span class="lineno"> 1235</span>&#160;    array-&gt;capacity = capacity;</div>
-<div class="line"><a name="l01236"></a><span class="lineno"> 1236</span>&#160;    array-&gt;count = 0;</div>
-<div class="line"><a name="l01237"></a><span class="lineno"> 1237</span>&#160;    array-&gt;size = size;</div>
-<div class="line"><a name="l01238"></a><span class="lineno"> 1238</span>&#160;    array-&gt;data = ECS_MALLOC(size * capacity, ecs-&gt;mem_ctx);</div>
-<div class="line"><a name="l01239"></a><span class="lineno"> 1239</span>&#160;}</div>
-<div class="line"><a name="l01240"></a><span class="lineno"> 1240</span>&#160; </div>
-<div class="line"><a name="l01241"></a><span class="lineno"> 1241</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> ecs_array_free(<a class="code" href="pico__ecs_8h.html#a78aee9dde23c9234e2607b7bf6c91139">ecs_t</a>* ecs, ecs_array_t* array)</div>
-<div class="line"><a name="l01242"></a><span class="lineno"> 1242</span>&#160;{</div>
-<div class="line"><a name="l01243"></a><span class="lineno"> 1243</span>&#160;    (void)ecs;</div>
-<div class="line"><a name="l01244"></a><span class="lineno"> 1244</span>&#160;    ECS_FREE(array-&gt;data, ecs-&gt;mem_ctx);</div>
-<div class="line"><a name="l01245"></a><span class="lineno"> 1245</span>&#160;}</div>
-<div class="line"><a name="l01246"></a><span class="lineno"> 1246</span>&#160; </div>
-<div class="line"><a name="l01247"></a><span class="lineno"> 1247</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> ecs_array_resize(<a class="code" href="pico__ecs_8h.html#a78aee9dde23c9234e2607b7bf6c91139">ecs_t</a>* ecs, ecs_array_t* array, <span class="keywordtype">size_t</span> capacity)</div>
-<div class="line"><a name="l01248"></a><span class="lineno"> 1248</span>&#160;{</div>
+<div class="line"><a name="l01231"></a><span class="lineno"> 1231</span>&#160;    ECS_ASSERT(ecs_is_not_null(ecs));</div>
+<div class="line"><a name="l01232"></a><span class="lineno"> 1232</span>&#160;    ECS_ASSERT(ecs_is_not_null(array));</div>
+<div class="line"><a name="l01233"></a><span class="lineno"> 1233</span>&#160; </div>
+<div class="line"><a name="l01234"></a><span class="lineno"> 1234</span>&#160;    (void)ecs;</div>
+<div class="line"><a name="l01235"></a><span class="lineno"> 1235</span>&#160; </div>
+<div class="line"><a name="l01236"></a><span class="lineno"> 1236</span>&#160;    memset(array, 0, <span class="keyword">sizeof</span>(ecs_array_t));</div>
+<div class="line"><a name="l01237"></a><span class="lineno"> 1237</span>&#160; </div>
+<div class="line"><a name="l01238"></a><span class="lineno"> 1238</span>&#160;    array-&gt;capacity = capacity;</div>
+<div class="line"><a name="l01239"></a><span class="lineno"> 1239</span>&#160;    array-&gt;count = 0;</div>
+<div class="line"><a name="l01240"></a><span class="lineno"> 1240</span>&#160;    array-&gt;size = size;</div>
+<div class="line"><a name="l01241"></a><span class="lineno"> 1241</span>&#160;    array-&gt;data = ECS_MALLOC(size * capacity, ecs-&gt;mem_ctx);</div>
+<div class="line"><a name="l01242"></a><span class="lineno"> 1242</span>&#160;}</div>
+<div class="line"><a name="l01243"></a><span class="lineno"> 1243</span>&#160; </div>
+<div class="line"><a name="l01244"></a><span class="lineno"> 1244</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> ecs_array_free(<a class="code" href="pico__ecs_8h.html#a78aee9dde23c9234e2607b7bf6c91139">ecs_t</a>* ecs, ecs_array_t* array)</div>
+<div class="line"><a name="l01245"></a><span class="lineno"> 1245</span>&#160;{</div>
+<div class="line"><a name="l01246"></a><span class="lineno"> 1246</span>&#160;    ECS_ASSERT(ecs_is_not_null(ecs));</div>
+<div class="line"><a name="l01247"></a><span class="lineno"> 1247</span>&#160;    ECS_ASSERT(ecs_is_not_null(array));</div>
+<div class="line"><a name="l01248"></a><span class="lineno"> 1248</span>&#160; </div>
 <div class="line"><a name="l01249"></a><span class="lineno"> 1249</span>&#160;    (void)ecs;</div>
 <div class="line"><a name="l01250"></a><span class="lineno"> 1250</span>&#160; </div>
-<div class="line"><a name="l01251"></a><span class="lineno"> 1251</span>&#160;    <span class="keywordflow">if</span> (capacity &gt;= array-&gt;capacity)</div>
-<div class="line"><a name="l01252"></a><span class="lineno"> 1252</span>&#160;    {</div>
-<div class="line"><a name="l01253"></a><span class="lineno"> 1253</span>&#160;        <span class="keywordflow">while</span> (array-&gt;capacity &lt;= capacity)</div>
-<div class="line"><a name="l01254"></a><span class="lineno"> 1254</span>&#160;        {</div>
-<div class="line"><a name="l01255"></a><span class="lineno"> 1255</span>&#160;            array-&gt;capacity += (array-&gt;capacity / 2) + 2;</div>
-<div class="line"><a name="l01256"></a><span class="lineno"> 1256</span>&#160;        }</div>
-<div class="line"><a name="l01257"></a><span class="lineno"> 1257</span>&#160; </div>
-<div class="line"><a name="l01258"></a><span class="lineno"> 1258</span>&#160;        array-&gt;data = ECS_REALLOC(array-&gt;data,</div>
-<div class="line"><a name="l01259"></a><span class="lineno"> 1259</span>&#160;                                  array-&gt;capacity * array-&gt;size,</div>
-<div class="line"><a name="l01260"></a><span class="lineno"> 1260</span>&#160;                                  ecs-&gt;mem_ctx);</div>
-<div class="line"><a name="l01261"></a><span class="lineno"> 1261</span>&#160; </div>
-<div class="line"><a name="l01262"></a><span class="lineno"> 1262</span>&#160;        array-&gt;capacity = capacity;</div>
-<div class="line"><a name="l01263"></a><span class="lineno"> 1263</span>&#160;    }</div>
-<div class="line"><a name="l01264"></a><span class="lineno"> 1264</span>&#160;}</div>
-<div class="line"><a name="l01265"></a><span class="lineno"> 1265</span>&#160; </div>
-<div class="line"><a name="l01266"></a><span class="lineno"> 1266</span>&#160;<span class="comment">/*=============================================================================</span></div>
-<div class="line"><a name="l01267"></a><span class="lineno"> 1267</span>&#160;<span class="comment"> * Internal validation functions</span></div>
-<div class="line"><a name="l01268"></a><span class="lineno"> 1268</span>&#160;<span class="comment"> *============================================================================*/</span></div>
-<div class="line"><a name="l01269"></a><span class="lineno"> 1269</span>&#160;<span class="preprocessor">#ifndef NDEBUG</span></div>
-<div class="line"><a name="l01270"></a><span class="lineno"> 1270</span>&#160;<span class="keyword">static</span> <span class="keywordtype">bool</span> ecs_is_not_null(<span class="keywordtype">void</span>* ptr)</div>
-<div class="line"><a name="l01271"></a><span class="lineno"> 1271</span>&#160;{</div>
-<div class="line"><a name="l01272"></a><span class="lineno"> 1272</span>&#160;    <span class="keywordflow">return</span> NULL != ptr;</div>
-<div class="line"><a name="l01273"></a><span class="lineno"> 1273</span>&#160;}</div>
-<div class="line"><a name="l01274"></a><span class="lineno"> 1274</span>&#160; </div>
-<div class="line"><a name="l01275"></a><span class="lineno"> 1275</span>&#160;<span class="keyword">static</span> <span class="keywordtype">bool</span> ecs_is_valid_component_id(<a class="code" href="pico__ecs_8h.html#aa9ee79bf65bd0a2a714e48a71e58c3de">ecs_id_t</a> <span class="keywordtype">id</span>)</div>
-<div class="line"><a name="l01276"></a><span class="lineno"> 1276</span>&#160;{</div>
-<div class="line"><a name="l01277"></a><span class="lineno"> 1277</span>&#160;    <span class="keywordflow">return</span> <span class="keywordtype">id</span> &lt; ECS_MAX_COMPONENTS;</div>
-<div class="line"><a name="l01278"></a><span class="lineno"> 1278</span>&#160;}</div>
-<div class="line"><a name="l01279"></a><span class="lineno"> 1279</span>&#160; </div>
-<div class="line"><a name="l01280"></a><span class="lineno"> 1280</span>&#160;<span class="keyword">static</span> <span class="keywordtype">bool</span> ecs_is_valid_system_id(<a class="code" href="pico__ecs_8h.html#aa9ee79bf65bd0a2a714e48a71e58c3de">ecs_id_t</a> <span class="keywordtype">id</span>)</div>
-<div class="line"><a name="l01281"></a><span class="lineno"> 1281</span>&#160;{</div>
-<div class="line"><a name="l01282"></a><span class="lineno"> 1282</span>&#160;    <span class="keywordflow">return</span> <span class="keywordtype">id</span> &lt; ECS_MAX_SYSTEMS;</div>
-<div class="line"><a name="l01283"></a><span class="lineno"> 1283</span>&#160;}</div>
-<div class="line"><a name="l01284"></a><span class="lineno"> 1284</span>&#160; </div>
-<div class="line"><a name="l01285"></a><span class="lineno"> 1285</span>&#160;<span class="keyword">static</span> <span class="keywordtype">bool</span> ecs_is_entity_ready(<a class="code" href="pico__ecs_8h.html#a78aee9dde23c9234e2607b7bf6c91139">ecs_t</a>* ecs, <a class="code" href="pico__ecs_8h.html#aa9ee79bf65bd0a2a714e48a71e58c3de">ecs_id_t</a> entity_id)</div>
-<div class="line"><a name="l01286"></a><span class="lineno"> 1286</span>&#160;{</div>
-<div class="line"><a name="l01287"></a><span class="lineno"> 1287</span>&#160;    <span class="keywordflow">return</span> ecs-&gt;entities[entity_id].ready;</div>
-<div class="line"><a name="l01288"></a><span class="lineno"> 1288</span>&#160;}</div>
-<div class="line"><a name="l01289"></a><span class="lineno"> 1289</span>&#160; </div>
-<div class="line"><a name="l01290"></a><span class="lineno"> 1290</span>&#160;<span class="keyword">static</span> <span class="keywordtype">bool</span> ecs_is_component_ready(<a class="code" href="pico__ecs_8h.html#a78aee9dde23c9234e2607b7bf6c91139">ecs_t</a>* ecs, <a class="code" href="pico__ecs_8h.html#aa9ee79bf65bd0a2a714e48a71e58c3de">ecs_id_t</a> comp_id)</div>
-<div class="line"><a name="l01291"></a><span class="lineno"> 1291</span>&#160;{</div>
-<div class="line"><a name="l01292"></a><span class="lineno"> 1292</span>&#160;    <span class="keywordflow">return</span> comp_id &lt; ecs-&gt;comp_count;</div>
-<div class="line"><a name="l01293"></a><span class="lineno"> 1293</span>&#160;}</div>
-<div class="line"><a name="l01294"></a><span class="lineno"> 1294</span>&#160; </div>
-<div class="line"><a name="l01295"></a><span class="lineno"> 1295</span>&#160;<span class="keyword">static</span> <span class="keywordtype">bool</span> ecs_is_system_ready(<a class="code" href="pico__ecs_8h.html#a78aee9dde23c9234e2607b7bf6c91139">ecs_t</a>* ecs, <a class="code" href="pico__ecs_8h.html#aa9ee79bf65bd0a2a714e48a71e58c3de">ecs_id_t</a> sys_id)</div>
-<div class="line"><a name="l01296"></a><span class="lineno"> 1296</span>&#160;{</div>
-<div class="line"><a name="l01297"></a><span class="lineno"> 1297</span>&#160;    <span class="keywordflow">return</span> sys_id &lt; ecs-&gt;system_count;</div>
-<div class="line"><a name="l01298"></a><span class="lineno"> 1298</span>&#160;}</div>
-<div class="line"><a name="l01299"></a><span class="lineno"> 1299</span>&#160; </div>
-<div class="line"><a name="l01300"></a><span class="lineno"> 1300</span>&#160;<span class="preprocessor">#endif // NDEBUG</span></div>
-<div class="line"><a name="l01301"></a><span class="lineno"> 1301</span>&#160; </div>
-<div class="line"><a name="l01302"></a><span class="lineno"> 1302</span>&#160;<span class="preprocessor">#endif // PICO_ECS_IMPLEMENTATION</span></div>
-<div class="line"><a name="l01303"></a><span class="lineno"> 1303</span>&#160; </div>
-<div class="line"><a name="l01304"></a><span class="lineno"> 1304</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l01305"></a><span class="lineno"> 1305</span>&#160;<span class="comment">    ----------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l01306"></a><span class="lineno"> 1306</span>&#160;<span class="comment">    This software is available under two licenses (A) or (B). You may choose</span></div>
-<div class="line"><a name="l01307"></a><span class="lineno"> 1307</span>&#160;<span class="comment">    either one as you wish:</span></div>
-<div class="line"><a name="l01308"></a><span class="lineno"> 1308</span>&#160;<span class="comment">    ----------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l01309"></a><span class="lineno"> 1309</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l01310"></a><span class="lineno"> 1310</span>&#160;<span class="comment">    (A) The zlib License</span></div>
-<div class="line"><a name="l01311"></a><span class="lineno"> 1311</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l01312"></a><span class="lineno"> 1312</span>&#160;<span class="comment">    Copyright (c) 2021 James McLean</span></div>
-<div class="line"><a name="l01313"></a><span class="lineno"> 1313</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l01314"></a><span class="lineno"> 1314</span>&#160;<span class="comment">    This software is provided &#39;as-is&#39;, without any express or implied warranty.</span></div>
-<div class="line"><a name="l01315"></a><span class="lineno"> 1315</span>&#160;<span class="comment">    In no event will the authors be held liable for any damages arising from the</span></div>
-<div class="line"><a name="l01316"></a><span class="lineno"> 1316</span>&#160;<span class="comment">    use of this software.</span></div>
+<div class="line"><a name="l01251"></a><span class="lineno"> 1251</span>&#160;    ECS_FREE(array-&gt;data, ecs-&gt;mem_ctx);</div>
+<div class="line"><a name="l01252"></a><span class="lineno"> 1252</span>&#160;}</div>
+<div class="line"><a name="l01253"></a><span class="lineno"> 1253</span>&#160; </div>
+<div class="line"><a name="l01254"></a><span class="lineno"> 1254</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> ecs_array_resize(<a class="code" href="pico__ecs_8h.html#a78aee9dde23c9234e2607b7bf6c91139">ecs_t</a>* ecs, ecs_array_t* array, <span class="keywordtype">size_t</span> capacity)</div>
+<div class="line"><a name="l01255"></a><span class="lineno"> 1255</span>&#160;{</div>
+<div class="line"><a name="l01256"></a><span class="lineno"> 1256</span>&#160;    ECS_ASSERT(ecs_is_not_null(ecs));</div>
+<div class="line"><a name="l01257"></a><span class="lineno"> 1257</span>&#160;    ECS_ASSERT(ecs_is_not_null(array));</div>
+<div class="line"><a name="l01258"></a><span class="lineno"> 1258</span>&#160; </div>
+<div class="line"><a name="l01259"></a><span class="lineno"> 1259</span>&#160;    (void)ecs;</div>
+<div class="line"><a name="l01260"></a><span class="lineno"> 1260</span>&#160; </div>
+<div class="line"><a name="l01261"></a><span class="lineno"> 1261</span>&#160;    <span class="keywordflow">if</span> (capacity &gt;= array-&gt;capacity)</div>
+<div class="line"><a name="l01262"></a><span class="lineno"> 1262</span>&#160;    {</div>
+<div class="line"><a name="l01263"></a><span class="lineno"> 1263</span>&#160;        <span class="keywordflow">while</span> (array-&gt;capacity &lt;= capacity)</div>
+<div class="line"><a name="l01264"></a><span class="lineno"> 1264</span>&#160;        {</div>
+<div class="line"><a name="l01265"></a><span class="lineno"> 1265</span>&#160;            array-&gt;capacity += (array-&gt;capacity / 2) + 2;</div>
+<div class="line"><a name="l01266"></a><span class="lineno"> 1266</span>&#160;        }</div>
+<div class="line"><a name="l01267"></a><span class="lineno"> 1267</span>&#160; </div>
+<div class="line"><a name="l01268"></a><span class="lineno"> 1268</span>&#160;        array-&gt;data = ECS_REALLOC(array-&gt;data,</div>
+<div class="line"><a name="l01269"></a><span class="lineno"> 1269</span>&#160;                                  array-&gt;capacity * array-&gt;size,</div>
+<div class="line"><a name="l01270"></a><span class="lineno"> 1270</span>&#160;                                  ecs-&gt;mem_ctx);</div>
+<div class="line"><a name="l01271"></a><span class="lineno"> 1271</span>&#160;    }</div>
+<div class="line"><a name="l01272"></a><span class="lineno"> 1272</span>&#160;}</div>
+<div class="line"><a name="l01273"></a><span class="lineno"> 1273</span>&#160; </div>
+<div class="line"><a name="l01274"></a><span class="lineno"> 1274</span>&#160;<span class="comment">/*=============================================================================</span></div>
+<div class="line"><a name="l01275"></a><span class="lineno"> 1275</span>&#160;<span class="comment"> * Internal validation functions</span></div>
+<div class="line"><a name="l01276"></a><span class="lineno"> 1276</span>&#160;<span class="comment"> *============================================================================*/</span></div>
+<div class="line"><a name="l01277"></a><span class="lineno"> 1277</span>&#160;<span class="preprocessor">#ifndef NDEBUG</span></div>
+<div class="line"><a name="l01278"></a><span class="lineno"> 1278</span>&#160;<span class="keyword">static</span> <span class="keywordtype">bool</span> ecs_is_not_null(<span class="keywordtype">void</span>* ptr)</div>
+<div class="line"><a name="l01279"></a><span class="lineno"> 1279</span>&#160;{</div>
+<div class="line"><a name="l01280"></a><span class="lineno"> 1280</span>&#160;    <span class="keywordflow">return</span> NULL != ptr;</div>
+<div class="line"><a name="l01281"></a><span class="lineno"> 1281</span>&#160;}</div>
+<div class="line"><a name="l01282"></a><span class="lineno"> 1282</span>&#160; </div>
+<div class="line"><a name="l01283"></a><span class="lineno"> 1283</span>&#160;<span class="keyword">static</span> <span class="keywordtype">bool</span> ecs_is_valid_component_id(<a class="code" href="pico__ecs_8h.html#aa9ee79bf65bd0a2a714e48a71e58c3de">ecs_id_t</a> <span class="keywordtype">id</span>)</div>
+<div class="line"><a name="l01284"></a><span class="lineno"> 1284</span>&#160;{</div>
+<div class="line"><a name="l01285"></a><span class="lineno"> 1285</span>&#160;    <span class="keywordflow">return</span> <span class="keywordtype">id</span> &lt; ECS_MAX_COMPONENTS;</div>
+<div class="line"><a name="l01286"></a><span class="lineno"> 1286</span>&#160;}</div>
+<div class="line"><a name="l01287"></a><span class="lineno"> 1287</span>&#160; </div>
+<div class="line"><a name="l01288"></a><span class="lineno"> 1288</span>&#160;<span class="keyword">static</span> <span class="keywordtype">bool</span> ecs_is_valid_system_id(<a class="code" href="pico__ecs_8h.html#aa9ee79bf65bd0a2a714e48a71e58c3de">ecs_id_t</a> <span class="keywordtype">id</span>)</div>
+<div class="line"><a name="l01289"></a><span class="lineno"> 1289</span>&#160;{</div>
+<div class="line"><a name="l01290"></a><span class="lineno"> 1290</span>&#160;    <span class="keywordflow">return</span> <span class="keywordtype">id</span> &lt; ECS_MAX_SYSTEMS;</div>
+<div class="line"><a name="l01291"></a><span class="lineno"> 1291</span>&#160;}</div>
+<div class="line"><a name="l01292"></a><span class="lineno"> 1292</span>&#160; </div>
+<div class="line"><a name="l01293"></a><span class="lineno"> 1293</span>&#160;<span class="keyword">static</span> <span class="keywordtype">bool</span> ecs_is_entity_ready(<a class="code" href="pico__ecs_8h.html#a78aee9dde23c9234e2607b7bf6c91139">ecs_t</a>* ecs, <a class="code" href="pico__ecs_8h.html#aa9ee79bf65bd0a2a714e48a71e58c3de">ecs_id_t</a> entity_id)</div>
+<div class="line"><a name="l01294"></a><span class="lineno"> 1294</span>&#160;{</div>
+<div class="line"><a name="l01295"></a><span class="lineno"> 1295</span>&#160;    <span class="keywordflow">return</span> ecs-&gt;entities[entity_id].ready;</div>
+<div class="line"><a name="l01296"></a><span class="lineno"> 1296</span>&#160;}</div>
+<div class="line"><a name="l01297"></a><span class="lineno"> 1297</span>&#160; </div>
+<div class="line"><a name="l01298"></a><span class="lineno"> 1298</span>&#160;<span class="keyword">static</span> <span class="keywordtype">bool</span> ecs_is_component_ready(<a class="code" href="pico__ecs_8h.html#a78aee9dde23c9234e2607b7bf6c91139">ecs_t</a>* ecs, <a class="code" href="pico__ecs_8h.html#aa9ee79bf65bd0a2a714e48a71e58c3de">ecs_id_t</a> comp_id)</div>
+<div class="line"><a name="l01299"></a><span class="lineno"> 1299</span>&#160;{</div>
+<div class="line"><a name="l01300"></a><span class="lineno"> 1300</span>&#160;    <span class="keywordflow">return</span> comp_id &lt; ecs-&gt;comp_count;</div>
+<div class="line"><a name="l01301"></a><span class="lineno"> 1301</span>&#160;}</div>
+<div class="line"><a name="l01302"></a><span class="lineno"> 1302</span>&#160; </div>
+<div class="line"><a name="l01303"></a><span class="lineno"> 1303</span>&#160;<span class="keyword">static</span> <span class="keywordtype">bool</span> ecs_is_system_ready(<a class="code" href="pico__ecs_8h.html#a78aee9dde23c9234e2607b7bf6c91139">ecs_t</a>* ecs, <a class="code" href="pico__ecs_8h.html#aa9ee79bf65bd0a2a714e48a71e58c3de">ecs_id_t</a> sys_id)</div>
+<div class="line"><a name="l01304"></a><span class="lineno"> 1304</span>&#160;{</div>
+<div class="line"><a name="l01305"></a><span class="lineno"> 1305</span>&#160;    <span class="keywordflow">return</span> sys_id &lt; ecs-&gt;system_count;</div>
+<div class="line"><a name="l01306"></a><span class="lineno"> 1306</span>&#160;}</div>
+<div class="line"><a name="l01307"></a><span class="lineno"> 1307</span>&#160; </div>
+<div class="line"><a name="l01308"></a><span class="lineno"> 1308</span>&#160;<span class="preprocessor">#endif // NDEBUG</span></div>
+<div class="line"><a name="l01309"></a><span class="lineno"> 1309</span>&#160; </div>
+<div class="line"><a name="l01310"></a><span class="lineno"> 1310</span>&#160;<span class="preprocessor">#endif // PICO_ECS_IMPLEMENTATION</span></div>
+<div class="line"><a name="l01311"></a><span class="lineno"> 1311</span>&#160; </div>
+<div class="line"><a name="l01312"></a><span class="lineno"> 1312</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l01313"></a><span class="lineno"> 1313</span>&#160;<span class="comment">    ----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l01314"></a><span class="lineno"> 1314</span>&#160;<span class="comment">    This software is available under two licenses (A) or (B). You may choose</span></div>
+<div class="line"><a name="l01315"></a><span class="lineno"> 1315</span>&#160;<span class="comment">    either one as you wish:</span></div>
+<div class="line"><a name="l01316"></a><span class="lineno"> 1316</span>&#160;<span class="comment">    ----------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l01317"></a><span class="lineno"> 1317</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l01318"></a><span class="lineno"> 1318</span>&#160;<span class="comment">    Permission is granted to anyone to use this software for any purpose,</span></div>
-<div class="line"><a name="l01319"></a><span class="lineno"> 1319</span>&#160;<span class="comment">    including commercial applications, and to alter it and redistribute it</span></div>
-<div class="line"><a name="l01320"></a><span class="lineno"> 1320</span>&#160;<span class="comment">    freely, subject to the following restrictions:</span></div>
+<div class="line"><a name="l01318"></a><span class="lineno"> 1318</span>&#160;<span class="comment">    (A) The zlib License</span></div>
+<div class="line"><a name="l01319"></a><span class="lineno"> 1319</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l01320"></a><span class="lineno"> 1320</span>&#160;<span class="comment">    Copyright (c) 2021 James McLean</span></div>
 <div class="line"><a name="l01321"></a><span class="lineno"> 1321</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l01322"></a><span class="lineno"> 1322</span>&#160;<span class="comment">    1. The origin of this software must not be misrepresented; you must not</span></div>
-<div class="line"><a name="l01323"></a><span class="lineno"> 1323</span>&#160;<span class="comment">    claim that you wrote the original software. If you use this software in a</span></div>
-<div class="line"><a name="l01324"></a><span class="lineno"> 1324</span>&#160;<span class="comment">    product, an acknowledgment in the product documentation would be appreciated</span></div>
-<div class="line"><a name="l01325"></a><span class="lineno"> 1325</span>&#160;<span class="comment">    but is not required.</span></div>
-<div class="line"><a name="l01326"></a><span class="lineno"> 1326</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l01327"></a><span class="lineno"> 1327</span>&#160;<span class="comment">    2. Altered source versions must be plainly marked as such, and must not be</span></div>
-<div class="line"><a name="l01328"></a><span class="lineno"> 1328</span>&#160;<span class="comment">    misrepresented as being the original software.</span></div>
+<div class="line"><a name="l01322"></a><span class="lineno"> 1322</span>&#160;<span class="comment">    This software is provided &#39;as-is&#39;, without any express or implied warranty.</span></div>
+<div class="line"><a name="l01323"></a><span class="lineno"> 1323</span>&#160;<span class="comment">    In no event will the authors be held liable for any damages arising from the</span></div>
+<div class="line"><a name="l01324"></a><span class="lineno"> 1324</span>&#160;<span class="comment">    use of this software.</span></div>
+<div class="line"><a name="l01325"></a><span class="lineno"> 1325</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l01326"></a><span class="lineno"> 1326</span>&#160;<span class="comment">    Permission is granted to anyone to use this software for any purpose,</span></div>
+<div class="line"><a name="l01327"></a><span class="lineno"> 1327</span>&#160;<span class="comment">    including commercial applications, and to alter it and redistribute it</span></div>
+<div class="line"><a name="l01328"></a><span class="lineno"> 1328</span>&#160;<span class="comment">    freely, subject to the following restrictions:</span></div>
 <div class="line"><a name="l01329"></a><span class="lineno"> 1329</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l01330"></a><span class="lineno"> 1330</span>&#160;<span class="comment">    3. This notice may not be removed or altered from any source distribution.</span></div>
-<div class="line"><a name="l01331"></a><span class="lineno"> 1331</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l01332"></a><span class="lineno"> 1332</span>&#160;<span class="comment">    ----------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l01333"></a><span class="lineno"> 1333</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l01334"></a><span class="lineno"> 1334</span>&#160;<span class="comment">    (B) Public Domain (www.unlicense.org)</span></div>
-<div class="line"><a name="l01335"></a><span class="lineno"> 1335</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l01336"></a><span class="lineno"> 1336</span>&#160;<span class="comment">    This is free and unencumbered software released into the public domain.</span></div>
+<div class="line"><a name="l01330"></a><span class="lineno"> 1330</span>&#160;<span class="comment">    1. The origin of this software must not be misrepresented; you must not</span></div>
+<div class="line"><a name="l01331"></a><span class="lineno"> 1331</span>&#160;<span class="comment">    claim that you wrote the original software. If you use this software in a</span></div>
+<div class="line"><a name="l01332"></a><span class="lineno"> 1332</span>&#160;<span class="comment">    product, an acknowledgment in the product documentation would be appreciated</span></div>
+<div class="line"><a name="l01333"></a><span class="lineno"> 1333</span>&#160;<span class="comment">    but is not required.</span></div>
+<div class="line"><a name="l01334"></a><span class="lineno"> 1334</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l01335"></a><span class="lineno"> 1335</span>&#160;<span class="comment">    2. Altered source versions must be plainly marked as such, and must not be</span></div>
+<div class="line"><a name="l01336"></a><span class="lineno"> 1336</span>&#160;<span class="comment">    misrepresented as being the original software.</span></div>
 <div class="line"><a name="l01337"></a><span class="lineno"> 1337</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l01338"></a><span class="lineno"> 1338</span>&#160;<span class="comment">    Anyone is free to copy, modify, publish, use, compile, sell, or distribute</span></div>
-<div class="line"><a name="l01339"></a><span class="lineno"> 1339</span>&#160;<span class="comment">    this software, either in source code form or as a compiled binary, for any</span></div>
-<div class="line"><a name="l01340"></a><span class="lineno"> 1340</span>&#160;<span class="comment">    purpose, commercial or non-commercial, and by any means.</span></div>
+<div class="line"><a name="l01338"></a><span class="lineno"> 1338</span>&#160;<span class="comment">    3. This notice may not be removed or altered from any source distribution.</span></div>
+<div class="line"><a name="l01339"></a><span class="lineno"> 1339</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l01340"></a><span class="lineno"> 1340</span>&#160;<span class="comment">    ----------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l01341"></a><span class="lineno"> 1341</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l01342"></a><span class="lineno"> 1342</span>&#160;<span class="comment">    In jurisdictions that recognize copyright laws, the author or authors of</span></div>
-<div class="line"><a name="l01343"></a><span class="lineno"> 1343</span>&#160;<span class="comment">    this software dedicate any and all copyright interest in the software to the</span></div>
-<div class="line"><a name="l01344"></a><span class="lineno"> 1344</span>&#160;<span class="comment">    public domain. We make this dedication for the benefit of the public at</span></div>
-<div class="line"><a name="l01345"></a><span class="lineno"> 1345</span>&#160;<span class="comment">    large and to the detriment of our heirs and successors. We intend this</span></div>
-<div class="line"><a name="l01346"></a><span class="lineno"> 1346</span>&#160;<span class="comment">    dedication to be an overt act of relinquishment in perpetuity of all present</span></div>
-<div class="line"><a name="l01347"></a><span class="lineno"> 1347</span>&#160;<span class="comment">    and future rights to this software under copyright law.</span></div>
-<div class="line"><a name="l01348"></a><span class="lineno"> 1348</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l01349"></a><span class="lineno"> 1349</span>&#160;<span class="comment">    THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span></div>
-<div class="line"><a name="l01350"></a><span class="lineno"> 1350</span>&#160;<span class="comment">    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span></div>
-<div class="line"><a name="l01351"></a><span class="lineno"> 1351</span>&#160;<span class="comment">    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span></div>
-<div class="line"><a name="l01352"></a><span class="lineno"> 1352</span>&#160;<span class="comment">    AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN</span></div>
-<div class="line"><a name="l01353"></a><span class="lineno"> 1353</span>&#160;<span class="comment">    ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION</span></div>
-<div class="line"><a name="l01354"></a><span class="lineno"> 1354</span>&#160;<span class="comment">    WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</span></div>
-<div class="line"><a name="l01355"></a><span class="lineno"> 1355</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l01356"></a><span class="lineno"> 1356</span>&#160; </div>
-<div class="line"><a name="l01357"></a><span class="lineno"> 1357</span>&#160;<span class="comment">// EoF</span></div>
+<div class="line"><a name="l01342"></a><span class="lineno"> 1342</span>&#160;<span class="comment">    (B) Public Domain (www.unlicense.org)</span></div>
+<div class="line"><a name="l01343"></a><span class="lineno"> 1343</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l01344"></a><span class="lineno"> 1344</span>&#160;<span class="comment">    This is free and unencumbered software released into the public domain.</span></div>
+<div class="line"><a name="l01345"></a><span class="lineno"> 1345</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l01346"></a><span class="lineno"> 1346</span>&#160;<span class="comment">    Anyone is free to copy, modify, publish, use, compile, sell, or distribute</span></div>
+<div class="line"><a name="l01347"></a><span class="lineno"> 1347</span>&#160;<span class="comment">    this software, either in source code form or as a compiled binary, for any</span></div>
+<div class="line"><a name="l01348"></a><span class="lineno"> 1348</span>&#160;<span class="comment">    purpose, commercial or non-commercial, and by any means.</span></div>
+<div class="line"><a name="l01349"></a><span class="lineno"> 1349</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l01350"></a><span class="lineno"> 1350</span>&#160;<span class="comment">    In jurisdictions that recognize copyright laws, the author or authors of</span></div>
+<div class="line"><a name="l01351"></a><span class="lineno"> 1351</span>&#160;<span class="comment">    this software dedicate any and all copyright interest in the software to the</span></div>
+<div class="line"><a name="l01352"></a><span class="lineno"> 1352</span>&#160;<span class="comment">    public domain. We make this dedication for the benefit of the public at</span></div>
+<div class="line"><a name="l01353"></a><span class="lineno"> 1353</span>&#160;<span class="comment">    large and to the detriment of our heirs and successors. We intend this</span></div>
+<div class="line"><a name="l01354"></a><span class="lineno"> 1354</span>&#160;<span class="comment">    dedication to be an overt act of relinquishment in perpetuity of all present</span></div>
+<div class="line"><a name="l01355"></a><span class="lineno"> 1355</span>&#160;<span class="comment">    and future rights to this software under copyright law.</span></div>
+<div class="line"><a name="l01356"></a><span class="lineno"> 1356</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l01357"></a><span class="lineno"> 1357</span>&#160;<span class="comment">    THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span></div>
+<div class="line"><a name="l01358"></a><span class="lineno"> 1358</span>&#160;<span class="comment">    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span></div>
+<div class="line"><a name="l01359"></a><span class="lineno"> 1359</span>&#160;<span class="comment">    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span></div>
+<div class="line"><a name="l01360"></a><span class="lineno"> 1360</span>&#160;<span class="comment">    AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN</span></div>
+<div class="line"><a name="l01361"></a><span class="lineno"> 1361</span>&#160;<span class="comment">    ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION</span></div>
+<div class="line"><a name="l01362"></a><span class="lineno"> 1362</span>&#160;<span class="comment">    WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</span></div>
+<div class="line"><a name="l01363"></a><span class="lineno"> 1363</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l01364"></a><span class="lineno"> 1364</span>&#160; </div>
+<div class="line"><a name="l01365"></a><span class="lineno"> 1365</span>&#160;<span class="comment">// EoF</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="apico__ecs_8h_html_a3479df8429f09e798b32037419f94af9"><div class="ttname"><a href="pico__ecs_8h.html#a3479df8429f09e798b32037419f94af9">ecs_ret_t</a></div><div class="ttdeci">int8_t ecs_ret_t</div><div class="ttdoc">Return code for update callback and calling functions.</div><div class="ttdef"><b>Definition:</b> pico_ecs.h:95</div></div>
 <div class="ttc" id="apico__ecs_8h_html_a9c6cfc4c1aa35a30b1caf8a1900d231a"><div class="ttname"><a href="pico__ecs_8h.html#a9c6cfc4c1aa35a30b1caf8a1900d231a">ecs_queue_destroy</a></div><div class="ttdeci">void ecs_queue_destroy(ecs_t *ecs, ecs_id_t entity_id)</div><div class="ttdoc">Queues an entity for destruction at the end of system execution.</div></div>

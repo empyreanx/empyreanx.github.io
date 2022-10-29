@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['t00_564',['t00',['../structpm__t2.html#a7f3a438ba7337d90e609f417ebfc922b',1,'pm_t2']]],
-  ['t01_565',['t01',['../structpm__t2.html#a9192b60a080ae0b8cdad2be67c309f4d',1,'pm_t2']]],
-  ['t10_566',['t10',['../structpm__t2.html#ab33250f1f938eac2bb2afc6309fc12fb',1,'pm_t2']]],
-  ['t11_567',['t11',['../structpm__t2.html#a8c247906da3a6be92bf12db95d08c2ba',1,'pm_t2']]],
-  ['tx_568',['tx',['../structpm__t2.html#a54381e79478d7482803af403d4dc4c4f',1,'pm_t2']]],
-  ['ty_569',['ty',['../structpm__t2.html#a83585f2ec513734c7dd19c8bb8d96a5b',1,'pm_t2']]]
+  ['normal_595',['normal',['../structsat__manifold__t.html#a1ae4ceb8acbf8159f6bfba4301a64f21',1,'sat_manifold_t']]],
+  ['normals_596',['normals',['../structsat__poly__t.html#a69cb8b0e4e7dd3526da94f7a6aedc986',1,'sat_poly_t']]]
 ];
