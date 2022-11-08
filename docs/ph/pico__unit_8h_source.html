@@ -77,19 +77,19 @@ $(function() {
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="pico__unit_8h.html#a5620b4d60f6ca881b48fed708ddf325a">   78</a></span>&#160;<span class="preprocessor">#define PU_TEST(name) static bool name()</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="pico__unit_8h.html#a8bc255ff55721571e878568d2b5dcb35">   78</a></span>&#160;<span class="preprocessor">#define TEST_CASE(name) static bool name()</span></div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="pico__unit_8h.html#a084adfbcfceceb9f582e55584e5819ee">   89</a></span>&#160;<span class="preprocessor">#define PU_ASSERT(expr) \</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="pico__unit_8h.html#ad9f2db71e103991db7d6f001a955285f">   89</a></span>&#160;<span class="preprocessor">#define REQUIRE(expr) \</span></div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">    do  { \</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">        if (!pu_assert((expr) ? true : false, (#expr), __FILE__, __LINE__)) \</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">        if (!pu_require((expr) ? true : false, (#expr), __FILE__, __LINE__)) \</span></div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">            return false; \</span></div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">    } while(false)</span></div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="pico__unit_8h.html#a6213a2cd4b2d43ecbf0f3cb3ffe5870b">  103</a></span>&#160;<span class="preprocessor">#define PU_RUN_TEST(test_fp) (pu_run_test(#test_fp, test_fp))</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="pico__unit_8h.html#a618bdc12228e9458f734380fdc719842">  103</a></span>&#160;<span class="preprocessor">#define RUN_TEST_CASE(test_fp) (pu_run_test(#test_fp, test_fp))</span></div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="pico__unit_8h.html#ae73aacf962da7a3c8cba0c16728d423e">  110</a></span>&#160;<span class="preprocessor">#define PU_SUITE(name) void name()</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="pico__unit_8h.html#a1dcc30e04987b50d0b98ad113ef0e6fc">  110</a></span>&#160;<span class="preprocessor">#define TEST_SUITE(name) void name()</span></div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="pico__unit_8h.html#aae717af95c308fa17538ba93800bd7fe">  118</a></span>&#160;<span class="preprocessor">#define PU_RUN_SUITE(suite_fp) pu_run_suite(#suite_fp, suite_fp)</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="pico__unit_8h.html#a56eb1aa2c407d02d99d3d687f110fa48">  118</a></span>&#160;<span class="preprocessor">#define RUN_TEST_SUITE(suite_fp) pu_run_suite(#suite_fp, suite_fp)</span></div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
 <div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="pico__unit_8h.html#ab4f6307484d15f2c4b5d0c5286ee9b0f">  123</a></span>&#160;<span class="keyword">typedef</span> void (*<a class="code" href="pico__unit_8h.html#ab4f6307484d15f2c4b5d0c5286ee9b0f">pu_setup_fn</a>)(void);</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
@@ -112,10 +112,10 @@ $(function() {
 <div class="line"><a name="l00169"></a><span class="lineno"><a class="line" href="pico__unit_8h.html#a428a3a0ab00bc146b6e45bb14fecb648">  169</a></span>&#160;<span class="keyword">typedef</span> bool (*<a class="code" href="pico__unit_8h.html#a428a3a0ab00bc146b6e45bb14fecb648">pu_test_fn</a>)(void);</div>
 <div class="line"><a name="l00170"></a><span class="lineno"><a class="line" href="pico__unit_8h.html#a49e764f0764eaa49abddbb4aee0de8a5">  170</a></span>&#160;<span class="keyword">typedef</span> void (*<a class="code" href="pico__unit_8h.html#a49e764f0764eaa49abddbb4aee0de8a5">pu_suite_fn</a>)(void);</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="pico__unit_8h.html#ab5041543a5af08e8aa67f80a238a017e">pu_assert</a>(<span class="keywordtype">bool</span> passed,</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;               <span class="keyword">const</span> <span class="keywordtype">char</span>* <span class="keyword">const</span> expr,</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;               <span class="keyword">const</span> <span class="keywordtype">char</span>* <span class="keyword">const</span> file,</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;               <span class="keywordtype">int</span> line);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="pico__unit_8h.html#a713ac79a60331f99d10ef981ac1394f1">pu_require</a>(<span class="keywordtype">bool</span> passed,</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">char</span>* <span class="keyword">const</span> expr,</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">char</span>* <span class="keyword">const</span> file,</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                <span class="keywordtype">int</span> line);</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="keywordtype">void</span> <a class="code" href="pico__unit_8h.html#a4f7e8e5cdbb28b2fcc1669cba6b8c09d">pu_run_test</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* <span class="keyword">const</span> name, <a class="code" href="pico__unit_8h.html#a428a3a0ab00bc146b6e45bb14fecb648">pu_test_fn</a> test_fp);</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
@@ -177,14 +177,14 @@ $(function() {
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    pu_time = enabled;</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;}</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="keywordtype">bool</span> </div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="keywordtype">bool</span></div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;<a class="code" href="pico__unit_8h.html#ac6f133b933ae38c901347d354fc404ed">pu_test_failed</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;{</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keywordflow">return</span> (pu_num_failed != 0);</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;}</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; </div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;<span class="keywordtype">bool</span></div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;<a class="code" href="pico__unit_8h.html#ab5041543a5af08e8aa67f80a238a017e">pu_assert</a> (<span class="keywordtype">bool</span> passed,</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;<a class="code" href="pico__unit_8h.html#a713ac79a60331f99d10ef981ac1394f1">pu_require</a>(<span class="keywordtype">bool</span> passed,</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;           <span class="keyword">const</span> <span class="keywordtype">char</span>* <span class="keyword">const</span> expr,</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;           <span class="keyword">const</span> <span class="keywordtype">char</span>* <span class="keyword">const</span> file,</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;           <span class="keywordtype">int</span> line)</div>
@@ -399,9 +399,9 @@ $(function() {
 <div class="ttc" id="apico__unit_8h_html_a49e764f0764eaa49abddbb4aee0de8a5"><div class="ttname"><a href="pico__unit_8h.html#a49e764f0764eaa49abddbb4aee0de8a5">pu_suite_fn</a></div><div class="ttdeci">void(* pu_suite_fn)(void)</div><div class="ttdef"><b>Definition:</b> pico_unit.h:170</div></div>
 <div class="ttc" id="apico__unit_8h_html_ac6f133b933ae38c901347d354fc404ed"><div class="ttname"><a href="pico__unit_8h.html#ac6f133b933ae38c901347d354fc404ed">pu_test_failed</a></div><div class="ttdeci">bool pu_test_failed(void)</div><div class="ttdoc">Check whether at least one test failed.</div></div>
 <div class="ttc" id="apico__unit_8h_html_a428a3a0ab00bc146b6e45bb14fecb648"><div class="ttname"><a href="pico__unit_8h.html#a428a3a0ab00bc146b6e45bb14fecb648">pu_test_fn</a></div><div class="ttdeci">bool(* pu_test_fn)(void)</div><div class="ttdef"><b>Definition:</b> pico_unit.h:169</div></div>
+<div class="ttc" id="apico__unit_8h_html_a713ac79a60331f99d10ef981ac1394f1"><div class="ttname"><a href="pico__unit_8h.html#a713ac79a60331f99d10ef981ac1394f1">pu_require</a></div><div class="ttdeci">bool pu_require(bool passed, const char *const expr, const char *const file, int line)</div><div class="ttdoc">Used internally.</div></div>
 <div class="ttc" id="apico__unit_8h_html_ab4f6307484d15f2c4b5d0c5286ee9b0f"><div class="ttname"><a href="pico__unit_8h.html#ab4f6307484d15f2c4b5d0c5286ee9b0f">pu_setup_fn</a></div><div class="ttdeci">void(* pu_setup_fn)(void)</div><div class="ttdoc">Functions that are run before or after a number of unit tests execute.</div><div class="ttdef"><b>Definition:</b> pico_unit.h:123</div></div>
 <div class="ttc" id="apico__unit_8h_html_ab5f99126534446b7058865e6bdabedd0"><div class="ttname"><a href="pico__unit_8h.html#ab5f99126534446b7058865e6bdabedd0">pu_display_time</a></div><div class="ttdeci">void pu_display_time(bool enabled)</div><div class="ttdoc">Turns on time measurement. NOTE: Off by default.</div></div>
-<div class="ttc" id="apico__unit_8h_html_ab5041543a5af08e8aa67f80a238a017e"><div class="ttname"><a href="pico__unit_8h.html#ab5041543a5af08e8aa67f80a238a017e">pu_assert</a></div><div class="ttdeci">bool pu_assert(bool passed, const char *const expr, const char *const file, int line)</div><div class="ttdoc">Used internally.</div></div>
 <div class="ttc" id="apico__unit_8h_html_a4f7e8e5cdbb28b2fcc1669cba6b8c09d"><div class="ttname"><a href="pico__unit_8h.html#a4f7e8e5cdbb28b2fcc1669cba6b8c09d">pu_run_test</a></div><div class="ttdeci">void pu_run_test(const char *const name, pu_test_fn test_fp)</div><div class="ttdoc">Used internally.</div></div>
 <div class="ttc" id="apico__unit_8h_html_a6b34c80d1840604e48f564ab4b0e5089"><div class="ttname"><a href="pico__unit_8h.html#a6b34c80d1840604e48f564ab4b0e5089">pu_run_suite</a></div><div class="ttdeci">void pu_run_suite(const char *const name, pu_suite_fn suite_fp)</div><div class="ttdoc">Used internally.</div></div>
 <div class="ttc" id="apico__unit_8h_html_a7514088d1d7d27fe6367a8c57e86adaf"><div class="ttname"><a href="pico__unit_8h.html#a7514088d1d7d27fe6367a8c57e86adaf">pu_print_stats</a></div><div class="ttdeci">void pu_print_stats(void)</div><div class="ttdoc">Prints test statistics.</div></div>
