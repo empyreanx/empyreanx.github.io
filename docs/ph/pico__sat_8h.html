@@ -104,24 +104,36 @@ Functions</h2></td></tr>
 <tr class="memitem:a99ea0002433bfc25ed7e8df67bf3016e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsat__circle__t.html">sat_circle_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__sat_8h.html#a99ea0002433bfc25ed7e8df67bf3016e">sat_make_circle</a> (<a class="el" href="structpm__v2.html">pm_v2</a> pos, <a class="el" href="pico__math_8h.html#aae7836efe3af8fecd46c88a7bf152cba">pm_float</a> radius)</td></tr>
 <tr class="memdesc:a99ea0002433bfc25ed7e8df67bf3016e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a circle.  <a href="pico__sat_8h.html#a99ea0002433bfc25ed7e8df67bf3016e">More...</a><br /></td></tr>
 <tr class="separator:a99ea0002433bfc25ed7e8df67bf3016e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6753eae830ce33cdf1701907278318b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsat__poly__t.html">sat_poly_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__sat_8h.html#ac6753eae830ce33cdf1701907278318b">sat_make_poly</a> (<a class="el" href="structpm__v2.html">pm_v2</a> vertices[], int vertex_count)</td></tr>
-<tr class="memdesc:ac6753eae830ce33cdf1701907278318b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a polygon.  <a href="pico__sat_8h.html#ac6753eae830ce33cdf1701907278318b">More...</a><br /></td></tr>
-<tr class="separator:ac6753eae830ce33cdf1701907278318b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac84c5a6525f1a08b7048e3a5946e183a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsat__poly__t.html">sat_poly_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__sat_8h.html#ac84c5a6525f1a08b7048e3a5946e183a">sat_make_poly</a> (const <a class="el" href="structpm__v2.html">pm_v2</a> vertices[], int vertex_count)</td></tr>
+<tr class="memdesc:ac84c5a6525f1a08b7048e3a5946e183a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a polygon.  <a href="pico__sat_8h.html#ac84c5a6525f1a08b7048e3a5946e183a">More...</a><br /></td></tr>
+<tr class="separator:ac84c5a6525f1a08b7048e3a5946e183a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad18941a373b0dd964d23e94aae0b7392"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsat__poly__t.html">sat_poly_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__sat_8h.html#ad18941a373b0dd964d23e94aae0b7392">sat_aabb_to_poly</a> (const <a class="el" href="structpm__b2.html">pm_b2</a> *aabb)</td></tr>
 <tr class="memdesc:ad18941a373b0dd964d23e94aae0b7392"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts and axis-aligned bounding box (AABB) to a polygon.  <a href="pico__sat_8h.html#ad18941a373b0dd964d23e94aae0b7392">More...</a><br /></td></tr>
 <tr class="separator:ad18941a373b0dd964d23e94aae0b7392"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb53edb25b4772ff33df0b50e997f6e9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__sat_8h.html#abb53edb25b4772ff33df0b50e997f6e9">sat_test_poly_poly</a> (const <a class="el" href="structsat__poly__t.html">sat_poly_t</a> *poly1, const <a class="el" href="structsat__poly__t.html">sat_poly_t</a> *poly2, <a class="el" href="structsat__manifold__t.html">sat_manifold_t</a> *manifold)</td></tr>
-<tr class="memdesc:abb53edb25b4772ff33df0b50e997f6e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests to see if one polygon overlaps with another.  <a href="pico__sat_8h.html#abb53edb25b4772ff33df0b50e997f6e9">More...</a><br /></td></tr>
-<tr class="separator:abb53edb25b4772ff33df0b50e997f6e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fa95c09f1e0b2a4ffa0538d34a755e5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__sat_8h.html#a0fa95c09f1e0b2a4ffa0538d34a755e5">sat_test_poly_poly</a> (const <a class="el" href="structsat__poly__t.html">sat_poly_t</a> *poly_a, const <a class="el" href="structsat__poly__t.html">sat_poly_t</a> *poly_b, <a class="el" href="structsat__manifold__t.html">sat_manifold_t</a> *manifold)</td></tr>
+<tr class="memdesc:a0fa95c09f1e0b2a4ffa0538d34a755e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests to see if one polygon overlaps with another.  <a href="pico__sat_8h.html#a0fa95c09f1e0b2a4ffa0538d34a755e5">More...</a><br /></td></tr>
+<tr class="separator:a0fa95c09f1e0b2a4ffa0538d34a755e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67a8f113d52fc898522a29ff3d8f62d3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__sat_8h.html#a67a8f113d52fc898522a29ff3d8f62d3">sat_test_poly_circle</a> (const <a class="el" href="structsat__poly__t.html">sat_poly_t</a> *poly, const <a class="el" href="structsat__circle__t.html">sat_circle_t</a> *circle, <a class="el" href="structsat__manifold__t.html">sat_manifold_t</a> *manifold)</td></tr>
 <tr class="memdesc:a67a8f113d52fc898522a29ff3d8f62d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests to see if a polygon overlaps a circle.  <a href="pico__sat_8h.html#a67a8f113d52fc898522a29ff3d8f62d3">More...</a><br /></td></tr>
 <tr class="separator:a67a8f113d52fc898522a29ff3d8f62d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc197160c05b06bff116e9b203c06b55"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__sat_8h.html#afc197160c05b06bff116e9b203c06b55">sat_test_circle_poly</a> (const <a class="el" href="structsat__circle__t.html">sat_circle_t</a> *circle, const <a class="el" href="structsat__poly__t.html">sat_poly_t</a> *poly, <a class="el" href="structsat__manifold__t.html">sat_manifold_t</a> *manifold)</td></tr>
 <tr class="memdesc:afc197160c05b06bff116e9b203c06b55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests to see if a circle overlaps a polygon.  <a href="pico__sat_8h.html#afc197160c05b06bff116e9b203c06b55">More...</a><br /></td></tr>
 <tr class="separator:afc197160c05b06bff116e9b203c06b55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa942eea851311f2b24b57daea5b75a9a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__sat_8h.html#aa942eea851311f2b24b57daea5b75a9a">sat_test_circle_circle</a> (const <a class="el" href="structsat__circle__t.html">sat_circle_t</a> *circle1, const <a class="el" href="structsat__circle__t.html">sat_circle_t</a> *circle2, <a class="el" href="structsat__manifold__t.html">sat_manifold_t</a> *manifold)</td></tr>
-<tr class="memdesc:aa942eea851311f2b24b57daea5b75a9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests to see if two circles overlap.  <a href="pico__sat_8h.html#aa942eea851311f2b24b57daea5b75a9a">More...</a><br /></td></tr>
-<tr class="separator:aa942eea851311f2b24b57daea5b75a9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c61580ae793ea4a55562edf74b2fe4e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__sat_8h.html#a8c61580ae793ea4a55562edf74b2fe4e">sat_test_circle_circle</a> (const <a class="el" href="structsat__circle__t.html">sat_circle_t</a> *circle_a, const <a class="el" href="structsat__circle__t.html">sat_circle_t</a> *circle_b, <a class="el" href="structsat__manifold__t.html">sat_manifold_t</a> *manifold)</td></tr>
+<tr class="memdesc:a8c61580ae793ea4a55562edf74b2fe4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests to see if two circles overlap.  <a href="pico__sat_8h.html#a8c61580ae793ea4a55562edf74b2fe4e">More...</a><br /></td></tr>
+<tr class="separator:a8c61580ae793ea4a55562edf74b2fe4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64ab7467fa5b76c23ab92050e8b1e06f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsat__poly__t.html">sat_poly_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__sat_8h.html#a64ab7467fa5b76c23ab92050e8b1e06f">sat_transform_poly</a> (const <a class="el" href="structpm__t2.html">pm_t2</a> *transform, const <a class="el" href="structsat__poly__t.html">sat_poly_t</a> *poly)</td></tr>
+<tr class="memdesc:a64ab7467fa5b76c23ab92050e8b1e06f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforms a polygon using an affine transform.  <a href="pico__sat_8h.html#a64ab7467fa5b76c23ab92050e8b1e06f">More...</a><br /></td></tr>
+<tr class="separator:a64ab7467fa5b76c23ab92050e8b1e06f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15c37b41b9f2d539c895fd7b8cec5b2c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsat__circle__t.html">sat_circle_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__sat_8h.html#a15c37b41b9f2d539c895fd7b8cec5b2c">sat_transform_circle</a> (const <a class="el" href="structpm__t2.html">pm_t2</a> *transform, const <a class="el" href="structsat__circle__t.html">sat_circle_t</a> *circle)</td></tr>
+<tr class="memdesc:a15c37b41b9f2d539c895fd7b8cec5b2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforms a circle using an affine transform.  <a href="pico__sat_8h.html#a15c37b41b9f2d539c895fd7b8cec5b2c">More...</a><br /></td></tr>
+<tr class="separator:a15c37b41b9f2d539c895fd7b8cec5b2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f408d58d54bbe6ca2d753127621fec9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structpm__b2.html">pm_b2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__sat_8h.html#a8f408d58d54bbe6ca2d753127621fec9">sat_poly_to_aabb</a> (const <a class="el" href="structsat__poly__t.html">sat_poly_t</a> *poly)</td></tr>
+<tr class="memdesc:a8f408d58d54bbe6ca2d753127621fec9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the bounding box for the given polygon.  <a href="pico__sat_8h.html#a8f408d58d54bbe6ca2d753127621fec9">More...</a><br /></td></tr>
+<tr class="separator:a8f408d58d54bbe6ca2d753127621fec9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1dee6d60874abff0635bc8146848d71"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structpm__b2.html">pm_b2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__sat_8h.html#aa1dee6d60874abff0635bc8146848d71">sat_circle_to_aabb</a> (const <a class="el" href="structsat__circle__t.html">sat_circle_t</a> *circle)</td></tr>
+<tr class="memdesc:aa1dee6d60874abff0635bc8146848d71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the bounding box for the given circle.  <a href="pico__sat_8h.html#aa1dee6d60874abff0635bc8146848d71">More...</a><br /></td></tr>
+<tr class="separator:aa1dee6d60874abff0635bc8146848d71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Separating Axis Theorem (SAT) Tests written in C99. </p>
@@ -156,15 +168,7 @@ Dependencies:</h2>
 <blockquote class="doxtable">
 <p>#define PICO_MATH_IMPLEMENTATION #include "pico_math.h" </p>
 </blockquote>
-<p>to the same or other source file (once).</p>
-<h2><a class="anchor" id="autotoc_md44"></a>
-Todo:</h2>
-<ul>
-<li><a class="el" href="structpm__b2.html" title="A 2D axis-aligned-bounding-box (AABB)">pm_b2</a> sat_polygon_to_aabb(const sat_polygon_t* poly);</li>
-<li><a class="el" href="structpm__b2.html" title="A 2D axis-aligned-bounding-box (AABB)">pm_b2</a> sat_circle_to_aabb(const sat_circle_t* circle);</li>
-<li>void sat_transform_poly(const pm_t2* transform, const sat_poly_t* poly_in sat_poly_t* poly_out);</li>
-<li>void sat_transfom_circle(const pm_t2* transform, const sat_circle_t* circle_in, sat_circle* circle_out); </li>
-</ul>
+<p>to the same or other source file (once). </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a03cab665057973485e1aef9cd547da8f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a03cab665057973485e1aef9cd547da8f">&#9670;&nbsp;</a></span>PICO_SAT_MAX_POLY_VERTS</h2>
@@ -218,8 +222,8 @@ Todo:</h2>
 
 </div>
 </div>
-<a id="ac6753eae830ce33cdf1701907278318b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac6753eae830ce33cdf1701907278318b">&#9670;&nbsp;</a></span>sat_make_poly()</h2>
+<a id="ac84c5a6525f1a08b7048e3a5946e183a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac84c5a6525f1a08b7048e3a5946e183a">&#9670;&nbsp;</a></span>sat_make_poly()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -227,7 +231,7 @@ Todo:</h2>
         <tr>
           <td class="memname"><a class="el" href="structsat__poly__t.html">sat_poly_t</a> sat_make_poly </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structpm__v2.html">pm_v2</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="structpm__v2.html">pm_v2</a>&#160;</td>
           <td class="paramname"><em>vertices</em>[], </td>
         </tr>
         <tr>
@@ -277,8 +281,8 @@ Todo:</h2>
 
 </div>
 </div>
-<a id="abb53edb25b4772ff33df0b50e997f6e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb53edb25b4772ff33df0b50e997f6e9">&#9670;&nbsp;</a></span>sat_test_poly_poly()</h2>
+<a id="a0fa95c09f1e0b2a4ffa0538d34a755e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fa95c09f1e0b2a4ffa0538d34a755e5">&#9670;&nbsp;</a></span>sat_test_poly_poly()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -287,13 +291,13 @@ Todo:</h2>
           <td class="memname">bool sat_test_poly_poly </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structsat__poly__t.html">sat_poly_t</a> *&#160;</td>
-          <td class="paramname"><em>poly1</em>, </td>
+          <td class="paramname"><em>poly_a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="structsat__poly__t.html">sat_poly_t</a> *&#160;</td>
-          <td class="paramname"><em>poly2</em>, </td>
+          <td class="paramname"><em>poly_b</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -312,8 +316,8 @@ Todo:</h2>
 <p>Tests to see if one polygon overlaps with another. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">poly1</td><td>The colliding polygon </td></tr>
-    <tr><td class="paramname">poly2</td><td>The target polygon </td></tr>
+    <tr><td class="paramname">poly_a</td><td>The colliding polygon </td></tr>
+    <tr><td class="paramname">poly_b</td><td>The target polygon </td></tr>
     <tr><td class="paramname">manifold</td><td>The collision manifold to populate (or NULL) </td></tr>
   </table>
   </dd>
@@ -412,8 +416,8 @@ Todo:</h2>
 
 </div>
 </div>
-<a id="aa942eea851311f2b24b57daea5b75a9a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa942eea851311f2b24b57daea5b75a9a">&#9670;&nbsp;</a></span>sat_test_circle_circle()</h2>
+<a id="a8c61580ae793ea4a55562edf74b2fe4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c61580ae793ea4a55562edf74b2fe4e">&#9670;&nbsp;</a></span>sat_test_circle_circle()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -422,13 +426,13 @@ Todo:</h2>
           <td class="memname">bool sat_test_circle_circle </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structsat__circle__t.html">sat_circle_t</a> *&#160;</td>
-          <td class="paramname"><em>circle1</em>, </td>
+          <td class="paramname"><em>circle_a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="structsat__circle__t.html">sat_circle_t</a> *&#160;</td>
-          <td class="paramname"><em>circle2</em>, </td>
+          <td class="paramname"><em>circle_b</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -447,13 +451,129 @@ Todo:</h2>
 <p>Tests to see if two circles overlap. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">circle1</td><td>The colliding circle </td></tr>
-    <tr><td class="paramname">circle2</td><td>The target circle </td></tr>
+    <tr><td class="paramname">circle_a</td><td>The colliding circle </td></tr>
+    <tr><td class="paramname">circle_b</td><td>The target circle </td></tr>
     <tr><td class="paramname">manifold</td><td>The collision manifold to populate (or NULL) </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if the circle and the other circle, and false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a64ab7467fa5b76c23ab92050e8b1e06f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64ab7467fa5b76c23ab92050e8b1e06f">&#9670;&nbsp;</a></span>sat_transform_poly()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsat__poly__t.html">sat_poly_t</a> sat_transform_poly </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structpm__t2.html">pm_t2</a> *&#160;</td>
+          <td class="paramname"><em>transform</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structsat__poly__t.html">sat_poly_t</a> *&#160;</td>
+          <td class="paramname"><em>poly</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Transforms a polygon using an affine transform. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">transform</td><td>The transform </td></tr>
+    <tr><td class="paramname">poly</td><td>The polygon to transform </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A new polygon </dd></dl>
+
+</div>
+</div>
+<a id="a15c37b41b9f2d539c895fd7b8cec5b2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15c37b41b9f2d539c895fd7b8cec5b2c">&#9670;&nbsp;</a></span>sat_transform_circle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsat__circle__t.html">sat_circle_t</a> sat_transform_circle </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structpm__t2.html">pm_t2</a> *&#160;</td>
+          <td class="paramname"><em>transform</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structsat__circle__t.html">sat_circle_t</a> *&#160;</td>
+          <td class="paramname"><em>circle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Transforms a circle using an affine transform. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">transform</td><td>The transform </td></tr>
+    <tr><td class="paramname">poly</td><td>The circle to transform </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A new circle </dd></dl>
+
+</div>
+</div>
+<a id="a8f408d58d54bbe6ca2d753127621fec9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f408d58d54bbe6ca2d753127621fec9">&#9670;&nbsp;</a></span>sat_poly_to_aabb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structpm__b2.html">pm_b2</a> sat_poly_to_aabb </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structsat__poly__t.html">sat_poly_t</a> *&#160;</td>
+          <td class="paramname"><em>poly</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the bounding box for the given polygon. </p>
+
+</div>
+</div>
+<a id="aa1dee6d60874abff0635bc8146848d71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1dee6d60874abff0635bc8146848d71">&#9670;&nbsp;</a></span>sat_circle_to_aabb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structpm__b2.html">pm_b2</a> sat_circle_to_aabb </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structsat__circle__t.html">sat_circle_t</a> *&#160;</td>
+          <td class="paramname"><em>circle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the bounding box for the given circle. </p>
 
 </div>
 </div>

@@ -154,8 +154,8 @@ $(function() {
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="comment">// Minimum capacity of quadtree&#39;s internal array</span></div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="preprocessor">#ifndef PICO_QT_TMP_CAPACITY</span></div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="preprocessor">#define PICO_QT_TMP_CAPACITY 256</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="preprocessor">#ifndef PICO_QT_QUERY_CAPACITY</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="preprocessor">#define PICO_QT_QUERY_CAPACITY 256</span></div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="comment">/*=============================================================================</span></div>
@@ -168,7 +168,7 @@ $(function() {
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="preprocessor">#define QT_FREE          PICO_QT_FREE</span></div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<span class="preprocessor">#define QT_MAX_DEPTH     PICO_QT_MAX_DEPTH</span></div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;<span class="preprocessor">#define QT_NODE_CAPACITY PICO_QT_NODE_CAPACITY</span></div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;<span class="preprocessor">#define QT_TMP_CAPACITY  PICO_QT_TMP_CAPACITY</span></div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;<span class="preprocessor">#define QT_QUERY_CAPACITY  PICO_QT_QUERY_CAPACITY</span></div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="comment">/*=============================================================================</span></div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;<span class="comment"> * Internal data structures</span></div>
@@ -200,7 +200,7 @@ $(function() {
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; </div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;<span class="keyword">struct </span><a class="code" href="pico__qt_8h.html#a401a096f476f0653fc79cf15f1a3a9eb">qt_t</a></div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;{</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    qt_array_t tmp;</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    qt_array_t query;</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <a class="code" href="structqt__rect__t.html">qt_rect_t</a>  bounds;</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    qt_node_t* root;</div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;};</div>
@@ -239,7 +239,7 @@ $(function() {
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    qt-&gt;bounds = bounds;</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    qt-&gt;root = qt_node_create(bounds, 0, max_depth);</div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; </div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    qt_array_init(&amp;qt-&gt;tmp, QT_TMP_CAPACITY);</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    qt_array_init(&amp;qt-&gt;query, QT_QUERY_CAPACITY);</div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160; </div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    <span class="keywordflow">return</span> qt;</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;}</div>
@@ -248,7 +248,7 @@ $(function() {
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;{</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    QT_ASSERT(qt);</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160; </div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    qt_array_destroy(&amp;qt-&gt;tmp);</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    qt_array_destroy(&amp;qt-&gt;query);</div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    qt_node_destroy(qt-&gt;root);</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    QT_FREE(qt);</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;}</div>
@@ -286,29 +286,29 @@ $(function() {
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        <span class="keywordflow">return</span> NULL;</div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160; </div>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    <span class="comment">// Reset the internal array</span></div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    qt-&gt;tmp.size = 0;</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    qt-&gt;query.size = 0;</div>
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160; </div>
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    <span class="comment">// Start query the root node</span></div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    qt_node_query(qt-&gt;root, &amp;area, &amp;qt-&gt;tmp);</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    qt_node_query(qt-&gt;root, &amp;area, &amp;qt-&gt;query);</div>
 <div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160; </div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    <span class="comment">// If no results then return NULL</span></div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <span class="keywordflow">if</span> (qt-&gt;tmp.size == 0)</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <span class="keywordflow">if</span> (qt-&gt;query.size == 0)</div>
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    {</div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        *size = 0;</div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        <span class="keywordflow">return</span> NULL;</div>
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    }</div>
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160; </div>
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    <span class="comment">// Allocate value array</span></div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    <a class="code" href="pico__qt_8h.html#a07804a940b5c1df89c765e2afd6d5adb">qt_value_t</a>* values = QT_MALLOC(qt-&gt;tmp.size * <span class="keyword">sizeof</span>(<a class="code" href="pico__qt_8h.html#a07804a940b5c1df89c765e2afd6d5adb">qt_value_t</a>));</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    <a class="code" href="pico__qt_8h.html#a07804a940b5c1df89c765e2afd6d5adb">qt_value_t</a>* values = QT_MALLOC(qt-&gt;query.size * <span class="keyword">sizeof</span>(<a class="code" href="pico__qt_8h.html#a07804a940b5c1df89c765e2afd6d5adb">qt_value_t</a>));</div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160; </div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    <span class="comment">// Fill value array</span></div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; qt-&gt;tmp.size; i++)</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; qt-&gt;query.size; i++)</div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    {</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        values[i] = qt-&gt;tmp.items[i].value;</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        values[i] = qt-&gt;query.items[i].value;</div>
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    }</div>
 <div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160; </div>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    <span class="comment">// Set size and return</span></div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    *size = qt-&gt;tmp.size;</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    *size = qt-&gt;query.size;</div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160; </div>
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    <span class="keywordflow">return</span> values;</div>
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;}</div>
@@ -332,7 +332,7 @@ $(function() {
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    QT_ASSERT(qt);</div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160; </div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    qt_array_t array;</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    qt_array_init(&amp;array, QT_TMP_CAPACITY);</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    qt_array_init(&amp;array, QT_QUERY_CAPACITY);</div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160; </div>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    qt_node_all_items(qt-&gt;root, &amp;array);</div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    <a class="code" href="pico__qt_8h.html#aa5115e5fc6b407dc3c99ed9b31a06f44">qt_reset</a>(qt);</div>

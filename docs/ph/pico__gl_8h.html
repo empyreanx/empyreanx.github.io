@@ -176,18 +176,6 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:a3e8256b083ace5fdeadca5d8e9fad559"><td class="mdescLeft">&#160;</td><td class="mdescRight">OpenGL versions used by the library.  <a href="pico__gl_8h.html#a3e8256b083ace5fdeadca5d8e9fad559">More...</a><br /></td></tr>
 <tr class="separator:a3e8256b083ace5fdeadca5d8e9fad559"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0b6403496d044f95efbcac06e818601"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gl_8h.html#ae0b6403496d044f95efbcac06e818601">pgl_format_t</a> { <br />
-&#160;&#160;<a class="el" href="pico__gl_8h.html#ae0b6403496d044f95efbcac06e818601ac8e19a219e0c1e2a1f0e4ecfd0b02519">PGL_RED</a>, 
-<a class="el" href="pico__gl_8h.html#ae0b6403496d044f95efbcac06e818601a3afbca8fa0f952be93ccff31c78c188e">PGL_RGB</a>, 
-<a class="el" href="pico__gl_8h.html#ae0b6403496d044f95efbcac06e818601a3b0d9e9eeb28ea2286ab0982f326dc70">PGL_RGBA</a>, 
-<a class="el" href="pico__gl_8h.html#ae0b6403496d044f95efbcac06e818601acdc4247ff4d68455f4fa471b535f48fe">PGL_BGR</a>, 
-<br />
-&#160;&#160;<a class="el" href="pico__gl_8h.html#ae0b6403496d044f95efbcac06e818601a517b0521f4ea8bab6c2714d99036aa8e">PGL_BGRA</a>, 
-<a class="el" href="pico__gl_8h.html#ae0b6403496d044f95efbcac06e818601a40ada4c19ef9b90be5a42df5ae8d3c0a">PGL_FORMAT_COUNT</a>
-<br />
- }</td></tr>
-<tr class="memdesc:ae0b6403496d044f95efbcac06e818601"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pixel formats.  <a href="pico__gl_8h.html#ae0b6403496d044f95efbcac06e818601">More...</a><br /></td></tr>
-<tr class="separator:ae0b6403496d044f95efbcac06e818601"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c0e394db4bc30b74ba1d2a6d6498c71"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gl_8h.html#a4c0e394db4bc30b74ba1d2a6d6498c71">pgl_blend_factor_t</a> { <br />
 &#160;&#160;<a class="el" href="pico__gl_8h.html#a4c0e394db4bc30b74ba1d2a6d6498c71a544fd0d2aa7095ee4e70a6e14f3e5160">PGL_ZERO</a>, 
 <a class="el" href="pico__gl_8h.html#a4c0e394db4bc30b74ba1d2a6d6498c71adae91a036b835aa5ee8b6a9d87eaa7cc">PGL_ONE</a>, 
@@ -224,8 +212,7 @@ Enumerations</h2></td></tr>
 <a class="el" href="pico__gl_8h.html#af35bf2851dfd0486b661c39336bdb0bdada7ba09cb9352d9c36b4f8574a52d4bc">PGL_LINE_STRIP</a>, 
 <a class="el" href="pico__gl_8h.html#af35bf2851dfd0486b661c39336bdb0bda886525849dce0146f29ead8cb8ac143f">PGL_TRIANGLES</a>, 
 <br />
-&#160;&#160;<a class="el" href="pico__gl_8h.html#af35bf2851dfd0486b661c39336bdb0bda0c07566e449c47ae5847410f0b69c3e4">GL_TRIANGLE_STRIP</a>, 
-<a class="el" href="pico__gl_8h.html#af35bf2851dfd0486b661c39336bdb0bda939bbf9efd94183094d315fcea8dbfb3">GL_TRIANGLE_FAN</a>
+&#160;&#160;<a class="el" href="pico__gl_8h.html#af35bf2851dfd0486b661c39336bdb0bda22453ab254c0ebad2c5286dfe6ad2eeb">PGL_TRIANGLE_STRIP</a>
 <br />
  }</td></tr>
 <tr class="memdesc:af35bf2851dfd0486b661c39336bdb0bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drawing primitives.  <a href="pico__gl_8h.html#af35bf2851dfd0486b661c39336bdb0bd">More...</a><br /></td></tr>
@@ -233,27 +220,30 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a75defc4ee9224ca5ba908741bee7e999"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gl_8h.html#a75defc4ee9224ca5ba908741bee7e999">pgl_global_init</a> (<a class="el" href="pico__gl_8h.html#a734c038804349ad7df62d2b610da8339">pgl_loader_fn</a> load_proc, bool gles)</td></tr>
-<tr class="memdesc:a75defc4ee9224ca5ba908741bee7e999"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads all supported OpenGL functions via GLAD.  <a href="pico__gl_8h.html#a75defc4ee9224ca5ba908741bee7e999">More...</a><br /></td></tr>
-<tr class="separator:a75defc4ee9224ca5ba908741bee7e999"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcae088916ecab4550de62430e5874e6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gl_8h.html#abcae088916ecab4550de62430e5874e6">pgl_global_init</a> (<a class="el" href="pico__gl_8h.html#a734c038804349ad7df62d2b610da8339">pgl_loader_fn</a> loader_fp, bool gles)</td></tr>
+<tr class="memdesc:abcae088916ecab4550de62430e5874e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads all supported OpenGL functions via GLAD.  <a href="pico__gl_8h.html#abcae088916ecab4550de62430e5874e6">More...</a><br /></td></tr>
+<tr class="separator:abcae088916ecab4550de62430e5874e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6344410b95878ae8a8b8733ea8044e21"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pico__gl_8h.html#aea66b8b5691c55af96a4baff9bb53d29">pgl_error_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gl_8h.html#a6344410b95878ae8a8b8733ea8044e21">pgl_get_error</a> (<a class="el" href="pico__gl_8h.html#af51fa12f49452bafcb60d1904589f730">pgl_ctx_t</a> *ctx)</td></tr>
 <tr class="memdesc:a6344410b95878ae8a8b8733ea8044e21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current error code.  <a href="pico__gl_8h.html#a6344410b95878ae8a8b8733ea8044e21">More...</a><br /></td></tr>
 <tr class="separator:a6344410b95878ae8a8b8733ea8044e21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b37dad31b321652a3793b9d07a2cd03"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gl_8h.html#a4b37dad31b321652a3793b9d07a2cd03">pgl_get_error_str</a> (<a class="el" href="pico__gl_8h.html#aea66b8b5691c55af96a4baff9bb53d29">pgl_error_t</a> code)</td></tr>
+<tr class="memdesc:a4b37dad31b321652a3793b9d07a2cd03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the string associated with the specified error code.  <a href="pico__gl_8h.html#a4b37dad31b321652a3793b9d07a2cd03">More...</a><br /></td></tr>
+<tr class="separator:a4b37dad31b321652a3793b9d07a2cd03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4014754d2830dc43db09b59a1b74897f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pico__gl_8h.html#a3e8256b083ace5fdeadca5d8e9fad559">pgl_version_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gl_8h.html#a4014754d2830dc43db09b59a1b74897f">pgl_get_version</a> ()</td></tr>
 <tr class="memdesc:a4014754d2830dc43db09b59a1b74897f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current OpenGL version in use by the library.  <a href="pico__gl_8h.html#a4014754d2830dc43db09b59a1b74897f">More...</a><br /></td></tr>
 <tr class="separator:a4014754d2830dc43db09b59a1b74897f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ad0720d21a5f28e03515da996ce67bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gl_8h.html#a0ad0720d21a5f28e03515da996ce67bf">pgl_print_info</a> ()</td></tr>
 <tr class="memdesc:a0ad0720d21a5f28e03515da996ce67bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints system info.  <a href="pico__gl_8h.html#a0ad0720d21a5f28e03515da996ce67bf">More...</a><br /></td></tr>
 <tr class="separator:a0ad0720d21a5f28e03515da996ce67bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b37dad31b321652a3793b9d07a2cd03"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gl_8h.html#a4b37dad31b321652a3793b9d07a2cd03">pgl_get_error_str</a> (<a class="el" href="pico__gl_8h.html#aea66b8b5691c55af96a4baff9bb53d29">pgl_error_t</a> code)</td></tr>
-<tr class="memdesc:a4b37dad31b321652a3793b9d07a2cd03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the string associated with the specified error code.  <a href="pico__gl_8h.html#a4b37dad31b321652a3793b9d07a2cd03">More...</a><br /></td></tr>
-<tr class="separator:a4b37dad31b321652a3793b9d07a2cd03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33e874cbdeb4135024a23f6341e29459"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pico__gl_8h.html#af51fa12f49452bafcb60d1904589f730">pgl_ctx_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gl_8h.html#a33e874cbdeb4135024a23f6341e29459">pgl_create_context</a> (uint32_t w, uint32_t h, bool depth, uint32_t samples, bool srgb, void *mem_ctx)</td></tr>
 <tr class="memdesc:a33e874cbdeb4135024a23f6341e29459"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of the renderer.  <a href="pico__gl_8h.html#a33e874cbdeb4135024a23f6341e29459">More...</a><br /></td></tr>
 <tr class="separator:a33e874cbdeb4135024a23f6341e29459"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab004ae3553d18d19c78d31e808eb8405"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gl_8h.html#ab004ae3553d18d19c78d31e808eb8405">pgl_destroy_context</a> (<a class="el" href="pico__gl_8h.html#af51fa12f49452bafcb60d1904589f730">pgl_ctx_t</a> *ctx)</td></tr>
-<tr class="memdesc:ab004ae3553d18d19c78d31e808eb8405"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys a context, releasing it's resources.  <a href="pico__gl_8h.html#ab004ae3553d18d19c78d31e808eb8405">More...</a><br /></td></tr>
+<tr class="memdesc:ab004ae3553d18d19c78d31e808eb8405"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys a renderer context, releasing it's resources.  <a href="pico__gl_8h.html#ab004ae3553d18d19c78d31e808eb8405">More...</a><br /></td></tr>
 <tr class="separator:ab004ae3553d18d19c78d31e808eb8405"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad613d76acc303d37d5a6584df582d67"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gl_8h.html#aad613d76acc303d37d5a6584df582d67">pgl_resize</a> (<a class="el" href="pico__gl_8h.html#af51fa12f49452bafcb60d1904589f730">pgl_ctx_t</a> *ctx, uint32_t w, uint32_t h, bool reset_vp)</td></tr>
+<tr class="memdesc:aad613d76acc303d37d5a6584df582d67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resizes the drawable dimensions.  <a href="pico__gl_8h.html#aad613d76acc303d37d5a6584df582d67">More...</a><br /></td></tr>
+<tr class="separator:aad613d76acc303d37d5a6584df582d67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a350b40552f2cb44252da4a4193c2824f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pico__gl_8h.html#a16d88bc17a24b2d88277dc8463636641">pgl_shader_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gl_8h.html#a350b40552f2cb44252da4a4193c2824f">pgl_create_shader</a> (<a class="el" href="pico__gl_8h.html#af51fa12f49452bafcb60d1904589f730">pgl_ctx_t</a> *ctx, const char *vert_src, const char *frag_src)</td></tr>
 <tr class="memdesc:a350b40552f2cb44252da4a4193c2824f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shader program.  <a href="pico__gl_8h.html#a350b40552f2cb44252da4a4193c2824f">More...</a><br /></td></tr>
 <tr class="separator:a350b40552f2cb44252da4a4193c2824f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -266,18 +256,18 @@ Functions</h2></td></tr>
 <tr class="memitem:a2ee6e58c4400dfcab6c64e2b811c76c3"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gl_8h.html#a2ee6e58c4400dfcab6c64e2b811c76c3">pgl_get_shader_id</a> (const <a class="el" href="pico__gl_8h.html#a16d88bc17a24b2d88277dc8463636641">pgl_shader_t</a> *shader)</td></tr>
 <tr class="memdesc:a2ee6e58c4400dfcab6c64e2b811c76c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the implementation specific shader ID.  <a href="pico__gl_8h.html#a2ee6e58c4400dfcab6c64e2b811c76c3">More...</a><br /></td></tr>
 <tr class="separator:a2ee6e58c4400dfcab6c64e2b811c76c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1fe1b6ec244524709eb08009a055d1f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pico__gl_8h.html#acefa7a4a5ea41ee5470fa46465651684">pgl_texture_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gl_8h.html#ab1fe1b6ec244524709eb08009a055d1f">pgl_create_texture</a> (<a class="el" href="pico__gl_8h.html#af51fa12f49452bafcb60d1904589f730">pgl_ctx_t</a> *ctx, bool target, <a class="el" href="pico__gl_8h.html#ae0b6403496d044f95efbcac06e818601">pgl_format_t</a> fmt, bool srgb, int32_t w, int32_t h, bool smooth, bool repeat)</td></tr>
-<tr class="memdesc:ab1fe1b6ec244524709eb08009a055d1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an empty texture.  <a href="pico__gl_8h.html#ab1fe1b6ec244524709eb08009a055d1f">More...</a><br /></td></tr>
-<tr class="separator:ab1fe1b6ec244524709eb08009a055d1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aebf0e703653310c34101d9f0abe57934"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pico__gl_8h.html#acefa7a4a5ea41ee5470fa46465651684">pgl_texture_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gl_8h.html#aebf0e703653310c34101d9f0abe57934">pgl_texture_from_bitmap</a> (<a class="el" href="pico__gl_8h.html#af51fa12f49452bafcb60d1904589f730">pgl_ctx_t</a> *ctx, <a class="el" href="pico__gl_8h.html#ae0b6403496d044f95efbcac06e818601">pgl_format_t</a> fmt, bool srgb, int32_t w, int32_t h, bool smooth, bool repeat, const uint8_t *bitmap)</td></tr>
-<tr class="memdesc:aebf0e703653310c34101d9f0abe57934"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a texture from a bitmap.  <a href="pico__gl_8h.html#aebf0e703653310c34101d9f0abe57934">More...</a><br /></td></tr>
-<tr class="separator:aebf0e703653310c34101d9f0abe57934"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9fd5f08f76e92c4782758e344e27557c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gl_8h.html#a9fd5f08f76e92c4782758e344e27557c">pgl_upload_texture</a> (<a class="el" href="pico__gl_8h.html#af51fa12f49452bafcb60d1904589f730">pgl_ctx_t</a> *ctx, <a class="el" href="pico__gl_8h.html#acefa7a4a5ea41ee5470fa46465651684">pgl_texture_t</a> *texture, <a class="el" href="pico__gl_8h.html#ae0b6403496d044f95efbcac06e818601">pgl_format_t</a> fmt, bool srgb, int32_t w, int32_t h, const uint8_t *bitmap)</td></tr>
-<tr class="memdesc:a9fd5f08f76e92c4782758e344e27557c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uploads data from a bitmap into a texture.  <a href="pico__gl_8h.html#a9fd5f08f76e92c4782758e344e27557c">More...</a><br /></td></tr>
-<tr class="separator:a9fd5f08f76e92c4782758e344e27557c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66c1fa9d26158b2d74529d8a00919557"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gl_8h.html#a66c1fa9d26158b2d74529d8a00919557">pgl_update_texture</a> (<a class="el" href="pico__gl_8h.html#af51fa12f49452bafcb60d1904589f730">pgl_ctx_t</a> *ctx, <a class="el" href="pico__gl_8h.html#acefa7a4a5ea41ee5470fa46465651684">pgl_texture_t</a> *texture, <a class="el" href="pico__gl_8h.html#ae0b6403496d044f95efbcac06e818601">pgl_format_t</a> fmt, int x, int y, int w, int h, const uint8_t *bitmap)</td></tr>
-<tr class="memdesc:a66c1fa9d26158b2d74529d8a00919557"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates a region of an existing texture.  <a href="pico__gl_8h.html#a66c1fa9d26158b2d74529d8a00919557">More...</a><br /></td></tr>
-<tr class="separator:a66c1fa9d26158b2d74529d8a00919557"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80c3ab81087303534c8d862f913d08ea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pico__gl_8h.html#acefa7a4a5ea41ee5470fa46465651684">pgl_texture_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gl_8h.html#a80c3ab81087303534c8d862f913d08ea">pgl_create_texture</a> (<a class="el" href="pico__gl_8h.html#af51fa12f49452bafcb60d1904589f730">pgl_ctx_t</a> *ctx, bool target, int32_t w, int32_t h, bool srgb, bool smooth, bool repeat)</td></tr>
+<tr class="memdesc:a80c3ab81087303534c8d862f913d08ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an empty texture.  <a href="pico__gl_8h.html#a80c3ab81087303534c8d862f913d08ea">More...</a><br /></td></tr>
+<tr class="separator:a80c3ab81087303534c8d862f913d08ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76d056b7295a00a183615691fa2252f5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pico__gl_8h.html#acefa7a4a5ea41ee5470fa46465651684">pgl_texture_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gl_8h.html#a76d056b7295a00a183615691fa2252f5">pgl_texture_from_bitmap</a> (<a class="el" href="pico__gl_8h.html#af51fa12f49452bafcb60d1904589f730">pgl_ctx_t</a> *ctx, int32_t w, int32_t h, bool srgb, bool smooth, bool repeat, const uint8_t *bitmap)</td></tr>
+<tr class="memdesc:a76d056b7295a00a183615691fa2252f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a texture from a bitmap.  <a href="pico__gl_8h.html#a76d056b7295a00a183615691fa2252f5">More...</a><br /></td></tr>
+<tr class="separator:a76d056b7295a00a183615691fa2252f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4191858e001cfe118ccd17e676978f0c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gl_8h.html#a4191858e001cfe118ccd17e676978f0c">pgl_upload_texture</a> (<a class="el" href="pico__gl_8h.html#af51fa12f49452bafcb60d1904589f730">pgl_ctx_t</a> *ctx, <a class="el" href="pico__gl_8h.html#acefa7a4a5ea41ee5470fa46465651684">pgl_texture_t</a> *texture, int32_t w, int32_t h, const uint8_t *bitmap)</td></tr>
+<tr class="memdesc:a4191858e001cfe118ccd17e676978f0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uploads data from a bitmap into a texture.  <a href="pico__gl_8h.html#a4191858e001cfe118ccd17e676978f0c">More...</a><br /></td></tr>
+<tr class="separator:a4191858e001cfe118ccd17e676978f0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9152a4057e0caa3c1c14a764237706a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gl_8h.html#aa9152a4057e0caa3c1c14a764237706a">pgl_update_texture</a> (<a class="el" href="pico__gl_8h.html#af51fa12f49452bafcb60d1904589f730">pgl_ctx_t</a> *ctx, <a class="el" href="pico__gl_8h.html#acefa7a4a5ea41ee5470fa46465651684">pgl_texture_t</a> *texture, int x, int y, int w, int h, const uint8_t *bitmap)</td></tr>
+<tr class="memdesc:aa9152a4057e0caa3c1c14a764237706a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates a region of an existing texture.  <a href="pico__gl_8h.html#aa9152a4057e0caa3c1c14a764237706a">More...</a><br /></td></tr>
+<tr class="separator:aa9152a4057e0caa3c1c14a764237706a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa30f5652c82224e21758939cd9833356"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gl_8h.html#aa30f5652c82224e21758939cd9833356">pgl_generate_mipmap</a> (<a class="el" href="pico__gl_8h.html#acefa7a4a5ea41ee5470fa46465651684">pgl_texture_t</a> *texture, bool linear)</td></tr>
 <tr class="memdesc:aa30f5652c82224e21758939cd9833356"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate mipmaps for the specified texture.  <a href="pico__gl_8h.html#aa30f5652c82224e21758939cd9833356">More...</a><br /></td></tr>
 <tr class="separator:aa30f5652c82224e21758939cd9833356"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -303,6 +293,8 @@ Functions</h2></td></tr>
 <tr class="separator:aecbf942f813d3dc5089ec2382e4b74e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27a55a0ccba32158adc41a009d1ee322"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gl_8h.html#a27a55a0ccba32158adc41a009d1ee322">pgl_draw_array</a> (<a class="el" href="pico__gl_8h.html#af51fa12f49452bafcb60d1904589f730">pgl_ctx_t</a> *ctx, <a class="el" href="pico__gl_8h.html#af35bf2851dfd0486b661c39336bdb0bd">pgl_primitive_t</a> primitive, const <a class="el" href="structpgl__vertex__t.html">pgl_vertex_t</a> *vertices, <a class="el" href="pico__gl_8h.html#ac45edf63090e9ebe407ee1cf4a0a2ad6">pgl_size_t</a> count, <a class="el" href="pico__gl_8h.html#acefa7a4a5ea41ee5470fa46465651684">pgl_texture_t</a> *texture, <a class="el" href="pico__gl_8h.html#a16d88bc17a24b2d88277dc8463636641">pgl_shader_t</a> *shader)</td></tr>
 <tr class="separator:a27a55a0ccba32158adc41a009d1ee322"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30b266a05826805032b35494198828c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gl_8h.html#a30b266a05826805032b35494198828c1">pgl_draw_indexed_array</a> (<a class="el" href="pico__gl_8h.html#af51fa12f49452bafcb60d1904589f730">pgl_ctx_t</a> *ctx, <a class="el" href="pico__gl_8h.html#af35bf2851dfd0486b661c39336bdb0bd">pgl_primitive_t</a> primitive, const <a class="el" href="structpgl__vertex__t.html">pgl_vertex_t</a> *vertices, <a class="el" href="pico__gl_8h.html#ac45edf63090e9ebe407ee1cf4a0a2ad6">pgl_size_t</a> vertex_count, const uint32_t *indices, <a class="el" href="pico__gl_8h.html#ac45edf63090e9ebe407ee1cf4a0a2ad6">pgl_size_t</a> index_count, <a class="el" href="pico__gl_8h.html#acefa7a4a5ea41ee5470fa46465651684">pgl_texture_t</a> *texture, <a class="el" href="pico__gl_8h.html#a16d88bc17a24b2d88277dc8463636641">pgl_shader_t</a> *shader)</td></tr>
+<tr class="separator:a30b266a05826805032b35494198828c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2350de789f4d016f276cf3a6a971fafb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pico__gl_8h.html#ab07098c9586a1f3c8586ed1859cd6bc2">pgl_buffer_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gl_8h.html#a2350de789f4d016f276cf3a6a971fafb">pgl_create_buffer</a> (<a class="el" href="pico__gl_8h.html#af51fa12f49452bafcb60d1904589f730">pgl_ctx_t</a> *ctx, <a class="el" href="pico__gl_8h.html#af35bf2851dfd0486b661c39336bdb0bd">pgl_primitive_t</a> primitive, const <a class="el" href="structpgl__vertex__t.html">pgl_vertex_t</a> *vertices, <a class="el" href="pico__gl_8h.html#ac45edf63090e9ebe407ee1cf4a0a2ad6">pgl_size_t</a> count)</td></tr>
 <tr class="memdesc:a2350de789f4d016f276cf3a6a971fafb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a buffer in VRAM to store an array of vertices that can then be rendered without having upload the vertices every time they are drawn.  <a href="pico__gl_8h.html#a2350de789f4d016f276cf3a6a971fafb">More...</a><br /></td></tr>
 <tr class="separator:a2350de789f4d016f276cf3a6a971fafb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -435,7 +427,7 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A powerful OpenGL-based graphics library written in C99. </p>
-<p>============================================================================= WARNING: This file was automatically generated on 24/03/2022 14:37:18. </p>
+<p>============================================================================= WARNING: This file was automatically generated on 12/11/2022 14:31:27. </p>
 <h1><a class="anchor" id="autotoc_md12"></a>
 DO NOT EDIT!</h1>
 <hr  />
@@ -477,7 +469,7 @@ Constants:</h2>
 <li>PICO_GL_MAX_UNIFORMS (default: 32)</li>
 <li>PICO_GL_MAX_STATES (default: 32)</li>
 </ul>
-<p>Must be defined before PGL_IMPLEMENTATION</p>
+<p>Must be defined before PICO_GL_IMPLEMENTATION</p>
 <h2><a class="anchor" id="autotoc_md18"></a>
 Todo:</h2>
 <ul>
@@ -485,7 +477,7 @@ Todo:</h2>
 <li>Better version handling</li>
 <li>Shader examples</li>
 <li>Scissor</li>
-<li>Indexed arrays/buffers</li>
+<li>Indexed buffers</li>
 <li>Multiple texture units </li>
 </ul>
 </div><h2 class="groupheader">Typedef Documentation</h2>
@@ -806,35 +798,6 @@ Todo:</h2>
 
 </div>
 </div>
-<a id="ae0b6403496d044f95efbcac06e818601"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae0b6403496d044f95efbcac06e818601">&#9670;&nbsp;</a></span>pgl_format_t</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="pico__gl_8h.html#ae0b6403496d044f95efbcac06e818601">pgl_format_t</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Pixel formats. </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ae0b6403496d044f95efbcac06e818601ac8e19a219e0c1e2a1f0e4ecfd0b02519"></a>PGL_RED&#160;</td><td class="fielddoc"><p>(red, 0, 0, 1) </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ae0b6403496d044f95efbcac06e818601a3afbca8fa0f952be93ccff31c78c188e"></a>PGL_RGB&#160;</td><td class="fielddoc"><p>(red, green, blue, 1) </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ae0b6403496d044f95efbcac06e818601a3b0d9e9eeb28ea2286ab0982f326dc70"></a>PGL_RGBA&#160;</td><td class="fielddoc"><p>(red, green, blue, alpha) </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ae0b6403496d044f95efbcac06e818601acdc4247ff4d68455f4fa471b535f48fe"></a>PGL_BGR&#160;</td><td class="fielddoc"><p>(blue, green, red, 1) </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ae0b6403496d044f95efbcac06e818601a517b0521f4ea8bab6c2714d99036aa8e"></a>PGL_BGRA&#160;</td><td class="fielddoc"><p>(blue, green, red, alpha) </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ae0b6403496d044f95efbcac06e818601a40ada4c19ef9b90be5a42df5ae8d3c0a"></a>PGL_FORMAT_COUNT&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-</div>
-</div>
 <a id="a4c0e394db4bc30b74ba1d2a6d6498c71"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4c0e394db4bc30b74ba1d2a6d6498c71">&#9670;&nbsp;</a></span>pgl_blend_factor_t</h2>
 
@@ -925,17 +888,15 @@ Todo:</h2>
 </td></tr>
 <tr><td class="fieldname"><a id="af35bf2851dfd0486b661c39336bdb0bda886525849dce0146f29ead8cb8ac143f"></a>PGL_TRIANGLES&#160;</td><td class="fielddoc"><p>Each adjacent triple forms an individual triangle. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="af35bf2851dfd0486b661c39336bdb0bda0c07566e449c47ae5847410f0b69c3e4"></a>GL_TRIANGLE_STRIP&#160;</td><td class="fielddoc"><p>Array of points where every triple forms a triangle. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="af35bf2851dfd0486b661c39336bdb0bda939bbf9efd94183094d315fcea8dbfb3"></a>GL_TRIANGLE_FAN&#160;</td><td class="fielddoc"><p>The first vertex is held fixed. Every pair of. </p>
+<tr><td class="fieldname"><a id="af35bf2851dfd0486b661c39336bdb0bda22453ab254c0ebad2c5286dfe6ad2eeb"></a>PGL_TRIANGLE_STRIP&#160;</td><td class="fielddoc"><p>Array of points where every triple forms a triangle. </p>
 </td></tr>
 </table>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a75defc4ee9224ca5ba908741bee7e999"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a75defc4ee9224ca5ba908741bee7e999">&#9670;&nbsp;</a></span>pgl_global_init()</h2>
+<a id="abcae088916ecab4550de62430e5874e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcae088916ecab4550de62430e5874e6">&#9670;&nbsp;</a></span>pgl_global_init()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -944,7 +905,7 @@ Todo:</h2>
           <td class="memname">int pgl_global_init </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="pico__gl_8h.html#a734c038804349ad7df62d2b610da8339">pgl_loader_fn</a>&#160;</td>
-          <td class="paramname"><em>load_proc</em>, </td>
+          <td class="paramname"><em>loader_fp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -964,7 +925,7 @@ Todo:</h2>
 <p>IMPORTANT: A valid OpenGL context must exist for this function to succeed. This function must be called before any other PGL functions.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">load_proc</td><td>Function loader (can be NULL except for GLES contexts) </td></tr>
+    <tr><td class="paramname">loader_fp</td><td>Function loader (can be NULL except for GLES contexts) </td></tr>
     <tr><td class="paramname">gles</td><td>Set to <em>true</em> if using OpenGL ES</td></tr>
   </table>
   </dd>
@@ -990,6 +951,33 @@ Todo:</h2>
 </div><div class="memdoc">
 
 <p>Returns the current error code. </p>
+
+</div>
+</div>
+<a id="a4b37dad31b321652a3793b9d07a2cd03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b37dad31b321652a3793b9d07a2cd03">&#9670;&nbsp;</a></span>pgl_get_error_str()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* pgl_get_error_str </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="pico__gl_8h.html#aea66b8b5691c55af96a4baff9bb53d29">pgl_error_t</a>&#160;</td>
+          <td class="paramname"><em>code</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the string associated with the specified error code. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">code</td><td>The error code to query</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The string representation of the error code </dd></dl>
 
 </div>
 </div>
@@ -1030,33 +1018,6 @@ Todo:</h2>
 </div><div class="memdoc">
 
 <p>Prints system info. </p>
-
-</div>
-</div>
-<a id="a4b37dad31b321652a3793b9d07a2cd03"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b37dad31b321652a3793b9d07a2cd03">&#9670;&nbsp;</a></span>pgl_get_error_str()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char* pgl_get_error_str </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="pico__gl_8h.html#aea66b8b5691c55af96a4baff9bb53d29">pgl_error_t</a>&#160;</td>
-          <td class="paramname"><em>code</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the string associated with the specified error code. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">code</td><td>The error code to query</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The string representation of the error code </dd></dl>
 
 </div>
 </div>
@@ -1115,6 +1076,7 @@ Todo:</h2>
   <table class="params">
     <tr><td class="paramname">w</td><td>The drawable width of the window in pixels </td></tr>
     <tr><td class="paramname">h</td><td>The drawable height of the window in pixels </td></tr>
+    <tr><td class="paramname">depth</td><td>Depth test is enabled if true </td></tr>
     <tr><td class="paramname">samples</td><td>The number of MSAA (anti-alising) samples (disabled if 0) </td></tr>
     <tr><td class="paramname">srgb</td><td>Enables support for the sRGB colorspace </td></tr>
     <tr><td class="paramname">mem_ctx</td><td>User data provided to custom allocators</td></tr>
@@ -1141,10 +1103,60 @@ Todo:</h2>
       </table>
 </div><div class="memdoc">
 
-<p>Destroys a context, releasing it's resources. </p>
+<p>Destroys a renderer context, releasing it's resources. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ctx</td><td>A pointer to the context </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aad613d76acc303d37d5a6584df582d67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad613d76acc303d37d5a6584df582d67">&#9670;&nbsp;</a></span>pgl_resize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pgl_resize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="pico__gl_8h.html#af51fa12f49452bafcb60d1904589f730">pgl_ctx_t</a> *&#160;</td>
+          <td class="paramname"><em>ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>reset_vp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resizes the drawable dimensions. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ctx</td><td>A pointer to the context </td></tr>
+    <tr><td class="paramname">w</td><td>The drawable width of the window in pixels </td></tr>
+    <tr><td class="paramname">h</td><td>The drawable height of the window in pixels @pawram reset_vp Resets the viewport if true </td></tr>
   </table>
   </dd>
 </dl>
@@ -1288,8 +1300,8 @@ Todo:</h2>
 
 </div>
 </div>
-<a id="ab1fe1b6ec244524709eb08009a055d1f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab1fe1b6ec244524709eb08009a055d1f">&#9670;&nbsp;</a></span>pgl_create_texture()</h2>
+<a id="a80c3ab81087303534c8d862f913d08ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80c3ab81087303534c8d862f913d08ea">&#9670;&nbsp;</a></span>pgl_create_texture()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1309,18 +1321,6 @@ Todo:</h2>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="pico__gl_8h.html#ae0b6403496d044f95efbcac06e818601">pgl_format_t</a>&#160;</td>
-          <td class="paramname"><em>fmt</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>srgb</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">int32_t&#160;</td>
           <td class="paramname"><em>w</em>, </td>
         </tr>
@@ -1329,6 +1329,12 @@ Todo:</h2>
           <td></td>
           <td class="paramtype">int32_t&#160;</td>
           <td class="paramname"><em>h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>srgb</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1355,10 +1361,9 @@ Todo:</h2>
   <table class="params">
     <tr><td class="paramname">ctx</td><td>The relevant context </td></tr>
     <tr><td class="paramname">target</td><td>If true, the texture can be used as a render target </td></tr>
-    <tr><td class="paramname">fmt</td><td>The texture pixel format </td></tr>
-    <tr><td class="paramname">srgb</td><td>True is the internal format is sRGB </td></tr>
     <tr><td class="paramname">w</td><td>The texture's width </td></tr>
     <tr><td class="paramname">h</td><td>The texture's height </td></tr>
+    <tr><td class="paramname">srgb</td><td>True if the internal format is sRGB </td></tr>
     <tr><td class="paramname">smooth</td><td>High (true) or low (false) quality filtering </td></tr>
     <tr><td class="paramname">repeat</td><td>Repeats or clamps when uv coordinates exceed 1.0 </td></tr>
   </table>
@@ -1367,8 +1372,8 @@ Todo:</h2>
 
 </div>
 </div>
-<a id="aebf0e703653310c34101d9f0abe57934"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aebf0e703653310c34101d9f0abe57934">&#9670;&nbsp;</a></span>pgl_texture_from_bitmap()</h2>
+<a id="a76d056b7295a00a183615691fa2252f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76d056b7295a00a183615691fa2252f5">&#9670;&nbsp;</a></span>pgl_texture_from_bitmap()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1382,18 +1387,6 @@ Todo:</h2>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="pico__gl_8h.html#ae0b6403496d044f95efbcac06e818601">pgl_format_t</a>&#160;</td>
-          <td class="paramname"><em>fmt</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>srgb</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">int32_t&#160;</td>
           <td class="paramname"><em>w</em>, </td>
         </tr>
@@ -1402,6 +1395,12 @@ Todo:</h2>
           <td></td>
           <td class="paramtype">int32_t&#160;</td>
           <td class="paramname"><em>h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>srgb</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1433,21 +1432,20 @@ Todo:</h2>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ctx</td><td>The relevant context </td></tr>
-    <tr><td class="paramname">fmt</td><td>The texture's pixel format </td></tr>
-    <tr><td class="paramname">srgb</td><td>True is the internal format is sRGB </td></tr>
     <tr><td class="paramname">w</td><td>The texture's width </td></tr>
     <tr><td class="paramname">h</td><td>The texture's height </td></tr>
+    <tr><td class="paramname">srgb</td><td>True if the internal format is sRGB </td></tr>
     <tr><td class="paramname">smooth</td><td>High (true) or low (false) quality filtering </td></tr>
     <tr><td class="paramname">repeat</td><td>Repeats or clamps when uv coordinates exceed 1.0 </td></tr>
-    <tr><td class="paramname">bitmap</td><td>Bitmap data corresponding to the specified format </td></tr>
+    <tr><td class="paramname">bitmap</td><td>Pixel data in RGBA format </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a9fd5f08f76e92c4782758e344e27557c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9fd5f08f76e92c4782758e344e27557c">&#9670;&nbsp;</a></span>pgl_upload_texture()</h2>
+<a id="a4191858e001cfe118ccd17e676978f0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4191858e001cfe118ccd17e676978f0c">&#9670;&nbsp;</a></span>pgl_upload_texture()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1463,18 +1461,6 @@ Todo:</h2>
           <td></td>
           <td class="paramtype"><a class="el" href="pico__gl_8h.html#acefa7a4a5ea41ee5470fa46465651684">pgl_texture_t</a> *&#160;</td>
           <td class="paramname"><em>texture</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="pico__gl_8h.html#ae0b6403496d044f95efbcac06e818601">pgl_format_t</a>&#160;</td>
-          <td class="paramname"><em>fmt</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>srgb</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1507,19 +1493,17 @@ Todo:</h2>
   <table class="params">
     <tr><td class="paramname">ctx</td><td>The relevant context </td></tr>
     <tr><td class="paramname">texture</td><td>The target texture </td></tr>
-    <tr><td class="paramname">fmt</td><td>The bitmap's pixel format </td></tr>
-    <tr><td class="paramname">srgb</td><td>True is the internal format is sRGB </td></tr>
     <tr><td class="paramname">w</td><td>The texture's width </td></tr>
     <tr><td class="paramname">h</td><td>The texture's height </td></tr>
-    <tr><td class="paramname">bitmap</td><td>The pixel data </td></tr>
+    <tr><td class="paramname">bitmap</td><td>The pixel data in RGBA </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a66c1fa9d26158b2d74529d8a00919557"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66c1fa9d26158b2d74529d8a00919557">&#9670;&nbsp;</a></span>pgl_update_texture()</h2>
+<a id="aa9152a4057e0caa3c1c14a764237706a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9152a4057e0caa3c1c14a764237706a">&#9670;&nbsp;</a></span>pgl_update_texture()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1535,12 +1519,6 @@ Todo:</h2>
           <td></td>
           <td class="paramtype"><a class="el" href="pico__gl_8h.html#acefa7a4a5ea41ee5470fa46465651684">pgl_texture_t</a> *&#160;</td>
           <td class="paramname"><em>texture</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="pico__gl_8h.html#ae0b6403496d044f95efbcac06e818601">pgl_format_t</a>&#160;</td>
-          <td class="paramname"><em>fmt</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1585,12 +1563,11 @@ Todo:</h2>
   <table class="params">
     <tr><td class="paramname">ctx</td><td>The relevant context </td></tr>
     <tr><td class="paramname">texture</td><td>The texture to update </td></tr>
-    <tr><td class="paramname">fmt</td><td>The bitmap's pixel format </td></tr>
     <tr><td class="paramname">x</td><td>The x offset of the region </td></tr>
     <tr><td class="paramname">y</td><td>The y offset of the region </td></tr>
     <tr><td class="paramname">w</td><td>The width of the region </td></tr>
     <tr><td class="paramname">h</td><td>The height of the region </td></tr>
-    <tr><td class="paramname">bitmap</td><td>The pixel data </td></tr>
+    <tr><td class="paramname">bitmap</td><td>The pixel data in RGBA </td></tr>
   </table>
   </dd>
 </dl>
@@ -1938,19 +1915,91 @@ Todo:</h2>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Draws an array of primitives to the framebuffer</p>
+<p>Draws primitives according to a vertex array</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ctx</td><td>The relevant context </td></tr>
-    <tr><td class="paramname">primitive</td><td>The primitives type (</td></tr>
+    <tr><td class="paramname">primitive</td><td>The type of geometry to draw </td></tr>
+    <tr><td class="paramname">vertices</td><td>A vertex array </td></tr>
+    <tr><td class="paramname">count</td><td>The number of vertices </td></tr>
+    <tr><td class="paramname">texture</td><td>The texture to draw from (can be <code>NULL</code>) </td></tr>
+    <tr><td class="paramname">shader</td><td>The shader used to draw the array (cannot be <code>NULL</code>) </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="pico__gl_8h.html#af35bf2851dfd0486b661c39336bdb0bd" title="Drawing primitives.">pgl_primitive_t</a>) </dd></dl>
+
+</div>
+</div>
+<a id="a30b266a05826805032b35494198828c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30b266a05826805032b35494198828c1">&#9670;&nbsp;</a></span>pgl_draw_indexed_array()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pgl_draw_indexed_array </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="pico__gl_8h.html#af51fa12f49452bafcb60d1904589f730">pgl_ctx_t</a> *&#160;</td>
+          <td class="paramname"><em>ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pico__gl_8h.html#af35bf2851dfd0486b661c39336bdb0bd">pgl_primitive_t</a>&#160;</td>
+          <td class="paramname"><em>primitive</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structpgl__vertex__t.html">pgl_vertex_t</a> *&#160;</td>
+          <td class="paramname"><em>vertices</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pico__gl_8h.html#ac45edf63090e9ebe407ee1cf4a0a2ad6">pgl_size_t</a>&#160;</td>
+          <td class="paramname"><em>vertex_count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint32_t *&#160;</td>
+          <td class="paramname"><em>indices</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pico__gl_8h.html#ac45edf63090e9ebe407ee1cf4a0a2ad6">pgl_size_t</a>&#160;</td>
+          <td class="paramname"><em>index_count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pico__gl_8h.html#acefa7a4a5ea41ee5470fa46465651684">pgl_texture_t</a> *&#160;</td>
+          <td class="paramname"><em>texture</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pico__gl_8h.html#a16d88bc17a24b2d88277dc8463636641">pgl_shader_t</a> *&#160;</td>
+          <td class="paramname"><em>shader</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Draws primvities according to vertex and index arrays</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">vertices</td><td>A vertex array </td></tr>
-    <tr><td class="paramname">count</td><td>The number of vertices </td></tr>
+    <tr><td class="paramname">ctx</td><td>The relevant context </td></tr>
+    <tr><td class="paramname">primitive</td><td>The type of geometry to draw </td></tr>
+    <tr><td class="paramname">vertices</td><td>An array of vertices </td></tr>
+    <tr><td class="paramname">vertex_count</td><td>The number of vertices </td></tr>
+    <tr><td class="paramname">indices</td><td>An array of indices </td></tr>
+    <tr><td class="paramname">index_</td><td>count The number of indicies </td></tr>
     <tr><td class="paramname">texture</td><td>The texture to draw from (can be <code>NULL</code>) </td></tr>
     <tr><td class="paramname">shader</td><td>The shader used to draw the array (cannot be <code>NULL</code>) </td></tr>
   </table>
@@ -2001,15 +2050,9 @@ Todo:</h2>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ctx</td><td>The relevant context </td></tr>
-    <tr><td class="paramname">primitive</td><td>The primitives type (</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="pico__gl_8h.html#af35bf2851dfd0486b661c39336bdb0bd" title="Drawing primitives.">pgl_primitive_t</a>) </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
+    <tr><td class="paramname">primitive</td><td>The type of geometry to draw </td></tr>
     <tr><td class="paramname">vertices</td><td>A vertex array </td></tr>
-    <tr><td class="paramname">count</td><td>The number of vertices</td></tr>
+    <tr><td class="paramname">count</td><td>The number of vertices to store in the buffer</td></tr>
   </table>
   </dd>
 </dl>
@@ -2716,7 +2759,7 @@ Todo:</h2>
   <table class="params">
     <tr><td class="paramname">shader</td><td>The uniform's shader program </td></tr>
     <tr><td class="paramname">name</td><td>The name of the uniform </td></tr>
-    <tr><td class="paramname">a</td><td>The integer value </td></tr>
+    <tr><td class="paramname">value</td><td>The integer value </td></tr>
   </table>
   </dd>
 </dl>
