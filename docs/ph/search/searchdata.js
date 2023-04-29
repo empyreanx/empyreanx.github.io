@@ -8,7 +8,7 @@ var indexSectionsWithContent =
   5: "elpq",
   6: "lp",
   7: "lp",
-  8: "_lprt",
+  8: "_elprt",
   9: "p"
 };
 

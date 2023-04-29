@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['test_5fcase_773',['TEST_CASE',['../pico__unit_8h.html#a8bc255ff55721571e878568d2b5dcb35',1,'pico_unit.h']]],
-  ['test_5fsuite_774',['TEST_SUITE',['../pico__unit_8h.html#a1dcc30e04987b50d0b98ad113ef0e6fc',1,'pico_unit.h']]]
+  ['require_788',['REQUIRE',['../pico__unit_8h.html#ad9f2db71e103991db7d6f001a955285f',1,'pico_unit.h']]],
+  ['run_5ftest_5fcase_789',['RUN_TEST_CASE',['../pico__unit_8h.html#a618bdc12228e9458f734380fdc719842',1,'pico_unit.h']]],
+  ['run_5ftest_5fsuite_790',['RUN_TEST_SUITE',['../pico__unit_8h.html#a56eb1aa2c407d02d99d3d687f110fa48',1,'pico_unit.h']]]
 ];
