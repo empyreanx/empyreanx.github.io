@@ -79,6 +79,12 @@ $(function() {
 Include dependency graph for pico_unit.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="pico__unit_8h__incl.png" border="0" usemap="#apico__unit_8h" alt=""/></div>
+<map name="apico__unit_8h" id="apico__unit_8h">
+<area shape="rect" title="A bare&#45;bones unit testing framework written in C99." alt="" coords="103,5,196,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,88,107"/>
+<area shape="rect" title=" " alt="" coords="112,80,187,107"/>
+<area shape="rect" title=" " alt="" coords="211,80,282,107"/>
+</map>
 </div>
 </div>
 <p><a href="pico__unit_8h_source.html">Go to the source code of this file.</a></p>
@@ -144,12 +150,12 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A bare-bones unit testing framework written in C99. </p>
 <hr  />
- <h2><a class="anchor" id="autotoc_md50"></a>
+ <h2><a class="anchor" id="autotoc_md57"></a>
 Licensing information at end of header</h2>
-<h2><a class="anchor" id="autotoc_md51"></a>
+<h2><a class="anchor" id="autotoc_md58"></a>
 Features:</h2>
 <p>Written in C99 and compatible with C++ Single-header for easy integration into any build system Tiny memory and code footprint Simple and minimalistic API All unit tests are run during execution and failures are indicated On demand setup and teardown function support Ability to group tests into test suites Ability to print test statistics Optional color coded output Optional time measurement Permissive licensing (zlib or public domain)</p>
-<h2><a class="anchor" id="autotoc_md52"></a>
+<h2><a class="anchor" id="autotoc_md59"></a>
 Summary:</h2>
 <p>This library is a minimal unit testing framework. It should compile and run on just about any platform with a standard C99 compiler.</p>
 <p>Writing tests is simple: 1) Use the TEST_CASE macro and define the test using using REQUIRE to test boolean expressions; 2) Run the test inside the body of a test suite or other function (e.g. main) using RUN_TEST_CASE. How you group tests and test suites is entirely up to you.</p>
@@ -157,7 +163,7 @@ Summary:</h2>
 <p>There are a number of display options available: color coded output, test elapsed time (unless PICO_UNIT_NO_CLOCK is defined), and printing test statistics.</p>
 <p>A test suite is simply a group of tests. These contain calls to RUN_TEST_CASE. The advantage of using test suites is that it divides unit tests into logical groups. There are helper macros for declaring and defining test suites. Test suites help with formatting the output and the number of suites shows up in the test statistics. There is also the option to flexibly define setup and teardown functions for groups of tests.</p>
 <p>Please see the examples for more details.</p>
-<h2><a class="anchor" id="autotoc_md53"></a>
+<h2><a class="anchor" id="autotoc_md60"></a>
 Usage:</h2>
 <p>To use this library in your project, add the following</p>
 <blockquote class="doxtable">

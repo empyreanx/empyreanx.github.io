@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['max_636',['max',['../structpm__b2.html#aba81c8a1bd902e8f20f1bcd9ab5ac8a5',1,'pm_b2']]],
-  ['min_637',['min',['../structpm__b2.html#a5473b0e73d7c4f9bed90ce2fc137e277',1,'pm_b2']]]
+  ['get_5fshader_5fdesc_791',['get_shader_desc',['../structpg__shader__internal__t.html#ab555ca88a0a1906ba09c99726aef3aef',1,'pg_shader_internal_t']]],
+  ['get_5funiformblock_5fslot_792',['get_uniformblock_slot',['../structpg__shader__internal__t.html#a60fa6321ac7bcf62b92021452360d92e',1,'pg_shader_internal_t']]]
 ];

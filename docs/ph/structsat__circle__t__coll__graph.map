@@ -1,0 +1,4 @@
+<map id="sat_circle_t" name="sat_circle_t">
+<area shape="rect" id="node1" title="A circle shape." alt="" coords="5,95,101,121"/>
+<area shape="rect" id="node2" href="$structpm__v2.html" title="A 2D vector." alt="" coords="20,5,87,32"/>
+</map>

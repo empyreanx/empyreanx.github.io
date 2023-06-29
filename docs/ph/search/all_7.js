@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['max_75',['max',['../structpm__b2.html#aba81c8a1bd902e8f20f1bcd9ab5ac8a5',1,'pm_b2']]],
-  ['min_76',['min',['../structpm__b2.html#a5473b0e73d7c4f9bed90ce2fc137e277',1,'pm_b2']]]
+  ['indexed_48',['indexed',['../structpg__pipeline__opts__t.html#a805c84ea96e10556fa88c86959d9ab90',1,'pg_pipeline_opts_t']]]
 ];
