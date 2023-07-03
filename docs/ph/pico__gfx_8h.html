@@ -131,9 +131,6 @@ Typedefs</h2></td></tr>
 <tr class="memitem:acce49146fed834375407e4886a5d761a"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="pico__gfx_8h.html#acce49146fed834375407e4886a5d761a">pg_ctx_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gfx_8h.html#acce49146fed834375407e4886a5d761a">pg_ctx_t</a></td></tr>
 <tr class="memdesc:acce49146fed834375407e4886a5d761a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains core data/state for an instance of the graphics library.  <a href="pico__gfx_8h.html#acce49146fed834375407e4886a5d761a">More...</a><br /></td></tr>
 <tr class="separator:acce49146fed834375407e4886a5d761a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e381f9b140307c27b285a3e3bcef0d8"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="pico__gfx_8h.html#a4e381f9b140307c27b285a3e3bcef0d8">pg_pass_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gfx_8h.html#a4e381f9b140307c27b285a3e3bcef0d8">pg_pass_t</a></td></tr>
-<tr class="memdesc:a4e381f9b140307c27b285a3e3bcef0d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render pass. Writes draw calls to a render target or the window.  <a href="pico__gfx_8h.html#a4e381f9b140307c27b285a3e3bcef0d8">More...</a><br /></td></tr>
-<tr class="separator:a4e381f9b140307c27b285a3e3bcef0d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a692e7a3a2bac623e8ad5cb6890aba684"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="pico__gfx_8h.html#a692e7a3a2bac623e8ad5cb6890aba684">pg_pipeline_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gfx_8h.html#a692e7a3a2bac623e8ad5cb6890aba684">pg_pipeline_t</a></td></tr>
 <tr class="memdesc:a692e7a3a2bac623e8ad5cb6890aba684"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render state information.  <a href="pico__gfx_8h.html#a692e7a3a2bac623e8ad5cb6890aba684">More...</a><br /></td></tr>
 <tr class="separator:a692e7a3a2bac623e8ad5cb6890aba684"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -218,15 +215,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ad6a0eff7fecf70dc49d4be242c821135"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gfx_8h.html#ad6a0eff7fecf70dc49d4be242c821135">pg_get_window_size</a> (<a class="el" href="pico__gfx_8h.html#acce49146fed834375407e4886a5d761a">pg_ctx_t</a> *ctx, int *width, int *height)</td></tr>
 <tr class="memdesc:ad6a0eff7fecf70dc49d4be242c821135"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the window size.  <a href="pico__gfx_8h.html#ad6a0eff7fecf70dc49d4be242c821135">More...</a><br /></td></tr>
 <tr class="separator:ad6a0eff7fecf70dc49d4be242c821135"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c6af4f6e44bf3945077f1ebc339521b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pico__gfx_8h.html#a4e381f9b140307c27b285a3e3bcef0d8">pg_pass_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gfx_8h.html#a1c6af4f6e44bf3945077f1ebc339521b">pg_create_pass</a> (const <a class="el" href="pico__gfx_8h.html#acce49146fed834375407e4886a5d761a">pg_ctx_t</a> *ctx, <a class="el" href="pico__gfx_8h.html#ab40e9a805eeea8c9dc969574ef82730e">pg_texture_t</a> *texture)</td></tr>
-<tr class="memdesc:a1c6af4f6e44bf3945077f1ebc339521b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a render pass.  <a href="pico__gfx_8h.html#a1c6af4f6e44bf3945077f1ebc339521b">More...</a><br /></td></tr>
-<tr class="separator:a1c6af4f6e44bf3945077f1ebc339521b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ba4c122140f3aa00dbd5495fa4b0bc8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gfx_8h.html#a8ba4c122140f3aa00dbd5495fa4b0bc8">pg_destroy_pass</a> (const <a class="el" href="pico__gfx_8h.html#acce49146fed834375407e4886a5d761a">pg_ctx_t</a> *ctx, <a class="el" href="pico__gfx_8h.html#a4e381f9b140307c27b285a3e3bcef0d8">pg_pass_t</a> *pass)</td></tr>
-<tr class="memdesc:a8ba4c122140f3aa00dbd5495fa4b0bc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys a render pass.  <a href="pico__gfx_8h.html#a8ba4c122140f3aa00dbd5495fa4b0bc8">More...</a><br /></td></tr>
-<tr class="separator:a8ba4c122140f3aa00dbd5495fa4b0bc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad766a668646cafa69cb2d7a335d2fea8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gfx_8h.html#ad766a668646cafa69cb2d7a335d2fea8">pg_begin_pass</a> (<a class="el" href="pico__gfx_8h.html#acce49146fed834375407e4886a5d761a">pg_ctx_t</a> *ctx, <a class="el" href="pico__gfx_8h.html#a4e381f9b140307c27b285a3e3bcef0d8">pg_pass_t</a> *pass, bool clear)</td></tr>
-<tr class="memdesc:ad766a668646cafa69cb2d7a335d2fea8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts a render pass (mandatory)  <a href="pico__gfx_8h.html#ad766a668646cafa69cb2d7a335d2fea8">More...</a><br /></td></tr>
-<tr class="separator:ad766a668646cafa69cb2d7a335d2fea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab233020fe7cf85b845ac0a6335f845c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gfx_8h.html#ab233020fe7cf85b845ac0a6335f845c2">pg_begin_pass</a> (<a class="el" href="pico__gfx_8h.html#acce49146fed834375407e4886a5d761a">pg_ctx_t</a> *ctx, <a class="el" href="pico__gfx_8h.html#ab40e9a805eeea8c9dc969574ef82730e">pg_texture_t</a> *target, bool clear)</td></tr>
+<tr class="memdesc:ab233020fe7cf85b845ac0a6335f845c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts a render pass (mandatory)  <a href="pico__gfx_8h.html#ab233020fe7cf85b845ac0a6335f845c2">More...</a><br /></td></tr>
+<tr class="separator:ab233020fe7cf85b845ac0a6335f845c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a245db68686c7d9c15c1a6faa93974041"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gfx_8h.html#a245db68686c7d9c15c1a6faa93974041">pg_end_pass</a> (<a class="el" href="pico__gfx_8h.html#acce49146fed834375407e4886a5d761a">pg_ctx_t</a> *ctx)</td></tr>
 <tr class="memdesc:a245db68686c7d9c15c1a6faa93974041"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends a render pass (mandatory)  <a href="pico__gfx_8h.html#a245db68686c7d9c15c1a6faa93974041">More...</a><br /></td></tr>
 <tr class="separator:a245db68686c7d9c15c1a6faa93974041"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -259,15 +250,12 @@ Functions</h2></td></tr>
 <tr class="separator:a28da19ac7f32cd00be5bd1393e8a2158"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe1925519988009b43288f0ea8e26148"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gfx_8h.html#abe1925519988009b43288f0ea8e26148">pg_reset_pipeline</a> (<a class="el" href="pico__gfx_8h.html#acce49146fed834375407e4886a5d761a">pg_ctx_t</a> *ctx)</td></tr>
 <tr class="separator:abe1925519988009b43288f0ea8e26148"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a565929540f51747b8a376fab72d31f68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gfx_8h.html#a565929540f51747b8a376fab72d31f68">pg_set_identity</a> (<a class="el" href="pico__gfx_8h.html#acce49146fed834375407e4886a5d761a">pg_ctx_t</a> *ctx)</td></tr>
-<tr class="memdesc:a565929540f51747b8a376fab72d31f68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set both the projection and model-view matrices to the identity matrix.  <a href="pico__gfx_8h.html#a565929540f51747b8a376fab72d31f68">More...</a><br /></td></tr>
-<tr class="separator:a565929540f51747b8a376fab72d31f68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9a03b470e7179298208afbfe349aec5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gfx_8h.html#ae9a03b470e7179298208afbfe349aec5">pg_set_projection</a> (<a class="el" href="pico__gfx_8h.html#acce49146fed834375407e4886a5d761a">pg_ctx_t</a> *ctx, <a class="el" href="pico__gfx_8h.html#a3b61daa1db58de3cf273581fbd594201">pg_mat4_t</a> matrix)</td></tr>
-<tr class="memdesc:ae9a03b470e7179298208afbfe349aec5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the projection transform to the specified matrix.  <a href="pico__gfx_8h.html#ae9a03b470e7179298208afbfe349aec5">More...</a><br /></td></tr>
-<tr class="separator:ae9a03b470e7179298208afbfe349aec5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2eecd4f37397f149b7898043bad342ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gfx_8h.html#a2eecd4f37397f149b7898043bad342ee">pg_set_modelview</a> (<a class="el" href="pico__gfx_8h.html#acce49146fed834375407e4886a5d761a">pg_ctx_t</a> *ctx, <a class="el" href="pico__gfx_8h.html#a3b61daa1db58de3cf273581fbd594201">pg_mat4_t</a> matrix)</td></tr>
-<tr class="memdesc:a2eecd4f37397f149b7898043bad342ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the model-view transform to the specified matrix.  <a href="pico__gfx_8h.html#a2eecd4f37397f149b7898043bad342ee">More...</a><br /></td></tr>
-<tr class="separator:a2eecd4f37397f149b7898043bad342ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42e5fd5b0b1a85ebea772ea32005e953"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gfx_8h.html#a42e5fd5b0b1a85ebea772ea32005e953">pg_set_transform</a> (<a class="el" href="pico__gfx_8h.html#acce49146fed834375407e4886a5d761a">pg_ctx_t</a> *ctx, <a class="el" href="pico__gfx_8h.html#a3b61daa1db58de3cf273581fbd594201">pg_mat4_t</a> matrix)</td></tr>
+<tr class="memdesc:a42e5fd5b0b1a85ebea772ea32005e953"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the MVP transform.  <a href="pico__gfx_8h.html#a42e5fd5b0b1a85ebea772ea32005e953">More...</a><br /></td></tr>
+<tr class="separator:a42e5fd5b0b1a85ebea772ea32005e953"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a3ea3736a7b934079e3e12c951d813c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gfx_8h.html#a8a3ea3736a7b934079e3e12c951d813c">pg_reset_transform</a> (<a class="el" href="pico__gfx_8h.html#acce49146fed834375407e4886a5d761a">pg_ctx_t</a> *ctx)</td></tr>
+<tr class="memdesc:a8a3ea3736a7b934079e3e12c951d813c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the transform (MVP) to the identity matrix.  <a href="pico__gfx_8h.html#a8a3ea3736a7b934079e3e12c951d813c">More...</a><br /></td></tr>
+<tr class="separator:a8a3ea3736a7b934079e3e12c951d813c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3db1909d1c60627027fb7cb11f04c7e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__gfx_8h.html#a3db1909d1c60627027fb7cb11f04c7e1">pg_reset_state</a> (<a class="el" href="pico__gfx_8h.html#acce49146fed834375407e4886a5d761a">pg_ctx_t</a> *ctx)</td></tr>
 <tr class="memdesc:a3db1909d1c60627027fb7cb11f04c7e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the active state to defaults.  <a href="pico__gfx_8h.html#a3db1909d1c60627027fb7cb11f04c7e1">More...</a><br /></td></tr>
 <tr class="separator:a3db1909d1c60627027fb7cb11f04c7e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -356,13 +344,13 @@ Features:</h2>
 </ul>
 <h2><a class="anchor" id="autotoc_md15"></a>
 Summary:</h2>
-<p>Pico GFX (pico_gfx) is a high-level wrapper for the sokol_gfx, a low-level wrapper for OpenGL, Metal, and D3D. Pico GFX is designed to make the common case intuitive and convenient, especially for 2D applications. It provides access to low-level constructs, such as render passes and pipelines, in a way that is easy to use and understand.</p>
+<p>Pico GFX (pico_gfx) is a high-level wrapper for <a href="https://github.com/floooh/sokol/blob/master/sokol_gfx.h">sokol_gfx</a>, a low-level wrapper for OpenGL, Metal, and D3D. Pico GFX is designed to make the common case intuitive and convenient, especially for 2D applications. It provides access to low-level constructs, such as render passes and pipelines, in a way that is easy to use and understand.</p>
 <p>pico_gfx includes a default shader (and pipeline), but can be extended using the sokol shader compiler (<code>sokol-shdc</code>) which allows for a shader to be written in a single language (e.g. GLSL) which is then transformed into shader sources for all suppported backends.</p>
 <p>One thing pico_gfx does not support (and neither does sokol_gfx) is window and graphics context creation. See <a href="https://github.com/RandyGaul/cute_framework/tree/master/src/internal">here</a> for some examples. It is worth mentioning that <a href="https://www.libsdl.org">SDL2</a> can supply both a window and OpenGL context out of the box. SDL2 is used in the demos.</p>
 <p>Another library that supports window/context creation on all supported backends is <a href="https://github.com/floooh/sokol/blob/master/sokol_app.h">sokol_app</a>, but it has yet to be tested with pico_gfx.</p>
 <p>State (pipeline/shader, the default uniform block, the viewport, scissor, and clear color) can be managed via the state stack. The stack enables changes to be isolated. Simply push the current state to the top of the stack, make some local changes, and then pop the stack to restore the original state.</p>
 <p>Shaders expose uniforms in blocks. These blocks must be registered with the shader by calling <code>pg_register_uniform_block</code>. They may then be set at will by calling <code>pg_set_uniform_block</code>. These functions typically operate on structs supplied by a custom shader,</p>
-<p>The default shader provides a uniform block containing projection and model-view transforms. These can be set using the <code>pg_set_projection</code> and <code>pg_set_modelview</code> functions, and reset to the identity using <code>pg_set_identity</code>.</p>
+<p>The default shader provides a uniform block containing a transformation matrix (u_mvp) that is used to map vertices to normalized device coordinates. This transformation can be set using <code>pg_set_transform</code> and reset to the identity by calling <code>pg_reset_transform</code>.</p>
 <p>Please see the examples for more details.</p>
 <h2><a class="anchor" id="autotoc_md16"></a>
 Build:</h2>
@@ -431,7 +419,7 @@ Customization:</h2>
 <div class="line">        }                               \</div>
 <div class="line">    )</div>
 <div class="ttc" id="apico__gfx_8h_html_a9ee1e4299c40184d3fc3f927ed1b9c6a"><div class="ttname"><a href="pico__gfx_8h.html#a9ee1e4299c40184d3fc3f927ed1b9c6a">pg_create_shader_internal</a></div><div class="ttdeci">pg_shader_t * pg_create_shader_internal(const pg_ctx_t *ctx, pg_shader_internal_t internal)</div></div>
-<div class="ttc" id="astructpg__shader__internal__t_html"><div class="ttname"><a href="structpg__shader__internal__t.html">pg_shader_internal_t</a></div><div class="ttdef"><b>Definition:</b> pico_gfx.h:610</div></div>
+<div class="ttc" id="astructpg__shader__internal__t_html"><div class="ttname"><a href="structpg__shader__internal__t.html">pg_shader_internal_t</a></div><div class="ttdef"><b>Definition:</b> pico_gfx.h:589</div></div>
 </div><!-- fragment -->
 <p>Creates the shader with the given prefix The prefix should refer to the shader program name in a shader compiled by <code>sokol-shdc</code> </p>
 
@@ -573,22 +561,6 @@ Customization:</h2>
 </div><div class="memdoc">
 
 <p>Contains core data/state for an instance of the graphics library. </p>
-
-</div>
-</div>
-<a id="a4e381f9b140307c27b285a3e3bcef0d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4e381f9b140307c27b285a3e3bcef0d8">&#9670;&nbsp;</a></span>pg_pass_t</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef struct <a class="el" href="pico__gfx_8h.html#a4e381f9b140307c27b285a3e3bcef0d8">pg_pass_t</a> <a class="el" href="pico__gfx_8h.html#a4e381f9b140307c27b285a3e3bcef0d8">pg_pass_t</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Render pass. Writes draw calls to a render target or the window. </p>
 
 </div>
 </div>
@@ -998,74 +970,8 @@ Customization:</h2>
 
 </div>
 </div>
-<a id="a1c6af4f6e44bf3945077f1ebc339521b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c6af4f6e44bf3945077f1ebc339521b">&#9670;&nbsp;</a></span>pg_create_pass()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="pico__gfx_8h.html#a4e381f9b140307c27b285a3e3bcef0d8">pg_pass_t</a>* pg_create_pass </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="pico__gfx_8h.html#acce49146fed834375407e4886a5d761a">pg_ctx_t</a> *&#160;</td>
-          <td class="paramname"><em>ctx</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="pico__gfx_8h.html#ab40e9a805eeea8c9dc969574ef82730e">pg_texture_t</a> *&#160;</td>
-          <td class="paramname"><em>texture</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Creates a render pass. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">texture</td><td>The render target </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a8ba4c122140f3aa00dbd5495fa4b0bc8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8ba4c122140f3aa00dbd5495fa4b0bc8">&#9670;&nbsp;</a></span>pg_destroy_pass()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void pg_destroy_pass </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="pico__gfx_8h.html#acce49146fed834375407e4886a5d761a">pg_ctx_t</a> *&#160;</td>
-          <td class="paramname"><em>ctx</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="pico__gfx_8h.html#a4e381f9b140307c27b285a3e3bcef0d8">pg_pass_t</a> *&#160;</td>
-          <td class="paramname"><em>pass</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Destroys a render pass. </p>
-
-</div>
-</div>
-<a id="ad766a668646cafa69cb2d7a335d2fea8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad766a668646cafa69cb2d7a335d2fea8">&#9670;&nbsp;</a></span>pg_begin_pass()</h2>
+<a id="ab233020fe7cf85b845ac0a6335f845c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab233020fe7cf85b845ac0a6335f845c2">&#9670;&nbsp;</a></span>pg_begin_pass()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1079,8 +985,8 @@ Customization:</h2>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="pico__gfx_8h.html#a4e381f9b140307c27b285a3e3bcef0d8">pg_pass_t</a> *&#160;</td>
-          <td class="paramname"><em>pass</em>, </td>
+          <td class="paramtype"><a class="el" href="pico__gfx_8h.html#ab40e9a805eeea8c9dc969574ef82730e">pg_texture_t</a> *&#160;</td>
+          <td class="paramname"><em>target</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1167,7 +1073,7 @@ Customization:</h2>
 </div><div class="memdoc">
 
 <p>Pushes the active state onto the stack. </p>
-<p>State consists of the pipeline, draw color, scissor, and viewport. </p>
+<p>State consists of the pipeline, draw color, scissor, viewport, and default MVP transform. </p>
 
 </div>
 </div>
@@ -1448,14 +1354,44 @@ Customization:</h2>
 
 </div>
 </div>
-<a id="a565929540f51747b8a376fab72d31f68"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a565929540f51747b8a376fab72d31f68">&#9670;&nbsp;</a></span>pg_set_identity()</h2>
+<a id="a42e5fd5b0b1a85ebea772ea32005e953"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42e5fd5b0b1a85ebea772ea32005e953">&#9670;&nbsp;</a></span>pg_set_transform()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void pg_set_identity </td>
+          <td class="memname">void pg_set_transform </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="pico__gfx_8h.html#acce49146fed834375407e4886a5d761a">pg_ctx_t</a> *&#160;</td>
+          <td class="paramname"><em>ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pico__gfx_8h.html#a3b61daa1db58de3cf273581fbd594201">pg_mat4_t</a>&#160;</td>
+          <td class="paramname"><em>matrix</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the MVP transform. </p>
+
+</div>
+</div>
+<a id="a8a3ea3736a7b934079e3e12c951d813c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a3ea3736a7b934079e3e12c951d813c">&#9670;&nbsp;</a></span>pg_reset_transform()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pg_reset_transform </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="pico__gfx_8h.html#acce49146fed834375407e4886a5d761a">pg_ctx_t</a> *&#160;</td>
           <td class="paramname"><em>ctx</em></td><td>)</td>
@@ -1464,67 +1400,7 @@ Customization:</h2>
       </table>
 </div><div class="memdoc">
 
-<p>Set both the projection and model-view matrices to the identity matrix. </p>
-
-</div>
-</div>
-<a id="ae9a03b470e7179298208afbfe349aec5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae9a03b470e7179298208afbfe349aec5">&#9670;&nbsp;</a></span>pg_set_projection()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void pg_set_projection </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="pico__gfx_8h.html#acce49146fed834375407e4886a5d761a">pg_ctx_t</a> *&#160;</td>
-          <td class="paramname"><em>ctx</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="pico__gfx_8h.html#a3b61daa1db58de3cf273581fbd594201">pg_mat4_t</a>&#160;</td>
-          <td class="paramname"><em>matrix</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the projection transform to the specified matrix. </p>
-
-</div>
-</div>
-<a id="a2eecd4f37397f149b7898043bad342ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2eecd4f37397f149b7898043bad342ee">&#9670;&nbsp;</a></span>pg_set_modelview()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void pg_set_modelview </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="pico__gfx_8h.html#acce49146fed834375407e4886a5d761a">pg_ctx_t</a> *&#160;</td>
-          <td class="paramname"><em>ctx</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="pico__gfx_8h.html#a3b61daa1db58de3cf273581fbd594201">pg_mat4_t</a>&#160;</td>
-          <td class="paramname"><em>matrix</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the model-view transform to the specified matrix. </p>
+<p>Set the transform (MVP) to the identity matrix. </p>
 
 </div>
 </div>

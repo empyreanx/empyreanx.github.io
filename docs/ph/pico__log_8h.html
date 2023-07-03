@@ -197,9 +197,9 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A minimal and flexible logging framework written in C99. </p>
 <hr  />
- <h2><a class="anchor" id="autotoc_md27"></a>
+ <h2><a class="anchor" id="autotoc_md20"></a>
 Licensing information at end of header</h2>
-<h2><a class="anchor" id="autotoc_md28"></a>
+<h2><a class="anchor" id="autotoc_md21"></a>
 Features:</h2>
 <ul>
 <li>Written in pure C99, and compatible with C++</li>
@@ -212,7 +212,7 @@ Features:</h2>
 <li>reporting individually, on a per appender basis</li>
 <li>Permissive licensing (zlib or public domain)</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md29"></a>
+<h2><a class="anchor" id="autotoc_md22"></a>
 Summary:</h2>
 <p>This library is built around the notion of appenders. An appender writes log messages to a sink. It could be a file, a network connection, or stream (e.g. stdout).</p>
 <p>Once one or more appenders are registered, macros such as log_info will send messages to the appenders.</p>
@@ -220,14 +220,14 @@ Summary:</h2>
 <p>Output can also be modified to show or hide various metadata. These are date/time, log level, filename/line number, and calling function. They can be toggled using the log_display* functions. There is also an option to enable color coded output.</p>
 <p>It is possible to synchronize appenders using <code>log_set_lock</code>. This function accepts a function pointer that takes a boolean and user data as input. If this function pointer is passed true the lock is acquired and false to release the lock.</p>
 <p>Please see the examples for more details.</p>
-<h2><a class="anchor" id="autotoc_md30"></a>
+<h2><a class="anchor" id="autotoc_md23"></a>
 Usage:</h2>
 <p>To use this library in your project, add the following</p>
 <blockquote class="doxtable">
 <p>#define PICO_LOG_IMPLEMENTATION #include "pico_log.h" </p>
 </blockquote>
 <p>to a source file (once), then simply include the header normally.</p>
-<h2><a class="anchor" id="autotoc_md31"></a>
+<h2><a class="anchor" id="autotoc_md24"></a>
 Constants:</h2>
 <ul>
 <li>PICO_LOG_MAX_APPENDERS (default: 16)</li>

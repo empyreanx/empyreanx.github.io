@@ -144,9 +144,9 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A simple quadtree library. </p>
 <hr  />
- <h2><a class="anchor" id="autotoc_md39"></a>
+ <h2><a class="anchor" id="autotoc_md32"></a>
 Licensing information at end of header</h2>
-<h2><a class="anchor" id="autotoc_md40"></a>
+<h2><a class="anchor" id="autotoc_md33"></a>
 Features:</h2>
 <ul>
 <li>Written in C99</li>
@@ -154,15 +154,15 @@ Features:</h2>
 <li>Simple and concise API</li>
 <li>Permissive license (zlib or public domain)</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md41"></a>
+<h2><a class="anchor" id="autotoc_md34"></a>
 Summary:</h2>
 <p>This library builds and manages <a href="https://en.wikipedia.org/wiki/Quadtree">Quadtrees</a>.</p>
 <p>A quadtree is a data structure that can be used to perform efficient spatial queries. Items (values + bounds) are inserted into the tree. During this process, space in a quadtree is subdivided to make subsequent retrieval fast. Queries return values for all items that are contained within or overlap the search area.</p>
 <p>Currently, values are numeric. If uintptr_t is used they can also store a pointer. An integer value could represent an entity ID, an array index, a key for a hashtable etc...</p>
-<h2><a class="anchor" id="autotoc_md42"></a>
+<h2><a class="anchor" id="autotoc_md35"></a>
 Depth:</h2>
 <p>There is a tradeoff between space and time complexity. Lower depth values have smaller space requirements, but higher search times. Indeed, a tree with a depth of zero reduces to a linear bounds check. Higher values speed up searches, but at the cost of increased space. There are, however, diminishing returns with regard to increasing the max depth too high. Eventually all of the additional space is wasted with no benefit to performance.</p>
-<h2><a class="anchor" id="autotoc_md43"></a>
+<h2><a class="anchor" id="autotoc_md36"></a>
 Usage:</h2>
 <p>To use this library in your project, add the following</p>
 <blockquote class="doxtable">
@@ -170,7 +170,7 @@ Usage:</h2>
 </blockquote>
 <p>to a source file (once), then simply include the header normally.</p>
 <p>Must be defined before PICO_QT_IMPLEMENTATION</p>
-<h2><a class="anchor" id="autotoc_md44"></a>
+<h2><a class="anchor" id="autotoc_md37"></a>
 Customization:</h2>
 <p>A few macros can be overridden simply by defining them before including this source file. Here is a list of them.</p>
 <p>PICO_QT_USE_DOUBLE PICO_QT_USE_UINTPTR PICO_QT_BLOCK_SIZE PICO_QT_ASSERT PICO_QT_MALLOC PICO_QT_REALLOC PICO_QT_FREE PICO_QT_MEMCPY PICO_QT_MEMSET </p>
