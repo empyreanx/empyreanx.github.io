@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['h_47',['h',['../structqt__rect__t.html#aa3a32dd5ca1983c49e368cee58f17954',1,'qt_rect_t']]]
+  ['get_5fshader_5fdesc_47',['get_shader_desc',['../structpg__shader__internal__t.html#ab555ca88a0a1906ba09c99726aef3aef',1,'pg_shader_internal_t']]],
+  ['get_5funiformblock_5fslot_48',['get_uniformblock_slot',['../structpg__shader__internal__t.html#a60fa6321ac7bcf62b92021452360d92e',1,'pg_shader_internal_t']]]
 ];

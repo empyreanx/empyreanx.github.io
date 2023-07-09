@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['s_587',['s',['../structpm__rng__t.html#a65ca798be0900fe8e67e30cdcbb4cc0f',1,'pm_rng_t']]],
-  ['smooth_588',['smooth',['../structpg__texture__opts__t.html#a204abbfd9cb0731050e4edcb81c18868',1,'pg_texture_opts_t']]]
+  ['radius_813',['radius',['../structph__circle__t.html#ac318b64a6b639f909393201a4313976a',1,'ph_circle_t']]],
+  ['repeat_814',['repeat',['../structpg__texture__opts__t.html#a711b7edbea36f7bd5bc9533546167c25',1,'pg_texture_opts_t']]]
 ];

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['get_5fshader_5fdesc_572',['get_shader_desc',['../structpg__shader__internal__t.html#ab555ca88a0a1906ba09c99726aef3aef',1,'pg_shader_internal_t']]],
-  ['get_5funiformblock_5fslot_573',['get_uniformblock_slot',['../structpg__shader__internal__t.html#a60fa6321ac7bcf62b92021452360d92e',1,'pg_shader_internal_t']]]
+  ['edges_799',['edges',['../structph__poly__t.html#a6472810f7726f4b6c3080b2ed4973ce7',1,'ph_poly_t']]]
 ];

@@ -95,7 +95,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="center"><img src="pico__math_8h__dep__incl.png" border="0" usemap="#apico__math_8hdep" alt=""/></div>
 <map name="apico__math_8hdep" id="apico__math_8hdep">
 <area shape="rect" title="A 2D math library for games." alt="" coords="5,5,108,32"/>
-<area shape="rect" href="pico__sat_8h.html" title="Separating Axis Theorem (SAT) Tests written in C99." alt="" coords="13,80,101,107"/>
+<area shape="rect" href="pico__hit_8h.html" title=" " alt="" coords="14,80,99,107"/>
 </map>
 </div>
 </div>
@@ -378,9 +378,9 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A 2D math library for games. </p>
 <hr  />
- <h2><a class="anchor" id="autotoc_md26"></a>
+ <h2><a class="anchor" id="autotoc_md39"></a>
 Licensing information at end of header</h2>
-<h2><a class="anchor" id="autotoc_md27"></a>
+<h2><a class="anchor" id="autotoc_md40"></a>
 Features:</h2>
 <ul>
 <li>Written in C99</li>
@@ -391,7 +391,7 @@ Features:</h2>
 <li>Extensive test suite</li>
 <li>Permissive license (zlib or public domain)</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md28"></a>
+<h2><a class="anchor" id="autotoc_md41"></a>
 Summary:</h2>
 <p>This library provides functions that act on three 2D types: vectors (<a class="el" href="structpm__v2.html" title="A 2D vector.">pm_v2</a>), transforms (<a class="el" href="structpm__t2.html" title="A 2D transform.">pm_t2</a>), and axis-align bounding boxes (<a class="el" href="structpm__b2.html" title="A 2D axis-aligned-bounding-box (AABB)">pm_b2</a>). The library also provides some scalar functions as well as a random number generator.</p>
 <p>This library aims to strike a balance between performance and simplicity. Most functions return by value. All vectors are passed by value. Otherwise, transforms and AABBs are passed by pointer. There is no dynamic memory allocation.</p>
@@ -401,14 +401,14 @@ Summary:</h2>
 <p>Bounding box functions provide tests for intersection of AABBs and determnining if a point is contained within a given AABB. There are functions for computing unions and intersections of AABBs as well as for computing the minimum enclosing AABB for a set of points.</p>
 <p>The random number generator uses the Mersenne Twister algorithm, which is substantially better than <code>rand()</code> in terms of the quality of its output. It is slower than <code>rand()</code> but still has pretty decent performance.</p>
 <p>Please see the unit tests for some concrete examples.</p>
-<h2><a class="anchor" id="autotoc_md29"></a>
+<h2><a class="anchor" id="autotoc_md42"></a>
 Usage:</h2>
 <p>To use this library in your project, add the following</p>
 <blockquote class="doxtable">
 <p>#define PICO_MATH_IMPLEMENTATION #include "pico_ml.h" </p>
 </blockquote>
 <p>to a source file (once), then simply include the header normally.</p>
-<h2><a class="anchor" id="autotoc_md30"></a>
+<h2><a class="anchor" id="autotoc_md43"></a>
 Todo:</h2>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a41daca15036ae70fb43c040e8fbe4999"></a>
