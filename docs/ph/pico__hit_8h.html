@@ -139,10 +139,13 @@ Functions</h2></td></tr>
 <tr class="memdesc:a88f96200a88c77d698b82d7a5b71158a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforms a polygon using an affine transform.  <a href="pico__hit_8h.html#a88f96200a88c77d698b82d7a5b71158a">More...</a><br /></td></tr>
 <tr class="separator:a88f96200a88c77d698b82d7a5b71158a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f0b7ef4ac429037219e68d0a055ae45"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#a9f0b7ef4ac429037219e68d0a055ae45">ph_ray_segment</a> (const <a class="el" href="structph__ray__t.html">ph_ray_t</a> *ray, <a class="el" href="structpm__v2.html">pm_v2</a> s1, <a class="el" href="structpm__v2.html">pm_v2</a> s2, <a class="el" href="structph__raycast__t.html">ph_raycast_t</a> *raycast)</td></tr>
+<tr class="memdesc:a9f0b7ef4ac429037219e68d0a055ae45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests if ray intersects a (directed) line segment.  <a href="pico__hit_8h.html#a9f0b7ef4ac429037219e68d0a055ae45">More...</a><br /></td></tr>
 <tr class="separator:a9f0b7ef4ac429037219e68d0a055ae45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf724b6bd2a2ec0bbd2e856891a677d8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#adf724b6bd2a2ec0bbd2e856891a677d8">ph_ray_poly</a> (const <a class="el" href="structph__ray__t.html">ph_ray_t</a> *ray, const <a class="el" href="structph__poly__t.html">ph_poly_t</a> *poly, <a class="el" href="structph__raycast__t.html">ph_raycast_t</a> *raycast)</td></tr>
+<tr class="memdesc:adf724b6bd2a2ec0bbd2e856891a677d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests if ray intersects a polygon.  <a href="pico__hit_8h.html#adf724b6bd2a2ec0bbd2e856891a677d8">More...</a><br /></td></tr>
 <tr class="separator:adf724b6bd2a2ec0bbd2e856891a677d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ad5a532706b71964df83f760ba5e9a3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#a6ad5a532706b71964df83f760ba5e9a3">ph_ray_circle</a> (const <a class="el" href="structph__ray__t.html">ph_ray_t</a> *ray, const <a class="el" href="structph__circle__t.html">ph_circle_t</a> *circle, <a class="el" href="structph__raycast__t.html">ph_raycast_t</a> *raycast)</td></tr>
+<tr class="memdesc:a6ad5a532706b71964df83f760ba5e9a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests if ray intersects a circle.  <a href="pico__hit_8h.html#a6ad5a532706b71964df83f760ba5e9a3">More...</a><br /></td></tr>
 <tr class="separator:a6ad5a532706b71964df83f760ba5e9a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2cef0b572b3094d1495a177b196f60c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structph__circle__t.html">ph_circle_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#ac2cef0b572b3094d1495a177b196f60c">ph_transform_circle</a> (const <a class="el" href="structpm__t2.html">pm_t2</a> *transform, const <a class="el" href="structph__circle__t.html">ph_circle_t</a> *circle)</td></tr>
 <tr class="memdesc:ac2cef0b572b3094d1495a177b196f60c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforms a circle using an affine transform.  <a href="pico__hit_8h.html#ac2cef0b572b3094d1495a177b196f60c">More...</a><br /></td></tr>
@@ -566,6 +569,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Tests if ray intersects a (directed) line segment. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ray</td><td>Ray to test </td></tr>
+    <tr><td class="paramname">s1</td><td>First endpoint of segment </td></tr>
+    <tr><td class="paramname">s2</td><td>Second endpoint of segment </td></tr>
+    <tr><td class="paramname">raycast</td><td>Normal and distance of collision (if not NULL) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the ray collides with the line segment and false otherwise </dd></dl>
+
 </div>
 </div>
 <a id="adf724b6bd2a2ec0bbd2e856891a677d8"></a>
@@ -600,6 +615,17 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Tests if ray intersects a polygon. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ray</td><td>Ray to test </td></tr>
+    <tr><td class="paramname">poly</td><td>The polygon </td></tr>
+    <tr><td class="paramname">raycast</td><td>Normal and distance of collision (if not NULL). May terminate early if NULL </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the ray collides with the polygon and false otherwise </dd></dl>
+
 </div>
 </div>
 <a id="a6ad5a532706b71964df83f760ba5e9a3"></a>
@@ -633,6 +659,17 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Tests if ray intersects a circle. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ray</td><td>Ray to test </td></tr>
+    <tr><td class="paramname">circle</td><td>The circle </td></tr>
+    <tr><td class="paramname">raycast</td><td>Normal and distance of collision (if not NULL). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the ray collides with the circle and false otherwise </dd></dl>
 
 </div>
 </div>
