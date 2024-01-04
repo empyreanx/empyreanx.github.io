@@ -79,12 +79,6 @@ $(function() {
 Include dependency graph for pico_ecs.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="pico__ecs_8h__incl.png" border="0" usemap="#apico__ecs_8h" alt=""/></div>
-<map name="apico__ecs_8h" id="apico__ecs_8h">
-<area shape="rect" title="A pure and simple ECS written in C99." alt="" coords="104,5,195,32"/>
-<area shape="rect" title=" " alt="" coords="5,80,88,107"/>
-<area shape="rect" title=" " alt="" coords="112,80,187,107"/>
-<area shape="rect" title=" " alt="" coords="211,80,282,107"/>
-</map>
 </div>
 </div>
 <p><a href="pico__ecs_8h_source.html">Go to the source code of this file.</a></p>
@@ -94,6 +88,9 @@ Macros</h2></td></tr>
 <tr class="memitem:a68f795087862e8bd6f7e85ab84bb0b16"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__ecs_8h.html#a68f795087862e8bd6f7e85ab84bb0b16">ECS_NULL</a>&#160;&#160;&#160;((<a class="el" href="pico__ecs_8h.html#aa9ee79bf65bd0a2a714e48a71e58c3de">ecs_id_t</a>)-1)</td></tr>
 <tr class="memdesc:a68f795087862e8bd6f7e85ab84bb0b16"><td class="mdescLeft">&#160;</td><td class="mdescRight">NULL/invalid/undefined value.  <a href="pico__ecs_8h.html#a68f795087862e8bd6f7e85ab84bb0b16">More...</a><br /></td></tr>
 <tr class="separator:a68f795087862e8bd6f7e85ab84bb0b16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c05e4ae546322deb96adc92276ca7ce"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__ecs_8h.html#a5c05e4ae546322deb96adc92276ca7ce">ECS_DT_TYPE</a>&#160;&#160;&#160;double</td></tr>
+<tr class="memdesc:a5c05e4ae546322deb96adc92276ca7ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine delta-time type.  <a href="pico__ecs_8h.html#a5c05e4ae546322deb96adc92276ca7ce">More...</a><br /></td></tr>
+<tr class="separator:a5c05e4ae546322deb96adc92276ca7ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -106,16 +103,15 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a3479df8429f09e798b32037419f94af9"><td class="memItemLeft" align="right" valign="top">typedef int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__ecs_8h.html#a3479df8429f09e798b32037419f94af9">ecs_ret_t</a></td></tr>
 <tr class="memdesc:a3479df8429f09e798b32037419f94af9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return code for update callback and calling functions.  <a href="pico__ecs_8h.html#a3479df8429f09e798b32037419f94af9">More...</a><br /></td></tr>
 <tr class="separator:a3479df8429f09e798b32037419f94af9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7dbffd9b7cd3048225140f3b77db1d52"><td class="memItemLeft" align="right" valign="top">typedef double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__ecs_8h.html#a7dbffd9b7cd3048225140f3b77db1d52">ecs_dt_t</a></td></tr>
-<tr class="memdesc:a7dbffd9b7cd3048225140f3b77db1d52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine floating point type.  <a href="pico__ecs_8h.html#a7dbffd9b7cd3048225140f3b77db1d52">More...</a><br /></td></tr>
-<tr class="separator:a7dbffd9b7cd3048225140f3b77db1d52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29e69a76b2180ebe4f2ac81d6d5fa62f"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="pico__ecs_8h.html#a5c05e4ae546322deb96adc92276ca7ce">ECS_DT_TYPE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__ecs_8h.html#a29e69a76b2180ebe4f2ac81d6d5fa62f">ecs_dt_t</a></td></tr>
+<tr class="separator:a29e69a76b2180ebe4f2ac81d6d5fa62f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ef1149077d50e8129abf37e8733d3c6"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__ecs_8h.html#a6ef1149077d50e8129abf37e8733d3c6">ecs_constructor_fn</a>) (<a class="el" href="pico__ecs_8h.html#a78aee9dde23c9234e2607b7bf6c91139">ecs_t</a> *ecs, <a class="el" href="pico__ecs_8h.html#aa9ee79bf65bd0a2a714e48a71e58c3de">ecs_id_t</a> entity_id, void *ptr, void *args)</td></tr>
 <tr class="memdesc:a6ef1149077d50e8129abf37e8733d3c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when a component is created (via ecs_add)  <a href="pico__ecs_8h.html#a6ef1149077d50e8129abf37e8733d3c6">More...</a><br /></td></tr>
 <tr class="separator:a6ef1149077d50e8129abf37e8733d3c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a295f78dd0bc9da385e1eac8034fe981f"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__ecs_8h.html#a295f78dd0bc9da385e1eac8034fe981f">ecs_destructor_fn</a>) (<a class="el" href="pico__ecs_8h.html#a78aee9dde23c9234e2607b7bf6c91139">ecs_t</a> *ecs, <a class="el" href="pico__ecs_8h.html#aa9ee79bf65bd0a2a714e48a71e58c3de">ecs_id_t</a> entity_id, void *ptr)</td></tr>
 <tr class="memdesc:a295f78dd0bc9da385e1eac8034fe981f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when a component is destroyed (via ecs_remove or ecs_destroy)  <a href="pico__ecs_8h.html#a295f78dd0bc9da385e1eac8034fe981f">More...</a><br /></td></tr>
 <tr class="separator:a295f78dd0bc9da385e1eac8034fe981f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa7953d2bc2b6babeecf3edc3f2588b72"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="pico__ecs_8h.html#a3479df8429f09e798b32037419f94af9">ecs_ret_t</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__ecs_8h.html#aa7953d2bc2b6babeecf3edc3f2588b72">ecs_system_fn</a>) (<a class="el" href="pico__ecs_8h.html#a78aee9dde23c9234e2607b7bf6c91139">ecs_t</a> *ecs, <a class="el" href="pico__ecs_8h.html#aa9ee79bf65bd0a2a714e48a71e58c3de">ecs_id_t</a> *entities, int entity_count, <a class="el" href="pico__ecs_8h.html#a7dbffd9b7cd3048225140f3b77db1d52">ecs_dt_t</a> dt, void *udata)</td></tr>
+<tr class="memitem:aa7953d2bc2b6babeecf3edc3f2588b72"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="pico__ecs_8h.html#a3479df8429f09e798b32037419f94af9">ecs_ret_t</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__ecs_8h.html#aa7953d2bc2b6babeecf3edc3f2588b72">ecs_system_fn</a>) (<a class="el" href="pico__ecs_8h.html#a78aee9dde23c9234e2607b7bf6c91139">ecs_t</a> *ecs, <a class="el" href="pico__ecs_8h.html#aa9ee79bf65bd0a2a714e48a71e58c3de">ecs_id_t</a> *entities, int entity_count, <a class="el" href="pico__ecs_8h.html#a29e69a76b2180ebe4f2ac81d6d5fa62f">ecs_dt_t</a> dt, void *udata)</td></tr>
 <tr class="memdesc:aa7953d2bc2b6babeecf3edc3f2588b72"><td class="mdescLeft">&#160;</td><td class="mdescRight">System update callback.  <a href="pico__ecs_8h.html#aa7953d2bc2b6babeecf3edc3f2588b72">More...</a><br /></td></tr>
 <tr class="separator:aa7953d2bc2b6babeecf3edc3f2588b72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a658cf601b1df7e5fb57fc837c0989004"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__ecs_8h.html#a658cf601b1df7e5fb57fc837c0989004">ecs_added_fn</a>) (<a class="el" href="pico__ecs_8h.html#a78aee9dde23c9234e2607b7bf6c91139">ecs_t</a> *ecs, <a class="el" href="pico__ecs_8h.html#aa9ee79bf65bd0a2a714e48a71e58c3de">ecs_id_t</a> entity_id, void *udata)</td></tr>
@@ -181,10 +177,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a221c69e132009281a238361e60350253"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__ecs_8h.html#a221c69e132009281a238361e60350253">ecs_queue_remove</a> (<a class="el" href="pico__ecs_8h.html#a78aee9dde23c9234e2607b7bf6c91139">ecs_t</a> *ecs, <a class="el" href="pico__ecs_8h.html#aa9ee79bf65bd0a2a714e48a71e58c3de">ecs_id_t</a> entity_id, <a class="el" href="pico__ecs_8h.html#aa9ee79bf65bd0a2a714e48a71e58c3de">ecs_id_t</a> comp_id)</td></tr>
 <tr class="memdesc:a221c69e132009281a238361e60350253"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queues a component for removable.  <a href="pico__ecs_8h.html#a221c69e132009281a238361e60350253">More...</a><br /></td></tr>
 <tr class="separator:a221c69e132009281a238361e60350253"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad066355a98d5125532c4629b867291d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pico__ecs_8h.html#a3479df8429f09e798b32037419f94af9">ecs_ret_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__ecs_8h.html#ad066355a98d5125532c4629b867291d8">ecs_update_system</a> (<a class="el" href="pico__ecs_8h.html#a78aee9dde23c9234e2607b7bf6c91139">ecs_t</a> *ecs, <a class="el" href="pico__ecs_8h.html#aa9ee79bf65bd0a2a714e48a71e58c3de">ecs_id_t</a> sys_id, <a class="el" href="pico__ecs_8h.html#a7dbffd9b7cd3048225140f3b77db1d52">ecs_dt_t</a> dt)</td></tr>
+<tr class="memitem:ad066355a98d5125532c4629b867291d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pico__ecs_8h.html#a3479df8429f09e798b32037419f94af9">ecs_ret_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__ecs_8h.html#ad066355a98d5125532c4629b867291d8">ecs_update_system</a> (<a class="el" href="pico__ecs_8h.html#a78aee9dde23c9234e2607b7bf6c91139">ecs_t</a> *ecs, <a class="el" href="pico__ecs_8h.html#aa9ee79bf65bd0a2a714e48a71e58c3de">ecs_id_t</a> sys_id, <a class="el" href="pico__ecs_8h.html#a29e69a76b2180ebe4f2ac81d6d5fa62f">ecs_dt_t</a> dt)</td></tr>
 <tr class="memdesc:ad066355a98d5125532c4629b867291d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update an individual system.  <a href="pico__ecs_8h.html#ad066355a98d5125532c4629b867291d8">More...</a><br /></td></tr>
 <tr class="separator:ad066355a98d5125532c4629b867291d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a5e245658c52f85685e103b351bbb7b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pico__ecs_8h.html#a3479df8429f09e798b32037419f94af9">ecs_ret_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__ecs_8h.html#a9a5e245658c52f85685e103b351bbb7b">ecs_update_systems</a> (<a class="el" href="pico__ecs_8h.html#a78aee9dde23c9234e2607b7bf6c91139">ecs_t</a> *ecs, <a class="el" href="pico__ecs_8h.html#a7dbffd9b7cd3048225140f3b77db1d52">ecs_dt_t</a> dt)</td></tr>
+<tr class="memitem:a9a5e245658c52f85685e103b351bbb7b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pico__ecs_8h.html#a3479df8429f09e798b32037419f94af9">ecs_ret_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__ecs_8h.html#a9a5e245658c52f85685e103b351bbb7b">ecs_update_systems</a> (<a class="el" href="pico__ecs_8h.html#a78aee9dde23c9234e2607b7bf6c91139">ecs_t</a> *ecs, <a class="el" href="pico__ecs_8h.html#a29e69a76b2180ebe4f2ac81d6d5fa62f">ecs_dt_t</a> dt)</td></tr>
 <tr class="memdesc:a9a5e245658c52f85685e103b351bbb7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates all systems.  <a href="pico__ecs_8h.html#a9a5e245658c52f85685e103b351bbb7b">More...</a><br /></td></tr>
 <tr class="separator:a9a5e245658c52f85685e103b351bbb7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -248,6 +244,22 @@ Todo:</h2>
 
 </div>
 </div>
+<a id="a5c05e4ae546322deb96adc92276ca7ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c05e4ae546322deb96adc92276ca7ce">&#9670;&nbsp;</a></span>ECS_DT_TYPE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ECS_DT_TYPE&#160;&#160;&#160;double</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Determine delta-time type. </p>
+
+</div>
+</div>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="a78aee9dde23c9234e2607b7bf6c91139"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a78aee9dde23c9234e2607b7bf6c91139">&#9670;&nbsp;</a></span>ecs_t</h2>
@@ -297,19 +309,17 @@ Todo:</h2>
 
 </div>
 </div>
-<a id="a7dbffd9b7cd3048225140f3b77db1d52"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7dbffd9b7cd3048225140f3b77db1d52">&#9670;&nbsp;</a></span>ecs_dt_t</h2>
+<a id="a29e69a76b2180ebe4f2ac81d6d5fa62f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29e69a76b2180ebe4f2ac81d6d5fa62f">&#9670;&nbsp;</a></span>ecs_dt_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef double <a class="el" href="pico__ecs_8h.html#a7dbffd9b7cd3048225140f3b77db1d52">ecs_dt_t</a></td>
+          <td class="memname">typedef <a class="el" href="pico__ecs_8h.html#a5c05e4ae546322deb96adc92276ca7ce">ECS_DT_TYPE</a> <a class="el" href="pico__ecs_8h.html#a29e69a76b2180ebe4f2ac81d6d5fa62f">ecs_dt_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Determine floating point type. </p>
 
 </div>
 </div>
@@ -370,7 +380,7 @@ Todo:</h2>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="pico__ecs_8h.html#a3479df8429f09e798b32037419f94af9">ecs_ret_t</a>(* ecs_system_fn) (<a class="el" href="pico__ecs_8h.html#a78aee9dde23c9234e2607b7bf6c91139">ecs_t</a> *ecs, <a class="el" href="pico__ecs_8h.html#aa9ee79bf65bd0a2a714e48a71e58c3de">ecs_id_t</a> *entities, int entity_count, <a class="el" href="pico__ecs_8h.html#a7dbffd9b7cd3048225140f3b77db1d52">ecs_dt_t</a> dt, void *udata)</td>
+          <td class="memname">typedef <a class="el" href="pico__ecs_8h.html#a3479df8429f09e798b32037419f94af9">ecs_ret_t</a>(* ecs_system_fn) (<a class="el" href="pico__ecs_8h.html#a78aee9dde23c9234e2607b7bf6c91139">ecs_t</a> *ecs, <a class="el" href="pico__ecs_8h.html#aa9ee79bf65bd0a2a714e48a71e58c3de">ecs_id_t</a> *entities, int entity_count, <a class="el" href="pico__ecs_8h.html#a29e69a76b2180ebe4f2ac81d6d5fa62f">ecs_dt_t</a> dt, void *udata)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1190,7 +1200,7 @@ Todo:</h2>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="pico__ecs_8h.html#a7dbffd9b7cd3048225140f3b77db1d52">ecs_dt_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="pico__ecs_8h.html#a29e69a76b2180ebe4f2ac81d6d5fa62f">ecs_dt_t</a>&#160;</td>
           <td class="paramname"><em>dt</em>&#160;</td>
         </tr>
         <tr>
@@ -1229,7 +1239,7 @@ Todo:</h2>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="pico__ecs_8h.html#a7dbffd9b7cd3048225140f3b77db1d52">ecs_dt_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="pico__ecs_8h.html#a29e69a76b2180ebe4f2ac81d6d5fa62f">ecs_dt_t</a>&#160;</td>
           <td class="paramname"><em>dt</em>&#160;</td>
         </tr>
         <tr>

@@ -1,4 +1,0 @@
-<map id="sat_poly_t" name="sat_poly_t">
-<area shape="rect" id="node1" title="A polygon shape Must use CCW (counter&#45;clockwise) winding." alt="" coords="5,124,95,151"/>
-<area shape="rect" id="node2" href="$structpm__v2.html" title="A 2D vector." alt="" coords="17,5,83,32"/>
-</map>

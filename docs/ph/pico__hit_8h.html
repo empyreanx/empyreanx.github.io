@@ -74,14 +74,6 @@ $(function() {
 Include dependency graph for pico_hit.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="pico__hit_8h__incl.png" border="0" usemap="#apico__hit_8h" alt=""/></div>
-<map name="apico__hit_8h" id="apico__hit_8h">
-<area shape="rect" title=" " alt="" coords="133,5,218,32"/>
-<area shape="rect" href="pico__math_8h.html" title="A 2D math library for games." alt="" coords="124,80,227,107"/>
-<area shape="rect" title=" " alt="" coords="5,155,68,181"/>
-<area shape="rect" title=" " alt="" coords="92,155,160,181"/>
-<area shape="rect" title=" " alt="" coords="185,155,267,181"/>
-<area shape="rect" title=" " alt="" coords="292,155,363,181"/>
-</map>
 </div>
 </div>
 <p><a href="pico__hit_8h_source.html">Go to the source code of this file.</a></p>
@@ -95,7 +87,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A polygon shape Must use CCW (counter-clockwise) winding.  <a href="structph__poly__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structph__ray__t.html">ph_ray_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A ray.  <a href="structph__ray__t.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A ray (directed line segment)  <a href="structph__ray__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structph__manifold__t.html">ph_manifold_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A collision manifold Provides information about a collision. Normals always point from shape 1 to shape 2.  <a href="structph__manifold__t.html#details">More...</a><br /></td></tr>
@@ -106,23 +98,23 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a46867f0870ad57fe9c2c0ae48e42428b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#a46867f0870ad57fe9c2c0ae48e42428b">PICO_HIT_MAX_POLY_VERTS</a>&#160;&#160;&#160;8</td></tr>
+<tr class="memitem:a46867f0870ad57fe9c2c0ae48e42428b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#a46867f0870ad57fe9c2c0ae48e42428b">PICO_HIT_MAX_POLY_VERTS</a>&#160;&#160;&#160;16</td></tr>
 <tr class="separator:a46867f0870ad57fe9c2c0ae48e42428b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aa11d0b6d6169a939b34666a32c71514a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structph__circle__t.html">ph_circle_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#aa11d0b6d6169a939b34666a32c71514a">ph_make_circle</a> (<a class="el" href="structpm__v2.html">pm_v2</a> pos, <a class="el" href="pico__math_8h.html#aae7836efe3af8fecd46c88a7bf152cba">pm_float</a> radius)</td></tr>
-<tr class="memdesc:aa11d0b6d6169a939b34666a32c71514a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a circle.  <a href="pico__hit_8h.html#aa11d0b6d6169a939b34666a32c71514a">More...</a><br /></td></tr>
-<tr class="separator:aa11d0b6d6169a939b34666a32c71514a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7711c502d9abbc162f7857ca2b68d7c4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structph__poly__t.html">ph_poly_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#a7711c502d9abbc162f7857ca2b68d7c4">ph_make_poly</a> (const <a class="el" href="structpm__v2.html">pm_v2</a> vertices[], int vertex_count)</td></tr>
-<tr class="memdesc:a7711c502d9abbc162f7857ca2b68d7c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a polygon.  <a href="pico__hit_8h.html#a7711c502d9abbc162f7857ca2b68d7c4">More...</a><br /></td></tr>
-<tr class="separator:a7711c502d9abbc162f7857ca2b68d7c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac0bfbdeba87680c6fd58d2cd8d634892"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structph__ray__t.html">ph_ray_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#ac0bfbdeba87680c6fd58d2cd8d634892">ph_make_ray</a> (<a class="el" href="structpm__v2.html">pm_v2</a> pos, <a class="el" href="structpm__v2.html">pm_v2</a> dir, <a class="el" href="pico__math_8h.html#aae7836efe3af8fecd46c88a7bf152cba">pm_float</a> dist)</td></tr>
-<tr class="memdesc:ac0bfbdeba87680c6fd58d2cd8d634892"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a ray.  <a href="pico__hit_8h.html#ac0bfbdeba87680c6fd58d2cd8d634892">More...</a><br /></td></tr>
-<tr class="separator:ac0bfbdeba87680c6fd58d2cd8d634892"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a855e2d0d3c8d5f8418585b4f6b93a3f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structph__poly__t.html">ph_poly_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#a855e2d0d3c8d5f8418585b4f6b93a3f9">ph_aabb_to_poly</a> (const <a class="el" href="structpm__b2.html">pm_b2</a> *aabb)</td></tr>
-<tr class="memdesc:a855e2d0d3c8d5f8418585b4f6b93a3f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts and axis-aligned bounding box (AABB) to a polygon.  <a href="pico__hit_8h.html#a855e2d0d3c8d5f8418585b4f6b93a3f9">More...</a><br /></td></tr>
-<tr class="separator:a855e2d0d3c8d5f8418585b4f6b93a3f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adba91cbb255f36b2a3fb0109f299cca4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structph__circle__t.html">ph_circle_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#adba91cbb255f36b2a3fb0109f299cca4">ph_make_circle</a> (<a class="el" href="structpv2.html">pv2</a> pos, <a class="el" href="pico__math_8h.html#a5ce19b909a88aefe3e3a3beac779f98c">pfloat</a> radius)</td></tr>
+<tr class="memdesc:adba91cbb255f36b2a3fb0109f299cca4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a circle.  <a href="pico__hit_8h.html#adba91cbb255f36b2a3fb0109f299cca4">More...</a><br /></td></tr>
+<tr class="separator:adba91cbb255f36b2a3fb0109f299cca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d7955222df8d81bce86ccbec7902047"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structph__poly__t.html">ph_poly_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#a4d7955222df8d81bce86ccbec7902047">ph_make_poly</a> (const <a class="el" href="structpv2.html">pv2</a> vertices[], int vertex_count)</td></tr>
+<tr class="memdesc:a4d7955222df8d81bce86ccbec7902047"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a polygon.  <a href="pico__hit_8h.html#a4d7955222df8d81bce86ccbec7902047">More...</a><br /></td></tr>
+<tr class="separator:a4d7955222df8d81bce86ccbec7902047"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a138aae4d2dc47b11a23e0e64dea6e2f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structph__ray__t.html">ph_ray_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#a138aae4d2dc47b11a23e0e64dea6e2f0">ph_make_ray</a> (<a class="el" href="structpv2.html">pv2</a> pos, <a class="el" href="structpv2.html">pv2</a> dir, <a class="el" href="pico__math_8h.html#a5ce19b909a88aefe3e3a3beac779f98c">pfloat</a> dist)</td></tr>
+<tr class="memdesc:a138aae4d2dc47b11a23e0e64dea6e2f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a ray.  <a href="pico__hit_8h.html#a138aae4d2dc47b11a23e0e64dea6e2f0">More...</a><br /></td></tr>
+<tr class="separator:a138aae4d2dc47b11a23e0e64dea6e2f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a840c8e99fc78fe7723587566b70e8ec5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structph__poly__t.html">ph_poly_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#a840c8e99fc78fe7723587566b70e8ec5">ph_aabb_to_poly</a> (const <a class="el" href="structpb2.html">pb2</a> *aabb)</td></tr>
+<tr class="memdesc:a840c8e99fc78fe7723587566b70e8ec5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts and axis-aligned bounding box (AABB) to a polygon.  <a href="pico__hit_8h.html#a840c8e99fc78fe7723587566b70e8ec5">More...</a><br /></td></tr>
+<tr class="separator:a840c8e99fc78fe7723587566b70e8ec5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a391ac270ec1bcf4a1040b5efa117581f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#a391ac270ec1bcf4a1040b5efa117581f">ph_sat_poly_poly</a> (const <a class="el" href="structph__poly__t.html">ph_poly_t</a> *poly_a, const <a class="el" href="structph__poly__t.html">ph_poly_t</a> *poly_b, <a class="el" href="structph__manifold__t.html">ph_manifold_t</a> *manifold)</td></tr>
 <tr class="memdesc:a391ac270ec1bcf4a1040b5efa117581f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests to see if one polygon overlaps with another.  <a href="pico__hit_8h.html#a391ac270ec1bcf4a1040b5efa117581f">More...</a><br /></td></tr>
 <tr class="separator:a391ac270ec1bcf4a1040b5efa117581f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -135,27 +127,30 @@ Functions</h2></td></tr>
 <tr class="memitem:aade0516489f38a2b5dda23d26e976bc8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#aade0516489f38a2b5dda23d26e976bc8">ph_sat_circle_circle</a> (const <a class="el" href="structph__circle__t.html">ph_circle_t</a> *circle_a, const <a class="el" href="structph__circle__t.html">ph_circle_t</a> *circle_b, <a class="el" href="structph__manifold__t.html">ph_manifold_t</a> *manifold)</td></tr>
 <tr class="memdesc:aade0516489f38a2b5dda23d26e976bc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests to see if two circles overlap.  <a href="pico__hit_8h.html#aade0516489f38a2b5dda23d26e976bc8">More...</a><br /></td></tr>
 <tr class="separator:aade0516489f38a2b5dda23d26e976bc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88f96200a88c77d698b82d7a5b71158a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structph__poly__t.html">ph_poly_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#a88f96200a88c77d698b82d7a5b71158a">ph_transform_poly</a> (const <a class="el" href="structpm__t2.html">pm_t2</a> *transform, const <a class="el" href="structph__poly__t.html">ph_poly_t</a> *poly)</td></tr>
-<tr class="memdesc:a88f96200a88c77d698b82d7a5b71158a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforms a polygon using an affine transform.  <a href="pico__hit_8h.html#a88f96200a88c77d698b82d7a5b71158a">More...</a><br /></td></tr>
-<tr class="separator:a88f96200a88c77d698b82d7a5b71158a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f0b7ef4ac429037219e68d0a055ae45"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#a9f0b7ef4ac429037219e68d0a055ae45">ph_ray_segment</a> (const <a class="el" href="structph__ray__t.html">ph_ray_t</a> *ray, <a class="el" href="structpm__v2.html">pm_v2</a> s1, <a class="el" href="structpm__v2.html">pm_v2</a> s2, <a class="el" href="structph__raycast__t.html">ph_raycast_t</a> *raycast)</td></tr>
-<tr class="memdesc:a9f0b7ef4ac429037219e68d0a055ae45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests if ray intersects a (directed) line segment.  <a href="pico__hit_8h.html#a9f0b7ef4ac429037219e68d0a055ae45">More...</a><br /></td></tr>
-<tr class="separator:a9f0b7ef4ac429037219e68d0a055ae45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98102c714c9d66eae29fd2ae7b7467c0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#a98102c714c9d66eae29fd2ae7b7467c0">ph_ray_line</a> (const <a class="el" href="structph__ray__t.html">ph_ray_t</a> *ray, <a class="el" href="structpv2.html">pv2</a> s1, <a class="el" href="structpv2.html">pv2</a> s2, <a class="el" href="structph__raycast__t.html">ph_raycast_t</a> *raycast)</td></tr>
+<tr class="memdesc:a98102c714c9d66eae29fd2ae7b7467c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests if ray intersects a (directed) line segment.  <a href="pico__hit_8h.html#a98102c714c9d66eae29fd2ae7b7467c0">More...</a><br /></td></tr>
+<tr class="separator:a98102c714c9d66eae29fd2ae7b7467c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf724b6bd2a2ec0bbd2e856891a677d8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#adf724b6bd2a2ec0bbd2e856891a677d8">ph_ray_poly</a> (const <a class="el" href="structph__ray__t.html">ph_ray_t</a> *ray, const <a class="el" href="structph__poly__t.html">ph_poly_t</a> *poly, <a class="el" href="structph__raycast__t.html">ph_raycast_t</a> *raycast)</td></tr>
 <tr class="memdesc:adf724b6bd2a2ec0bbd2e856891a677d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests if ray intersects a polygon.  <a href="pico__hit_8h.html#adf724b6bd2a2ec0bbd2e856891a677d8">More...</a><br /></td></tr>
 <tr class="separator:adf724b6bd2a2ec0bbd2e856891a677d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ad5a532706b71964df83f760ba5e9a3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#a6ad5a532706b71964df83f760ba5e9a3">ph_ray_circle</a> (const <a class="el" href="structph__ray__t.html">ph_ray_t</a> *ray, const <a class="el" href="structph__circle__t.html">ph_circle_t</a> *circle, <a class="el" href="structph__raycast__t.html">ph_raycast_t</a> *raycast)</td></tr>
 <tr class="memdesc:a6ad5a532706b71964df83f760ba5e9a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests if ray intersects a circle.  <a href="pico__hit_8h.html#a6ad5a532706b71964df83f760ba5e9a3">More...</a><br /></td></tr>
 <tr class="separator:a6ad5a532706b71964df83f760ba5e9a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2cef0b572b3094d1495a177b196f60c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structph__circle__t.html">ph_circle_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#ac2cef0b572b3094d1495a177b196f60c">ph_transform_circle</a> (const <a class="el" href="structpm__t2.html">pm_t2</a> *transform, const <a class="el" href="structph__circle__t.html">ph_circle_t</a> *circle)</td></tr>
-<tr class="memdesc:ac2cef0b572b3094d1495a177b196f60c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforms a circle using an affine transform.  <a href="pico__hit_8h.html#ac2cef0b572b3094d1495a177b196f60c">More...</a><br /></td></tr>
-<tr class="separator:ac2cef0b572b3094d1495a177b196f60c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a247db7168e3ba4d80ec6e0a038fe67ed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structpm__b2.html">pm_b2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#a247db7168e3ba4d80ec6e0a038fe67ed">ph_poly_to_aabb</a> (const <a class="el" href="structph__poly__t.html">ph_poly_t</a> *poly)</td></tr>
-<tr class="memdesc:a247db7168e3ba4d80ec6e0a038fe67ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the bounding box for the given polygon.  <a href="pico__hit_8h.html#a247db7168e3ba4d80ec6e0a038fe67ed">More...</a><br /></td></tr>
-<tr class="separator:a247db7168e3ba4d80ec6e0a038fe67ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e21f5b85327ece0e5469eda62afdb20"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structpm__b2.html">pm_b2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#a8e21f5b85327ece0e5469eda62afdb20">ph_circle_to_aabb</a> (const <a class="el" href="structph__circle__t.html">ph_circle_t</a> *circle)</td></tr>
-<tr class="memdesc:a8e21f5b85327ece0e5469eda62afdb20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the bounding box for the given circle.  <a href="pico__hit_8h.html#a8e21f5b85327ece0e5469eda62afdb20">More...</a><br /></td></tr>
-<tr class="separator:a8e21f5b85327ece0e5469eda62afdb20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea25a1a059e25326b1cd55bde287ca1e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structpv2.html">pv2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#aea25a1a059e25326b1cd55bde287ca1e">ph_ray_at</a> (const <a class="el" href="structph__ray__t.html">ph_ray_t</a> *ray, <a class="el" href="pico__math_8h.html#a5ce19b909a88aefe3e3a3beac779f98c">pfloat</a> dist)</td></tr>
+<tr class="memdesc:aea25a1a059e25326b1cd55bde287ca1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the point along the ray at the specified distance from the origin.  <a href="pico__hit_8h.html#aea25a1a059e25326b1cd55bde287ca1e">More...</a><br /></td></tr>
+<tr class="separator:aea25a1a059e25326b1cd55bde287ca1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a094c30e037fa667889996c4c1e5b33ca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structph__poly__t.html">ph_poly_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#a094c30e037fa667889996c4c1e5b33ca">ph_transform_poly</a> (const <a class="el" href="structpt2.html">pt2</a> *transform, const <a class="el" href="structph__poly__t.html">ph_poly_t</a> *poly)</td></tr>
+<tr class="memdesc:a094c30e037fa667889996c4c1e5b33ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforms a polygon using an affine transform.  <a href="pico__hit_8h.html#a094c30e037fa667889996c4c1e5b33ca">More...</a><br /></td></tr>
+<tr class="separator:a094c30e037fa667889996c4c1e5b33ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a208e8092fcc819c636dbc776361891e5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structph__circle__t.html">ph_circle_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#a208e8092fcc819c636dbc776361891e5">ph_transform_circle</a> (const <a class="el" href="structpt2.html">pt2</a> *transform, const <a class="el" href="structph__circle__t.html">ph_circle_t</a> *circle)</td></tr>
+<tr class="memdesc:a208e8092fcc819c636dbc776361891e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforms a circle using an affine transform.  <a href="pico__hit_8h.html#a208e8092fcc819c636dbc776361891e5">More...</a><br /></td></tr>
+<tr class="separator:a208e8092fcc819c636dbc776361891e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a180767bdb437174dc9d3bc23ac67005e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structpb2.html">pb2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#a180767bdb437174dc9d3bc23ac67005e">ph_poly_to_aabb</a> (const <a class="el" href="structph__poly__t.html">ph_poly_t</a> *poly)</td></tr>
+<tr class="memdesc:a180767bdb437174dc9d3bc23ac67005e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the bounding box for the given polygon.  <a href="pico__hit_8h.html#a180767bdb437174dc9d3bc23ac67005e">More...</a><br /></td></tr>
+<tr class="separator:a180767bdb437174dc9d3bc23ac67005e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9586763e04eccc001fa17f80d0f1c685"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structpb2.html">pb2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#a9586763e04eccc001fa17f80d0f1c685">ph_circle_to_aabb</a> (const <a class="el" href="structph__circle__t.html">ph_circle_t</a> *circle)</td></tr>
+<tr class="memdesc:a9586763e04eccc001fa17f80d0f1c685"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the bounding box for the given circle.  <a href="pico__hit_8h.html#a9586763e04eccc001fa17f80d0f1c685">More...</a><br /></td></tr>
+<tr class="separator:a9586763e04eccc001fa17f80d0f1c685"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a46867f0870ad57fe9c2c0ae48e42428b"></a>
@@ -165,7 +160,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define PICO_HIT_MAX_POLY_VERTS&#160;&#160;&#160;8</td>
+          <td class="memname">#define PICO_HIT_MAX_POLY_VERTS&#160;&#160;&#160;16</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -173,8 +168,8 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="aa11d0b6d6169a939b34666a32c71514a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa11d0b6d6169a939b34666a32c71514a">&#9670;&nbsp;</a></span>ph_make_circle()</h2>
+<a id="adba91cbb255f36b2a3fb0109f299cca4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adba91cbb255f36b2a3fb0109f299cca4">&#9670;&nbsp;</a></span>ph_make_circle()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -182,13 +177,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="structph__circle__t.html">ph_circle_t</a> ph_make_circle </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structpm__v2.html">pm_v2</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structpv2.html">pv2</a>&#160;</td>
           <td class="paramname"><em>pos</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="pico__math_8h.html#aae7836efe3af8fecd46c88a7bf152cba">pm_float</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="pico__math_8h.html#a5ce19b909a88aefe3e3a3beac779f98c">pfloat</a>&#160;</td>
           <td class="paramname"><em>radius</em>&#160;</td>
         </tr>
         <tr>
@@ -210,8 +205,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a7711c502d9abbc162f7857ca2b68d7c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7711c502d9abbc162f7857ca2b68d7c4">&#9670;&nbsp;</a></span>ph_make_poly()</h2>
+<a id="a4d7955222df8d81bce86ccbec7902047"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d7955222df8d81bce86ccbec7902047">&#9670;&nbsp;</a></span>ph_make_poly()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -219,7 +214,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="structph__poly__t.html">ph_poly_t</a> ph_make_poly </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structpm__v2.html">pm_v2</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="structpv2.html">pv2</a>&#160;</td>
           <td class="paramname"><em>vertices</em>[], </td>
         </tr>
         <tr>
@@ -248,8 +243,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ac0bfbdeba87680c6fd58d2cd8d634892"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac0bfbdeba87680c6fd58d2cd8d634892">&#9670;&nbsp;</a></span>ph_make_ray()</h2>
+<a id="a138aae4d2dc47b11a23e0e64dea6e2f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a138aae4d2dc47b11a23e0e64dea6e2f0">&#9670;&nbsp;</a></span>ph_make_ray()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -257,19 +252,19 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="structph__ray__t.html">ph_ray_t</a> ph_make_ray </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structpm__v2.html">pm_v2</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structpv2.html">pv2</a>&#160;</td>
           <td class="paramname"><em>pos</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structpm__v2.html">pm_v2</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structpv2.html">pv2</a>&#160;</td>
           <td class="paramname"><em>dir</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="pico__math_8h.html#aae7836efe3af8fecd46c88a7bf152cba">pm_float</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="pico__math_8h.html#a5ce19b909a88aefe3e3a3beac779f98c">pfloat</a>&#160;</td>
           <td class="paramname"><em>dist</em>&#160;</td>
         </tr>
         <tr>
@@ -292,8 +287,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a855e2d0d3c8d5f8418585b4f6b93a3f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a855e2d0d3c8d5f8418585b4f6b93a3f9">&#9670;&nbsp;</a></span>ph_aabb_to_poly()</h2>
+<a id="a840c8e99fc78fe7723587566b70e8ec5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a840c8e99fc78fe7723587566b70e8ec5">&#9670;&nbsp;</a></span>ph_aabb_to_poly()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -301,7 +296,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="structph__poly__t.html">ph_poly_t</a> ph_aabb_to_poly </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structpm__b2.html">pm_b2</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="structpb2.html">pb2</a> *&#160;</td>
           <td class="paramname"><em>aabb</em></td><td>)</td>
           <td></td>
         </tr>
@@ -493,52 +488,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a88f96200a88c77d698b82d7a5b71158a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a88f96200a88c77d698b82d7a5b71158a">&#9670;&nbsp;</a></span>ph_transform_poly()</h2>
+<a id="a98102c714c9d66eae29fd2ae7b7467c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98102c714c9d66eae29fd2ae7b7467c0">&#9670;&nbsp;</a></span>ph_ray_line()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structph__poly__t.html">ph_poly_t</a> ph_transform_poly </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structpm__t2.html">pm_t2</a> *&#160;</td>
-          <td class="paramname"><em>transform</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structph__poly__t.html">ph_poly_t</a> *&#160;</td>
-          <td class="paramname"><em>poly</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Transforms a polygon using an affine transform. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">transform</td><td>The transform </td></tr>
-    <tr><td class="paramname">poly</td><td>The polygon to transform </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A new polygon </dd></dl>
-
-</div>
-</div>
-<a id="a9f0b7ef4ac429037219e68d0a055ae45"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f0b7ef4ac429037219e68d0a055ae45">&#9670;&nbsp;</a></span>ph_ray_segment()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool ph_ray_segment </td>
+          <td class="memname">bool ph_ray_line </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structph__ray__t.html">ph_ray_t</a> *&#160;</td>
           <td class="paramname"><em>ray</em>, </td>
@@ -546,13 +503,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structpm__v2.html">pm_v2</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structpv2.html">pv2</a>&#160;</td>
           <td class="paramname"><em>s1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structpm__v2.html">pm_v2</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structpv2.html">pv2</a>&#160;</td>
           <td class="paramname"><em>s2</em>, </td>
         </tr>
         <tr>
@@ -575,7 +532,7 @@ Functions</h2></td></tr>
     <tr><td class="paramname">ray</td><td>Ray to test </td></tr>
     <tr><td class="paramname">s1</td><td>First endpoint of segment </td></tr>
     <tr><td class="paramname">s2</td><td>Second endpoint of segment </td></tr>
-    <tr><td class="paramname">raycast</td><td>Normal and distance of collision (if not NULL) </td></tr>
+    <tr><td class="paramname">raycast</td><td>Normal and distance of impact (or NULL) </td></tr>
   </table>
   </dd>
 </dl>
@@ -620,7 +577,7 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">ray</td><td>Ray to test </td></tr>
     <tr><td class="paramname">poly</td><td>The polygon </td></tr>
-    <tr><td class="paramname">raycast</td><td>Normal and distance of collision (if not NULL). May terminate early if NULL </td></tr>
+    <tr><td class="paramname">raycast</td><td>Normal and distance of impact (or NULL). May terminate early if NULL </td></tr>
   </table>
   </dd>
 </dl>
@@ -665,7 +622,7 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">ray</td><td>Ray to test </td></tr>
     <tr><td class="paramname">circle</td><td>The circle </td></tr>
-    <tr><td class="paramname">raycast</td><td>Normal and distance of collision (if not NULL). </td></tr>
+    <tr><td class="paramname">raycast</td><td>Normal and distance of impact (if not NULL). </td></tr>
   </table>
   </dd>
 </dl>
@@ -673,8 +630,76 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ac2cef0b572b3094d1495a177b196f60c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac2cef0b572b3094d1495a177b196f60c">&#9670;&nbsp;</a></span>ph_transform_circle()</h2>
+<a id="aea25a1a059e25326b1cd55bde287ca1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea25a1a059e25326b1cd55bde287ca1e">&#9670;&nbsp;</a></span>ph_ray_at()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structpv2.html">pv2</a> ph_ray_at </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structph__ray__t.html">ph_ray_t</a> *&#160;</td>
+          <td class="paramname"><em>ray</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pico__math_8h.html#a5ce19b909a88aefe3e3a3beac779f98c">pfloat</a>&#160;</td>
+          <td class="paramname"><em>dist</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Finds the point along the ray at the specified distance from the origin. </p>
+
+</div>
+</div>
+<a id="a094c30e037fa667889996c4c1e5b33ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a094c30e037fa667889996c4c1e5b33ca">&#9670;&nbsp;</a></span>ph_transform_poly()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structph__poly__t.html">ph_poly_t</a> ph_transform_poly </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structpt2.html">pt2</a> *&#160;</td>
+          <td class="paramname"><em>transform</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structph__poly__t.html">ph_poly_t</a> *&#160;</td>
+          <td class="paramname"><em>poly</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Transforms a polygon using an affine transform. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">transform</td><td>The transform </td></tr>
+    <tr><td class="paramname">poly</td><td>The polygon to transform </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A new polygon </dd></dl>
+
+</div>
+</div>
+<a id="a208e8092fcc819c636dbc776361891e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a208e8092fcc819c636dbc776361891e5">&#9670;&nbsp;</a></span>ph_transform_circle()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -682,7 +707,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="structph__circle__t.html">ph_circle_t</a> ph_transform_circle </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structpm__t2.html">pm_t2</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="structpt2.html">pt2</a> *&#160;</td>
           <td class="paramname"><em>transform</em>, </td>
         </tr>
         <tr>
@@ -711,14 +736,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a247db7168e3ba4d80ec6e0a038fe67ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a247db7168e3ba4d80ec6e0a038fe67ed">&#9670;&nbsp;</a></span>ph_poly_to_aabb()</h2>
+<a id="a180767bdb437174dc9d3bc23ac67005e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a180767bdb437174dc9d3bc23ac67005e">&#9670;&nbsp;</a></span>ph_poly_to_aabb()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structpm__b2.html">pm_b2</a> ph_poly_to_aabb </td>
+          <td class="memname"><a class="el" href="structpb2.html">pb2</a> ph_poly_to_aabb </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structph__poly__t.html">ph_poly_t</a> *&#160;</td>
           <td class="paramname"><em>poly</em></td><td>)</td>
@@ -731,14 +756,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a8e21f5b85327ece0e5469eda62afdb20"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e21f5b85327ece0e5469eda62afdb20">&#9670;&nbsp;</a></span>ph_circle_to_aabb()</h2>
+<a id="a9586763e04eccc001fa17f80d0f1c685"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9586763e04eccc001fa17f80d0f1c685">&#9670;&nbsp;</a></span>ph_circle_to_aabb()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structpm__b2.html">pm_b2</a> ph_circle_to_aabb </td>
+          <td class="memname"><a class="el" href="structpb2.html">pb2</a> ph_circle_to_aabb </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structph__circle__t.html">ph_circle_t</a> *&#160;</td>
           <td class="paramname"><em>circle</em></td><td>)</td>

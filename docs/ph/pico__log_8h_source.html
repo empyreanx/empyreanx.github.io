@@ -576,10 +576,10 @@ $(function() {
 <div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;log_append_timestamp (<span class="keywordtype">char</span>* entry_str, <span class="keyword">const</span> <span class="keywordtype">char</span>* time_fmt)</div>
 <div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;{</div>
 <div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;    <span class="keywordtype">char</span> time_str[LOG_TIMESTAMP_LEN + 1];</div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;    <span class="keywordtype">char</span> tmp_str[LOG_TIMESTAMP_LEN + 1];</div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;    <span class="keywordtype">char</span> tmp_str[LOG_TIMESTAMP_LEN];</div>
 <div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160; </div>
-<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;    snprintf(time_str, LOG_TIMESTAMP_LEN, <span class="stringliteral">&quot;%s &quot;</span>,</div>
-<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;             log_time_str(time_fmt, tmp_str, LOG_TIMESTAMP_LEN));</div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;    snprintf(time_str, <span class="keyword">sizeof</span>(time_str), <span class="stringliteral">&quot;%s &quot;</span>,</div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;             log_time_str(time_fmt, tmp_str, <span class="keyword">sizeof</span>(tmp_str)));</div>
 <div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160; </div>
 <div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;    strncat(entry_str, time_str, LOG_TIMESTAMP_LEN);</div>
 <div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;}</div>

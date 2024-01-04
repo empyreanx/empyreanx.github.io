@@ -1,4 +1,0 @@
-<map id="ph_manifold_t" name="ph_manifold_t">
-<area shape="rect" id="node1" title="A collision manifold Provides information about a collision. Normals always point from shape 1 to sha..." alt="" coords="5,109,120,136"/>
-<area shape="rect" id="node2" href="$structpm__v2.html" title="A 2D vector." alt="" coords="29,5,96,32"/>
-</map>

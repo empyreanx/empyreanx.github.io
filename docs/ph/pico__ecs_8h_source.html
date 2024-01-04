@@ -85,11 +85,11 @@ $(function() {
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
 <div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="pico__ecs_8h.html#a3479df8429f09e798b32037419f94af9">  105</a></span>&#160;<span class="keyword">typedef</span> int8_t <a class="code" href="pico__ecs_8h.html#a3479df8429f09e798b32037419f94af9">ecs_ret_t</a>;</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">#ifdef ECS_USE_FLOAT</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keyword">typedef</span> <span class="keywordtype">float</span>  <a class="code" href="pico__ecs_8h.html#a7dbffd9b7cd3048225140f3b77db1d52">ecs_dt_t</a>;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="pico__ecs_8h.html#a7dbffd9b7cd3048225140f3b77db1d52">  113</a></span>&#160;    <span class="keyword">typedef</span> <span class="keywordtype">double</span> <a class="code" href="pico__ecs_8h.html#a7dbffd9b7cd3048225140f3b77db1d52">ecs_dt_t</a>;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">#ifndef ECS_DT_TYPE</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="pico__ecs_8h.html#a5c05e4ae546322deb96adc92276ca7ce">  111</a></span>&#160;<span class="preprocessor">#define ECS_DT_TYPE double</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="pico__ecs_8h.html#a29e69a76b2180ebe4f2ac81d6d5fa62f">  114</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="pico__ecs_8h.html#a5c05e4ae546322deb96adc92276ca7ce">ECS_DT_TYPE</a> <a class="code" href="pico__ecs_8h.html#a29e69a76b2180ebe4f2ac81d6d5fa62f">ecs_dt_t</a>;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
 <div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="pico__ecs_8h.html#a5bb529dd797bfb129577113a87491b3d">  124</a></span>&#160;<a class="code" href="pico__ecs_8h.html#a78aee9dde23c9234e2607b7bf6c91139">ecs_t</a>* <a class="code" href="pico__ecs_8h.html#a5bb529dd797bfb129577113a87491b3d">ecs_new</a>(<span class="keywordtype">size_t</span> entity_count, <span class="keywordtype">void</span>* mem_ctx);</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
@@ -114,7 +114,7 @@ $(function() {
 <div class="line"><a name="l00193"></a><span class="lineno"><a class="line" href="pico__ecs_8h.html#aa7953d2bc2b6babeecf3edc3f2588b72">  193</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="pico__ecs_8h.html#a3479df8429f09e798b32037419f94af9">ecs_ret_t</a> (*<a class="code" href="pico__ecs_8h.html#aa7953d2bc2b6babeecf3edc3f2588b72">ecs_system_fn</a>)(<a class="code" href="pico__ecs_8h.html#a78aee9dde23c9234e2607b7bf6c91139">ecs_t</a>* ecs,</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                                   <a class="code" href="pico__ecs_8h.html#aa9ee79bf65bd0a2a714e48a71e58c3de">ecs_id_t</a>* entities,</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                                   <span class="keywordtype">int</span> entity_count,</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                                   <a class="code" href="pico__ecs_8h.html#a7dbffd9b7cd3048225140f3b77db1d52">ecs_dt_t</a> dt,</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                                   <a class="code" href="pico__ecs_8h.html#a29e69a76b2180ebe4f2ac81d6d5fa62f">ecs_dt_t</a> dt,</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                                   <span class="keywordtype">void</span>* udata);</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
 <div class="line"><a name="l00206"></a><span class="lineno"><a class="line" href="pico__ecs_8h.html#a658cf601b1df7e5fb57fc837c0989004">  206</a></span>&#160;<span class="keyword">typedef</span> void (*<a class="code" href="pico__ecs_8h.html#a658cf601b1df7e5fb57fc837c0989004">ecs_added_fn</a>)(<a class="code" href="pico__ecs_8h.html#a78aee9dde23c9234e2607b7bf6c91139">ecs_t</a>* ecs, <a class="code" href="pico__ecs_8h.html#aa9ee79bf65bd0a2a714e48a71e58c3de">ecs_id_t</a> entity_id, <span class="keywordtype">void</span>* udata);</div>
@@ -152,9 +152,9 @@ $(function() {
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160; </div>
 <div class="line"><a name="l00359"></a><span class="lineno"><a class="line" href="pico__ecs_8h.html#a221c69e132009281a238361e60350253">  359</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="pico__ecs_8h.html#a221c69e132009281a238361e60350253">ecs_queue_remove</a>(<a class="code" href="pico__ecs_8h.html#a78aee9dde23c9234e2607b7bf6c91139">ecs_t</a>* ecs, <a class="code" href="pico__ecs_8h.html#aa9ee79bf65bd0a2a714e48a71e58c3de">ecs_id_t</a> entity_id, <a class="code" href="pico__ecs_8h.html#aa9ee79bf65bd0a2a714e48a71e58c3de">ecs_id_t</a> comp_id);</div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160; </div>
-<div class="line"><a name="l00370"></a><span class="lineno"><a class="line" href="pico__ecs_8h.html#ad066355a98d5125532c4629b867291d8">  370</a></span>&#160;<a class="code" href="pico__ecs_8h.html#a3479df8429f09e798b32037419f94af9">ecs_ret_t</a> <a class="code" href="pico__ecs_8h.html#ad066355a98d5125532c4629b867291d8">ecs_update_system</a>(<a class="code" href="pico__ecs_8h.html#a78aee9dde23c9234e2607b7bf6c91139">ecs_t</a>* ecs, <a class="code" href="pico__ecs_8h.html#aa9ee79bf65bd0a2a714e48a71e58c3de">ecs_id_t</a> sys_id, <a class="code" href="pico__ecs_8h.html#a7dbffd9b7cd3048225140f3b77db1d52">ecs_dt_t</a> dt);</div>
+<div class="line"><a name="l00370"></a><span class="lineno"><a class="line" href="pico__ecs_8h.html#ad066355a98d5125532c4629b867291d8">  370</a></span>&#160;<a class="code" href="pico__ecs_8h.html#a3479df8429f09e798b32037419f94af9">ecs_ret_t</a> <a class="code" href="pico__ecs_8h.html#ad066355a98d5125532c4629b867291d8">ecs_update_system</a>(<a class="code" href="pico__ecs_8h.html#a78aee9dde23c9234e2607b7bf6c91139">ecs_t</a>* ecs, <a class="code" href="pico__ecs_8h.html#aa9ee79bf65bd0a2a714e48a71e58c3de">ecs_id_t</a> sys_id, <a class="code" href="pico__ecs_8h.html#a29e69a76b2180ebe4f2ac81d6d5fa62f">ecs_dt_t</a> dt);</div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160; </div>
-<div class="line"><a name="l00380"></a><span class="lineno"><a class="line" href="pico__ecs_8h.html#a9a5e245658c52f85685e103b351bbb7b">  380</a></span>&#160;<a class="code" href="pico__ecs_8h.html#a3479df8429f09e798b32037419f94af9">ecs_ret_t</a> <a class="code" href="pico__ecs_8h.html#a9a5e245658c52f85685e103b351bbb7b">ecs_update_systems</a>(<a class="code" href="pico__ecs_8h.html#a78aee9dde23c9234e2607b7bf6c91139">ecs_t</a>* ecs, <a class="code" href="pico__ecs_8h.html#a7dbffd9b7cd3048225140f3b77db1d52">ecs_dt_t</a> dt);</div>
+<div class="line"><a name="l00380"></a><span class="lineno"><a class="line" href="pico__ecs_8h.html#a9a5e245658c52f85685e103b351bbb7b">  380</a></span>&#160;<a class="code" href="pico__ecs_8h.html#a3479df8429f09e798b32037419f94af9">ecs_ret_t</a> <a class="code" href="pico__ecs_8h.html#a9a5e245658c52f85685e103b351bbb7b">ecs_update_systems</a>(<a class="code" href="pico__ecs_8h.html#a78aee9dde23c9234e2607b7bf6c91139">ecs_t</a>* ecs, <a class="code" href="pico__ecs_8h.html#a29e69a76b2180ebe4f2ac81d6d5fa62f">ecs_dt_t</a> dt);</div>
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160; </div>
 <div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;}</div>
@@ -667,38 +667,38 @@ $(function() {
 <div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160; </div>
 <div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160;    <span class="comment">// Load component</span></div>
 <div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;    ecs_array_t* comp_array = &amp;ecs-&gt;comp_arrays[comp_id];</div>
-<div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160; </div>
-<div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160;    <span class="comment">// Set entity component bit that determines which systems this entity</span></div>
-<div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160;    <span class="comment">// belongs to</span></div>
-<div class="line"><a name="l00896"></a><span class="lineno">  896</span>&#160;    ecs_bitset_flip(&amp;entity-&gt;comp_bits, comp_id, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160;    ecs_comp_t* comp = &amp;ecs-&gt;comps[comp_id];</div>
+<div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160; </div>
+<div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160;    <span class="comment">// Grow the component array</span></div>
+<div class="line"><a name="l00896"></a><span class="lineno">  896</span>&#160;    ecs_array_resize(ecs, comp_array, entity_id);</div>
 <div class="line"><a name="l00897"></a><span class="lineno">  897</span>&#160; </div>
-<div class="line"><a name="l00898"></a><span class="lineno">  898</span>&#160;    <span class="comment">// Add entity to systems</span></div>
-<div class="line"><a name="l00899"></a><span class="lineno">  899</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="pico__ecs_8h.html#aa9ee79bf65bd0a2a714e48a71e58c3de">ecs_id_t</a> sys_id = 0; sys_id &lt; ecs-&gt;system_count; sys_id++)</div>
-<div class="line"><a name="l00900"></a><span class="lineno">  900</span>&#160;    {</div>
-<div class="line"><a name="l00901"></a><span class="lineno">  901</span>&#160;        ecs_sys_t* sys = &amp;ecs-&gt;systems[sys_id];</div>
-<div class="line"><a name="l00902"></a><span class="lineno">  902</span>&#160; </div>
-<div class="line"><a name="l00903"></a><span class="lineno">  903</span>&#160;        <span class="keywordflow">if</span> (ecs_entity_system_test(&amp;sys-&gt;require_bits, &amp;sys-&gt;exclude_bits, &amp;entity-&gt;comp_bits))</div>
-<div class="line"><a name="l00904"></a><span class="lineno">  904</span>&#160;        {</div>
-<div class="line"><a name="l00905"></a><span class="lineno">  905</span>&#160;            <span class="keywordflow">if</span> (ecs_sparse_set_add(ecs, &amp;sys-&gt;entity_ids, entity_id))</div>
-<div class="line"><a name="l00906"></a><span class="lineno">  906</span>&#160;            {</div>
-<div class="line"><a name="l00907"></a><span class="lineno">  907</span>&#160;                <span class="keywordflow">if</span> (sys-&gt;add_cb)</div>
-<div class="line"><a name="l00908"></a><span class="lineno">  908</span>&#160;                    sys-&gt;add_cb(ecs, entity_id, sys-&gt;udata);</div>
-<div class="line"><a name="l00909"></a><span class="lineno">  909</span>&#160;            }</div>
-<div class="line"><a name="l00910"></a><span class="lineno">  910</span>&#160;        }</div>
-<div class="line"><a name="l00911"></a><span class="lineno">  911</span>&#160;    }</div>
-<div class="line"><a name="l00912"></a><span class="lineno">  912</span>&#160; </div>
-<div class="line"><a name="l00913"></a><span class="lineno">  913</span>&#160;    <span class="comment">// Grow the component array</span></div>
-<div class="line"><a name="l00914"></a><span class="lineno">  914</span>&#160;    ecs_array_resize(ecs, comp_array, entity_id);</div>
+<div class="line"><a name="l00898"></a><span class="lineno">  898</span>&#160;    <span class="comment">// Get pointer to component</span></div>
+<div class="line"><a name="l00899"></a><span class="lineno">  899</span>&#160;    <span class="keywordtype">void</span>* ptr = <a class="code" href="pico__ecs_8h.html#a79ca1008f85ee4ffcb8c77e910c60f8a">ecs_get</a>(ecs, entity_id, comp_id);</div>
+<div class="line"><a name="l00900"></a><span class="lineno">  900</span>&#160; </div>
+<div class="line"><a name="l00901"></a><span class="lineno">  901</span>&#160;    <span class="comment">// Call constructor</span></div>
+<div class="line"><a name="l00902"></a><span class="lineno">  902</span>&#160;    <span class="keywordflow">if</span> (comp-&gt;constructor)</div>
+<div class="line"><a name="l00903"></a><span class="lineno">  903</span>&#160;        comp-&gt;constructor(ecs, entity_id, ptr, args);</div>
+<div class="line"><a name="l00904"></a><span class="lineno">  904</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00905"></a><span class="lineno">  905</span>&#160;        memset(ptr, 0, comp_array-&gt;size);</div>
+<div class="line"><a name="l00906"></a><span class="lineno">  906</span>&#160; </div>
+<div class="line"><a name="l00907"></a><span class="lineno">  907</span>&#160;    <span class="comment">// Set entity component bit that determines which systems this entity</span></div>
+<div class="line"><a name="l00908"></a><span class="lineno">  908</span>&#160;    <span class="comment">// belongs to</span></div>
+<div class="line"><a name="l00909"></a><span class="lineno">  909</span>&#160;    ecs_bitset_flip(&amp;entity-&gt;comp_bits, comp_id, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00910"></a><span class="lineno">  910</span>&#160; </div>
+<div class="line"><a name="l00911"></a><span class="lineno">  911</span>&#160;    <span class="comment">// Add entity to systems</span></div>
+<div class="line"><a name="l00912"></a><span class="lineno">  912</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="pico__ecs_8h.html#aa9ee79bf65bd0a2a714e48a71e58c3de">ecs_id_t</a> sys_id = 0; sys_id &lt; ecs-&gt;system_count; sys_id++)</div>
+<div class="line"><a name="l00913"></a><span class="lineno">  913</span>&#160;    {</div>
+<div class="line"><a name="l00914"></a><span class="lineno">  914</span>&#160;        ecs_sys_t* sys = &amp;ecs-&gt;systems[sys_id];</div>
 <div class="line"><a name="l00915"></a><span class="lineno">  915</span>&#160; </div>
-<div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160;    <span class="comment">// Get pointer to component</span></div>
-<div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160;    <span class="keywordtype">void</span>* ptr = <a class="code" href="pico__ecs_8h.html#a79ca1008f85ee4ffcb8c77e910c60f8a">ecs_get</a>(ecs, entity_id, comp_id);</div>
-<div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160; </div>
-<div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;    ecs_comp_t* comp = &amp;ecs-&gt;comps[comp_id];</div>
-<div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160; </div>
-<div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;    <span class="keywordflow">if</span> (comp-&gt;constructor)</div>
-<div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160;        comp-&gt;constructor(ecs, entity_id, ptr, args);</div>
-<div class="line"><a name="l00923"></a><span class="lineno">  923</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00924"></a><span class="lineno">  924</span>&#160;        memset(ptr, 0, comp_array-&gt;size);</div>
+<div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160;        <span class="keywordflow">if</span> (ecs_entity_system_test(&amp;sys-&gt;require_bits, &amp;sys-&gt;exclude_bits, &amp;entity-&gt;comp_bits))</div>
+<div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160;        {</div>
+<div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160;            <span class="keywordflow">if</span> (ecs_sparse_set_add(ecs, &amp;sys-&gt;entity_ids, entity_id))</div>
+<div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;            {</div>
+<div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;                <span class="keywordflow">if</span> (sys-&gt;add_cb)</div>
+<div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;                    sys-&gt;add_cb(ecs, entity_id, sys-&gt;udata);</div>
+<div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160;            }</div>
+<div class="line"><a name="l00923"></a><span class="lineno">  923</span>&#160;        }</div>
+<div class="line"><a name="l00924"></a><span class="lineno">  924</span>&#160;    }</div>
 <div class="line"><a name="l00925"></a><span class="lineno">  925</span>&#160; </div>
 <div class="line"><a name="l00926"></a><span class="lineno">  926</span>&#160;    <span class="comment">// Return component</span></div>
 <div class="line"><a name="l00927"></a><span class="lineno">  927</span>&#160;    <span class="keywordflow">return</span> ptr;</div>
@@ -759,7 +759,7 @@ $(function() {
 <div class="line"><a name="l00982"></a><span class="lineno">  982</span>&#160;    ecs_stack_push(ecs, &amp;ecs-&gt;remove_queue, comp_id);</div>
 <div class="line"><a name="l00983"></a><span class="lineno">  983</span>&#160;}</div>
 <div class="line"><a name="l00984"></a><span class="lineno">  984</span>&#160; </div>
-<div class="line"><a name="l00985"></a><span class="lineno">  985</span>&#160;<a class="code" href="pico__ecs_8h.html#a3479df8429f09e798b32037419f94af9">ecs_ret_t</a> <a class="code" href="pico__ecs_8h.html#ad066355a98d5125532c4629b867291d8">ecs_update_system</a>(<a class="code" href="pico__ecs_8h.html#a78aee9dde23c9234e2607b7bf6c91139">ecs_t</a>* ecs, <a class="code" href="pico__ecs_8h.html#aa9ee79bf65bd0a2a714e48a71e58c3de">ecs_id_t</a> sys_id, <a class="code" href="pico__ecs_8h.html#a7dbffd9b7cd3048225140f3b77db1d52">ecs_dt_t</a> dt)</div>
+<div class="line"><a name="l00985"></a><span class="lineno">  985</span>&#160;<a class="code" href="pico__ecs_8h.html#a3479df8429f09e798b32037419f94af9">ecs_ret_t</a> <a class="code" href="pico__ecs_8h.html#ad066355a98d5125532c4629b867291d8">ecs_update_system</a>(<a class="code" href="pico__ecs_8h.html#a78aee9dde23c9234e2607b7bf6c91139">ecs_t</a>* ecs, <a class="code" href="pico__ecs_8h.html#aa9ee79bf65bd0a2a714e48a71e58c3de">ecs_id_t</a> sys_id, <a class="code" href="pico__ecs_8h.html#a29e69a76b2180ebe4f2ac81d6d5fa62f">ecs_dt_t</a> dt)</div>
 <div class="line"><a name="l00986"></a><span class="lineno">  986</span>&#160;{</div>
 <div class="line"><a name="l00987"></a><span class="lineno">  987</span>&#160;    ECS_ASSERT(ecs_is_not_null(ecs));</div>
 <div class="line"><a name="l00988"></a><span class="lineno">  988</span>&#160;    ECS_ASSERT(ecs_is_valid_system_id(sys_id));</div>
@@ -783,7 +783,7 @@ $(function() {
 <div class="line"><a name="l01006"></a><span class="lineno"> 1006</span>&#160;    <span class="keywordflow">return</span> code;</div>
 <div class="line"><a name="l01007"></a><span class="lineno"> 1007</span>&#160;}</div>
 <div class="line"><a name="l01008"></a><span class="lineno"> 1008</span>&#160; </div>
-<div class="line"><a name="l01009"></a><span class="lineno"> 1009</span>&#160;<a class="code" href="pico__ecs_8h.html#a3479df8429f09e798b32037419f94af9">ecs_ret_t</a> <a class="code" href="pico__ecs_8h.html#a9a5e245658c52f85685e103b351bbb7b">ecs_update_systems</a>(<a class="code" href="pico__ecs_8h.html#a78aee9dde23c9234e2607b7bf6c91139">ecs_t</a>* ecs, <a class="code" href="pico__ecs_8h.html#a7dbffd9b7cd3048225140f3b77db1d52">ecs_dt_t</a> dt)</div>
+<div class="line"><a name="l01009"></a><span class="lineno"> 1009</span>&#160;<a class="code" href="pico__ecs_8h.html#a3479df8429f09e798b32037419f94af9">ecs_ret_t</a> <a class="code" href="pico__ecs_8h.html#a9a5e245658c52f85685e103b351bbb7b">ecs_update_systems</a>(<a class="code" href="pico__ecs_8h.html#a78aee9dde23c9234e2607b7bf6c91139">ecs_t</a>* ecs, <a class="code" href="pico__ecs_8h.html#a29e69a76b2180ebe4f2ac81d6d5fa62f">ecs_dt_t</a> dt)</div>
 <div class="line"><a name="l01010"></a><span class="lineno"> 1010</span>&#160;{</div>
 <div class="line"><a name="l01011"></a><span class="lineno"> 1011</span>&#160;    ECS_ASSERT(ecs_is_not_null(ecs));</div>
 <div class="line"><a name="l01012"></a><span class="lineno"> 1012</span>&#160;    ECS_ASSERT(dt &gt;= 0.0f);</div>
@@ -1326,12 +1326,14 @@ $(function() {
 <div class="ttc" id="apico__ecs_8h_html_a221c69e132009281a238361e60350253"><div class="ttname"><a href="pico__ecs_8h.html#a221c69e132009281a238361e60350253">ecs_queue_remove</a></div><div class="ttdeci">void ecs_queue_remove(ecs_t *ecs, ecs_id_t entity_id, ecs_id_t comp_id)</div><div class="ttdoc">Queues a component for removable.</div></div>
 <div class="ttc" id="apico__ecs_8h_html_a228548975a5dfea7fab58209ee5047c3"><div class="ttname"><a href="pico__ecs_8h.html#a228548975a5dfea7fab58209ee5047c3">ecs_removed_fn</a></div><div class="ttdeci">void(* ecs_removed_fn)(ecs_t *ecs, ecs_id_t entity_id, void *udata)</div><div class="ttdoc">Called when an entity is removed from a system.</div><div class="ttdef"><b>Definition:</b> pico_ecs.h:215</div></div>
 <div class="ttc" id="apico__ecs_8h_html_a295f78dd0bc9da385e1eac8034fe981f"><div class="ttname"><a href="pico__ecs_8h.html#a295f78dd0bc9da385e1eac8034fe981f">ecs_destructor_fn</a></div><div class="ttdeci">void(* ecs_destructor_fn)(ecs_t *ecs, ecs_id_t entity_id, void *ptr)</div><div class="ttdoc">Called when a component is destroyed (via ecs_remove or ecs_destroy)</div><div class="ttdef"><b>Definition:</b> pico_ecs.h:159</div></div>
+<div class="ttc" id="apico__ecs_8h_html_a29e69a76b2180ebe4f2ac81d6d5fa62f"><div class="ttname"><a href="pico__ecs_8h.html#a29e69a76b2180ebe4f2ac81d6d5fa62f">ecs_dt_t</a></div><div class="ttdeci">ECS_DT_TYPE ecs_dt_t</div><div class="ttdef"><b>Definition:</b> pico_ecs.h:114</div></div>
 <div class="ttc" id="apico__ecs_8h_html_a33da187baa222e35555fa9334c3197ed"><div class="ttname"><a href="pico__ecs_8h.html#a33da187baa222e35555fa9334c3197ed">ecs_register_system</a></div><div class="ttdeci">ecs_id_t ecs_register_system(ecs_t *ecs, ecs_system_fn system_cb, ecs_added_fn add_cb, ecs_removed_fn remove_cb, void *udata)</div><div class="ttdoc">Registers a system.</div></div>
 <div class="ttc" id="apico__ecs_8h_html_a3479df8429f09e798b32037419f94af9"><div class="ttname"><a href="pico__ecs_8h.html#a3479df8429f09e798b32037419f94af9">ecs_ret_t</a></div><div class="ttdeci">int8_t ecs_ret_t</div><div class="ttdoc">Return code for update callback and calling functions.</div><div class="ttdef"><b>Definition:</b> pico_ecs.h:105</div></div>
 <div class="ttc" id="apico__ecs_8h_html_a36f53d4eac87d38a1118193c09d250cf"><div class="ttname"><a href="pico__ecs_8h.html#a36f53d4eac87d38a1118193c09d250cf">ecs_register_component</a></div><div class="ttdeci">ecs_id_t ecs_register_component(ecs_t *ecs, size_t size, ecs_constructor_fn constructor, ecs_destructor_fn destructor)</div><div class="ttdoc">Registers a component.</div></div>
 <div class="ttc" id="apico__ecs_8h_html_a5100dc0ecf1b8469b8adcd121879889f"><div class="ttname"><a href="pico__ecs_8h.html#a5100dc0ecf1b8469b8adcd121879889f">ecs_free</a></div><div class="ttdeci">void ecs_free(ecs_t *ecs)</div><div class="ttdoc">Destroys an ECS instance.</div></div>
 <div class="ttc" id="apico__ecs_8h_html_a52736012815eae355c79edae83bdd138"><div class="ttname"><a href="pico__ecs_8h.html#a52736012815eae355c79edae83bdd138">ecs_add</a></div><div class="ttdeci">void * ecs_add(ecs_t *ecs, ecs_id_t entity_id, ecs_id_t comp_id, void *args)</div><div class="ttdoc">Adds a component instance to an entity.</div></div>
 <div class="ttc" id="apico__ecs_8h_html_a5bb529dd797bfb129577113a87491b3d"><div class="ttname"><a href="pico__ecs_8h.html#a5bb529dd797bfb129577113a87491b3d">ecs_new</a></div><div class="ttdeci">ecs_t * ecs_new(size_t entity_count, void *mem_ctx)</div><div class="ttdoc">Creates an ECS instance.</div></div>
+<div class="ttc" id="apico__ecs_8h_html_a5c05e4ae546322deb96adc92276ca7ce"><div class="ttname"><a href="pico__ecs_8h.html#a5c05e4ae546322deb96adc92276ca7ce">ECS_DT_TYPE</a></div><div class="ttdeci">#define ECS_DT_TYPE</div><div class="ttdoc">Determine delta-time type.</div><div class="ttdef"><b>Definition:</b> pico_ecs.h:111</div></div>
 <div class="ttc" id="apico__ecs_8h_html_a5c2ce2cf2fec4fb3710bafb3c20edbbc"><div class="ttname"><a href="pico__ecs_8h.html#a5c2ce2cf2fec4fb3710bafb3c20edbbc">ecs_exclude_component</a></div><div class="ttdeci">void ecs_exclude_component(ecs_t *ecs, ecs_id_t sys_id, ecs_id_t comp_id)</div><div class="ttdoc">Excludes entities having the specified component from being added to the target system.</div></div>
 <div class="ttc" id="apico__ecs_8h_html_a658cf601b1df7e5fb57fc837c0989004"><div class="ttname"><a href="pico__ecs_8h.html#a658cf601b1df7e5fb57fc837c0989004">ecs_added_fn</a></div><div class="ttdeci">void(* ecs_added_fn)(ecs_t *ecs, ecs_id_t entity_id, void *udata)</div><div class="ttdoc">Called when an entity is added to a system.</div><div class="ttdef"><b>Definition:</b> pico_ecs.h:206</div></div>
 <div class="ttc" id="apico__ecs_8h_html_a68f795087862e8bd6f7e85ab84bb0b16"><div class="ttname"><a href="pico__ecs_8h.html#a68f795087862e8bd6f7e85ab84bb0b16">ECS_NULL</a></div><div class="ttdeci">#define ECS_NULL</div><div class="ttdoc">NULL/invalid/undefined value.</div><div class="ttdef"><b>Definition:</b> pico_ecs.h:100</div></div>
@@ -1340,7 +1342,6 @@ $(function() {
 <div class="ttc" id="apico__ecs_8h_html_a78aee9dde23c9234e2607b7bf6c91139"><div class="ttname"><a href="pico__ecs_8h.html#a78aee9dde23c9234e2607b7bf6c91139">ecs_t</a></div><div class="ttdeci">struct ecs_s ecs_t</div><div class="ttdoc">ECS context.</div><div class="ttdef"><b>Definition:</b> pico_ecs.h:90</div></div>
 <div class="ttc" id="apico__ecs_8h_html_a79ca1008f85ee4ffcb8c77e910c60f8a"><div class="ttname"><a href="pico__ecs_8h.html#a79ca1008f85ee4ffcb8c77e910c60f8a">ecs_get</a></div><div class="ttdeci">void * ecs_get(ecs_t *ecs, ecs_id_t entity_id, ecs_id_t comp_id)</div><div class="ttdoc">Gets a component instance associated with an entity.</div></div>
 <div class="ttc" id="apico__ecs_8h_html_a7cd9788bd017f59965fd6acd76ddc653"><div class="ttname"><a href="pico__ecs_8h.html#a7cd9788bd017f59965fd6acd76ddc653">ecs_reset</a></div><div class="ttdeci">void ecs_reset(ecs_t *ecs)</div><div class="ttdoc">Removes all entities from the ECS, preserving systems and components.</div></div>
-<div class="ttc" id="apico__ecs_8h_html_a7dbffd9b7cd3048225140f3b77db1d52"><div class="ttname"><a href="pico__ecs_8h.html#a7dbffd9b7cd3048225140f3b77db1d52">ecs_dt_t</a></div><div class="ttdeci">double ecs_dt_t</div><div class="ttdoc">Determine floating point type.</div><div class="ttdef"><b>Definition:</b> pico_ecs.h:113</div></div>
 <div class="ttc" id="apico__ecs_8h_html_a8a6f0997b15f3961be48ea14ddcdb5ca"><div class="ttname"><a href="pico__ecs_8h.html#a8a6f0997b15f3961be48ea14ddcdb5ca">ecs_destroy</a></div><div class="ttdeci">void ecs_destroy(ecs_t *ecs, ecs_id_t entity_id)</div><div class="ttdoc">Destroys an entity.</div></div>
 <div class="ttc" id="apico__ecs_8h_html_a9a5e245658c52f85685e103b351bbb7b"><div class="ttname"><a href="pico__ecs_8h.html#a9a5e245658c52f85685e103b351bbb7b">ecs_update_systems</a></div><div class="ttdeci">ecs_ret_t ecs_update_systems(ecs_t *ecs, ecs_dt_t dt)</div><div class="ttdoc">Updates all systems.</div></div>
 <div class="ttc" id="apico__ecs_8h_html_a9c6cfc4c1aa35a30b1caf8a1900d231a"><div class="ttname"><a href="pico__ecs_8h.html#a9c6cfc4c1aa35a30b1caf8a1900d231a">ecs_queue_destroy</a></div><div class="ttdeci">void ecs_queue_destroy(ecs_t *ecs, ecs_id_t entity_id)</div><div class="ttdoc">Queues an entity for destruction at the end of system execution.</div></div>
