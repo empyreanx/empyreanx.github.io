@@ -1,0 +1,5 @@
+<map id="pg_pipeline_layout_t" name="pg_pipeline_layout_t">
+<area shape="rect" id="node1" title="Pipeline layout." alt="" coords="67,95,225,121"/>
+<area shape="rect" id="node2" href="$structpg__vertex__attr__t.html" title="Vertex attribute description." alt="" coords="5,5,135,32"/>
+<area shape="rect" id="node3" href="$structpg__vertex__buf__t.html" title="Vertex buffer description." alt="" coords="159,5,285,32"/>
+</map>

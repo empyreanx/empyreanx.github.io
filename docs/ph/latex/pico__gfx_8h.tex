@@ -1,0 +1,1426 @@
+\hypertarget{pico__gfx_8h}{}\doxysection{pico\+\_\+gfx.\+h File Reference}
+\label{pico__gfx_8h}\index{pico\_gfx.h@{pico\_gfx.h}}
+
+
+A powerful graphics library based on Sokol GFX, written in C99.  
+
+
+{\ttfamily \#include \char`\"{}sokol\+\_\+gfx.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+Include dependency graph for pico\+\_\+gfx.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{pico__gfx_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structpg__blend__mode__t}{pg\+\_\+blend\+\_\+mode\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Blend mode. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structpg__vertex__buf__t}{pg\+\_\+vertex\+\_\+buf\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Vertex buffer description. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structpg__vertex__attr__t}{pg\+\_\+vertex\+\_\+attr\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Vertex attribute description. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structpg__pipeline__layout__t}{pg\+\_\+pipeline\+\_\+layout\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Pipeline layout. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structpg__pipeline__opts__t}{pg\+\_\+pipeline\+\_\+opts\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Pipeline creation options. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structpg__texture__opts__t}{pg\+\_\+texture\+\_\+opts\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Texture creation options. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structpg__sampler__opts__t}{pg\+\_\+sampler\+\_\+opts\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Sampler options. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structpg__shader__internal__t}{pg\+\_\+shader\+\_\+internal\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pico__gfx_8h_a09f724f2cc31eb1790d8b030b7c9c507}{PG\+\_\+\+MAX\+\_\+\+VERTEX\+\_\+\+ATTRIBUTES}}~SG\+\_\+\+MAX\+\_\+\+VERTEX\+\_\+\+ATTRIBUTES
+\item 
+\#define \mbox{\hyperlink{pico__gfx_8h_a8a201275d2ca93d89003719fbb52ea99}{PG\+\_\+\+MAX\+\_\+\+VERTEX\+\_\+\+BUFFERS}}~SG\+\_\+\+MAX\+\_\+\+VERTEX\+\_\+\+BUFFERS
+\item 
+\#define \mbox{\hyperlink{pico__gfx_8h_a0743249ad5d5bacf91a7c8b618003e8d}{PG\+\_\+\+MAX\+\_\+\+TEXTURE\+\_\+\+SLOTS}}~SG\+\_\+\+MAX\+\_\+\+SHADERSTAGE\+\_\+\+IMAGES
+\item 
+\#define \mbox{\hyperlink{pico__gfx_8h_af8e5a89bf6213796b924badd05aaeba5}{PG\+\_\+\+MAX\+\_\+\+SAMPLER\+\_\+\+SLOTS}}~SG\+\_\+\+MAX\+\_\+\+SHADERSTAGE\+\_\+\+SAMPLERS
+\item 
+\#define \mbox{\hyperlink{pico__gfx_8h_a66eb3f6e66f02d24f6c5e0c888de9390}{pg\+\_\+create\+\_\+shader}}(ctx,  prefix)
+\begin{DoxyCompactList}\small\item\em Creates the shader with the given prefix The prefix should refer to the shader program name in a shader compiled by {\ttfamily sokol-\/shdc}. For example the sprite shader in the examples would have the prefix \textquotesingle{}shader\textquotesingle{} (without quotation marks) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} \mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Contains core data/state for an instance of the graphics library. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{pico__gfx_8h_a692e7a3a2bac623e8ad5cb6890aba684}{pg\+\_\+pipeline\+\_\+t}} \mbox{\hyperlink{pico__gfx_8h_a692e7a3a2bac623e8ad5cb6890aba684}{pg\+\_\+pipeline\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Render state information. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{pico__gfx_8h_ab527ff3e9b4d08c7c3c0362ff6b61758}{pg\+\_\+shader\+\_\+t}} \mbox{\hyperlink{pico__gfx_8h_ab527ff3e9b4d08c7c3c0362ff6b61758}{pg\+\_\+shader\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Vertex/fragment shader program. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{pico__gfx_8h_ab40e9a805eeea8c9dc969574ef82730e}{pg\+\_\+texture\+\_\+t}} \mbox{\hyperlink{pico__gfx_8h_ab40e9a805eeea8c9dc969574ef82730e}{pg\+\_\+texture\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Represents an image or render target in VRAM. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{pico__gfx_8h_a09e5f14b79c2ac65c1c7e538001cf034}{pg\+\_\+sampler\+\_\+t}} \mbox{\hyperlink{pico__gfx_8h_a09e5f14b79c2ac65c1c7e538001cf034}{pg\+\_\+sampler\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Represents sampler. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{pico__gfx_8h_a8e7ea5ce0722842a16a1127f41b1e3e6}{pg\+\_\+buffer\+\_\+t}} \mbox{\hyperlink{pico__gfx_8h_a8e7ea5ce0722842a16a1127f41b1e3e6}{pg\+\_\+buffer\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em A vertex or index array buffer. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structpg__pipeline__opts__t}{pg\+\_\+pipeline\+\_\+opts\+\_\+t}} \mbox{\hyperlink{pico__gfx_8h_a3a82cdf61cc1cf667e45be9fd15be922}{pg\+\_\+pipeline\+\_\+opts\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Pipeline creation options. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structpg__texture__opts__t}{pg\+\_\+texture\+\_\+opts\+\_\+t}} \mbox{\hyperlink{pico__gfx_8h_a29758c124f9fdf4130cb6f53ca66044d}{pg\+\_\+texture\+\_\+opts\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Texture creation options. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{pico__gfx_8h_a01cd02be2f4dded2f572a4f94c167896}{pg\+\_\+backend\+\_\+t}} \{ \newline
+\mbox{\hyperlink{pico__gfx_8h_a01cd02be2f4dded2f572a4f94c167896aa8b9ab5eacf0a50721d0e4e9610d2971}{PG\+\_\+\+BACKEND\+\_\+\+GL}}
+, \mbox{\hyperlink{pico__gfx_8h_a01cd02be2f4dded2f572a4f94c167896ac9a6f972964fa9b5b1d190cd65e9b923}{PG\+\_\+\+BACKEND\+\_\+\+GLES}}
+, \mbox{\hyperlink{pico__gfx_8h_a01cd02be2f4dded2f572a4f94c167896a4baa471a079ba0f6dcde0efc6541d23f}{PG\+\_\+\+BACKEND\+\_\+\+D3D}}
+, \mbox{\hyperlink{pico__gfx_8h_a01cd02be2f4dded2f572a4f94c167896aa4e05be8f026a30e8fc8c07bad867499}{PG\+\_\+\+BACKEND\+\_\+\+METAL}}
+, \newline
+\mbox{\hyperlink{pico__gfx_8h_a01cd02be2f4dded2f572a4f94c167896a243f3fdd231433158454aed7a118e6e2}{PG\+\_\+\+BACKEND\+\_\+\+WGPU}}
+ \}
+\begin{DoxyCompactList}\small\item\em Graphics backends. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{pico__gfx_8h_ad8207f8cbc93f9fb83b76ae34ff1bab7}{pg\+\_\+primitive\+\_\+t}} \{ \newline
+\mbox{\hyperlink{pico__gfx_8h_ad8207f8cbc93f9fb83b76ae34ff1bab7a94659c0c42c3c8eae86c5c00628921e9}{PG\+\_\+\+DEFAULT\+\_\+\+PRIMITIVE}}
+, \mbox{\hyperlink{pico__gfx_8h_ad8207f8cbc93f9fb83b76ae34ff1bab7a487c138c3a8fcdc615cd7ee25a9e62dc}{PG\+\_\+\+POINTS}}
+, \mbox{\hyperlink{pico__gfx_8h_ad8207f8cbc93f9fb83b76ae34ff1bab7ab2ce2ed9a257df5d3113ae8b07cc4da4}{PG\+\_\+\+LINES}}
+, \mbox{\hyperlink{pico__gfx_8h_ad8207f8cbc93f9fb83b76ae34ff1bab7a5af7109fcb6de54c2fae882f1d90ec70}{PG\+\_\+\+LINE\+\_\+\+STRIP}}
+, \newline
+\mbox{\hyperlink{pico__gfx_8h_ad8207f8cbc93f9fb83b76ae34ff1bab7a0a1ffd4b4cfc9ae8543d77a1592f2615}{PG\+\_\+\+TRIANGLES}}
+, \mbox{\hyperlink{pico__gfx_8h_ad8207f8cbc93f9fb83b76ae34ff1bab7a20e05e79ffa0d06342bde9fc8fe8738f}{PG\+\_\+\+TRIANGLE\+\_\+\+STRIP}}
+ \}
+\begin{DoxyCompactList}\small\item\em Drawing primitives. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{pico__gfx_8h_abd20c0d63bd87e2f6e7e67c0a45f7cb5}{pg\+\_\+blend\+\_\+factor\+\_\+t}} \{ \newline
+\mbox{\hyperlink{pico__gfx_8h_abd20c0d63bd87e2f6e7e67c0a45f7cb5a388f7cc6f193793a4736ebdd80fe8904}{PG\+\_\+\+DEFAULT\+\_\+\+BLEND\+\_\+\+FACTOR}}
+, \mbox{\hyperlink{pico__gfx_8h_abd20c0d63bd87e2f6e7e67c0a45f7cb5a9edc26dc4fe4617fe4ece45285abc951}{PG\+\_\+\+ZERO}}
+, \mbox{\hyperlink{pico__gfx_8h_abd20c0d63bd87e2f6e7e67c0a45f7cb5a2aaa600dcd8ec9d5f713bcd1b560d286}{PG\+\_\+\+ONE}}
+, \mbox{\hyperlink{pico__gfx_8h_abd20c0d63bd87e2f6e7e67c0a45f7cb5acd3db591232d53122265eb56cb1b9452}{PG\+\_\+\+SRC\+\_\+\+COLOR}}
+, \newline
+\mbox{\hyperlink{pico__gfx_8h_abd20c0d63bd87e2f6e7e67c0a45f7cb5a1f8f659c7f6ec62393021c954e705181}{PG\+\_\+\+ONE\+\_\+\+MINUS\+\_\+\+SRC\+\_\+\+COLOR}}
+, \mbox{\hyperlink{pico__gfx_8h_abd20c0d63bd87e2f6e7e67c0a45f7cb5a6f8612057cf72f665c4b1bfbb12686e3}{PG\+\_\+\+DST\+\_\+\+COLOR}}
+, \mbox{\hyperlink{pico__gfx_8h_abd20c0d63bd87e2f6e7e67c0a45f7cb5ae1b007cd18995017d0bfaf0bc08569ca}{PG\+\_\+\+ONE\+\_\+\+MINUS\+\_\+\+DST\+\_\+\+COLOR}}
+, \mbox{\hyperlink{pico__gfx_8h_abd20c0d63bd87e2f6e7e67c0a45f7cb5a2cbcc9d095dc32ae057cfd23534446cf}{PG\+\_\+\+SRC\+\_\+\+ALPHA}}
+, \newline
+\mbox{\hyperlink{pico__gfx_8h_abd20c0d63bd87e2f6e7e67c0a45f7cb5aeb947475c1e3f395b4027aa50c1c1fb3}{PG\+\_\+\+ONE\+\_\+\+MINUS\+\_\+\+SRC\+\_\+\+ALPHA}}
+, \mbox{\hyperlink{pico__gfx_8h_abd20c0d63bd87e2f6e7e67c0a45f7cb5abbc4ed5bda810be14b7064dd24ec6513}{PG\+\_\+\+DST\+\_\+\+ALPHA}}
+, \mbox{\hyperlink{pico__gfx_8h_abd20c0d63bd87e2f6e7e67c0a45f7cb5ae063f711ce8fd9f4bd71229d84002f88}{PG\+\_\+\+ONE\+\_\+\+MINUS\+\_\+\+DST\+\_\+\+ALPHA}}
+ \}
+\begin{DoxyCompactList}\small\item\em Blend factors. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{pico__gfx_8h_af4e7d0bfe37107a14f24054c26ccd278}{pg\+\_\+blend\+\_\+eq\+\_\+t}} \{ \mbox{\hyperlink{pico__gfx_8h_af4e7d0bfe37107a14f24054c26ccd278a6723663bebe8dd9368d6b5ba2b2f31af}{PG\+\_\+\+DEFAULT\+\_\+\+BLEND\+\_\+\+EQ}}
+, \mbox{\hyperlink{pico__gfx_8h_af4e7d0bfe37107a14f24054c26ccd278a8fb09388323e9e7eabd36828dab905a8}{PG\+\_\+\+ADD}}
+, \mbox{\hyperlink{pico__gfx_8h_af4e7d0bfe37107a14f24054c26ccd278ab96a078561fe2aa2d1c99bc173c9c9fa}{PG\+\_\+\+SUBTRACT}}
+, \mbox{\hyperlink{pico__gfx_8h_af4e7d0bfe37107a14f24054c26ccd278aa3aa009b0784c76c60a185a76a2d9f95}{PG\+\_\+\+REVERSE\+\_\+\+SUBTRACT}}
+ \}
+\begin{DoxyCompactList}\small\item\em Blend equations. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{pico__gfx_8h_a0bd24ab05e613d2facc0f906d1d40802}{pg\+\_\+stage\+\_\+t}} \{ \mbox{\hyperlink{pico__gfx_8h_a0bd24ab05e613d2facc0f906d1d40802a5a453355d0c2f387602b849f253315de}{PG\+\_\+\+STAGE\+\_\+\+VS}}
+, \mbox{\hyperlink{pico__gfx_8h_a0bd24ab05e613d2facc0f906d1d40802a27de9c01fc7b093fc9a437d6f9cdd857}{PG\+\_\+\+STAGE\+\_\+\+FS}}
+ \}
+\begin{DoxyCompactList}\small\item\em Shader stage. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691b}{pg\+\_\+vertex\+\_\+format\+\_\+t}} \{ \newline
+\mbox{\hyperlink{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691ba1127311bf74da9b3b03743251ace813a}{PG\+\_\+\+VERTEX\+\_\+\+FORMAT\+\_\+\+INVALID}}
+, \mbox{\hyperlink{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691ba1b80260fb726e45beaa3b65ddfdab66f}{PG\+\_\+\+VERTEX\+\_\+\+FORMAT\+\_\+\+FLOAT}}
+, \mbox{\hyperlink{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691ba46e545941c44e65c45870cfdaf2ab1b4}{PG\+\_\+\+VERTEX\+\_\+\+FORMAT\+\_\+\+FLOAT2}}
+, \mbox{\hyperlink{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691bab8d1fc901ac8a3c774a6cac99687db7b}{PG\+\_\+\+VERTEX\+\_\+\+FORMAT\+\_\+\+FLOAT3}}
+, \newline
+\mbox{\hyperlink{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691ba4a8ec0b41a90642ba8c9b76da7755b14}{PG\+\_\+\+VERTEX\+\_\+\+FORMAT\+\_\+\+FLOAT4}}
+, \mbox{\hyperlink{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691ba13f4218d3d9c17a267321e8fdcad8053}{PG\+\_\+\+VERTEX\+\_\+\+FORMAT\+\_\+\+BYTE4}}
+, \mbox{\hyperlink{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691baf0367d2869b26a2a3402f2e9f71536e9}{PG\+\_\+\+VERTEX\+\_\+\+FORMAT\+\_\+\+BYTE4N}}
+, \mbox{\hyperlink{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691baca9063153678ca53e0eb7991ad8a80d0}{PG\+\_\+\+VERTEX\+\_\+\+FORMAT\+\_\+\+UBYTE4}}
+, \newline
+\mbox{\hyperlink{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691ba7bc96a4505ea269c04ba5bda2b291e94}{PG\+\_\+\+VERTEX\+\_\+\+FORMAT\+\_\+\+UBYTE4N}}
+, \mbox{\hyperlink{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691ba6bb12e7f5de1eb063bcd85737845f5b6}{PG\+\_\+\+VERTEX\+\_\+\+FORMAT\+\_\+\+SHORT2}}
+, \mbox{\hyperlink{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691bade7016e97874dd5181c718402a220964}{PG\+\_\+\+VERTEX\+\_\+\+FORMAT\+\_\+\+SHORT2N}}
+, \mbox{\hyperlink{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691ba8e7a71b64a3da942c25f750bdb98266c}{PG\+\_\+\+VERTEX\+\_\+\+FORMAT\+\_\+\+USHORT2N}}
+, \newline
+\mbox{\hyperlink{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691ba8c72250b4be673c7b28c2e290e7fcfc5}{PG\+\_\+\+VERTEX\+\_\+\+FORMAT\+\_\+\+SHORT4}}
+, \mbox{\hyperlink{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691bafd7cae67a5e10b995dcecb98f0436205}{PG\+\_\+\+VERTEX\+\_\+\+FORMAT\+\_\+\+SHORT4N}}
+, \mbox{\hyperlink{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691ba30f75e3229e5fda8e5878f654a243007}{PG\+\_\+\+VERTEX\+\_\+\+FORMAT\+\_\+\+USHORT4N}}
+, \mbox{\hyperlink{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691ba86c30b8a3321e798cc9212739bdfc248}{PG\+\_\+\+VERTEX\+\_\+\+FORMAT\+\_\+\+UINT10\+\_\+\+N2}}
+, \newline
+\mbox{\hyperlink{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691ba4efe1a04b4b6a2f3892eaa5ad025dd4f}{PG\+\_\+\+VERTEX\+\_\+\+FORMAT\+\_\+\+HALF2}}
+, \mbox{\hyperlink{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691bab1b059580755cb6afba5d62d3cf1c243}{PG\+\_\+\+VERTEX\+\_\+\+FORMAT\+\_\+\+HALF4}}
+ \}
+\begin{DoxyCompactList}\small\item\em Vertex attribute pixel formats. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{pico__gfx_8h_a1b3b7c5599861780b7eca429e5e47042}{pg\+\_\+buffer\+\_\+usage\+\_\+t}} \{ \mbox{\hyperlink{pico__gfx_8h_a1b3b7c5599861780b7eca429e5e47042a1c0939f3d6c9ec9867a18c1b31ce41ba}{PG\+\_\+\+USAGE\+\_\+\+STATIC}}
+, \mbox{\hyperlink{pico__gfx_8h_a1b3b7c5599861780b7eca429e5e47042a90bbf06e5bd0b373baf7e90692fa6784}{PG\+\_\+\+USAGE\+\_\+\+DYNAMIC}}
+, \mbox{\hyperlink{pico__gfx_8h_a1b3b7c5599861780b7eca429e5e47042a6a6e236c027f1d0b84ad8b80649fab36}{PG\+\_\+\+USAGE\+\_\+\+STREAM}}
+ \}
+\begin{DoxyCompactList}\small\item\em Buffer update criteria. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{pico__gfx_8h_a4482c03bd692fb46f57bac936004dde3}{pg\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Loads pico\+\_\+gfx and sokol\+\_\+gfx. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__gfx_8h_a5f9aa91b35dc592ae33b52af06b4de93}{pg\+\_\+shutdown}} (void)
+\begin{DoxyCompactList}\small\item\em Tears down pico\+\_\+gfx and sokol\+\_\+gfx. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$ \mbox{\hyperlink{pico__gfx_8h_aa54a81d2e3c1caea2bc3e186194dd95c}{pg\+\_\+create\+\_\+context}} (int window\+\_\+width, int window\+\_\+height, void $\ast$mem\+\_\+ctx)
+\begin{DoxyCompactList}\small\item\em Creates a graphics context. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__gfx_8h_a089e1b3bbef37fbd573cf7a2a28d150c}{pg\+\_\+destroy\+\_\+context}} (\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Destroys a graphics context. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{pico__gfx_8h_a01cd02be2f4dded2f572a4f94c167896}{pg\+\_\+backend\+\_\+t}} \mbox{\hyperlink{pico__gfx_8h_a8704e25e01f2cce8351ce30b10820883}{pg\+\_\+backend}} (void)
+\begin{DoxyCompactList}\small\item\em Returns the backend in use at runtime. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__gfx_8h_a8838cfd1046f75082cba3c16ebfeae78}{pg\+\_\+set\+\_\+window\+\_\+size}} (\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$ctx, int width, int height, bool reset)
+\begin{DoxyCompactList}\small\item\em Sets the window dimensions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__gfx_8h_ad6a0eff7fecf70dc49d4be242c821135}{pg\+\_\+get\+\_\+window\+\_\+size}} (\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$ctx, int $\ast$width, int $\ast$height)
+\begin{DoxyCompactList}\small\item\em Gets the window size. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__gfx_8h_ab233020fe7cf85b845ac0a6335f845c2}{pg\+\_\+begin\+\_\+pass}} (\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{pico__gfx_8h_ab40e9a805eeea8c9dc969574ef82730e}{pg\+\_\+texture\+\_\+t}} $\ast$target, bool clear)
+\begin{DoxyCompactList}\small\item\em Starts a render pass (mandatory) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__gfx_8h_a245db68686c7d9c15c1a6faa93974041}{pg\+\_\+end\+\_\+pass}} (\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Ends a render pass (mandatory) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__gfx_8h_aa51791249dece6d9f917de44ee2a9725}{pg\+\_\+flush}} (\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Flush commands. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__gfx_8h_a5a4b71aeaa81cd168bf8a7a7d469d11b}{pg\+\_\+push\+\_\+state}} (\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Pushes the active state onto the stack. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__gfx_8h_acfa65c0743a204053eab6b12f8748abd}{pg\+\_\+pop\+\_\+state}} (\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Pops a state off the stack and makes it the active state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__gfx_8h_a9e46a03a0c7cacfa7d4268dcd8f45ae5}{pg\+\_\+set\+\_\+clear\+\_\+color}} (\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$ctx, float r, float g, float b, float a)
+\begin{DoxyCompactList}\small\item\em Sets the clear color state to be placed at the top of the state stack. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__gfx_8h_a71b10ead99c0486c9a2105c622c46595}{pg\+\_\+reset\+\_\+clear\+\_\+color}} (\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$ctx)
+\item 
+void \mbox{\hyperlink{pico__gfx_8h_aaa85cb931eaf161abff1548c8f558021}{pg\+\_\+set\+\_\+viewport}} (\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$ctx, int x, int y, int w, int h)
+\begin{DoxyCompactList}\small\item\em Sets the viewport state to be placed at the top of the state stack. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__gfx_8h_a8e8a8aae6ec6129061973c55398054b4}{pg\+\_\+reset\+\_\+viewport}} (\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$ctx)
+\item 
+void \mbox{\hyperlink{pico__gfx_8h_a3f728a986e245967e65ba85b1946929b}{pg\+\_\+set\+\_\+scissor}} (\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$ctx, int x, int y, int w, int h)
+\begin{DoxyCompactList}\small\item\em Sets the scissor state to be placed at the top of the state stack. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__gfx_8h_a953290a20d7938606b85a34173181183}{pg\+\_\+reset\+\_\+scissor}} (\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$ctx)
+\item 
+void \mbox{\hyperlink{pico__gfx_8h_a28da19ac7f32cd00be5bd1393e8a2158}{pg\+\_\+set\+\_\+pipeline}} (\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{pico__gfx_8h_a692e7a3a2bac623e8ad5cb6890aba684}{pg\+\_\+pipeline\+\_\+t}} $\ast$pipeline)
+\begin{DoxyCompactList}\small\item\em Sets the pipeline state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__gfx_8h_abe1925519988009b43288f0ea8e26148}{pg\+\_\+reset\+\_\+pipeline}} (\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$ctx)
+\item 
+void \mbox{\hyperlink{pico__gfx_8h_ad72760ccd8cbdea2c3f477c30808602f}{pg\+\_\+bind\+\_\+buffer}} (\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$ctx, int slot, \mbox{\hyperlink{pico__gfx_8h_a8e7ea5ce0722842a16a1127f41b1e3e6}{pg\+\_\+buffer\+\_\+t}} $\ast$buffer)
+\begin{DoxyCompactList}\small\item\em Binds a buffer to the specified slot. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__gfx_8h_a3f2c4b81caf990079c4d9a83b6500689}{pg\+\_\+reset\+\_\+buffers}} (\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Clears buffer bindings. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__gfx_8h_ae4e067b7c9e49e5315c1b6549a316e3c}{pg\+\_\+set\+\_\+index\+\_\+buffer}} (\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{pico__gfx_8h_a8e7ea5ce0722842a16a1127f41b1e3e6}{pg\+\_\+buffer\+\_\+t}} $\ast$buffer)
+\begin{DoxyCompactList}\small\item\em Sets the active index buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__gfx_8h_afd0699c5d7b9cb8db29347b3a1ad5c6f}{pg\+\_\+reset\+\_\+index\+\_\+buffer}} (\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Disables indexed rednering. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__gfx_8h_ae3432311bab43c9d397bfa8c4e659ed1}{pg\+\_\+bind\+\_\+texture}} (\mbox{\hyperlink{pico__gfx_8h_ab527ff3e9b4d08c7c3c0362ff6b61758}{pg\+\_\+shader\+\_\+t}} $\ast$shader, const char $\ast$name, \mbox{\hyperlink{pico__gfx_8h_ab40e9a805eeea8c9dc969574ef82730e}{pg\+\_\+texture\+\_\+t}} $\ast$texture)
+\begin{DoxyCompactList}\small\item\em Binds a texture to a slot in the current state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__gfx_8h_a13d32c59ac18c44c87d0f225c5e7da18}{pg\+\_\+reset\+\_\+textures}} (\mbox{\hyperlink{pico__gfx_8h_ab527ff3e9b4d08c7c3c0362ff6b61758}{pg\+\_\+shader\+\_\+t}} $\ast$shader)
+\begin{DoxyCompactList}\small\item\em Resets the texture bindings for the current state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__gfx_8h_aa3841b31fef3e9cb0c375e45ba3006c0}{pg\+\_\+bind\+\_\+sampler}} (\mbox{\hyperlink{pico__gfx_8h_ab527ff3e9b4d08c7c3c0362ff6b61758}{pg\+\_\+shader\+\_\+t}} $\ast$shader, const char $\ast$name, \mbox{\hyperlink{pico__gfx_8h_a09e5f14b79c2ac65c1c7e538001cf034}{pg\+\_\+sampler\+\_\+t}} $\ast$sampler)
+\begin{DoxyCompactList}\small\item\em Binds a sampler to a slot in the current state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__gfx_8h_a49f7c4c7a9b00840535472445d2eb999}{pg\+\_\+reset\+\_\+samplers}} (\mbox{\hyperlink{pico__gfx_8h_ab527ff3e9b4d08c7c3c0362ff6b61758}{pg\+\_\+shader\+\_\+t}} $\ast$shader)
+\begin{DoxyCompactList}\small\item\em Resets the sampler bindings for the current state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__gfx_8h_a3db1909d1c60627027fb7cb11f04c7e1}{pg\+\_\+reset\+\_\+state}} (\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Resets the active state to defaults. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__gfx_8h_ac9064b0d4f979b324b99a66cf23fc563}{pg\+\_\+destroy\+\_\+shader}} (\mbox{\hyperlink{pico__gfx_8h_ab527ff3e9b4d08c7c3c0362ff6b61758}{pg\+\_\+shader\+\_\+t}} $\ast$shader)
+\begin{DoxyCompactList}\small\item\em Destroys a shader. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{pico__gfx_8h_a42e2ee05909a747a473b70d647256bae}{pg\+\_\+get\+\_\+shader\+\_\+id}} (const \mbox{\hyperlink{pico__gfx_8h_ab527ff3e9b4d08c7c3c0362ff6b61758}{pg\+\_\+shader\+\_\+t}} $\ast$shader)
+\begin{DoxyCompactList}\small\item\em Returns a shader ID. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__gfx_8h_a1e923f38d458d7d3d387e9d2b8f8e277}{pg\+\_\+alloc\+\_\+uniform\+\_\+block}} (\mbox{\hyperlink{pico__gfx_8h_ab527ff3e9b4d08c7c3c0362ff6b61758}{pg\+\_\+shader\+\_\+t}} $\ast$shader, \mbox{\hyperlink{pico__gfx_8h_a0bd24ab05e613d2facc0f906d1d40802}{pg\+\_\+stage\+\_\+t}} stage, const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Registers a uniform block (UB) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__gfx_8h_a48764342340787e8b7cda415faadf5cd}{pg\+\_\+set\+\_\+uniform\+\_\+block}} (\mbox{\hyperlink{pico__gfx_8h_ab527ff3e9b4d08c7c3c0362ff6b61758}{pg\+\_\+shader\+\_\+t}} $\ast$shader, const char $\ast$name, const void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Sets a uniform block (UB) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{pico__gfx_8h_a692e7a3a2bac623e8ad5cb6890aba684}{pg\+\_\+pipeline\+\_\+t}} $\ast$ \mbox{\hyperlink{pico__gfx_8h_ab9b924d21240581be8ffd96e5228971d}{pg\+\_\+create\+\_\+pipeline}} (\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{pico__gfx_8h_ab527ff3e9b4d08c7c3c0362ff6b61758}{pg\+\_\+shader\+\_\+t}} $\ast$shader, const \mbox{\hyperlink{structpg__pipeline__opts__t}{pg\+\_\+pipeline\+\_\+opts\+\_\+t}} $\ast$opts)
+\begin{DoxyCompactList}\small\item\em Creates a rendering pipeline (encapsulates render state) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__gfx_8h_a983c62d0e2fb83d46e7044f6b07d6273}{pg\+\_\+destroy\+\_\+pipeline}} (\mbox{\hyperlink{pico__gfx_8h_a692e7a3a2bac623e8ad5cb6890aba684}{pg\+\_\+pipeline\+\_\+t}} $\ast$pipeline)
+\begin{DoxyCompactList}\small\item\em Destroys a render pipeline. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{pico__gfx_8h_ab527ff3e9b4d08c7c3c0362ff6b61758}{pg\+\_\+shader\+\_\+t}} $\ast$ \mbox{\hyperlink{pico__gfx_8h_a6ab347eddd14ca354d0da90feabfcddb}{pg\+\_\+get\+\_\+pipeline\+\_\+shader}} (const \mbox{\hyperlink{pico__gfx_8h_a692e7a3a2bac623e8ad5cb6890aba684}{pg\+\_\+pipeline\+\_\+t}} $\ast$pipeline)
+\begin{DoxyCompactList}\small\item\em Returns the shader associated with the pipeline. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{pico__gfx_8h_ab40e9a805eeea8c9dc969574ef82730e}{pg\+\_\+texture\+\_\+t}} $\ast$ \mbox{\hyperlink{pico__gfx_8h_a4252570936922f5483c9861a363f42da}{pg\+\_\+create\+\_\+texture}} (\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$ctx, int width, int height, const uint8\+\_\+t $\ast$data, size\+\_\+t size, const \mbox{\hyperlink{structpg__texture__opts__t}{pg\+\_\+texture\+\_\+opts\+\_\+t}} $\ast$opts)
+\begin{DoxyCompactList}\small\item\em Creates a texture from an RGBA8 image. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{pico__gfx_8h_ab40e9a805eeea8c9dc969574ef82730e}{pg\+\_\+texture\+\_\+t}} $\ast$ \mbox{\hyperlink{pico__gfx_8h_a002709c0ec2957f18b8efd9f2654c08a}{pg\+\_\+create\+\_\+render\+\_\+texture}} (\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$ctx, int width, int height, const \mbox{\hyperlink{structpg__texture__opts__t}{pg\+\_\+texture\+\_\+opts\+\_\+t}} $\ast$opts)
+\begin{DoxyCompactList}\small\item\em Creates a render target. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__gfx_8h_a12003a86c180e594a8f3f13fc4cd93ec}{pg\+\_\+destroy\+\_\+texture}} (\mbox{\hyperlink{pico__gfx_8h_ab40e9a805eeea8c9dc969574ef82730e}{pg\+\_\+texture\+\_\+t}} $\ast$texture)
+\begin{DoxyCompactList}\small\item\em Destroys a texture. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{pico__gfx_8h_af6023fb8060f0c86f9fa0865b16544e6}{pg\+\_\+get\+\_\+texture\+\_\+id}} (const \mbox{\hyperlink{pico__gfx_8h_ab40e9a805eeea8c9dc969574ef82730e}{pg\+\_\+texture\+\_\+t}} $\ast$texture)
+\begin{DoxyCompactList}\small\item\em Returns a texture ID. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__gfx_8h_a62ce3926ad2211b7463309565e32e787}{pg\+\_\+get\+\_\+texture\+\_\+size}} (const \mbox{\hyperlink{pico__gfx_8h_ab40e9a805eeea8c9dc969574ef82730e}{pg\+\_\+texture\+\_\+t}} $\ast$texture, int $\ast$width, int $\ast$height)
+\begin{DoxyCompactList}\small\item\em Gets a texture\textquotesingle{}s dimensions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__gfx_8h_abf87be1801c84393441e9a974ebd94c2}{pg\+\_\+update\+\_\+texture}} (\mbox{\hyperlink{pico__gfx_8h_ab40e9a805eeea8c9dc969574ef82730e}{pg\+\_\+texture\+\_\+t}} $\ast$texture, char $\ast$data, int width, int height)
+\begin{DoxyCompactList}\small\item\em Updates a texture with the given data. This can only be called once per frame. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{pico__gfx_8h_a09e5f14b79c2ac65c1c7e538001cf034}{pg\+\_\+sampler\+\_\+t}} $\ast$ \mbox{\hyperlink{pico__gfx_8h_a041e5873269f3b8cb7bdb36065f9c6f4}{pg\+\_\+create\+\_\+sampler}} (\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$ctx, const \mbox{\hyperlink{structpg__sampler__opts__t}{pg\+\_\+sampler\+\_\+opts\+\_\+t}} $\ast$opts)
+\begin{DoxyCompactList}\small\item\em Creates a sampler represents an object that can control how shaders transform and filter texture resource data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__gfx_8h_af1f7deb4a7c7512634be4e43ede6da7a}{pg\+\_\+destroy\+\_\+sampler}} (\mbox{\hyperlink{pico__gfx_8h_a09e5f14b79c2ac65c1c7e538001cf034}{pg\+\_\+sampler\+\_\+t}} $\ast$sampler)
+\begin{DoxyCompactList}\small\item\em Destroys a sampler object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{pico__gfx_8h_a8e7ea5ce0722842a16a1127f41b1e3e6}{pg\+\_\+buffer\+\_\+t}} $\ast$ \mbox{\hyperlink{pico__gfx_8h_a232a717375e0969f9e91d4da9e84e2ff}{pg\+\_\+create\+\_\+vertex\+\_\+buffer}} (\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{pico__gfx_8h_a1b3b7c5599861780b7eca429e5e47042}{pg\+\_\+buffer\+\_\+usage\+\_\+t}} usage, const void $\ast$data, size\+\_\+t count, size\+\_\+t max\+\_\+elements, size\+\_\+t element\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Creates a vertex buffer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{pico__gfx_8h_a8e7ea5ce0722842a16a1127f41b1e3e6}{pg\+\_\+buffer\+\_\+t}} $\ast$ \mbox{\hyperlink{pico__gfx_8h_a0573c90cb0943fd1a1eec6f2be4fffe3}{pg\+\_\+create\+\_\+index\+\_\+buffer}} (\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{pico__gfx_8h_a1b3b7c5599861780b7eca429e5e47042}{pg\+\_\+buffer\+\_\+usage\+\_\+t}} usage, const void $\ast$data, size\+\_\+t count, size\+\_\+t max\+\_\+elements)
+\begin{DoxyCompactList}\small\item\em Creates a vertex buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__gfx_8h_ab0c5d6def8656c6e6284700ae4588de8}{pg\+\_\+destroy\+\_\+buffer}} (\mbox{\hyperlink{pico__gfx_8h_a8e7ea5ce0722842a16a1127f41b1e3e6}{pg\+\_\+buffer\+\_\+t}} $\ast$buffer)
+\begin{DoxyCompactList}\small\item\em Destroys a vertex or index buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__gfx_8h_adac67fddfccc53c0b5486f1ffde77310}{pg\+\_\+update\+\_\+buffer}} (\mbox{\hyperlink{pico__gfx_8h_a8e7ea5ce0722842a16a1127f41b1e3e6}{pg\+\_\+buffer\+\_\+t}} $\ast$buffer, void $\ast$data, size\+\_\+t count)
+\item 
+int \mbox{\hyperlink{pico__gfx_8h_ac01d2f4e4abb6d484698a7271d6e7456}{pg\+\_\+append\+\_\+buffer}} (\mbox{\hyperlink{pico__gfx_8h_a8e7ea5ce0722842a16a1127f41b1e3e6}{pg\+\_\+buffer\+\_\+t}} $\ast$buffer, void $\ast$data, size\+\_\+t count)
+\begin{DoxyCompactList}\small\item\em Appends data to a buffer. This can happen more than once per frame, and cannot happen after an update. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{pico__gfx_8h_a2a494b8ec0192b9c0c7a62a5d02b0635}{pg\+\_\+get\+\_\+buffer\+\_\+offset}} (\mbox{\hyperlink{pico__gfx_8h_a8e7ea5ce0722842a16a1127f41b1e3e6}{pg\+\_\+buffer\+\_\+t}} $\ast$buffer)
+\begin{DoxyCompactList}\small\item\em Returns the buffer offset. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__gfx_8h_ac8eea3c2177c8e6d1b7dd9c1b9c2e07c}{pg\+\_\+set\+\_\+buffer\+\_\+offset}} (\mbox{\hyperlink{pico__gfx_8h_a8e7ea5ce0722842a16a1127f41b1e3e6}{pg\+\_\+buffer\+\_\+t}} $\ast$buffer, int offset)
+\begin{DoxyCompactList}\small\item\em Sets the buffer offset. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__gfx_8h_a504dc065d05734b107f5719a2613ed75}{pg\+\_\+reset\+\_\+buffer}} (\mbox{\hyperlink{pico__gfx_8h_a8e7ea5ce0722842a16a1127f41b1e3e6}{pg\+\_\+buffer\+\_\+t}} $\ast$buffer)
+\begin{DoxyCompactList}\small\item\em Destroys and recreates buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__gfx_8h_a1c814bbdee9e49deba04355a986d05c9}{pg\+\_\+draw}} (const \mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$ctx, size\+\_\+t start, size\+\_\+t count, size\+\_\+t instances)
+\begin{DoxyCompactList}\small\item\em Draws from the buffers that are bound to the current state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{pico__gfx_8h_ab527ff3e9b4d08c7c3c0362ff6b61758}{pg\+\_\+shader\+\_\+t}} $\ast$ \mbox{\hyperlink{pico__gfx_8h_add4d7156e35b6c3c6bddc75462d1e0d8}{pg\+\_\+create\+\_\+shader\+\_\+internal}} (\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{structpg__shader__internal__t}{pg\+\_\+shader\+\_\+internal\+\_\+t}} internal)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A powerful graphics library based on Sokol GFX, written in C99. 
+
+\DoxyHorRuler{0}
+ \hypertarget{pico__gfx_8h_autotoc_md13}{}\doxysubsubsection{Licensing information at end of header}\label{pico__gfx_8h_autotoc_md13}
+\hypertarget{pico__gfx_8h_autotoc_md14}{}\doxysubsubsection{Features\+:}\label{pico__gfx_8h_autotoc_md14}
+
+\begin{DoxyItemize}
+\item Written in C99
+\item Two header library for easy build system integration
+\item Easy to use low-\/level constructs (buffers, render passes, pipelines, and samplers)
+\item Flexible pipeline configuration
+\item Simple state management system (state stack)
+\item Render to texture
+\item Custom shaders via the sokol shader compiler
+\item Simple and concise API
+\item Permissive license (zlib or public domain)
+\end{DoxyItemize}\hypertarget{pico__gfx_8h_autotoc_md15}{}\doxysubsubsection{Summary\+:}\label{pico__gfx_8h_autotoc_md15}
+pico\+\_\+gfx is a thin wrapper for \href{https://github.com/floooh/sokol/blob/master/sokol_gfx.h}{\texttt{ sokol\+\_\+gfx}}, a low-\/level graphics library that supports Open\+GL, Metal, D3D, and Web\+GPU. pico\+\_\+gfx is designed make the common case intuitive and convenient. It provides access to low-\/level constructs, such as buffers, render passes and pipelines, in a way that is easy to use and understand.
+
+pico\+\_\+gfx comes with three examples; basic quad rendering (to a render texture and the screen), a scene graph demo, and a particle system demo. These are the best source of information regadring how to use the API.
+
+In constrast with earlier versions, pico\+\_\+gfx no longer includes a default shader or pipeline. This was a hard decision to make, but the header is less cluttered, and more generic. It is also hard to define what default really means. Pipeline layouts must now be specified explicitly. The examples demonstrate several ways of doing this.
+
+Shaders must be compiled with the sokol compiler ({\ttfamily sokol-\/shdc}). Binary versions of which can be found \href{https://github.com/floooh/sokol-tools-bin}{\texttt{ here}}. The source code for the compiler can be found \href{https://github.com/floooh/sokol-tools}{\texttt{ here}}. An example of how to use the compiler can be found in the {\ttfamily build\+\_\+pico\+\_\+gfx\+\_\+shader} directory. There are also two compiled shaders included with the examples that are more or less generic for rendering sprites and particles.
+
+One thing pico\+\_\+gfx does not support (and neither does sokol\+\_\+gfx) is window and graphics context creation. See \href{https://github.com/RandyGaul/cute_framework/tree/master/src/internal}{\texttt{ here}} for some examples. It is worth mentioning that \href{https://www.libsdl.org}{\texttt{ SDL2}} can supply both a window and Open\+GL context out of the box. SDL2 is used in the demos.
+
+Another library that supports window/context creation on all supported backends is \href{https://github.com/floooh/sokol/blob/master/sokol_app.h}{\texttt{ sokol\+\_\+app}}, but it has yet to be tested with pico\+\_\+gfx.
+
+The state that pico\+\_\+gfx manages includes\+: \begin{DoxyVerb}- Pipelines/shaders
+- Uniform blocks
+- Vertex buffers
+- Index buffers
+- Clear color
+- Viewport
+- Scissor
+- Textures
+- Samplers
+\end{DoxyVerb}
+ Most changes to the state can be isolated by using the state stack ({\ttfamily pg\+\_\+push\+\_\+state/pg\+\_\+pop\+\_\+state}). Simply push the current state onto the stack, make some local changes, and then pop the stack to restore the original state. The exceptions are textures and samplers that are shader state and not global state.
+
+Shaders expose uniforms in blocks. These blocks must be registered with the shader by calling {\ttfamily pg\+\_\+alloc\+\_\+uniform\+\_\+block}. They may then be set at will by calling {\ttfamily pg\+\_\+set\+\_\+uniform\+\_\+block}. These functions operate on structs supplied by a compiled shader,
+
+Please see the examples for more details.\hypertarget{pico__gfx_8h_autotoc_md16}{}\doxysubsubsection{C++}\label{pico__gfx_8h_autotoc_md16}
+In this iteration, pico\+\_\+gfx is a C only library. Proper C++ compatibility may be introduced in the future.\hypertarget{pico__gfx_8h_autotoc_md17}{}\doxysubsubsection{Build\+:}\label{pico__gfx_8h_autotoc_md17}
+To use this library in your project, add
+
+\begin{quote}
+\#define PICO\+\_\+\+GFX\+\_\+\+IMPLEMENTATION \#include \char`\"{}pico\+\_\+gfx.\+h\char`\"{} \end{quote}
+to a source file.
+
+IMPORTANT\+: sokol\+\_\+gfx.\+h must be in the include path!
+
+You must also define one of
+
+\#define PICO\+\_\+\+GFX\+\_\+\+GL \#define PICO\+\_\+\+GFX\+\_\+\+GLES \#define PICO\+\_\+\+GFX\+\_\+\+D3D \#define PICO\+\_\+\+GFX\+\_\+\+METAL \#define PICO\+\_\+\+GFX\+\_\+\+WEBGPU
+
+before including \mbox{\hyperlink{pico__gfx_8h}{pico\+\_\+gfx.\+h}}
+
+See the examples for build details.\hypertarget{pico__gfx_8h_autotoc_md18}{}\doxysubsubsection{Constants\+:}\label{pico__gfx_8h_autotoc_md18}
+
+\begin{DoxyItemize}
+\item PICO\+\_\+\+GFX\+\_\+\+HASHTABLE\+\_\+\+KEY\+\_\+\+SIZE (default\+: 16)
+\item PICO\+\_\+\+GFX\+\_\+\+STACK\+\_\+\+MAX\+\_\+\+SIZE (default\+: 16)
+\end{DoxyItemize}\hypertarget{pico__gfx_8h_autotoc_md19}{}\doxysubsubsection{Customization\+:}\label{pico__gfx_8h_autotoc_md19}
+
+\begin{DoxyItemize}
+\item NDEBUG
+\item PICO\+\_\+\+GFX\+\_\+\+ASSERT
+\item PICO\+\_\+\+GFX\+\_\+\+LOG
+\item PICO\+\_\+\+GFX\+\_\+\+MALLOC
+\item PICO\+\_\+\+GFX\+\_\+\+REALLOC
+\item PICO\+\_\+\+GFX\+\_\+\+FREE
+\end{DoxyItemize}
+
+The above (constants/macros) must be defined before PICO\+\_\+\+GFX\+\_\+\+IMPLEMENTATION 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{pico__gfx_8h_a09f724f2cc31eb1790d8b030b7c9c507}\label{pico__gfx_8h_a09f724f2cc31eb1790d8b030b7c9c507}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!PG\_MAX\_VERTEX\_ATTRIBUTES@{PG\_MAX\_VERTEX\_ATTRIBUTES}}
+\index{PG\_MAX\_VERTEX\_ATTRIBUTES@{PG\_MAX\_VERTEX\_ATTRIBUTES}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{PG\_MAX\_VERTEX\_ATTRIBUTES}{PG\_MAX\_VERTEX\_ATTRIBUTES}}
+{\footnotesize\ttfamily \#define PG\+\_\+\+MAX\+\_\+\+VERTEX\+\_\+\+ATTRIBUTES~SG\+\_\+\+MAX\+\_\+\+VERTEX\+\_\+\+ATTRIBUTES}
+
+\mbox{\Hypertarget{pico__gfx_8h_a8a201275d2ca93d89003719fbb52ea99}\label{pico__gfx_8h_a8a201275d2ca93d89003719fbb52ea99}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!PG\_MAX\_VERTEX\_BUFFERS@{PG\_MAX\_VERTEX\_BUFFERS}}
+\index{PG\_MAX\_VERTEX\_BUFFERS@{PG\_MAX\_VERTEX\_BUFFERS}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{PG\_MAX\_VERTEX\_BUFFERS}{PG\_MAX\_VERTEX\_BUFFERS}}
+{\footnotesize\ttfamily \#define PG\+\_\+\+MAX\+\_\+\+VERTEX\+\_\+\+BUFFERS~SG\+\_\+\+MAX\+\_\+\+VERTEX\+\_\+\+BUFFERS}
+
+\mbox{\Hypertarget{pico__gfx_8h_a0743249ad5d5bacf91a7c8b618003e8d}\label{pico__gfx_8h_a0743249ad5d5bacf91a7c8b618003e8d}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!PG\_MAX\_TEXTURE\_SLOTS@{PG\_MAX\_TEXTURE\_SLOTS}}
+\index{PG\_MAX\_TEXTURE\_SLOTS@{PG\_MAX\_TEXTURE\_SLOTS}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{PG\_MAX\_TEXTURE\_SLOTS}{PG\_MAX\_TEXTURE\_SLOTS}}
+{\footnotesize\ttfamily \#define PG\+\_\+\+MAX\+\_\+\+TEXTURE\+\_\+\+SLOTS~SG\+\_\+\+MAX\+\_\+\+SHADERSTAGE\+\_\+\+IMAGES}
+
+\mbox{\Hypertarget{pico__gfx_8h_af8e5a89bf6213796b924badd05aaeba5}\label{pico__gfx_8h_af8e5a89bf6213796b924badd05aaeba5}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!PG\_MAX\_SAMPLER\_SLOTS@{PG\_MAX\_SAMPLER\_SLOTS}}
+\index{PG\_MAX\_SAMPLER\_SLOTS@{PG\_MAX\_SAMPLER\_SLOTS}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{PG\_MAX\_SAMPLER\_SLOTS}{PG\_MAX\_SAMPLER\_SLOTS}}
+{\footnotesize\ttfamily \#define PG\+\_\+\+MAX\+\_\+\+SAMPLER\+\_\+\+SLOTS~SG\+\_\+\+MAX\+\_\+\+SHADERSTAGE\+\_\+\+SAMPLERS}
+
+\mbox{\Hypertarget{pico__gfx_8h_a66eb3f6e66f02d24f6c5e0c888de9390}\label{pico__gfx_8h_a66eb3f6e66f02d24f6c5e0c888de9390}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_create\_shader@{pg\_create\_shader}}
+\index{pg\_create\_shader@{pg\_create\_shader}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_create\_shader}{pg\_create\_shader}}
+{\footnotesize\ttfamily \#define pg\+\_\+create\+\_\+shader(\begin{DoxyParamCaption}\item[{}]{ctx,  }\item[{}]{prefix }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \mbox{\hyperlink{pico__gfx_8h_add4d7156e35b6c3c6bddc75462d1e0d8}{pg\_create\_shader\_internal}}(          \(\backslash\)}
+\DoxyCodeLine{        ctx,                            \(\backslash\)}
+\DoxyCodeLine{        (\mbox{\hyperlink{structpg__shader__internal__t}{pg\_shader\_internal\_t}})          \(\backslash\)}
+\DoxyCodeLine{        \{                               \(\backslash\)}
+\DoxyCodeLine{            prefix\#\#\_shader\_desc,       \(\backslash\)}
+\DoxyCodeLine{            prefix\#\#\_attr\_slot,         \(\backslash\)}
+\DoxyCodeLine{            prefix\#\#\_image\_slot,        \(\backslash\)}
+\DoxyCodeLine{            prefix\#\#\_sampler\_slot,      \(\backslash\)}
+\DoxyCodeLine{            prefix\#\#\_uniformblock\_slot, \(\backslash\)}
+\DoxyCodeLine{            prefix\#\#\_uniformblock\_size, \(\backslash\)}
+\DoxyCodeLine{        \}                               \(\backslash\)}
+\DoxyCodeLine{    )}
+
+\end{DoxyCode}
+
+
+Creates the shader with the given prefix The prefix should refer to the shader program name in a shader compiled by {\ttfamily sokol-\/shdc}. For example the sprite shader in the examples would have the prefix \textquotesingle{}shader\textquotesingle{} (without quotation marks) 
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{pico__gfx_8h_acce49146fed834375407e4886a5d761a}\label{pico__gfx_8h_acce49146fed834375407e4886a5d761a}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_ctx\_t@{pg\_ctx\_t}}
+\index{pg\_ctx\_t@{pg\_ctx\_t}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_ctx\_t}{pg\_ctx\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} \mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}}}
+
+
+
+Contains core data/state for an instance of the graphics library. 
+
+\mbox{\Hypertarget{pico__gfx_8h_a692e7a3a2bac623e8ad5cb6890aba684}\label{pico__gfx_8h_a692e7a3a2bac623e8ad5cb6890aba684}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_pipeline\_t@{pg\_pipeline\_t}}
+\index{pg\_pipeline\_t@{pg\_pipeline\_t}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_pipeline\_t}{pg\_pipeline\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{pico__gfx_8h_a692e7a3a2bac623e8ad5cb6890aba684}{pg\+\_\+pipeline\+\_\+t}} \mbox{\hyperlink{pico__gfx_8h_a692e7a3a2bac623e8ad5cb6890aba684}{pg\+\_\+pipeline\+\_\+t}}}
+
+
+
+Render state information. 
+
+\mbox{\Hypertarget{pico__gfx_8h_ab527ff3e9b4d08c7c3c0362ff6b61758}\label{pico__gfx_8h_ab527ff3e9b4d08c7c3c0362ff6b61758}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_shader\_t@{pg\_shader\_t}}
+\index{pg\_shader\_t@{pg\_shader\_t}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_shader\_t}{pg\_shader\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{pico__gfx_8h_ab527ff3e9b4d08c7c3c0362ff6b61758}{pg\+\_\+shader\+\_\+t}} \mbox{\hyperlink{pico__gfx_8h_ab527ff3e9b4d08c7c3c0362ff6b61758}{pg\+\_\+shader\+\_\+t}}}
+
+
+
+Vertex/fragment shader program. 
+
+\mbox{\Hypertarget{pico__gfx_8h_ab40e9a805eeea8c9dc969574ef82730e}\label{pico__gfx_8h_ab40e9a805eeea8c9dc969574ef82730e}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_texture\_t@{pg\_texture\_t}}
+\index{pg\_texture\_t@{pg\_texture\_t}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_texture\_t}{pg\_texture\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{pico__gfx_8h_ab40e9a805eeea8c9dc969574ef82730e}{pg\+\_\+texture\+\_\+t}} \mbox{\hyperlink{pico__gfx_8h_ab40e9a805eeea8c9dc969574ef82730e}{pg\+\_\+texture\+\_\+t}}}
+
+
+
+Represents an image or render target in VRAM. 
+
+\mbox{\Hypertarget{pico__gfx_8h_a09e5f14b79c2ac65c1c7e538001cf034}\label{pico__gfx_8h_a09e5f14b79c2ac65c1c7e538001cf034}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_sampler\_t@{pg\_sampler\_t}}
+\index{pg\_sampler\_t@{pg\_sampler\_t}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_sampler\_t}{pg\_sampler\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{pico__gfx_8h_a09e5f14b79c2ac65c1c7e538001cf034}{pg\+\_\+sampler\+\_\+t}} \mbox{\hyperlink{pico__gfx_8h_a09e5f14b79c2ac65c1c7e538001cf034}{pg\+\_\+sampler\+\_\+t}}}
+
+
+
+Represents sampler. 
+
+\mbox{\Hypertarget{pico__gfx_8h_a8e7ea5ce0722842a16a1127f41b1e3e6}\label{pico__gfx_8h_a8e7ea5ce0722842a16a1127f41b1e3e6}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_buffer\_t@{pg\_buffer\_t}}
+\index{pg\_buffer\_t@{pg\_buffer\_t}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_buffer\_t}{pg\_buffer\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{pico__gfx_8h_a8e7ea5ce0722842a16a1127f41b1e3e6}{pg\+\_\+buffer\+\_\+t}} \mbox{\hyperlink{pico__gfx_8h_a8e7ea5ce0722842a16a1127f41b1e3e6}{pg\+\_\+buffer\+\_\+t}}}
+
+
+
+A vertex or index array buffer. 
+
+\mbox{\Hypertarget{pico__gfx_8h_a3a82cdf61cc1cf667e45be9fd15be922}\label{pico__gfx_8h_a3a82cdf61cc1cf667e45be9fd15be922}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_pipeline\_opts\_t@{pg\_pipeline\_opts\_t}}
+\index{pg\_pipeline\_opts\_t@{pg\_pipeline\_opts\_t}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_pipeline\_opts\_t}{pg\_pipeline\_opts\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structpg__pipeline__opts__t}{pg\+\_\+pipeline\+\_\+opts\+\_\+t}} \mbox{\hyperlink{structpg__pipeline__opts__t}{pg\+\_\+pipeline\+\_\+opts\+\_\+t}}}
+
+
+
+Pipeline creation options. 
+
+\mbox{\Hypertarget{pico__gfx_8h_a29758c124f9fdf4130cb6f53ca66044d}\label{pico__gfx_8h_a29758c124f9fdf4130cb6f53ca66044d}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_texture\_opts\_t@{pg\_texture\_opts\_t}}
+\index{pg\_texture\_opts\_t@{pg\_texture\_opts\_t}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_texture\_opts\_t}{pg\_texture\_opts\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structpg__texture__opts__t}{pg\+\_\+texture\+\_\+opts\+\_\+t}} \mbox{\hyperlink{structpg__texture__opts__t}{pg\+\_\+texture\+\_\+opts\+\_\+t}}}
+
+
+
+Texture creation options. 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{pico__gfx_8h_a01cd02be2f4dded2f572a4f94c167896}\label{pico__gfx_8h_a01cd02be2f4dded2f572a4f94c167896}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_backend\_t@{pg\_backend\_t}}
+\index{pg\_backend\_t@{pg\_backend\_t}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_backend\_t}{pg\_backend\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{pico__gfx_8h_a01cd02be2f4dded2f572a4f94c167896}{pg\+\_\+backend\+\_\+t}}}
+
+
+
+Graphics backends. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_BACKEND\_GL@{PG\_BACKEND\_GL}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_BACKEND\_GL@{PG\_BACKEND\_GL}}}\mbox{\Hypertarget{pico__gfx_8h_a01cd02be2f4dded2f572a4f94c167896aa8b9ab5eacf0a50721d0e4e9610d2971}\label{pico__gfx_8h_a01cd02be2f4dded2f572a4f94c167896aa8b9ab5eacf0a50721d0e4e9610d2971}} 
+PG\+\_\+\+BACKEND\+\_\+\+GL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_BACKEND\_GLES@{PG\_BACKEND\_GLES}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_BACKEND\_GLES@{PG\_BACKEND\_GLES}}}\mbox{\Hypertarget{pico__gfx_8h_a01cd02be2f4dded2f572a4f94c167896ac9a6f972964fa9b5b1d190cd65e9b923}\label{pico__gfx_8h_a01cd02be2f4dded2f572a4f94c167896ac9a6f972964fa9b5b1d190cd65e9b923}} 
+PG\+\_\+\+BACKEND\+\_\+\+GLES&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_BACKEND\_D3D@{PG\_BACKEND\_D3D}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_BACKEND\_D3D@{PG\_BACKEND\_D3D}}}\mbox{\Hypertarget{pico__gfx_8h_a01cd02be2f4dded2f572a4f94c167896a4baa471a079ba0f6dcde0efc6541d23f}\label{pico__gfx_8h_a01cd02be2f4dded2f572a4f94c167896a4baa471a079ba0f6dcde0efc6541d23f}} 
+PG\+\_\+\+BACKEND\+\_\+\+D3D&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_BACKEND\_METAL@{PG\_BACKEND\_METAL}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_BACKEND\_METAL@{PG\_BACKEND\_METAL}}}\mbox{\Hypertarget{pico__gfx_8h_a01cd02be2f4dded2f572a4f94c167896aa4e05be8f026a30e8fc8c07bad867499}\label{pico__gfx_8h_a01cd02be2f4dded2f572a4f94c167896aa4e05be8f026a30e8fc8c07bad867499}} 
+PG\+\_\+\+BACKEND\+\_\+\+METAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_BACKEND\_WGPU@{PG\_BACKEND\_WGPU}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_BACKEND\_WGPU@{PG\_BACKEND\_WGPU}}}\mbox{\Hypertarget{pico__gfx_8h_a01cd02be2f4dded2f572a4f94c167896a243f3fdd231433158454aed7a118e6e2}\label{pico__gfx_8h_a01cd02be2f4dded2f572a4f94c167896a243f3fdd231433158454aed7a118e6e2}} 
+PG\+\_\+\+BACKEND\+\_\+\+WGPU&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{pico__gfx_8h_ad8207f8cbc93f9fb83b76ae34ff1bab7}\label{pico__gfx_8h_ad8207f8cbc93f9fb83b76ae34ff1bab7}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_primitive\_t@{pg\_primitive\_t}}
+\index{pg\_primitive\_t@{pg\_primitive\_t}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_primitive\_t}{pg\_primitive\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{pico__gfx_8h_ad8207f8cbc93f9fb83b76ae34ff1bab7}{pg\+\_\+primitive\+\_\+t}}}
+
+
+
+Drawing primitives. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_DEFAULT\_PRIMITIVE@{PG\_DEFAULT\_PRIMITIVE}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_DEFAULT\_PRIMITIVE@{PG\_DEFAULT\_PRIMITIVE}}}\mbox{\Hypertarget{pico__gfx_8h_ad8207f8cbc93f9fb83b76ae34ff1bab7a94659c0c42c3c8eae86c5c00628921e9}\label{pico__gfx_8h_ad8207f8cbc93f9fb83b76ae34ff1bab7a94659c0c42c3c8eae86c5c00628921e9}} 
+PG\+\_\+\+DEFAULT\+\_\+\+PRIMITIVE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_POINTS@{PG\_POINTS}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_POINTS@{PG\_POINTS}}}\mbox{\Hypertarget{pico__gfx_8h_ad8207f8cbc93f9fb83b76ae34ff1bab7a487c138c3a8fcdc615cd7ee25a9e62dc}\label{pico__gfx_8h_ad8207f8cbc93f9fb83b76ae34ff1bab7a487c138c3a8fcdc615cd7ee25a9e62dc}} 
+PG\+\_\+\+POINTS&Array of points. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_LINES@{PG\_LINES}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_LINES@{PG\_LINES}}}\mbox{\Hypertarget{pico__gfx_8h_ad8207f8cbc93f9fb83b76ae34ff1bab7ab2ce2ed9a257df5d3113ae8b07cc4da4}\label{pico__gfx_8h_ad8207f8cbc93f9fb83b76ae34ff1bab7ab2ce2ed9a257df5d3113ae8b07cc4da4}} 
+PG\+\_\+\+LINES&Each adjacent pair of points forms a line. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_LINE\_STRIP@{PG\_LINE\_STRIP}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_LINE\_STRIP@{PG\_LINE\_STRIP}}}\mbox{\Hypertarget{pico__gfx_8h_ad8207f8cbc93f9fb83b76ae34ff1bab7a5af7109fcb6de54c2fae882f1d90ec70}\label{pico__gfx_8h_ad8207f8cbc93f9fb83b76ae34ff1bab7a5af7109fcb6de54c2fae882f1d90ec70}} 
+PG\+\_\+\+LINE\+\_\+\+STRIP&Array of points where every pair forms a lines. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_TRIANGLES@{PG\_TRIANGLES}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_TRIANGLES@{PG\_TRIANGLES}}}\mbox{\Hypertarget{pico__gfx_8h_ad8207f8cbc93f9fb83b76ae34ff1bab7a0a1ffd4b4cfc9ae8543d77a1592f2615}\label{pico__gfx_8h_ad8207f8cbc93f9fb83b76ae34ff1bab7a0a1ffd4b4cfc9ae8543d77a1592f2615}} 
+PG\+\_\+\+TRIANGLES&Each adjacent triple forms an individual triangle. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_TRIANGLE\_STRIP@{PG\_TRIANGLE\_STRIP}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_TRIANGLE\_STRIP@{PG\_TRIANGLE\_STRIP}}}\mbox{\Hypertarget{pico__gfx_8h_ad8207f8cbc93f9fb83b76ae34ff1bab7a20e05e79ffa0d06342bde9fc8fe8738f}\label{pico__gfx_8h_ad8207f8cbc93f9fb83b76ae34ff1bab7a20e05e79ffa0d06342bde9fc8fe8738f}} 
+PG\+\_\+\+TRIANGLE\+\_\+\+STRIP&Array of points where every triple forms a triangle. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{pico__gfx_8h_abd20c0d63bd87e2f6e7e67c0a45f7cb5}\label{pico__gfx_8h_abd20c0d63bd87e2f6e7e67c0a45f7cb5}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_blend\_factor\_t@{pg\_blend\_factor\_t}}
+\index{pg\_blend\_factor\_t@{pg\_blend\_factor\_t}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_blend\_factor\_t}{pg\_blend\_factor\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{pico__gfx_8h_abd20c0d63bd87e2f6e7e67c0a45f7cb5}{pg\+\_\+blend\+\_\+factor\+\_\+t}}}
+
+
+
+Blend factors. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_DEFAULT\_BLEND\_FACTOR@{PG\_DEFAULT\_BLEND\_FACTOR}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_DEFAULT\_BLEND\_FACTOR@{PG\_DEFAULT\_BLEND\_FACTOR}}}\mbox{\Hypertarget{pico__gfx_8h_abd20c0d63bd87e2f6e7e67c0a45f7cb5a388f7cc6f193793a4736ebdd80fe8904}\label{pico__gfx_8h_abd20c0d63bd87e2f6e7e67c0a45f7cb5a388f7cc6f193793a4736ebdd80fe8904}} 
+PG\+\_\+\+DEFAULT\+\_\+\+BLEND\+\_\+\+FACTOR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_ZERO@{PG\_ZERO}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_ZERO@{PG\_ZERO}}}\mbox{\Hypertarget{pico__gfx_8h_abd20c0d63bd87e2f6e7e67c0a45f7cb5a9edc26dc4fe4617fe4ece45285abc951}\label{pico__gfx_8h_abd20c0d63bd87e2f6e7e67c0a45f7cb5a9edc26dc4fe4617fe4ece45285abc951}} 
+PG\+\_\+\+ZERO&(0, 0, 0, 0) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_ONE@{PG\_ONE}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_ONE@{PG\_ONE}}}\mbox{\Hypertarget{pico__gfx_8h_abd20c0d63bd87e2f6e7e67c0a45f7cb5a2aaa600dcd8ec9d5f713bcd1b560d286}\label{pico__gfx_8h_abd20c0d63bd87e2f6e7e67c0a45f7cb5a2aaa600dcd8ec9d5f713bcd1b560d286}} 
+PG\+\_\+\+ONE&(1, 1, 1, 1) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_SRC\_COLOR@{PG\_SRC\_COLOR}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_SRC\_COLOR@{PG\_SRC\_COLOR}}}\mbox{\Hypertarget{pico__gfx_8h_abd20c0d63bd87e2f6e7e67c0a45f7cb5acd3db591232d53122265eb56cb1b9452}\label{pico__gfx_8h_abd20c0d63bd87e2f6e7e67c0a45f7cb5acd3db591232d53122265eb56cb1b9452}} 
+PG\+\_\+\+SRC\+\_\+\+COLOR&(src.\+r, src.\+g, src.\+b, src.\+a) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_ONE\_MINUS\_SRC\_COLOR@{PG\_ONE\_MINUS\_SRC\_COLOR}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_ONE\_MINUS\_SRC\_COLOR@{PG\_ONE\_MINUS\_SRC\_COLOR}}}\mbox{\Hypertarget{pico__gfx_8h_abd20c0d63bd87e2f6e7e67c0a45f7cb5a1f8f659c7f6ec62393021c954e705181}\label{pico__gfx_8h_abd20c0d63bd87e2f6e7e67c0a45f7cb5a1f8f659c7f6ec62393021c954e705181}} 
+PG\+\_\+\+ONE\+\_\+\+MINUS\+\_\+\+SRC\+\_\+\+COLOR&(1, 1, 1, 1) -\/ (src.\+r, src.\+g, src.\+b, src.\+a) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_DST\_COLOR@{PG\_DST\_COLOR}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_DST\_COLOR@{PG\_DST\_COLOR}}}\mbox{\Hypertarget{pico__gfx_8h_abd20c0d63bd87e2f6e7e67c0a45f7cb5a6f8612057cf72f665c4b1bfbb12686e3}\label{pico__gfx_8h_abd20c0d63bd87e2f6e7e67c0a45f7cb5a6f8612057cf72f665c4b1bfbb12686e3}} 
+PG\+\_\+\+DST\+\_\+\+COLOR&(dst.\+r, dst.\+g, dst.\+b, dst.\+a) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_ONE\_MINUS\_DST\_COLOR@{PG\_ONE\_MINUS\_DST\_COLOR}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_ONE\_MINUS\_DST\_COLOR@{PG\_ONE\_MINUS\_DST\_COLOR}}}\mbox{\Hypertarget{pico__gfx_8h_abd20c0d63bd87e2f6e7e67c0a45f7cb5ae1b007cd18995017d0bfaf0bc08569ca}\label{pico__gfx_8h_abd20c0d63bd87e2f6e7e67c0a45f7cb5ae1b007cd18995017d0bfaf0bc08569ca}} 
+PG\+\_\+\+ONE\+\_\+\+MINUS\+\_\+\+DST\+\_\+\+COLOR&(1, 1, 1, 1) -\/ (dst.\+r, dst.\+g, dst.\+b, dst.\+a) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_SRC\_ALPHA@{PG\_SRC\_ALPHA}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_SRC\_ALPHA@{PG\_SRC\_ALPHA}}}\mbox{\Hypertarget{pico__gfx_8h_abd20c0d63bd87e2f6e7e67c0a45f7cb5a2cbcc9d095dc32ae057cfd23534446cf}\label{pico__gfx_8h_abd20c0d63bd87e2f6e7e67c0a45f7cb5a2cbcc9d095dc32ae057cfd23534446cf}} 
+PG\+\_\+\+SRC\+\_\+\+ALPHA&(src.\+a, src.\+a, src.\+a, src.\+a) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_ONE\_MINUS\_SRC\_ALPHA@{PG\_ONE\_MINUS\_SRC\_ALPHA}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_ONE\_MINUS\_SRC\_ALPHA@{PG\_ONE\_MINUS\_SRC\_ALPHA}}}\mbox{\Hypertarget{pico__gfx_8h_abd20c0d63bd87e2f6e7e67c0a45f7cb5aeb947475c1e3f395b4027aa50c1c1fb3}\label{pico__gfx_8h_abd20c0d63bd87e2f6e7e67c0a45f7cb5aeb947475c1e3f395b4027aa50c1c1fb3}} 
+PG\+\_\+\+ONE\+\_\+\+MINUS\+\_\+\+SRC\+\_\+\+ALPHA&(1, 1, 1, 1) -\/ (src.\+a, src.\+a, src.\+a, src.\+a) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_DST\_ALPHA@{PG\_DST\_ALPHA}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_DST\_ALPHA@{PG\_DST\_ALPHA}}}\mbox{\Hypertarget{pico__gfx_8h_abd20c0d63bd87e2f6e7e67c0a45f7cb5abbc4ed5bda810be14b7064dd24ec6513}\label{pico__gfx_8h_abd20c0d63bd87e2f6e7e67c0a45f7cb5abbc4ed5bda810be14b7064dd24ec6513}} 
+PG\+\_\+\+DST\+\_\+\+ALPHA&(dst.\+a, dst.\+a, dst.\+a, dst.\+a) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_ONE\_MINUS\_DST\_ALPHA@{PG\_ONE\_MINUS\_DST\_ALPHA}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_ONE\_MINUS\_DST\_ALPHA@{PG\_ONE\_MINUS\_DST\_ALPHA}}}\mbox{\Hypertarget{pico__gfx_8h_abd20c0d63bd87e2f6e7e67c0a45f7cb5ae063f711ce8fd9f4bd71229d84002f88}\label{pico__gfx_8h_abd20c0d63bd87e2f6e7e67c0a45f7cb5ae063f711ce8fd9f4bd71229d84002f88}} 
+PG\+\_\+\+ONE\+\_\+\+MINUS\+\_\+\+DST\+\_\+\+ALPHA&(1, 1, 1, 1) -\/ (dst.\+a, dst.\+a, dst.\+a, dst.\+a) \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{pico__gfx_8h_af4e7d0bfe37107a14f24054c26ccd278}\label{pico__gfx_8h_af4e7d0bfe37107a14f24054c26ccd278}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_blend\_eq\_t@{pg\_blend\_eq\_t}}
+\index{pg\_blend\_eq\_t@{pg\_blend\_eq\_t}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_blend\_eq\_t}{pg\_blend\_eq\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{pico__gfx_8h_af4e7d0bfe37107a14f24054c26ccd278}{pg\+\_\+blend\+\_\+eq\+\_\+t}}}
+
+
+
+Blend equations. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_DEFAULT\_BLEND\_EQ@{PG\_DEFAULT\_BLEND\_EQ}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_DEFAULT\_BLEND\_EQ@{PG\_DEFAULT\_BLEND\_EQ}}}\mbox{\Hypertarget{pico__gfx_8h_af4e7d0bfe37107a14f24054c26ccd278a6723663bebe8dd9368d6b5ba2b2f31af}\label{pico__gfx_8h_af4e7d0bfe37107a14f24054c26ccd278a6723663bebe8dd9368d6b5ba2b2f31af}} 
+PG\+\_\+\+DEFAULT\+\_\+\+BLEND\+\_\+\+EQ&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_ADD@{PG\_ADD}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_ADD@{PG\_ADD}}}\mbox{\Hypertarget{pico__gfx_8h_af4e7d0bfe37107a14f24054c26ccd278a8fb09388323e9e7eabd36828dab905a8}\label{pico__gfx_8h_af4e7d0bfe37107a14f24054c26ccd278a8fb09388323e9e7eabd36828dab905a8}} 
+PG\+\_\+\+ADD&result = src $\ast$ src\+\_\+factor + dst $\ast$ dst\+\_\+factor \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_SUBTRACT@{PG\_SUBTRACT}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_SUBTRACT@{PG\_SUBTRACT}}}\mbox{\Hypertarget{pico__gfx_8h_af4e7d0bfe37107a14f24054c26ccd278ab96a078561fe2aa2d1c99bc173c9c9fa}\label{pico__gfx_8h_af4e7d0bfe37107a14f24054c26ccd278ab96a078561fe2aa2d1c99bc173c9c9fa}} 
+PG\+\_\+\+SUBTRACT&result = src $\ast$ src\+\_\+factor -\/ dst $\ast$ dst\+\_\+factor \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_REVERSE\_SUBTRACT@{PG\_REVERSE\_SUBTRACT}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_REVERSE\_SUBTRACT@{PG\_REVERSE\_SUBTRACT}}}\mbox{\Hypertarget{pico__gfx_8h_af4e7d0bfe37107a14f24054c26ccd278aa3aa009b0784c76c60a185a76a2d9f95}\label{pico__gfx_8h_af4e7d0bfe37107a14f24054c26ccd278aa3aa009b0784c76c60a185a76a2d9f95}} 
+PG\+\_\+\+REVERSE\+\_\+\+SUBTRACT&result = dst $\ast$ dst\+\_\+factor -\/ src $\ast$ src\+\_\+factor \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{pico__gfx_8h_a0bd24ab05e613d2facc0f906d1d40802}\label{pico__gfx_8h_a0bd24ab05e613d2facc0f906d1d40802}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_stage\_t@{pg\_stage\_t}}
+\index{pg\_stage\_t@{pg\_stage\_t}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_stage\_t}{pg\_stage\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{pico__gfx_8h_a0bd24ab05e613d2facc0f906d1d40802}{pg\+\_\+stage\+\_\+t}}}
+
+
+
+Shader stage. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_STAGE\_VS@{PG\_STAGE\_VS}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_STAGE\_VS@{PG\_STAGE\_VS}}}\mbox{\Hypertarget{pico__gfx_8h_a0bd24ab05e613d2facc0f906d1d40802a5a453355d0c2f387602b849f253315de}\label{pico__gfx_8h_a0bd24ab05e613d2facc0f906d1d40802a5a453355d0c2f387602b849f253315de}} 
+PG\+\_\+\+STAGE\+\_\+\+VS&Vertex shader stage. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_STAGE\_FS@{PG\_STAGE\_FS}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_STAGE\_FS@{PG\_STAGE\_FS}}}\mbox{\Hypertarget{pico__gfx_8h_a0bd24ab05e613d2facc0f906d1d40802a27de9c01fc7b093fc9a437d6f9cdd857}\label{pico__gfx_8h_a0bd24ab05e613d2facc0f906d1d40802a27de9c01fc7b093fc9a437d6f9cdd857}} 
+PG\+\_\+\+STAGE\+\_\+\+FS&Fragment shader stage. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691b}\label{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691b}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_vertex\_format\_t@{pg\_vertex\_format\_t}}
+\index{pg\_vertex\_format\_t@{pg\_vertex\_format\_t}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_vertex\_format\_t}{pg\_vertex\_format\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691b}{pg\+\_\+vertex\+\_\+format\+\_\+t}}}
+
+
+
+Vertex attribute pixel formats. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_VERTEX\_FORMAT\_INVALID@{PG\_VERTEX\_FORMAT\_INVALID}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_VERTEX\_FORMAT\_INVALID@{PG\_VERTEX\_FORMAT\_INVALID}}}\mbox{\Hypertarget{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691ba1127311bf74da9b3b03743251ace813a}\label{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691ba1127311bf74da9b3b03743251ace813a}} 
+PG\+\_\+\+VERTEX\+\_\+\+FORMAT\+\_\+\+INVALID&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_VERTEX\_FORMAT\_FLOAT@{PG\_VERTEX\_FORMAT\_FLOAT}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_VERTEX\_FORMAT\_FLOAT@{PG\_VERTEX\_FORMAT\_FLOAT}}}\mbox{\Hypertarget{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691ba1b80260fb726e45beaa3b65ddfdab66f}\label{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691ba1b80260fb726e45beaa3b65ddfdab66f}} 
+PG\+\_\+\+VERTEX\+\_\+\+FORMAT\+\_\+\+FLOAT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_VERTEX\_FORMAT\_FLOAT2@{PG\_VERTEX\_FORMAT\_FLOAT2}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_VERTEX\_FORMAT\_FLOAT2@{PG\_VERTEX\_FORMAT\_FLOAT2}}}\mbox{\Hypertarget{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691ba46e545941c44e65c45870cfdaf2ab1b4}\label{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691ba46e545941c44e65c45870cfdaf2ab1b4}} 
+PG\+\_\+\+VERTEX\+\_\+\+FORMAT\+\_\+\+FLOAT2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_VERTEX\_FORMAT\_FLOAT3@{PG\_VERTEX\_FORMAT\_FLOAT3}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_VERTEX\_FORMAT\_FLOAT3@{PG\_VERTEX\_FORMAT\_FLOAT3}}}\mbox{\Hypertarget{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691bab8d1fc901ac8a3c774a6cac99687db7b}\label{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691bab8d1fc901ac8a3c774a6cac99687db7b}} 
+PG\+\_\+\+VERTEX\+\_\+\+FORMAT\+\_\+\+FLOAT3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_VERTEX\_FORMAT\_FLOAT4@{PG\_VERTEX\_FORMAT\_FLOAT4}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_VERTEX\_FORMAT\_FLOAT4@{PG\_VERTEX\_FORMAT\_FLOAT4}}}\mbox{\Hypertarget{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691ba4a8ec0b41a90642ba8c9b76da7755b14}\label{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691ba4a8ec0b41a90642ba8c9b76da7755b14}} 
+PG\+\_\+\+VERTEX\+\_\+\+FORMAT\+\_\+\+FLOAT4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_VERTEX\_FORMAT\_BYTE4@{PG\_VERTEX\_FORMAT\_BYTE4}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_VERTEX\_FORMAT\_BYTE4@{PG\_VERTEX\_FORMAT\_BYTE4}}}\mbox{\Hypertarget{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691ba13f4218d3d9c17a267321e8fdcad8053}\label{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691ba13f4218d3d9c17a267321e8fdcad8053}} 
+PG\+\_\+\+VERTEX\+\_\+\+FORMAT\+\_\+\+BYTE4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_VERTEX\_FORMAT\_BYTE4N@{PG\_VERTEX\_FORMAT\_BYTE4N}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_VERTEX\_FORMAT\_BYTE4N@{PG\_VERTEX\_FORMAT\_BYTE4N}}}\mbox{\Hypertarget{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691baf0367d2869b26a2a3402f2e9f71536e9}\label{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691baf0367d2869b26a2a3402f2e9f71536e9}} 
+PG\+\_\+\+VERTEX\+\_\+\+FORMAT\+\_\+\+BYTE4N&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_VERTEX\_FORMAT\_UBYTE4@{PG\_VERTEX\_FORMAT\_UBYTE4}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_VERTEX\_FORMAT\_UBYTE4@{PG\_VERTEX\_FORMAT\_UBYTE4}}}\mbox{\Hypertarget{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691baca9063153678ca53e0eb7991ad8a80d0}\label{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691baca9063153678ca53e0eb7991ad8a80d0}} 
+PG\+\_\+\+VERTEX\+\_\+\+FORMAT\+\_\+\+UBYTE4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_VERTEX\_FORMAT\_UBYTE4N@{PG\_VERTEX\_FORMAT\_UBYTE4N}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_VERTEX\_FORMAT\_UBYTE4N@{PG\_VERTEX\_FORMAT\_UBYTE4N}}}\mbox{\Hypertarget{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691ba7bc96a4505ea269c04ba5bda2b291e94}\label{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691ba7bc96a4505ea269c04ba5bda2b291e94}} 
+PG\+\_\+\+VERTEX\+\_\+\+FORMAT\+\_\+\+UBYTE4N&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_VERTEX\_FORMAT\_SHORT2@{PG\_VERTEX\_FORMAT\_SHORT2}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_VERTEX\_FORMAT\_SHORT2@{PG\_VERTEX\_FORMAT\_SHORT2}}}\mbox{\Hypertarget{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691ba6bb12e7f5de1eb063bcd85737845f5b6}\label{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691ba6bb12e7f5de1eb063bcd85737845f5b6}} 
+PG\+\_\+\+VERTEX\+\_\+\+FORMAT\+\_\+\+SHORT2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_VERTEX\_FORMAT\_SHORT2N@{PG\_VERTEX\_FORMAT\_SHORT2N}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_VERTEX\_FORMAT\_SHORT2N@{PG\_VERTEX\_FORMAT\_SHORT2N}}}\mbox{\Hypertarget{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691bade7016e97874dd5181c718402a220964}\label{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691bade7016e97874dd5181c718402a220964}} 
+PG\+\_\+\+VERTEX\+\_\+\+FORMAT\+\_\+\+SHORT2N&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_VERTEX\_FORMAT\_USHORT2N@{PG\_VERTEX\_FORMAT\_USHORT2N}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_VERTEX\_FORMAT\_USHORT2N@{PG\_VERTEX\_FORMAT\_USHORT2N}}}\mbox{\Hypertarget{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691ba8e7a71b64a3da942c25f750bdb98266c}\label{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691ba8e7a71b64a3da942c25f750bdb98266c}} 
+PG\+\_\+\+VERTEX\+\_\+\+FORMAT\+\_\+\+USHORT2N&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_VERTEX\_FORMAT\_SHORT4@{PG\_VERTEX\_FORMAT\_SHORT4}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_VERTEX\_FORMAT\_SHORT4@{PG\_VERTEX\_FORMAT\_SHORT4}}}\mbox{\Hypertarget{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691ba8c72250b4be673c7b28c2e290e7fcfc5}\label{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691ba8c72250b4be673c7b28c2e290e7fcfc5}} 
+PG\+\_\+\+VERTEX\+\_\+\+FORMAT\+\_\+\+SHORT4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_VERTEX\_FORMAT\_SHORT4N@{PG\_VERTEX\_FORMAT\_SHORT4N}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_VERTEX\_FORMAT\_SHORT4N@{PG\_VERTEX\_FORMAT\_SHORT4N}}}\mbox{\Hypertarget{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691bafd7cae67a5e10b995dcecb98f0436205}\label{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691bafd7cae67a5e10b995dcecb98f0436205}} 
+PG\+\_\+\+VERTEX\+\_\+\+FORMAT\+\_\+\+SHORT4N&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_VERTEX\_FORMAT\_USHORT4N@{PG\_VERTEX\_FORMAT\_USHORT4N}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_VERTEX\_FORMAT\_USHORT4N@{PG\_VERTEX\_FORMAT\_USHORT4N}}}\mbox{\Hypertarget{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691ba30f75e3229e5fda8e5878f654a243007}\label{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691ba30f75e3229e5fda8e5878f654a243007}} 
+PG\+\_\+\+VERTEX\+\_\+\+FORMAT\+\_\+\+USHORT4N&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_VERTEX\_FORMAT\_UINT10\_N2@{PG\_VERTEX\_FORMAT\_UINT10\_N2}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_VERTEX\_FORMAT\_UINT10\_N2@{PG\_VERTEX\_FORMAT\_UINT10\_N2}}}\mbox{\Hypertarget{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691ba86c30b8a3321e798cc9212739bdfc248}\label{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691ba86c30b8a3321e798cc9212739bdfc248}} 
+PG\+\_\+\+VERTEX\+\_\+\+FORMAT\+\_\+\+UINT10\+\_\+\+N2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_VERTEX\_FORMAT\_HALF2@{PG\_VERTEX\_FORMAT\_HALF2}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_VERTEX\_FORMAT\_HALF2@{PG\_VERTEX\_FORMAT\_HALF2}}}\mbox{\Hypertarget{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691ba4efe1a04b4b6a2f3892eaa5ad025dd4f}\label{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691ba4efe1a04b4b6a2f3892eaa5ad025dd4f}} 
+PG\+\_\+\+VERTEX\+\_\+\+FORMAT\+\_\+\+HALF2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_VERTEX\_FORMAT\_HALF4@{PG\_VERTEX\_FORMAT\_HALF4}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_VERTEX\_FORMAT\_HALF4@{PG\_VERTEX\_FORMAT\_HALF4}}}\mbox{\Hypertarget{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691bab1b059580755cb6afba5d62d3cf1c243}\label{pico__gfx_8h_a0b9bde3d7600db2083d71e557fd2691bab1b059580755cb6afba5d62d3cf1c243}} 
+PG\+\_\+\+VERTEX\+\_\+\+FORMAT\+\_\+\+HALF4&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{pico__gfx_8h_a1b3b7c5599861780b7eca429e5e47042}\label{pico__gfx_8h_a1b3b7c5599861780b7eca429e5e47042}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_buffer\_usage\_t@{pg\_buffer\_usage\_t}}
+\index{pg\_buffer\_usage\_t@{pg\_buffer\_usage\_t}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_buffer\_usage\_t}{pg\_buffer\_usage\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{pico__gfx_8h_a1b3b7c5599861780b7eca429e5e47042}{pg\+\_\+buffer\+\_\+usage\+\_\+t}}}
+
+
+
+Buffer update criteria. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_USAGE\_STATIC@{PG\_USAGE\_STATIC}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_USAGE\_STATIC@{PG\_USAGE\_STATIC}}}\mbox{\Hypertarget{pico__gfx_8h_a1b3b7c5599861780b7eca429e5e47042a1c0939f3d6c9ec9867a18c1b31ce41ba}\label{pico__gfx_8h_a1b3b7c5599861780b7eca429e5e47042a1c0939f3d6c9ec9867a18c1b31ce41ba}} 
+PG\+\_\+\+USAGE\+\_\+\+STATIC&Buffer is immutable (cannot be updated) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_USAGE\_DYNAMIC@{PG\_USAGE\_DYNAMIC}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_USAGE\_DYNAMIC@{PG\_USAGE\_DYNAMIC}}}\mbox{\Hypertarget{pico__gfx_8h_a1b3b7c5599861780b7eca429e5e47042a90bbf06e5bd0b373baf7e90692fa6784}\label{pico__gfx_8h_a1b3b7c5599861780b7eca429e5e47042a90bbf06e5bd0b373baf7e90692fa6784}} 
+PG\+\_\+\+USAGE\+\_\+\+DYNAMIC&Buffer is updated on average less than once per frame. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PG\_USAGE\_STREAM@{PG\_USAGE\_STREAM}!pico\_gfx.h@{pico\_gfx.h}}\index{pico\_gfx.h@{pico\_gfx.h}!PG\_USAGE\_STREAM@{PG\_USAGE\_STREAM}}}\mbox{\Hypertarget{pico__gfx_8h_a1b3b7c5599861780b7eca429e5e47042a6a6e236c027f1d0b84ad8b80649fab36}\label{pico__gfx_8h_a1b3b7c5599861780b7eca429e5e47042a6a6e236c027f1d0b84ad8b80649fab36}} 
+PG\+\_\+\+USAGE\+\_\+\+STREAM&Buffer is updated possibly more than once per frame. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pico__gfx_8h_a4482c03bd692fb46f57bac936004dde3}\label{pico__gfx_8h_a4482c03bd692fb46f57bac936004dde3}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_init@{pg\_init}}
+\index{pg\_init@{pg\_init}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_init()}{pg\_init()}}
+{\footnotesize\ttfamily void pg\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Loads pico\+\_\+gfx and sokol\+\_\+gfx. 
+
+IMPORTANT\+: A valid graphics API context (Open\+GL, Metal, D3D) must exist for this function to succeed. This function must be called before any other pico\+\_\+gfx functions.
+
+NOTE\+: This function calls {\ttfamily sg\+\_\+setup}. \mbox{\Hypertarget{pico__gfx_8h_a5f9aa91b35dc592ae33b52af06b4de93}\label{pico__gfx_8h_a5f9aa91b35dc592ae33b52af06b4de93}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_shutdown@{pg\_shutdown}}
+\index{pg\_shutdown@{pg\_shutdown}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_shutdown()}{pg\_shutdown()}}
+{\footnotesize\ttfamily void pg\+\_\+shutdown (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Tears down pico\+\_\+gfx and sokol\+\_\+gfx. 
+
+NOTE\+: This function calls {\ttfamily sg\+\_\+shutdown} \mbox{\Hypertarget{pico__gfx_8h_aa54a81d2e3c1caea2bc3e186194dd95c}\label{pico__gfx_8h_aa54a81d2e3c1caea2bc3e186194dd95c}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_create\_context@{pg\_create\_context}}
+\index{pg\_create\_context@{pg\_create\_context}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_create\_context()}{pg\_create\_context()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}}$\ast$ pg\+\_\+create\+\_\+context (\begin{DoxyParamCaption}\item[{int}]{window\+\_\+width,  }\item[{int}]{window\+\_\+height,  }\item[{void $\ast$}]{mem\+\_\+ctx }\end{DoxyParamCaption})}
+
+
+
+Creates a graphics context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window\+\_\+width} & The window width \\
+\hline
+{\em window\+\_\+height} & The window height \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pico__gfx_8h_a089e1b3bbef37fbd573cf7a2a28d150c}\label{pico__gfx_8h_a089e1b3bbef37fbd573cf7a2a28d150c}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_destroy\_context@{pg\_destroy\_context}}
+\index{pg\_destroy\_context@{pg\_destroy\_context}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_destroy\_context()}{pg\_destroy\_context()}}
+{\footnotesize\ttfamily void pg\+\_\+destroy\+\_\+context (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$}]{ctx }\end{DoxyParamCaption})}
+
+
+
+Destroys a graphics context. 
+
+\mbox{\Hypertarget{pico__gfx_8h_a8704e25e01f2cce8351ce30b10820883}\label{pico__gfx_8h_a8704e25e01f2cce8351ce30b10820883}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_backend@{pg\_backend}}
+\index{pg\_backend@{pg\_backend}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_backend()}{pg\_backend()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pico__gfx_8h_a01cd02be2f4dded2f572a4f94c167896}{pg\+\_\+backend\+\_\+t}} pg\+\_\+backend (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Returns the backend in use at runtime. 
+
+\mbox{\Hypertarget{pico__gfx_8h_a8838cfd1046f75082cba3c16ebfeae78}\label{pico__gfx_8h_a8838cfd1046f75082cba3c16ebfeae78}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_set\_window\_size@{pg\_set\_window\_size}}
+\index{pg\_set\_window\_size@{pg\_set\_window\_size}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_set\_window\_size()}{pg\_set\_window\_size()}}
+{\footnotesize\ttfamily void pg\+\_\+set\+\_\+window\+\_\+size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{bool}]{reset }\end{DoxyParamCaption})}
+
+
+
+Sets the window dimensions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & The graphics context \\
+\hline
+{\em width} & The window width \\
+\hline
+{\em height} & The window height \\
+\hline
+{\em reset} & Resets the viewport and scissor if true \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pico__gfx_8h_ad6a0eff7fecf70dc49d4be242c821135}\label{pico__gfx_8h_ad6a0eff7fecf70dc49d4be242c821135}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_get\_window\_size@{pg\_get\_window\_size}}
+\index{pg\_get\_window\_size@{pg\_get\_window\_size}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_get\_window\_size()}{pg\_get\_window\_size()}}
+{\footnotesize\ttfamily void pg\+\_\+get\+\_\+window\+\_\+size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{int $\ast$}]{width,  }\item[{int $\ast$}]{height }\end{DoxyParamCaption})}
+
+
+
+Gets the window size. 
+
+\mbox{\Hypertarget{pico__gfx_8h_ab233020fe7cf85b845ac0a6335f845c2}\label{pico__gfx_8h_ab233020fe7cf85b845ac0a6335f845c2}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_begin\_pass@{pg\_begin\_pass}}
+\index{pg\_begin\_pass@{pg\_begin\_pass}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_begin\_pass()}{pg\_begin\_pass()}}
+{\footnotesize\ttfamily void pg\+\_\+begin\+\_\+pass (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{pico__gfx_8h_ab40e9a805eeea8c9dc969574ef82730e}{pg\+\_\+texture\+\_\+t}} $\ast$}]{target,  }\item[{bool}]{clear }\end{DoxyParamCaption})}
+
+
+
+Starts a render pass (mandatory) 
+
+NOTE\+: The default pass should be the last pass of a frame.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & The graphics context \\
+\hline
+{\em pass} & The render pass (NULL for the default pass) \\
+\hline
+{\em clear} & Clears the render target or window \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pico__gfx_8h_a245db68686c7d9c15c1a6faa93974041}\label{pico__gfx_8h_a245db68686c7d9c15c1a6faa93974041}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_end\_pass@{pg\_end\_pass}}
+\index{pg\_end\_pass@{pg\_end\_pass}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_end\_pass()}{pg\_end\_pass()}}
+{\footnotesize\ttfamily void pg\+\_\+end\+\_\+pass (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$}]{ctx }\end{DoxyParamCaption})}
+
+
+
+Ends a render pass (mandatory) 
+
+\mbox{\Hypertarget{pico__gfx_8h_aa51791249dece6d9f917de44ee2a9725}\label{pico__gfx_8h_aa51791249dece6d9f917de44ee2a9725}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_flush@{pg\_flush}}
+\index{pg\_flush@{pg\_flush}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_flush()}{pg\_flush()}}
+{\footnotesize\ttfamily void pg\+\_\+flush (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$}]{ctx }\end{DoxyParamCaption})}
+
+
+
+Flush commands. 
+
+Must be called at the end of a frame (after {\ttfamily pg\+\_\+end\+\_\+pass}). \mbox{\Hypertarget{pico__gfx_8h_a5a4b71aeaa81cd168bf8a7a7d469d11b}\label{pico__gfx_8h_a5a4b71aeaa81cd168bf8a7a7d469d11b}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_push\_state@{pg\_push\_state}}
+\index{pg\_push\_state@{pg\_push\_state}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_push\_state()}{pg\_push\_state()}}
+{\footnotesize\ttfamily void pg\+\_\+push\+\_\+state (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$}]{ctx }\end{DoxyParamCaption})}
+
+
+
+Pushes the active state onto the stack. 
+
+State consists of the pipeline, draw color, scissor, viewport, and default MVP transform, buffers, textures, and samplers \mbox{\Hypertarget{pico__gfx_8h_acfa65c0743a204053eab6b12f8748abd}\label{pico__gfx_8h_acfa65c0743a204053eab6b12f8748abd}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_pop\_state@{pg\_pop\_state}}
+\index{pg\_pop\_state@{pg\_pop\_state}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_pop\_state()}{pg\_pop\_state()}}
+{\footnotesize\ttfamily void pg\+\_\+pop\+\_\+state (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$}]{ctx }\end{DoxyParamCaption})}
+
+
+
+Pops a state off the stack and makes it the active state. 
+
+\mbox{\Hypertarget{pico__gfx_8h_a9e46a03a0c7cacfa7d4268dcd8f45ae5}\label{pico__gfx_8h_a9e46a03a0c7cacfa7d4268dcd8f45ae5}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_set\_clear\_color@{pg\_set\_clear\_color}}
+\index{pg\_set\_clear\_color@{pg\_set\_clear\_color}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_set\_clear\_color()}{pg\_set\_clear\_color()}}
+{\footnotesize\ttfamily void pg\+\_\+set\+\_\+clear\+\_\+color (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{float}]{r,  }\item[{float}]{g,  }\item[{float}]{b,  }\item[{float}]{a }\end{DoxyParamCaption})}
+
+
+
+Sets the clear color state to be placed at the top of the state stack. 
+
+\mbox{\Hypertarget{pico__gfx_8h_a71b10ead99c0486c9a2105c622c46595}\label{pico__gfx_8h_a71b10ead99c0486c9a2105c622c46595}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_reset\_clear\_color@{pg\_reset\_clear\_color}}
+\index{pg\_reset\_clear\_color@{pg\_reset\_clear\_color}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_reset\_clear\_color()}{pg\_reset\_clear\_color()}}
+{\footnotesize\ttfamily void pg\+\_\+reset\+\_\+clear\+\_\+color (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$}]{ctx }\end{DoxyParamCaption})}
+
+Resets the clear color \mbox{\Hypertarget{pico__gfx_8h_aaa85cb931eaf161abff1548c8f558021}\label{pico__gfx_8h_aaa85cb931eaf161abff1548c8f558021}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_set\_viewport@{pg\_set\_viewport}}
+\index{pg\_set\_viewport@{pg\_set\_viewport}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_set\_viewport()}{pg\_set\_viewport()}}
+{\footnotesize\ttfamily void pg\+\_\+set\+\_\+viewport (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{w,  }\item[{int}]{h }\end{DoxyParamCaption})}
+
+
+
+Sets the viewport state to be placed at the top of the state stack. 
+
+\mbox{\Hypertarget{pico__gfx_8h_a8e8a8aae6ec6129061973c55398054b4}\label{pico__gfx_8h_a8e8a8aae6ec6129061973c55398054b4}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_reset\_viewport@{pg\_reset\_viewport}}
+\index{pg\_reset\_viewport@{pg\_reset\_viewport}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_reset\_viewport()}{pg\_reset\_viewport()}}
+{\footnotesize\ttfamily void pg\+\_\+reset\+\_\+viewport (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$}]{ctx }\end{DoxyParamCaption})}
+
+Resets the viewport \mbox{\Hypertarget{pico__gfx_8h_a3f728a986e245967e65ba85b1946929b}\label{pico__gfx_8h_a3f728a986e245967e65ba85b1946929b}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_set\_scissor@{pg\_set\_scissor}}
+\index{pg\_set\_scissor@{pg\_set\_scissor}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_set\_scissor()}{pg\_set\_scissor()}}
+{\footnotesize\ttfamily void pg\+\_\+set\+\_\+scissor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{w,  }\item[{int}]{h }\end{DoxyParamCaption})}
+
+
+
+Sets the scissor state to be placed at the top of the state stack. 
+
+\mbox{\Hypertarget{pico__gfx_8h_a953290a20d7938606b85a34173181183}\label{pico__gfx_8h_a953290a20d7938606b85a34173181183}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_reset\_scissor@{pg\_reset\_scissor}}
+\index{pg\_reset\_scissor@{pg\_reset\_scissor}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_reset\_scissor()}{pg\_reset\_scissor()}}
+{\footnotesize\ttfamily void pg\+\_\+reset\+\_\+scissor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$}]{ctx }\end{DoxyParamCaption})}
+
+Resets the scissor \mbox{\Hypertarget{pico__gfx_8h_a28da19ac7f32cd00be5bd1393e8a2158}\label{pico__gfx_8h_a28da19ac7f32cd00be5bd1393e8a2158}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_set\_pipeline@{pg\_set\_pipeline}}
+\index{pg\_set\_pipeline@{pg\_set\_pipeline}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_set\_pipeline()}{pg\_set\_pipeline()}}
+{\footnotesize\ttfamily void pg\+\_\+set\+\_\+pipeline (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{pico__gfx_8h_a692e7a3a2bac623e8ad5cb6890aba684}{pg\+\_\+pipeline\+\_\+t}} $\ast$}]{pipeline }\end{DoxyParamCaption})}
+
+
+
+Sets the pipeline state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & The graphics context \\
+\hline
+{\em pipeline} & The pipeline to be activated \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pico__gfx_8h_abe1925519988009b43288f0ea8e26148}\label{pico__gfx_8h_abe1925519988009b43288f0ea8e26148}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_reset\_pipeline@{pg\_reset\_pipeline}}
+\index{pg\_reset\_pipeline@{pg\_reset\_pipeline}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_reset\_pipeline()}{pg\_reset\_pipeline()}}
+{\footnotesize\ttfamily void pg\+\_\+reset\+\_\+pipeline (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$}]{ctx }\end{DoxyParamCaption})}
+
+Resets the pipeline \mbox{\Hypertarget{pico__gfx_8h_ad72760ccd8cbdea2c3f477c30808602f}\label{pico__gfx_8h_ad72760ccd8cbdea2c3f477c30808602f}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_bind\_buffer@{pg\_bind\_buffer}}
+\index{pg\_bind\_buffer@{pg\_bind\_buffer}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_bind\_buffer()}{pg\_bind\_buffer()}}
+{\footnotesize\ttfamily void pg\+\_\+bind\+\_\+buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{int}]{slot,  }\item[{\mbox{\hyperlink{pico__gfx_8h_a8e7ea5ce0722842a16a1127f41b1e3e6}{pg\+\_\+buffer\+\_\+t}} $\ast$}]{buffer }\end{DoxyParamCaption})}
+
+
+
+Binds a buffer to the specified slot. 
+
+\mbox{\Hypertarget{pico__gfx_8h_a3f2c4b81caf990079c4d9a83b6500689}\label{pico__gfx_8h_a3f2c4b81caf990079c4d9a83b6500689}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_reset\_buffers@{pg\_reset\_buffers}}
+\index{pg\_reset\_buffers@{pg\_reset\_buffers}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_reset\_buffers()}{pg\_reset\_buffers()}}
+{\footnotesize\ttfamily void pg\+\_\+reset\+\_\+buffers (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$}]{ctx }\end{DoxyParamCaption})}
+
+
+
+Clears buffer bindings. 
+
+\mbox{\Hypertarget{pico__gfx_8h_ae4e067b7c9e49e5315c1b6549a316e3c}\label{pico__gfx_8h_ae4e067b7c9e49e5315c1b6549a316e3c}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_set\_index\_buffer@{pg\_set\_index\_buffer}}
+\index{pg\_set\_index\_buffer@{pg\_set\_index\_buffer}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_set\_index\_buffer()}{pg\_set\_index\_buffer()}}
+{\footnotesize\ttfamily void pg\+\_\+set\+\_\+index\+\_\+buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{pico__gfx_8h_a8e7ea5ce0722842a16a1127f41b1e3e6}{pg\+\_\+buffer\+\_\+t}} $\ast$}]{buffer }\end{DoxyParamCaption})}
+
+
+
+Sets the active index buffer. 
+
+If an index buffer is set, pg\+\_\+draw will use indexing. \mbox{\Hypertarget{pico__gfx_8h_afd0699c5d7b9cb8db29347b3a1ad5c6f}\label{pico__gfx_8h_afd0699c5d7b9cb8db29347b3a1ad5c6f}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_reset\_index\_buffer@{pg\_reset\_index\_buffer}}
+\index{pg\_reset\_index\_buffer@{pg\_reset\_index\_buffer}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_reset\_index\_buffer()}{pg\_reset\_index\_buffer()}}
+{\footnotesize\ttfamily void pg\+\_\+reset\+\_\+index\+\_\+buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$}]{ctx }\end{DoxyParamCaption})}
+
+
+
+Disables indexed rednering. 
+
+\mbox{\Hypertarget{pico__gfx_8h_ae3432311bab43c9d397bfa8c4e659ed1}\label{pico__gfx_8h_ae3432311bab43c9d397bfa8c4e659ed1}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_bind\_texture@{pg\_bind\_texture}}
+\index{pg\_bind\_texture@{pg\_bind\_texture}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_bind\_texture()}{pg\_bind\_texture()}}
+{\footnotesize\ttfamily void pg\+\_\+bind\+\_\+texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__gfx_8h_ab527ff3e9b4d08c7c3c0362ff6b61758}{pg\+\_\+shader\+\_\+t}} $\ast$}]{shader,  }\item[{const char $\ast$}]{name,  }\item[{\mbox{\hyperlink{pico__gfx_8h_ab40e9a805eeea8c9dc969574ef82730e}{pg\+\_\+texture\+\_\+t}} $\ast$}]{texture }\end{DoxyParamCaption})}
+
+
+
+Binds a texture to a slot in the current state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader} & The shader associated with the texture \\
+\hline
+{\em slot} & The binding slot \\
+\hline
+{\em texture} & The texture to bind \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pico__gfx_8h_a13d32c59ac18c44c87d0f225c5e7da18}\label{pico__gfx_8h_a13d32c59ac18c44c87d0f225c5e7da18}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_reset\_textures@{pg\_reset\_textures}}
+\index{pg\_reset\_textures@{pg\_reset\_textures}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_reset\_textures()}{pg\_reset\_textures()}}
+{\footnotesize\ttfamily void pg\+\_\+reset\+\_\+textures (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__gfx_8h_ab527ff3e9b4d08c7c3c0362ff6b61758}{pg\+\_\+shader\+\_\+t}} $\ast$}]{shader }\end{DoxyParamCaption})}
+
+
+
+Resets the texture bindings for the current state. 
+
+\mbox{\Hypertarget{pico__gfx_8h_aa3841b31fef3e9cb0c375e45ba3006c0}\label{pico__gfx_8h_aa3841b31fef3e9cb0c375e45ba3006c0}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_bind\_sampler@{pg\_bind\_sampler}}
+\index{pg\_bind\_sampler@{pg\_bind\_sampler}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_bind\_sampler()}{pg\_bind\_sampler()}}
+{\footnotesize\ttfamily void pg\+\_\+bind\+\_\+sampler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__gfx_8h_ab527ff3e9b4d08c7c3c0362ff6b61758}{pg\+\_\+shader\+\_\+t}} $\ast$}]{shader,  }\item[{const char $\ast$}]{name,  }\item[{\mbox{\hyperlink{pico__gfx_8h_a09e5f14b79c2ac65c1c7e538001cf034}{pg\+\_\+sampler\+\_\+t}} $\ast$}]{sampler }\end{DoxyParamCaption})}
+
+
+
+Binds a sampler to a slot in the current state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader} & The shader associated with the sampler \\
+\hline
+{\em slot} & The binding slot \\
+\hline
+{\em sampler} & The sampler to bind \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pico__gfx_8h_a49f7c4c7a9b00840535472445d2eb999}\label{pico__gfx_8h_a49f7c4c7a9b00840535472445d2eb999}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_reset\_samplers@{pg\_reset\_samplers}}
+\index{pg\_reset\_samplers@{pg\_reset\_samplers}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_reset\_samplers()}{pg\_reset\_samplers()}}
+{\footnotesize\ttfamily void pg\+\_\+reset\+\_\+samplers (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__gfx_8h_ab527ff3e9b4d08c7c3c0362ff6b61758}{pg\+\_\+shader\+\_\+t}} $\ast$}]{shader }\end{DoxyParamCaption})}
+
+
+
+Resets the sampler bindings for the current state. 
+
+\mbox{\Hypertarget{pico__gfx_8h_a3db1909d1c60627027fb7cb11f04c7e1}\label{pico__gfx_8h_a3db1909d1c60627027fb7cb11f04c7e1}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_reset\_state@{pg\_reset\_state}}
+\index{pg\_reset\_state@{pg\_reset\_state}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_reset\_state()}{pg\_reset\_state()}}
+{\footnotesize\ttfamily void pg\+\_\+reset\+\_\+state (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$}]{ctx }\end{DoxyParamCaption})}
+
+
+
+Resets the active state to defaults. 
+
+\mbox{\Hypertarget{pico__gfx_8h_ac9064b0d4f979b324b99a66cf23fc563}\label{pico__gfx_8h_ac9064b0d4f979b324b99a66cf23fc563}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_destroy\_shader@{pg\_destroy\_shader}}
+\index{pg\_destroy\_shader@{pg\_destroy\_shader}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_destroy\_shader()}{pg\_destroy\_shader()}}
+{\footnotesize\ttfamily void pg\+\_\+destroy\+\_\+shader (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__gfx_8h_ab527ff3e9b4d08c7c3c0362ff6b61758}{pg\+\_\+shader\+\_\+t}} $\ast$}]{shader }\end{DoxyParamCaption})}
+
+
+
+Destroys a shader. 
+
+\mbox{\Hypertarget{pico__gfx_8h_a42e2ee05909a747a473b70d647256bae}\label{pico__gfx_8h_a42e2ee05909a747a473b70d647256bae}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_get\_shader\_id@{pg\_get\_shader\_id}}
+\index{pg\_get\_shader\_id@{pg\_get\_shader\_id}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_get\_shader\_id()}{pg\_get\_shader\_id()}}
+{\footnotesize\ttfamily uint32\+\_\+t pg\+\_\+get\+\_\+shader\+\_\+id (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{pico__gfx_8h_ab527ff3e9b4d08c7c3c0362ff6b61758}{pg\+\_\+shader\+\_\+t}} $\ast$}]{shader }\end{DoxyParamCaption})}
+
+
+
+Returns a shader ID. 
+
+\mbox{\Hypertarget{pico__gfx_8h_a1e923f38d458d7d3d387e9d2b8f8e277}\label{pico__gfx_8h_a1e923f38d458d7d3d387e9d2b8f8e277}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_alloc\_uniform\_block@{pg\_alloc\_uniform\_block}}
+\index{pg\_alloc\_uniform\_block@{pg\_alloc\_uniform\_block}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_alloc\_uniform\_block()}{pg\_alloc\_uniform\_block()}}
+{\footnotesize\ttfamily void pg\+\_\+alloc\+\_\+uniform\+\_\+block (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__gfx_8h_ab527ff3e9b4d08c7c3c0362ff6b61758}{pg\+\_\+shader\+\_\+t}} $\ast$}]{shader,  }\item[{\mbox{\hyperlink{pico__gfx_8h_a0bd24ab05e613d2facc0f906d1d40802}{pg\+\_\+stage\+\_\+t}}}]{stage,  }\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+
+
+Registers a uniform block (UB) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader} & The shader owning the UB \\
+\hline
+{\em stage} & The stage (VS or FS) associated with the UB \\
+\hline
+{\em name} & The name of the UB as supplied by {\ttfamily sokol\+\_\+shdc} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pico__gfx_8h_a48764342340787e8b7cda415faadf5cd}\label{pico__gfx_8h_a48764342340787e8b7cda415faadf5cd}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_set\_uniform\_block@{pg\_set\_uniform\_block}}
+\index{pg\_set\_uniform\_block@{pg\_set\_uniform\_block}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_set\_uniform\_block()}{pg\_set\_uniform\_block()}}
+{\footnotesize\ttfamily void pg\+\_\+set\+\_\+uniform\+\_\+block (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__gfx_8h_ab527ff3e9b4d08c7c3c0362ff6b61758}{pg\+\_\+shader\+\_\+t}} $\ast$}]{shader,  }\item[{const char $\ast$}]{name,  }\item[{const void $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Sets a uniform block (UB) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader} & The shader owning the UB \\
+\hline
+{\em name} & The name of the UB as supplied by {\ttfamily sokol\+\_\+shdc} \\
+\hline
+{\em data} & The data to set (must be the whole UB) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pico__gfx_8h_ab9b924d21240581be8ffd96e5228971d}\label{pico__gfx_8h_ab9b924d21240581be8ffd96e5228971d}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_create\_pipeline@{pg\_create\_pipeline}}
+\index{pg\_create\_pipeline@{pg\_create\_pipeline}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_create\_pipeline()}{pg\_create\_pipeline()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pico__gfx_8h_a692e7a3a2bac623e8ad5cb6890aba684}{pg\+\_\+pipeline\+\_\+t}}$\ast$ pg\+\_\+create\+\_\+pipeline (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{pico__gfx_8h_ab527ff3e9b4d08c7c3c0362ff6b61758}{pg\+\_\+shader\+\_\+t}} $\ast$}]{shader,  }\item[{const \mbox{\hyperlink{structpg__pipeline__opts__t}{pg\+\_\+pipeline\+\_\+opts\+\_\+t}} $\ast$}]{opts }\end{DoxyParamCaption})}
+
+
+
+Creates a rendering pipeline (encapsulates render state) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader} & The shader used by this pipeline \\
+\hline
+{\em opts} & Pipeline creation options (required!) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A render pipeline object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pico__gfx_8h_a983c62d0e2fb83d46e7044f6b07d6273}\label{pico__gfx_8h_a983c62d0e2fb83d46e7044f6b07d6273}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_destroy\_pipeline@{pg\_destroy\_pipeline}}
+\index{pg\_destroy\_pipeline@{pg\_destroy\_pipeline}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_destroy\_pipeline()}{pg\_destroy\_pipeline()}}
+{\footnotesize\ttfamily void pg\+\_\+destroy\+\_\+pipeline (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__gfx_8h_a692e7a3a2bac623e8ad5cb6890aba684}{pg\+\_\+pipeline\+\_\+t}} $\ast$}]{pipeline }\end{DoxyParamCaption})}
+
+
+
+Destroys a render pipeline. 
+
+\mbox{\Hypertarget{pico__gfx_8h_a6ab347eddd14ca354d0da90feabfcddb}\label{pico__gfx_8h_a6ab347eddd14ca354d0da90feabfcddb}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_get\_pipeline\_shader@{pg\_get\_pipeline\_shader}}
+\index{pg\_get\_pipeline\_shader@{pg\_get\_pipeline\_shader}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_get\_pipeline\_shader()}{pg\_get\_pipeline\_shader()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pico__gfx_8h_ab527ff3e9b4d08c7c3c0362ff6b61758}{pg\+\_\+shader\+\_\+t}}$\ast$ pg\+\_\+get\+\_\+pipeline\+\_\+shader (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{pico__gfx_8h_a692e7a3a2bac623e8ad5cb6890aba684}{pg\+\_\+pipeline\+\_\+t}} $\ast$}]{pipeline }\end{DoxyParamCaption})}
+
+
+
+Returns the shader associated with the pipeline. 
+
+\mbox{\Hypertarget{pico__gfx_8h_a4252570936922f5483c9861a363f42da}\label{pico__gfx_8h_a4252570936922f5483c9861a363f42da}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_create\_texture@{pg\_create\_texture}}
+\index{pg\_create\_texture@{pg\_create\_texture}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_create\_texture()}{pg\_create\_texture()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pico__gfx_8h_ab40e9a805eeea8c9dc969574ef82730e}{pg\+\_\+texture\+\_\+t}}$\ast$ pg\+\_\+create\+\_\+texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{const uint8\+\_\+t $\ast$}]{data,  }\item[{size\+\_\+t}]{size,  }\item[{const \mbox{\hyperlink{structpg__texture__opts__t}{pg\+\_\+texture\+\_\+opts\+\_\+t}} $\ast$}]{opts }\end{DoxyParamCaption})}
+
+
+
+Creates a texture from an RGBA8 image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & Image width \\
+\hline
+{\em height} & Image height \\
+\hline
+{\em data} & Image data (format must be RGBA8) \\
+\hline
+{\em size} & Size of the data in bytes \\
+\hline
+{\em opts} & Texture creation options (NULL for defaults) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A texture created from a bitmap 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pico__gfx_8h_a002709c0ec2957f18b8efd9f2654c08a}\label{pico__gfx_8h_a002709c0ec2957f18b8efd9f2654c08a}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_create\_render\_texture@{pg\_create\_render\_texture}}
+\index{pg\_create\_render\_texture@{pg\_create\_render\_texture}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_create\_render\_texture()}{pg\_create\_render\_texture()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pico__gfx_8h_ab40e9a805eeea8c9dc969574ef82730e}{pg\+\_\+texture\+\_\+t}}$\ast$ pg\+\_\+create\+\_\+render\+\_\+texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{const \mbox{\hyperlink{structpg__texture__opts__t}{pg\+\_\+texture\+\_\+opts\+\_\+t}} $\ast$}]{opts }\end{DoxyParamCaption})}
+
+
+
+Creates a render target. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & Render target width \\
+\hline
+{\em height} & Render target height \\
+\hline
+{\em opts} & Texture creation options (NULL for defaults) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A render texture 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pico__gfx_8h_a12003a86c180e594a8f3f13fc4cd93ec}\label{pico__gfx_8h_a12003a86c180e594a8f3f13fc4cd93ec}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_destroy\_texture@{pg\_destroy\_texture}}
+\index{pg\_destroy\_texture@{pg\_destroy\_texture}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_destroy\_texture()}{pg\_destroy\_texture()}}
+{\footnotesize\ttfamily void pg\+\_\+destroy\+\_\+texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__gfx_8h_ab40e9a805eeea8c9dc969574ef82730e}{pg\+\_\+texture\+\_\+t}} $\ast$}]{texture }\end{DoxyParamCaption})}
+
+
+
+Destroys a texture. 
+
+\mbox{\Hypertarget{pico__gfx_8h_af6023fb8060f0c86f9fa0865b16544e6}\label{pico__gfx_8h_af6023fb8060f0c86f9fa0865b16544e6}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_get\_texture\_id@{pg\_get\_texture\_id}}
+\index{pg\_get\_texture\_id@{pg\_get\_texture\_id}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_get\_texture\_id()}{pg\_get\_texture\_id()}}
+{\footnotesize\ttfamily uint32\+\_\+t pg\+\_\+get\+\_\+texture\+\_\+id (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{pico__gfx_8h_ab40e9a805eeea8c9dc969574ef82730e}{pg\+\_\+texture\+\_\+t}} $\ast$}]{texture }\end{DoxyParamCaption})}
+
+
+
+Returns a texture ID. 
+
+\mbox{\Hypertarget{pico__gfx_8h_a62ce3926ad2211b7463309565e32e787}\label{pico__gfx_8h_a62ce3926ad2211b7463309565e32e787}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_get\_texture\_size@{pg\_get\_texture\_size}}
+\index{pg\_get\_texture\_size@{pg\_get\_texture\_size}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_get\_texture\_size()}{pg\_get\_texture\_size()}}
+{\footnotesize\ttfamily void pg\+\_\+get\+\_\+texture\+\_\+size (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{pico__gfx_8h_ab40e9a805eeea8c9dc969574ef82730e}{pg\+\_\+texture\+\_\+t}} $\ast$}]{texture,  }\item[{int $\ast$}]{width,  }\item[{int $\ast$}]{height }\end{DoxyParamCaption})}
+
+
+
+Gets a texture\textquotesingle{}s dimensions. 
+
+\mbox{\Hypertarget{pico__gfx_8h_abf87be1801c84393441e9a974ebd94c2}\label{pico__gfx_8h_abf87be1801c84393441e9a974ebd94c2}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_update\_texture@{pg\_update\_texture}}
+\index{pg\_update\_texture@{pg\_update\_texture}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_update\_texture()}{pg\_update\_texture()}}
+{\footnotesize\ttfamily void pg\+\_\+update\+\_\+texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__gfx_8h_ab40e9a805eeea8c9dc969574ef82730e}{pg\+\_\+texture\+\_\+t}} $\ast$}]{texture,  }\item[{char $\ast$}]{data,  }\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})}
+
+
+
+Updates a texture with the given data. This can only be called once per frame. 
+
+\mbox{\Hypertarget{pico__gfx_8h_a041e5873269f3b8cb7bdb36065f9c6f4}\label{pico__gfx_8h_a041e5873269f3b8cb7bdb36065f9c6f4}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_create\_sampler@{pg\_create\_sampler}}
+\index{pg\_create\_sampler@{pg\_create\_sampler}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_create\_sampler()}{pg\_create\_sampler()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pico__gfx_8h_a09e5f14b79c2ac65c1c7e538001cf034}{pg\+\_\+sampler\+\_\+t}}$\ast$ pg\+\_\+create\+\_\+sampler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{const \mbox{\hyperlink{structpg__sampler__opts__t}{pg\+\_\+sampler\+\_\+opts\+\_\+t}} $\ast$}]{opts }\end{DoxyParamCaption})}
+
+
+
+Creates a sampler represents an object that can control how shaders transform and filter texture resource data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em opts} & Sampler options \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pico__gfx_8h_af1f7deb4a7c7512634be4e43ede6da7a}\label{pico__gfx_8h_af1f7deb4a7c7512634be4e43ede6da7a}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_destroy\_sampler@{pg\_destroy\_sampler}}
+\index{pg\_destroy\_sampler@{pg\_destroy\_sampler}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_destroy\_sampler()}{pg\_destroy\_sampler()}}
+{\footnotesize\ttfamily void pg\+\_\+destroy\+\_\+sampler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__gfx_8h_a09e5f14b79c2ac65c1c7e538001cf034}{pg\+\_\+sampler\+\_\+t}} $\ast$}]{sampler }\end{DoxyParamCaption})}
+
+
+
+Destroys a sampler object. 
+
+\mbox{\Hypertarget{pico__gfx_8h_a232a717375e0969f9e91d4da9e84e2ff}\label{pico__gfx_8h_a232a717375e0969f9e91d4da9e84e2ff}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_create\_vertex\_buffer@{pg\_create\_vertex\_buffer}}
+\index{pg\_create\_vertex\_buffer@{pg\_create\_vertex\_buffer}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_create\_vertex\_buffer()}{pg\_create\_vertex\_buffer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pico__gfx_8h_a8e7ea5ce0722842a16a1127f41b1e3e6}{pg\+\_\+buffer\+\_\+t}}$\ast$ pg\+\_\+create\+\_\+vertex\+\_\+buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{pico__gfx_8h_a1b3b7c5599861780b7eca429e5e47042}{pg\+\_\+buffer\+\_\+usage\+\_\+t}}}]{usage,  }\item[{const void $\ast$}]{data,  }\item[{size\+\_\+t}]{count,  }\item[{size\+\_\+t}]{max\+\_\+elements,  }\item[{size\+\_\+t}]{element\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+Creates a vertex buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em usage} & Determines whether the buffer is static, dynamic, or streaming \\
+\hline
+{\em data} & Vertex data elements (can be NULL) \\
+\hline
+{\em count} & The number of elements (can be zero) \\
+\hline
+{\em max\+\_\+elements} & The maximum number of elements in the buffer \\
+\hline
+{\em element\+\_\+size} & The size (in bytes) of each individual element \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pico__gfx_8h_a0573c90cb0943fd1a1eec6f2be4fffe3}\label{pico__gfx_8h_a0573c90cb0943fd1a1eec6f2be4fffe3}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_create\_index\_buffer@{pg\_create\_index\_buffer}}
+\index{pg\_create\_index\_buffer@{pg\_create\_index\_buffer}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_create\_index\_buffer()}{pg\_create\_index\_buffer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pico__gfx_8h_a8e7ea5ce0722842a16a1127f41b1e3e6}{pg\+\_\+buffer\+\_\+t}}$\ast$ pg\+\_\+create\+\_\+index\+\_\+buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{pico__gfx_8h_a1b3b7c5599861780b7eca429e5e47042}{pg\+\_\+buffer\+\_\+usage\+\_\+t}}}]{usage,  }\item[{const void $\ast$}]{data,  }\item[{size\+\_\+t}]{count,  }\item[{size\+\_\+t}]{max\+\_\+elements }\end{DoxyParamCaption})}
+
+
+
+Creates a vertex buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em usage} & Determines whether the buffer is static, dynamic, or streaming \\
+\hline
+{\em data} & Index data (can be NULL) \\
+\hline
+{\em count} & The number of indices (can be zero) \\
+\hline
+{\em max\+\_\+elements} & The maximum number of indices in the buffer \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pico__gfx_8h_ab0c5d6def8656c6e6284700ae4588de8}\label{pico__gfx_8h_ab0c5d6def8656c6e6284700ae4588de8}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_destroy\_buffer@{pg\_destroy\_buffer}}
+\index{pg\_destroy\_buffer@{pg\_destroy\_buffer}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_destroy\_buffer()}{pg\_destroy\_buffer()}}
+{\footnotesize\ttfamily void pg\+\_\+destroy\+\_\+buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__gfx_8h_a8e7ea5ce0722842a16a1127f41b1e3e6}{pg\+\_\+buffer\+\_\+t}} $\ast$}]{buffer }\end{DoxyParamCaption})}
+
+
+
+Destroys a vertex or index buffer. 
+
+\mbox{\Hypertarget{pico__gfx_8h_adac67fddfccc53c0b5486f1ffde77310}\label{pico__gfx_8h_adac67fddfccc53c0b5486f1ffde77310}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_update\_buffer@{pg\_update\_buffer}}
+\index{pg\_update\_buffer@{pg\_update\_buffer}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_update\_buffer()}{pg\_update\_buffer()}}
+{\footnotesize\ttfamily void pg\+\_\+update\+\_\+buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__gfx_8h_a8e7ea5ce0722842a16a1127f41b1e3e6}{pg\+\_\+buffer\+\_\+t}} $\ast$}]{buffer,  }\item[{void $\ast$}]{data,  }\item[{size\+\_\+t}]{count }\end{DoxyParamCaption})}
+
+Replaces the data in a buffer. This may only happen once per frame and cannot happen after appending data \mbox{\Hypertarget{pico__gfx_8h_ac01d2f4e4abb6d484698a7271d6e7456}\label{pico__gfx_8h_ac01d2f4e4abb6d484698a7271d6e7456}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_append\_buffer@{pg\_append\_buffer}}
+\index{pg\_append\_buffer@{pg\_append\_buffer}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_append\_buffer()}{pg\_append\_buffer()}}
+{\footnotesize\ttfamily int pg\+\_\+append\+\_\+buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__gfx_8h_a8e7ea5ce0722842a16a1127f41b1e3e6}{pg\+\_\+buffer\+\_\+t}} $\ast$}]{buffer,  }\item[{void $\ast$}]{data,  }\item[{size\+\_\+t}]{count }\end{DoxyParamCaption})}
+
+
+
+Appends data to a buffer. This can happen more than once per frame, and cannot happen after an update. 
+
+\mbox{\Hypertarget{pico__gfx_8h_a2a494b8ec0192b9c0c7a62a5d02b0635}\label{pico__gfx_8h_a2a494b8ec0192b9c0c7a62a5d02b0635}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_get\_buffer\_offset@{pg\_get\_buffer\_offset}}
+\index{pg\_get\_buffer\_offset@{pg\_get\_buffer\_offset}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_get\_buffer\_offset()}{pg\_get\_buffer\_offset()}}
+{\footnotesize\ttfamily int pg\+\_\+get\+\_\+buffer\+\_\+offset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__gfx_8h_a8e7ea5ce0722842a16a1127f41b1e3e6}{pg\+\_\+buffer\+\_\+t}} $\ast$}]{buffer }\end{DoxyParamCaption})}
+
+
+
+Returns the buffer offset. 
+
+\mbox{\Hypertarget{pico__gfx_8h_ac8eea3c2177c8e6d1b7dd9c1b9c2e07c}\label{pico__gfx_8h_ac8eea3c2177c8e6d1b7dd9c1b9c2e07c}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_set\_buffer\_offset@{pg\_set\_buffer\_offset}}
+\index{pg\_set\_buffer\_offset@{pg\_set\_buffer\_offset}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_set\_buffer\_offset()}{pg\_set\_buffer\_offset()}}
+{\footnotesize\ttfamily void pg\+\_\+set\+\_\+buffer\+\_\+offset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__gfx_8h_a8e7ea5ce0722842a16a1127f41b1e3e6}{pg\+\_\+buffer\+\_\+t}} $\ast$}]{buffer,  }\item[{int}]{offset }\end{DoxyParamCaption})}
+
+
+
+Sets the buffer offset. 
+
+\mbox{\Hypertarget{pico__gfx_8h_a504dc065d05734b107f5719a2613ed75}\label{pico__gfx_8h_a504dc065d05734b107f5719a2613ed75}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_reset\_buffer@{pg\_reset\_buffer}}
+\index{pg\_reset\_buffer@{pg\_reset\_buffer}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_reset\_buffer()}{pg\_reset\_buffer()}}
+{\footnotesize\ttfamily void pg\+\_\+reset\+\_\+buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__gfx_8h_a8e7ea5ce0722842a16a1127f41b1e3e6}{pg\+\_\+buffer\+\_\+t}} $\ast$}]{buffer }\end{DoxyParamCaption})}
+
+
+
+Destroys and recreates buffer. 
+
+\mbox{\Hypertarget{pico__gfx_8h_a1c814bbdee9e49deba04355a986d05c9}\label{pico__gfx_8h_a1c814bbdee9e49deba04355a986d05c9}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_draw@{pg\_draw}}
+\index{pg\_draw@{pg\_draw}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_draw()}{pg\_draw()}}
+{\footnotesize\ttfamily void pg\+\_\+draw (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{size\+\_\+t}]{start,  }\item[{size\+\_\+t}]{count,  }\item[{size\+\_\+t}]{instances }\end{DoxyParamCaption})}
+
+
+
+Draws from the buffers that are bound to the current state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & The graphics context \\
+\hline
+{\em start} & The position of the first element \\
+\hline
+{\em count} & The number of elements to draw \\
+\hline
+{\em instances} & The number of instances \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pico__gfx_8h_add4d7156e35b6c3c6bddc75462d1e0d8}\label{pico__gfx_8h_add4d7156e35b6c3c6bddc75462d1e0d8}} 
+\index{pico\_gfx.h@{pico\_gfx.h}!pg\_create\_shader\_internal@{pg\_create\_shader\_internal}}
+\index{pg\_create\_shader\_internal@{pg\_create\_shader\_internal}!pico\_gfx.h@{pico\_gfx.h}}
+\doxysubsubsection{\texorpdfstring{pg\_create\_shader\_internal()}{pg\_create\_shader\_internal()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pico__gfx_8h_ab527ff3e9b4d08c7c3c0362ff6b61758}{pg\+\_\+shader\+\_\+t}}$\ast$ pg\+\_\+create\+\_\+shader\+\_\+internal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__gfx_8h_acce49146fed834375407e4886a5d761a}{pg\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{structpg__shader__internal__t}{pg\+\_\+shader\+\_\+internal\+\_\+t}}}]{internal }\end{DoxyParamCaption})}
+

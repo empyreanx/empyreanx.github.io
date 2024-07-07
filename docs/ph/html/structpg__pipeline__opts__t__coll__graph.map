@@ -1,0 +1,7 @@
+<map id="pg_pipeline_opts_t" name="pg_pipeline_opts_t">
+<area shape="rect" id="node1" title="Pipeline creation options." alt="" coords="38,184,182,211"/>
+<area shape="rect" id="node2" href="$structpg__blend__mode__t.html" title="Blend mode." alt="" coords="5,95,143,121"/>
+<area shape="rect" id="node3" href="$structpg__pipeline__layout__t.html" title="Pipeline layout." alt="" coords="167,95,325,121"/>
+<area shape="rect" id="node4" href="$structpg__vertex__attr__t.html" title="Vertex attribute description." alt="" coords="105,5,235,32"/>
+<area shape="rect" id="node5" href="$structpg__vertex__buf__t.html" title="Vertex buffer description." alt="" coords="259,5,385,32"/>
+</map>

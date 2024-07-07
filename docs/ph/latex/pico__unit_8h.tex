@@ -1,0 +1,305 @@
+\hypertarget{pico__unit_8h}{}\doxysection{pico\+\_\+unit.\+h File Reference}
+\label{pico__unit_8h}\index{pico\_unit.h@{pico\_unit.h}}
+
+
+A bare-\/bones unit testing framework written in C99.  
+
+
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+Include dependency graph for pico\+\_\+unit.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{pico__unit_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pico__unit_8h_a8bc255ff55721571e878568d2b5dcb35}{TEST\+\_\+\+CASE}}(name)~static bool name(void)
+\begin{DoxyCompactList}\small\item\em Defines a unit test. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{pico__unit_8h_ad9f2db71e103991db7d6f001a955285f}{REQUIRE}}(expr)
+\begin{DoxyCompactList}\small\item\em Asserts that a condition is true. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{pico__unit_8h_a618bdc12228e9458f734380fdc719842}{RUN\+\_\+\+TEST\+\_\+\+CASE}}(test\+\_\+fp)~(\mbox{\hyperlink{pico__unit_8h_a4f7e8e5cdbb28b2fcc1669cba6b8c09d}{pu\+\_\+run\+\_\+test}}(\#test\+\_\+fp, test\+\_\+fp))
+\begin{DoxyCompactList}\small\item\em Runs a unit test function. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{pico__unit_8h_a1dcc30e04987b50d0b98ad113ef0e6fc}{TEST\+\_\+\+SUITE}}(name)~void name(void)
+\begin{DoxyCompactList}\small\item\em Declares a test suite. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{pico__unit_8h_a56eb1aa2c407d02d99d3d687f110fa48}{RUN\+\_\+\+TEST\+\_\+\+SUITE}}(suite\+\_\+fp)~\mbox{\hyperlink{pico__unit_8h_a6b34c80d1840604e48f564ab4b0e5089}{pu\+\_\+run\+\_\+suite}}(\#suite\+\_\+fp, suite\+\_\+fp)
+\begin{DoxyCompactList}\small\item\em Runs a series of unit tests. The test suite function has the signature, {\ttfamily void suite\+\_\+func(void)}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \mbox{\hyperlink{pico__unit_8h_ab4f6307484d15f2c4b5d0c5286ee9b0f}{pu\+\_\+setup\+\_\+fn}}) (void)
+\begin{DoxyCompactList}\small\item\em Functions that are run before or after a number of unit tests execute. \end{DoxyCompactList}\item 
+typedef bool($\ast$ \mbox{\hyperlink{pico__unit_8h_a428a3a0ab00bc146b6e45bb14fecb648}{pu\+\_\+test\+\_\+fn}}) (void)
+\item 
+typedef void($\ast$ \mbox{\hyperlink{pico__unit_8h_a49e764f0764eaa49abddbb4aee0de8a5}{pu\+\_\+suite\+\_\+fn}}) (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{pico__unit_8h_aff17eb6acdeeb7d502343f6358de559e}{pu\+\_\+setup}} (\mbox{\hyperlink{pico__unit_8h_ab4f6307484d15f2c4b5d0c5286ee9b0f}{pu\+\_\+setup\+\_\+fn}} setup\+\_\+fp, \mbox{\hyperlink{pico__unit_8h_ab4f6307484d15f2c4b5d0c5286ee9b0f}{pu\+\_\+setup\+\_\+fn}} teardown\+\_\+fp)
+\begin{DoxyCompactList}\small\item\em Sets the current setup and teardown functions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__unit_8h_a250a4b660703af15d57766048b018b6b}{pu\+\_\+clear\+\_\+setup}} (void)
+\begin{DoxyCompactList}\small\item\em Disables the setup and teardown functions by setting them to {\ttfamily NULL}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__unit_8h_a7c537808dad5d43264819b281551ccba}{pu\+\_\+display\+\_\+colors}} (bool enabled)
+\begin{DoxyCompactList}\small\item\em Turns on terminal colors. NOTE\+: Off by default. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__unit_8h_ab5f99126534446b7058865e6bdabedd0}{pu\+\_\+display\+\_\+time}} (bool enabled)
+\begin{DoxyCompactList}\small\item\em Turns on time measurement. NOTE\+: Off by default. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__unit_8h_a7514088d1d7d27fe6367a8c57e86adaf}{pu\+\_\+print\+\_\+stats}} (void)
+\begin{DoxyCompactList}\small\item\em Prints test statistics. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{pico__unit_8h_ac6f133b933ae38c901347d354fc404ed}{pu\+\_\+test\+\_\+failed}} (void)
+\begin{DoxyCompactList}\small\item\em Check whether at least one test failed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{pico__unit_8h_a713ac79a60331f99d10ef981ac1394f1}{pu\+\_\+require}} (bool passed, const char $\ast$const expr, const char $\ast$const file, int line)
+\begin{DoxyCompactList}\small\item\em Used internally. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__unit_8h_a4f7e8e5cdbb28b2fcc1669cba6b8c09d}{pu\+\_\+run\+\_\+test}} (const char $\ast$const name, \mbox{\hyperlink{pico__unit_8h_a428a3a0ab00bc146b6e45bb14fecb648}{pu\+\_\+test\+\_\+fn}} test\+\_\+fp)
+\begin{DoxyCompactList}\small\item\em Used internally. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__unit_8h_a6b34c80d1840604e48f564ab4b0e5089}{pu\+\_\+run\+\_\+suite}} (const char $\ast$const name, \mbox{\hyperlink{pico__unit_8h_a49e764f0764eaa49abddbb4aee0de8a5}{pu\+\_\+suite\+\_\+fn}} suite\+\_\+fp)
+\begin{DoxyCompactList}\small\item\em Used internally. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A bare-\/bones unit testing framework written in C99. 
+
+\DoxyHorRuler{0}
+ \hypertarget{pico__unit_8h_autotoc_md58}{}\doxysubsubsection{Licensing information at end of header}\label{pico__unit_8h_autotoc_md58}
+\hypertarget{pico__unit_8h_autotoc_md59}{}\doxysubsubsection{Features\+:}\label{pico__unit_8h_autotoc_md59}
+Written in C99 and compatible with C++ Single-\/header for easy integration into any build system Tiny memory and code footprint Simple and minimalistic API All unit tests are run during execution and failures are indicated On demand setup and teardown function support Ability to group tests into test suites Ability to print test statistics Optional color coded output Optional time measurement Permissive licensing (zlib or public domain)\hypertarget{pico__unit_8h_autotoc_md60}{}\doxysubsubsection{Summary\+:}\label{pico__unit_8h_autotoc_md60}
+This library is a minimal unit testing framework. It should compile and run on just about any platform with a standard C99 compiler.
+
+Writing tests is simple\+: 1) Use the TEST\+\_\+\+CASE macro and define the test using using REQUIRE to test boolean expressions; 2) Run the test inside the body of a test suite or other function (e.\+g. main) using RUN\+\_\+\+TEST\+\_\+\+CASE. How you group tests and test suites is entirely up to you.
+
+In order to keep the library portable and nimble, certain features were dispensed with, namely automatic test registration and predicates more complex than REQUIRE. Experience has shown these are not serious defects.
+
+There are a number of display options available\+: color coded output, test elapsed time (unless PICO\+\_\+\+UNIT\+\_\+\+NO\+\_\+\+CLOCK is defined), and printing test statistics.
+
+A test suite is simply a group of tests. These contain calls to RUN\+\_\+\+TEST\+\_\+\+CASE. The advantage of using test suites is that it divides unit tests into logical groups. There are helper macros for declaring and defining test suites. Test suites help with formatting the output and the number of suites shows up in the test statistics. There is also the option to flexibly define setup and teardown functions for groups of tests.
+
+Please see the examples for more details.\hypertarget{pico__unit_8h_autotoc_md61}{}\doxysubsubsection{Usage\+:}\label{pico__unit_8h_autotoc_md61}
+To use this library in your project, add the following
+
+\begin{quote}
+\#define PICO\+\_\+\+UNIT\+\_\+\+IMPLEMENTATION \#include \char`\"{}pico\+\_\+unit.\+h\char`\"{} \end{quote}
+to a source file (once), then simply include the header normally. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{pico__unit_8h_a8bc255ff55721571e878568d2b5dcb35}\label{pico__unit_8h_a8bc255ff55721571e878568d2b5dcb35}} 
+\index{pico\_unit.h@{pico\_unit.h}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!pico\_unit.h@{pico\_unit.h}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE}{TEST\_CASE}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+CASE(\begin{DoxyParamCaption}\item[{}]{name }\end{DoxyParamCaption})~static bool name(void)}
+
+
+
+Defines a unit test. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the test. Must be a valid C function name \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pico__unit_8h_ad9f2db71e103991db7d6f001a955285f}\label{pico__unit_8h_ad9f2db71e103991db7d6f001a955285f}} 
+\index{pico\_unit.h@{pico\_unit.h}!REQUIRE@{REQUIRE}}
+\index{REQUIRE@{REQUIRE}!pico\_unit.h@{pico\_unit.h}}
+\doxysubsubsection{\texorpdfstring{REQUIRE}{REQUIRE}}
+{\footnotesize\ttfamily \#define REQUIRE(\begin{DoxyParamCaption}\item[{}]{expr }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{do}  \{ \(\backslash\)}
+\DoxyCodeLine{        if (!\mbox{\hyperlink{pico__unit_8h_a713ac79a60331f99d10ef981ac1394f1}{pu\_require}}((expr) ? \textcolor{keyword}{true} : \textcolor{keyword}{false}, (\#expr), \_\_FILE\_\_, \_\_LINE\_\_)) \(\backslash\)}
+\DoxyCodeLine{            return \textcolor{keyword}{false}; \(\backslash\)}
+\DoxyCodeLine{    \} \textcolor{keywordflow}{while}(\textcolor{keyword}{false})}
+
+\end{DoxyCode}
+
+
+Asserts that a condition is true. 
+
+Asserts that the given expression evaluates to {\ttfamily true}. If the expression evalutes to {\ttfamily false}, execution of the current test aborts and an error message is displayed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em expr} & The expression to evaluate \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pico__unit_8h_a618bdc12228e9458f734380fdc719842}\label{pico__unit_8h_a618bdc12228e9458f734380fdc719842}} 
+\index{pico\_unit.h@{pico\_unit.h}!RUN\_TEST\_CASE@{RUN\_TEST\_CASE}}
+\index{RUN\_TEST\_CASE@{RUN\_TEST\_CASE}!pico\_unit.h@{pico\_unit.h}}
+\doxysubsubsection{\texorpdfstring{RUN\_TEST\_CASE}{RUN\_TEST\_CASE}}
+{\footnotesize\ttfamily \#define RUN\+\_\+\+TEST\+\_\+\+CASE(\begin{DoxyParamCaption}\item[{}]{test\+\_\+fp }\end{DoxyParamCaption})~(\mbox{\hyperlink{pico__unit_8h_a4f7e8e5cdbb28b2fcc1669cba6b8c09d}{pu\+\_\+run\+\_\+test}}(\#test\+\_\+fp, test\+\_\+fp))}
+
+
+
+Runs a unit test function. 
+
+IMPORTANT\+: The function {\ttfamily test\+\_\+fp} must return {\ttfamily true}. The test function has the signature, {\ttfamily bool test\+\_\+func(void)}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em test\+\_\+fp} & The test function to execute \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pico__unit_8h_a1dcc30e04987b50d0b98ad113ef0e6fc}\label{pico__unit_8h_a1dcc30e04987b50d0b98ad113ef0e6fc}} 
+\index{pico\_unit.h@{pico\_unit.h}!TEST\_SUITE@{TEST\_SUITE}}
+\index{TEST\_SUITE@{TEST\_SUITE}!pico\_unit.h@{pico\_unit.h}}
+\doxysubsubsection{\texorpdfstring{TEST\_SUITE}{TEST\_SUITE}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+SUITE(\begin{DoxyParamCaption}\item[{}]{name }\end{DoxyParamCaption})~void name(void)}
+
+
+
+Declares a test suite. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the test suite \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pico__unit_8h_a56eb1aa2c407d02d99d3d687f110fa48}\label{pico__unit_8h_a56eb1aa2c407d02d99d3d687f110fa48}} 
+\index{pico\_unit.h@{pico\_unit.h}!RUN\_TEST\_SUITE@{RUN\_TEST\_SUITE}}
+\index{RUN\_TEST\_SUITE@{RUN\_TEST\_SUITE}!pico\_unit.h@{pico\_unit.h}}
+\doxysubsubsection{\texorpdfstring{RUN\_TEST\_SUITE}{RUN\_TEST\_SUITE}}
+{\footnotesize\ttfamily \#define RUN\+\_\+\+TEST\+\_\+\+SUITE(\begin{DoxyParamCaption}\item[{}]{suite\+\_\+fp }\end{DoxyParamCaption})~\mbox{\hyperlink{pico__unit_8h_a6b34c80d1840604e48f564ab4b0e5089}{pu\+\_\+run\+\_\+suite}}(\#suite\+\_\+fp, suite\+\_\+fp)}
+
+
+
+Runs a series of unit tests. The test suite function has the signature, {\ttfamily void suite\+\_\+func(void)}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em suite\+\_\+fp} & The test suite function to run \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{pico__unit_8h_ab4f6307484d15f2c4b5d0c5286ee9b0f}\label{pico__unit_8h_ab4f6307484d15f2c4b5d0c5286ee9b0f}} 
+\index{pico\_unit.h@{pico\_unit.h}!pu\_setup\_fn@{pu\_setup\_fn}}
+\index{pu\_setup\_fn@{pu\_setup\_fn}!pico\_unit.h@{pico\_unit.h}}
+\doxysubsubsection{\texorpdfstring{pu\_setup\_fn}{pu\_setup\_fn}}
+{\footnotesize\ttfamily typedef void($\ast$ pu\+\_\+setup\+\_\+fn) (void)}
+
+
+
+Functions that are run before or after a number of unit tests execute. 
+
+\mbox{\Hypertarget{pico__unit_8h_a428a3a0ab00bc146b6e45bb14fecb648}\label{pico__unit_8h_a428a3a0ab00bc146b6e45bb14fecb648}} 
+\index{pico\_unit.h@{pico\_unit.h}!pu\_test\_fn@{pu\_test\_fn}}
+\index{pu\_test\_fn@{pu\_test\_fn}!pico\_unit.h@{pico\_unit.h}}
+\doxysubsubsection{\texorpdfstring{pu\_test\_fn}{pu\_test\_fn}}
+{\footnotesize\ttfamily typedef bool($\ast$ pu\+\_\+test\+\_\+fn) (void)}
+
+\mbox{\Hypertarget{pico__unit_8h_a49e764f0764eaa49abddbb4aee0de8a5}\label{pico__unit_8h_a49e764f0764eaa49abddbb4aee0de8a5}} 
+\index{pico\_unit.h@{pico\_unit.h}!pu\_suite\_fn@{pu\_suite\_fn}}
+\index{pu\_suite\_fn@{pu\_suite\_fn}!pico\_unit.h@{pico\_unit.h}}
+\doxysubsubsection{\texorpdfstring{pu\_suite\_fn}{pu\_suite\_fn}}
+{\footnotesize\ttfamily typedef void($\ast$ pu\+\_\+suite\+\_\+fn) (void)}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pico__unit_8h_aff17eb6acdeeb7d502343f6358de559e}\label{pico__unit_8h_aff17eb6acdeeb7d502343f6358de559e}} 
+\index{pico\_unit.h@{pico\_unit.h}!pu\_setup@{pu\_setup}}
+\index{pu\_setup@{pu\_setup}!pico\_unit.h@{pico\_unit.h}}
+\doxysubsubsection{\texorpdfstring{pu\_setup()}{pu\_setup()}}
+{\footnotesize\ttfamily void pu\+\_\+setup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__unit_8h_ab4f6307484d15f2c4b5d0c5286ee9b0f}{pu\+\_\+setup\+\_\+fn}}}]{setup\+\_\+fp,  }\item[{\mbox{\hyperlink{pico__unit_8h_ab4f6307484d15f2c4b5d0c5286ee9b0f}{pu\+\_\+setup\+\_\+fn}}}]{teardown\+\_\+fp }\end{DoxyParamCaption})}
+
+
+
+Sets the current setup and teardown functions. 
+
+Sets the current setup and teardown functions. The setup function is called prior to each unit test and the teardown function after. Either of these functions can be {\ttfamily NULL}. The setup and teardown functions have the signature, {\ttfamily void func(void)}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em setup\+\_\+fp} & The setup function \\
+\hline
+{\em teardown\+\_\+fp} & The teardown function \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pico__unit_8h_a250a4b660703af15d57766048b018b6b}\label{pico__unit_8h_a250a4b660703af15d57766048b018b6b}} 
+\index{pico\_unit.h@{pico\_unit.h}!pu\_clear\_setup@{pu\_clear\_setup}}
+\index{pu\_clear\_setup@{pu\_clear\_setup}!pico\_unit.h@{pico\_unit.h}}
+\doxysubsubsection{\texorpdfstring{pu\_clear\_setup()}{pu\_clear\_setup()}}
+{\footnotesize\ttfamily void pu\+\_\+clear\+\_\+setup (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Disables the setup and teardown functions by setting them to {\ttfamily NULL}. 
+
+\mbox{\Hypertarget{pico__unit_8h_a7c537808dad5d43264819b281551ccba}\label{pico__unit_8h_a7c537808dad5d43264819b281551ccba}} 
+\index{pico\_unit.h@{pico\_unit.h}!pu\_display\_colors@{pu\_display\_colors}}
+\index{pu\_display\_colors@{pu\_display\_colors}!pico\_unit.h@{pico\_unit.h}}
+\doxysubsubsection{\texorpdfstring{pu\_display\_colors()}{pu\_display\_colors()}}
+{\footnotesize\ttfamily void pu\+\_\+display\+\_\+colors (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})}
+
+
+
+Turns on terminal colors. NOTE\+: Off by default. 
+
+\mbox{\Hypertarget{pico__unit_8h_ab5f99126534446b7058865e6bdabedd0}\label{pico__unit_8h_ab5f99126534446b7058865e6bdabedd0}} 
+\index{pico\_unit.h@{pico\_unit.h}!pu\_display\_time@{pu\_display\_time}}
+\index{pu\_display\_time@{pu\_display\_time}!pico\_unit.h@{pico\_unit.h}}
+\doxysubsubsection{\texorpdfstring{pu\_display\_time()}{pu\_display\_time()}}
+{\footnotesize\ttfamily void pu\+\_\+display\+\_\+time (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})}
+
+
+
+Turns on time measurement. NOTE\+: Off by default. 
+
+\mbox{\Hypertarget{pico__unit_8h_a7514088d1d7d27fe6367a8c57e86adaf}\label{pico__unit_8h_a7514088d1d7d27fe6367a8c57e86adaf}} 
+\index{pico\_unit.h@{pico\_unit.h}!pu\_print\_stats@{pu\_print\_stats}}
+\index{pu\_print\_stats@{pu\_print\_stats}!pico\_unit.h@{pico\_unit.h}}
+\doxysubsubsection{\texorpdfstring{pu\_print\_stats()}{pu\_print\_stats()}}
+{\footnotesize\ttfamily void pu\+\_\+print\+\_\+stats (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Prints test statistics. 
+
+\mbox{\Hypertarget{pico__unit_8h_ac6f133b933ae38c901347d354fc404ed}\label{pico__unit_8h_ac6f133b933ae38c901347d354fc404ed}} 
+\index{pico\_unit.h@{pico\_unit.h}!pu\_test\_failed@{pu\_test\_failed}}
+\index{pu\_test\_failed@{pu\_test\_failed}!pico\_unit.h@{pico\_unit.h}}
+\doxysubsubsection{\texorpdfstring{pu\_test\_failed()}{pu\_test\_failed()}}
+{\footnotesize\ttfamily bool pu\+\_\+test\+\_\+failed (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Check whether at least one test failed. 
+
+\begin{DoxyReturn}{Returns}
+true if any test failed, false if they all passed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pico__unit_8h_a713ac79a60331f99d10ef981ac1394f1}\label{pico__unit_8h_a713ac79a60331f99d10ef981ac1394f1}} 
+\index{pico\_unit.h@{pico\_unit.h}!pu\_require@{pu\_require}}
+\index{pu\_require@{pu\_require}!pico\_unit.h@{pico\_unit.h}}
+\doxysubsubsection{\texorpdfstring{pu\_require()}{pu\_require()}}
+{\footnotesize\ttfamily bool pu\+\_\+require (\begin{DoxyParamCaption}\item[{bool}]{passed,  }\item[{const char $\ast$const}]{expr,  }\item[{const char $\ast$const}]{file,  }\item[{int}]{line }\end{DoxyParamCaption})}
+
+
+
+Used internally. 
+
+\mbox{\Hypertarget{pico__unit_8h_a4f7e8e5cdbb28b2fcc1669cba6b8c09d}\label{pico__unit_8h_a4f7e8e5cdbb28b2fcc1669cba6b8c09d}} 
+\index{pico\_unit.h@{pico\_unit.h}!pu\_run\_test@{pu\_run\_test}}
+\index{pu\_run\_test@{pu\_run\_test}!pico\_unit.h@{pico\_unit.h}}
+\doxysubsubsection{\texorpdfstring{pu\_run\_test()}{pu\_run\_test()}}
+{\footnotesize\ttfamily void pu\+\_\+run\+\_\+test (\begin{DoxyParamCaption}\item[{const char $\ast$const}]{name,  }\item[{\mbox{\hyperlink{pico__unit_8h_a428a3a0ab00bc146b6e45bb14fecb648}{pu\+\_\+test\+\_\+fn}}}]{test\+\_\+fp }\end{DoxyParamCaption})}
+
+
+
+Used internally. 
+
+\mbox{\Hypertarget{pico__unit_8h_a6b34c80d1840604e48f564ab4b0e5089}\label{pico__unit_8h_a6b34c80d1840604e48f564ab4b0e5089}} 
+\index{pico\_unit.h@{pico\_unit.h}!pu\_run\_suite@{pu\_run\_suite}}
+\index{pu\_run\_suite@{pu\_run\_suite}!pico\_unit.h@{pico\_unit.h}}
+\doxysubsubsection{\texorpdfstring{pu\_run\_suite()}{pu\_run\_suite()}}
+{\footnotesize\ttfamily void pu\+\_\+run\+\_\+suite (\begin{DoxyParamCaption}\item[{const char $\ast$const}]{name,  }\item[{\mbox{\hyperlink{pico__unit_8h_a49e764f0764eaa49abddbb4aee0de8a5}{pu\+\_\+suite\+\_\+fn}}}]{suite\+\_\+fp }\end{DoxyParamCaption})}
+
+
+
+Used internally. 
+

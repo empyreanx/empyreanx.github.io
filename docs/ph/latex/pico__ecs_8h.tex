@@ -1,0 +1,695 @@
+\hypertarget{pico__ecs_8h}{}\doxysection{pico\+\_\+ecs.\+h File Reference}
+\label{pico__ecs_8h}\index{pico\_ecs.h@{pico\_ecs.h}}
+
+
+A pure and simple ECS written in C99.  
+
+
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Include dependency graph for pico\+\_\+ecs.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{pico__ecs_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pico__ecs_8h_a68f795087862e8bd6f7e85ab84bb0b16}{ECS\+\_\+\+NULL}}~((\mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}})-\/1)
+\begin{DoxyCompactList}\small\item\em NULL/invalid/undefined value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{pico__ecs_8h_a5c05e4ae546322deb96adc92276ca7ce}{ECS\+\_\+\+DT\+\_\+\+TYPE}}~double
+\begin{DoxyCompactList}\small\item\em Determine delta-\/time type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct ecs\+\_\+s \mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em ECS context. \end{DoxyCompactList}\item 
+typedef uint32\+\_\+t \mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em ID used for entity and components. \end{DoxyCompactList}\item 
+typedef int8\+\_\+t \mbox{\hyperlink{pico__ecs_8h_a3479df8429f09e798b32037419f94af9}{ecs\+\_\+ret\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Return code for update callback and calling functions. \end{DoxyCompactList}\item 
+typedef \mbox{\hyperlink{pico__ecs_8h_a5c05e4ae546322deb96adc92276ca7ce}{ECS\+\_\+\+DT\+\_\+\+TYPE}} \mbox{\hyperlink{pico__ecs_8h_a29e69a76b2180ebe4f2ac81d6d5fa62f}{ecs\+\_\+dt\+\_\+t}}
+\item 
+typedef void($\ast$ \mbox{\hyperlink{pico__ecs_8h_a6ef1149077d50e8129abf37e8733d3c6}{ecs\+\_\+constructor\+\_\+fn}}) (\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$ecs, \mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}} entity\+\_\+id, void $\ast$ptr, void $\ast$args)
+\begin{DoxyCompactList}\small\item\em Called when a component is created (via ecs\+\_\+add) \end{DoxyCompactList}\item 
+typedef void($\ast$ \mbox{\hyperlink{pico__ecs_8h_a295f78dd0bc9da385e1eac8034fe981f}{ecs\+\_\+destructor\+\_\+fn}}) (\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$ecs, \mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}} entity\+\_\+id, void $\ast$ptr)
+\begin{DoxyCompactList}\small\item\em Called when a component is destroyed (via ecs\+\_\+remove or ecs\+\_\+destroy) \end{DoxyCompactList}\item 
+typedef \mbox{\hyperlink{pico__ecs_8h_a3479df8429f09e798b32037419f94af9}{ecs\+\_\+ret\+\_\+t}}($\ast$ \mbox{\hyperlink{pico__ecs_8h_aa7953d2bc2b6babeecf3edc3f2588b72}{ecs\+\_\+system\+\_\+fn}}) (\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$ecs, \mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}} $\ast$entities, int entity\+\_\+count, \mbox{\hyperlink{pico__ecs_8h_a29e69a76b2180ebe4f2ac81d6d5fa62f}{ecs\+\_\+dt\+\_\+t}} dt, void $\ast$udata)
+\begin{DoxyCompactList}\small\item\em System update callback. \end{DoxyCompactList}\item 
+typedef void($\ast$ \mbox{\hyperlink{pico__ecs_8h_a658cf601b1df7e5fb57fc837c0989004}{ecs\+\_\+added\+\_\+fn}}) (\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$ecs, \mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}} entity\+\_\+id, void $\ast$udata)
+\begin{DoxyCompactList}\small\item\em Called when an entity is added to a system. \end{DoxyCompactList}\item 
+typedef void($\ast$ \mbox{\hyperlink{pico__ecs_8h_a228548975a5dfea7fab58209ee5047c3}{ecs\+\_\+removed\+\_\+fn}}) (\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$ecs, \mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}} entity\+\_\+id, void $\ast$udata)
+\begin{DoxyCompactList}\small\item\em Called when an entity is removed from a system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$ \mbox{\hyperlink{pico__ecs_8h_a5bb529dd797bfb129577113a87491b3d}{ecs\+\_\+new}} (size\+\_\+t entity\+\_\+count, void $\ast$mem\+\_\+ctx)
+\begin{DoxyCompactList}\small\item\em Creates an ECS instance. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__ecs_8h_a5100dc0ecf1b8469b8adcd121879889f}{ecs\+\_\+free}} (\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$ecs)
+\begin{DoxyCompactList}\small\item\em Destroys an ECS instance. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__ecs_8h_a7cd9788bd017f59965fd6acd76ddc653}{ecs\+\_\+reset}} (\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$ecs)
+\begin{DoxyCompactList}\small\item\em Removes all entities from the ECS, preserving systems and components. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}} \mbox{\hyperlink{pico__ecs_8h_a36f53d4eac87d38a1118193c09d250cf}{ecs\+\_\+register\+\_\+component}} (\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$ecs, size\+\_\+t size, \mbox{\hyperlink{pico__ecs_8h_a6ef1149077d50e8129abf37e8733d3c6}{ecs\+\_\+constructor\+\_\+fn}} constructor, \mbox{\hyperlink{pico__ecs_8h_a295f78dd0bc9da385e1eac8034fe981f}{ecs\+\_\+destructor\+\_\+fn}} destructor)
+\begin{DoxyCompactList}\small\item\em Registers a component. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}} \mbox{\hyperlink{pico__ecs_8h_a33da187baa222e35555fa9334c3197ed}{ecs\+\_\+register\+\_\+system}} (\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$ecs, \mbox{\hyperlink{pico__ecs_8h_aa7953d2bc2b6babeecf3edc3f2588b72}{ecs\+\_\+system\+\_\+fn}} system\+\_\+cb, \mbox{\hyperlink{pico__ecs_8h_a658cf601b1df7e5fb57fc837c0989004}{ecs\+\_\+added\+\_\+fn}} add\+\_\+cb, \mbox{\hyperlink{pico__ecs_8h_a228548975a5dfea7fab58209ee5047c3}{ecs\+\_\+removed\+\_\+fn}} remove\+\_\+cb, void $\ast$udata)
+\begin{DoxyCompactList}\small\item\em Registers a system. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__ecs_8h_ac6a3c8ea73539ea7e21c0e245a3c9c17}{ecs\+\_\+require\+\_\+component}} (\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$ecs, \mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}} sys\+\_\+id, \mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}} comp\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Determines which components are available to the specified system. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__ecs_8h_a5c2ce2cf2fec4fb3710bafb3c20edbbc}{ecs\+\_\+exclude\+\_\+component}} (\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$ecs, \mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}} sys\+\_\+id, \mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}} comp\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Excludes entities having the specified component from being added to the target system. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__ecs_8h_ac4c75816738e8cd5640f8ae20f02e929}{ecs\+\_\+enable\+\_\+system}} (\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$ecs, \mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}} sys\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Enables a system. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__ecs_8h_a0d0b4ee0986e04b6dd1d595dd59f1de0}{ecs\+\_\+disable\+\_\+system}} (\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$ecs, \mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}} sys\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Disables a system. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}} \mbox{\hyperlink{pico__ecs_8h_a6d0a4162459c5597b2d536507787a948}{ecs\+\_\+create}} (\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$ecs)
+\begin{DoxyCompactList}\small\item\em Creates an entity. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{pico__ecs_8h_ab30754c78e4c186da450d1823ec967dc}{ecs\+\_\+is\+\_\+ready}} (\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$ecs, \mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}} entity\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Returns true if the entity is currently active. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__ecs_8h_a8a6f0997b15f3961be48ea14ddcdb5ca}{ecs\+\_\+destroy}} (\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$ecs, \mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}} entity\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Destroys an entity. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{pico__ecs_8h_af0b1f59a9c466128c4328aad2194f197}{ecs\+\_\+has}} (\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$ecs, \mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}} entity\+\_\+id, \mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}} comp\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Test if entity has the specified component. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{pico__ecs_8h_a52736012815eae355c79edae83bdd138}{ecs\+\_\+add}} (\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$ecs, \mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}} entity\+\_\+id, \mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}} comp\+\_\+id, void $\ast$args)
+\begin{DoxyCompactList}\small\item\em Adds a component instance to an entity. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{pico__ecs_8h_a79ca1008f85ee4ffcb8c77e910c60f8a}{ecs\+\_\+get}} (\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$ecs, \mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}} entity\+\_\+id, \mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}} comp\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Gets a component instance associated with an entity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__ecs_8h_aa570d8aa91e618f4eaf3e7c891d00385}{ecs\+\_\+remove}} (\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$ecs, \mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}} entity\+\_\+id, \mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}} comp\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Removes a component instance from an entity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__ecs_8h_a9c6cfc4c1aa35a30b1caf8a1900d231a}{ecs\+\_\+queue\+\_\+destroy}} (\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$ecs, \mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}} entity\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Queues an entity for destruction at the end of system execution. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__ecs_8h_a221c69e132009281a238361e60350253}{ecs\+\_\+queue\+\_\+remove}} (\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$ecs, \mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}} entity\+\_\+id, \mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}} comp\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Queues a component for removable. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{pico__ecs_8h_a3479df8429f09e798b32037419f94af9}{ecs\+\_\+ret\+\_\+t}} \mbox{\hyperlink{pico__ecs_8h_ad066355a98d5125532c4629b867291d8}{ecs\+\_\+update\+\_\+system}} (\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$ecs, \mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}} sys\+\_\+id, \mbox{\hyperlink{pico__ecs_8h_a29e69a76b2180ebe4f2ac81d6d5fa62f}{ecs\+\_\+dt\+\_\+t}} dt)
+\begin{DoxyCompactList}\small\item\em Update an individual system. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{pico__ecs_8h_a3479df8429f09e798b32037419f94af9}{ecs\+\_\+ret\+\_\+t}} \mbox{\hyperlink{pico__ecs_8h_a9a5e245658c52f85685e103b351bbb7b}{ecs\+\_\+update\+\_\+systems}} (\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$ecs, \mbox{\hyperlink{pico__ecs_8h_a29e69a76b2180ebe4f2ac81d6d5fa62f}{ecs\+\_\+dt\+\_\+t}} dt)
+\begin{DoxyCompactList}\small\item\em Updates all systems. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A pure and simple ECS written in C99. 
+
+\DoxyHorRuler{0}
+ \hypertarget{pico__ecs_8h_autotoc_md6}{}\doxysubsubsection{Licensing information at end of header}\label{pico__ecs_8h_autotoc_md6}
+\hypertarget{pico__ecs_8h_autotoc_md7}{}\doxysubsubsection{Features\+:}\label{pico__ecs_8h_autotoc_md7}
+
+\begin{DoxyItemize}
+\item Written in C99
+\item Single header library for easy build system integration
+\item Excellent performance
+\item Pure ECS design (strict separation between data and logic)
+\item Simple and concise API
+\item Permissive license (zlib or public domain)
+\end{DoxyItemize}\hypertarget{pico__ecs_8h_autotoc_md8}{}\doxysubsubsection{Summary\+:}\label{pico__ecs_8h_autotoc_md8}
+This library implements an ECS (Entity-\/\+Component-\/\+System). Entities (sometimes called game objects) are defined by their components. For example, an entity might have position, sprite, and physics components. Systems operate on the components of entities that match the system\textquotesingle{}s requirements. Entities are matched to systems based upon which components they have and also the system\textquotesingle{}s matching crieria.
+
+In the above example, a sprite renderer system would match entities having poition and sprite components. The system would send the appropriate geometry and texture ID to the game\textquotesingle{}s graphics API.
+
+Traditional game engines tightly couple state with logic. For example, in C++ a game object typically has its own update method that operates on that state. They also usually rely heavily on inheritance.
+
+If the state specified by the class changes this could ripple through the class, and perhaps subclasses as well. It could well be that the class no longer belongs in the existing class hierarchy forcing even more revisions. It could even be true that a class doesn\textquotesingle{}t neatly fit into the inheritance tree at all.
+
+An ECS solves these problems while also granting more flexibility in general. In an ECS there is a clear separation between data (components) and logic (systems), which makes it possible to build complex simulations with fewer assumptions about how that data will be used. In an ECS it effortless to change functionality, by either adding or removing components from entities, and/or by changing system requirements. Adding new logic is also simple as well, just register a new system!
+
+Please see the examples and unit tests for more details.\hypertarget{pico__ecs_8h_autotoc_md9}{}\doxysubsubsection{Usage\+:}\label{pico__ecs_8h_autotoc_md9}
+To use this library in your project, add the following
+
+\begin{quote}
+\#define PICO\+\_\+\+ECS\+\_\+\+IMPLEMENTATION \#include \char`\"{}pico\+\_\+ecs.\+h\char`\"{} \end{quote}
+to a source file (once), then simply include the header normally.\hypertarget{pico__ecs_8h_autotoc_md10}{}\doxysubsubsection{Constants\+:}\label{pico__ecs_8h_autotoc_md10}
+
+\begin{DoxyItemize}
+\item PICO\+\_\+\+ECS\+\_\+\+MAX\+\_\+\+COMPONENTS (default\+: 32)
+\item PICO\+\_\+\+ECS\+\_\+\+MAX\+\_\+\+SYSTEMS (default\+: 16)
+\end{DoxyItemize}
+
+Must be defined before PICO\+\_\+\+ECS\+\_\+\+IMPLEMENTATION\hypertarget{pico__ecs_8h_autotoc_md11}{}\doxysubsubsection{Todo\+:}\label{pico__ecs_8h_autotoc_md11}
+
+\begin{DoxyItemize}
+\item Better default assertion macro
+\item Port Rogue demo to Windows 
+\end{DoxyItemize}
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{pico__ecs_8h_a68f795087862e8bd6f7e85ab84bb0b16}\label{pico__ecs_8h_a68f795087862e8bd6f7e85ab84bb0b16}} 
+\index{pico\_ecs.h@{pico\_ecs.h}!ECS\_NULL@{ECS\_NULL}}
+\index{ECS\_NULL@{ECS\_NULL}!pico\_ecs.h@{pico\_ecs.h}}
+\doxysubsubsection{\texorpdfstring{ECS\_NULL}{ECS\_NULL}}
+{\footnotesize\ttfamily \#define ECS\+\_\+\+NULL~((\mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}})-\/1)}
+
+
+
+NULL/invalid/undefined value. 
+
+\mbox{\Hypertarget{pico__ecs_8h_a5c05e4ae546322deb96adc92276ca7ce}\label{pico__ecs_8h_a5c05e4ae546322deb96adc92276ca7ce}} 
+\index{pico\_ecs.h@{pico\_ecs.h}!ECS\_DT\_TYPE@{ECS\_DT\_TYPE}}
+\index{ECS\_DT\_TYPE@{ECS\_DT\_TYPE}!pico\_ecs.h@{pico\_ecs.h}}
+\doxysubsubsection{\texorpdfstring{ECS\_DT\_TYPE}{ECS\_DT\_TYPE}}
+{\footnotesize\ttfamily \#define ECS\+\_\+\+DT\+\_\+\+TYPE~double}
+
+
+
+Determine delta-\/time type. 
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}\label{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}} 
+\index{pico\_ecs.h@{pico\_ecs.h}!ecs\_t@{ecs\_t}}
+\index{ecs\_t@{ecs\_t}!pico\_ecs.h@{pico\_ecs.h}}
+\doxysubsubsection{\texorpdfstring{ecs\_t}{ecs\_t}}
+{\footnotesize\ttfamily typedef struct ecs\+\_\+s \mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}}}
+
+
+
+ECS context. 
+
+\mbox{\Hypertarget{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}\label{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}} 
+\index{pico\_ecs.h@{pico\_ecs.h}!ecs\_id\_t@{ecs\_id\_t}}
+\index{ecs\_id\_t@{ecs\_id\_t}!pico\_ecs.h@{pico\_ecs.h}}
+\doxysubsubsection{\texorpdfstring{ecs\_id\_t}{ecs\_id\_t}}
+{\footnotesize\ttfamily typedef uint32\+\_\+t \mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}}}
+
+
+
+ID used for entity and components. 
+
+\mbox{\Hypertarget{pico__ecs_8h_a3479df8429f09e798b32037419f94af9}\label{pico__ecs_8h_a3479df8429f09e798b32037419f94af9}} 
+\index{pico\_ecs.h@{pico\_ecs.h}!ecs\_ret\_t@{ecs\_ret\_t}}
+\index{ecs\_ret\_t@{ecs\_ret\_t}!pico\_ecs.h@{pico\_ecs.h}}
+\doxysubsubsection{\texorpdfstring{ecs\_ret\_t}{ecs\_ret\_t}}
+{\footnotesize\ttfamily typedef int8\+\_\+t \mbox{\hyperlink{pico__ecs_8h_a3479df8429f09e798b32037419f94af9}{ecs\+\_\+ret\+\_\+t}}}
+
+
+
+Return code for update callback and calling functions. 
+
+\mbox{\Hypertarget{pico__ecs_8h_a29e69a76b2180ebe4f2ac81d6d5fa62f}\label{pico__ecs_8h_a29e69a76b2180ebe4f2ac81d6d5fa62f}} 
+\index{pico\_ecs.h@{pico\_ecs.h}!ecs\_dt\_t@{ecs\_dt\_t}}
+\index{ecs\_dt\_t@{ecs\_dt\_t}!pico\_ecs.h@{pico\_ecs.h}}
+\doxysubsubsection{\texorpdfstring{ecs\_dt\_t}{ecs\_dt\_t}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{pico__ecs_8h_a5c05e4ae546322deb96adc92276ca7ce}{ECS\+\_\+\+DT\+\_\+\+TYPE}} \mbox{\hyperlink{pico__ecs_8h_a29e69a76b2180ebe4f2ac81d6d5fa62f}{ecs\+\_\+dt\+\_\+t}}}
+
+\mbox{\Hypertarget{pico__ecs_8h_a6ef1149077d50e8129abf37e8733d3c6}\label{pico__ecs_8h_a6ef1149077d50e8129abf37e8733d3c6}} 
+\index{pico\_ecs.h@{pico\_ecs.h}!ecs\_constructor\_fn@{ecs\_constructor\_fn}}
+\index{ecs\_constructor\_fn@{ecs\_constructor\_fn}!pico\_ecs.h@{pico\_ecs.h}}
+\doxysubsubsection{\texorpdfstring{ecs\_constructor\_fn}{ecs\_constructor\_fn}}
+{\footnotesize\ttfamily typedef void($\ast$ ecs\+\_\+constructor\+\_\+fn) (\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$ecs, \mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}} entity\+\_\+id, void $\ast$ptr, void $\ast$args)}
+
+
+
+Called when a component is created (via ecs\+\_\+add) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ecs} & The ECS instance \\
+\hline
+{\em entity\+\_\+id} & The entity being constructed \\
+\hline
+{\em ptr} & The pointer to the component \\
+\hline
+{\em udata} & The user data passed to the callback \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pico__ecs_8h_a295f78dd0bc9da385e1eac8034fe981f}\label{pico__ecs_8h_a295f78dd0bc9da385e1eac8034fe981f}} 
+\index{pico\_ecs.h@{pico\_ecs.h}!ecs\_destructor\_fn@{ecs\_destructor\_fn}}
+\index{ecs\_destructor\_fn@{ecs\_destructor\_fn}!pico\_ecs.h@{pico\_ecs.h}}
+\doxysubsubsection{\texorpdfstring{ecs\_destructor\_fn}{ecs\_destructor\_fn}}
+{\footnotesize\ttfamily typedef void($\ast$ ecs\+\_\+destructor\+\_\+fn) (\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$ecs, \mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}} entity\+\_\+id, void $\ast$ptr)}
+
+
+
+Called when a component is destroyed (via ecs\+\_\+remove or ecs\+\_\+destroy) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ecs} & The ECS instance \\
+\hline
+{\em entity\+\_\+id} & The entity being destoryed \\
+\hline
+{\em ptr} & The pointer to the component \\
+\hline
+{\em udata} & The user data passed to the callback \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pico__ecs_8h_aa7953d2bc2b6babeecf3edc3f2588b72}\label{pico__ecs_8h_aa7953d2bc2b6babeecf3edc3f2588b72}} 
+\index{pico\_ecs.h@{pico\_ecs.h}!ecs\_system\_fn@{ecs\_system\_fn}}
+\index{ecs\_system\_fn@{ecs\_system\_fn}!pico\_ecs.h@{pico\_ecs.h}}
+\doxysubsubsection{\texorpdfstring{ecs\_system\_fn}{ecs\_system\_fn}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{pico__ecs_8h_a3479df8429f09e798b32037419f94af9}{ecs\+\_\+ret\+\_\+t}}($\ast$ ecs\+\_\+system\+\_\+fn) (\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$ecs, \mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}} $\ast$entities, int entity\+\_\+count, \mbox{\hyperlink{pico__ecs_8h_a29e69a76b2180ebe4f2ac81d6d5fa62f}{ecs\+\_\+dt\+\_\+t}} dt, void $\ast$udata)}
+
+
+
+System update callback. 
+
+Systems implement the core logic of an ECS by manipulating entities and components.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ecs} & The ECS instance \\
+\hline
+{\em entities} & An array of entity IDs managed by the system \\
+\hline
+{\em entity\+\_\+count} & The number of entities in the array \\
+\hline
+{\em dt} & The time delta \\
+\hline
+{\em udata} & The user data associated with the system \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pico__ecs_8h_a658cf601b1df7e5fb57fc837c0989004}\label{pico__ecs_8h_a658cf601b1df7e5fb57fc837c0989004}} 
+\index{pico\_ecs.h@{pico\_ecs.h}!ecs\_added\_fn@{ecs\_added\_fn}}
+\index{ecs\_added\_fn@{ecs\_added\_fn}!pico\_ecs.h@{pico\_ecs.h}}
+\doxysubsubsection{\texorpdfstring{ecs\_added\_fn}{ecs\_added\_fn}}
+{\footnotesize\ttfamily typedef void($\ast$ ecs\+\_\+added\+\_\+fn) (\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$ecs, \mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}} entity\+\_\+id, void $\ast$udata)}
+
+
+
+Called when an entity is added to a system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ecs} & The ECS instance \\
+\hline
+{\em entity\+\_\+id} & The enitty being added \\
+\hline
+{\em udata} & The user data passed to the callback \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pico__ecs_8h_a228548975a5dfea7fab58209ee5047c3}\label{pico__ecs_8h_a228548975a5dfea7fab58209ee5047c3}} 
+\index{pico\_ecs.h@{pico\_ecs.h}!ecs\_removed\_fn@{ecs\_removed\_fn}}
+\index{ecs\_removed\_fn@{ecs\_removed\_fn}!pico\_ecs.h@{pico\_ecs.h}}
+\doxysubsubsection{\texorpdfstring{ecs\_removed\_fn}{ecs\_removed\_fn}}
+{\footnotesize\ttfamily typedef void($\ast$ ecs\+\_\+removed\+\_\+fn) (\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$ecs, \mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}} entity\+\_\+id, void $\ast$udata)}
+
+
+
+Called when an entity is removed from a system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ecs} & The ECS instance \\
+\hline
+{\em entity\+\_\+id} & The enitty being removed \\
+\hline
+{\em udata} & The user data passed to the callback \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pico__ecs_8h_a5bb529dd797bfb129577113a87491b3d}\label{pico__ecs_8h_a5bb529dd797bfb129577113a87491b3d}} 
+\index{pico\_ecs.h@{pico\_ecs.h}!ecs\_new@{ecs\_new}}
+\index{ecs\_new@{ecs\_new}!pico\_ecs.h@{pico\_ecs.h}}
+\doxysubsubsection{\texorpdfstring{ecs\_new()}{ecs\_new()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}}$\ast$ ecs\+\_\+new (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{entity\+\_\+count,  }\item[{void $\ast$}]{mem\+\_\+ctx }\end{DoxyParamCaption})}
+
+
+
+Creates an ECS instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity\+\_\+count} & The inital number of pooled entities \\
+\hline
+{\em mem\+\_\+ctx} & The Context for a custom allocator\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An ECS instance or NULL if out of memory 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pico__ecs_8h_a5100dc0ecf1b8469b8adcd121879889f}\label{pico__ecs_8h_a5100dc0ecf1b8469b8adcd121879889f}} 
+\index{pico\_ecs.h@{pico\_ecs.h}!ecs\_free@{ecs\_free}}
+\index{ecs\_free@{ecs\_free}!pico\_ecs.h@{pico\_ecs.h}}
+\doxysubsubsection{\texorpdfstring{ecs\_free()}{ecs\_free()}}
+{\footnotesize\ttfamily void ecs\+\_\+free (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$}]{ecs }\end{DoxyParamCaption})}
+
+
+
+Destroys an ECS instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ecs} & The ECS instance \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pico__ecs_8h_a7cd9788bd017f59965fd6acd76ddc653}\label{pico__ecs_8h_a7cd9788bd017f59965fd6acd76ddc653}} 
+\index{pico\_ecs.h@{pico\_ecs.h}!ecs\_reset@{ecs\_reset}}
+\index{ecs\_reset@{ecs\_reset}!pico\_ecs.h@{pico\_ecs.h}}
+\doxysubsubsection{\texorpdfstring{ecs\_reset()}{ecs\_reset()}}
+{\footnotesize\ttfamily void ecs\+\_\+reset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$}]{ecs }\end{DoxyParamCaption})}
+
+
+
+Removes all entities from the ECS, preserving systems and components. 
+
+\mbox{\Hypertarget{pico__ecs_8h_a36f53d4eac87d38a1118193c09d250cf}\label{pico__ecs_8h_a36f53d4eac87d38a1118193c09d250cf}} 
+\index{pico\_ecs.h@{pico\_ecs.h}!ecs\_register\_component@{ecs\_register\_component}}
+\index{ecs\_register\_component@{ecs\_register\_component}!pico\_ecs.h@{pico\_ecs.h}}
+\doxysubsubsection{\texorpdfstring{ecs\_register\_component()}{ecs\_register\_component()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}} ecs\+\_\+register\+\_\+component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$}]{ecs,  }\item[{size\+\_\+t}]{size,  }\item[{\mbox{\hyperlink{pico__ecs_8h_a6ef1149077d50e8129abf37e8733d3c6}{ecs\+\_\+constructor\+\_\+fn}}}]{constructor,  }\item[{\mbox{\hyperlink{pico__ecs_8h_a295f78dd0bc9da385e1eac8034fe981f}{ecs\+\_\+destructor\+\_\+fn}}}]{destructor }\end{DoxyParamCaption})}
+
+
+
+Registers a component. 
+
+Registers a component with the specfied size in bytes. Components define the game state (usually contained within structs) and are manipulated by systems.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ecs} & The ECS instance \\
+\hline
+{\em size} & The number of bytes to allocate for each component instance \\
+\hline
+{\em constructor} & Called when a component is created (disabled if NULL) \\
+\hline
+{\em destructor} & Called when a component is destroyed (disabled if NULL) \\
+\hline
+{\em udata} & Data passed to callbacks (can be NULL) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The component\textquotesingle{}s ID 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pico__ecs_8h_a33da187baa222e35555fa9334c3197ed}\label{pico__ecs_8h_a33da187baa222e35555fa9334c3197ed}} 
+\index{pico\_ecs.h@{pico\_ecs.h}!ecs\_register\_system@{ecs\_register\_system}}
+\index{ecs\_register\_system@{ecs\_register\_system}!pico\_ecs.h@{pico\_ecs.h}}
+\doxysubsubsection{\texorpdfstring{ecs\_register\_system()}{ecs\_register\_system()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}} ecs\+\_\+register\+\_\+system (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$}]{ecs,  }\item[{\mbox{\hyperlink{pico__ecs_8h_aa7953d2bc2b6babeecf3edc3f2588b72}{ecs\+\_\+system\+\_\+fn}}}]{system\+\_\+cb,  }\item[{\mbox{\hyperlink{pico__ecs_8h_a658cf601b1df7e5fb57fc837c0989004}{ecs\+\_\+added\+\_\+fn}}}]{add\+\_\+cb,  }\item[{\mbox{\hyperlink{pico__ecs_8h_a228548975a5dfea7fab58209ee5047c3}{ecs\+\_\+removed\+\_\+fn}}}]{remove\+\_\+cb,  }\item[{void $\ast$}]{udata }\end{DoxyParamCaption})}
+
+
+
+Registers a system. 
+
+Registers a system with the specified parameters. Systems contain the core logic of a game by manipulating game state as defined by components.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ecs} & The ECS instance \\
+\hline
+{\em system\+\_\+cb} & Callback that is fired every update \\
+\hline
+{\em add\+\_\+cb} & Called when an entity is added to the system (can be NULL) \\
+\hline
+{\em remove\+\_\+cb} & Called when an entity is removed from the system (can be NULL) \\
+\hline
+{\em udata} & The user data passed to the callbacks \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The system\textquotesingle{}s ID 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pico__ecs_8h_ac6a3c8ea73539ea7e21c0e245a3c9c17}\label{pico__ecs_8h_ac6a3c8ea73539ea7e21c0e245a3c9c17}} 
+\index{pico\_ecs.h@{pico\_ecs.h}!ecs\_require\_component@{ecs\_require\_component}}
+\index{ecs\_require\_component@{ecs\_require\_component}!pico\_ecs.h@{pico\_ecs.h}}
+\doxysubsubsection{\texorpdfstring{ecs\_require\_component()}{ecs\_require\_component()}}
+{\footnotesize\ttfamily void ecs\+\_\+require\+\_\+component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$}]{ecs,  }\item[{\mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}}}]{sys\+\_\+id,  }\item[{\mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}}}]{comp\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Determines which components are available to the specified system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ecs} & The ECS instance \\
+\hline
+{\em sys\+\_\+id} & The target system ID \\
+\hline
+{\em comp\+\_\+id} & The component ID \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pico__ecs_8h_a5c2ce2cf2fec4fb3710bafb3c20edbbc}\label{pico__ecs_8h_a5c2ce2cf2fec4fb3710bafb3c20edbbc}} 
+\index{pico\_ecs.h@{pico\_ecs.h}!ecs\_exclude\_component@{ecs\_exclude\_component}}
+\index{ecs\_exclude\_component@{ecs\_exclude\_component}!pico\_ecs.h@{pico\_ecs.h}}
+\doxysubsubsection{\texorpdfstring{ecs\_exclude\_component()}{ecs\_exclude\_component()}}
+{\footnotesize\ttfamily void ecs\+\_\+exclude\+\_\+component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$}]{ecs,  }\item[{\mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}}}]{sys\+\_\+id,  }\item[{\mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}}}]{comp\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Excludes entities having the specified component from being added to the target system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ecs} & The ECS instance \\
+\hline
+{\em sys\+\_\+id} & The target system ID \\
+\hline
+{\em comp\+\_\+id} & The component ID tp exclude \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pico__ecs_8h_ac4c75816738e8cd5640f8ae20f02e929}\label{pico__ecs_8h_ac4c75816738e8cd5640f8ae20f02e929}} 
+\index{pico\_ecs.h@{pico\_ecs.h}!ecs\_enable\_system@{ecs\_enable\_system}}
+\index{ecs\_enable\_system@{ecs\_enable\_system}!pico\_ecs.h@{pico\_ecs.h}}
+\doxysubsubsection{\texorpdfstring{ecs\_enable\_system()}{ecs\_enable\_system()}}
+{\footnotesize\ttfamily void ecs\+\_\+enable\+\_\+system (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$}]{ecs,  }\item[{\mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}}}]{sys\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Enables a system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ecs} & The ECS instance \\
+\hline
+{\em sys\+\_\+id} & The specified system ID \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pico__ecs_8h_a0d0b4ee0986e04b6dd1d595dd59f1de0}\label{pico__ecs_8h_a0d0b4ee0986e04b6dd1d595dd59f1de0}} 
+\index{pico\_ecs.h@{pico\_ecs.h}!ecs\_disable\_system@{ecs\_disable\_system}}
+\index{ecs\_disable\_system@{ecs\_disable\_system}!pico\_ecs.h@{pico\_ecs.h}}
+\doxysubsubsection{\texorpdfstring{ecs\_disable\_system()}{ecs\_disable\_system()}}
+{\footnotesize\ttfamily void ecs\+\_\+disable\+\_\+system (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$}]{ecs,  }\item[{\mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}}}]{sys\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Disables a system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ecs} & The ECS instance \\
+\hline
+{\em sys\+\_\+id} & The specified system ID \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pico__ecs_8h_a6d0a4162459c5597b2d536507787a948}\label{pico__ecs_8h_a6d0a4162459c5597b2d536507787a948}} 
+\index{pico\_ecs.h@{pico\_ecs.h}!ecs\_create@{ecs\_create}}
+\index{ecs\_create@{ecs\_create}!pico\_ecs.h@{pico\_ecs.h}}
+\doxysubsubsection{\texorpdfstring{ecs\_create()}{ecs\_create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}} ecs\+\_\+create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$}]{ecs }\end{DoxyParamCaption})}
+
+
+
+Creates an entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ecs} & The ECS instance\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new entity ID 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pico__ecs_8h_ab30754c78e4c186da450d1823ec967dc}\label{pico__ecs_8h_ab30754c78e4c186da450d1823ec967dc}} 
+\index{pico\_ecs.h@{pico\_ecs.h}!ecs\_is\_ready@{ecs\_is\_ready}}
+\index{ecs\_is\_ready@{ecs\_is\_ready}!pico\_ecs.h@{pico\_ecs.h}}
+\doxysubsubsection{\texorpdfstring{ecs\_is\_ready()}{ecs\_is\_ready()}}
+{\footnotesize\ttfamily bool ecs\+\_\+is\+\_\+ready (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$}]{ecs,  }\item[{\mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}}}]{entity\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Returns true if the entity is currently active. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ecs} & The ECS instance \\
+\hline
+{\em entity\+\_\+id} & The target entity \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pico__ecs_8h_a8a6f0997b15f3961be48ea14ddcdb5ca}\label{pico__ecs_8h_a8a6f0997b15f3961be48ea14ddcdb5ca}} 
+\index{pico\_ecs.h@{pico\_ecs.h}!ecs\_destroy@{ecs\_destroy}}
+\index{ecs\_destroy@{ecs\_destroy}!pico\_ecs.h@{pico\_ecs.h}}
+\doxysubsubsection{\texorpdfstring{ecs\_destroy()}{ecs\_destroy()}}
+{\footnotesize\ttfamily void ecs\+\_\+destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$}]{ecs,  }\item[{\mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}}}]{entity\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Destroys an entity. 
+
+Destroys an entity, releasing resources and returning it to the pool.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ecs} & The ECS instance \\
+\hline
+{\em entity\+\_\+id} & The ID of the entity to destroy \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pico__ecs_8h_af0b1f59a9c466128c4328aad2194f197}\label{pico__ecs_8h_af0b1f59a9c466128c4328aad2194f197}} 
+\index{pico\_ecs.h@{pico\_ecs.h}!ecs\_has@{ecs\_has}}
+\index{ecs\_has@{ecs\_has}!pico\_ecs.h@{pico\_ecs.h}}
+\doxysubsubsection{\texorpdfstring{ecs\_has()}{ecs\_has()}}
+{\footnotesize\ttfamily bool ecs\+\_\+has (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$}]{ecs,  }\item[{\mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}}}]{entity\+\_\+id,  }\item[{\mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}}}]{comp\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Test if entity has the specified component. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ecs} & The ECS instance \\
+\hline
+{\em entity\+\_\+id} & The entity ID \\
+\hline
+{\em comp\+\_\+id} & The component ID\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the entity has the component 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pico__ecs_8h_a52736012815eae355c79edae83bdd138}\label{pico__ecs_8h_a52736012815eae355c79edae83bdd138}} 
+\index{pico\_ecs.h@{pico\_ecs.h}!ecs\_add@{ecs\_add}}
+\index{ecs\_add@{ecs\_add}!pico\_ecs.h@{pico\_ecs.h}}
+\doxysubsubsection{\texorpdfstring{ecs\_add()}{ecs\_add()}}
+{\footnotesize\ttfamily void$\ast$ ecs\+\_\+add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$}]{ecs,  }\item[{\mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}}}]{entity\+\_\+id,  }\item[{\mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}}}]{comp\+\_\+id,  }\item[{void $\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Adds a component instance to an entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ecs} & The ECS instance \\
+\hline
+{\em entity\+\_\+id} & The entity ID \\
+\hline
+{\em comp\+\_\+id} & The component ID\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The component instance 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pico__ecs_8h_a79ca1008f85ee4ffcb8c77e910c60f8a}\label{pico__ecs_8h_a79ca1008f85ee4ffcb8c77e910c60f8a}} 
+\index{pico\_ecs.h@{pico\_ecs.h}!ecs\_get@{ecs\_get}}
+\index{ecs\_get@{ecs\_get}!pico\_ecs.h@{pico\_ecs.h}}
+\doxysubsubsection{\texorpdfstring{ecs\_get()}{ecs\_get()}}
+{\footnotesize\ttfamily void$\ast$ ecs\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$}]{ecs,  }\item[{\mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}}}]{entity\+\_\+id,  }\item[{\mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}}}]{comp\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Gets a component instance associated with an entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ecs} & The ECS instance \\
+\hline
+{\em entity\+\_\+id} & The entity ID \\
+\hline
+{\em comp\+\_\+id} & The component ID\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The component instance 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pico__ecs_8h_aa570d8aa91e618f4eaf3e7c891d00385}\label{pico__ecs_8h_aa570d8aa91e618f4eaf3e7c891d00385}} 
+\index{pico\_ecs.h@{pico\_ecs.h}!ecs\_remove@{ecs\_remove}}
+\index{ecs\_remove@{ecs\_remove}!pico\_ecs.h@{pico\_ecs.h}}
+\doxysubsubsection{\texorpdfstring{ecs\_remove()}{ecs\_remove()}}
+{\footnotesize\ttfamily void ecs\+\_\+remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$}]{ecs,  }\item[{\mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}}}]{entity\+\_\+id,  }\item[{\mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}}}]{comp\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Removes a component instance from an entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ecs} & The ECS instance \\
+\hline
+{\em entity\+\_\+id} & The entity ID \\
+\hline
+{\em comp\+\_\+id} & The component ID \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pico__ecs_8h_a9c6cfc4c1aa35a30b1caf8a1900d231a}\label{pico__ecs_8h_a9c6cfc4c1aa35a30b1caf8a1900d231a}} 
+\index{pico\_ecs.h@{pico\_ecs.h}!ecs\_queue\_destroy@{ecs\_queue\_destroy}}
+\index{ecs\_queue\_destroy@{ecs\_queue\_destroy}!pico\_ecs.h@{pico\_ecs.h}}
+\doxysubsubsection{\texorpdfstring{ecs\_queue\_destroy()}{ecs\_queue\_destroy()}}
+{\footnotesize\ttfamily void ecs\+\_\+queue\+\_\+destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$}]{ecs,  }\item[{\mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}}}]{entity\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Queues an entity for destruction at the end of system execution. 
+
+Queued entities are destroyed after the curent iteration.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ecs} & The ECS instance \\
+\hline
+{\em entity\+\_\+id} & The ID of the entity to destroy \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pico__ecs_8h_a221c69e132009281a238361e60350253}\label{pico__ecs_8h_a221c69e132009281a238361e60350253}} 
+\index{pico\_ecs.h@{pico\_ecs.h}!ecs\_queue\_remove@{ecs\_queue\_remove}}
+\index{ecs\_queue\_remove@{ecs\_queue\_remove}!pico\_ecs.h@{pico\_ecs.h}}
+\doxysubsubsection{\texorpdfstring{ecs\_queue\_remove()}{ecs\_queue\_remove()}}
+{\footnotesize\ttfamily void ecs\+\_\+queue\+\_\+remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$}]{ecs,  }\item[{\mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}}}]{entity\+\_\+id,  }\item[{\mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}}}]{comp\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Queues a component for removable. 
+
+Queued entity/component pairs that will be deleted after the current system returns
+
+
+\begin{DoxyParams}{Parameters}
+{\em ecs} & The ECS instance \\
+\hline
+{\em entity\+\_\+id} & The ID of the entity that has the component \\
+\hline
+{\em comp\+\_\+id} & The component to remove \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pico__ecs_8h_ad066355a98d5125532c4629b867291d8}\label{pico__ecs_8h_ad066355a98d5125532c4629b867291d8}} 
+\index{pico\_ecs.h@{pico\_ecs.h}!ecs\_update\_system@{ecs\_update\_system}}
+\index{ecs\_update\_system@{ecs\_update\_system}!pico\_ecs.h@{pico\_ecs.h}}
+\doxysubsubsection{\texorpdfstring{ecs\_update\_system()}{ecs\_update\_system()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pico__ecs_8h_a3479df8429f09e798b32037419f94af9}{ecs\+\_\+ret\+\_\+t}} ecs\+\_\+update\+\_\+system (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$}]{ecs,  }\item[{\mbox{\hyperlink{pico__ecs_8h_aa9ee79bf65bd0a2a714e48a71e58c3de}{ecs\+\_\+id\+\_\+t}}}]{sys\+\_\+id,  }\item[{\mbox{\hyperlink{pico__ecs_8h_a29e69a76b2180ebe4f2ac81d6d5fa62f}{ecs\+\_\+dt\+\_\+t}}}]{dt }\end{DoxyParamCaption})}
+
+
+
+Update an individual system. 
+
+This function should be called once per frame.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ecs} & The ECS instance \\
+\hline
+{\em sys\+\_\+id} & The system to update \\
+\hline
+{\em dt} & The time delta \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pico__ecs_8h_a9a5e245658c52f85685e103b351bbb7b}\label{pico__ecs_8h_a9a5e245658c52f85685e103b351bbb7b}} 
+\index{pico\_ecs.h@{pico\_ecs.h}!ecs\_update\_systems@{ecs\_update\_systems}}
+\index{ecs\_update\_systems@{ecs\_update\_systems}!pico\_ecs.h@{pico\_ecs.h}}
+\doxysubsubsection{\texorpdfstring{ecs\_update\_systems()}{ecs\_update\_systems()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pico__ecs_8h_a3479df8429f09e798b32037419f94af9}{ecs\+\_\+ret\+\_\+t}} ecs\+\_\+update\+\_\+systems (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__ecs_8h_a78aee9dde23c9234e2607b7bf6c91139}{ecs\+\_\+t}} $\ast$}]{ecs,  }\item[{\mbox{\hyperlink{pico__ecs_8h_a29e69a76b2180ebe4f2ac81d6d5fa62f}{ecs\+\_\+dt\+\_\+t}}}]{dt }\end{DoxyParamCaption})}
+
+
+
+Updates all systems. 
+
+This function should be called once per frame.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ecs} & The ECS instance \\
+\hline
+{\em dt} & The time delta \\
+\hline
+\end{DoxyParams}

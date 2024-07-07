@@ -1,0 +1,4 @@
+<map id="ph_ray_t" name="ph_ray_t">
+<area shape="rect" id="node1" title="A ray (directed line segment)" alt="" coords="5,109,84,136"/>
+<area shape="rect" id="node2" href="$structpv2.html" title="A 2D vector." alt="" coords="21,5,68,32"/>
+</map>

@@ -1,0 +1,176 @@
+\hypertarget{pico__time_8h}{}\doxysection{pico\+\_\+time.\+h File Reference}
+\label{pico__time_8h}\index{pico\_time.h@{pico\_time.h}}
+
+
+A simple time management library.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Include dependency graph for pico\+\_\+time.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{pico__time_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pico__time_8h_a3024ccd4a9af5109d24e6c57565d74a1}{\+\_\+\+POSIX\+\_\+\+C\+\_\+\+SOURCE}}~199309L
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint64\+\_\+t \mbox{\hyperlink{pico__time_8h_ab79ee746422e20141a3e7c6c47f750ad}{ptime\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Time value expressed in microseconds. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{pico__time_8h_ab79ee746422e20141a3e7c6c47f750ad}{ptime\+\_\+t}} \mbox{\hyperlink{pico__time_8h_a1480ec2c3ec17198b97354d1b7a67bc4}{pt\+\_\+now}} (void)
+\begin{DoxyCompactList}\small\item\em Returns the present high-\/res clock time. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__time_8h_afe9eaa0614163b1f6e0b54cbff93310c}{pt\+\_\+sleep}} (\mbox{\hyperlink{pico__time_8h_ab79ee746422e20141a3e7c6c47f750ad}{ptime\+\_\+t}} duration)
+\begin{DoxyCompactList}\small\item\em Sleeps for at least the specified duration. \end{DoxyCompactList}\item 
+int64\+\_\+t \mbox{\hyperlink{pico__time_8h_a358d95a81ae177f7ecb59b94ea84cd23}{pt\+\_\+to\+\_\+usec}} (\mbox{\hyperlink{pico__time_8h_ab79ee746422e20141a3e7c6c47f750ad}{ptime\+\_\+t}} time)
+\begin{DoxyCompactList}\small\item\em Converts time to microseconds. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{pico__time_8h_a2bf7f7743ae981db1e940409d8590500}{pt\+\_\+to\+\_\+msec}} (\mbox{\hyperlink{pico__time_8h_ab79ee746422e20141a3e7c6c47f750ad}{ptime\+\_\+t}} time)
+\begin{DoxyCompactList}\small\item\em Converts time to milliseconds. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{pico__time_8h_a95758d996a21c6acb3370c0e704dad81}{pt\+\_\+to\+\_\+sec}} (\mbox{\hyperlink{pico__time_8h_ab79ee746422e20141a3e7c6c47f750ad}{ptime\+\_\+t}} time)
+\begin{DoxyCompactList}\small\item\em Converts time to seconds. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{pico__time_8h_ab79ee746422e20141a3e7c6c47f750ad}{ptime\+\_\+t}} \mbox{\hyperlink{pico__time_8h_a4d86a8e38902a7a793b823d855f090df}{pt\+\_\+from\+\_\+usec}} (int64\+\_\+t usec)
+\begin{DoxyCompactList}\small\item\em Make time from microseconds. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{pico__time_8h_ab79ee746422e20141a3e7c6c47f750ad}{ptime\+\_\+t}} \mbox{\hyperlink{pico__time_8h_ad5a91366f5e2c4766eb683fd75788715}{pt\+\_\+from\+\_\+msec}} (int32\+\_\+t msec)
+\begin{DoxyCompactList}\small\item\em Make time from miliseconds. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{pico__time_8h_ab79ee746422e20141a3e7c6c47f750ad}{ptime\+\_\+t}} \mbox{\hyperlink{pico__time_8h_af0f9420089b3457f71bf7fbfd717470c}{pt\+\_\+from\+\_\+sec}} (double sec)
+\begin{DoxyCompactList}\small\item\em Make time from seconds. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A simple time management library. 
+
+\DoxyHorRuler{0}
+ \hypertarget{pico__time_8h_autotoc_md53}{}\doxysubsubsection{Licensing information at end of header}\label{pico__time_8h_autotoc_md53}
+\hypertarget{pico__time_8h_autotoc_md54}{}\doxysubsubsection{Features\+:}\label{pico__time_8h_autotoc_md54}
+
+\begin{DoxyItemize}
+\item Written in C99
+\item Single header library for easy build system integration
+\item Cross-\/platform time and sleep functions
+\item Time conversion functions
+\end{DoxyItemize}\hypertarget{pico__time_8h_autotoc_md55}{}\doxysubsubsection{Summary\+:}\label{pico__time_8h_autotoc_md55}
+This library provides high-\/res time and sleep functions, as well as unit conversions functions.
+
+Even though {\ttfamily ptime\+\_\+t} is expressed in microseconds, it is still recommended that you use the {\ttfamily pt\+\_\+to\+\_\+usec} and {\ttfamily pt\+\_\+from\+\_\+usec} functions should this ever change.\hypertarget{pico__time_8h_autotoc_md56}{}\doxysubsubsection{Usage\+:}\label{pico__time_8h_autotoc_md56}
+To use this library in your project, add the following
+
+\begin{quote}
+\#define PICO\+\_\+\+TIME\+\_\+\+IMPLEMENTATION \#include \char`\"{}pico\+\_\+time.\+h\char`\"{} \end{quote}
+to a source file (once).
+
+IMPORTANT\+: On POSIX systems, when defining PICO\+\_\+\+TIME\+\_\+\+IMPLEMENTATION, one of three conditions must hold\+:
+
+1) \#define \+\_\+\+POSIX\+\_\+\+C\+\_\+\+SOURCE 199309L must precede any header include in the file 2) This library must be included before any other headers 3) The build system must define {\ttfamily \+\_\+\+POSIX\+\_\+\+C\+\_\+\+SOURCE 199309L} 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{pico__time_8h_a3024ccd4a9af5109d24e6c57565d74a1}\label{pico__time_8h_a3024ccd4a9af5109d24e6c57565d74a1}} 
+\index{pico\_time.h@{pico\_time.h}!\_POSIX\_C\_SOURCE@{\_POSIX\_C\_SOURCE}}
+\index{\_POSIX\_C\_SOURCE@{\_POSIX\_C\_SOURCE}!pico\_time.h@{pico\_time.h}}
+\doxysubsubsection{\texorpdfstring{\_POSIX\_C\_SOURCE}{\_POSIX\_C\_SOURCE}}
+{\footnotesize\ttfamily \#define \+\_\+\+POSIX\+\_\+\+C\+\_\+\+SOURCE~199309L}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{pico__time_8h_ab79ee746422e20141a3e7c6c47f750ad}\label{pico__time_8h_ab79ee746422e20141a3e7c6c47f750ad}} 
+\index{pico\_time.h@{pico\_time.h}!ptime\_t@{ptime\_t}}
+\index{ptime\_t@{ptime\_t}!pico\_time.h@{pico\_time.h}}
+\doxysubsubsection{\texorpdfstring{ptime\_t}{ptime\_t}}
+{\footnotesize\ttfamily typedef uint64\+\_\+t \mbox{\hyperlink{pico__time_8h_ab79ee746422e20141a3e7c6c47f750ad}{ptime\+\_\+t}}}
+
+
+
+Time value expressed in microseconds. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pico__time_8h_a1480ec2c3ec17198b97354d1b7a67bc4}\label{pico__time_8h_a1480ec2c3ec17198b97354d1b7a67bc4}} 
+\index{pico\_time.h@{pico\_time.h}!pt\_now@{pt\_now}}
+\index{pt\_now@{pt\_now}!pico\_time.h@{pico\_time.h}}
+\doxysubsubsection{\texorpdfstring{pt\_now()}{pt\_now()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pico__time_8h_ab79ee746422e20141a3e7c6c47f750ad}{ptime\+\_\+t}} pt\+\_\+now (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Returns the present high-\/res clock time. 
+
+\mbox{\Hypertarget{pico__time_8h_afe9eaa0614163b1f6e0b54cbff93310c}\label{pico__time_8h_afe9eaa0614163b1f6e0b54cbff93310c}} 
+\index{pico\_time.h@{pico\_time.h}!pt\_sleep@{pt\_sleep}}
+\index{pt\_sleep@{pt\_sleep}!pico\_time.h@{pico\_time.h}}
+\doxysubsubsection{\texorpdfstring{pt\_sleep()}{pt\_sleep()}}
+{\footnotesize\ttfamily void pt\+\_\+sleep (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__time_8h_ab79ee746422e20141a3e7c6c47f750ad}{ptime\+\_\+t}}}]{duration }\end{DoxyParamCaption})}
+
+
+
+Sleeps for at least the specified duration. 
+
+Note\+: On most platforms this function has microsecond resolution, except on Windows where it only has millisecond resoultion. \mbox{\Hypertarget{pico__time_8h_a358d95a81ae177f7ecb59b94ea84cd23}\label{pico__time_8h_a358d95a81ae177f7ecb59b94ea84cd23}} 
+\index{pico\_time.h@{pico\_time.h}!pt\_to\_usec@{pt\_to\_usec}}
+\index{pt\_to\_usec@{pt\_to\_usec}!pico\_time.h@{pico\_time.h}}
+\doxysubsubsection{\texorpdfstring{pt\_to\_usec()}{pt\_to\_usec()}}
+{\footnotesize\ttfamily int64\+\_\+t pt\+\_\+to\+\_\+usec (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__time_8h_ab79ee746422e20141a3e7c6c47f750ad}{ptime\+\_\+t}}}]{time }\end{DoxyParamCaption})}
+
+
+
+Converts time to microseconds. 
+
+\mbox{\Hypertarget{pico__time_8h_a2bf7f7743ae981db1e940409d8590500}\label{pico__time_8h_a2bf7f7743ae981db1e940409d8590500}} 
+\index{pico\_time.h@{pico\_time.h}!pt\_to\_msec@{pt\_to\_msec}}
+\index{pt\_to\_msec@{pt\_to\_msec}!pico\_time.h@{pico\_time.h}}
+\doxysubsubsection{\texorpdfstring{pt\_to\_msec()}{pt\_to\_msec()}}
+{\footnotesize\ttfamily int32\+\_\+t pt\+\_\+to\+\_\+msec (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__time_8h_ab79ee746422e20141a3e7c6c47f750ad}{ptime\+\_\+t}}}]{time }\end{DoxyParamCaption})}
+
+
+
+Converts time to milliseconds. 
+
+\mbox{\Hypertarget{pico__time_8h_a95758d996a21c6acb3370c0e704dad81}\label{pico__time_8h_a95758d996a21c6acb3370c0e704dad81}} 
+\index{pico\_time.h@{pico\_time.h}!pt\_to\_sec@{pt\_to\_sec}}
+\index{pt\_to\_sec@{pt\_to\_sec}!pico\_time.h@{pico\_time.h}}
+\doxysubsubsection{\texorpdfstring{pt\_to\_sec()}{pt\_to\_sec()}}
+{\footnotesize\ttfamily double pt\+\_\+to\+\_\+sec (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__time_8h_ab79ee746422e20141a3e7c6c47f750ad}{ptime\+\_\+t}}}]{time }\end{DoxyParamCaption})}
+
+
+
+Converts time to seconds. 
+
+\mbox{\Hypertarget{pico__time_8h_a4d86a8e38902a7a793b823d855f090df}\label{pico__time_8h_a4d86a8e38902a7a793b823d855f090df}} 
+\index{pico\_time.h@{pico\_time.h}!pt\_from\_usec@{pt\_from\_usec}}
+\index{pt\_from\_usec@{pt\_from\_usec}!pico\_time.h@{pico\_time.h}}
+\doxysubsubsection{\texorpdfstring{pt\_from\_usec()}{pt\_from\_usec()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pico__time_8h_ab79ee746422e20141a3e7c6c47f750ad}{ptime\+\_\+t}} pt\+\_\+from\+\_\+usec (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{usec }\end{DoxyParamCaption})}
+
+
+
+Make time from microseconds. 
+
+\mbox{\Hypertarget{pico__time_8h_ad5a91366f5e2c4766eb683fd75788715}\label{pico__time_8h_ad5a91366f5e2c4766eb683fd75788715}} 
+\index{pico\_time.h@{pico\_time.h}!pt\_from\_msec@{pt\_from\_msec}}
+\index{pt\_from\_msec@{pt\_from\_msec}!pico\_time.h@{pico\_time.h}}
+\doxysubsubsection{\texorpdfstring{pt\_from\_msec()}{pt\_from\_msec()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pico__time_8h_ab79ee746422e20141a3e7c6c47f750ad}{ptime\+\_\+t}} pt\+\_\+from\+\_\+msec (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{msec }\end{DoxyParamCaption})}
+
+
+
+Make time from miliseconds. 
+
+\mbox{\Hypertarget{pico__time_8h_af0f9420089b3457f71bf7fbfd717470c}\label{pico__time_8h_af0f9420089b3457f71bf7fbfd717470c}} 
+\index{pico\_time.h@{pico\_time.h}!pt\_from\_sec@{pt\_from\_sec}}
+\index{pt\_from\_sec@{pt\_from\_sec}!pico\_time.h@{pico\_time.h}}
+\doxysubsubsection{\texorpdfstring{pt\_from\_sec()}{pt\_from\_sec()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pico__time_8h_ab79ee746422e20141a3e7c6c47f750ad}{ptime\+\_\+t}} pt\+\_\+from\+\_\+sec (\begin{DoxyParamCaption}\item[{double}]{sec }\end{DoxyParamCaption})}
+
+
+
+Make time from seconds. 
+

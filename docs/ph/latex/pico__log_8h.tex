@@ -1,0 +1,551 @@
+\hypertarget{pico__log_8h}{}\doxysection{pico\+\_\+log.\+h File Reference}
+\label{pico__log_8h}\index{pico\_log.h@{pico\_log.h}}
+
+
+A minimal and flexible logging framework written in C99.  
+
+
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for pico\+\_\+log.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pico__log_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pico__log_8h_af89cb876e6e1d43cfeacdd58a7c9b78c}{log\+\_\+trace}}(...)~        \mbox{\hyperlink{pico__log_8h_a0917db71e256c8bbb8d6e98d612de8ca}{log\+\_\+write}}(\mbox{\hyperlink{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1da8fa9f12103da446ab4f3d3dc2fcf7f5d}{LOG\+\_\+\+LEVEL\+\_\+\+TRACE}}, \+\_\+\+\_\+\+FILE\+\_\+\+\_\+, \+\_\+\+\_\+\+LINE\+\_\+\+\_\+, \+\_\+\+\_\+func\+\_\+\+\_\+, \+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Logs a TRACE an INFO message. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{pico__log_8h_aa77e596ef13d2f0f75d0ac9540ed358d}{log\+\_\+debug}}(...)~        \mbox{\hyperlink{pico__log_8h_a0917db71e256c8bbb8d6e98d612de8ca}{log\+\_\+write}}(\mbox{\hyperlink{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1da538b2b6e011479d408ecd2be0f6d6177}{LOG\+\_\+\+LEVEL\+\_\+\+DEBUG}}, \+\_\+\+\_\+\+FILE\+\_\+\+\_\+, \+\_\+\+\_\+\+LINE\+\_\+\+\_\+, \+\_\+\+\_\+func\+\_\+\+\_\+, \+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Logs a DEBUG message. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{pico__log_8h_aa1cfe5444875c8eca0ea6f6993977d6d}{log\+\_\+info}}(...)~        \mbox{\hyperlink{pico__log_8h_a0917db71e256c8bbb8d6e98d612de8ca}{log\+\_\+write}}(\mbox{\hyperlink{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1daedee1e3159bfe7d918b6e29873c5aee4}{LOG\+\_\+\+LEVEL\+\_\+\+INFO}},  \+\_\+\+\_\+\+FILE\+\_\+\+\_\+, \+\_\+\+\_\+\+LINE\+\_\+\+\_\+, \+\_\+\+\_\+func\+\_\+\+\_\+, \+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Logs an INFO message. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{pico__log_8h_a04af09851c431d178f16b24fa1aac1e9}{log\+\_\+warn}}(...)~        \mbox{\hyperlink{pico__log_8h_a0917db71e256c8bbb8d6e98d612de8ca}{log\+\_\+write}}(\mbox{\hyperlink{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1da99c1e5c8e6d557f3993b9ab54a0107f4}{LOG\+\_\+\+LEVEL\+\_\+\+WARN}},  \+\_\+\+\_\+\+FILE\+\_\+\+\_\+, \+\_\+\+\_\+\+LINE\+\_\+\+\_\+, \+\_\+\+\_\+func\+\_\+\+\_\+, \+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Logs a WARN message. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{pico__log_8h_a6ae72553ea9805dd87a463d6f710364d}{log\+\_\+error}}(...)~        \mbox{\hyperlink{pico__log_8h_a0917db71e256c8bbb8d6e98d612de8ca}{log\+\_\+write}}(\mbox{\hyperlink{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1da5b40f003febbc3b535649d63f4b8a44f}{LOG\+\_\+\+LEVEL\+\_\+\+ERROR}}, \+\_\+\+\_\+\+FILE\+\_\+\+\_\+, \+\_\+\+\_\+\+LINE\+\_\+\+\_\+, \+\_\+\+\_\+func\+\_\+\+\_\+, \+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Logs an ERROR message. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{pico__log_8h_a704a43b1e2ff3bb554aff101efdbeecf}{log\+\_\+fatal}}(...)~        \mbox{\hyperlink{pico__log_8h_a0917db71e256c8bbb8d6e98d612de8ca}{log\+\_\+write}}(\mbox{\hyperlink{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1da779dc8dd26898fb0f88cd5f6e02ba1e5}{LOG\+\_\+\+LEVEL\+\_\+\+FATAL}}, \+\_\+\+\_\+\+FILE\+\_\+\+\_\+, \+\_\+\+\_\+\+LINE\+\_\+\+\_\+, \+\_\+\+\_\+func\+\_\+\+\_\+, \+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Logs a FATAL message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \mbox{\hyperlink{pico__log_8h_a3812256bf0619b47a6a60c70881a8c26}{log\+\_\+appender\+\_\+fn}}) (const char $\ast$entry, void $\ast$udata)
+\begin{DoxyCompactList}\small\item\em Appender function definition. An appender writes a log entry to an output stream. This could be the console, a file, a network connection, etc... \end{DoxyCompactList}\item 
+typedef void($\ast$ \mbox{\hyperlink{pico__log_8h_afd9d8919a261fd4d1699c8039672fc59}{log\+\_\+appender\+\_\+lock\+\_\+fn}}) (bool lock, void $\ast$udata)
+\begin{DoxyCompactList}\small\item\em Lock function definition. This is called during log\+\_\+write. \end{DoxyCompactList}\item 
+typedef int \mbox{\hyperlink{pico__log_8h_adb16d047b76f848ceecd6835beb101d0}{log\+\_\+appender\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Identifies a registered appender. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1d}{log\+\_\+level\+\_\+t}} \{ \newline
+\mbox{\hyperlink{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1da8fa9f12103da446ab4f3d3dc2fcf7f5d}{LOG\+\_\+\+LEVEL\+\_\+\+TRACE}} = 0
+, \mbox{\hyperlink{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1da538b2b6e011479d408ecd2be0f6d6177}{LOG\+\_\+\+LEVEL\+\_\+\+DEBUG}}
+, \mbox{\hyperlink{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1daedee1e3159bfe7d918b6e29873c5aee4}{LOG\+\_\+\+LEVEL\+\_\+\+INFO}}
+, \mbox{\hyperlink{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1da99c1e5c8e6d557f3993b9ab54a0107f4}{LOG\+\_\+\+LEVEL\+\_\+\+WARN}}
+, \newline
+\mbox{\hyperlink{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1da5b40f003febbc3b535649d63f4b8a44f}{LOG\+\_\+\+LEVEL\+\_\+\+ERROR}}
+, \mbox{\hyperlink{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1da779dc8dd26898fb0f88cd5f6e02ba1e5}{LOG\+\_\+\+LEVEL\+\_\+\+FATAL}}
+, \mbox{\hyperlink{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1dac8312acdf50b862a92c7807ed7657344}{LOG\+\_\+\+LEVEL\+\_\+\+COUNT}}
+ \}
+\begin{DoxyCompactList}\small\item\em These codes allow different layers of granularity when logging. See the documentation of the {\ttfamily log\+\_\+set\+\_\+level} function for more information. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{pico__log_8h_a4a3a318279bb2be93dd0492281ce44a2}{log\+\_\+str\+\_\+to\+\_\+level}} (const char $\ast$str, \mbox{\hyperlink{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1d}{log\+\_\+level\+\_\+t}} $\ast$level)
+\begin{DoxyCompactList}\small\item\em Converts a string to the corresponding log level. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__log_8h_a3679e585bdabee5e4b0f7338ee87c45e}{log\+\_\+enable}} (void)
+\begin{DoxyCompactList}\small\item\em Enables logging. NOTE\+: Logging is enabled by default. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__log_8h_a17687236cfa5bb99f8c21ef1f7918d21}{log\+\_\+disable}} (void)
+\begin{DoxyCompactList}\small\item\em Disables logging. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{pico__log_8h_adb16d047b76f848ceecd6835beb101d0}{log\+\_\+appender\+\_\+t}} \mbox{\hyperlink{pico__log_8h_ad476d5612bae72971e67fbead908527d}{log\+\_\+add\+\_\+appender}} (\mbox{\hyperlink{pico__log_8h_a3812256bf0619b47a6a60c70881a8c26}{log\+\_\+appender\+\_\+fn}} appender\+\_\+fp, \mbox{\hyperlink{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1d}{log\+\_\+level\+\_\+t}} level, void $\ast$udata)
+\begin{DoxyCompactList}\small\item\em Registers an appender. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{pico__log_8h_adb16d047b76f848ceecd6835beb101d0}{log\+\_\+appender\+\_\+t}} \mbox{\hyperlink{pico__log_8h_a8f1f52e9ac7e68940a8b053ee54d12f4}{log\+\_\+add\+\_\+stream}} (FILE $\ast$stream, \mbox{\hyperlink{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1d}{log\+\_\+level\+\_\+t}} level)
+\begin{DoxyCompactList}\small\item\em Registers an output stream appender. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__log_8h_aba500ec477b1634d4d71172eca74016b}{log\+\_\+remove\+\_\+appender}} (\mbox{\hyperlink{pico__log_8h_adb16d047b76f848ceecd6835beb101d0}{log\+\_\+appender\+\_\+t}} id)
+\begin{DoxyCompactList}\small\item\em Unregisters appender (removes the appender from the logger). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__log_8h_ac14ac87ba19a0c31b1918d7ed4ca0056}{log\+\_\+enable\+\_\+appender}} (\mbox{\hyperlink{pico__log_8h_adb16d047b76f848ceecd6835beb101d0}{log\+\_\+appender\+\_\+t}} id)
+\begin{DoxyCompactList}\small\item\em Enables the specified appender. NOTE\+: Appenders are enabled by default after registration. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__log_8h_afce92470b648403ea10f89cca683beca}{log\+\_\+disable\+\_\+appender}} (\mbox{\hyperlink{pico__log_8h_adb16d047b76f848ceecd6835beb101d0}{log\+\_\+appender\+\_\+t}} id)
+\begin{DoxyCompactList}\small\item\em Disables the specified appender. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__log_8h_ab0a9595bd846f51f999293ec8ea6a4ea}{log\+\_\+set\+\_\+lock}} (\mbox{\hyperlink{pico__log_8h_adb16d047b76f848ceecd6835beb101d0}{log\+\_\+appender\+\_\+t}} id, \mbox{\hyperlink{pico__log_8h_afd9d8919a261fd4d1699c8039672fc59}{log\+\_\+appender\+\_\+lock\+\_\+fn}} lock\+\_\+fp, void $\ast$udata)
+\begin{DoxyCompactList}\small\item\em Sets the lock function for a given appender. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__log_8h_aa92dbb8007a4acce47c977c6f566d2da}{log\+\_\+set\+\_\+level}} (\mbox{\hyperlink{pico__log_8h_adb16d047b76f848ceecd6835beb101d0}{log\+\_\+appender\+\_\+t}} id, \mbox{\hyperlink{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1d}{log\+\_\+level\+\_\+t}} level)
+\begin{DoxyCompactList}\small\item\em Sets the logging level. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__log_8h_ad5891c78bfeed0a59cbf11b2dd536967}{log\+\_\+set\+\_\+time\+\_\+fmt}} (\mbox{\hyperlink{pico__log_8h_adb16d047b76f848ceecd6835beb101d0}{log\+\_\+appender\+\_\+t}} id, const char $\ast$fmt)
+\begin{DoxyCompactList}\small\item\em Set the appender timestamp. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__log_8h_a4ed1a8252938bad8f215ca2275290e02}{log\+\_\+display\+\_\+colors}} (\mbox{\hyperlink{pico__log_8h_adb16d047b76f848ceecd6835beb101d0}{log\+\_\+appender\+\_\+t}} id, bool enabled)
+\begin{DoxyCompactList}\small\item\em Turns colors ouput on or off for the specified appender. NOTE\+: Off by default. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__log_8h_a06b3dabaf94493e93a7068dd6e8e0c00}{log\+\_\+display\+\_\+timestamp}} (\mbox{\hyperlink{pico__log_8h_adb16d047b76f848ceecd6835beb101d0}{log\+\_\+appender\+\_\+t}} id, bool enabled)
+\begin{DoxyCompactList}\small\item\em Turns timestamp reporting on/off for the specified appender. NOTE\+: Off by default. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__log_8h_a6ae63a8193e7af401df3eb73add5d9fc}{log\+\_\+display\+\_\+level}} (\mbox{\hyperlink{pico__log_8h_adb16d047b76f848ceecd6835beb101d0}{log\+\_\+appender\+\_\+t}} id, bool enabled)
+\begin{DoxyCompactList}\small\item\em Turns log level reporting on/off for the specified appender. NOTE\+: On by default. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__log_8h_a35ae2659ac9c1ad0e9b29b44010b95a5}{log\+\_\+display\+\_\+file}} (\mbox{\hyperlink{pico__log_8h_adb16d047b76f848ceecd6835beb101d0}{log\+\_\+appender\+\_\+t}} id, bool enabled)
+\begin{DoxyCompactList}\small\item\em Turns filename and line number reporting on/off for the specified appender. NOTE\+: Off by default. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__log_8h_abd7948b1bc26d7cde8ac52e557bcd8d5}{log\+\_\+display\+\_\+function}} (\mbox{\hyperlink{pico__log_8h_adb16d047b76f848ceecd6835beb101d0}{log\+\_\+appender\+\_\+t}} id, bool enabled)
+\begin{DoxyCompactList}\small\item\em Turns function reporting on/off for the specified appender. NOTE\+: Off by default. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pico__log_8h_a0917db71e256c8bbb8d6e98d612de8ca}{log\+\_\+write}} (\mbox{\hyperlink{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1d}{log\+\_\+level\+\_\+t}} level, const char $\ast$file, unsigned line, const char $\ast$func, const char $\ast$fmt,...)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A minimal and flexible logging framework written in C99. 
+
+\DoxyHorRuler{0}
+ \hypertarget{pico__log_8h_autotoc_md34}{}\doxysubsubsection{Licensing information at end of header}\label{pico__log_8h_autotoc_md34}
+\hypertarget{pico__log_8h_autotoc_md35}{}\doxysubsubsection{Features\+:}\label{pico__log_8h_autotoc_md35}
+
+\begin{DoxyItemize}
+\item Written in pure C99, and compatible with C++
+\item Single header library for easy integration into any build system
+\item Tiny memory and code footprint
+\item Simple and minimalistic API
+\item Flexible and extensible appender handling
+\item Ability to set logging level (TRACE, DEBUG, INFO, WARN, ERROR, and FATAL)
+\item Ability to toggle date/time, log level, filename/line, and function
+\item reporting individually, on a per appender basis
+\item Permissive licensing (zlib or public domain)
+\end{DoxyItemize}\hypertarget{pico__log_8h_autotoc_md36}{}\doxysubsubsection{Summary\+:}\label{pico__log_8h_autotoc_md36}
+This library is built around the notion of appenders. An appender writes log messages to a sink. It could be a file, a network connection, or stream (e.\+g. stdout).
+
+Once one or more appenders are registered, macros such as log\+\_\+info will send messages to the appenders.
+
+Output can be modified in a number of ways. The most important way to affect the output is to specify the log level (e.\+g. LOG\+\_\+\+LEVEL\+\_\+\+INFO). If the log level is set LOG\+\_\+\+LEVEL\+\_\+\+INFO, then messages sent to log\+\_\+trace or log\+\_\+debug will not be written whereas log\+\_\+info, log\+\_\+warn, log\+\_\+error, and log\+\_\+fatal will have no effect.
+
+Output can also be modified to show or hide various metadata. These are date/time, log level, filename/line number, and calling function. They can be toggled using the log\+\_\+display$\ast$ functions. There is also an option to enable color coded output.
+
+It is possible to synchronize appenders using {\ttfamily log\+\_\+set\+\_\+lock}. This function accepts a function pointer that takes a boolean and user data as input. If this function pointer is passed true the lock is acquired and false to release the lock.
+
+Please see the examples for more details.\hypertarget{pico__log_8h_autotoc_md37}{}\doxysubsubsection{Usage\+:}\label{pico__log_8h_autotoc_md37}
+To use this library in your project, add the following
+
+\begin{quote}
+\#define PICO\+\_\+\+LOG\+\_\+\+IMPLEMENTATION \#include \char`\"{}pico\+\_\+log.\+h\char`\"{} \end{quote}
+to a source file (once), then simply include the header normally.\hypertarget{pico__log_8h_autotoc_md38}{}\doxysubsubsection{Constants\+:}\label{pico__log_8h_autotoc_md38}
+
+\begin{DoxyItemize}
+\item PICO\+\_\+\+LOG\+\_\+\+MAX\+\_\+\+APPENDERS (default\+: 16)
+\item PICO\+\_\+\+LOG\+\_\+\+MAX\+\_\+\+MSG\+\_\+\+LENGTH (default\+: 1024)
+\end{DoxyItemize}
+
+Must be defined before PICO\+\_\+\+LOG\+\_\+\+IMPLEMENTATION 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{pico__log_8h_af89cb876e6e1d43cfeacdd58a7c9b78c}\label{pico__log_8h_af89cb876e6e1d43cfeacdd58a7c9b78c}} 
+\index{pico\_log.h@{pico\_log.h}!log\_trace@{log\_trace}}
+\index{log\_trace@{log\_trace}!pico\_log.h@{pico\_log.h}}
+\doxysubsubsection{\texorpdfstring{log\_trace}{log\_trace}}
+{\footnotesize\ttfamily \#define log\+\_\+trace(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})~        \mbox{\hyperlink{pico__log_8h_a0917db71e256c8bbb8d6e98d612de8ca}{log\+\_\+write}}(\mbox{\hyperlink{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1da8fa9f12103da446ab4f3d3dc2fcf7f5d}{LOG\+\_\+\+LEVEL\+\_\+\+TRACE}}, \+\_\+\+\_\+\+FILE\+\_\+\+\_\+, \+\_\+\+\_\+\+LINE\+\_\+\+\_\+, \+\_\+\+\_\+func\+\_\+\+\_\+, \+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)}
+
+
+
+Logs a TRACE an INFO message. 
+
+Writes a TRACE level message to the log. Usage is similar to printf (i.\+e. \mbox{\hyperlink{pico__log_8h_af89cb876e6e1d43cfeacdd58a7c9b78c}{log\+\_\+trace(format, args...)}}) \mbox{\Hypertarget{pico__log_8h_aa77e596ef13d2f0f75d0ac9540ed358d}\label{pico__log_8h_aa77e596ef13d2f0f75d0ac9540ed358d}} 
+\index{pico\_log.h@{pico\_log.h}!log\_debug@{log\_debug}}
+\index{log\_debug@{log\_debug}!pico\_log.h@{pico\_log.h}}
+\doxysubsubsection{\texorpdfstring{log\_debug}{log\_debug}}
+{\footnotesize\ttfamily \#define log\+\_\+debug(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})~        \mbox{\hyperlink{pico__log_8h_a0917db71e256c8bbb8d6e98d612de8ca}{log\+\_\+write}}(\mbox{\hyperlink{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1da538b2b6e011479d408ecd2be0f6d6177}{LOG\+\_\+\+LEVEL\+\_\+\+DEBUG}}, \+\_\+\+\_\+\+FILE\+\_\+\+\_\+, \+\_\+\+\_\+\+LINE\+\_\+\+\_\+, \+\_\+\+\_\+func\+\_\+\+\_\+, \+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)}
+
+
+
+Logs a DEBUG message. 
+
+Writes a DEBUG level message to the log. Usage is similar to printf (i.\+e. (i.\+e. \mbox{\hyperlink{pico__log_8h_aa77e596ef13d2f0f75d0ac9540ed358d}{log\+\_\+debug(format, args...)}}) \mbox{\Hypertarget{pico__log_8h_aa1cfe5444875c8eca0ea6f6993977d6d}\label{pico__log_8h_aa1cfe5444875c8eca0ea6f6993977d6d}} 
+\index{pico\_log.h@{pico\_log.h}!log\_info@{log\_info}}
+\index{log\_info@{log\_info}!pico\_log.h@{pico\_log.h}}
+\doxysubsubsection{\texorpdfstring{log\_info}{log\_info}}
+{\footnotesize\ttfamily \#define log\+\_\+info(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})~        \mbox{\hyperlink{pico__log_8h_a0917db71e256c8bbb8d6e98d612de8ca}{log\+\_\+write}}(\mbox{\hyperlink{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1daedee1e3159bfe7d918b6e29873c5aee4}{LOG\+\_\+\+LEVEL\+\_\+\+INFO}},  \+\_\+\+\_\+\+FILE\+\_\+\+\_\+, \+\_\+\+\_\+\+LINE\+\_\+\+\_\+, \+\_\+\+\_\+func\+\_\+\+\_\+, \+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)}
+
+
+
+Logs an INFO message. 
+
+Writes an INFO level message to the log. Usage is similar to printf (i.\+e. \mbox{\hyperlink{pico__log_8h_aa1cfe5444875c8eca0ea6f6993977d6d}{log\+\_\+info(format, args...)}}) \mbox{\Hypertarget{pico__log_8h_a04af09851c431d178f16b24fa1aac1e9}\label{pico__log_8h_a04af09851c431d178f16b24fa1aac1e9}} 
+\index{pico\_log.h@{pico\_log.h}!log\_warn@{log\_warn}}
+\index{log\_warn@{log\_warn}!pico\_log.h@{pico\_log.h}}
+\doxysubsubsection{\texorpdfstring{log\_warn}{log\_warn}}
+{\footnotesize\ttfamily \#define log\+\_\+warn(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})~        \mbox{\hyperlink{pico__log_8h_a0917db71e256c8bbb8d6e98d612de8ca}{log\+\_\+write}}(\mbox{\hyperlink{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1da99c1e5c8e6d557f3993b9ab54a0107f4}{LOG\+\_\+\+LEVEL\+\_\+\+WARN}},  \+\_\+\+\_\+\+FILE\+\_\+\+\_\+, \+\_\+\+\_\+\+LINE\+\_\+\+\_\+, \+\_\+\+\_\+func\+\_\+\+\_\+, \+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)}
+
+
+
+Logs a WARN message. 
+
+Writes a WARN level message to the log. Usage is similar to printf (i.\+e. (i.\+e. \mbox{\hyperlink{pico__log_8h_a04af09851c431d178f16b24fa1aac1e9}{log\+\_\+warn(format, args...)}}) \mbox{\Hypertarget{pico__log_8h_a6ae72553ea9805dd87a463d6f710364d}\label{pico__log_8h_a6ae72553ea9805dd87a463d6f710364d}} 
+\index{pico\_log.h@{pico\_log.h}!log\_error@{log\_error}}
+\index{log\_error@{log\_error}!pico\_log.h@{pico\_log.h}}
+\doxysubsubsection{\texorpdfstring{log\_error}{log\_error}}
+{\footnotesize\ttfamily \#define log\+\_\+error(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})~        \mbox{\hyperlink{pico__log_8h_a0917db71e256c8bbb8d6e98d612de8ca}{log\+\_\+write}}(\mbox{\hyperlink{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1da5b40f003febbc3b535649d63f4b8a44f}{LOG\+\_\+\+LEVEL\+\_\+\+ERROR}}, \+\_\+\+\_\+\+FILE\+\_\+\+\_\+, \+\_\+\+\_\+\+LINE\+\_\+\+\_\+, \+\_\+\+\_\+func\+\_\+\+\_\+, \+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)}
+
+
+
+Logs an ERROR message. 
+
+Writes a ERROR level message to the log. Usage is similar to printf (i.\+e. (i.\+e. \mbox{\hyperlink{pico__log_8h_a6ae72553ea9805dd87a463d6f710364d}{log\+\_\+error(format, args...)}}) \mbox{\Hypertarget{pico__log_8h_a704a43b1e2ff3bb554aff101efdbeecf}\label{pico__log_8h_a704a43b1e2ff3bb554aff101efdbeecf}} 
+\index{pico\_log.h@{pico\_log.h}!log\_fatal@{log\_fatal}}
+\index{log\_fatal@{log\_fatal}!pico\_log.h@{pico\_log.h}}
+\doxysubsubsection{\texorpdfstring{log\_fatal}{log\_fatal}}
+{\footnotesize\ttfamily \#define log\+\_\+fatal(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})~        \mbox{\hyperlink{pico__log_8h_a0917db71e256c8bbb8d6e98d612de8ca}{log\+\_\+write}}(\mbox{\hyperlink{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1da779dc8dd26898fb0f88cd5f6e02ba1e5}{LOG\+\_\+\+LEVEL\+\_\+\+FATAL}}, \+\_\+\+\_\+\+FILE\+\_\+\+\_\+, \+\_\+\+\_\+\+LINE\+\_\+\+\_\+, \+\_\+\+\_\+func\+\_\+\+\_\+, \+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)}
+
+
+
+Logs a FATAL message. 
+
+Writes a FATAL level message to the log.. Usage is similar to printf (i.\+e. (i.\+e. \mbox{\hyperlink{pico__log_8h_a704a43b1e2ff3bb554aff101efdbeecf}{log\+\_\+fatal(format, args...)}}) 
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{pico__log_8h_a3812256bf0619b47a6a60c70881a8c26}\label{pico__log_8h_a3812256bf0619b47a6a60c70881a8c26}} 
+\index{pico\_log.h@{pico\_log.h}!log\_appender\_fn@{log\_appender\_fn}}
+\index{log\_appender\_fn@{log\_appender\_fn}!pico\_log.h@{pico\_log.h}}
+\doxysubsubsection{\texorpdfstring{log\_appender\_fn}{log\_appender\_fn}}
+{\footnotesize\ttfamily typedef void($\ast$ log\+\_\+appender\+\_\+fn) (const char $\ast$entry, void $\ast$udata)}
+
+
+
+Appender function definition. An appender writes a log entry to an output stream. This could be the console, a file, a network connection, etc... 
+
+\mbox{\Hypertarget{pico__log_8h_afd9d8919a261fd4d1699c8039672fc59}\label{pico__log_8h_afd9d8919a261fd4d1699c8039672fc59}} 
+\index{pico\_log.h@{pico\_log.h}!log\_appender\_lock\_fn@{log\_appender\_lock\_fn}}
+\index{log\_appender\_lock\_fn@{log\_appender\_lock\_fn}!pico\_log.h@{pico\_log.h}}
+\doxysubsubsection{\texorpdfstring{log\_appender\_lock\_fn}{log\_appender\_lock\_fn}}
+{\footnotesize\ttfamily typedef void($\ast$ log\+\_\+appender\+\_\+lock\+\_\+fn) (bool lock, void $\ast$udata)}
+
+
+
+Lock function definition. This is called during log\+\_\+write. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lock} & True to lock, false to release the lock \\
+\hline
+{\em udata} & Data obtained from the corresponding {\ttfamily log\+\_\+set\+\_\+lock} function \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pico__log_8h_adb16d047b76f848ceecd6835beb101d0}\label{pico__log_8h_adb16d047b76f848ceecd6835beb101d0}} 
+\index{pico\_log.h@{pico\_log.h}!log\_appender\_t@{log\_appender\_t}}
+\index{log\_appender\_t@{log\_appender\_t}!pico\_log.h@{pico\_log.h}}
+\doxysubsubsection{\texorpdfstring{log\_appender\_t}{log\_appender\_t}}
+{\footnotesize\ttfamily typedef int \mbox{\hyperlink{pico__log_8h_adb16d047b76f848ceecd6835beb101d0}{log\+\_\+appender\+\_\+t}}}
+
+
+
+Identifies a registered appender. 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1d}\label{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1d}} 
+\index{pico\_log.h@{pico\_log.h}!log\_level\_t@{log\_level\_t}}
+\index{log\_level\_t@{log\_level\_t}!pico\_log.h@{pico\_log.h}}
+\doxysubsubsection{\texorpdfstring{log\_level\_t}{log\_level\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1d}{log\+\_\+level\+\_\+t}}}
+
+
+
+These codes allow different layers of granularity when logging. See the documentation of the {\ttfamily log\+\_\+set\+\_\+level} function for more information. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOG\_LEVEL\_TRACE@{LOG\_LEVEL\_TRACE}!pico\_log.h@{pico\_log.h}}\index{pico\_log.h@{pico\_log.h}!LOG\_LEVEL\_TRACE@{LOG\_LEVEL\_TRACE}}}\mbox{\Hypertarget{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1da8fa9f12103da446ab4f3d3dc2fcf7f5d}\label{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1da8fa9f12103da446ab4f3d3dc2fcf7f5d}} 
+LOG\+\_\+\+LEVEL\+\_\+\+TRACE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOG\_LEVEL\_DEBUG@{LOG\_LEVEL\_DEBUG}!pico\_log.h@{pico\_log.h}}\index{pico\_log.h@{pico\_log.h}!LOG\_LEVEL\_DEBUG@{LOG\_LEVEL\_DEBUG}}}\mbox{\Hypertarget{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1da538b2b6e011479d408ecd2be0f6d6177}\label{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1da538b2b6e011479d408ecd2be0f6d6177}} 
+LOG\+\_\+\+LEVEL\+\_\+\+DEBUG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOG\_LEVEL\_INFO@{LOG\_LEVEL\_INFO}!pico\_log.h@{pico\_log.h}}\index{pico\_log.h@{pico\_log.h}!LOG\_LEVEL\_INFO@{LOG\_LEVEL\_INFO}}}\mbox{\Hypertarget{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1daedee1e3159bfe7d918b6e29873c5aee4}\label{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1daedee1e3159bfe7d918b6e29873c5aee4}} 
+LOG\+\_\+\+LEVEL\+\_\+\+INFO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOG\_LEVEL\_WARN@{LOG\_LEVEL\_WARN}!pico\_log.h@{pico\_log.h}}\index{pico\_log.h@{pico\_log.h}!LOG\_LEVEL\_WARN@{LOG\_LEVEL\_WARN}}}\mbox{\Hypertarget{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1da99c1e5c8e6d557f3993b9ab54a0107f4}\label{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1da99c1e5c8e6d557f3993b9ab54a0107f4}} 
+LOG\+\_\+\+LEVEL\+\_\+\+WARN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOG\_LEVEL\_ERROR@{LOG\_LEVEL\_ERROR}!pico\_log.h@{pico\_log.h}}\index{pico\_log.h@{pico\_log.h}!LOG\_LEVEL\_ERROR@{LOG\_LEVEL\_ERROR}}}\mbox{\Hypertarget{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1da5b40f003febbc3b535649d63f4b8a44f}\label{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1da5b40f003febbc3b535649d63f4b8a44f}} 
+LOG\+\_\+\+LEVEL\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOG\_LEVEL\_FATAL@{LOG\_LEVEL\_FATAL}!pico\_log.h@{pico\_log.h}}\index{pico\_log.h@{pico\_log.h}!LOG\_LEVEL\_FATAL@{LOG\_LEVEL\_FATAL}}}\mbox{\Hypertarget{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1da779dc8dd26898fb0f88cd5f6e02ba1e5}\label{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1da779dc8dd26898fb0f88cd5f6e02ba1e5}} 
+LOG\+\_\+\+LEVEL\+\_\+\+FATAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOG\_LEVEL\_COUNT@{LOG\_LEVEL\_COUNT}!pico\_log.h@{pico\_log.h}}\index{pico\_log.h@{pico\_log.h}!LOG\_LEVEL\_COUNT@{LOG\_LEVEL\_COUNT}}}\mbox{\Hypertarget{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1dac8312acdf50b862a92c7807ed7657344}\label{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1dac8312acdf50b862a92c7807ed7657344}} 
+LOG\+\_\+\+LEVEL\+\_\+\+COUNT&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pico__log_8h_a4a3a318279bb2be93dd0492281ce44a2}\label{pico__log_8h_a4a3a318279bb2be93dd0492281ce44a2}} 
+\index{pico\_log.h@{pico\_log.h}!log\_str\_to\_level@{log\_str\_to\_level}}
+\index{log\_str\_to\_level@{log\_str\_to\_level}!pico\_log.h@{pico\_log.h}}
+\doxysubsubsection{\texorpdfstring{log\_str\_to\_level()}{log\_str\_to\_level()}}
+{\footnotesize\ttfamily bool log\+\_\+str\+\_\+to\+\_\+level (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str,  }\item[{\mbox{\hyperlink{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1d}{log\+\_\+level\+\_\+t}} $\ast$}]{level }\end{DoxyParamCaption})}
+
+
+
+Converts a string to the corresponding log level. 
+
+\mbox{\Hypertarget{pico__log_8h_a3679e585bdabee5e4b0f7338ee87c45e}\label{pico__log_8h_a3679e585bdabee5e4b0f7338ee87c45e}} 
+\index{pico\_log.h@{pico\_log.h}!log\_enable@{log\_enable}}
+\index{log\_enable@{log\_enable}!pico\_log.h@{pico\_log.h}}
+\doxysubsubsection{\texorpdfstring{log\_enable()}{log\_enable()}}
+{\footnotesize\ttfamily void log\+\_\+enable (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Enables logging. NOTE\+: Logging is enabled by default. 
+
+\mbox{\Hypertarget{pico__log_8h_a17687236cfa5bb99f8c21ef1f7918d21}\label{pico__log_8h_a17687236cfa5bb99f8c21ef1f7918d21}} 
+\index{pico\_log.h@{pico\_log.h}!log\_disable@{log\_disable}}
+\index{log\_disable@{log\_disable}!pico\_log.h@{pico\_log.h}}
+\doxysubsubsection{\texorpdfstring{log\_disable()}{log\_disable()}}
+{\footnotesize\ttfamily void log\+\_\+disable (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Disables logging. 
+
+\mbox{\Hypertarget{pico__log_8h_ad476d5612bae72971e67fbead908527d}\label{pico__log_8h_ad476d5612bae72971e67fbead908527d}} 
+\index{pico\_log.h@{pico\_log.h}!log\_add\_appender@{log\_add\_appender}}
+\index{log\_add\_appender@{log\_add\_appender}!pico\_log.h@{pico\_log.h}}
+\doxysubsubsection{\texorpdfstring{log\_add\_appender()}{log\_add\_appender()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pico__log_8h_adb16d047b76f848ceecd6835beb101d0}{log\+\_\+appender\+\_\+t}} log\+\_\+add\+\_\+appender (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__log_8h_a3812256bf0619b47a6a60c70881a8c26}{log\+\_\+appender\+\_\+fn}}}]{appender\+\_\+fp,  }\item[{\mbox{\hyperlink{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1d}{log\+\_\+level\+\_\+t}}}]{level,  }\item[{void $\ast$}]{udata }\end{DoxyParamCaption})}
+
+
+
+Registers an appender. 
+
+Adds appender to logger and enables the specified appender. An appender writes a log entry to an output stream. This could be a console, a file, a network connection, etc...
+
+
+\begin{DoxyParams}{Parameters}
+{\em appender\+\_\+fp} & Pointer to the appender function to register. An appender function has the signature, {\ttfamily void appender\+\_\+func(const char$\ast$ p\+\_\+entry, void$\ast$ p\+\_\+udata)}\\
+\hline
+{\em level} & The appender\textquotesingle{}s log level\\
+\hline
+{\em udata} & A pointer supplied to the appender function when writing a log entry. This pointer is not modified by the logger. If not required, pass in NULL for this parameter.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An identifier for the appender. This ID is valid until the appender is unregistered. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pico__log_8h_a8f1f52e9ac7e68940a8b053ee54d12f4}\label{pico__log_8h_a8f1f52e9ac7e68940a8b053ee54d12f4}} 
+\index{pico\_log.h@{pico\_log.h}!log\_add\_stream@{log\_add\_stream}}
+\index{log\_add\_stream@{log\_add\_stream}!pico\_log.h@{pico\_log.h}}
+\doxysubsubsection{\texorpdfstring{log\_add\_stream()}{log\_add\_stream()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pico__log_8h_adb16d047b76f848ceecd6835beb101d0}{log\+\_\+appender\+\_\+t}} log\+\_\+add\+\_\+stream (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{stream,  }\item[{\mbox{\hyperlink{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1d}{log\+\_\+level\+\_\+t}}}]{level }\end{DoxyParamCaption})}
+
+
+
+Registers an output stream appender. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & The output stream to write to \\
+\hline
+{\em level} & The appender\textquotesingle{}s log level\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An identifier for the appender. This ID is valid until the appender is unregistered. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pico__log_8h_aba500ec477b1634d4d71172eca74016b}\label{pico__log_8h_aba500ec477b1634d4d71172eca74016b}} 
+\index{pico\_log.h@{pico\_log.h}!log\_remove\_appender@{log\_remove\_appender}}
+\index{log\_remove\_appender@{log\_remove\_appender}!pico\_log.h@{pico\_log.h}}
+\doxysubsubsection{\texorpdfstring{log\_remove\_appender()}{log\_remove\_appender()}}
+{\footnotesize\ttfamily void log\+\_\+remove\+\_\+appender (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__log_8h_adb16d047b76f848ceecd6835beb101d0}{log\+\_\+appender\+\_\+t}}}]{id }\end{DoxyParamCaption})}
+
+
+
+Unregisters appender (removes the appender from the logger). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The appender to unregister \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pico__log_8h_ac14ac87ba19a0c31b1918d7ed4ca0056}\label{pico__log_8h_ac14ac87ba19a0c31b1918d7ed4ca0056}} 
+\index{pico\_log.h@{pico\_log.h}!log\_enable\_appender@{log\_enable\_appender}}
+\index{log\_enable\_appender@{log\_enable\_appender}!pico\_log.h@{pico\_log.h}}
+\doxysubsubsection{\texorpdfstring{log\_enable\_appender()}{log\_enable\_appender()}}
+{\footnotesize\ttfamily void log\+\_\+enable\+\_\+appender (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__log_8h_adb16d047b76f848ceecd6835beb101d0}{log\+\_\+appender\+\_\+t}}}]{id }\end{DoxyParamCaption})}
+
+
+
+Enables the specified appender. NOTE\+: Appenders are enabled by default after registration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The appender to enable. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pico__log_8h_afce92470b648403ea10f89cca683beca}\label{pico__log_8h_afce92470b648403ea10f89cca683beca}} 
+\index{pico\_log.h@{pico\_log.h}!log\_disable\_appender@{log\_disable\_appender}}
+\index{log\_disable\_appender@{log\_disable\_appender}!pico\_log.h@{pico\_log.h}}
+\doxysubsubsection{\texorpdfstring{log\_disable\_appender()}{log\_disable\_appender()}}
+{\footnotesize\ttfamily void log\+\_\+disable\+\_\+appender (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__log_8h_adb16d047b76f848ceecd6835beb101d0}{log\+\_\+appender\+\_\+t}}}]{id }\end{DoxyParamCaption})}
+
+
+
+Disables the specified appender. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The appender to disable \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pico__log_8h_ab0a9595bd846f51f999293ec8ea6a4ea}\label{pico__log_8h_ab0a9595bd846f51f999293ec8ea6a4ea}} 
+\index{pico\_log.h@{pico\_log.h}!log\_set\_lock@{log\_set\_lock}}
+\index{log\_set\_lock@{log\_set\_lock}!pico\_log.h@{pico\_log.h}}
+\doxysubsubsection{\texorpdfstring{log\_set\_lock()}{log\_set\_lock()}}
+{\footnotesize\ttfamily void log\+\_\+set\+\_\+lock (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__log_8h_adb16d047b76f848ceecd6835beb101d0}{log\+\_\+appender\+\_\+t}}}]{id,  }\item[{\mbox{\hyperlink{pico__log_8h_afd9d8919a261fd4d1699c8039672fc59}{log\+\_\+appender\+\_\+lock\+\_\+fn}}}]{lock\+\_\+fp,  }\item[{void $\ast$}]{udata }\end{DoxyParamCaption})}
+
+
+
+Sets the lock function for a given appender. 
+
+$^\wedge$
+\begin{DoxyParams}{Parameters}
+{\em lock\+\_\+fp} & The lock function pointer \\
+\hline
+{\em id} & The appender to hold the lock \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pico__log_8h_aa92dbb8007a4acce47c977c6f566d2da}\label{pico__log_8h_aa92dbb8007a4acce47c977c6f566d2da}} 
+\index{pico\_log.h@{pico\_log.h}!log\_set\_level@{log\_set\_level}}
+\index{log\_set\_level@{log\_set\_level}!pico\_log.h@{pico\_log.h}}
+\doxysubsubsection{\texorpdfstring{log\_set\_level()}{log\_set\_level()}}
+{\footnotesize\ttfamily void log\+\_\+set\+\_\+level (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__log_8h_adb16d047b76f848ceecd6835beb101d0}{log\+\_\+appender\+\_\+t}}}]{id,  }\item[{\mbox{\hyperlink{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1d}{log\+\_\+level\+\_\+t}}}]{level }\end{DoxyParamCaption})}
+
+
+
+Sets the logging level. 
+
+Sets the logging level. Only those messages of equal or higher priority (severity) than this value will be logged.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The appender \\
+\hline
+{\em level} & The new appender logging threshold. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pico__log_8h_ad5891c78bfeed0a59cbf11b2dd536967}\label{pico__log_8h_ad5891c78bfeed0a59cbf11b2dd536967}} 
+\index{pico\_log.h@{pico\_log.h}!log\_set\_time\_fmt@{log\_set\_time\_fmt}}
+\index{log\_set\_time\_fmt@{log\_set\_time\_fmt}!pico\_log.h@{pico\_log.h}}
+\doxysubsubsection{\texorpdfstring{log\_set\_time\_fmt()}{log\_set\_time\_fmt()}}
+{\footnotesize\ttfamily void log\+\_\+set\+\_\+time\+\_\+fmt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__log_8h_adb16d047b76f848ceecd6835beb101d0}{log\+\_\+appender\+\_\+t}}}]{id,  }\item[{const char $\ast$}]{fmt }\end{DoxyParamCaption})}
+
+
+
+Set the appender timestamp. 
+
+Sets the appender timestamp format according to\+: \href{https://man7.org/linux/man-pages/man3/strftime.3.html}{\texttt{ https\+://man7.\+org/linux/man-\/pages/man3/strftime.\+3.\+html}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The appender id \\
+\hline
+{\em fmt} & The time format \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pico__log_8h_a4ed1a8252938bad8f215ca2275290e02}\label{pico__log_8h_a4ed1a8252938bad8f215ca2275290e02}} 
+\index{pico\_log.h@{pico\_log.h}!log\_display\_colors@{log\_display\_colors}}
+\index{log\_display\_colors@{log\_display\_colors}!pico\_log.h@{pico\_log.h}}
+\doxysubsubsection{\texorpdfstring{log\_display\_colors()}{log\_display\_colors()}}
+{\footnotesize\ttfamily void log\+\_\+display\+\_\+colors (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__log_8h_adb16d047b76f848ceecd6835beb101d0}{log\+\_\+appender\+\_\+t}}}]{id,  }\item[{bool}]{enabled }\end{DoxyParamCaption})}
+
+
+
+Turns colors ouput on or off for the specified appender. NOTE\+: Off by default. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The appender id \\
+\hline
+{\em enabled} & On if true \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pico__log_8h_a06b3dabaf94493e93a7068dd6e8e0c00}\label{pico__log_8h_a06b3dabaf94493e93a7068dd6e8e0c00}} 
+\index{pico\_log.h@{pico\_log.h}!log\_display\_timestamp@{log\_display\_timestamp}}
+\index{log\_display\_timestamp@{log\_display\_timestamp}!pico\_log.h@{pico\_log.h}}
+\doxysubsubsection{\texorpdfstring{log\_display\_timestamp()}{log\_display\_timestamp()}}
+{\footnotesize\ttfamily void log\+\_\+display\+\_\+timestamp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__log_8h_adb16d047b76f848ceecd6835beb101d0}{log\+\_\+appender\+\_\+t}}}]{id,  }\item[{bool}]{enabled }\end{DoxyParamCaption})}
+
+
+
+Turns timestamp reporting on/off for the specified appender. NOTE\+: Off by default. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The appender id \\
+\hline
+{\em enabled} & On if true \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pico__log_8h_a6ae63a8193e7af401df3eb73add5d9fc}\label{pico__log_8h_a6ae63a8193e7af401df3eb73add5d9fc}} 
+\index{pico\_log.h@{pico\_log.h}!log\_display\_level@{log\_display\_level}}
+\index{log\_display\_level@{log\_display\_level}!pico\_log.h@{pico\_log.h}}
+\doxysubsubsection{\texorpdfstring{log\_display\_level()}{log\_display\_level()}}
+{\footnotesize\ttfamily void log\+\_\+display\+\_\+level (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__log_8h_adb16d047b76f848ceecd6835beb101d0}{log\+\_\+appender\+\_\+t}}}]{id,  }\item[{bool}]{enabled }\end{DoxyParamCaption})}
+
+
+
+Turns log level reporting on/off for the specified appender. NOTE\+: On by default. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The appender id \\
+\hline
+{\em enabled} & On if true \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pico__log_8h_a35ae2659ac9c1ad0e9b29b44010b95a5}\label{pico__log_8h_a35ae2659ac9c1ad0e9b29b44010b95a5}} 
+\index{pico\_log.h@{pico\_log.h}!log\_display\_file@{log\_display\_file}}
+\index{log\_display\_file@{log\_display\_file}!pico\_log.h@{pico\_log.h}}
+\doxysubsubsection{\texorpdfstring{log\_display\_file()}{log\_display\_file()}}
+{\footnotesize\ttfamily void log\+\_\+display\+\_\+file (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__log_8h_adb16d047b76f848ceecd6835beb101d0}{log\+\_\+appender\+\_\+t}}}]{id,  }\item[{bool}]{enabled }\end{DoxyParamCaption})}
+
+
+
+Turns filename and line number reporting on/off for the specified appender. NOTE\+: Off by default. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The appender id \\
+\hline
+{\em enabled} & On if true \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pico__log_8h_abd7948b1bc26d7cde8ac52e557bcd8d5}\label{pico__log_8h_abd7948b1bc26d7cde8ac52e557bcd8d5}} 
+\index{pico\_log.h@{pico\_log.h}!log\_display\_function@{log\_display\_function}}
+\index{log\_display\_function@{log\_display\_function}!pico\_log.h@{pico\_log.h}}
+\doxysubsubsection{\texorpdfstring{log\_display\_function()}{log\_display\_function()}}
+{\footnotesize\ttfamily void log\+\_\+display\+\_\+function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__log_8h_adb16d047b76f848ceecd6835beb101d0}{log\+\_\+appender\+\_\+t}}}]{id,  }\item[{bool}]{enabled }\end{DoxyParamCaption})}
+
+
+
+Turns function reporting on/off for the specified appender. NOTE\+: Off by default. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The appender id \\
+\hline
+{\em enabled} & On if true \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pico__log_8h_a0917db71e256c8bbb8d6e98d612de8ca}\label{pico__log_8h_a0917db71e256c8bbb8d6e98d612de8ca}} 
+\index{pico\_log.h@{pico\_log.h}!log\_write@{log\_write}}
+\index{log\_write@{log\_write}!pico\_log.h@{pico\_log.h}}
+\doxysubsubsection{\texorpdfstring{log\_write()}{log\_write()}}
+{\footnotesize\ttfamily void log\+\_\+write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pico__log_8h_a98121d38a8cf3daf5246a349f912ca1d}{log\+\_\+level\+\_\+t}}}]{level,  }\item[{const char $\ast$}]{file,  }\item[{unsigned}]{line,  }\item[{const char $\ast$}]{func,  }\item[{const char $\ast$}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+WARNING\+: It is inadvisable to call this function directly. Use the macros instead. 

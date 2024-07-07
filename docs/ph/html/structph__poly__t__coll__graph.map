@@ -1,0 +1,4 @@
+<map id="ph_poly_t" name="ph_poly_t">
+<area shape="rect" id="node1" title="A polygon shape Must use CCW (counter&#45;clockwise) winding." alt="" coords="5,124,91,151"/>
+<area shape="rect" id="node2" href="$structpv2.html" title="A 2D vector." alt="" coords="25,5,71,32"/>
+</map>

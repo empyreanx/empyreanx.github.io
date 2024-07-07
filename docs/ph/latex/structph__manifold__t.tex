@@ -1,0 +1,71 @@
+\hypertarget{structph__manifold__t}{}\doxysection{ph\+\_\+manifold\+\_\+t Struct Reference}
+\label{structph__manifold__t}\index{ph\_manifold\_t@{ph\_manifold\_t}}
+
+
+A collision manifold Provides information about a collision. Normals always point from shape 1 to shape 2.  
+
+
+
+
+{\ttfamily \#include $<$pico\+\_\+hit.\+h$>$}
+
+
+
+Collaboration diagram for ph\+\_\+manifold\+\_\+t\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{structph__manifold__t__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structpv2}{pv2}} \mbox{\hyperlink{structph__manifold__t_af26008ef2824f895828e78da93e9ba94}{normal}}
+\begin{DoxyCompactList}\small\item\em Normal to colliding edge (in direction of MTV) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{pico__math_8h_a5ce19b909a88aefe3e3a3beac779f98c}{pfloat}} \mbox{\hyperlink{structph__manifold__t_aa29d5727870542d08f2d1c3b230003f5}{overlap}}
+\begin{DoxyCompactList}\small\item\em Amount of overlap between two shapes along colliding axis (MTD) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structpv2}{pv2}} \mbox{\hyperlink{structph__manifold__t_ad04a40a664f2f483db5a5ec9cf784c01}{vector}}
+\begin{DoxyCompactList}\small\item\em Vector defined by {\ttfamily vector = normal $\ast$ overlap} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A collision manifold Provides information about a collision. Normals always point from shape 1 to shape 2. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structph__manifold__t_af26008ef2824f895828e78da93e9ba94}\label{structph__manifold__t_af26008ef2824f895828e78da93e9ba94}} 
+\index{ph\_manifold\_t@{ph\_manifold\_t}!normal@{normal}}
+\index{normal@{normal}!ph\_manifold\_t@{ph\_manifold\_t}}
+\doxysubsubsection{\texorpdfstring{normal}{normal}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structpv2}{pv2}} ph\+\_\+manifold\+\_\+t\+::normal}
+
+
+
+Normal to colliding edge (in direction of MTV) 
+
+\mbox{\Hypertarget{structph__manifold__t_aa29d5727870542d08f2d1c3b230003f5}\label{structph__manifold__t_aa29d5727870542d08f2d1c3b230003f5}} 
+\index{ph\_manifold\_t@{ph\_manifold\_t}!overlap@{overlap}}
+\index{overlap@{overlap}!ph\_manifold\_t@{ph\_manifold\_t}}
+\doxysubsubsection{\texorpdfstring{overlap}{overlap}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pico__math_8h_a5ce19b909a88aefe3e3a3beac779f98c}{pfloat}} ph\+\_\+manifold\+\_\+t\+::overlap}
+
+
+
+Amount of overlap between two shapes along colliding axis (MTD) 
+
+\mbox{\Hypertarget{structph__manifold__t_ad04a40a664f2f483db5a5ec9cf784c01}\label{structph__manifold__t_ad04a40a664f2f483db5a5ec9cf784c01}} 
+\index{ph\_manifold\_t@{ph\_manifold\_t}!vector@{vector}}
+\index{vector@{vector}!ph\_manifold\_t@{ph\_manifold\_t}}
+\doxysubsubsection{\texorpdfstring{vector}{vector}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structpv2}{pv2}} ph\+\_\+manifold\+\_\+t\+::vector}
+
+
+
+Vector defined by {\ttfamily vector = normal $\ast$ overlap} 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{pico__hit_8h}{pico\+\_\+hit.\+h}}\end{DoxyCompactItemize}
