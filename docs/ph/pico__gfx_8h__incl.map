@@ -1,0 +1,9 @@
+<map id="pico_gfx.h" name="pico_gfx.h">
+<area shape="rect" id="Node000001" title="A powerful graphics library based on Sokol GFX, written in C99." alt="" coords="122,5,211,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,101,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="150,33,85,74,82,69,147,28"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="125,79,208,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="169,31,169,65,164,65,164,31"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="232,79,307,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="185,28,243,68,240,73,182,33"/>
+</map>

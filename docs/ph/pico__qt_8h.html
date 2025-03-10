@@ -86,6 +86,13 @@ $(function() {
 Include dependency graph for pico_qt.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="pico__qt_8h__incl.png" border="0" usemap="#apico__qt_8h" alt=""/></div>
+<map name="apico__qt_8h" id="apico__qt_8h">
+<area shape="rect" title="A simple quadtree library." alt="" coords="57,5,138,31"/>
+<area shape="rect" title=" " alt="" coords="5,79,88,104"/>
+<area shape="poly" title=" " alt="" coords="91,33,65,69,61,66,87,29"/>
+<area shape="rect" title=" " alt="" coords="113,79,183,104"/>
+<area shape="poly" title=" " alt="" coords="108,29,134,66,130,69,104,33"/>
+</map>
 </div>
 </div>
 <p><a href="pico__qt_8h_source.html">Go to the source code of this file.</a></p>
@@ -152,9 +159,9 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A simple quadtree library. </p>
 <hr  />
- <h2><a class="anchor" id="autotoc_md46"></a>
+ <h2><a class="anchor" id="autotoc_md47"></a>
 Licensing information at end of header</h2>
-<h2><a class="anchor" id="autotoc_md47"></a>
+<h2><a class="anchor" id="autotoc_md48"></a>
 Features:</h2>
 <ul>
 <li>Written in C99</li>
@@ -162,15 +169,15 @@ Features:</h2>
 <li>Simple and concise API</li>
 <li>Permissive license (zlib or public domain)</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md48"></a>
+<h2><a class="anchor" id="autotoc_md49"></a>
 Summary:</h2>
 <p>This library builds and manages <a href="https://en.wikipedia.org/wiki/Quadtree">Quadtrees</a>.</p>
 <p>A quadtree is a data structure that can be used to perform efficient spatial queries. Items (values + bounds) are inserted into the tree. During this process, space in a quadtree is subdivided to make subsequent retrieval fast. Queries return values for all items that are contained within or overlap the search area.</p>
 <p>Currently, values are numeric. If uintptr_t is used they can also store a pointer. An integer value could represent an entity ID, an array index, a key for a hashtable etc...</p>
-<h2><a class="anchor" id="autotoc_md49"></a>
+<h2><a class="anchor" id="autotoc_md50"></a>
 Depth:</h2>
 <p>There is a tradeoff between space and time complexity. Lower depth values have smaller space requirements, but higher search times. Indeed, a tree with a depth of zero reduces to a linear bounds check. Higher values speed up searches, but at the cost of increased space. There are, however, diminishing returns with regard to increasing the max depth too high. Eventually all of the additional space is wasted with no benefit to performance.</p>
-<h2><a class="anchor" id="autotoc_md50"></a>
+<h2><a class="anchor" id="autotoc_md51"></a>
 Usage:</h2>
 <p>To use this library in your project, add the following</p>
 <blockquote class="doxtable">
@@ -178,7 +185,7 @@ Usage:</h2>
 </blockquote>
 <p>to a source file (once), then simply include the header normally.</p>
 <p>Must be defined before PICO_QT_IMPLEMENTATION</p>
-<h2><a class="anchor" id="autotoc_md51"></a>
+<h2><a class="anchor" id="autotoc_md52"></a>
 Customization:</h2>
 <p>A few macros can be overridden simply by defining them before including this source file. Here is a list of them.</p>
 <p>PICO_QT_VALUE_TYPE PICO_QT_BLOCK_SIZE PICO_QT_ASSERT PICO_QT_MALLOC PICO_QT_REALLOC PICO_QT_FREE PICO_QT_MEMCPY PICO_QT_MEMSET </p>

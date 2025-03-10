@@ -1,0 +1,5 @@
+<map id="ph_circle_t" name="ph_circle_t">
+<area shape="rect" id="Node000001" title="A circle shape." alt="" coords="5,93,97,119"/>
+<area shape="rect" id="Node000002" href="$structpv2.html" title="A 2D vector." alt="" coords="28,5,75,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="54,45,54,93,49,93,49,45"/>
+</map>

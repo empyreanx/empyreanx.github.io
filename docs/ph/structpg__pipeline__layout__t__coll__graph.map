@@ -1,0 +1,7 @@
+<map id="pg_pipeline_layout_t" name="pg_pipeline_layout_t">
+<area shape="rect" id="Node000001" title="Pipeline layout." alt="" coords="66,93,223,119"/>
+<area shape="rect" id="Node000002" href="$structpg__vertex__buf__t.html" title="Vertex buffer description." alt="" coords="5,5,132,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="90,39,136,91,132,95,86,43"/>
+<area shape="rect" id="Node000003" href="$structpg__vertex__attr__t.html" title="Vertex attribute description." alt="" coords="156,5,285,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="203,43,157,95,153,91,199,39"/>
+</map>

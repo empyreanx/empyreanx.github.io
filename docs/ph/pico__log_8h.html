@@ -88,6 +88,17 @@ $(function() {
 Include dependency graph for pico_log.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="pico__log_8h__incl.png" border="0" usemap="#apico__log_8h" alt=""/></div>
+<map name="apico__log_8h" id="apico__log_8h">
+<area shape="rect" title="A minimal and flexible logging framework written in C99." alt="" coords="152,5,240,31"/>
+<area shape="rect" title=" " alt="" coords="5,79,80,104"/>
+<area shape="poly" title=" " alt="" coords="172,33,81,75,79,70,170,28"/>
+<area shape="rect" title=" " alt="" coords="104,79,187,104"/>
+<area shape="poly" title=" " alt="" coords="190,33,164,69,159,66,185,29"/>
+<area shape="rect" title=" " alt="" coords="211,79,285,104"/>
+<area shape="poly" title=" " alt="" coords="207,29,234,66,229,69,202,33"/>
+<area shape="rect" title=" " alt="" coords="309,79,376,104"/>
+<area shape="poly" title=" " alt="" coords="221,28,308,70,305,75,218,33"/>
+</map>
 </div>
 </div>
 <p><a href="pico__log_8h_source.html">Go to the source code of this file.</a></p>
@@ -197,9 +208,9 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A minimal and flexible logging framework written in C99. </p>
 <hr  />
- <h2><a class="anchor" id="autotoc_md34"></a>
+ <h2><a class="anchor" id="autotoc_md35"></a>
 Licensing information at end of header</h2>
-<h2><a class="anchor" id="autotoc_md35"></a>
+<h2><a class="anchor" id="autotoc_md36"></a>
 Features:</h2>
 <ul>
 <li>Written in pure C99, and compatible with C++</li>
@@ -212,7 +223,7 @@ Features:</h2>
 <li>reporting individually, on a per appender basis</li>
 <li>Permissive licensing (zlib or public domain)</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md36"></a>
+<h2><a class="anchor" id="autotoc_md37"></a>
 Summary:</h2>
 <p>This library is built around the notion of appenders. An appender writes log messages to a sink. It could be a file, a network connection, or stream (e.g. stdout).</p>
 <p>Once one or more appenders are registered, macros such as log_info will send messages to the appenders.</p>
@@ -220,14 +231,14 @@ Summary:</h2>
 <p>Output can also be modified to show or hide various metadata. These are date/time, log level, filename/line number, and calling function. They can be toggled using the log_display* functions. There is also an option to enable color coded output.</p>
 <p>It is possible to synchronize appenders using <code>log_set_lock</code>. This function accepts a function pointer that takes a boolean and user data as input. If this function pointer is passed true the lock is acquired and false to release the lock.</p>
 <p>Please see the examples for more details.</p>
-<h2><a class="anchor" id="autotoc_md37"></a>
+<h2><a class="anchor" id="autotoc_md38"></a>
 Usage:</h2>
 <p>To use this library in your project, add the following</p>
 <blockquote class="doxtable">
 <p>&zwj;#define PICO_LOG_IMPLEMENTATION #include "pico_log.h" </p>
 </blockquote>
 <p>to a source file (once), then simply include the header normally.</p>
-<h2><a class="anchor" id="autotoc_md38"></a>
+<h2><a class="anchor" id="autotoc_md39"></a>
 Constants:</h2>
 <ul>
 <li>PICO_LOG_MAX_APPENDERS (default: 16)</li>
