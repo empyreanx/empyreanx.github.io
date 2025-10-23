@@ -393,12 +393,12 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A 2D math library for games. </p>
 <hr  />
- <h2><a class="anchor" id="autotoc_md41"></a>
+ <h2><a class="anchor" id="autotoc_md44"></a>
 Licensing information at end of header</h2>
-<h2><a class="anchor" id="autotoc_md42"></a>
+<h2><a class="anchor" id="autotoc_md45"></a>
 Notice:</h2>
 <p>This library has undergone a major revision with release 2.0. Although the functionality is more or less the same, the naming conventions differ substantially. To summarize, 'pm_v2', 'pm_t2', and 'pm_b2' have all been replaced by '<a class="el" href="structpv2.html" title="A 2D vector.">pv2</a>', '<a class="el" href="structpt2.html" title="A 2D transform.">pt2</a>', and '<a class="el" href="structpb2.html" title="A 2D axis-aligned-bounding-box (AABB)">pb2</a>'. These changes affect both type defintions as well as function names. With scalar functions 'pm_' has been replaced by 'pf_', for example 'pm_equal' is now 'pf_equal'. The type 'pm_float' has been replaced by 'pfloat'. The purpose of these changes is largely to make type and function names more specific and compact. The old (and no longer maintained) version can be found at <a href="https://github.com/empyreanx/pico_headers_deprecated">https://github.com/empyreanx/pico_headers_deprecated</a></p>
-<h2><a class="anchor" id="autotoc_md43"></a>
+<h2><a class="anchor" id="autotoc_md46"></a>
 Features:</h2>
 <ul>
 <li>Written in C99</li>
@@ -409,7 +409,7 @@ Features:</h2>
 <li>Extensive test suite</li>
 <li>Permissive license (zlib or public domain)</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md44"></a>
+<h2><a class="anchor" id="autotoc_md47"></a>
 Summary:</h2>
 <p>This library provides functions that act on three 2D types: vectors (<a class="el" href="structpv2.html" title="A 2D vector.">pv2</a>), transforms (<a class="el" href="structpt2.html" title="A 2D transform.">pt2</a>), and axis-align bounding boxes (<a class="el" href="structpb2.html" title="A 2D axis-aligned-bounding-box (AABB)">pb2</a>). The library also provides some scalar functions as well as a random number generator.</p>
 <p>This library aims to strike a balance between performance and simplicity. Most functions return by value. All vectors are passed by value. Otherwise, transforms and AABBs are passed by pointer. There is no dynamic memory allocation.</p>
@@ -419,7 +419,7 @@ Summary:</h2>
 <p>Bounding box functions provide tests for intersection of AABBs and determnining if a point is contained within a given AABB. There are functions for computing unions and intersections of AABBs as well as for computing the minimum enclosing AABB for a set of points.</p>
 <p>The random number generator uses the xoshiro128** algorithm, which is substantially better than <code>rand()</code> in terms of the quality of its output without sacrificing too much performance.</p>
 <p>Please see the unit tests for some concrete examples.</p>
-<h2><a class="anchor" id="autotoc_md45"></a>
+<h2><a class="anchor" id="autotoc_md48"></a>
 Usage:</h2>
 <p>To use this library in your project, add the following</p>
 <blockquote class="doxtable">

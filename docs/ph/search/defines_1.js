@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['ecs_5fdt_5ftype_0',['ECS_DT_TYPE',['../pico__ecs_8h.html#a5c05e4ae546322deb96adc92276ca7ce',1,'pico_ecs.h']]],
-  ['ecs_5fnull_1',['ECS_NULL',['../pico__ecs_8h.html#a68f795087862e8bd6f7e85ab84bb0b16',1,'pico_ecs.h']]]
+  ['ecs_5fid_5ftype_0',['ECS_ID_TYPE',['../pico__ecs_8h.html#af59384959ce720b4a6e2f7de93598822',1,'pico_ecs.h']]],
+  ['ecs_5fmask_5ftype_1',['ECS_MASK_TYPE',['../pico__ecs_8h.html#a1a2dee7e6d21c5fe5e41c4f6b035b1f9',1,'pico_ecs.h']]]
 ];

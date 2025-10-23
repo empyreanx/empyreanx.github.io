@@ -1,11 +1,11 @@
 <map id="pg_pipeline_opts_t" name="pg_pipeline_opts_t">
-<area shape="rect" id="Node000001" title="Pipeline creation options." alt="" coords="158,181,302,207"/>
-<area shape="rect" id="Node000002" href="$structpg__pipeline__layout__t.html" title="Pipeline layout." alt="" coords="66,93,223,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="168,127,220,179,216,183,164,131"/>
+<area shape="rect" id="Node000001" title="Pipeline creation options." alt="" coords="159,197,303,223"/>
+<area shape="rect" id="Node000002" href="$structpg__pipeline__layout__t.html" title="Pipeline layout." alt="" coords="66,101,223,127"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="167,135,223,195,219,199,163,139"/>
 <area shape="rect" id="Node000003" href="$structpg__vertex__buf__t.html" title="Vertex buffer description." alt="" coords="5,5,132,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="90,39,136,91,132,95,86,43"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="89,40,137,99,133,103,84,43"/>
 <area shape="rect" id="Node000004" href="$structpg__vertex__attr__t.html" title="Vertex attribute description." alt="" coords="156,5,285,31"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="203,43,157,95,153,91,199,39"/>
-<area shape="rect" id="Node000005" href="$structpg__blend__mode__t.html" title="Blend mode." alt="" coords="248,93,385,119"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="297,130,244,183,240,179,294,126"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="205,43,156,103,152,99,201,40"/>
+<area shape="rect" id="Node000005" href="$structpg__blend__mode__t.html" title="Blend mode." alt="" coords="248,101,385,127"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="299,139,244,199,240,195,295,135"/>
 </map>

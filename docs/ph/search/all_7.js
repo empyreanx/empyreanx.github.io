@@ -1,9 +1,11 @@
 var searchData=
 [
-  ['get_5fattr_5fslot_0',['get_attr_slot',['../structpg__shader__internal__t.html#af90eec253ce01449bec689d059ff68b0',1,'pg_shader_internal_t']]],
-  ['get_5fimg_5fslot_1',['get_img_slot',['../structpg__shader__internal__t.html#af0f75d8d071197ad5a8657bd0864847d',1,'pg_shader_internal_t']]],
-  ['get_5fshader_5fdesc_2',['get_shader_desc',['../structpg__shader__internal__t.html#a0fea96b717deacc3c09e3cac848985f4',1,'pg_shader_internal_t']]],
-  ['get_5fsmp_5fslot_3',['get_smp_slot',['../structpg__shader__internal__t.html#ad8681597f3a388a684a9600bd5e9a0bf',1,'pg_shader_internal_t']]],
-  ['get_5funiformblock_5fsize_4',['get_uniformblock_size',['../structpg__shader__internal__t.html#a30cd4e99a9d70455dd2868e298d064be',1,'pg_shader_internal_t']]],
-  ['get_5funiformblock_5fslot_5',['get_uniformblock_slot',['../structpg__shader__internal__t.html#ac868d73e40f5e2675cec1072a2478fc2',1,'pg_shader_internal_t']]]
+  ['c_0',['C++',['../pico__gfx_8h.html#autotoc_md20',1,'']]],
+  ['color_1',['color',['../structpgl__vertex__t.html#a3cfb8b24947e1ef338d64bab2ba02c13',1,'pgl_vertex_t']]],
+  ['color_5fdst_2',['color_dst',['../structpg__blend__mode__t.html#adf3613990f0e130fc76b2404c7857ba9',1,'pg_blend_mode_t::color_dst'],['../structpgl__blend__mode__t.html#a418ed3da89284581786c6667f3aaf5d0',1,'pgl_blend_mode_t::color_dst']]],
+  ['color_5feq_3',['color_eq',['../structpg__blend__mode__t.html#a1bbeed16865c0590dc4b4a99a81dc91d',1,'pg_blend_mode_t::color_eq'],['../structpgl__blend__mode__t.html#a403dcc004fb5d25d3b51015379e0fb01',1,'pgl_blend_mode_t::color_eq']]],
+  ['color_5fsrc_4',['color_src',['../structpg__blend__mode__t.html#ae3dd2c4bcf95263cd8a61137fa6e1dd7',1,'pg_blend_mode_t::color_src'],['../structpgl__blend__mode__t.html#ae2554cc79581829888b5cc5cecbb6ed5',1,'pgl_blend_mode_t::color_src']]],
+  ['compatibility_5',['Compatibility',['../pico__gfx_8h.html#autotoc_md17',1,'']]],
+  ['constants_3a_6',['constants:',['../pico__ecs_8h.html#autotoc_md14',1,'Constants:'],['../pico__gfx_8h.html#autotoc_md22',1,'Constants:'],['../pico__gl_8h.html#autotoc_md29',1,'Constants:'],['../pico__log_8h.html#autotoc_md42',1,'Constants:']]],
+  ['customization_3a_7',['customization:',['../pico__gfx_8h.html#autotoc_md23',1,'Customization:'],['../pico__qt_8h.html#autotoc_md55',1,'Customization:']]]
 ];

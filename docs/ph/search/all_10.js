@@ -1,10 +1,7 @@
 var searchData=
 [
-  ['radius_0',['radius',['../structph__circle__t.html#a907397e448463c69c55b23fdfed80be5',1,'ph_circle_t']]],
-  ['readme_2emd_1',['README.md',['../README_8md.html',1,'']]],
-  ['repeat_5fu_2',['repeat_u',['../structpg__sampler__opts__t.html#a45680628f3cd9df80a68e257948ca028',1,'pg_sampler_opts_t']]],
-  ['repeat_5fv_3',['repeat_v',['../structpg__sampler__opts__t.html#af67d2ad5162059f29502fe98a23b20a0',1,'pg_sampler_opts_t']]],
-  ['require_4',['REQUIRE',['../pico__unit_8h.html#ad9f2db71e103991db7d6f001a955285f',1,'pico_unit.h']]],
-  ['run_5ftest_5fcase_5',['RUN_TEST_CASE',['../pico__unit_8h.html#a618bdc12228e9458f734380fdc719842',1,'pico_unit.h']]],
-  ['run_5ftest_5fsuite_6',['RUN_TEST_SUITE',['../pico__unit_8h.html#a56eb1aa2c407d02d99d3d687f110fa48',1,'pico_unit.h']]]
+  ['normal_0',['normal',['../structph__manifold__t.html#af26008ef2824f895828e78da93e9ba94',1,'ph_manifold_t::normal'],['../structph__raycast__t.html#a6b873c110e7f5673684c15c02b4df8e6',1,'ph_raycast_t::normal']]],
+  ['normals_1',['normals',['../structph__poly__t.html#a3b9999a03926cd7ce159a52e22ff5d0f',1,'ph_poly_t']]],
+  ['not_20edit_2',['DO NOT EDIT!',['../pico__gl_8h.html#autotoc_md24',1,'']]],
+  ['notice_3a_3',['Notice:',['../pico__math_8h.html#autotoc_md45',1,'']]]
 ];
