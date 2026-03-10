@@ -1,9 +1,11 @@
 <map id="pico_gfx.h" name="pico_gfx.h">
-<area shape="rect" id="Node000001" title="A powerful graphics library based on Sokol GFX, written in C99." alt="" coords="122,5,211,31"/>
+<area shape="rect" id="Node000001" title="A powerful graphics library based on Sokol GFX, written in C99." alt="" coords="173,5,262,31"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,79,101,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="150,33,85,74,82,69,147,28"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,33,94,76,91,71,190,28"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="125,79,208,104"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="169,31,169,65,164,65,164,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="211,33,185,69,181,66,207,29"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="232,79,307,104"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="185,28,243,68,240,73,182,33"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="228,29,255,66,251,69,224,33"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="331,79,402,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="242,28,331,70,329,75,240,33"/>
 </map>

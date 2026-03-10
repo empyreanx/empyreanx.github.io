@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['uv_0',['uv',['../structpgl__vertex__t.html#a0b12b1be56f1f4b4fd742802ea04bac4',1,'pgl_vertex_t']]]
+  ['vertices_0',['vertices',['../structph__poly__t.html#a6ef0874d59605e64cc290643a8f17d96',1,'ph_poly_t']]]
 ];

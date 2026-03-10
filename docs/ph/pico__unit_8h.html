@@ -141,15 +141,21 @@ Functions</h2></td></tr>
 <tr class="memitem:ab5f99126534446b7058865e6bdabedd0" id="r_ab5f99126534446b7058865e6bdabedd0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__unit_8h.html#ab5f99126534446b7058865e6bdabedd0">pu_display_time</a> (bool enabled)</td></tr>
 <tr class="memdesc:ab5f99126534446b7058865e6bdabedd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turns on time measurement. NOTE: Off by default.  <br /></td></tr>
 <tr class="separator:ab5f99126534446b7058865e6bdabedd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adee72738848faeec1149463120948305" id="r_adee72738848faeec1149463120948305"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__unit_8h.html#adee72738848faeec1149463120948305">pu_display_quiet</a> (bool enabled)</td></tr>
+<tr class="memdesc:adee72738848faeec1149463120948305"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turns on quiet mode. Only failures are printed.  <br /></td></tr>
+<tr class="separator:adee72738848faeec1149463120948305"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b420d25f58f9b9f74c27c7d1c6fc3bc" id="r_a0b420d25f58f9b9f74c27c7d1c6fc3bc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__unit_8h.html#a0b420d25f58f9b9f74c27c7d1c6fc3bc">pu_is_quiet</a> (void)</td></tr>
+<tr class="memdesc:a0b420d25f58f9b9f74c27c7d1c6fc3bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether quiet mode is enabled.  <br /></td></tr>
+<tr class="separator:a0b420d25f58f9b9f74c27c7d1c6fc3bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7514088d1d7d27fe6367a8c57e86adaf" id="r_a7514088d1d7d27fe6367a8c57e86adaf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__unit_8h.html#a7514088d1d7d27fe6367a8c57e86adaf">pu_print_stats</a> (void)</td></tr>
 <tr class="memdesc:a7514088d1d7d27fe6367a8c57e86adaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints test statistics.  <br /></td></tr>
 <tr class="separator:a7514088d1d7d27fe6367a8c57e86adaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6f133b933ae38c901347d354fc404ed" id="r_ac6f133b933ae38c901347d354fc404ed"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__unit_8h.html#ac6f133b933ae38c901347d354fc404ed">pu_test_failed</a> (void)</td></tr>
 <tr class="memdesc:ac6f133b933ae38c901347d354fc404ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether at least one test failed.  <br /></td></tr>
 <tr class="separator:ac6f133b933ae38c901347d354fc404ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a713ac79a60331f99d10ef981ac1394f1" id="r_a713ac79a60331f99d10ef981ac1394f1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__unit_8h.html#a713ac79a60331f99d10ef981ac1394f1">pu_require</a> (bool passed, const char *const expr, const char *const file, int line)</td></tr>
-<tr class="memdesc:a713ac79a60331f99d10ef981ac1394f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used internally.  <br /></td></tr>
-<tr class="separator:a713ac79a60331f99d10ef981ac1394f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a410c9a4b4f9323944747c283f60a93e0" id="r_a410c9a4b4f9323944747c283f60a93e0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__unit_8h.html#a410c9a4b4f9323944747c283f60a93e0">pu_require</a> (bool passed, const char *const expr, const char *const file, int line, const char *const fmt,...)</td></tr>
+<tr class="memdesc:a410c9a4b4f9323944747c283f60a93e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used internally.  <br /></td></tr>
+<tr class="separator:a410c9a4b4f9323944747c283f60a93e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f7e8e5cdbb28b2fcc1669cba6b8c09d" id="r_a4f7e8e5cdbb28b2fcc1669cba6b8c09d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__unit_8h.html#a4f7e8e5cdbb28b2fcc1669cba6b8c09d">pu_run_test</a> (const char *const name, <a class="el" href="pico__unit_8h.html#a428a3a0ab00bc146b6e45bb14fecb648">pu_test_fn</a> test_fp)</td></tr>
 <tr class="memdesc:a4f7e8e5cdbb28b2fcc1669cba6b8c09d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used internally.  <br /></td></tr>
 <tr class="separator:a4f7e8e5cdbb28b2fcc1669cba6b8c09d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -160,12 +166,12 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A bare-bones unit testing framework written in C99. </p>
 <hr  />
- <h2><a class="anchor" id="autotoc_md62"></a>
+ <h2><a class="anchor" id="autotoc_md55"></a>
 Licensing information at end of header</h2>
-<h2><a class="anchor" id="autotoc_md63"></a>
+<h2><a class="anchor" id="autotoc_md56"></a>
 Features:</h2>
-<p>Written in C99 and compatible with C++ Single-header for easy integration into any build system Tiny memory and code footprint Simple and minimalistic API All unit tests are run during execution and failures are indicated On demand setup and teardown function support Ability to group tests into test suites Ability to print test statistics Optional color coded output Optional time measurement Permissive licensing (zlib or public domain)</p>
-<h2><a class="anchor" id="autotoc_md64"></a>
+<p>Written in C99 and compatible with C++ Single-header for easy integration into any build system Tiny memory and code footprint Simple and minimalistic API All unit tests are run during execution and failures are indicated On demand setup and teardown function support Ability to group tests into test suites Ability to print test statistics Optional color coded output Optional time measurement Optional quiet mode that only shows failures Permissive licensing (zlib or public domain)</p>
+<h2><a class="anchor" id="autotoc_md57"></a>
 Summary:</h2>
 <p>This library is a minimal unit testing framework. It should compile and run on just about any platform with a standard C99 compiler.</p>
 <p>Writing tests is simple: 1) Use the TEST_CASE macro and define the test using using REQUIRE to test boolean expressions; 2) Run the test inside the body of a test suite or other function (e.g. main) using RUN_TEST_CASE. How you group tests and test suites is entirely up to you.</p>
@@ -173,7 +179,7 @@ Summary:</h2>
 <p>There are a number of display options available: color coded output, test elapsed time (unless PICO_UNIT_NO_CLOCK is defined), and printing test statistics.</p>
 <p>A test suite is simply a group of tests. These contain calls to RUN_TEST_CASE. The advantage of using test suites is that it divides unit tests into logical groups. There are helper macros for declaring and defining test suites. Test suites help with formatting the output and the number of suites shows up in the test statistics. There is also the option to flexibly define setup and teardown functions for groups of tests.</p>
 <p>Please see the examples for more details.</p>
-<h2><a class="anchor" id="autotoc_md65"></a>
+<h2><a class="anchor" id="autotoc_md58"></a>
 Usage:</h2>
 <p>To use this library in your project, add the following</p>
 <blockquote class="doxtable">
@@ -222,11 +228,12 @@ Usage:</h2>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span>  { \</div>
-<div class="line">        if (!<a class="code hl_function" href="pico__unit_8h.html#a713ac79a60331f99d10ef981ac1394f1">pu_require</a>((expr) ? <span class="keyword">true</span> : false, (#expr), __FILE__, __LINE__)) \</div>
+<b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span> { \</div>
+<div class="line">        if (!<a class="code hl_function" href="pico__unit_8h.html#a410c9a4b4f9323944747c283f60a93e0">pu_require</a>((expr) ? <span class="keyword">true</span> : false, (#expr), __FILE__, __LINE__, \</div>
+<div class="line">                        NULL)) \</div>
 <div class="line">            return false; \</div>
 <div class="line">    } <span class="keywordflow">while</span>(<span class="keyword">false</span>)</div>
-<div class="ttc" id="apico__unit_8h_html_a713ac79a60331f99d10ef981ac1394f1"><div class="ttname"><a href="pico__unit_8h.html#a713ac79a60331f99d10ef981ac1394f1">pu_require</a></div><div class="ttdeci">bool pu_require(bool passed, const char *const expr, const char *const file, int line)</div><div class="ttdoc">Used internally.</div></div>
+<div class="ttc" id="apico__unit_8h_html_a410c9a4b4f9323944747c283f60a93e0"><div class="ttname"><a href="pico__unit_8h.html#a410c9a4b4f9323944747c283f60a93e0">pu_require</a></div><div class="ttdeci">bool pu_require(bool passed, const char *const expr, const char *const file, int line, const char *const fmt,...)</div><div class="ttdoc">Used internally.</div></div>
 </div><!-- fragment -->
 <p>Asserts that a condition is true. </p>
 <p>Asserts that the given expression evaluates to <code>true</code>. If the expression evalutes to <code>false</code>, execution of the current test aborts and an error message is displayed.</p>
@@ -462,6 +469,46 @@ Usage:</h2>
 
 </div>
 </div>
+<a id="adee72738848faeec1149463120948305" name="adee72738848faeec1149463120948305"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adee72738848faeec1149463120948305">&#9670;&#160;</a></span>pu_display_quiet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pu_display_quiet </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enabled</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Turns on quiet mode. Only failures are printed. </p>
+
+</div>
+</div>
+<a id="a0b420d25f58f9b9f74c27c7d1c6fc3bc" name="a0b420d25f58f9b9f74c27c7d1c6fc3bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b420d25f58f9b9f74c27c7d1c6fc3bc">&#9670;&#160;</a></span>pu_is_quiet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool pu_is_quiet </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns whether quiet mode is enabled. </p>
+
+</div>
+</div>
 <a id="a7514088d1d7d27fe6367a8c57e86adaf" name="a7514088d1d7d27fe6367a8c57e86adaf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7514088d1d7d27fe6367a8c57e86adaf">&#9670;&#160;</a></span>pu_print_stats()</h2>
 
@@ -503,8 +550,8 @@ Usage:</h2>
 
 </div>
 </div>
-<a id="a713ac79a60331f99d10ef981ac1394f1" name="a713ac79a60331f99d10ef981ac1394f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a713ac79a60331f99d10ef981ac1394f1">&#9670;&#160;</a></span>pu_require()</h2>
+<a id="a410c9a4b4f9323944747c283f60a93e0" name="a410c9a4b4f9323944747c283f60a93e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a410c9a4b4f9323944747c283f60a93e0">&#9670;&#160;</a></span>pu_require()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -531,7 +578,19 @@ Usage:</h2>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>line</em>&#160;</td>
+          <td class="paramname"><em>line</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *const&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
         </tr>
         <tr>
           <td></td>

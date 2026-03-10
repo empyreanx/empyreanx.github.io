@@ -83,18 +83,21 @@ $(function() {
 <div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &lt;stddef.h&gt;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;limits.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for pico_ecs.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="pico__ecs_8h__incl.png" border="0" usemap="#apico__ecs_8h" alt=""/></div>
 <map name="apico__ecs_8h" id="apico__ecs_8h">
-<area shape="rect" title="A pure and simple ECS written in C99." alt="" coords="104,5,195,31"/>
+<area shape="rect" title="A pure and simple ECS written in C99." alt="" coords="152,5,243,31"/>
 <area shape="rect" title=" " alt="" coords="5,79,88,104"/>
-<area shape="poly" title=" " alt="" coords="134,33,76,73,73,68,131,28"/>
+<area shape="poly" title=" " alt="" coords="174,33,85,75,83,70,172,28"/>
 <area shape="rect" title=" " alt="" coords="112,79,187,104"/>
-<area shape="poly" title=" " alt="" coords="152,31,152,65,147,65,147,31"/>
+<area shape="poly" title=" " alt="" coords="192,33,167,69,162,66,187,30"/>
 <area shape="rect" title=" " alt="" coords="211,79,282,104"/>
-<area shape="poly" title=" " alt="" coords="167,29,221,68,218,72,163,33"/>
+<area shape="poly" title=" " alt="" coords="208,29,233,66,229,69,203,33"/>
+<area shape="rect" title=" " alt="" coords="306,79,377,104"/>
+<area shape="poly" title=" " alt="" coords="222,28,307,70,304,75,219,33"/>
 </map>
 </div>
 </div>
@@ -115,11 +118,17 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:af59384959ce720b4a6e2f7de93598822" id="r_af59384959ce720b4a6e2f7de93598822"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__ecs_8h.html#af59384959ce720b4a6e2f7de93598822">ECS_ID_TYPE</a>&#160;&#160;&#160;uint64_t</td></tr>
-<tr class="memdesc:af59384959ce720b4a6e2f7de93598822"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine ID type.  <br /></td></tr>
+<tr class="memdesc:af59384959ce720b4a6e2f7de93598822"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine ID type. It should be unsigned.  <br /></td></tr>
 <tr class="separator:af59384959ce720b4a6e2f7de93598822"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a2dee7e6d21c5fe5e41c4f6b035b1f9" id="r_a1a2dee7e6d21c5fe5e41c4f6b035b1f9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__ecs_8h.html#a1a2dee7e6d21c5fe5e41c4f6b035b1f9">ECS_MASK_TYPE</a>&#160;&#160;&#160;uint64_t</td></tr>
 <tr class="memdesc:a1a2dee7e6d21c5fe5e41c4f6b035b1f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine mask type.  <br /></td></tr>
 <tr class="separator:a1a2dee7e6d21c5fe5e41c4f6b035b1f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a2592ce951b11d9c930a4d93150553f" id="r_a0a2592ce951b11d9c930a4d93150553f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__ecs_8h.html#a0a2592ce951b11d9c930a4d93150553f">ECS_INVALID_ID</a>&#160;&#160;&#160;((<a class="el" href="pico__ecs_8h.html#a3bc00f777f39c3e4079606880f0cf167">ecs_id_t</a>)-1)</td></tr>
+<tr class="memdesc:a0a2592ce951b11d9c930a4d93150553f"><td class="mdescLeft">&#160;</td><td class="mdescRight">An invalid ID.  <br /></td></tr>
+<tr class="separator:a0a2592ce951b11d9c930a4d93150553f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4766721d892ef664682dd4edff9d633" id="r_af4766721d892ef664682dd4edff9d633"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__ecs_8h.html#af4766721d892ef664682dd4edff9d633">ECS_IS_INVALID</a>(obj)&#160;&#160;&#160;((obj.id) == <a class="el" href="pico__ecs_8h.html#a0a2592ce951b11d9c930a4d93150553f">ECS_INVALID_ID</a>)</td></tr>
+<tr class="memdesc:af4766721d892ef664682dd4edff9d633"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if the argument (entity/system/component) is invalid.  <br /></td></tr>
+<tr class="separator:af4766721d892ef664682dd4edff9d633"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -162,12 +171,6 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:af1c9efd3c5ea82b10ecb9969cfbce56a" id="r_af1c9efd3c5ea82b10ecb9969cfbce56a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__ecs_8h.html#af1c9efd3c5ea82b10ecb9969cfbce56a">ecs_is_invalid_entity</a> (<a class="el" href="structecs__entity__t.html">ecs_entity_t</a> entity)</td></tr>
-<tr class="memdesc:af1c9efd3c5ea82b10ecb9969cfbce56a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the entity is invalid and false otherwise.  <br /></td></tr>
-<tr class="separator:af1c9efd3c5ea82b10ecb9969cfbce56a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1fc146b56e8c225d7ac256ea431cd2ec" id="r_a1fc146b56e8c225d7ac256ea431cd2ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structecs__entity__t.html">ecs_entity_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__ecs_8h.html#a1fc146b56e8c225d7ac256ea431cd2ec">ecs_invalid_entity</a> ()</td></tr>
-<tr class="memdesc:a1fc146b56e8c225d7ac256ea431cd2ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an invalid entity.  <br /></td></tr>
-<tr class="separator:a1fc146b56e8c225d7ac256ea431cd2ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed914c999fdfcc4c2c115ef4f152588b" id="r_aed914c999fdfcc4c2c115ef4f152588b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pico__ecs_8h.html#a78aee9dde23c9234e2607b7bf6c91139">ecs_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__ecs_8h.html#aed914c999fdfcc4c2c115ef4f152588b">ecs_new</a> (size_t entity_count, void *mem_ctx)</td></tr>
 <tr class="memdesc:aed914c999fdfcc4c2c115ef4f152588b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an ECS context.  <br /></td></tr>
 <tr class="separator:aed914c999fdfcc4c2c115ef4f152588b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -234,12 +237,6 @@ Functions</h2></td></tr>
 <tr class="memitem:a27617e3d57af04f725169dd27452a451" id="r_a27617e3d57af04f725169dd27452a451"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__ecs_8h.html#a27617e3d57af04f725169dd27452a451">ecs_remove</a> (<a class="el" href="pico__ecs_8h.html#a78aee9dde23c9234e2607b7bf6c91139">ecs_t</a> *ecs, <a class="el" href="structecs__entity__t.html">ecs_entity_t</a> entity, <a class="el" href="structecs__comp__t.html">ecs_comp_t</a> comp)</td></tr>
 <tr class="memdesc:a27617e3d57af04f725169dd27452a451"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a component instance from an entity.  <br /></td></tr>
 <tr class="separator:a27617e3d57af04f725169dd27452a451"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c77b2683ddd6f5b6ff9133afafe6669" id="r_a2c77b2683ddd6f5b6ff9133afafe6669"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__ecs_8h.html#a2c77b2683ddd6f5b6ff9133afafe6669">ecs_queue_destroy</a> (<a class="el" href="pico__ecs_8h.html#a78aee9dde23c9234e2607b7bf6c91139">ecs_t</a> *ecs, <a class="el" href="structecs__entity__t.html">ecs_entity_t</a> entity)</td></tr>
-<tr class="memdesc:a2c77b2683ddd6f5b6ff9133afafe6669"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queues an entity for destruction after the current system returns.  <br /></td></tr>
-<tr class="separator:a2c77b2683ddd6f5b6ff9133afafe6669"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b4a66909f17e7ad115281a43688de7e" id="r_a0b4a66909f17e7ad115281a43688de7e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__ecs_8h.html#a0b4a66909f17e7ad115281a43688de7e">ecs_queue_remove</a> (<a class="el" href="pico__ecs_8h.html#a78aee9dde23c9234e2607b7bf6c91139">ecs_t</a> *ecs, <a class="el" href="structecs__entity__t.html">ecs_entity_t</a> entity, <a class="el" href="structecs__comp__t.html">ecs_comp_t</a> comp)</td></tr>
-<tr class="memdesc:a0b4a66909f17e7ad115281a43688de7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queues a component for removal from the specified entity.  <br /></td></tr>
-<tr class="separator:a0b4a66909f17e7ad115281a43688de7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8c577e226acbd6ab111617920e6552c" id="r_ab8c577e226acbd6ab111617920e6552c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pico__ecs_8h.html#acbd0608deb20b5bc3a425a13c937bba7">ecs_ret_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__ecs_8h.html#ab8c577e226acbd6ab111617920e6552c">ecs_run_system</a> (<a class="el" href="pico__ecs_8h.html#a78aee9dde23c9234e2607b7bf6c91139">ecs_t</a> *ecs, <a class="el" href="structecs__system__t.html">ecs_system_t</a> sys, <a class="el" href="pico__ecs_8h.html#a2b32b62a16bd57c231ec1cc267cef9b2">ecs_mask_t</a> mask)</td></tr>
 <tr class="memdesc:ab8c577e226acbd6ab111617920e6552c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update an individual system.  <br /></td></tr>
 <tr class="separator:ab8c577e226acbd6ab111617920e6552c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -271,8 +268,8 @@ Summary:</h2>
 <p>An ECS solves these problems while also granting more flexibility in general. In an ECS there is a clear separation between data (components) and logic (systems), which makes it possible to build complex simulations with fewer assumptions about how that data will be used. In an ECS it is effortless to change functionality, by either adding or removing components from entities, and/or by changing system requirements. Adding new logic is also simple as well, just defining a new system!</p>
 <p>Please see the examples and unit tests for more details.</p>
 <h2><a class="anchor" id="autotoc_md9"></a>
-Version 2.4 to 3.0 Migration Guide:</h2>
-<p>Version 3.0 is a major departure from 2.4. Here is a short guide to help make the leap to 3.0.</p>
+Version 2.4 to 3.1 Migration Guide:</h2>
+<p>Version 3.1 is a major departure from 2.4. Here is a short guide to help make the leap to 3.1.</p>
 <ol type="1">
 <li>Make the following substitutions:<ul>
 <li>ecs_register_system -&gt; ecs_define_system</li>
@@ -286,8 +283,9 @@ Version 2.4 to 3.0 Migration Guide:</h2>
 <li>Insert a mask value of 0 into <code>ecs_define_system</code> calls, for example, <code>ecs_define_system(ecs, 0, ...)</code></li>
 <li>Ensure all update calls have the form <code>ecs_run_system(ctx, sys, 0)</code> and/or <code>ecs_run_systems(ctx, 0)</code></li>
 <li>Replace raw IDs with typesafe handles.</li>
+<li>Replace all ecs_queue_remove and ecs_queue_destroy with ecs_remove and ecs_remove respectively.</li>
 </ol>
-<p>If you encounter any difficultlies with any of these steps and/or your project doesn't compile once you're finished, please submit an issue.</p>
+<p>If you encounter any difficulties with any of these steps and/or your project doesn't compile once you're finished, please submit an issue.</p>
 <h2><a class="anchor" id="autotoc_md10"></a>
 Masks:</h2>
 <p>Masks are a new feature in 3.0. Systems to are assigned to categories (using a bitmask) at definition and then can selectively invoke those systems at runtime (also using a bitmask).</p>
@@ -315,6 +313,18 @@ Revision History:</h2>
 <li>Significant internal refactoring</li>
 </ul>
 </li>
+<li>3.1 (2026/02/01):<ul>
+<li>Fixed sparse set related bugs</li>
+<li>More sophisticated logic regarding adding entities to/from systems</li>
+<li>Functions ecs_queue_remove and ecs_queue_destroy have been removed. (they can be replaced directly by ecs_remove and ecs_destroy respectively)</li>
+<li>Improved unit test quality and coverage</li>
+</ul>
+</li>
+<li>3.2 (2026/03/09):<ul>
+<li>Capacity overflow detection</li>
+<li>Invalid entity ID value has been reverted to max ID value</li>
+</ul>
+</li>
 </ul>
 <h2><a class="anchor" id="autotoc_md12"></a>
 Usage:</h2>
@@ -329,6 +339,7 @@ Macros:</h2>
 <li>ECS_MALLOC(size, ctx) (default: malloc)</li>
 <li>ECS_REALLOC(ptr, size, ctx) (default: realloc)</li>
 <li>ECS_FREE(ptr, ctx) (default: free)</li>
+<li>ECS_MEMSET (default: memset)</li>
 </ul>
 <p>The ctx parameter is sometimes used by custom allocators</p>
 <h2><a class="anchor" id="autotoc_md14"></a>
@@ -351,7 +362,7 @@ Constants:</h2>
       </table>
 </div><div class="memdoc">
 
-<p>Determine ID type. </p>
+<p>Determine ID type. It should be unsigned. </p>
 
 </div>
 </div>
@@ -368,6 +379,42 @@ Constants:</h2>
 </div><div class="memdoc">
 
 <p>Determine mask type. </p>
+
+</div>
+</div>
+<a id="a0a2592ce951b11d9c930a4d93150553f" name="a0a2592ce951b11d9c930a4d93150553f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a2592ce951b11d9c930a4d93150553f">&#9670;&#160;</a></span>ECS_INVALID_ID</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ECS_INVALID_ID&#160;&#160;&#160;((<a class="el" href="pico__ecs_8h.html#a3bc00f777f39c3e4079606880f0cf167">ecs_id_t</a>)-1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>An invalid ID. </p>
+
+</div>
+</div>
+<a id="af4766721d892ef664682dd4edff9d633" name="af4766721d892ef664682dd4edff9d633"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4766721d892ef664682dd4edff9d633">&#9670;&#160;</a></span>ECS_IS_INVALID</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ECS_IS_INVALID</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">obj</td><td>)</td>
+          <td>&#160;&#160;&#160;((obj.id) == <a class="el" href="pico__ecs_8h.html#a0a2592ce951b11d9c930a4d93150553f">ECS_INVALID_ID</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>True if the argument (entity/system/component) is invalid. </p>
 
 </div>
 </div>
@@ -607,45 +654,6 @@ Constants:</h2>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="af1c9efd3c5ea82b10ecb9969cfbce56a" name="af1c9efd3c5ea82b10ecb9969cfbce56a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af1c9efd3c5ea82b10ecb9969cfbce56a">&#9670;&#160;</a></span>ecs_is_invalid_entity()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool ecs_is_invalid_entity </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structecs__entity__t.html">ecs_entity_t</a>&#160;</td>
-          <td class="paramname"><em>entity</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns true if the entity is invalid and false otherwise. </p>
-
-</div>
-</div>
-<a id="a1fc146b56e8c225d7ac256ea431cd2ec" name="a1fc146b56e8c225d7ac256ea431cd2ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1fc146b56e8c225d7ac256ea431cd2ec">&#9670;&#160;</a></span>ecs_invalid_entity()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structecs__entity__t.html">ecs_entity_t</a> ecs_invalid_entity </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns an invalid entity. </p>
-
-</div>
-</div>
 <a id="aed914c999fdfcc4c2c115ef4f152588b" name="aed914c999fdfcc4c2c115ef4f152588b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aed914c999fdfcc4c2c115ef4f152588b">&#9670;&#160;</a></span>ecs_new()</h2>
 
@@ -1498,7 +1506,6 @@ Constants:</h2>
 
 <p>Destroys an entity. </p>
 <p>Destroys an entity, releasing resources and returning it to the pool.</p>
-<p>WARNING: This function may change the order of a system's entity array. It should be used with caution. A better option in most circumstances is to use the <code><a class="el" href="pico__ecs_8h.html#a2c77b2683ddd6f5b6ff9133afafe6669">ecs_queue_destroy</a></code> function, which destroys the entity after the system has finished executing.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ecs</td><td>The ECS context </td></tr>
@@ -1542,95 +1549,11 @@ Constants:</h2>
 </div><div class="memdoc">
 
 <p>Removes a component instance from an entity. </p>
-<p>WARNING: This function may change the order of a system's entity array. It should be used with caution. A better option in most circumstances is to use the <code><a class="el" href="pico__ecs_8h.html#a0b4a66909f17e7ad115281a43688de7e">ecs_queue_remove</a></code> function, which removes the component after the system has finished executing.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ecs</td><td>The ECS context </td></tr>
     <tr><td class="paramname">entity</td><td>The entity </td></tr>
     <tr><td class="paramname">comp</td><td>The component </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a2c77b2683ddd6f5b6ff9133afafe6669" name="a2c77b2683ddd6f5b6ff9133afafe6669"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c77b2683ddd6f5b6ff9133afafe6669">&#9670;&#160;</a></span>ecs_queue_destroy()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ecs_queue_destroy </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="pico__ecs_8h.html#a78aee9dde23c9234e2607b7bf6c91139">ecs_t</a> *&#160;</td>
-          <td class="paramname"><em>ecs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structecs__entity__t.html">ecs_entity_t</a>&#160;</td>
-          <td class="paramname"><em>entity</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Queues an entity for destruction after the current system returns. </p>
-<p>Queued entities are destroyed after the curent iteration.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">ecs</td><td>The ECS context </td></tr>
-    <tr><td class="paramname">entity</td><td>The entity to destroy </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a0b4a66909f17e7ad115281a43688de7e" name="a0b4a66909f17e7ad115281a43688de7e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0b4a66909f17e7ad115281a43688de7e">&#9670;&#160;</a></span>ecs_queue_remove()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ecs_queue_remove </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="pico__ecs_8h.html#a78aee9dde23c9234e2607b7bf6c91139">ecs_t</a> *&#160;</td>
-          <td class="paramname"><em>ecs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structecs__entity__t.html">ecs_entity_t</a>&#160;</td>
-          <td class="paramname"><em>entity</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structecs__comp__t.html">ecs_comp_t</a>&#160;</td>
-          <td class="paramname"><em>comp</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Queues a component for removal from the specified entity. </p>
-<p>Queued entity/component pairs that will be deleted after the current system returns.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">ecs</td><td>The ECS context </td></tr>
-    <tr><td class="paramname">entity</td><td>The entity that has the component </td></tr>
-    <tr><td class="paramname">comp</td><td>The component to remove </td></tr>
   </table>
   </dd>
 </dl>

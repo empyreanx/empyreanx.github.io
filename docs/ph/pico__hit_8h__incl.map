@@ -1,5 +1,5 @@
 <map id="pico_hit.h" name="pico_hit.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="133,5,218,31"/>
+<area shape="rect" id="Node000001" title="Separating Axis Theorem (SAT) Tests written in C99." alt="" coords="133,5,218,31"/>
 <area shape="rect" id="Node000002" href="$pico__math_8h.html" title="A 2D math library for games." alt="" coords="124,79,227,104"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="178,31,178,65,173,65,173,31"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="5,152,68,177"/>

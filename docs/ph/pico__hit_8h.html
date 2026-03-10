@@ -85,7 +85,7 @@ Include dependency graph for pico_hit.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="pico__hit_8h__incl.png" border="0" usemap="#apico__hit_8h" alt=""/></div>
 <map name="apico__hit_8h" id="apico__hit_8h">
-<area shape="rect" title=" " alt="" coords="133,5,218,31"/>
+<area shape="rect" title="Separating Axis Theorem (SAT) Tests written in C99." alt="" coords="133,5,218,31"/>
 <area shape="rect" href="pico__math_8h.html" title="A 2D math library for games." alt="" coords="124,79,227,104"/>
 <area shape="poly" title=" " alt="" coords="178,31,178,65,173,65,173,31"/>
 <area shape="rect" title=" " alt="" coords="5,152,68,177"/>
@@ -109,11 +109,16 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structph__poly__t.html">ph_poly_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A polygon shape Must use CCW (counter-clockwise) winding.  <a href="structph__poly__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structph__ray__t.html">ph_ray_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A ray (directed line segment)  <a href="structph__ray__t.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structph__sat__t.html">ph_sat_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A collision result Provides information about a collision. Normals always point from the target shape to the colliding shape.  <a href="structph__sat__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structph__contact__t.html">ph_contact_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A contact point.  <a href="structph__contact__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structph__manifold__t.html">ph_manifold_t</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A collision manifold Provides information about a collision. Normals always point from shape 1 to shape 2.  <a href="structph__manifold__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structph__ray__t.html">ph_ray_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A ray (directed line segment)  <a href="structph__ray__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structph__raycast__t.html">ph_raycast_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raycast information.  <a href="structph__raycast__t.html#details">More...</a><br /></td></tr>
@@ -126,30 +131,42 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:adba91cbb255f36b2a3fb0109f299cca4" id="r_adba91cbb255f36b2a3fb0109f299cca4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structph__circle__t.html">ph_circle_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#adba91cbb255f36b2a3fb0109f299cca4">ph_make_circle</a> (<a class="el" href="structpv2.html">pv2</a> pos, <a class="el" href="pico__math_8h.html#a5ce19b909a88aefe3e3a3beac779f98c">pfloat</a> radius)</td></tr>
-<tr class="memdesc:adba91cbb255f36b2a3fb0109f299cca4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a circle.  <br /></td></tr>
-<tr class="separator:adba91cbb255f36b2a3fb0109f299cca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d7955222df8d81bce86ccbec7902047" id="r_a4d7955222df8d81bce86ccbec7902047"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structph__poly__t.html">ph_poly_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#a4d7955222df8d81bce86ccbec7902047">ph_make_poly</a> (const <a class="el" href="structpv2.html">pv2</a> vertices[], int vertex_count)</td></tr>
-<tr class="memdesc:a4d7955222df8d81bce86ccbec7902047"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a polygon.  <br /></td></tr>
-<tr class="separator:a4d7955222df8d81bce86ccbec7902047"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a138aae4d2dc47b11a23e0e64dea6e2f0" id="r_a138aae4d2dc47b11a23e0e64dea6e2f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structph__ray__t.html">ph_ray_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#a138aae4d2dc47b11a23e0e64dea6e2f0">ph_make_ray</a> (<a class="el" href="structpv2.html">pv2</a> pos, <a class="el" href="structpv2.html">pv2</a> dir, <a class="el" href="pico__math_8h.html#a5ce19b909a88aefe3e3a3beac779f98c">pfloat</a> dist)</td></tr>
-<tr class="memdesc:a138aae4d2dc47b11a23e0e64dea6e2f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a ray.  <br /></td></tr>
-<tr class="separator:a138aae4d2dc47b11a23e0e64dea6e2f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60443c040a3f8cec1ff664e7d9867eed" id="r_a60443c040a3f8cec1ff664e7d9867eed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structph__circle__t.html">ph_circle_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#a60443c040a3f8cec1ff664e7d9867eed">ph_make_circle</a> (<a class="el" href="structpv2.html">pv2</a> center, <a class="el" href="pico__math_8h.html#a5ce19b909a88aefe3e3a3beac779f98c">pfloat</a> radius)</td></tr>
+<tr class="memdesc:a60443c040a3f8cec1ff664e7d9867eed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a circle.  <br /></td></tr>
+<tr class="separator:a60443c040a3f8cec1ff664e7d9867eed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a048fe5c556a91297e24dee4a85b8e6a8" id="r_a048fe5c556a91297e24dee4a85b8e6a8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structph__poly__t.html">ph_poly_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#a048fe5c556a91297e24dee4a85b8e6a8">ph_make_poly</a> (const <a class="el" href="structpv2.html">pv2</a> vertices[], int count, bool reverse)</td></tr>
+<tr class="memdesc:a048fe5c556a91297e24dee4a85b8e6a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a polygon.  <br /></td></tr>
+<tr class="separator:a048fe5c556a91297e24dee4a85b8e6a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afda8d603bc757e500c4efd8e8b9e17e9" id="r_afda8d603bc757e500c4efd8e8b9e17e9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structph__ray__t.html">ph_ray_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#afda8d603bc757e500c4efd8e8b9e17e9">ph_make_ray</a> (<a class="el" href="structpv2.html">pv2</a> origin, <a class="el" href="structpv2.html">pv2</a> dir, <a class="el" href="pico__math_8h.html#a5ce19b909a88aefe3e3a3beac779f98c">pfloat</a> len)</td></tr>
+<tr class="memdesc:afda8d603bc757e500c4efd8e8b9e17e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a ray.  <br /></td></tr>
+<tr class="separator:afda8d603bc757e500c4efd8e8b9e17e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a840c8e99fc78fe7723587566b70e8ec5" id="r_a840c8e99fc78fe7723587566b70e8ec5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structph__poly__t.html">ph_poly_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#a840c8e99fc78fe7723587566b70e8ec5">ph_aabb_to_poly</a> (const <a class="el" href="structpb2.html">pb2</a> *aabb)</td></tr>
-<tr class="memdesc:a840c8e99fc78fe7723587566b70e8ec5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts and axis-aligned bounding box (AABB) to a polygon.  <br /></td></tr>
+<tr class="memdesc:a840c8e99fc78fe7723587566b70e8ec5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts an axis-aligned bounding box (AABB) to a polygon.  <br /></td></tr>
 <tr class="separator:a840c8e99fc78fe7723587566b70e8ec5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a391ac270ec1bcf4a1040b5efa117581f" id="r_a391ac270ec1bcf4a1040b5efa117581f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#a391ac270ec1bcf4a1040b5efa117581f">ph_sat_poly_poly</a> (const <a class="el" href="structph__poly__t.html">ph_poly_t</a> *poly_a, const <a class="el" href="structph__poly__t.html">ph_poly_t</a> *poly_b, <a class="el" href="structph__manifold__t.html">ph_manifold_t</a> *manifold)</td></tr>
-<tr class="memdesc:a391ac270ec1bcf4a1040b5efa117581f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests to see if one polygon overlaps with another.  <br /></td></tr>
-<tr class="separator:a391ac270ec1bcf4a1040b5efa117581f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3c37f7de9b8744012085830dbd10942" id="r_ac3c37f7de9b8744012085830dbd10942"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#ac3c37f7de9b8744012085830dbd10942">ph_sat_poly_circle</a> (const <a class="el" href="structph__poly__t.html">ph_poly_t</a> *poly, const <a class="el" href="structph__circle__t.html">ph_circle_t</a> *circle, <a class="el" href="structph__manifold__t.html">ph_manifold_t</a> *manifold)</td></tr>
-<tr class="memdesc:ac3c37f7de9b8744012085830dbd10942"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests to see if a polygon overlaps a circle.  <br /></td></tr>
-<tr class="separator:ac3c37f7de9b8744012085830dbd10942"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd7ad518b177cb49a6a7771e4dd2317c" id="r_acd7ad518b177cb49a6a7771e4dd2317c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#acd7ad518b177cb49a6a7771e4dd2317c">ph_sat_circle_poly</a> (const <a class="el" href="structph__circle__t.html">ph_circle_t</a> *circle, const <a class="el" href="structph__poly__t.html">ph_poly_t</a> *poly, <a class="el" href="structph__manifold__t.html">ph_manifold_t</a> *manifold)</td></tr>
-<tr class="memdesc:acd7ad518b177cb49a6a7771e4dd2317c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests to see if a circle overlaps a polygon.  <br /></td></tr>
-<tr class="separator:acd7ad518b177cb49a6a7771e4dd2317c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aade0516489f38a2b5dda23d26e976bc8" id="r_aade0516489f38a2b5dda23d26e976bc8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#aade0516489f38a2b5dda23d26e976bc8">ph_sat_circle_circle</a> (const <a class="el" href="structph__circle__t.html">ph_circle_t</a> *circle_a, const <a class="el" href="structph__circle__t.html">ph_circle_t</a> *circle_b, <a class="el" href="structph__manifold__t.html">ph_manifold_t</a> *manifold)</td></tr>
-<tr class="memdesc:aade0516489f38a2b5dda23d26e976bc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests to see if two circles overlap.  <br /></td></tr>
-<tr class="separator:aade0516489f38a2b5dda23d26e976bc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d976baa62edde60cc0e0f7037bd1b62" id="r_a6d976baa62edde60cc0e0f7037bd1b62"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#a6d976baa62edde60cc0e0f7037bd1b62">ph_sat_poly_poly</a> (const <a class="el" href="structph__poly__t.html">ph_poly_t</a> *poly_a, const <a class="el" href="structph__poly__t.html">ph_poly_t</a> *poly_b, <a class="el" href="structph__sat__t.html">ph_sat_t</a> *result)</td></tr>
+<tr class="memdesc:a6d976baa62edde60cc0e0f7037bd1b62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests to see if one convex polygon overlaps with another.  <br /></td></tr>
+<tr class="separator:a6d976baa62edde60cc0e0f7037bd1b62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07021566c8ba30d160d6f77e5a108975" id="r_a07021566c8ba30d160d6f77e5a108975"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#a07021566c8ba30d160d6f77e5a108975">ph_sat_poly_circle</a> (const <a class="el" href="structph__poly__t.html">ph_poly_t</a> *poly, const <a class="el" href="structph__circle__t.html">ph_circle_t</a> *circle, <a class="el" href="structph__sat__t.html">ph_sat_t</a> *result)</td></tr>
+<tr class="memdesc:a07021566c8ba30d160d6f77e5a108975"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests to see if a convex polygon overlaps a circle.  <br /></td></tr>
+<tr class="separator:a07021566c8ba30d160d6f77e5a108975"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13a28bc721324e97617030cf77a8ffce" id="r_a13a28bc721324e97617030cf77a8ffce"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#a13a28bc721324e97617030cf77a8ffce">ph_sat_circle_poly</a> (const <a class="el" href="structph__circle__t.html">ph_circle_t</a> *circle, const <a class="el" href="structph__poly__t.html">ph_poly_t</a> *poly, <a class="el" href="structph__sat__t.html">ph_sat_t</a> *result)</td></tr>
+<tr class="memdesc:a13a28bc721324e97617030cf77a8ffce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests to see if a circle overlaps a polygon.  <br /></td></tr>
+<tr class="separator:a13a28bc721324e97617030cf77a8ffce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5c81ddfe7cfad880b487b9d2a84da12" id="r_ad5c81ddfe7cfad880b487b9d2a84da12"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#ad5c81ddfe7cfad880b487b9d2a84da12">ph_sat_circle_circle</a> (const <a class="el" href="structph__circle__t.html">ph_circle_t</a> *circle_a, const <a class="el" href="structph__circle__t.html">ph_circle_t</a> *circle_b, <a class="el" href="structph__sat__t.html">ph_sat_t</a> *result)</td></tr>
+<tr class="memdesc:ad5c81ddfe7cfad880b487b9d2a84da12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests to see if two circles overlap.  <br /></td></tr>
+<tr class="separator:ad5c81ddfe7cfad880b487b9d2a84da12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89e8a706b911ecce7483fc53a6a8e2da" id="r_a89e8a706b911ecce7483fc53a6a8e2da"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#a89e8a706b911ecce7483fc53a6a8e2da">ph_manifold_poly_poly</a> (const <a class="el" href="structph__poly__t.html">ph_poly_t</a> *poly_a, const <a class="el" href="structph__poly__t.html">ph_poly_t</a> *poly_b, <a class="el" href="structph__manifold__t.html">ph_manifold_t</a> *manifold)</td></tr>
+<tr class="memdesc:a89e8a706b911ecce7483fc53a6a8e2da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests if a polygon collides with another polygon and generates contact information.  <br /></td></tr>
+<tr class="separator:a89e8a706b911ecce7483fc53a6a8e2da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6608d35df2a34ee3cd34451cdab18af8" id="r_a6608d35df2a34ee3cd34451cdab18af8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#a6608d35df2a34ee3cd34451cdab18af8">ph_manifold_poly_circle</a> (const <a class="el" href="structph__poly__t.html">ph_poly_t</a> *poly, const <a class="el" href="structph__circle__t.html">ph_circle_t</a> *circle, <a class="el" href="structph__manifold__t.html">ph_manifold_t</a> *manifold)</td></tr>
+<tr class="memdesc:a6608d35df2a34ee3cd34451cdab18af8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests if a polygon and circle collide and generates contact information.  <br /></td></tr>
+<tr class="separator:a6608d35df2a34ee3cd34451cdab18af8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b161b2652143ab25d925cd8102ad785" id="r_a2b161b2652143ab25d925cd8102ad785"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#a2b161b2652143ab25d925cd8102ad785">ph_manifold_circle_poly</a> (const <a class="el" href="structph__circle__t.html">ph_circle_t</a> *circle, const <a class="el" href="structph__poly__t.html">ph_poly_t</a> *poly, <a class="el" href="structph__manifold__t.html">ph_manifold_t</a> *manifold)</td></tr>
+<tr class="memdesc:a2b161b2652143ab25d925cd8102ad785"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests if a circle and polygon collide and generates contact information.  <br /></td></tr>
+<tr class="separator:a2b161b2652143ab25d925cd8102ad785"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cd162e5bd6f93c5fa079ea30b6cbb60" id="r_a2cd162e5bd6f93c5fa079ea30b6cbb60"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#a2cd162e5bd6f93c5fa079ea30b6cbb60">ph_manifold_circle_circle</a> (const <a class="el" href="structph__circle__t.html">ph_circle_t</a> *circle_a, const <a class="el" href="structph__circle__t.html">ph_circle_t</a> *circle_b, <a class="el" href="structph__manifold__t.html">ph_manifold_t</a> *manifold)</td></tr>
+<tr class="memdesc:a2cd162e5bd6f93c5fa079ea30b6cbb60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests if two circles collide and generates contact information.  <br /></td></tr>
+<tr class="separator:a2cd162e5bd6f93c5fa079ea30b6cbb60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98102c714c9d66eae29fd2ae7b7467c0" id="r_a98102c714c9d66eae29fd2ae7b7467c0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__hit_8h.html#a98102c714c9d66eae29fd2ae7b7467c0">ph_ray_line</a> (const <a class="el" href="structph__ray__t.html">ph_ray_t</a> *ray, <a class="el" href="structpv2.html">pv2</a> s1, <a class="el" href="structpv2.html">pv2</a> s2, <a class="el" href="structph__raycast__t.html">ph_raycast_t</a> *raycast)</td></tr>
 <tr class="memdesc:a98102c714c9d66eae29fd2ae7b7467c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests if ray intersects a (directed) line segment.  <br /></td></tr>
 <tr class="separator:a98102c714c9d66eae29fd2ae7b7467c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -178,9 +195,9 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Separating Axis Theorem (SAT) Tests written in C99. </p>
 <hr  />
- <h2><a class="anchor" id="autotoc_md32"></a>
+ <h2><a class="anchor" id="autotoc_md25"></a>
 Licensing information at end of header</h2>
-<h2><a class="anchor" id="autotoc_md33"></a>
+<h2><a class="anchor" id="autotoc_md26"></a>
 Features:</h2>
 <ul>
 <li>Written in C99</li>
@@ -190,21 +207,21 @@ Features:</h2>
 <li>Ray casts against line segments, polygons, and circles</li>
 <li>Permissive license (MIT)</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md34"></a>
+<h2><a class="anchor" id="autotoc_md27"></a>
 Summary:</h2>
 <p>The Separating Axis Theorem (SAT) roughly states that two convex shapes do not intersect if there is an axis separating them. In the case of simple shapes the theorem provides necessary and sufficient conditions. For example, in the case of convex polygons, it is sufficient to test the axises along the edge normals of both polygons.</p>
 <p>SAT tests are reasonably efficient and are frequently used for static, narrow phase, collision detection in games.</p>
 <p>This library provides SAT tests for polygons, AABBs (which are, of course, polygons), and circles. Manifold objects can be passed to test functions so that, in the case of a collision, they will contain the colliding edge normal, overlap (minimum translational distance or MTD), and a vector (minimum translation vector or MTV).</p>
 <p>Rays (directed line segments) can be cast against line segments, polygons, and circles. Aside from reporting hits, the normal at and distance to the point of impact is also available.</p>
 <p>IMPORTANT: Polygons in this library use counter-clockwise (CCW) winding. See the <code>ph_aabb_to_poly</code> for an example.</p>
-<h2><a class="anchor" id="autotoc_md35"></a>
+<h2><a class="anchor" id="autotoc_md28"></a>
 Usage:</h2>
 <p>To use this library in your project, add the following</p>
 <blockquote class="doxtable">
 <p>&zwj;#define PICO_HIT_IMPLEMENTATION #include "pico_hit.h" </p>
 </blockquote>
 <p>to a source file (once), then simply include the header normally.</p>
-<h2><a class="anchor" id="autotoc_md36"></a>
+<h2><a class="anchor" id="autotoc_md29"></a>
 Dependencies:</h2>
 <p>This library depends on "pico_math.h", which must be in the include path. You must also add</p>
 <blockquote class="doxtable">
@@ -227,8 +244,8 @@ Dependencies:</h2>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="adba91cbb255f36b2a3fb0109f299cca4" name="adba91cbb255f36b2a3fb0109f299cca4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adba91cbb255f36b2a3fb0109f299cca4">&#9670;&#160;</a></span>ph_make_circle()</h2>
+<a id="a60443c040a3f8cec1ff664e7d9867eed" name="a60443c040a3f8cec1ff664e7d9867eed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60443c040a3f8cec1ff664e7d9867eed">&#9670;&#160;</a></span>ph_make_circle()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -237,7 +254,7 @@ Dependencies:</h2>
           <td class="memname"><a class="el" href="structph__circle__t.html">ph_circle_t</a> ph_make_circle </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structpv2.html">pv2</a>&#160;</td>
-          <td class="paramname"><em>pos</em>, </td>
+          <td class="paramname"><em>center</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -256,7 +273,7 @@ Dependencies:</h2>
 <p>Initializes a circle. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pos</td><td>Circle center </td></tr>
+    <tr><td class="paramname">center</td><td>Circle center </td></tr>
     <tr><td class="paramname">radius</td><td>Circle radius </td></tr>
   </table>
   </dd>
@@ -264,8 +281,8 @@ Dependencies:</h2>
 
 </div>
 </div>
-<a id="a4d7955222df8d81bce86ccbec7902047" name="a4d7955222df8d81bce86ccbec7902047"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d7955222df8d81bce86ccbec7902047">&#9670;&#160;</a></span>ph_make_poly()</h2>
+<a id="a048fe5c556a91297e24dee4a85b8e6a8" name="a048fe5c556a91297e24dee4a85b8e6a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a048fe5c556a91297e24dee4a85b8e6a8">&#9670;&#160;</a></span>ph_make_poly()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -280,7 +297,13 @@ Dependencies:</h2>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>vertex_count</em>&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>reverse</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -293,8 +316,9 @@ Dependencies:</h2>
 <p>Initializes a polygon. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">vertex_count</td><td>The number of vertices of the polygon </td></tr>
-    <tr><td class="paramname">vertices</td><td>The vertices of the polygon (must use CCW winding) </td></tr>
+    <tr><td class="paramname">count</td><td>The number of vertices of the polygon </td></tr>
+    <tr><td class="paramname">vertices</td><td>The vertices of the polygon </td></tr>
+    <tr><td class="paramname">reverse</td><td>Converts a polygon with CW winding to CCW </td></tr>
   </table>
   </dd>
 </dl>
@@ -302,8 +326,8 @@ Dependencies:</h2>
 
 </div>
 </div>
-<a id="a138aae4d2dc47b11a23e0e64dea6e2f0" name="a138aae4d2dc47b11a23e0e64dea6e2f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a138aae4d2dc47b11a23e0e64dea6e2f0">&#9670;&#160;</a></span>ph_make_ray()</h2>
+<a id="afda8d603bc757e500c4efd8e8b9e17e9" name="afda8d603bc757e500c4efd8e8b9e17e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afda8d603bc757e500c4efd8e8b9e17e9">&#9670;&#160;</a></span>ph_make_ray()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -312,7 +336,7 @@ Dependencies:</h2>
           <td class="memname"><a class="el" href="structph__ray__t.html">ph_ray_t</a> ph_make_ray </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structpv2.html">pv2</a>&#160;</td>
-          <td class="paramname"><em>pos</em>, </td>
+          <td class="paramname"><em>origin</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -324,7 +348,7 @@ Dependencies:</h2>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="pico__math_8h.html#a5ce19b909a88aefe3e3a3beac779f98c">pfloat</a>&#160;</td>
-          <td class="paramname"><em>dist</em>&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -338,8 +362,8 @@ Dependencies:</h2>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pos</td><td>The origin of the array </td></tr>
-    <tr><td class="paramname">dir</td><td>The direction of the ray </td></tr>
-    <tr><td class="paramname">dist</td><td>The length of the ray </td></tr>
+    <tr><td class="paramname">dir</td><td>The direction of the ray (normalized) </td></tr>
+    <tr><td class="paramname">len</td><td>The length of the ray </td></tr>
   </table>
   </dd>
 </dl>
@@ -362,19 +386,199 @@ Dependencies:</h2>
       </table>
 </div><div class="memdoc">
 
-<p>Converts and axis-aligned bounding box (AABB) to a polygon. </p>
+<p>Converts an axis-aligned bounding box (AABB) to a polygon. </p>
 <p>aabb The AABB </p><dl class="section return"><dt>Returns</dt><dd>the AABB as a polygon </dd></dl>
 
 </div>
 </div>
-<a id="a391ac270ec1bcf4a1040b5efa117581f" name="a391ac270ec1bcf4a1040b5efa117581f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a391ac270ec1bcf4a1040b5efa117581f">&#9670;&#160;</a></span>ph_sat_poly_poly()</h2>
+<a id="a6d976baa62edde60cc0e0f7037bd1b62" name="a6d976baa62edde60cc0e0f7037bd1b62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d976baa62edde60cc0e0f7037bd1b62">&#9670;&#160;</a></span>ph_sat_poly_poly()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">bool ph_sat_poly_poly </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structph__poly__t.html">ph_poly_t</a> *&#160;</td>
+          <td class="paramname"><em>poly_a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structph__poly__t.html">ph_poly_t</a> *&#160;</td>
+          <td class="paramname"><em>poly_b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structph__sat__t.html">ph_sat_t</a> *&#160;</td>
+          <td class="paramname"><em>result</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tests to see if one convex polygon overlaps with another. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">poly_a</td><td>The colliding polygon </td></tr>
+    <tr><td class="paramname">poly_b</td><td>The target polygon </td></tr>
+    <tr><td class="paramname">result</td><td>The collision result to populate (or NULL) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the polygons overlap and false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a07021566c8ba30d160d6f77e5a108975" name="a07021566c8ba30d160d6f77e5a108975"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07021566c8ba30d160d6f77e5a108975">&#9670;&#160;</a></span>ph_sat_poly_circle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ph_sat_poly_circle </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structph__poly__t.html">ph_poly_t</a> *&#160;</td>
+          <td class="paramname"><em>poly</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structph__circle__t.html">ph_circle_t</a> *&#160;</td>
+          <td class="paramname"><em>circle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structph__sat__t.html">ph_sat_t</a> *&#160;</td>
+          <td class="paramname"><em>result</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tests to see if a convex polygon overlaps a circle. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">poly</td><td>The colliding polygon </td></tr>
+    <tr><td class="paramname">circle</td><td>The target circle </td></tr>
+    <tr><td class="paramname">result</td><td>The collision result to populate (or NULL) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the polygon and circle overlap, and false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a13a28bc721324e97617030cf77a8ffce" name="a13a28bc721324e97617030cf77a8ffce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13a28bc721324e97617030cf77a8ffce">&#9670;&#160;</a></span>ph_sat_circle_poly()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ph_sat_circle_poly </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structph__circle__t.html">ph_circle_t</a> *&#160;</td>
+          <td class="paramname"><em>circle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structph__poly__t.html">ph_poly_t</a> *&#160;</td>
+          <td class="paramname"><em>poly</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structph__sat__t.html">ph_sat_t</a> *&#160;</td>
+          <td class="paramname"><em>result</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tests to see if a circle overlaps a polygon. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">circle</td><td>The colliding circle </td></tr>
+    <tr><td class="paramname">poly</td><td>The target polygon </td></tr>
+    <tr><td class="paramname">result</td><td>The collision result to populate (or NULL) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the circle overlaps the polygon, and false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="ad5c81ddfe7cfad880b487b9d2a84da12" name="ad5c81ddfe7cfad880b487b9d2a84da12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5c81ddfe7cfad880b487b9d2a84da12">&#9670;&#160;</a></span>ph_sat_circle_circle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ph_sat_circle_circle </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structph__circle__t.html">ph_circle_t</a> *&#160;</td>
+          <td class="paramname"><em>circle_a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structph__circle__t.html">ph_circle_t</a> *&#160;</td>
+          <td class="paramname"><em>circle_b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structph__sat__t.html">ph_sat_t</a> *&#160;</td>
+          <td class="paramname"><em>result</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tests to see if two circles overlap. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">circle_a</td><td>The colliding circle </td></tr>
+    <tr><td class="paramname">circle_b</td><td>The target circle </td></tr>
+    <tr><td class="paramname">result</td><td>The collision result to populate (or NULL) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the circle and the other circle, and false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a89e8a706b911ecce7483fc53a6a8e2da" name="a89e8a706b911ecce7483fc53a6a8e2da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89e8a706b911ecce7483fc53a6a8e2da">&#9670;&#160;</a></span>ph_manifold_poly_poly()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ph_manifold_poly_poly </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structph__poly__t.html">ph_poly_t</a> *&#160;</td>
           <td class="paramname"><em>poly_a</em>, </td>
@@ -399,27 +603,27 @@ Dependencies:</h2>
       </table>
 </div><div class="memdoc">
 
-<p>Tests to see if one polygon overlaps with another. </p>
+<p>Tests if a polygon collides with another polygon and generates contact information. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">poly_a</td><td>The colliding polygon </td></tr>
     <tr><td class="paramname">poly_b</td><td>The target polygon </td></tr>
-    <tr><td class="paramname">manifold</td><td>The collision manifold to populate (or NULL) </td></tr>
+    <tr><td class="paramname">manifold</td><td>The contact manifold to populate </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>True if the polygons overlap and false otherwise </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if contacts are generated successfully, and false otherwise </dd></dl>
 
 </div>
 </div>
-<a id="ac3c37f7de9b8744012085830dbd10942" name="ac3c37f7de9b8744012085830dbd10942"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac3c37f7de9b8744012085830dbd10942">&#9670;&#160;</a></span>ph_sat_poly_circle()</h2>
+<a id="a6608d35df2a34ee3cd34451cdab18af8" name="a6608d35df2a34ee3cd34451cdab18af8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6608d35df2a34ee3cd34451cdab18af8">&#9670;&#160;</a></span>ph_manifold_poly_circle()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool ph_sat_poly_circle </td>
+          <td class="memname">bool ph_manifold_poly_circle </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structph__poly__t.html">ph_poly_t</a> *&#160;</td>
           <td class="paramname"><em>poly</em>, </td>
@@ -444,27 +648,27 @@ Dependencies:</h2>
       </table>
 </div><div class="memdoc">
 
-<p>Tests to see if a polygon overlaps a circle. </p>
+<p>Tests if a polygon and circle collide and generates contact information. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">poly</td><td>The colliding polygon </td></tr>
-    <tr><td class="paramname">circle</td><td>The target circle </td></tr>
-    <tr><td class="paramname">manifold</td><td>The collision manifold to populate (or NULL) </td></tr>
+    <tr><td class="paramname">poly</td><td>The polygon </td></tr>
+    <tr><td class="paramname">circle</td><td>The circle </td></tr>
+    <tr><td class="paramname">manifold</td><td>The contact manifold to populate </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>True if the polygon and circle overlap, and false otherwise </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if contacts are generated successfully, and false otherwise </dd></dl>
 
 </div>
 </div>
-<a id="acd7ad518b177cb49a6a7771e4dd2317c" name="acd7ad518b177cb49a6a7771e4dd2317c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd7ad518b177cb49a6a7771e4dd2317c">&#9670;&#160;</a></span>ph_sat_circle_poly()</h2>
+<a id="a2b161b2652143ab25d925cd8102ad785" name="a2b161b2652143ab25d925cd8102ad785"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b161b2652143ab25d925cd8102ad785">&#9670;&#160;</a></span>ph_manifold_circle_poly()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool ph_sat_circle_poly </td>
+          <td class="memname">bool ph_manifold_circle_poly </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structph__circle__t.html">ph_circle_t</a> *&#160;</td>
           <td class="paramname"><em>circle</em>, </td>
@@ -489,27 +693,27 @@ Dependencies:</h2>
       </table>
 </div><div class="memdoc">
 
-<p>Tests to see if a circle overlaps a polygon. </p>
+<p>Tests if a circle and polygon collide and generates contact information. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">circle</td><td>The colliding circle </td></tr>
-    <tr><td class="paramname">poly</td><td>The target polygon </td></tr>
-    <tr><td class="paramname">manifold</td><td>The collision manifold to populate (or NULL) </td></tr>
+    <tr><td class="paramname">circle</td><td>The circle </td></tr>
+    <tr><td class="paramname">poly</td><td>The polygon </td></tr>
+    <tr><td class="paramname">manifold</td><td>The contact manifold to populate </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>True if the circle overlaps the polygon, and false otherwise </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if contacts are generated successfully, and false otherwise </dd></dl>
 
 </div>
 </div>
-<a id="aade0516489f38a2b5dda23d26e976bc8" name="aade0516489f38a2b5dda23d26e976bc8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aade0516489f38a2b5dda23d26e976bc8">&#9670;&#160;</a></span>ph_sat_circle_circle()</h2>
+<a id="a2cd162e5bd6f93c5fa079ea30b6cbb60" name="a2cd162e5bd6f93c5fa079ea30b6cbb60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cd162e5bd6f93c5fa079ea30b6cbb60">&#9670;&#160;</a></span>ph_manifold_circle_circle()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool ph_sat_circle_circle </td>
+          <td class="memname">bool ph_manifold_circle_circle </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structph__circle__t.html">ph_circle_t</a> *&#160;</td>
           <td class="paramname"><em>circle_a</em>, </td>
@@ -534,16 +738,16 @@ Dependencies:</h2>
       </table>
 </div><div class="memdoc">
 
-<p>Tests to see if two circles overlap. </p>
+<p>Tests if two circles collide and generates contact information. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">circle_a</td><td>The colliding circle </td></tr>
-    <tr><td class="paramname">circle_b</td><td>The target circle </td></tr>
-    <tr><td class="paramname">manifold</td><td>The collision manifold to populate (or NULL) </td></tr>
+    <tr><td class="paramname">circle_a</td><td>First circle </td></tr>
+    <tr><td class="paramname">circle_b</td><td>Second circle </td></tr>
+    <tr><td class="paramname">manifold</td><td>The contact manifold to populate </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>True if the circle and the other circle, and false otherwise </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if contacts are generated successfully, and false otherwise </dd></dl>
 
 </div>
 </div>
@@ -635,7 +839,7 @@ Dependencies:</h2>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ray</td><td>Ray to test </td></tr>
-    <tr><td class="paramname">poly</td><td>The polygon </td></tr>
+    <tr><td class="paramname">poly</td><td>The target polygon </td></tr>
     <tr><td class="paramname">raycast</td><td>Normal and distance of impact (or NULL). May terminate early if NULL </td></tr>
   </table>
   </dd>
@@ -680,7 +884,7 @@ Dependencies:</h2>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ray</td><td>Ray to test </td></tr>
-    <tr><td class="paramname">circle</td><td>The circle </td></tr>
+    <tr><td class="paramname">circle</td><td>The target circle </td></tr>
     <tr><td class="paramname">raycast</td><td>Normal and distance of impact (if not NULL). </td></tr>
   </table>
   </dd>
