@@ -4,6 +4,7 @@ var searchData=
   ['pg_5fblend_5feq_5ft_1',['pg_blend_eq_t',['../pico__gfx_8h.html#af4e7d0bfe37107a14f24054c26ccd278',1,'pico_gfx.h']]],
   ['pg_5fblend_5ffactor_5ft_2',['pg_blend_factor_t',['../pico__gfx_8h.html#abd20c0d63bd87e2f6e7e67c0a45f7cb5',1,'pico_gfx.h']]],
   ['pg_5fbuffer_5fusage_5ft_3',['pg_buffer_usage_t',['../pico__gfx_8h.html#a1b3b7c5599861780b7eca429e5e47042',1,'pico_gfx.h']]],
-  ['pg_5fprimitive_5ft_4',['pg_primitive_t',['../pico__gfx_8h.html#ad8207f8cbc93f9fb83b76ae34ff1bab7',1,'pico_gfx.h']]],
-  ['pg_5fvertex_5fformat_5ft_5',['pg_vertex_format_t',['../pico__gfx_8h.html#a0b9bde3d7600db2083d71e557fd2691b',1,'pico_gfx.h']]]
+  ['pg_5fpixel_5fformat_5ft_4',['pg_pixel_format_t',['../pico__gfx_8h.html#aeeba2ab7de43d218477932475ef0b101',1,'pico_gfx.h']]],
+  ['pg_5fprimitive_5ft_5',['pg_primitive_t',['../pico__gfx_8h.html#ad8207f8cbc93f9fb83b76ae34ff1bab7',1,'pico_gfx.h']]],
+  ['pg_5fvertex_5fformat_5ft_6',['pg_vertex_format_t',['../pico__gfx_8h.html#a0b9bde3d7600db2083d71e557fd2691b',1,'pico_gfx.h']]]
 ];
