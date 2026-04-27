@@ -222,10 +222,10 @@ pf_face_t*  face  = pf_create_face(atlas, ttf_data, 32.0f);  // 32px height
 </pre><p> During rendering (call every frame for each string): float x = 10, y = 50; pf_draw_text(face, "Hello!", &amp;x, &amp;y, my_quad_callback, user_ptr);</p>
 <p>The callback receives screen-space quads with atlas UVs and page index. After pf_draw_text, upload any dirty atlas pages to the GPU: pf_upload_atlas(atlas, my_upload_callback, user_ptr);</p>
 <p>pf_destroy_face(face); pf_destroy_atlas(atlas); ```</p>
-<h2><a class="anchor" id="autotoc_md15"></a>
+<h2><a class="anchor" id="autotoc_md23"></a>
 Full Example:</h2>
 <p>A more or less complete example can be found at: examples_pico_gfx/text.c</p>
-<h2><a class="anchor" id="autotoc_md16"></a>
+<h2><a class="anchor" id="autotoc_md24"></a>
 Macro Overrides:</h2>
 <ul>
 <li>PICO_FONT_ASSERT (default: assert)</li>
@@ -234,7 +234,7 @@ Macro Overrides:</h2>
 <li>PICO_FONT_FRE (default: free)</li>
 <li>PICO_FONT_MEMSET (default: memset)</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md17"></a>
+<h2><a class="anchor" id="autotoc_md25"></a>
 Constant Overrides:</h2>
 <ul>
 <li>PICO_FONT_GLYPH_PADDING (default: 1)</li>

@@ -247,9 +247,9 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A pure and simple ECS written in C99. </p>
 <hr  />
- <h2><a class="anchor" id="autotoc_md6"></a>
+ <h2><a class="anchor" id="autotoc_md14"></a>
 Licensing information at end of header</h2>
-<h2><a class="anchor" id="autotoc_md7"></a>
+<h2><a class="anchor" id="autotoc_md15"></a>
 Features:</h2>
 <ul>
 <li>Written in C99</li>
@@ -259,7 +259,7 @@ Features:</h2>
 <li>Simple and concise API</li>
 <li>Permissive license (zlib or public domain)</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md8"></a>
+<h2><a class="anchor" id="autotoc_md16"></a>
 Summary:</h2>
 <p>This library implements an ECS (Entity-Component-System). Entities (sometimes called game objects) are defined by their components. For example, an entity might have position, sprite, and physics components. Systems operate on the components of entities that match the system's requirements. Entities are matched to systems based upon which components they have and also the system's matching crieria.</p>
 <p>In the above example, a sprite renderer system would match entities having poition and sprite components. The system would send the appropriate geometry and texture ID to the game's graphics API.</p>
@@ -267,7 +267,7 @@ Summary:</h2>
 <p>If the state specified by the class changes this could ripple through the class, and perhaps subclasses as well. It could well be that the class no longer belongs in the existing class hierarchy forcing even more revisions. It could even be true that a class doesn't neatly fit into the inheritance tree at all.</p>
 <p>An ECS solves these problems while also granting more flexibility in general. In an ECS there is a clear separation between data (components) and logic (systems), which makes it possible to build complex simulations with fewer assumptions about how that data will be used. In an ECS it is effortless to change functionality, by either adding or removing components from entities, and/or by changing system requirements. Adding new logic is also simple as well, just defining a new system!</p>
 <p>Please see the examples and unit tests for more details.</p>
-<h2><a class="anchor" id="autotoc_md9"></a>
+<h2><a class="anchor" id="autotoc_md17"></a>
 Version 2.4 to 3.1 Migration Guide:</h2>
 <p>Version 3.1 is a major departure from 2.4. Here is a short guide to help make the leap to 3.1.</p>
 <ol type="1">
@@ -286,7 +286,7 @@ Version 2.4 to 3.1 Migration Guide:</h2>
 <li>Replace all ecs_queue_remove and ecs_queue_destroy with ecs_remove and ecs_remove respectively.</li>
 </ol>
 <p>If you encounter any difficulties with any of these steps and/or your project doesn't compile once you're finished, please submit an issue.</p>
-<h2><a class="anchor" id="autotoc_md10"></a>
+<h2><a class="anchor" id="autotoc_md18"></a>
 Masks:</h2>
 <p>Masks are a new feature in 3.0. Systems to are assigned to categories (using a bitmask) at definition and then can selectively invoke those systems at runtime (also using a bitmask).</p>
 <p>Note that passing 0 into <code>ecs_define_system</code> means the system matches all categories.</p>
@@ -299,7 +299,7 @@ Masks:</h2>
 <p><code>ecs_run_system(ecs, sys, (1 &lt;&lt; 3));</code></p>
 <p>Nor will this:</p>
 <p><code>ecs_run_system(ecs, sys, 0);</code></p>
-<h2><a class="anchor" id="autotoc_md11"></a>
+<h2><a class="anchor" id="autotoc_md19"></a>
 Revision History:</h2>
 <ul>
 <li>3.0 (2025/10/22):<ul>
@@ -326,14 +326,14 @@ Revision History:</h2>
 </ul>
 </li>
 </ul>
-<h2><a class="anchor" id="autotoc_md12"></a>
+<h2><a class="anchor" id="autotoc_md20"></a>
 Usage:</h2>
 <p>To use this library in your project, add the following</p>
 <blockquote class="doxtable">
 <p>&zwj;#define PICO_ECS_IMPLEMENTATION #include "pico_ecs.h" </p>
 </blockquote>
 <p>to a source file (once), then simply include the header normally.</p>
-<h2><a class="anchor" id="autotoc_md13"></a>
+<h2><a class="anchor" id="autotoc_md21"></a>
 Macros:</h2>
 <ul>
 <li>ECS_MALLOC(size, ctx) (default: malloc)</li>
@@ -342,7 +342,7 @@ Macros:</h2>
 <li>ECS_MEMSET (default: memset)</li>
 </ul>
 <p>The ctx parameter is sometimes used by custom allocators</p>
-<h2><a class="anchor" id="autotoc_md14"></a>
+<h2><a class="anchor" id="autotoc_md22"></a>
 Constants:</h2>
 <ul>
 <li>PICO_ECS_MAX_COMPONENTS (default: 32)</li>

@@ -94,6 +94,7 @@ var menudata={children:[
 {text:"p",url:"globals_func_p.html#index_p"},
 {text:"q",url:"globals_func_q.html#index_q"}]},
 {text:"Typedefs",url:"globals_type.html",children:[
+{text:"b",url:"globals_type.html#index_b"},
 {text:"e",url:"globals_type.html#index_e"},
 {text:"l",url:"globals_type.html#index_l"},
 {text:"p",url:"globals_type.html#index_p"},
@@ -104,6 +105,7 @@ var menudata={children:[
 {text:"p",url:"globals_eval.html#index_p"}]},
 {text:"Macros",url:"globals_defs.html",children:[
 {text:"_",url:"globals_defs.html#index__5F"},
+{text:"b",url:"globals_defs.html#index_b"},
 {text:"e",url:"globals_defs.html#index_e"},
 {text:"l",url:"globals_defs.html#index_l"},
 {text:"p",url:"globals_defs.html#index_p"},
