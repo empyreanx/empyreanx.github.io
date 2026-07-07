@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['h_0',['h',['../structqt__rect__t.html#aa3a32dd5ca1983c49e368cee58f17954',1,'qt_rect_t']]],
-  ['header_1',['header',['../pico__b64_8h.html#autotoc_md1',1,'Licensing information at end of header'],['../pico__bvh_8h.html#autotoc_md6',1,'Licensing information at end of header'],['../pico__ecs_8h.html#autotoc_md14',1,'Licensing information at end of header'],['../pico__gfx_8h.html#autotoc_md27',1,'Licensing information at end of header'],['../pico__hit_8h.html#autotoc_md36',1,'Licensing information at end of header'],['../pico__log_8h.html#autotoc_md42',1,'Licensing information at end of header'],['../pico__math_8h.html#autotoc_md48',1,'Licensing information at end of header'],['../pico__qt_8h.html#autotoc_md54',1,'Licensing information at end of header'],['../pico__time_8h.html#autotoc_md61',1,'Licensing information at end of header'],['../pico__unit_8h.html#autotoc_md66',1,'Licensing information at end of header']]],
-  ['history_3a_2',['Revision History:',['../pico__ecs_8h.html#autotoc_md19',1,'']]]
+  ['normal_0',['normal',['../structph__sat__t.html#aa4c88b60015cca293418adf70cd128a9',1,'ph_sat_t::normal'],['../structph__manifold__t.html#af26008ef2824f895828e78da93e9ba94',1,'ph_manifold_t::normal'],['../structph__raycast__t.html#a6b873c110e7f5673684c15c02b4df8e6',1,'ph_raycast_t::normal']]],
+  ['normals_1',['normals',['../structph__poly__t.html#a3b9999a03926cd7ce159a52e22ff5d0f',1,'ph_poly_t']]],
+  ['notes_2',['Complexity Notes',['../pico__bvh_8h.html#autotoc_md12',1,'']]],
+  ['notice_3a_3',['Notice:',['../pico__math_8h.html#autotoc_md63',1,'']]]
 ];

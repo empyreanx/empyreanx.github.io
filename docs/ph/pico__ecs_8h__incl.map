@@ -1,5 +1,5 @@
 <map id="pico_ecs.h" name="pico_ecs.h">
-<area shape="rect" id="Node000001" title="A pure and simple ECS written in C99." alt="" coords="152,5,243,31"/>
+<area shape="rect" id="Node000001" title="A pure and simple ECS." alt="" coords="152,5,243,31"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,79,88,104"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="174,33,85,75,83,70,172,28"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="112,79,187,104"/>

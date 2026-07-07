@@ -1,9 +1,6 @@
 var searchData=
 [
-  ['dependencies_3a_0',['Dependencies:',['../pico__hit_8h.html#autotoc_md40',1,'']]],
-  ['depth_1',['depth',['../structph__contact__t.html#a09dfb521521779ddf849cad1b2521738',1,'ph_contact_t']]],
-  ['depth_3a_2',['Depth:',['../pico__qt_8h.html#autotoc_md57',1,'']]],
-  ['descent_3',['descent',['../structpf__metrics__t.html#a4d3399a060d05b83b99927b2f0e8fe56',1,'pf_metrics_t']]],
-  ['dir_4',['dir',['../structph__ray__t.html#a6b3e862935ae5e280eaa41b9a0bc1b82',1,'ph_ray_t']]],
-  ['dist_5',['dist',['../structph__raycast__t.html#a6d13ee9acd51829e9ee18e74787543e5',1,'ph_raycast_t']]]
+  ['h_0',['h',['../structqt__rect__t.html#aa3a32dd5ca1983c49e368cee58f17954',1,'qt_rect_t']]],
+  ['header_1',['header',['../pico__b64_8h.html#autotoc_md1',1,'Licensing information at end of header'],['../pico__bvh_8h.html#autotoc_md6',1,'Licensing information at end of header'],['../pico__ecs_8h.html#autotoc_md14',1,'Licensing information at end of header'],['../pico__emitter_8h.html#autotoc_md23',1,'Licensing information at end of header'],['../pico__font_8h.html#autotoc_md31',1,'Licensing information at end of header'],['../pico__gfx_8h.html#autotoc_md41',1,'Licensing information at end of header'],['../pico__hit_8h.html#autotoc_md50',1,'Licensing information at end of header'],['../pico__log_8h.html#autotoc_md56',1,'Licensing information at end of header'],['../pico__math_8h.html#autotoc_md62',1,'Licensing information at end of header'],['../pico__qt_8h.html#autotoc_md68',1,'Licensing information at end of header'],['../pico__time_8h.html#autotoc_md75',1,'Licensing information at end of header'],['../pico__unit_8h.html#autotoc_md80',1,'Licensing information at end of header']]],
+  ['history_3a_2',['history:',['../pico__ecs_8h.html#autotoc_md18',1,'Revision History:'],['../pico__emitter_8h.html#autotoc_md27',1,'Revision History:'],['../pico__font_8h.html#autotoc_md34',1,'Revision History:']]]
 ];

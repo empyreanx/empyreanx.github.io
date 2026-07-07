@@ -1,0 +1,5 @@
+<map id="ecs_comp_desc_t" name="ecs_comp_desc_t">
+<area shape="rect" id="Node000001" title="Optional parameters for component definition." alt="" coords="5,123,141,148"/>
+<area shape="rect" id="Node000002" href="$structecs__entity__t.html" title="An entity handle." alt="" coords="23,5,124,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="76,44,76,123,71,123,71,44"/>
+</map>

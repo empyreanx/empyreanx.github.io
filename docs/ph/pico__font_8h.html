@@ -76,6 +76,9 @@ $(function() {
   <div class="headertitle"><div class="title">pico_font.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>A simple, dynamic (online) font atlas.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
@@ -85,7 +88,7 @@ Include dependency graph for pico_font.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="pico__font_8h__incl.png" border="0" usemap="#apico__font_8h" alt=""/></div>
 <map name="apico__font_8h" id="apico__font_8h">
-<area shape="rect" title=" " alt="" coords="147,5,242,31"/>
+<area shape="rect" title="A simple, dynamic (online) font atlas." alt="" coords="147,5,242,31"/>
 <area shape="rect" title=" " alt="" coords="5,79,88,104"/>
 <area shape="poly" title=" " alt="" coords="172,33,84,75,82,70,170,28"/>
 <area shape="rect" title=" " alt="" coords="113,79,183,104"/>
@@ -114,8 +117,10 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:a24c2566370569c257df89c57380f2e33" id="r_a24c2566370569c257df89c57380f2e33"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="pico__font_8h.html#a24c2566370569c257df89c57380f2e33">pf_atlas_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__font_8h.html#a24c2566370569c257df89c57380f2e33">pf_atlas_t</a></td></tr>
+<tr class="memdesc:a24c2566370569c257df89c57380f2e33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opaque atlas handle.  <br /></td></tr>
 <tr class="separator:a24c2566370569c257df89c57380f2e33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33f2b69bbfa1f498bb9e2eacf85f3172" id="r_a33f2b69bbfa1f498bb9e2eacf85f3172"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="pico__font_8h.html#a33f2b69bbfa1f498bb9e2eacf85f3172">pf_face_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__font_8h.html#a33f2b69bbfa1f498bb9e2eacf85f3172">pf_face_t</a></td></tr>
+<tr class="memdesc:a33f2b69bbfa1f498bb9e2eacf85f3172"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opaque font-face handle.  <br /></td></tr>
 <tr class="separator:a33f2b69bbfa1f498bb9e2eacf85f3172"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9edc1f05b7e38707493421723376bbf9" id="r_a9edc1f05b7e38707493421723376bbf9"><td class="memItemLeft" align="right" valign="top">typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__font_8h.html#a9edc1f05b7e38707493421723376bbf9">pf_draw_callback_fn</a>) (const <a class="el" href="structpf__quad__t.html">pf_quad_t</a> *quad, void *user)</td></tr>
 <tr class="memdesc:a9edc1f05b7e38707493421723376bbf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback invoked for each glyph quad during text drawing.  <br /></td></tr>
@@ -132,11 +137,11 @@ Functions</h2></td></tr>
 <tr class="memitem:a74aff30923a3c4fda14663246bfb2b33" id="r_a74aff30923a3c4fda14663246bfb2b33"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__font_8h.html#a74aff30923a3c4fda14663246bfb2b33">pf_destroy_atlas</a> (<a class="el" href="pico__font_8h.html#a24c2566370569c257df89c57380f2e33">pf_atlas_t</a> *atlas)</td></tr>
 <tr class="memdesc:a74aff30923a3c4fda14663246bfb2b33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys a font atlas and frees all associated pages and glyphs.  <br /></td></tr>
 <tr class="separator:a74aff30923a3c4fda14663246bfb2b33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9299ae002cf7ae3e8b814b78f6b624d" id="r_ae9299ae002cf7ae3e8b814b78f6b624d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pico__font_8h.html#a33f2b69bbfa1f498bb9e2eacf85f3172">pf_face_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__font_8h.html#ae9299ae002cf7ae3e8b814b78f6b624d">pf_create_face</a> (<a class="el" href="pico__font_8h.html#a24c2566370569c257df89c57380f2e33">pf_atlas_t</a> *atlas, const unsigned char *ttf_data, float pixel_height)</td></tr>
-<tr class="memdesc:ae9299ae002cf7ae3e8b814b78f6b624d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a font face at a given pixel height.  <br /></td></tr>
-<tr class="separator:ae9299ae002cf7ae3e8b814b78f6b624d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbc57a0e441b5573c09f0ac7dde991a9" id="r_abbc57a0e441b5573c09f0ac7dde991a9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pico__font_8h.html#a33f2b69bbfa1f498bb9e2eacf85f3172">pf_face_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__font_8h.html#abbc57a0e441b5573c09f0ac7dde991a9">pf_create_face</a> (<a class="el" href="pico__font_8h.html#a24c2566370569c257df89c57380f2e33">pf_atlas_t</a> *atlas, const unsigned char *ttf_data, size_t ttf_data_size, float pixel_height)</td></tr>
+<tr class="memdesc:abbc57a0e441b5573c09f0ac7dde991a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a font face at a given pixel height.  <br /></td></tr>
+<tr class="separator:abbc57a0e441b5573c09f0ac7dde991a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a50b4857a827da9c872e1d47bad08d1a0" id="r_a50b4857a827da9c872e1d47bad08d1a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__font_8h.html#a50b4857a827da9c872e1d47bad08d1a0">pf_destroy_face</a> (<a class="el" href="pico__font_8h.html#a33f2b69bbfa1f498bb9e2eacf85f3172">pf_face_t</a> *face)</td></tr>
-<tr class="memdesc:a50b4857a827da9c872e1d47bad08d1a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys a font face.  <br /></td></tr>
+<tr class="memdesc:a50b4857a827da9c872e1d47bad08d1a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys a font face and frees the TTF data it owns.  <br /></td></tr>
 <tr class="separator:a50b4857a827da9c872e1d47bad08d1a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5fe90105d0aacbfbb1571cd4131d28c" id="r_ac5fe90105d0aacbfbb1571cd4131d28c"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structpf__glyph__t.html">pf_glyph_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__font_8h.html#ac5fe90105d0aacbfbb1571cd4131d28c">pf_get_glyph</a> (<a class="el" href="pico__font_8h.html#a33f2b69bbfa1f498bb9e2eacf85f3172">pf_face_t</a> *face, uint32_t codepoint)</td></tr>
 <tr class="memdesc:ac5fe90105d0aacbfbb1571cd4131d28c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get (or rasterize) a single glyph.  <br /></td></tr>
@@ -157,7 +162,84 @@ Functions</h2></td></tr>
 <tr class="memdesc:a4d6e2c074f0fcb58644be26dc5f90107"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the horizontal kerning adjustment between two codepoints.  <br /></td></tr>
 <tr class="separator:a4d6e2c074f0fcb58644be26dc5f90107"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Typedef Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A simple, dynamic (online) font atlas. </p>
+<hr  />
+ <h2><a class="anchor" id="autotoc_md31"></a>
+Licensing information at end of header</h2>
+<h2><a class="anchor" id="autotoc_md32"></a>
+Introduction:</h2>
+<p>A single-header library that rasterizes and caches glyphs on demand into a multi-page texture atlas. Each page is a single-channel (alpha) bitmap with a fixed width and a height that grows on demand up to a configurable maximum. When a page is full, a new page is appended automatically. Glyph placement uses row-based shelf packing. The library also supports basic, single line drawing, but can be customized using the available metrics and measurement functions.</p>
+<h2><a class="anchor" id="autotoc_md33"></a>
+Features:</h2>
+<ul>
+<li>Written in C99</li>
+<li>On-demand glyph rasterization via stb_truetype.h</li>
+<li>Multi-page atlas with automatic page growth and creation</li>
+<li>Hashtable glyph cache with automatic rehashing</li>
+<li>UTF-8 text layout with kerning (rendering API agnostic)</li>
+<li>Text measurement and font metrics</li>
+<li>Dirty-page tracking for efficient GPU uploads</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md34"></a>
+Revision History:</h2>
+<ul>
+<li>0.1 (2026/04/11):<ul>
+<li>On-demand glyph rasterization and storage</li>
+<li>Simple text rendering</li>
+</ul>
+</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md35"></a>
+Usage:</h2>
+<pre class="fragment">#define PICO_FONT_IMPLEMENTATION
+#include "pico_font.h"
+</pre><p> You must also have stb_truetype.h available. Define STB_TRUETYPE_IMPLEMENTATION exactly once in your project after including this file.</p>
+<h2><a class="anchor" id="autotoc_md36"></a>
+Quick Start:</h2>
+<div class="fragment"><div class="line"><a class="code hl_typedef" href="pico__font_8h.html#a24c2566370569c257df89c57380f2e33">pf_atlas_t</a>* atlas = <a class="code hl_function" href="pico__font_8h.html#aca79f5fa1d4889789811e5448954f443">pf_create_atlas</a>(512, 512);   <span class="comment">// page width, max page height</span></div>
+<div class="line"><a class="code hl_typedef" href="pico__font_8h.html#a33f2b69bbfa1f498bb9e2eacf85f3172">pf_face_t</a>*  face  = <a class="code hl_function" href="pico__font_8h.html#abbc57a0e441b5573c09f0ac7dde991a9">pf_create_face</a>(atlas, ttf_data, 32.0f);  <span class="comment">// 32px height</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// During rendering (call every frame for each string):</span></div>
+<div class="line"><span class="keywordtype">float</span> x = 10, y = 50;</div>
+<div class="line"><a class="code hl_function" href="pico__font_8h.html#aae5582e1bd65789aa30f7cf83876d6de">pf_draw_text</a>(face, <span class="stringliteral">&quot;Hello!&quot;</span>, &amp;x, &amp;y, my_quad_callback, user_ptr);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// The callback receives screen-space quads with atlas UVs and page index.</span></div>
+<div class="line"><span class="comment">// After pf_draw_text, upload any dirty atlas pages to the GPU:</span></div>
+<div class="line"><a class="code hl_function" href="pico__font_8h.html#a1233984fbf62d3f42abf58e6e36e9f1b">pf_upload_atlas</a>(atlas, my_upload_callback, user_ptr);</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_function" href="pico__font_8h.html#a50b4857a827da9c872e1d47bad08d1a0">pf_destroy_face</a>(face);</div>
+<div class="line"><a class="code hl_function" href="pico__font_8h.html#a74aff30923a3c4fda14663246bfb2b33">pf_destroy_atlas</a>(atlas);</div>
+<div class="ttc" id="apico__font_8h_html_a1233984fbf62d3f42abf58e6e36e9f1b"><div class="ttname"><a href="pico__font_8h.html#a1233984fbf62d3f42abf58e6e36e9f1b">pf_upload_atlas</a></div><div class="ttdeci">void pf_upload_atlas(pf_atlas_t *atlas, pf_upload_callback_fn cb, void *user)</div><div class="ttdoc">Iterate over dirty pages and invoke the callback for each one.</div></div>
+<div class="ttc" id="apico__font_8h_html_a24c2566370569c257df89c57380f2e33"><div class="ttname"><a href="pico__font_8h.html#a24c2566370569c257df89c57380f2e33">pf_atlas_t</a></div><div class="ttdeci">struct pf_atlas_t pf_atlas_t</div><div class="ttdoc">Opaque atlas handle.</div><div class="ttdef"><b>Definition</b> pico_font.h:106</div></div>
+<div class="ttc" id="apico__font_8h_html_a33f2b69bbfa1f498bb9e2eacf85f3172"><div class="ttname"><a href="pico__font_8h.html#a33f2b69bbfa1f498bb9e2eacf85f3172">pf_face_t</a></div><div class="ttdeci">struct pf_face_t pf_face_t</div><div class="ttdoc">Opaque font-face handle.</div><div class="ttdef"><b>Definition</b> pico_font.h:111</div></div>
+<div class="ttc" id="apico__font_8h_html_a50b4857a827da9c872e1d47bad08d1a0"><div class="ttname"><a href="pico__font_8h.html#a50b4857a827da9c872e1d47bad08d1a0">pf_destroy_face</a></div><div class="ttdeci">void pf_destroy_face(pf_face_t *face)</div><div class="ttdoc">Destroys a font face and frees the TTF data it owns.</div></div>
+<div class="ttc" id="apico__font_8h_html_a74aff30923a3c4fda14663246bfb2b33"><div class="ttname"><a href="pico__font_8h.html#a74aff30923a3c4fda14663246bfb2b33">pf_destroy_atlas</a></div><div class="ttdeci">void pf_destroy_atlas(pf_atlas_t *atlas)</div><div class="ttdoc">Destroys a font atlas and frees all associated pages and glyphs.</div></div>
+<div class="ttc" id="apico__font_8h_html_aae5582e1bd65789aa30f7cf83876d6de"><div class="ttname"><a href="pico__font_8h.html#aae5582e1bd65789aa30f7cf83876d6de">pf_draw_text</a></div><div class="ttdeci">void pf_draw_text(pf_face_t *face, const char *text, float *x, float *y, pf_draw_callback_fn cb, void *user)</div><div class="ttdoc">Lay out and emit quads for a UTF-8 string.</div></div>
+<div class="ttc" id="apico__font_8h_html_abbc57a0e441b5573c09f0ac7dde991a9"><div class="ttname"><a href="pico__font_8h.html#abbc57a0e441b5573c09f0ac7dde991a9">pf_create_face</a></div><div class="ttdeci">pf_face_t * pf_create_face(pf_atlas_t *atlas, const unsigned char *ttf_data, size_t ttf_data_size, float pixel_height)</div><div class="ttdoc">Create a font face at a given pixel height.</div></div>
+<div class="ttc" id="apico__font_8h_html_aca79f5fa1d4889789811e5448954f443"><div class="ttname"><a href="pico__font_8h.html#aca79f5fa1d4889789811e5448954f443">pf_create_atlas</a></div><div class="ttdeci">pf_atlas_t * pf_create_atlas(int page_width, int max_page_height)</div><div class="ttdoc">Allocates and initializes a font atlas.</div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md37"></a>
+Full Example:</h2>
+<p>A more or less complete example can be found at: examples_pico_gfx/text.c</p>
+<h2><a class="anchor" id="autotoc_md38"></a>
+Macro Overrides:</h2>
+<ul>
+<li>PICO_FONT_ASSERT (default: assert)</li>
+<li>PICO_FONT_MALLOC (default: malloc)</li>
+<li>PICO_FONT_CALLOC (default: calloc)</li>
+<li>PICO_FONT_REALLOC (default: realloc)</li>
+<li>PICO_FONT_FREE (default: free)</li>
+<li>PICO_FONT_MEMSET (default: memset)</li>
+<li>PICO_FONT_MEMCPY (default: memcpy)</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md39"></a>
+Constant Overrides:</h2>
+<ul>
+<li>PICO_FONT_GLYPH_PADDING (default: 1)</li>
+<li>PICO_FONT_CACHE_INIT_SIZE (default: 256)</li>
+<li>PICO_FONT_INIT_PAGE_HEIGHT (default: 64) </li>
+</ul>
+</div><h2 class="groupheader">Typedef Documentation</h2>
 <a id="a24c2566370569c257df89c57380f2e33" name="a24c2566370569c257df89c57380f2e33"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a24c2566370569c257df89c57380f2e33">&#9670;&#160;</a></span>pf_atlas_t</h2>
 
@@ -169,78 +251,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">@file pico_font.h
-@brief A simple, dynamic (online) font atlas
 
-----------------------------------------------------------------------------
-Licensing information at end of header
-----------------------------------------------------------------------------
-
-Introduction:
--------------
-
-A single-header library that rasterizes and caches glyphs on demand into a
-multi-page texture atlas. Each page is a single-channel (alpha) bitmap with
-a fixed width and a height that grows on demand up to a configurable maximum.
-When a page is full, a new page is appended automatically. Glyph placement
-uses row-based shelf packing. The library also supports basic, single line
-drawing, but can be customized using the available metrics and measurement
-functions.
-
-Features:
----------
-- Written in C99
-- On-demand glyph rasterization via stb_truetype.h
-- Multi-page atlas with automatic page growth and creation
-- Hashtable glyph cache with automatic rehashing
-- UTF-8 text layout with kerning (rendering API agnostic)
-- Text measurement and font metrics
-- Dirty-page tracking for efficient GPU uploads
-
-Revision History:
------------------
-
-- 0.1 (2026/04/11):
-    - On-demand glyph rasterization and storage
-    - Simple text rendering
-
-Usage:
-------
-
-    #define PICO_FONT_IMPLEMENTATION
-    #include "pico_font.h"
-
-You must also have stb_truetype.h available. Define STB_TRUETYPE_IMPLEMENTATION
-exactly once in your project after including this file.
-
-Quick Start:
-------------
-
-```c
-pf_atlas_t* atlas = pf_create_atlas(512, 512);   // page width, max page height
-pf_face_t*  face  = pf_create_face(atlas, ttf_data, 32.0f);  // 32px height
-</pre><p> During rendering (call every frame for each string): float x = 10, y = 50; pf_draw_text(face, "Hello!", &amp;x, &amp;y, my_quad_callback, user_ptr);</p>
-<p>The callback receives screen-space quads with atlas UVs and page index. After pf_draw_text, upload any dirty atlas pages to the GPU: pf_upload_atlas(atlas, my_upload_callback, user_ptr);</p>
-<p>pf_destroy_face(face); pf_destroy_atlas(atlas); ```</p>
-<h2><a class="anchor" id="autotoc_md23"></a>
-Full Example:</h2>
-<p>A more or less complete example can be found at: examples_pico_gfx/text.c</p>
-<h2><a class="anchor" id="autotoc_md24"></a>
-Macro Overrides:</h2>
-<ul>
-<li>PICO_FONT_ASSERT (default: assert)</li>
-<li>PICO_FONT_CALLOC (default: calloc)</li>
-<li>PICO_FONT_REALLOC (default: realloc)</li>
-<li>PICO_FONT_FRE (default: free)</li>
-<li>PICO_FONT_MEMSET (default: memset)</li>
-</ul>
-<h2><a class="anchor" id="autotoc_md25"></a>
-Constant Overrides:</h2>
-<ul>
-<li>PICO_FONT_GLYPH_PADDING (default: 1)</li>
-<li>PICO_FONT_CACHE_INIT_SIZE (default: 256)</li>
-<li>PICO_FONT_INIT_PAGE_HEIGHT (default: 64) </li>
-</ul>
+<p>Opaque atlas handle. </p>
 
 </div>
 </div>
@@ -255,6 +267,8 @@ Constant Overrides:</h2>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Opaque font-face handle. </p>
 
 </div>
 </div>
@@ -271,7 +285,14 @@ Constant Overrides:</h2>
 </div><div class="memdoc">
 
 <p>Callback invoked for each glyph quad during text drawing. </p>
-<p>Return false to stop iteration, true to continue. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">quad</td><td>The screen-space quad with atlas UVs and page index </td></tr>
+    <tr><td class="paramname">user</td><td>Opaque pointer supplied by the caller </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>false to stop iteration, true to continue </dd></dl>
 
 </div>
 </div>
@@ -290,10 +311,11 @@ Constant Overrides:</h2>
 <p>Callback invoked for each dirty atlas page during pf_upload_atlas. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">page</td><td>page index </td></tr>
-    <tr><td class="paramname">pixels</td><td>single-channel bitmap (width * height bytes) </td></tr>
-    <tr><td class="paramname">width,bitmap</td><td>horizontal dimensions </td></tr>
-    <tr><td class="paramname">height</td><td>bitmap vertical dimensions </td></tr>
+    <tr><td class="paramname">page</td><td>Page index </td></tr>
+    <tr><td class="paramname">pixels</td><td>Single-channel bitmap (width * height bytes) </td></tr>
+    <tr><td class="paramname">width</td><td>Bitmap width in pixels </td></tr>
+    <tr><td class="paramname">height</td><td>Bitmap height in pixels </td></tr>
+    <tr><td class="paramname">user</td><td>Opaque pointer supplied by the caller </td></tr>
   </table>
   </dd>
 </dl>
@@ -367,8 +389,8 @@ Constant Overrides:</h2>
 
 </div>
 </div>
-<a id="ae9299ae002cf7ae3e8b814b78f6b624d" name="ae9299ae002cf7ae3e8b814b78f6b624d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae9299ae002cf7ae3e8b814b78f6b624d">&#9670;&#160;</a></span>pf_create_face()</h2>
+<a id="abbc57a0e441b5573c09f0ac7dde991a9" name="abbc57a0e441b5573c09f0ac7dde991a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbc57a0e441b5573c09f0ac7dde991a9">&#9670;&#160;</a></span>pf_create_face()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -388,6 +410,12 @@ Constant Overrides:</h2>
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>ttf_data_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">float&#160;</td>
           <td class="paramname"><em>pixel_height</em>&#160;</td>
         </tr>
@@ -400,7 +428,7 @@ Constant Overrides:</h2>
 </div><div class="memdoc">
 
 <p>Create a font face at a given pixel height. </p>
-<p>Initialises an stb_truetype font from raw TrueType data and binds it to <code>atlas</code> for glyph caching. The face does not take ownership of <code>ttf_data</code>; the caller must keep it alive for the lifetime of the face.</p>
+<p>Initialises an stb_truetype font from raw TrueType data and binds it to <code>atlas</code> for glyph caching. The face takes ownership of <code>ttf_data:</code> it is released with PICO_FONT_FREE by pf_destroy_face (or immediately if creation fails), so it must have been allocated compatibly with PICO_FONT_FREE and must not be freed by the caller.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">atlas</td><td>Atlas that will store rasterized glyphs. </td></tr>
@@ -429,7 +457,7 @@ Constant Overrides:</h2>
       </table>
 </div><div class="memdoc">
 
-<p>Destroys a font face. </p>
+<p>Destroys a font face and frees the TTF data it owns. </p>
 <p>Does not destroy the atlas it was bound to.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -530,7 +558,7 @@ Constant Overrides:</h2>
 </div><div class="memdoc">
 
 <p>Lay out and emit quads for a UTF-8 string. </p>
-<p>For each visible glyph the callback receives a screen-space quad with atlas UVs and a page index. Kerning is applied automatically between adjacent codepoints. The caller is responsible for line breaking; use <a class="el" href="pico__font_8h.html#a824c72f6df13b2d62692092d11b7cc8e" title="Retrieve vertical font metrics for a face.">pf_get_metrics()</a> to obtain the line height for advancing *y between lines.</p>
+<p>For each visible glyph the callback receives a screen-space quad with atlas UVs and a page index. Kerning is applied automatically between adjacent codepoints. The caller is responsible for line breaking; use <a class="el" href="pico__font_8h.html#a824c72f6df13b2d62692092d11b7cc8e" title="Retrieve vertical font metrics for a face.">pf_get_metrics()</a> to obtain the line height for advancing <code>y</code> between lines.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">face</td><td>Face to use. </td></tr>

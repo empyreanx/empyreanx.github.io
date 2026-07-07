@@ -1,0 +1,5 @@
+<map id="ecs_sys_desc_t" name="ecs_sys_desc_t">
+<area shape="rect" id="Node000001" title="Optional parameters for system definition." alt="" coords="5,108,128,133"/>
+<area shape="rect" id="Node000002" href="$structecs__entity__t.html" title="An entity handle." alt="" coords="16,5,117,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="69,45,69,108,64,108,64,45"/>
+</map>

@@ -16,7 +16,7 @@ var searchData=
   ['pb2_5ftransform_13',['pb2_transform',['../pico__math_8h.html#a74c8e1b9c7ad88c3b46379435e10b7ff',1,'pico_math.h']]],
   ['pf_5fclamp_14',['pf_clamp',['../pico__math_8h.html#a1dfb2ed2ff9bbf31d3142604dbef4bb5',1,'pico_math.h']]],
   ['pf_5fcreate_5fatlas_15',['pf_create_atlas',['../pico__font_8h.html#aca79f5fa1d4889789811e5448954f443',1,'pico_font.h']]],
-  ['pf_5fcreate_5fface_16',['pf_create_face',['../pico__font_8h.html#ae9299ae002cf7ae3e8b814b78f6b624d',1,'pico_font.h']]],
+  ['pf_5fcreate_5fface_16',['pf_create_face',['../pico__font_8h.html#abbc57a0e441b5573c09f0ac7dde991a9',1,'pico_font.h']]],
   ['pf_5fdestroy_5fatlas_17',['pf_destroy_atlas',['../pico__font_8h.html#a74aff30923a3c4fda14663246bfb2b33',1,'pico_font.h']]],
   ['pf_5fdestroy_5fface_18',['pf_destroy_face',['../pico__font_8h.html#a50b4857a827da9c872e1d47bad08d1a0',1,'pico_font.h']]],
   ['pf_5fdraw_5ftext_19',['pf_draw_text',['../pico__font_8h.html#aae5582e1bd65789aa30f7cf83876d6de',1,'pico_font.h']]],

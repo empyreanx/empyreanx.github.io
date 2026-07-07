@@ -78,7 +78,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Dynamic 2D Bounding Volume Heirarchy (BVH)  
+<p>A Dynamic 2D Bounding Volume Heirarchy (BVH) Library.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
@@ -87,7 +87,7 @@ Include dependency graph for pico_bvh.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="pico__bvh_8h__incl.png" border="0" usemap="#apico__bvh_8h" alt=""/></div>
 <map name="apico__bvh_8h" id="apico__bvh_8h">
-<area shape="rect" title="Dynamic 2D Bounding Volume Heirarchy (BVH)" alt="" coords="51,5,143,31"/>
+<area shape="rect" title="A Dynamic 2D Bounding Volume Heirarchy (BVH) Library." alt="" coords="51,5,143,31"/>
 <area shape="rect" title=" " alt="" coords="5,79,88,104"/>
 <area shape="poly" title=" " alt="" coords="91,33,65,69,61,66,87,29"/>
 <area shape="rect" title=" " alt="" coords="113,79,183,104"/>
@@ -148,9 +148,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a4ac152efad7b7ac4f828a011a6f87fa2" id="r_a4ac152efad7b7ac4f828a011a6f87fa2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__bvh_8h.html#a4ac152efad7b7ac4f828a011a6f87fa2">bvh_query_aabb</a> (const <a class="el" href="pico__bvh_8h.html#a7ccd213bb9342f7d7b6e35d35978fa2d">bvh_t</a> *tree, <a class="el" href="structbvh__aabb__t.html">bvh_aabb_t</a> query, <a class="el" href="pico__bvh_8h.html#ae4d16c1a4afa06ef2b4a13da651bd5de">bvh_query_cb</a> cb, void *ctx)</td></tr>
 <tr class="memdesc:a4ac152efad7b7ac4f828a011a6f87fa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries the tree against an AABB.  <br /></td></tr>
 <tr class="separator:a4ac152efad7b7ac4f828a011a6f87fa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae11737728c39293623ea296279e6ec91" id="r_ae11737728c39293623ea296279e6ec91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__bvh_8h.html#ae11737728c39293623ea296279e6ec91">bvh_query_ray</a> (const <a class="el" href="pico__bvh_8h.html#a7ccd213bb9342f7d7b6e35d35978fa2d">bvh_t</a> *tree, <a class="el" href="structbvh__vec2__t.html">bvh_vec2_t</a> origin, <a class="el" href="structbvh__vec2__t.html">bvh_vec2_t</a> dir, float max_t, <a class="el" href="pico__bvh_8h.html#ae4d16c1a4afa06ef2b4a13da651bd5de">bvh_query_cb</a> cb, void *ctx)</td></tr>
-<tr class="memdesc:ae11737728c39293623ea296279e6ec91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries the tree against a ray.  <br /></td></tr>
-<tr class="separator:ae11737728c39293623ea296279e6ec91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3250668c8dbb6e0b1be54f7fd1ef513b" id="r_a3250668c8dbb6e0b1be54f7fd1ef513b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__bvh_8h.html#a3250668c8dbb6e0b1be54f7fd1ef513b">bvh_query_ray</a> (const <a class="el" href="pico__bvh_8h.html#a7ccd213bb9342f7d7b6e35d35978fa2d">bvh_t</a> *tree, <a class="el" href="structbvh__vec2__t.html">bvh_vec2_t</a> origin, <a class="el" href="structbvh__vec2__t.html">bvh_vec2_t</a> dir, float t_max, <a class="el" href="pico__bvh_8h.html#ae4d16c1a4afa06ef2b4a13da651bd5de">bvh_query_cb</a> cb, void *ctx)</td></tr>
+<tr class="memdesc:a3250668c8dbb6e0b1be54f7fd1ef513b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries the tree against a ray.  <br /></td></tr>
+<tr class="separator:a3250668c8dbb6e0b1be54f7fd1ef513b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e75f88973cb42e7c29c7374b64f4b54" id="r_a5e75f88973cb42e7c29c7374b64f4b54"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pico__bvh_8h.html#acc55a661817f2cb30f0e3d08a9859710">bvh_udata_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pico__bvh_8h.html#a5e75f88973cb42e7c29c7374b64f4b54">bvh_get_udata</a> (const <a class="el" href="pico__bvh_8h.html#a7ccd213bb9342f7d7b6e35d35978fa2d">bvh_t</a> *tree, int leaf_id)</td></tr>
 <tr class="memdesc:a5e75f88973cb42e7c29c7374b64f4b54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the user data from the specified leaf node.  <br /></td></tr>
 <tr class="separator:a5e75f88973cb42e7c29c7374b64f4b54"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -168,7 +168,7 @@ Functions</h2></td></tr>
 <tr class="separator:a7061edbf71c3dd95b96bf8997de926b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Dynamic 2D Bounding Volume Heirarchy (BVH) </p>
+<div class="textblock"><p>A Dynamic 2D Bounding Volume Heirarchy (BVH) Library. </p>
 <hr  />
  <h2><a class="anchor" id="autotoc_md6"></a>
 Licensing information at end of header</h2>
@@ -195,7 +195,7 @@ Features</h2>
 </ul>
 <h2><a class="anchor" id="autotoc_md10"></a>
 Typical Workflow</h2>
-<p>1) Create tree bvh_t* tree = <a class="el" href="pico__bvh_8h.html#ad0f4a12ffdbfc12c30cadb08c95c7349" title="Allocates and initializes a BVH instances.">bvh_create()</a>; 2) Insert and keep returned IDs int id = bvh_insert(tree, aabb, padding, udata); 3) Update or remove by ID bvh_move(tree, id, new_aabb, padding); bvh_remove(tree, id); 4) Query with callbacks bvh_query_aabb(tree, query, cb, ctx); bvh_query_ray(tree, origin, dir, max_t, cb, ctx); 5) Destroy when done bvh_destroy(tree);</p>
+<p>1) Create tree bvh_t* tree = <a class="el" href="pico__bvh_8h.html#ad0f4a12ffdbfc12c30cadb08c95c7349" title="Allocates and initializes a BVH instances.">bvh_create()</a>; 2) Insert and keep returned IDs int id = bvh_insert(tree, aabb, padding, udata); 3) Update or remove by ID bvh_move(tree, id, new_aabb, padding); bvh_remove(tree, id); 4) Query with callbacks bvh_query_aabb(tree, query, cb, ctx); bvh_query_ray(tree, origin, dir, t_max, cb, ctx); 5) Destroy when done bvh_destroy(tree);</p>
 <p>Query Semantics</p>
 <hr  />
 <ul>
@@ -267,6 +267,15 @@ Complexity Notes</h2>
 </div><div class="memdoc">
 
 <p>Return false to stop traversal early. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">leaf_id</td><td>Leaf handle for the candidate hit. </td></tr>
+    <tr><td class="paramname">udata</td><td>User payload stored in that leaf. </td></tr>
+    <tr><td class="paramname">ctx</td><td>User-provided context pointer passed through query calls. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true to continue traversal, false to stop early. </dd></dl>
 
 </div>
 </div>
@@ -283,6 +292,16 @@ Complexity Notes</h2>
 </div><div class="memdoc">
 
 <p>Called for every node during <a class="el" href="pico__bvh_8h.html#ad0de02ec08169c3095319f85a8d3b0b9" title="Depth-first walk over every node (internal + leaf).">bvh_walk()</a>; depth=0 at root. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">aabb</td><td>Node bounds. </td></tr>
+    <tr><td class="paramname">depth</td><td>Tree depth, where 0 is the root. </td></tr>
+    <tr><td class="paramname">is_leaf</td><td>true for leaf nodes, false for internal nodes. </td></tr>
+    <tr><td class="paramname">udata</td><td>User payload for leaf nodes; unspecified for internal nodes. </td></tr>
+    <tr><td class="paramname">ctx</td><td>User-provided context pointer passed through bvh_walk. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -342,6 +361,16 @@ Complexity Notes</h2>
 </div><div class="memdoc">
 
 <p>Constructs an AABB from a position and dimensions. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Minimum x coordinate. </td></tr>
+    <tr><td class="paramname">y</td><td>Minimum y coordinate. </td></tr>
+    <tr><td class="paramname">w</td><td>Width added to x to form max.x. </td></tr>
+    <tr><td class="paramname">h</td><td>Height added to y to form max.y. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Constructed AABB. </dd></dl>
 
 </div>
 </div>
@@ -362,6 +391,7 @@ Complexity Notes</h2>
 </div><div class="memdoc">
 
 <p>Allocates and initializes a BVH instances. </p>
+<dl class="section return"><dt>Returns</dt><dd>New BVH instance, or NULL on allocation failure. </dd></dl>
 
 </div>
 </div>
@@ -382,6 +412,12 @@ Complexity Notes</h2>
 </div><div class="memdoc">
 
 <p>Destroys and deallocates a BVH instance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tree</td><td>BVH instance to destroy. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -425,6 +461,15 @@ Complexity Notes</h2>
 
 <p>Inserts a new leaf. </p>
 <p>The stored AABB is padded by <code>padding</code> (pass 0 for exact fit).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tree</td><td>BVH instance to modify. </td></tr>
+    <tr><td class="paramname">aabb</td><td>Tight bounds for the new leaf. </td></tr>
+    <tr><td class="paramname">padding</td><td>Margin added on all sides before storing the leaf bounds. </td></tr>
+    <tr><td class="paramname">udata</td><td>User payload associated with the leaf. </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>Returns</dt><dd>A stable ID for future move/remove calls. </dd></dl>
 
 </div>
@@ -456,6 +501,13 @@ Complexity Notes</h2>
 </div><div class="memdoc">
 
 <p>Remove a leaf. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tree</td><td>BVH instance to modify. </td></tr>
+    <tr><td class="paramname">leaf_id</td><td>ID previously returned by bvh_insert. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -498,6 +550,15 @@ Complexity Notes</h2>
 </div><div class="memdoc">
 
 <p>Update a leaf's AABB. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tree</td><td>BVH instance to modify. </td></tr>
+    <tr><td class="paramname">leaf_id</td><td>ID previously returned by bvh_insert. </td></tr>
+    <tr><td class="paramname">new_aabb</td><td>New tight bounds for the leaf. </td></tr>
+    <tr><td class="paramname">padding</td><td>Margin added on all sides before storing the leaf bounds. </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the tree was restructured (the old padded AABB no longer contained the new tight one). </dd></dl>
 
 </div>
@@ -541,11 +602,20 @@ Complexity Notes</h2>
 </div><div class="memdoc">
 
 <p>Queries the tree against an AABB. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tree</td><td>BVH instance to query. </td></tr>
+    <tr><td class="paramname">query</td><td>Query AABB in world space. </td></tr>
+    <tr><td class="paramname">cb</td><td>Callback invoked for each overlapping leaf. </td></tr>
+    <tr><td class="paramname">ctx</td><td>User-provided context pointer passed to cb. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a id="ae11737728c39293623ea296279e6ec91" name="ae11737728c39293623ea296279e6ec91"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae11737728c39293623ea296279e6ec91">&#9670;&#160;</a></span>bvh_query_ray()</h2>
+<a id="a3250668c8dbb6e0b1be54f7fd1ef513b" name="a3250668c8dbb6e0b1be54f7fd1ef513b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3250668c8dbb6e0b1be54f7fd1ef513b">&#9670;&#160;</a></span>bvh_query_ray()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -572,7 +642,7 @@ Complexity Notes</h2>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>max_t</em>, </td>
+          <td class="paramname"><em>t_max</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -595,7 +665,17 @@ Complexity Notes</h2>
 </div><div class="memdoc">
 
 <p>Queries the tree against a ray. </p>
-<p>Ray: origin + t*dir, t in [0, max_t]. Use FLT_MAX for infinite ray. </p>
+<p>Ray: origin + t*dir, t in [0, t_max]. Use FLT_MAX for infinite ray. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tree</td><td>BVH instance to query. </td></tr>
+    <tr><td class="paramname">origin</td><td>Ray origin. </td></tr>
+    <tr><td class="paramname">dir</td><td>Ray direction; it does not need to be normalized. </td></tr>
+    <tr><td class="paramname">t_max</td><td>Maximum parametric distance along the ray. </td></tr>
+    <tr><td class="paramname">cb</td><td>Callback invoked for each overlapping leaf. </td></tr>
+    <tr><td class="paramname">ctx</td><td>User-provided context pointer passed to cb. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -626,6 +706,14 @@ Complexity Notes</h2>
 </div><div class="memdoc">
 
 <p>Returns the user data from the specified leaf node. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tree</td><td>BVH instance to read from. </td></tr>
+    <tr><td class="paramname">leaf_id</td><td>ID previously returned by bvh_insert. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>User payload stored in that leaf. </dd></dl>
 
 </div>
 </div>
@@ -656,6 +744,14 @@ Complexity Notes</h2>
 </div><div class="memdoc">
 
 <p>Returns the enlarged bounds from the specified leaf node. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tree</td><td>BVH instance to read from. </td></tr>
+    <tr><td class="paramname">leaf_id</td><td>ID previously returned by bvh_insert. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Stored padded AABB for that leaf. </dd></dl>
 
 </div>
 </div>
@@ -676,6 +772,13 @@ Complexity Notes</h2>
 </div><div class="memdoc">
 
 <p>Returns number of leaves in the tree. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tree</td><td>BVH instance to read from. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of currently allocated leaves. </dd></dl>
 
 </div>
 </div>
@@ -712,6 +815,14 @@ Complexity Notes</h2>
 </div><div class="memdoc">
 
 <p>Depth-first walk over every node (internal + leaf). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tree</td><td>BVH instance to walk. </td></tr>
+    <tr><td class="paramname">cb</td><td>Callback invoked once per node. </td></tr>
+    <tr><td class="paramname">ctx</td><td>User-provided context pointer passed to cb. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -732,6 +843,13 @@ Complexity Notes</h2>
 </div><div class="memdoc">
 
 <p>Total surface-area cost (lower = better balanced). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tree</td><td>BVH instance to evaluate. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Sum of node perimeters in the tree. </dd></dl>
 
 </div>
 </div>

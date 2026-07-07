@@ -1,5 +1,5 @@
 <map id="pico_font.h" name="pico_font.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="147,5,242,31"/>
+<area shape="rect" id="Node000001" title="A simple, dynamic (online) font atlas." alt="" coords="147,5,242,31"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,79,88,104"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,33,84,75,82,70,170,28"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="113,79,183,104"/>

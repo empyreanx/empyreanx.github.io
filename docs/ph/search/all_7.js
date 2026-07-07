@@ -1,17 +1,10 @@
 var searchData=
 [
-  ['c_0',['C++',['../pico__gfx_8h.html#autotoc_md31',1,'']]],
-  ['center_1',['center',['../structph__circle__t.html#a98f4fa30732a09cf899ee1c5aed6d34a',1,'ph_circle_t']]],
-  ['centroid_2',['centroid',['../structph__poly__t.html#a2dfb73548db9907c0b63521a3ad1d28e',1,'ph_poly_t']]],
-  ['codepoint_3',['codepoint',['../structpf__glyph__t.html#a25fe5899375f9e6c57cf4495b35b0ef4',1,'pf_glyph_t']]],
-  ['color_5fdst_4',['color_dst',['../structpg__blend__mode__t.html#adf3613990f0e130fc76b2404c7857ba9',1,'pg_blend_mode_t']]],
-  ['color_5feq_5',['color_eq',['../structpg__blend__mode__t.html#a1bbeed16865c0590dc4b4a99a81dc91d',1,'pg_blend_mode_t']]],
-  ['color_5fsrc_6',['color_src',['../structpg__blend__mode__t.html#ae3dd2c4bcf95263cd8a61137fa6e1dd7',1,'pg_blend_mode_t']]],
-  ['compatibility_7',['Compatibility',['../pico__gfx_8h.html#autotoc_md28',1,'']]],
-  ['complexity_20notes_8',['Complexity Notes',['../pico__bvh_8h.html#autotoc_md12',1,'']]],
-  ['constant_20overrides_3a_9',['Constant Overrides:',['../pico__font_8h.html#autotoc_md25',1,'']]],
-  ['constants_3a_10',['constants:',['../pico__ecs_8h.html#autotoc_md22',1,'Constants:'],['../pico__gfx_8h.html#autotoc_md33',1,'Constants:'],['../pico__log_8h.html#autotoc_md46',1,'Constants:']]],
-  ['contacts_11',['contacts',['../structph__manifold__t.html#aac9c6ce886818a8f23a191a06e2f788c',1,'ph_manifold_t']]],
-  ['count_12',['count',['../structph__manifold__t.html#ada527fc801e76eec97180766911b96d2',1,'ph_manifold_t::count'],['../structph__poly__t.html#affa6d0ad15ebc1ded600739819bd270f',1,'ph_poly_t::count']]],
-  ['customization_3a_13',['customization:',['../pico__gfx_8h.html#autotoc_md34',1,'Customization:'],['../pico__qt_8h.html#autotoc_md59',1,'Customization:']]]
+  ['get_5fattr_5fslot_0',['get_attr_slot',['../structpg__shader__internal__t.html#af90eec253ce01449bec689d059ff68b0',1,'pg_shader_internal_t']]],
+  ['get_5fimg_5fslot_1',['get_img_slot',['../structpg__shader__internal__t.html#af0f75d8d071197ad5a8657bd0864847d',1,'pg_shader_internal_t']]],
+  ['get_5fshader_5fdesc_2',['get_shader_desc',['../structpg__shader__internal__t.html#a0fea96b717deacc3c09e3cac848985f4',1,'pg_shader_internal_t']]],
+  ['get_5fsmp_5fslot_3',['get_smp_slot',['../structpg__shader__internal__t.html#ad8681597f3a388a684a9600bd5e9a0bf',1,'pg_shader_internal_t']]],
+  ['get_5funiformblock_5fsize_4',['get_uniformblock_size',['../structpg__shader__internal__t.html#a30cd4e99a9d70455dd2868e298d064be',1,'pg_shader_internal_t']]],
+  ['get_5funiformblock_5fslot_5',['get_uniformblock_slot',['../structpg__shader__internal__t.html#ac868d73e40f5e2675cec1072a2478fc2',1,'pg_shader_internal_t']]],
+  ['glyph_5findex_6',['glyph_index',['../structpf__glyph__t.html#a0d3ca095261831b7618a9d9fb4329b67',1,'pf_glyph_t']]]
 ];
